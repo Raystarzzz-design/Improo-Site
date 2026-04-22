@@ -4,27 +4,23 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Improo</title>
-  <meta
-    name="description"
-    content="Improo helps you build your health, discipline and life with intention."
-  />
+  <meta name="description" content="Improo helps you build your health, discipline and life with intention." />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+
   <header class="site-header">
     <div class="container nav">
       <a href="#home" class="brand" aria-label="Improo home">
         <img src="images/logo.webp" alt="Improo logo" class="brand-logo" />
       </a>
-
       <nav class="nav-links">
         <a href="#home">Home</a>
         <a href="#features">Features</a>
         <a href="#roadmap">Roadmap</a>
         <a href="insights/index.html">Insights</a>
-        <a href="#" onclick="openPopup()">Contact</a>
+        <a href="#" onclick="openPopup(); return false;">Contact</a>
       </nav>
-
       <div class="socials">
         <a href="#" aria-label="Instagram">IG</a>
         <a href="https://x.com/Improo_" aria-label="X">X</a>
@@ -34,15 +30,13 @@
   </header>
 
   <main id="home">
+
     <section class="hero">
       <div class="container hero-grid">
+
         <div class="hero-copy">
           <h1>Build your health, discipline and life with intention.</h1>
-
-          <p class="hero-text">
-            Improo helps you stay consistent, take action and build better habits over time.
-          </p>
-
+          <p class="hero-text">Improo helps you stay consistent, take action and build better habits over time.</p>
           <div class="hero-actions">
             <a href="#" class="btn btn-primary">App launching soon 🚀</a>
             <a href="#" class="follow-link">Follow us on social media</a>
@@ -51,13 +45,27 @@
 
         <div class="hero-visual">
           <div class="phone-stage">
+            <!-- Gloed achter de telefoon -->
+            <div class="phone-glow"></div>
             <div class="phone-mockup">
+              <!-- Statusbalk bovenaan -->
+              <div class="phone-statusbar">
+                <span class="phone-time">9:41</span>
+                <div class="phone-icons">
+                  <svg width="16" height="11" viewBox="0 0 16 11" fill="white" opacity="0.9"><rect x="0" y="4" width="3" height="7" rx="1"/><rect x="4.5" y="2.5" width="3" height="8.5" rx="1"/><rect x="9" y="0.5" width="3" height="10.5" rx="1"/><rect x="13.5" y="0" width="2.5" height="11" rx="1" opacity="0.3"/></svg>
+                  <svg width="16" height="12" viewBox="0 0 16 12" fill="white" opacity="0.9"><path d="M8 2.4C10.4 2.4 12.6 3.4 14.1 5L15.5 3.6C13.6 1.4 10.9 0 8 0C5.1 0 2.4 1.4 0.5 3.6L1.9 5C3.4 3.4 5.6 2.4 8 2.4Z"/><path d="M8 5.6C9.6 5.6 11 6.2 12.1 7.2L13.5 5.8C12 4.4 10.1 3.6 8 3.6C5.9 3.6 4 4.4 2.5 5.8L3.9 7.2C5 6.2 6.4 5.6 8 5.6Z"/><circle cx="8" cy="10" r="2"/></svg>
+                  <svg width="25" height="12" viewBox="0 0 25 12" fill="none"><rect x="0.5" y="0.5" width="21" height="11" rx="3.5" stroke="white" stroke-opacity="0.35"/><rect x="2" y="2" width="17" height="8" rx="2" fill="white"/><path d="M23 4.5V7.5C23.8 7.2 24.5 6.4 24.5 6C24.5 5.6 23.8 4.8 23 4.5Z" fill="white" opacity="0.4"/></svg>
+                </div>
+              </div>
+              <!-- Notch/dynamic island -->
               <div class="phone-notch"></div>
+              <!-- App scherm -->
               <img src="images/app.jpg" alt="Improo app preview" class="phone-screen" />
               <div class="phone-reflection"></div>
             </div>
           </div>
         </div>
+
       </div>
     </section>
 
@@ -70,7 +78,6 @@
             <p>Set goals that matter and take daily action.</p>
           </div>
         </article>
-
         <article class="feature-card">
           <div class="feature-icon">↗</div>
           <div>
@@ -78,7 +85,6 @@
             <p>See your growth and build real momentum.</p>
           </div>
         </article>
-
         <article class="feature-card">
           <div class="feature-icon">♡</div>
           <div>
@@ -92,29 +98,25 @@
     <section id="roadmap" class="roadmap-section">
       <div class="container roadmap-card">
         <div class="roadmap-copy">
-          <h2>What’s coming</h2>
-          <p>We’re working hard to bring you the best experience possible.</p>
+          <h2>What's coming</h2>
+          <p>We're working hard to bring you the best experience possible.</p>
         </div>
-
         <div class="roadmap-steps">
           <div class="step done">
             <span class="dot">✓</span>
             <h4>Planning</h4>
             <p>Completed</p>
           </div>
-
           <div class="step done">
             <span class="dot">✓</span>
             <h4>Building</h4>
             <p>In progress</p>
           </div>
-
           <div class="step active">
             <span class="dot">•••</span>
             <h4>Testing</h4>
             <p>Soon</p>
           </div>
-
           <div class="step muted">
             <span class="dot">＋</span>
             <h4>Launch</h4>
@@ -124,7 +126,6 @@
       </div>
     </section>
 
-    <section id="blog" class="spacer-section"></section>
   </main>
 
   <footer id="contact" class="site-footer">
@@ -134,7 +135,6 @@
         <p>Build your health, discipline and life with intention.</p>
         <small>© 2025 Improo. All rights reserved.</small>
       </div>
-
       <div class="footer-links">
         <h4>Navigation</h4>
         <a href="#home">Home</a>
@@ -142,51 +142,61 @@
         <a href="#roadmap">Roadmap</a>
         <a href="insights/index.html">Insights</a>
       </div>
-
       <div class="footer-links">
         <h4>Follow us</h4>
         <a href="#">Instagram</a>
         <a href="https://x.com/Improo_">X (Twitter)</a>
         <a href="#">TikTok</a>
       </div>
-
       <div class="footer-links">
         <h4>Contact</h4>
-        <a href="#">hello@improo.app</a>
+        <a href="#" onclick="openPopup(); return false;">Send us a message</a>
+        <a href="mailto:contact.improo@gmail.com">contact.improo@gmail.com</a>
       </div>
     </div>
   </footer>
-  <div id="contact-popup" class="popup">
-  <div class="popup-content">
-    <span class="close-btn" onclick="closePopup()">×</span>
 
-    <h2>Contact</h2>
-
-    <input type="text" id="name" placeholder="Your name">
-    <input type="email" id="email" placeholder="Your email">
-    <textarea id="message" placeholder="Your message"></textarea>
-
-    <button onclick="sendEmail()">Send message</button>
+  <!-- CONTACT POPUP -->
+  <div id="contact-popup" class="popup-overlay" onclick="handleOverlayClick(event)">
+    <div class="popup-box">
+      <button class="popup-close" onclick="closePopup()" aria-label="Close">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+          <path d="M2 2l14 14M16 2L2 16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+      <h2 class="popup-title">Get in touch</h2>
+      <p class="popup-sub">We usually respond within 24 hours.</p>
+      <div class="popup-fields">
+        <input type="text" id="contact-name" placeholder="Your name" />
+        <input type="email" id="contact-email" placeholder="Your email" />
+        <textarea id="contact-message" placeholder="Your message" rows="5"></textarea>
+        <button class="popup-send" onclick="sendEmail()">Send message</button>
+      </div>
+    </div>
   </div>
-</div>
+
   <script>
-function openPopup() {
-  document.getElementById("contact-popup").style.display = "flex";
-}
+    function openPopup() {
+      document.getElementById('contact-popup').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+    function closePopup() {
+      document.getElementById('contact-popup').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+    function handleOverlayClick(e) {
+      if (e.target === document.getElementById('contact-popup')) closePopup();
+    }
+    function sendEmail() {
+      var name    = document.getElementById('contact-name').value;
+      var email   = document.getElementById('contact-email').value;
+      var message = document.getElementById('contact-message').value;
+      if (!name || !email || !message) { alert('Please fill in all fields.'); return; }
+      var mailto = 'mailto:contact.improo@gmail.com?subject=Contact from ' + encodeURIComponent(name) + '&body=Name: ' + encodeURIComponent(name) + '%0AEmail: ' + encodeURIComponent(email) + '%0A%0A' + encodeURIComponent(message);
+      window.location.href = mailto;
+      closePopup();
+    }
+  </script>
 
-function closePopup() {
-  document.getElementById("contact-popup").style.display = "none";
-}
-
-function sendEmail() {
-  let name = document.getElementById("name").value;
-  let email = document.getElementById("email").value;
-  let message = document.getElementById("message").value;
-
-  let mailto = `contact.improo:@gmail.com?subject=Contact from ${name}&body=Name: ${name}%0AEmail: ${email}%0A%0A${message}`;
-
-  window.location.href = mailto;
-}
-</script>
 </body>
 </html>
