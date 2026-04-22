@@ -549,3 +549,7 @@ a {
   font-size: 0.8rem;
   color: var(--blue);
 }
+.nav-links a.active {
+  color: var(--blue);
+  font-weight: 600;
+}
