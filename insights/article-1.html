@@ -1,1 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- UPDATE THESE PER ARTICLE -->
+  <title>Why Most People Quit After 3 Weeks – Improo Insights</title>
+  <meta name="description" content="The first three weeks of any new habit are a filter. Here's the framework that changes everything." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+    :root {
+      --bg:       #0a0d12;
+      --bg-card:  rgba(255,255,255,0.04);
+      --border:   rgba(255,255,255,0.08);
+      --text:     #e8eaf0;
+      --muted:    rgba(255,255,255,0.45);
+      --faint:    rgba(255,255,255,0.22);
+      --blue:     #4f9cf9;
+      --font-head:'Syne', sans-serif;
+      --font-body:'DM Sans', sans-serif;
+      --content-width: 680px;
+    }
+
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--text); font-family: var(--font-body); font-size: 15px; line-height: 1.6; }
+
+    /* ── NAV ── */
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 48px;
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      background: rgba(10,13,18,0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      z-index: 100;
+    }
+    .logo { font-family: var(--font-head); font-size: 20px; font-weight: 700; color: #fff; text-decoration: none; letter-spacing: -0.5px; }
+    .nav-links { display: flex; gap: 32px; list-style: none; }
+    .nav-links a { font-size: 14px; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--text); }
+    .nav-links a.active { color: var(--blue); }
+    .nav-cta {
+      font-size: 13px; font-weight: 500;
+      padding: 8px 20px;
+      border: 1px solid rgba(79,156,249,0.4);
+      border-radius: 99px;
+      color: var(--blue);
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .nav-cta:hover { background: rgba(79,156,249,0.1); }
+
+    /* ── BACK LINK ── */
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      color: var(--muted);
+      text-decoration: none;
+      margin: 36px 0 0;
+      transition: color 0.2s;
+      max-width: var(--content-width);
+      margin-left: auto; margin-right: auto;
+      padding: 0 24px;
+    }
+    .back-link:hover { color: var(--text); }
+
+    /* ── ARTICLE HEADER ── */
+    .article-header {
+      max-width: var(--content-width);
+      margin: 0 auto;
+      padding: 36px 24px 48px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    /* UPDATE: change badge class to match category */
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      padding: 4px 11px;
+      border-radius: 99px;
+      margin-bottom: 20px;
+    }
+    .badge-health    { background: rgba(34,197,94,0.12);  color: #4ade80; }
+    .badge-discipline{ background: rgba(79,156,249,0.12); color: #7db8fb; }
+    .badge-mindset   { background: rgba(168,85,247,0.12); color: #c084fc; }
+    .badge-updates   { background: rgba(245,158,11,0.12); color: #fbbf24; }
+
+    .article-title {
+      font-family: var(--font-head);
+      font-size: clamp(26px, 4vw, 40px);
+      font-weight: 700;
+      line-height: 1.15;
+      color: #fff;
+      margin-bottom: 18px;
+      letter-spacing: -0.5px;
+    }
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      font-size: 12px;
+      color: var(--faint);
+    }
+    .meta-sep { width: 3px; height: 3px; border-radius: 50%; background: var(--faint); }
+    .article-intro {
+      font-size: 18px;
+      line-height: 1.65;
+      color: rgba(255,255,255,0.65);
+      margin-top: 28px;
+      font-weight: 300;
+    }
+
+    /* ── PROGRESS BAR ── */
+    #progress-bar {
+      position: fixed;
+      top: 0; left: 0;
+      height: 2px;
+      background: var(--blue);
+      width: 0%;
+      z-index: 200;
+      transition: width 0.1s linear;
+    }
+
+    /* ── ARTICLE BODY ── */
+    .article-body {
+      max-width: var(--content-width);
+      margin: 0 auto;
+      padding: 52px 24px 80px;
+    }
+
+    /* Typography */
+    .article-body h2 {
+      font-family: var(--font-head);
+      font-size: 22px;
+      font-weight: 700;
+      color: #fff;
+      margin: 48px 0 16px;
+      line-height: 1.2;
+    }
+    .article-body h3 {
+      font-family: var(--font-head);
+      font-size: 17px;
+      font-weight: 600;
+      color: #fff;
+      margin: 32px 0 12px;
+    }
+    .article-body p {
+      font-size: 16px;
+      line-height: 1.8;
+      color: rgba(255,255,255,0.75);
+      margin-bottom: 20px;
+    }
+    .article-body p:last-child { margin-bottom: 0; }
+    .article-body a { color: var(--blue); text-decoration: underline; text-underline-offset: 3px; }
+
+    /* Callout block */
+    .callout {
+      border-left: 3px solid var(--blue);
+      padding: 16px 20px;
+      background: rgba(79,156,249,0.06);
+      border-radius: 0 8px 8px 0;
+      margin: 28px 0;
+    }
+    .callout p { margin: 0; color: rgba(255,255,255,0.65); font-style: italic; font-size: 16px; }
+
+    /* Key points list */
+    .article-body ul {
+      padding-left: 0;
+      list-style: none;
+      margin-bottom: 20px;
+    }
+    .article-body ul li {
+      font-size: 16px;
+      line-height: 1.7;
+      color: rgba(255,255,255,0.75);
+      padding: 6px 0 6px 20px;
+      position: relative;
+    }
+    .article-body ul li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 14px;
+      width: 5px; height: 5px;
+      border-radius: 50%;
+      background: var(--blue);
+    }
+
+    /* ── DIVIDER ── */
+    .article-divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 48px 0;
+    }
+
+    /* ── CTA BLOCK ── */
+    .article-cta {
+      background: rgba(79,156,249,0.06);
+      border: 1px solid rgba(79,156,249,0.2);
+      border-radius: 14px;
+      padding: 36px;
+      text-align: center;
+      margin-top: 64px;
+    }
+    .article-cta h3 {
+      font-family: var(--font-head);
+      font-size: 20px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 10px;
+    }
+    .article-cta p { font-size: 14px; color: var(--muted); margin-bottom: 24px; }
+    .cta-btn {
+      display: inline-block;
+      padding: 12px 28px;
+      background: var(--blue);
+      color: #fff;
+      border-radius: 99px;
+      font-size: 14px;
+      font-weight: 500;
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+    .cta-btn:hover { opacity: 0.85; }
+
+    /* ── MORE ARTICLES ── */
+    .more-articles {
+      border-top: 1px solid var(--border);
+      padding: 64px 48px 80px;
+    }
+    .more-label {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 28px;
+    }
+    .more-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    @media (max-width: 720px) { .more-grid { grid-template-columns: 1fr; } }
+
+    .more-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 22px 20px 18px;
+      text-decoration: none;
+      color: inherit;
+      display: flex; flex-direction: column;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .more-card:hover { border-color: rgba(79,156,249,0.3); transform: translateY(-2px); }
+    .more-card .badge { margin-bottom: 10px; }
+    .more-card-title { font-family: var(--font-head); font-size: 14px; font-weight: 600; color: #fff; line-height: 1.35; flex-grow: 1; }
+    .more-card-date { font-size: 11px; color: var(--faint); margin-top: 14px; }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 32px 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .footer-logo { font-family: var(--font-head); font-weight: 700; font-size: 16px; color: #fff; }
+    .footer-text { font-size: 12px; color: var(--faint); }
+    .footer-links { display: flex; gap: 24px; }
+    .footer-links a { font-size: 12px; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--text); }
+
+    @media (max-width: 580px) {
+      nav { padding: 16px 20px; }
+      .nav-links { display: none; }
+      .more-articles { padding: 40px 20px 60px; }
+      footer { padding: 24px 20px; flex-direction: column; gap: 12px; text-align: center; }
+      .footer-links { flex-wrap: wrap; justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Reading progress bar -->
+  <div id="progress-bar"></div>
+
+  <!-- NAV -->
+  <nav>
+    <a href="../index.html" class="logo">Improo</a>
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../features.html">Features</a></li>
+      <li><a href="../roadmap.html">Roadmap</a></li>
+      <li><a href="index.html" class="active">Insights</a></li>
+      <li><a href="../index.html#contact">Contact</a></li>
+    </ul>
+    <a href="../index.html#waitlist" class="nav-cta">Join waitlist</a>
+  </nav>
+
+  <!-- BACK -->
+  <a href="index.html" class="back-link">
+    <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M9 2L4 7l5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    Back to Insights
+  </a>
+
+  <!-- ARTICLE HEADER -->
+  <!-- UPDATE: badge class, title, meta, intro per article -->
+  <header class="article-header">
+    <span class="badge badge-discipline">Discipline</span>
+    <h1 class="article-title">Why Most People Quit After 3 Weeks (And How to Be Different)</h1>
+    <div class="article-meta">
+      <span>April 18, 2025</span>
+      <span class="meta-sep"></span>
+      <span>5 min read</span>
+    </div>
+    <p class="article-intro">
+      The first three weeks of any new habit are a filter. Most people treat discomfort as a signal to stop — but it's actually the moment the real work begins.
+    </p>
+  </header>
+
+  <!-- ARTICLE BODY -->
+  <!-- REPLACE everything below with your article content -->
+  <article class="article-body">
+
+    <h2>The 21-day myth</h2>
+    <p>You've probably heard that it takes 21 days to form a habit. That number comes from a loosely interpreted 1960s self-help book — not science. Modern research puts the real average at 66 days. And more importantly, the shape of that curve is not linear.</p>
+    <p>Progress feels exponential at first, then it plateaus. Most people hit that plateau around week three and mistake it for failure.</p>
+
+    <div class="callout">
+      <p>"The plateau is not the end of growth — it's the foundation of it. Every expert was once a beginner who didn't quit at week three."</p>
+    </div>
+
+    <h2>What actually happens in the first 3 weeks</h2>
+    <p>When you start a new behavior, your brain treats it as a novelty. Dopamine spikes. Motivation is high. Everything feels possible. This is the honeymoon phase — and it's chemically driven, not a reflection of your actual discipline.</p>
+    <p>By week two, the novelty fades. The behavior is no longer new information for your brain. The dopamine response drops. This is where most people check in with themselves and think: "I'm less motivated. This must not be working."</p>
+    <p>But this is exactly backwards. The drop in novelty-driven motivation is the signal that your brain is starting to automate the behavior — which is the entire point.</p>
+
+    <h2>The framework that changes everything</h2>
+    <p>Instead of treating motivation as fuel, treat consistency as infrastructure. Motivation is a weather pattern — it changes. Systems are the road you build so you can travel regardless of weather.</p>
+
+    <ul>
+      <li>Attach the new habit to an existing anchor (e.g., after my morning coffee)</li>
+      <li>Reduce the behavior to its minimum viable version on hard days</li>
+      <li>Track streaks not outcomes — the output is a byproduct of the input</li>
+      <li>Design your environment to make the behavior the path of least resistance</li>
+    </ul>
+
+    <hr class="article-divider" />
+
+    <h2>The identity shift</h2>
+    <p>The most durable change comes from identity, not willpower. Instead of "I'm trying to work out," the shift is "I am someone who moves every day." One is a task. The other is a self-description.</p>
+    <p>When your behavior is tied to your identity, the question changes from "Do I feel like doing this today?" to "Is this who I am?" The answer to the second question is almost always more stable.</p>
+
+    <!-- APP CTA -->
+    <div class="article-cta">
+      <h3>Build habits that actually stick</h3>
+      <p>Improo is a health and discipline app built around the frameworks in this article. Join the waitlist to be first in line.</p>
+      <a href="../index.html#waitlist" class="cta-btn">Join the waitlist</a>
+    </div>
+
+  </article>
+
+  <!-- MORE ARTICLES -->
+  <section class="more-articles">
+    <p class="more-label">More Insights</p>
+    <div class="more-grid">
+      <a href="article-2.html" class="more-card">
+        <span class="badge badge-health">Health</span>
+        <p class="more-card-title">Sleep as a Performance Tool</p>
+        <span class="more-card-date">April 12, 2025</span>
+      </a>
+      <a href="article-3.html" class="more-card">
+        <span class="badge badge-mindset">Mindset</span>
+        <p class="more-card-title">Identity Before Behavior</p>
+        <span class="more-card-date">April 8, 2025</span>
+      </a>
+      <a href="article-5.html" class="more-card">
+        <span class="badge badge-health">Health</span>
+        <p class="more-card-title">The 10-Minute Movement Rule</p>
+        <span class="more-card-date">March 28, 2025</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <span class="footer-logo">Improo</span>
+    <span class="footer-text">© 2025 Improo. All rights reserved.</span>
+    <div class="footer-links">
+      <a href="../index.html">Home</a>
+      <a href="index.html">Insights</a>
+      <a href="../index.html#contact">Contact</a>
+    </div>
+  </footer>
+
+  <script>
+    // Reading progress bar
+    const bar = document.getElementById('progress-bar');
+    window.addEventListener('scroll', () => {
+      const scrollTop = window.scrollY;
+      const docH = document.documentElement.scrollHeight - window.innerHeight;
+      bar.style.width = (scrollTop / docH * 100) + '%';
+    });
+  </script>
+
+</body>
+</html>
