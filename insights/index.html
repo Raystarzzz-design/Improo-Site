@@ -10,248 +10,72 @@
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     :root {
-      --bg:        #0a0d12;
-      --bg-card:   rgba(255,255,255,0.04);
-      --border:    rgba(255,255,255,0.08);
-      --border-hover: rgba(79,156,249,0.35);
-      --text:      #e8eaf0;
-      --muted:     rgba(255,255,255,0.45);
-      --faint:     rgba(255,255,255,0.22);
-      --blue:      #4f9cf9;
-      --blue-bg:   rgba(79,156,249,0.05);
-      --font-head: 'Syne', sans-serif;
-      --font-body: 'DM Sans', sans-serif;
+      --bg:#0a0d12;--bg-card:rgba(255,255,255,0.04);--border:rgba(255,255,255,0.08);
+      --border-hover:rgba(79,156,249,0.35);--text:#e8eaf0;--muted:rgba(255,255,255,0.45);
+      --faint:rgba(255,255,255,0.22);--blue:#4f9cf9;--blue-bg:rgba(79,156,249,0.05);
+      --font-head:'Syne',sans-serif;--font-body:'DM Sans',sans-serif;
     }
-
-    html { scroll-behavior: smooth; }
-    body { background: var(--bg); color: var(--text); font-family: var(--font-body); font-size: 15px; line-height: 1.6; min-height: 100vh; }
-
-    /* ── NAV ── */
-    nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 18px 48px;
-      border-bottom: 1px solid var(--border);
-      position: sticky;
-      top: 0;
-      background: rgba(10,13,18,0.92);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      z-index: 100;
-    }
-    .logo { font-family: var(--font-head); font-size: 20px; font-weight: 700; color: #fff; text-decoration: none; letter-spacing: -0.5px; }
-    .nav-links { display: flex; gap: 32px; list-style: none; }
-    .nav-links a { font-size: 14px; color: var(--muted); text-decoration: none; transition: color 0.2s; }
-    .nav-links a:hover { color: var(--text); }
-    .nav-links a.active { color: var(--blue); }
-    .nav-cta {
-      font-size: 13px;
-      font-weight: 500;
-      padding: 8px 20px;
-      border: 1px solid rgba(79,156,249,0.4);
-      border-radius: 99px;
-      color: var(--blue);
-      text-decoration: none;
-      transition: all 0.2s;
-    }
-    .nav-cta:hover { background: rgba(79,156,249,0.1); }
-
-    /* ── HERO ── */
-    .hero {
-      padding: 64px 48px 48px;
-      border-bottom: 1px solid var(--border);
-    }
-    .hero-label {
-      font-size: 11px;
-      font-weight: 500;
-      letter-spacing: 2.5px;
-      text-transform: uppercase;
-      color: var(--blue);
-      margin-bottom: 16px;
-    }
-    .hero-title {
-      font-family: var(--font-head);
-      font-size: clamp(32px, 5vw, 48px);
-      font-weight: 700;
-      line-height: 1.1;
-      color: #fff;
-      margin-bottom: 14px;
-      max-width: 560px;
-    }
-    .hero-sub {
-      font-size: 16px;
-      color: var(--muted);
-      max-width: 440px;
-      line-height: 1.65;
-    }
-
-    /* ── FILTERS ── */
-    .filters {
-      display: flex;
-      gap: 8px;
-      padding: 28px 48px;
-      flex-wrap: wrap;
-      border-bottom: 1px solid var(--border);
-    }
-    .filter-btn {
-      font-size: 12px;
-      font-family: var(--font-body);
-      font-weight: 500;
-      padding: 7px 18px;
-      border-radius: 99px;
-      border: 1px solid var(--border);
-      color: var(--muted);
-      background: transparent;
-      cursor: pointer;
-      transition: all 0.2s;
-      letter-spacing: 0.3px;
-    }
-    .filter-btn:hover { color: var(--text); border-color: rgba(255,255,255,0.2); }
-    .filter-btn.active { background: var(--blue); color: #fff; border-color: var(--blue); }
-
-    /* ── GRID ── */
-    .grid-wrap { padding: 36px 48px 80px; }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-    }
-    @media (max-width: 900px) { .grid { grid-template-columns: repeat(2, 1fr); } .imp-featured { grid-column: span 2; } }
-    @media (max-width: 580px) { .grid { grid-template-columns: 1fr; } .imp-featured { grid-column: span 1; } nav { padding: 16px 20px; } .hero, .filters, .grid-wrap { padding-left: 20px; padding-right: 20px; } .nav-links { display: none; } }
-
-    /* ── CARD ── */
-    .card {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 26px 24px 22px;
-      transition: border-color 0.25s, background 0.25s, transform 0.25s;
-      position: relative;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      text-decoration: none;
-      color: inherit;
-    }
-    .card:hover { border-color: var(--border-hover); background: var(--blue-bg); transform: translateY(-3px); }
-
-    .card-accent {
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 3px;
-      border-radius: 14px 14px 0 0;
-    }
-    .accent-blue   { background: linear-gradient(90deg,#4f9cf9,#2563eb); }
-    .accent-green  { background: linear-gradient(90deg,#22c55e,#16a34a); }
-    .accent-amber  { background: linear-gradient(90deg,#f59e0b,#d97706); }
-    .accent-purple { background: linear-gradient(90deg,#a855f7,#7c3aed); }
-
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      font-size: 10px;
-      font-weight: 500;
-      letter-spacing: 1.2px;
-      text-transform: uppercase;
-      padding: 4px 11px;
-      border-radius: 99px;
-      margin-bottom: 14px;
-      width: fit-content;
-    }
-    .badge-health    { background: rgba(34,197,94,0.12);  color: #4ade80; }
-    .badge-discipline{ background: rgba(79,156,249,0.12); color: #7db8fb; }
-    .badge-mindset   { background: rgba(168,85,247,0.12); color: #c084fc; }
-    .badge-updates   { background: rgba(245,158,11,0.12); color: #fbbf24; }
-
-    .card-title {
-      font-family: var(--font-head);
-      font-size: 16px;
-      font-weight: 600;
-      color: #fff;
-      line-height: 1.3;
-      margin-bottom: 10px;
-      flex-grow: 1;
-    }
-    .card-desc {
-      font-size: 13px;
-      color: var(--muted);
-      line-height: 1.65;
-      margin-bottom: 20px;
-    }
-    .card-footer {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-top: auto;
-      padding-top: 16px;
-      border-top: 1px solid rgba(255,255,255,0.06);
-    }
-    .card-date { font-size: 11px; color: var(--faint); }
-    .card-link {
-      font-size: 12px;
-      font-weight: 500;
-      color: var(--blue);
-      display: flex;
-      align-items: center;
-      gap: 5px;
-    }
-    .card-link svg { transition: transform 0.2s; }
-    .card:hover .card-link svg { transform: translateX(3px); }
-
-    /* Featured card spans 2 columns */
-    .card-featured { grid-column: span 2; }
-    .card-featured .card-title { font-size: 20px; }
-    .card-featured .card-desc  { font-size: 14px; }
-
-    /* ── PAGINATION ── */
-    .pagination {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      padding: 0 0 80px;
-    }
-    .page-btn {
-      width: 36px; height: 36px;
-      border-radius: 8px;
-      border: 1px solid var(--border);
-      background: transparent;
-      color: var(--muted);
-      font-size: 13px;
-      font-family: var(--font-body);
-      cursor: pointer;
-      transition: all 0.2s;
-      display: flex; align-items: center; justify-content: center;
-    }
-    .page-btn:hover { color: var(--text); border-color: rgba(255,255,255,0.2); }
-    .page-btn.active { background: var(--blue); color: #fff; border-color: var(--blue); }
-
-    /* ── FOOTER ── */
-    footer {
-      border-top: 1px solid var(--border);
-      padding: 32px 48px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .footer-logo { font-family: var(--font-head); font-weight: 700; font-size: 16px; color: #fff; }
-    .footer-text { font-size: 12px; color: var(--faint); }
-    .footer-links { display: flex; gap: 24px; }
-    .footer-links a { font-size: 12px; color: var(--muted); text-decoration: none; transition: color 0.2s; }
-    .footer-links a:hover { color: var(--text); }
-
-    /* ── HIDDEN (filter) ── */
-    .card[data-hidden] { display: none; }
+    html{scroll-behavior:smooth;}
+    body{background:var(--bg);color:var(--text);font-family:var(--font-body);font-size:15px;line-height:1.6;min-height:100vh;}
+    nav{display:flex;align-items:center;justify-content:space-between;padding:14px 48px;border-bottom:1px solid var(--border);position:sticky;top:0;background:rgba(10,13,18,0.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);z-index:100;}
+    .logo img{height:36px;width:auto;display:block;}
+    .nav-links{display:flex;gap:32px;list-style:none;}
+    .nav-links a{font-size:14px;color:var(--muted);text-decoration:none;transition:color 0.2s;}
+    .nav-links a:hover{color:var(--text);}
+    .nav-links a.active{color:var(--blue);}
+    .nav-cta{font-size:13px;font-weight:500;padding:8px 20px;border:1px solid rgba(79,156,249,0.4);border-radius:99px;color:var(--blue);text-decoration:none;transition:all 0.2s;}
+    .nav-cta:hover{background:rgba(79,156,249,0.1);}
+    .hero{padding:64px 48px 48px;border-bottom:1px solid var(--border);}
+    .hero-label{font-size:11px;font-weight:500;letter-spacing:2.5px;text-transform:uppercase;color:var(--blue);margin-bottom:16px;}
+    .hero-title{font-family:var(--font-head);font-size:clamp(32px,5vw,48px);font-weight:700;line-height:1.1;color:#fff;margin-bottom:14px;max-width:560px;}
+    .hero-sub{font-size:16px;color:var(--muted);max-width:440px;line-height:1.65;}
+    .filters{display:flex;gap:8px;padding:28px 48px;flex-wrap:wrap;border-bottom:1px solid var(--border);}
+    .filter-btn{font-size:12px;font-family:var(--font-body);font-weight:500;padding:7px 18px;border-radius:99px;border:1px solid var(--border);color:var(--muted);background:transparent;cursor:pointer;transition:all 0.2s;}
+    .filter-btn:hover{color:var(--text);border-color:rgba(255,255,255,0.2);}
+    .filter-btn.active{background:var(--blue);color:#fff;border-color:var(--blue);}
+    .grid-wrap{padding:36px 48px 80px;}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+    .card{background:var(--bg-card);border:1px solid var(--border);border-radius:14px;padding:26px 24px 22px;transition:border-color 0.25s,background 0.25s,transform 0.25s;position:relative;overflow:hidden;display:flex;flex-direction:column;text-decoration:none;color:inherit;}
+    .card:hover{border-color:var(--border-hover);background:var(--blue-bg);transform:translateY(-3px);}
+    .card-accent{position:absolute;top:0;left:0;right:0;height:3px;border-radius:14px 14px 0 0;}
+    .accent-blue{background:linear-gradient(90deg,#4f9cf9,#2563eb);}
+    .accent-green{background:linear-gradient(90deg,#22c55e,#16a34a);}
+    .accent-amber{background:linear-gradient(90deg,#f59e0b,#d97706);}
+    .accent-purple{background:linear-gradient(90deg,#a855f7,#7c3aed);}
+    .badge{display:inline-flex;align-items:center;font-size:10px;font-weight:500;letter-spacing:1.2px;text-transform:uppercase;padding:4px 11px;border-radius:99px;margin-bottom:14px;width:fit-content;}
+    .badge-health{background:rgba(34,197,94,0.12);color:#4ade80;}
+    .badge-discipline{background:rgba(79,156,249,0.12);color:#7db8fb;}
+    .badge-mindset{background:rgba(168,85,247,0.12);color:#c084fc;}
+    .badge-updates{background:rgba(245,158,11,0.12);color:#fbbf24;}
+    .card-title{font-family:var(--font-head);font-size:16px;font-weight:600;color:#fff;line-height:1.3;margin-bottom:10px;}
+    .card-desc{font-size:13px;color:var(--muted);line-height:1.65;margin-bottom:20px;flex-grow:1;}
+    .card-footer{display:flex;align-items:center;justify-content:space-between;margin-top:auto;padding-top:16px;border-top:1px solid rgba(255,255,255,0.06);}
+    .card-date{font-size:11px;color:var(--faint);}
+    .card-link{font-size:12px;font-weight:500;color:var(--blue);display:flex;align-items:center;gap:5px;}
+    .card-link svg{transition:transform 0.2s;}
+    .card:hover .card-link svg{transform:translateX(3px);}
+    .card-featured{grid-column:span 2;}
+    .card-featured .card-title{font-size:20px;}
+    .card-featured .card-desc{font-size:14px;}
+    .pagination{display:flex;align-items:center;justify-content:center;gap:8px;padding:0 0 80px;}
+    .page-btn{width:36px;height:36px;border-radius:8px;border:1px solid var(--border);background:transparent;color:var(--muted);font-size:13px;font-family:var(--font-body);cursor:pointer;transition:all 0.2s;display:flex;align-items:center;justify-content:center;}
+    .page-btn:hover{color:var(--text);border-color:rgba(255,255,255,0.2);}
+    .page-btn.active{background:var(--blue);color:#fff;border-color:var(--blue);}
+    footer{border-top:1px solid var(--border);padding:28px 48px;display:flex;align-items:center;justify-content:space-between;}
+    .footer-logo img{height:28px;width:auto;display:block;}
+    .footer-text{font-size:12px;color:var(--faint);}
+    .footer-links{display:flex;gap:24px;}
+    .footer-links a{font-size:12px;color:var(--muted);text-decoration:none;transition:color 0.2s;}
+    .footer-links a:hover{color:var(--text);}
+    .card[data-hidden]{display:none;}
+    @media(max-width:900px){.grid{grid-template-columns:repeat(2,1fr);}.card-featured{grid-column:span 2;}}
+    @media(max-width:580px){nav{padding:14px 20px;}.nav-links{display:none;}.hero,.filters,.grid-wrap{padding-left:20px;padding-right:20px;}.grid{grid-template-columns:1fr;}.card-featured{grid-column:span 1;}footer{padding:24px 20px;flex-direction:column;gap:14px;text-align:center;}.footer-links{flex-wrap:wrap;justify-content:center;}}
   </style>
 </head>
 <body>
-
-  <!-- NAV -->
   <nav>
-    <a href="../index.html" class="logo">Improo</a>
+    <a href="../index.html" class="logo"><img src="../images/logo.webp" alt="Improo" /></a>
     <ul class="nav-links">
       <li><a href="../index.html">Home</a></li>
       <li><a href="../features.html">Features</a></li>
@@ -261,15 +85,11 @@
     </ul>
     <a href="../index.html#waitlist" class="nav-cta">Join waitlist</a>
   </nav>
-
-  <!-- HERO -->
   <section class="hero">
     <p class="hero-label">Insights</p>
     <h1 class="hero-title">Build better habits.<br>Think sharper.</h1>
     <p class="hero-sub">Articles on health, discipline, and mindset — written for people who take their growth seriously.</p>
   </section>
-
-  <!-- FILTERS -->
   <div class="filters">
     <button class="filter-btn active" data-filter="all">All</button>
     <button class="filter-btn" data-filter="health">Health</button>
@@ -277,82 +97,52 @@
     <button class="filter-btn" data-filter="mindset">Mindset</button>
     <button class="filter-btn" data-filter="updates">Updates</button>
   </div>
-
-  <!-- GRID -->
   <div class="grid-wrap">
     <div class="grid" id="article-grid">
-
-      <!-- FEATURED -->
-      <a href="article-1.html" class="card card-featured" data-category="discipline">
+      <a href="Quit after 3 weeks.html" class="card card-featured" data-category="discipline">
         <div class="card-accent accent-blue"></div>
         <span class="badge badge-discipline">Discipline</span>
         <h2 class="card-title">Why Most People Quit After 3 Weeks (And How to Be Different)</h2>
-        <p class="card-desc">The first three weeks of any new habit are a filter. Most people treat discomfort as a signal to stop — but it's actually the moment the real work begins. Here's the framework that changes everything.</p>
-        <div class="card-footer">
-          <span class="card-date">April 18, 2025</span>
-          <span class="card-link">Read article <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M2.5 6.5h8M8 3.5l3 3-3 3" stroke="#4f9cf9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-        </div>
+        <p class="card-desc">The first three weeks of any new habit feel exciting — then reality hits. Here's what the science actually says about habit formation, and how to make it past the plateau.</p>
+        <div class="card-footer"><span class="card-date">April 18, 2025</span><span class="card-link">Read article <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M2.5 6.5h8M8 3.5l3 3-3 3" stroke="#4f9cf9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
       </a>
-
       <a href="article-2.html" class="card" data-category="health">
         <div class="card-accent accent-green"></div>
         <span class="badge badge-health">Health</span>
         <h2 class="card-title">Sleep as a Performance Tool</h2>
         <p class="card-desc">Most people treat sleep as rest. High performers treat it as training. The difference is in how you approach recovery.</p>
-        <div class="card-footer">
-          <span class="card-date">April 12, 2025</span>
-          <span class="card-link">Read article <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M2.5 6.5h8M8 3.5l3 3-3 3" stroke="#4f9cf9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-        </div>
+        <div class="card-footer"><span class="card-date">April 12, 2025</span><span class="card-link">Read article <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M2.5 6.5h8M8 3.5l3 3-3 3" stroke="#4f9cf9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
       </a>
-
       <a href="article-3.html" class="card" data-category="mindset">
         <div class="card-accent accent-purple"></div>
         <span class="badge badge-mindset">Mindset</span>
         <h2 class="card-title">Identity Before Behavior</h2>
         <p class="card-desc">You don't rise to your goals — you fall to the level of your identity. Change who you are first, and the habits follow naturally.</p>
-        <div class="card-footer">
-          <span class="card-date">April 8, 2025</span>
-          <span class="card-link">Read article <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M2.5 6.5h8M8 3.5l3 3-3 3" stroke="#4f9cf9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-        </div>
+        <div class="card-footer"><span class="card-date">April 8, 2025</span><span class="card-link">Read article <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M2.5 6.5h8M8 3.5l3 3-3 3" stroke="#4f9cf9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
       </a>
-
       <a href="article-4.html" class="card" data-category="updates">
         <div class="card-accent accent-amber"></div>
         <span class="badge badge-updates">Updates</span>
         <h2 class="card-title">Improo App: What We're Building</h2>
         <p class="card-desc">A first look at the core features of Improo — habit tracking, belt challenges, community groups, and more.</p>
-        <div class="card-footer">
-          <span class="card-date">April 2, 2025</span>
-          <span class="card-link">Read article <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M2.5 6.5h8M8 3.5l3 3-3 3" stroke="#4f9cf9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-        </div>
+        <div class="card-footer"><span class="card-date">April 2, 2025</span><span class="card-link">Read article <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M2.5 6.5h8M8 3.5l3 3-3 3" stroke="#4f9cf9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
       </a>
-
       <a href="article-5.html" class="card" data-category="health">
         <div class="card-accent accent-green"></div>
         <span class="badge badge-health">Health</span>
         <h2 class="card-title">The 10-Minute Movement Rule</h2>
         <p class="card-desc">If you can't find time for a full workout, you can always find 10 minutes. Done consistently, that beats nothing done perfectly.</p>
-        <div class="card-footer">
-          <span class="card-date">March 28, 2025</span>
-          <span class="card-link">Read article <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M2.5 6.5h8M8 3.5l3 3-3 3" stroke="#4f9cf9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-        </div>
+        <div class="card-footer"><span class="card-date">March 28, 2025</span><span class="card-link">Read article <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M2.5 6.5h8M8 3.5l3 3-3 3" stroke="#4f9cf9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
       </a>
-
-      <!-- Add more cards here following the same pattern -->
-
     </div>
   </div>
-
-  <!-- PAGINATION (show when you have more articles) -->
   <div class="pagination">
     <button class="page-btn active">1</button>
     <button class="page-btn">2</button>
     <button class="page-btn">3</button>
   </div>
-
-  <!-- FOOTER -->
   <footer>
-    <span class="footer-logo">Improo</span>
+    <a href="../index.html" class="footer-logo"><img src="../images/logo.webp" alt="Improo" /></a>
     <span class="footer-text">© 2025 Improo. All rights reserved.</span>
     <div class="footer-links">
       <a href="../index.html">Home</a>
@@ -360,24 +150,20 @@
       <a href="../index.html#contact">Contact</a>
     </div>
   </footer>
-
   <script>
-    // Category filter
-    const btns = document.querySelectorAll('.filter-btn');
-    const cards = document.querySelectorAll('.card');
-
-    btns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        btns.forEach(b => b.classList.remove('active'));
+    const btns=document.querySelectorAll('.filter-btn');
+    const cards=document.querySelectorAll('.card');
+    btns.forEach(btn=>{
+      btn.addEventListener('click',()=>{
+        btns.forEach(b=>b.classList.remove('active'));
         btn.classList.add('active');
-        const f = btn.dataset.filter;
-        cards.forEach(card => {
-          const match = f === 'all' || card.dataset.category === f;
-          match ? card.removeAttribute('data-hidden') : card.setAttribute('data-hidden', '');
+        const f=btn.dataset.filter;
+        cards.forEach(card=>{
+          const match=f==='all'||card.dataset.category===f;
+          match?card.removeAttribute('data-hidden'):card.setAttribute('data-hidden','');
         });
       });
     });
   </script>
-
 </body>
 </html>
