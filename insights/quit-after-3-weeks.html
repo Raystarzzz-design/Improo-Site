@@ -6,334 +6,11 @@
   <title>Why Most People Quit After 3 Weeks – Improo Insights</title>
   <meta name="description" content="The first three weeks of any new habit feel exciting — then reality hits. Here's what the science actually says about habit formation, and how to make it past the plateau." />
   <link rel="stylesheet" href="../style.css" />
-  <style>
-    :root {
-      --font-head: Arial, Helvetica, sans-serif;
-      --font-body: Arial, Helvetica, sans-serif;
-      --content-width: 720px;
-      --blue:   #1677ff;
-      --blue-2: #3ab5ff;
-      --muted:  #b2bfd4;
-      --panel:  rgba(8,16,30,0.92);
-      --line:   rgba(255,255,255,0.08);
-      --text:   #ffffff;
-      --faint:  rgba(178,191,212,0.45);
-    }
-
-    /* ── PROGRESS BAR ── */
-    #progress-bar {
-      position: fixed;
-      top: 0; left: 0;
-      height: 2px;
-      background: var(--blue-2);
-      width: 0%;
-      z-index: 200;
-      transition: width 0.1s linear;
-    }
-
-    /* ── BACK LINK ── */
-    .back-wrap {
-      max-width: var(--content-width);
-      margin: 0 auto;
-      padding: 36px 24px 0;
-    }
-    .back-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 13px;
-      color: var(--muted);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-    .back-link:hover { color: var(--blue-2); }
-
-    /* ── ARTICLE HEADER ── */
-    .article-header {
-      max-width: var(--content-width);
-      margin: 0 auto;
-      padding: 32px 24px 48px;
-      border-bottom: 1px solid var(--line);
-    }
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      padding: 4px 12px;
-      border-radius: 99px;
-      margin-bottom: 20px;
-      background: rgba(22,119,255,0.15);
-      color: var(--blue-2);
-    }
-    .article-title {
-      font-size: clamp(26px, 4vw, 40px);
-      font-weight: 700;
-      line-height: 1.15;
-      color: #fff;
-      margin: 0 0 18px;
-      letter-spacing: -0.03em;
-    }
-    .article-meta {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      font-size: 12px;
-      color: var(--faint);
-    }
-    .meta-dot {
-      width: 3px; height: 3px;
-      border-radius: 50%;
-      background: var(--faint);
-      display: inline-block;
-    }
-    .article-intro {
-      font-size: 18px;
-      line-height: 1.7;
-      color: rgba(255,255,255,0.6);
-      margin-top: 28px;
-      font-weight: 300;
-    }
-
-    /* ── ARTICLE BODY ── */
-    .article-body {
-      max-width: var(--content-width);
-      margin: 0 auto;
-      padding: 52px 24px 0;
-    }
-    .article-body h2 {
-      font-size: 22px;
-      font-weight: 700;
-      color: #fff;
-      margin: 52px 0 16px;
-      line-height: 1.2;
-      letter-spacing: -0.02em;
-    }
-    .article-body h2:first-child { margin-top: 0; }
-    .article-body p {
-      font-size: 16px;
-      line-height: 1.85;
-      color: rgba(255,255,255,0.7);
-      margin-bottom: 22px;
-    }
-    sup a {
-      color: var(--blue-2);
-      font-size: 11px;
-      text-decoration: none;
-      font-weight: 700;
-      margin-left: 1px;
-    }
-    sup a:hover { text-decoration: underline; }
-
-    /* Callout */
-    .callout {
-      border-left: 3px solid var(--blue-2);
-      padding: 18px 22px;
-      background: rgba(22,119,255,0.07);
-      border-radius: 0 10px 10px 0;
-      margin: 32px 0;
-    }
-    .callout p {
-      margin: 0;
-      color: rgba(255,255,255,0.6);
-      font-style: italic;
-      font-size: 17px;
-      line-height: 1.65;
-    }
-
-    /* List */
-    .article-body ul {
-      padding-left: 0;
-      list-style: none;
-      margin-bottom: 22px;
-    }
-    .article-body ul li {
-      font-size: 16px;
-      line-height: 1.75;
-      color: rgba(255,255,255,0.7);
-      padding: 6px 0 6px 22px;
-      position: relative;
-    }
-    .article-body ul li::before {
-      content: '';
-      position: absolute;
-      left: 0; top: 15px;
-      width: 5px; height: 5px;
-      border-radius: 50%;
-      background: var(--blue-2);
-    }
-
-    /* Divider */
-    .article-divider {
-      border: none;
-      border-top: 1px solid var(--line);
-      margin: 52px 0;
-    }
-
-    /* ── CHART BLOCK ── */
-    .chart-block {
-      background: var(--panel);
-      border: 1px solid var(--line);
-      border-radius: 20px;
-      padding: 24px 24px 16px;
-      margin: 36px 0;
-      box-shadow: 0 25px 70px rgba(0,0,0,0.42);
-    }
-    .chart-block-title {
-      font-size: 13px;
-      font-weight: 700;
-      color: rgba(255,255,255,0.6);
-      margin: 0 0 12px;
-    }
-    .chart-legend {
-      display: flex;
-      gap: 20px;
-      margin-bottom: 16px;
-      flex-wrap: wrap;
-    }
-    .legend-item {
-      display: flex;
-      align-items: center;
-      gap: 7px;
-      font-size: 12px;
-      color: var(--muted);
-    }
-    .legend-swatch {
-      width: 22px; height: 3px;
-      border-radius: 2px;
-      display: inline-block;
-    }
-    .chart-source {
-      font-size: 11px;
-      color: rgba(178,191,212,0.4);
-      margin: 12px 0 0;
-      text-align: center;
-    }
-
-    /* ── SOURCES ── */
-    .sources {
-      max-width: var(--content-width);
-      margin: 0 auto;
-      padding: 36px 24px 0;
-      border-top: 1px solid var(--line);
-    }
-    .sources-label {
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 16px;
-    }
-    .sources ol {
-      padding-left: 0;
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-    .sources ol li {
-      display: flex;
-      gap: 12px;
-      font-size: 12px;
-      color: var(--faint);
-      line-height: 1.6;
-    }
-    .sources ol li .src-num { color: var(--blue-2); font-weight: 700; min-width: 18px; }
-    .sources ol li a { color: var(--faint); text-decoration: underline; text-underline-offset: 3px; }
-    .sources ol li a:hover { color: var(--muted); }
-
-    /* ── CTA BLOCK ── */
-    .article-cta {
-      max-width: var(--content-width);
-      margin: 52px auto 0;
-      background: rgba(22,119,255,0.08);
-      border: 1px solid rgba(22,119,255,0.25);
-      border-radius: 20px;
-      padding: 36px;
-      text-align: center;
-      box-shadow: 0 25px 70px rgba(0,0,0,0.3);
-    }
-    .article-cta h3 {
-      font-size: 20px;
-      font-weight: 700;
-      color: #fff;
-      margin: 0 0 10px;
-    }
-    .article-cta p { font-size: 14px; color: var(--muted); margin: 0 0 24px; }
-    .cta-btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 52px;
-      padding: 0 28px;
-      border-radius: 18px;
-      font-weight: 700;
-      font-size: 15px;
-      color: #fff;
-      background: linear-gradient(135deg, var(--blue-2), var(--blue));
-      text-decoration: none;
-      transition: transform 0.2s ease;
-      box-shadow: 0 25px 70px rgba(0,0,0,0.42);
-    }
-    .cta-btn:hover { transform: translateY(-1px); }
-
-    /* ── MORE ARTICLES ── */
-    .more-articles {
-      border-top: 1px solid var(--line);
-      padding: 56px 48px 72px;
-      margin-top: 64px;
-    }
-    .more-label {
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 24px;
-    }
-    .more-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-    }
-    .more-card {
-      background: var(--panel);
-      border: 1px solid var(--line);
-      border-radius: 16px;
-      padding: 20px;
-      text-decoration: none;
-      color: inherit;
-      display: flex;
-      flex-direction: column;
-      transition: transform 0.2s ease;
-    }
-    .more-card:hover { transform: translateY(-3px); }
-    .more-card .badge { margin-bottom: 10px; }
-    .more-card-title {
-      font-size: 14px;
-      font-weight: 700;
-      color: #fff;
-      line-height: 1.35;
-      flex-grow: 1;
-      margin: 0;
-    }
-    .more-card-date { font-size: 11px; color: var(--faint); margin-top: 14px; }
-
-    @media (max-width: 720px) {
-      .more-articles { padding: 40px 20px 56px; }
-      .more-grid { grid-template-columns: 1fr; }
-      .article-header, .article-body, .back-wrap, .sources, .article-cta { padding-left: 20px; padding-right: 20px; }
-    }
-  </style>
 </head>
 <body>
 
   <div id="progress-bar"></div>
 
-  <!-- NAV — zelfde als je homepage -->
   <header class="site-header">
     <div class="container">
       <nav class="nav">
@@ -350,138 +27,132 @@
     </div>
   </header>
 
-  <!-- BACK -->
-  <div class="back-wrap">
+  <div class="article-wrap">
+
     <a href="index.html" class="back-link">
       <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
         <path d="M9 2L4 7l5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
       Back to Insights
     </a>
+
+    <header class="article-header">
+      <span class="article-badge">Discipline</span>
+      <h1 class="article-title">Why Most People Quit After 3 Weeks (And How to Be Different)</h1>
+      <div class="article-meta">
+        <span>April 18, 2025</span>
+        <span class="meta-dot"></span>
+        <span>5 min read</span>
+      </div>
+      <p class="article-intro">
+        The first three weeks of any new habit feel exciting — then reality hits. Here's what the science actually says about habit formation, and how to make it past the plateau.
+      </p>
+    </header>
+
+    <article class="article-body">
+
+      <h2>The 21-day myth</h2>
+      <p>You've probably heard it takes 21 days to build a habit. That number comes from <em>Psycho-Cybernetics</em>, a self-help book by Maxwell Maltz published in 1960. Maltz observed that his patients took roughly 21 days to adjust to changes — like getting used to a new face after plastic surgery. That observation got misquoted, simplified, and repeated until it became accepted as fact.</p>
+      <p>It isn't. A UCL study tracking 96 people over 12 weeks found that the average time to reach automaticity — the point where a behavior feels effortless — was 66 days. The range ran from 18 days to 254 days, depending on the person and the complexity of the behavior. <sup><a href="#sources">[1]</a></sup></p>
+      <p>There is no magic number. But there is a pattern: early enthusiasm gives way to a plateau, and that plateau is where most people give up.</p>
+
+      <div class="chart-block">
+        <p class="chart-block-title">Expected vs. actual habit formation</p>
+        <div class="chart-legend">
+          <span class="legend-item">
+            <span class="legend-swatch" style="background:#1677ff;"></span>What people expect
+          </span>
+          <span class="legend-item">
+            <span class="legend-swatch" style="background:#3ab5ff;"></span>How it actually works
+          </span>
+        </div>
+        <div class="chart-canvas-wrap">
+          <canvas id="habitChart"></canvas>
+        </div>
+        <p class="chart-source">Based on Lally et al. (2010) — average automaticity reached at 66 days, range 18–254 days</p>
+      </div>
+
+      <div class="callout">
+        <p>The drop in motivation you feel around week two or three isn't a sign that you're failing. It's a sign that your brain is starting to automate the behavior — which is exactly what you want.</p>
+      </div>
+
+      <h2>What actually happens in the first few weeks</h2>
+      <p>When you start a new behavior, your brain treats it as novel input. Dopamine fires. Everything feels possible. This early phase is chemically driven — not a reflection of your actual discipline or commitment.</p>
+      <p>As the novelty fades, the dopamine response drops. This is normal and expected. Research on habit loops shows that with repetition, the behavior moves from conscious effort toward automaticity — the brain begins to hand it off to lower-level processing. <sup><a href="#sources">[2]</a></sup> That transition feels like a loss of motivation, but it's actually progress.</p>
+      <p>Most people misread this signal. They check in with themselves, notice they feel less excited, and conclude that the habit isn't working — or isn't for them. They quit right at the point where the habit is starting to take root.</p>
+
+      <h2>Why motivation is the wrong thing to rely on</h2>
+      <p>Motivation is a state, not a trait. It fluctuates with sleep, stress, mood, and circumstance. Designing a habit system around motivation is like building a house that only stands when the weather is good.</p>
+      <p>What actually drives long-term behavior change is a combination of environment design, identity, and consistency — not how you feel on any given day. BJ Fogg's research at Stanford on behavior design shows that making the target behavior easier to do (reducing friction) is more effective than trying to increase motivation. <sup><a href="#sources">[3]</a></sup></p>
+
+      <h2>A practical framework for getting past the plateau</h2>
+      <p>These four principles don't require more willpower. They change the conditions so willpower matters less:</p>
+      <ul>
+        <li>Anchor the habit to something you already do — after morning coffee, after brushing your teeth. The existing routine acts as a reliable trigger.</li>
+        <li>Shrink the behavior on hard days. A 30-minute workout becomes "put on your shoes." Starting is the hardest part — the rest often follows.</li>
+        <li>Track the streak, not the outcome. The output is a byproduct of consistency. The number on the scale matters less than the day count on your habit tracker.</li>
+        <li>Design your environment to make the right choice the easy choice. Want to read more? Put the book on your pillow. Want to eat better? Don't buy what you don't want to eat.</li>
+      </ul>
+
+      <hr class="article-divider" />
+
+      <h2>Identity is the long game</h2>
+      <p>The most durable habits are the ones tied to identity rather than outcomes. "I'm trying to exercise more" is a goal. "I'm someone who moves every day" is an identity. The difference sounds subtle, but it changes how you make decisions.</p>
+      <p>When a behavior is part of how you see yourself, skipping it creates dissonance — a friction of its own. You're no longer fighting for motivation. You're maintaining consistency with who you are.</p>
+      <p>This shift doesn't happen overnight. It's built through small, repeated actions that accumulate into evidence. Every time you follow through, you cast a vote for that identity. Miss once, it's fine. Miss consistently, and you're voting for a different story.</p>
+      <p>Three weeks isn't a finish line. It's barely a warm-up. Give it the time it actually takes.</p>
+
+    </article>
+
+    <section class="sources" id="sources">
+      <p class="sources-label">Sources</p>
+      <ol>
+        <li>
+          <span class="src-num">[1]</span>
+          <span>Lally, P., van Jaarsveld, C. H. M., Potts, H. W. W., &amp; Wardle, J. (2010). How are habits formed: Modelling habit formation in the real world. <em>European Journal of Social Psychology</em>, 40(6), 998–1009. <a href="https://doi.org/10.1002/ejsp.674" target="_blank" rel="noopener">doi.org/10.1002/ejsp.674</a></span>
+        </li>
+        <li>
+          <span class="src-num">[2]</span>
+          <span>Graybiel, A. M. (2008). Habits, rituals, and the evaluative brain. <em>Annual Review of Neuroscience</em>, 31, 359–387. <a href="https://doi.org/10.1146/annurev.neuro.29.051605.112851" target="_blank" rel="noopener">doi.org/10.1146/annurev.neuro.29.051605.112851</a></span>
+        </li>
+        <li>
+          <span class="src-num">[3]</span>
+          <span>Fogg, B. J. (2019). <em>Tiny Habits: The Small Changes That Change Everything</em>. Houghton Mifflin Harcourt. <a href="https://www.tinyhabits.com" target="_blank" rel="noopener">tinyhabits.com</a></span>
+        </li>
+      </ol>
+    </section>
+
+    <div class="article-cta">
+      <h3>Build habits that actually stick</h3>
+      <p>Improo is a health and discipline app built around the principles in this article. Join the waitlist to be first in line.</p>
+      <a href="../index.html#contact" class="cta-btn">Get early access</a>
+    </div>
+
   </div>
 
-  <!-- HEADER -->
-  <header class="article-header">
-    <span class="badge">Discipline</span>
-    <h1 class="article-title">Why Most People Quit After 3 Weeks (And How to Be Different)</h1>
-    <div class="article-meta">
-      <span>April 18, 2025</span>
-      <span class="meta-dot"></span>
-      <span>5 min read</span>
-    </div>
-    <p class="article-intro">
-      The first three weeks of any new habit feel exciting — then reality hits. Here's what the science actually says about habit formation, and how to make it past the plateau.
-    </p>
-  </header>
-
-  <!-- BODY -->
-  <article class="article-body">
-
-    <h2>The 21-day myth</h2>
-    <p>You've probably heard it takes 21 days to build a habit. That number comes from <em>Psycho-Cybernetics</em>, a self-help book by Maxwell Maltz published in 1960. Maltz observed that his patients took roughly 21 days to adjust to changes — like getting used to a new face after plastic surgery. That observation got misquoted, simplified, and repeated until it became accepted as fact.</p>
-    <p>It isn't. A UCL study tracking 96 people over 12 weeks found that the average time to reach automaticity — the point where a behavior feels effortless — was 66 days. The range ran from 18 days to 254 days, depending on the person and the complexity of the behavior. <sup><a href="#sources">[1]</a></sup></p>
-    <p>There is no magic number. But there is a pattern: early enthusiasm gives way to a plateau, and that plateau is where most people give up.</p>
-
-    <!-- CHART -->
-    <div class="chart-block">
-      <p class="chart-block-title">Expected vs. actual habit formation</p>
-      <div class="chart-legend">
-        <span class="legend-item">
-          <span class="legend-swatch" style="background:#1677ff;"></span>What people expect
-        </span>
-        <span class="legend-item">
-          <span class="legend-swatch" style="background:#3ab5ff;"></span>How it actually works
-        </span>
-      </div>
-      <div style="position:relative;width:100%;height:280px;">
-        <canvas id="habitChart" role="img" aria-label="Line chart comparing expected vs actual habit formation over 90 days. The expected line rises steadily. The actual line plateaus around day 21 before climbing to automaticity around day 66.">
-          Expected curve rises steadily. Actual curve plateaus around week 3 before recovering toward automaticity at ~66 days.
-        </canvas>
-      </div>
-      <p class="chart-source">Based on Lally et al. (2010) — average automaticity reached at 66 days, range 18–254 days</p>
-    </div>
-
-    <div class="callout">
-      <p>The drop in motivation you feel around week two or three isn't a sign that you're failing. It's a sign that your brain is starting to automate the behavior — which is exactly what you want.</p>
-    </div>
-
-    <h2>What actually happens in the first few weeks</h2>
-    <p>When you start a new behavior, your brain treats it as novel input. Dopamine fires. Everything feels possible. This early phase is chemically driven — not a reflection of your actual discipline or commitment.</p>
-    <p>As the novelty fades, the dopamine response drops. This is normal and expected. Research on habit loops shows that with repetition, the behavior moves from conscious effort toward automaticity — the brain begins to hand it off to lower-level processing. <sup><a href="#sources">[2]</a></sup> That transition feels like a loss of motivation, but it's actually progress.</p>
-    <p>Most people misread this signal. They check in with themselves, notice they feel less excited, and conclude that the habit isn't working — or isn't for them. They quit right at the point where the habit is starting to take root.</p>
-
-    <h2>Why "motivation" is the wrong thing to rely on</h2>
-    <p>Motivation is a state, not a trait. It fluctuates with sleep, stress, mood, and circumstance. Designing a habit system around motivation is like building a house that only stands when the weather is good.</p>
-    <p>What actually drives long-term behavior change is a combination of environment design, identity, and consistency — not how you feel on any given day. BJ Fogg's research at Stanford on behavior design shows that making the target behavior easier to do (reducing friction) is more effective than trying to increase motivation. <sup><a href="#sources">[3]</a></sup></p>
-
-    <h2>A practical framework for getting past the plateau</h2>
-    <p>These four principles don't require more willpower. They change the conditions so willpower matters less:</p>
-    <ul>
-      <li>Anchor the habit to something you already do — after morning coffee, after brushing your teeth. The existing routine acts as a reliable trigger.</li>
-      <li>Shrink the behavior on hard days. A 30-minute workout becomes "put on your shoes." Starting is the hardest part — the rest often follows.</li>
-      <li>Track the streak, not the outcome. The output is a byproduct of consistency. The number on the scale matters less than the day count on your habit tracker.</li>
-      <li>Design your environment to make the right choice the easy choice. Want to read more? Put the book on your pillow. Want to eat better? Don't buy what you don't want to eat.</li>
-    </ul>
-
-    <hr class="article-divider" />
-
-    <h2>Identity is the long game</h2>
-    <p>The most durable habits are the ones tied to identity rather than outcomes. "I'm trying to exercise more" is a goal. "I'm someone who moves every day" is an identity. The difference sounds subtle, but it changes how you make decisions.</p>
-    <p>When a behavior is part of how you see yourself, skipping it creates dissonance — a friction of its own. You're no longer fighting for motivation. You're maintaining consistency with who you are.</p>
-    <p>This shift doesn't happen overnight. It's built through small, repeated actions that accumulate into evidence. Every time you follow through, you cast a vote for that identity. Miss once, it's fine. Miss consistently, and you're voting for a different story.</p>
-    <p>Three weeks isn't a finish line. It's barely a warm-up. Give it the time it actually takes.</p>
-
-  </article>
-
-  <!-- SOURCES -->
-  <section class="sources" id="sources">
-    <p class="sources-label">Sources</p>
-    <ol>
-      <li>
-        <span class="src-num">[1]</span>
-        <span>Lally, P., van Jaarsveld, C. H. M., Potts, H. W. W., &amp; Wardle, J. (2010). How are habits formed: Modelling habit formation in the real world. <em>European Journal of Social Psychology</em>, 40(6), 998–1009. <a href="https://doi.org/10.1002/ejsp.674" target="_blank" rel="noopener">doi.org/10.1002/ejsp.674</a></span>
-      </li>
-      <li>
-        <span class="src-num">[2]</span>
-        <span>Graybiel, A. M. (2008). Habits, rituals, and the evaluative brain. <em>Annual Review of Neuroscience</em>, 31, 359–387. <a href="https://doi.org/10.1146/annurev.neuro.29.051605.112851" target="_blank" rel="noopener">doi.org/10.1146/annurev.neuro.29.051605.112851</a></span>
-      </li>
-      <li>
-        <span class="src-num">[3]</span>
-        <span>Fogg, B. J. (2019). <em>Tiny Habits: The Small Changes That Change Everything</em>. Houghton Mifflin Harcourt. <a href="https://www.tinyhabits.com" target="_blank" rel="noopener">tinyhabits.com</a></span>
-      </li>
-    </ol>
-  </section>
-
-  <!-- CTA -->
-  <div class="article-cta">
-    <h3>Build habits that actually stick</h3>
-    <p>Improo is a health and discipline app built around the principles in this article. Join the waitlist to be first in line.</p>
-    <a href="../index.html#contact" class="cta-btn">Get early access</a>
-  </div>
-
-  <!-- MORE ARTICLES -->
   <section class="more-articles">
-    <p class="more-label">More Insights</p>
-    <div class="more-grid">
-      <a href="article-2.html" class="more-card">
-        <span class="badge">Health</span>
-        <p class="more-card-title">Sleep as a Performance Tool</p>
-        <span class="more-card-date">April 12, 2025</span>
-      </a>
-      <a href="article-3.html" class="more-card">
-        <span class="badge">Mindset</span>
-        <p class="more-card-title">Identity Before Behavior</p>
-        <span class="more-card-date">April 8, 2025</span>
-      </a>
-      <a href="article-4.html" class="more-card">
-        <span class="badge">Updates</span>
-        <p class="more-card-title">Improo App: What We're Building</p>
-        <span class="more-card-date">April 2, 2025</span>
-      </a>
+    <div class="container">
+      <p class="more-label">More Insights</p>
+      <div class="more-grid">
+        <a href="article-2.html" class="more-card">
+          <span class="article-badge">Health</span>
+          <p class="more-card-title">Sleep as a Performance Tool</p>
+          <span class="more-card-date">April 12, 2025</span>
+        </a>
+        <a href="article-3.html" class="more-card">
+          <span class="article-badge">Mindset</span>
+          <p class="more-card-title">Identity Before Behavior</p>
+          <span class="more-card-date">April 8, 2025</span>
+        </a>
+        <a href="article-4.html" class="more-card">
+          <span class="article-badge">Updates</span>
+          <p class="more-card-title">Improo App: What We're Building</p>
+          <span class="more-card-date">April 2, 2025</span>
+        </a>
+      </div>
     </div>
   </section>
 
-  <!-- FOOTER — zelfde als je homepage -->
   <footer class="site-footer">
     <div class="container">
       <div class="footer-grid">
@@ -490,23 +161,20 @@
           <p>Build your health, discipline and life with intention.</p>
           <small>© 2025 Improo. All rights reserved.</small>
         </div>
-        <div>
-          <div class="footer-links">
-            <h4>Navigate</h4>
-            <a href="../index.html">Home</a>
-            <a href="index.html">Insights</a>
-            <a href="../index.html#roadmap">Roadmap</a>
-          </div>
+        <div class="footer-links">
+          <h4>Navigate</h4>
+          <a href="../index.html">Home</a>
+          <a href="index.html">Insights</a>
+          <a href="../index.html#roadmap">Roadmap</a>
         </div>
       </div>
     </div>
   </footer>
 
-  <!-- CHART JS -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
   <script>
-    (function() {
-      var labels = ['Day 1','','','Day 21','','','','','','Day 66','','','','','','','','','Day 90'];
+    window.addEventListener('load', function () {
+      var labels   = ['Day 1','','','Day 21','','','','','','Day 66','','','','','','','','','Day 90'];
       var expected = [5,12,20,28,36,43,50,56,62,67,71,74,77,79,81,83,85,87,89];
       var actual   = [5,18,30,34,33,31,30,31,33,38,44,52,60,67,73,78,82,86,89];
       var days     = [1,6,11,16,21,26,31,36,41,46,51,56,61,66,71,76,81,86,90];
@@ -550,8 +218,8 @@
               borderWidth: 1,
               padding: 10,
               callbacks: {
-                title: function(ctx) { return 'Day ' + days[ctx[0].dataIndex]; },
-                label: function(ctx) {
+                title: function (ctx) { return 'Day ' + days[ctx[0].dataIndex]; },
+                label: function (ctx) {
                   return (ctx.datasetIndex === 0 ? 'Expected' : 'Actual') + ': ' + Math.round(ctx.raw) + '%';
                 }
               }
@@ -569,7 +237,7 @@
               ticks: {
                 color: '#b2bfd4',
                 font: { size: 11 },
-                callback: function(v) { return v + '%'; },
+                callback: function (v) { return v + '%'; },
                 stepSize: 25
               },
               border: { color: 'rgba(255,255,255,0.08)' },
@@ -584,25 +252,30 @@
         },
         plugins: [{
           id: 'quitZone',
-          afterDraw: function(chart) {
+          afterDraw: function (chart) {
             var ctx = chart.ctx;
-            var xs = chart.scales.x;
-            var ys = chart.scales.y;
-            var x1 = xs.getPixelForIndex(2);
-            var x2 = xs.getPixelForIndex(5);
-            var top = ys.top;
-            var bot = ys.bottom;
+            var xAxis = chart.scales.x;
+            var yAxis = chart.scales.y;
+
+            /* Chart.js v4: gebruik getPixelForValue met de label-waarde */
+            var x1 = xAxis.getPixelForValue(2);
+            var x2 = xAxis.getPixelForValue(5);
+            var top = yAxis.top;
+            var bot = yAxis.bottom;
+
             ctx.save();
             ctx.fillStyle = 'rgba(239,68,68,0.08)';
             ctx.fillRect(x1, top, x2 - x1, bot - top);
+
             ctx.strokeStyle = 'rgba(239,68,68,0.4)';
             ctx.lineWidth = 1;
-            ctx.setLineDash([4,4]);
+            ctx.setLineDash([4, 4]);
             ctx.beginPath();
             ctx.moveTo(x1, top);
             ctx.lineTo(x1, bot);
             ctx.stroke();
             ctx.setLineDash([]);
+
             ctx.fillStyle = 'rgba(239,68,68,0.65)';
             ctx.font = '10px Arial, sans-serif';
             ctx.fillText('most people quit', x1 + 6, top + 14);
@@ -610,14 +283,13 @@
           }
         }]
       });
-    })();
+    });
 
-    // Reading progress bar
+    /* Reading progress bar */
     var bar = document.getElementById('progress-bar');
-    window.addEventListener('scroll', function() {
-      var scrollTop = window.scrollY;
+    window.addEventListener('scroll', function () {
       var docH = document.documentElement.scrollHeight - window.innerHeight;
-      bar.style.width = (scrollTop / docH * 100) + '%';
+      if (docH > 0) bar.style.width = (window.scrollY / docH * 100) + '%';
     });
   </script>
 
