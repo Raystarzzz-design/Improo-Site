@@ -22,7 +22,7 @@
         <a href="#features">Features</a>
         <a href="#roadmap">Roadmap</a>
         <a href="insights/index.html">Insights</a>
-        <a href="#contact">Contact</a>
+        <a href="#" onclick="openPopup()">Contact</a>
       </nav>
 
       <div class="socials">
@@ -156,5 +156,37 @@
       </div>
     </div>
   </footer>
+  <div id="contact-popup" class="popup">
+  <div class="popup-content">
+    <span class="close-btn" onclick="closePopup()">×</span>
+
+    <h2>Contact</h2>
+
+    <input type="text" id="name" placeholder="Your name">
+    <input type="email" id="email" placeholder="Your email">
+    <textarea id="message" placeholder="Your message"></textarea>
+
+    <button onclick="sendEmail()">Send message</button>
+  </div>
+</div>
+  <script>
+function openPopup() {
+  document.getElementById("contact-popup").style.display = "flex";
+}
+
+function closePopup() {
+  document.getElementById("contact-popup").style.display = "none";
+}
+
+function sendEmail() {
+  let name = document.getElementById("name").value;
+  let email = document.getElementById("email").value;
+  let message = document.getElementById("message").value;
+
+  let mailto = `contact.improo:@gmail.com?subject=Contact from ${name}&body=Name: ${name}%0AEmail: ${email}%0A%0A${message}`;
+
+  window.location.href = mailto;
+}
+</script>
 </body>
 </html>
