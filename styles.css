@@ -517,3 +517,35 @@ a {
     grid-template-columns: 1fr;
   }
 }
+.insights-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.insight-card {
+  display: block;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 20px;
+  transition: transform 0.2s ease;
+}
+
+.insight-card:hover {
+  transform: translateY(-4px);
+}
+
+.insight-card h3 {
+  margin-bottom: 10px;
+}
+
+.insight-card p {
+  color: var(--muted);
+}
+
+.insight-card span {
+  font-size: 0.8rem;
+  color: var(--blue);
+}
