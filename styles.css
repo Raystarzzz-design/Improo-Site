@@ -843,3 +843,53 @@ a { color: inherit; text-decoration: none; }
   margin-top: 4px;
 }
 .popup-send:hover { opacity: 0.9; transform: translateY(-1px); }
+
+/* ── MISSION SECTIE ── */
+
+.mission-section {
+  padding: 16px 0 24px;
+}
+
+.mission-card {
+  padding: 40px;
+  border-radius: var(--radius-xl);
+  background: var(--panel-2);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+}
+
+.mission-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--blue-2);
+  margin-bottom: 24px;
+}
+
+.mission-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.mission-copy h2 {
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0 0 18px;
+  letter-spacing: -0.03em;
+}
+
+.mission-copy p {
+  color: var(--muted);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin: 0 0 14px;
+  max-width: 480px;
+}
+
+.mission-link {
+  display: inline-flex;
+  align-items: c
