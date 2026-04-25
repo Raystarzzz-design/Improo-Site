@@ -95,6 +95,156 @@
       </div>
     </section>
 
+    <!-- ============================================================
+     MISSIE SECTIE — plak dit in index.html
+     TUSSEN de features-section en de roadmap-section
+     ============================================================ -->
+
+<section class="mission-section">
+  <div class="container mission-card">
+
+    <div class="mission-label">Why Improo exists</div>
+
+    <div class="mission-grid">
+      <div class="mission-copy">
+        <h2>There's no perfect diet.<br>There's only today's step.</h2>
+        <p>
+          After years of information overload, conflicting advice, and failed attempts,
+          the founder of Improo had a simple realisation: the problem was never a lack
+          of knowledge. It was the absence of clarity, consistency, and real support.
+        </p>
+        <p>
+          Improo exists to cut through the noise. To give you a clear framework,
+          practical tools, and a community of people who genuinely understand the
+          struggle — because they've been there too.
+        </p>
+        <a href="insights/why-i-built-improo.html" class="mission-link">
+          Read the full story
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+            <path d="M2.5 7h9M8 3.5l3.5 3.5L8 10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+
+      <div class="mission-stats">
+        <div class="mission-stat">
+          <span class="stat-number">11 kg</span>
+          <span class="stat-label">lost by the founder so far — still going</span>
+        </div>
+        <div class="mission-stat">
+          <span class="stat-number">24 lbs</span>
+          <span class="stat-label">real progress, imperfect journey</span>
+        </div>
+        <div class="mission-stat">
+          <span class="stat-number">1 step</span>
+          <span class="stat-label">is all it takes to start today</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================================================
+     BIJBEHORENDE CSS — voeg dit toe aan styles.css
+     ============================================================
+
+.mission-section {
+  padding: 16px 0 24px;
+}
+
+.mission-card {
+  padding: 40px;
+  border-radius: var(--radius-xl);
+  background: var(--panel-2);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+}
+
+.mission-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--blue-2);
+  margin-bottom: 24px;
+}
+
+.mission-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.mission-copy h2 {
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0 0 18px;
+  letter-spacing: -0.03em;
+}
+
+.mission-copy p {
+  color: var(--muted);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin: 0 0 14px;
+  max-width: 480px;
+}
+
+.mission-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--blue-2);
+  margin-top: 8px;
+  transition: gap 0.2s;
+}
+.mission-link:hover { gap: 10px; }
+
+.mission-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.mission-stat {
+  padding: 20px 24px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+}
+
+.stat-number {
+  display: block;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: -0.03em;
+  margin-bottom: 4px;
+}
+
+.stat-label {
+  font-size: 0.85rem;
+  color: var(--muted);
+  line-height: 1.4;
+}
+
+@media (max-width: 1100px) {
+  .mission-grid { grid-template-columns: 1fr; }
+  .mission-stats { flex-direction: row; flex-wrap: wrap; }
+  .mission-stat { flex: 1; min-width: 140px; }
+}
+
+@media (max-width: 760px) {
+  .mission-card { padding: 28px 20px; }
+  .mission-stats { flex-direction: column; }
+}
+
+============================================================ -->
     <section id="roadmap" class="roadmap-section">
       <div class="container roadmap-card">
         <div class="roadmap-copy">
