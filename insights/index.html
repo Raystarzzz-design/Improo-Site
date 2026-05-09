@@ -12,8 +12,9 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
       --bg:#0a0d12;--bg-card:rgba(255,255,255,0.04);--border:rgba(255,255,255,0.08);
-      --border-hover:rgba(79,156,249,0.35);--text:#e8eaf0;--muted:rgba(255,255,255,0.45);
-      --faint:rgba(255,255,255,0.22);--blue:#4f9cf9;--blue-bg:rgba(79,156,249,0.05);
+      --border-hover:rgba(96,165,250,0.35);--text:#e8eaf0;--muted:rgba(255,255,255,0.45);
+      --faint:rgba(255,255,255,0.22);--blue:#60A5FA;--blue-bg:rgba(96,165,250,0.05);
+      --green:#22C55E;--purple:#8B5CF6;--orange:#F59E0B;
       --font-head:'Syne',sans-serif;--font-body:'DM Sans',sans-serif;
     }
     html{scroll-behavior:smooth;}
@@ -24,30 +25,68 @@
     .nav-links a{font-size:14px;color:var(--muted);text-decoration:none;transition:color 0.2s;}
     .nav-links a:hover{color:var(--text);}
     .nav-links a.active{color:var(--blue);}
-    .nav-cta{font-size:13px;font-weight:500;padding:8px 20px;border:1px solid rgba(79,156,249,0.4);border-radius:99px;color:var(--blue);text-decoration:none;transition:all 0.2s;}
-    .nav-cta:hover{background:rgba(79,156,249,0.1);}
+    .nav-cta{font-size:13px;font-weight:500;padding:8px 20px;border:1px solid rgba(96,165,250,0.4);border-radius:99px;color:var(--blue);text-decoration:none;transition:all 0.2s;}
+    .nav-cta:hover{background:rgba(96,165,250,0.1);}
     .hero{padding:64px 48px 48px;border-bottom:1px solid var(--border);}
     .hero-label{font-size:11px;font-weight:500;letter-spacing:2.5px;text-transform:uppercase;color:var(--blue);margin-bottom:16px;}
     .hero-title{font-family:var(--font-head);font-size:clamp(32px,5vw,48px);font-weight:700;line-height:1.1;color:#fff;margin-bottom:14px;max-width:560px;}
     .hero-sub{font-size:16px;color:var(--muted);max-width:440px;line-height:1.65;}
+
+    /* ── FILTER BUTTONS ── */
     .filters{display:flex;gap:8px;padding:28px 48px;flex-wrap:wrap;border-bottom:1px solid var(--border);}
-    .filter-btn{font-size:12px;font-family:var(--font-body);font-weight:500;padding:7px 18px;border-radius:99px;border:1px solid var(--border);color:var(--muted);background:transparent;cursor:pointer;transition:all 0.2s;}
-    .filter-btn:hover{color:var(--text);border-color:rgba(255,255,255,0.2);}
-    .filter-btn.active{background:var(--blue);color:#fff;border-color:var(--blue);}
+
+    .filter-btn {
+      font-size: 12px;
+      font-family: var(--font-body);
+      font-weight: 500;
+      padding: 7px 18px;
+      border-radius: 99px;
+      border: 1px solid transparent;
+      background: transparent;
+      cursor: pointer;
+      transition: all 0.2s;
+      letter-spacing: 0.3px;
+    }
+
+    /* All — blue */
+    .filter-btn[data-filter="all"] { color: var(--blue); border-color: rgba(96,165,250,0.3); }
+    .filter-btn[data-filter="all"]:hover,
+    .filter-btn[data-filter="all"].active { background: var(--blue); border-color: var(--blue); color: #fff; font-weight: 700; }
+
+    /* Health — green */
+    .filter-btn[data-filter="health"] { color: var(--green); border-color: rgba(34,197,94,0.3); }
+    .filter-btn[data-filter="health"]:hover,
+    .filter-btn[data-filter="health"].active { background: var(--green); border-color: var(--green); color: #fff; font-weight: 700; }
+
+    /* Discipline — blue */
+    .filter-btn[data-filter="discipline"] { color: var(--blue); border-color: rgba(96,165,250,0.3); }
+    .filter-btn[data-filter="discipline"]:hover,
+    .filter-btn[data-filter="discipline"].active { background: var(--blue); border-color: var(--blue); color: #fff; font-weight: 700; }
+
+    /* Mindset — purple */
+    .filter-btn[data-filter="mindset"] { color: var(--purple); border-color: rgba(139,92,246,0.3); }
+    .filter-btn[data-filter="mindset"]:hover,
+    .filter-btn[data-filter="mindset"].active { background: var(--purple); border-color: var(--purple); color: #fff; font-weight: 700; }
+
+    /* Updates — orange */
+    .filter-btn[data-filter="updates"] { color: var(--orange); border-color: rgba(245,158,11,0.3); }
+    .filter-btn[data-filter="updates"]:hover,
+    .filter-btn[data-filter="updates"].active { background: var(--orange); border-color: var(--orange); color: #fff; font-weight: 700; }
+
     .grid-wrap{padding:36px 48px 80px;}
     .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
     .card{background:var(--bg-card);border:1px solid var(--border);border-radius:14px;padding:26px 24px 22px;transition:border-color 0.25s,background 0.25s,transform 0.25s;position:relative;overflow:hidden;display:flex;flex-direction:column;text-decoration:none;color:inherit;}
     .card:hover{border-color:var(--border-hover);background:var(--blue-bg);transform:translateY(-3px);}
     .card-accent{position:absolute;top:0;left:0;right:0;height:3px;border-radius:14px 14px 0 0;}
-    .accent-blue{background:linear-gradient(90deg,#4f9cf9,#2563eb);}
+    .accent-blue{background:linear-gradient(90deg,#60A5FA,#2563eb);}
     .accent-green{background:linear-gradient(90deg,#22c55e,#16a34a);}
     .accent-amber{background:linear-gradient(90deg,#f59e0b,#d97706);}
-    .accent-purple{background:linear-gradient(90deg,#a855f7,#7c3aed);}
+    .accent-purple{background:linear-gradient(90deg,#8B5CF6,#7c3aed);}
     .badge{display:inline-flex;align-items:center;font-size:10px;font-weight:500;letter-spacing:1.2px;text-transform:uppercase;padding:4px 11px;border-radius:99px;margin-bottom:14px;width:fit-content;}
-    .badge-health{background:rgba(34,197,94,0.12);color:#4ade80;}
-    .badge-discipline{background:rgba(79,156,249,0.12);color:#7db8fb;}
-    .badge-mindset{background:rgba(168,85,247,0.12);color:#c084fc;}
-    .badge-updates{background:rgba(245,158,11,0.12);color:#fbbf24;}
+    .badge-health{background:rgba(34,197,94,0.12);color:#22C55E;}
+    .badge-discipline{background:rgba(96,165,250,0.12);color:#60A5FA;}
+    .badge-mindset{background:rgba(139,92,246,0.12);color:#8B5CF6;}
+    .badge-updates{background:rgba(245,158,11,0.12);color:#F59E0B;}
     .card-title{font-family:var(--font-head);font-size:16px;font-weight:600;color:#fff;line-height:1.3;margin-bottom:10px;}
     .card-desc{font-size:13px;color:var(--muted);line-height:1.65;margin-bottom:20px;flex-grow:1;}
     .card-footer{display:flex;align-items:center;justify-content:space-between;margin-top:auto;padding-top:16px;border-top:1px solid rgba(255,255,255,0.06);}
@@ -104,42 +143,42 @@
         <span class="badge badge-discipline">Discipline</span>
         <h2 class="card-title">Why Most People Quit After 3 Weeks (And How to Be Different)</h2>
         <p class="card-desc">The first three weeks of any new habit feel exciting — then reality hits. Here's what the science actually says about habit formation, and how to make it past the plateau.</p>
-        <div class="card-footer"><span class="card-date">April 18, 2026</span><span class="card-link">Read article <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M2.5 6.5h8M8 3.5l3 3-3 3" stroke="#4f9cf9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+        <div class="card-footer"><span class="card-date">April 18, 2026</span><span class="card-link">Read article <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M2.5 6.5h8M8 3.5l3 3-3 3" stroke="#60A5FA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
       </a>
       <a href="sleep-as-a-performance-tool.html" class="card" data-category="health">
         <div class="card-accent accent-green"></div>
         <span class="badge badge-health">Health</span>
         <h2 class="card-title">Sleep as a Performance Tool</h2>
         <p class="card-desc">Most people treat sleep as rest. High performers treat it as training. The difference is in how you approach recovery.</p>
-        <div class="card-footer"><span class="card-date">April 12, 2026</span><span class="card-link">Read article <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M2.5 6.5h8M8 3.5l3 3-3 3" stroke="#4f9cf9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+        <div class="card-footer"><span class="card-date">April 12, 2026</span><span class="card-link">Read article <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M2.5 6.5h8M8 3.5l3 3-3 3" stroke="#60A5FA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
       </a>
       <a href="article-3.html" class="card" data-category="mindset">
         <div class="card-accent accent-purple"></div>
         <span class="badge badge-mindset">Mindset</span>
         <h2 class="card-title">Identity Before Behavior</h2>
         <p class="card-desc">You don't rise to your goals — you fall to the level of your identity. Change who you are first, and the habits follow naturally.</p>
-        <div class="card-footer"><span class="card-date">April 8, 2026</span><span class="card-link">Read article <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M2.5 6.5h8M8 3.5l3 3-3 3" stroke="#4f9cf9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+        <div class="card-footer"><span class="card-date">April 8, 2026</span><span class="card-link">Read article <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M2.5 6.5h8M8 3.5l3 3-3 3" stroke="#60A5FA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
       </a>
       <a href="article-4.html" class="card" data-category="updates">
         <div class="card-accent accent-amber"></div>
         <span class="badge badge-updates">Updates</span>
         <h2 class="card-title">Improo App: What We're Building</h2>
         <p class="card-desc">A first look at the core features of Improo — habit tracking, belt challenges, community groups, and more.</p>
-        <div class="card-footer"><span class="card-date">April 2, 2026</span><span class="card-link">Read article <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M2.5 6.5h8M8 3.5l3 3-3 3" stroke="#4f9cf9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+        <div class="card-footer"><span class="card-date">April 2, 2026</span><span class="card-link">Read article <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M2.5 6.5h8M8 3.5l3 3-3 3" stroke="#60A5FA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
       </a>
       <a href="why-i-built-improo.html" class="card card-featured" data-category="mindset">
         <div class="card-accent accent-purple"></div>
         <span class="badge badge-mindset">Mindset</span>
         <h2 class="card-title">Why I Built Improo — The Story Behind the App</h2>
         <p class="card-desc">After 10 years of struggling with obesity, I had a simple realisation that changed everything. This is that story — and why I built Improo.</p>
-        <div class="card-footer"><span class="card-date">April 25, 2026</span><span class="card-link">Read article <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M2.5 6.5h8M8 3.5l3 3-3 3" stroke="#4f9cf9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+        <div class="card-footer"><span class="card-date">April 25, 2026</span><span class="card-link">Read article <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M2.5 6.5h8M8 3.5l3 3-3 3" stroke="#60A5FA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
       </a>
       <a href="article-5.html" class="card" data-category="health">
         <div class="card-accent accent-green"></div>
         <span class="badge badge-health">Health</span>
         <h2 class="card-title">The 10-Minute Movement Rule</h2>
         <p class="card-desc">If you can't find time for a full workout, you can always find 10 minutes. Done consistently, that beats nothing done perfectly.</p>
-        <div class="card-footer"><span class="card-date">March 28, 2026</span><span class="card-link">Read article <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M2.5 6.5h8M8 3.5l3 3-3 3" stroke="#4f9cf9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+        <div class="card-footer"><span class="card-date">March 28, 2026</span><span class="card-link">Read article <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M2.5 6.5h8M8 3.5l3 3-3 3" stroke="#60A5FA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
       </a>
     </div>
   </div>
@@ -150,7 +189,7 @@
   </div>
   <footer>
     <a href="../index.html" class="footer-logo"><img src="../images/logo.webp" alt="Improo" /></a>
-    <span class="footer-text">© 2026 Improo. All rights reserved. &nbsp;·&nbsp; <a href="../disclaimer.html" style="color:inherit;text-decoration:underline;">Disclaimer</a> &nbsp;·&nbsp; <a href="../privacy-policy.html" style="color:inherit;text-decoration:underline;">Privacy Policy</a>&nbsp;·&nbsp; <a href="../terms-of-service.html" style="color:inherit;text-decoration:underline;">Terms of Service</a></span>
+    <span class="footer-text">© 2026 Improo. All rights reserved. &nbsp;·&nbsp; <a href="../disclaimer.html" style="color:inherit;text-decoration:underline;">Disclaimer</a> &nbsp;·&nbsp; <a href="../privacy-policy.html" style="color:inherit;text-decoration:underline;">Privacy Policy</a> &nbsp;·&nbsp; <a href="../terms-of-service.html" style="color:inherit;text-decoration:underline;">Terms of Service</a></span>
     <div class="footer-links">
       <a href="../index.html">Home</a>
       <a href="index.html">Insights</a>
