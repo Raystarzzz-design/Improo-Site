@@ -162,13 +162,15 @@
           <img src="../images/logo.webp" alt="Improo" class="footer-logo" />
           <p>Build your health, discipline and life with intention.</p>
           <small>© 2026 Improo. All rights reserved.</small>
-<small style="display:block;margin-top:6px;font-size:0.75rem;opacity:0.6;">Improo is not a medical service. Content is for informational purposes only. <a href="disclaimer.html" style="color:inherit;text-decoration:underline;">Read our disclaimer.</a></small>
+          <small style="display:block;margin-top:6px;font-size:0.75rem;opacity:0.6;">Improo is not a medical service. Content is for informational purposes only. <a href="../disclaimer.html" style="color:inherit;text-decoration:underline;">Read our disclaimer.</a></small>
         </div>
         <div class="footer-links">
           <h4>Navigate</h4>
           <a href="../index.html">Home</a>
           <a href="index.html">Insights</a>
           <a href="../index.html#roadmap">Roadmap</a>
+          <a href="../disclaimer.html">Disclaimer</a>
+          <a href="../privacy-policy.html">Privacy Policy</a>
         </div>
       </div>
     </div>
@@ -259,17 +261,13 @@
             var ctx = chart.ctx;
             var xAxis = chart.scales.x;
             var yAxis = chart.scales.y;
-
-            /* Chart.js v4: gebruik getPixelForValue met de label-waarde */
             var x1 = xAxis.getPixelForValue(2);
             var x2 = xAxis.getPixelForValue(5);
             var top = yAxis.top;
             var bot = yAxis.bottom;
-
             ctx.save();
             ctx.fillStyle = 'rgba(239,68,68,0.08)';
             ctx.fillRect(x1, top, x2 - x1, bot - top);
-
             ctx.strokeStyle = 'rgba(239,68,68,0.4)';
             ctx.lineWidth = 1;
             ctx.setLineDash([4, 4]);
@@ -278,7 +276,6 @@
             ctx.lineTo(x1, bot);
             ctx.stroke();
             ctx.setLineDash([]);
-
             ctx.fillStyle = 'rgba(239,68,68,0.65)';
             ctx.font = '10px Arial, sans-serif';
             ctx.fillText('most people quit', x1 + 6, top + 14);
