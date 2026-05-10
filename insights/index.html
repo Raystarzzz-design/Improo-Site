@@ -45,7 +45,9 @@
     .slider-wrap { position: relative; overflow: hidden; height: 480px; }
     .slides { display: flex; height: 100%; transition: transform 0.5s cubic-bezier(0.4,0,0.2,1); }
     .slide { min-width: 100%; height: 100%; position: relative; overflow: hidden; display: flex; align-items: flex-end; }
-    .slide-bg { position: absolute; inset: 0; height: 100%; width: 100%; transition: transform 6s ease; }
+    .slide-bg { position: absolute; top: 0; left: 0; right: 0; bottom: 0; height: 100%; width: 100%; background-size: cover !important; background-position: center !important; transition: transform 6s ease; }
+    .slide-img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; transition: transform 6s ease; }
+    .slide:hover .slide-img { transform: scale(1.03); }
     .slide:hover .slide-bg { transform: scale(1.03); }
 
     .slide-bg-mindset { background: linear-gradient(135deg, #0f0c29 0%, #1a1040 40%, #2d1b69 70%, #0a0a1a 100%); }
@@ -116,7 +118,7 @@
     .card:hover { border-color: var(--border-hover); transform: translateY(-3px); }
 
     .card-img { height: 160px; position: relative; overflow: hidden; flex-shrink: 0; }
-    .card-img-bg { position: absolute; inset: 0; transition: transform 0.4s ease; }
+    .card-img-bg { position: absolute; top: 0; left: 0; right: 0; bottom: 0; height: 100%; width: 100%; background-size: cover !important; background-position: center !important; transition: transform 0.4s ease; }
     .card:hover .card-img-bg { transform: scale(1.06); }
 
     .card-bg-mindset { background: linear-gradient(135deg, #1a0a3d 0%, #2d1b69 50%, #0f0826 100%); }
@@ -180,12 +182,6 @@
 </head>
 <body>
 
-<div style="position:absolute;width:0;height:0;overflow:hidden;">
-  <img src="images/sleep-as-a-performance-tool.webp" alt="">
-  <img src="images/identity-before-behavior.webp" alt="">
-  <img src="images/quit-after-3-weeks.webp" alt="">
-</div>
-
   <nav>
     <a href="../index.html" class="logo"><img src="../images/logo.webp" alt="Improo" /></a>
     <ul class="nav-links">
@@ -202,7 +198,7 @@
     <div class="slides" id="slides">
 
       <div class="slide">
-        <div class="slide-bg" style="background-image:url('images/slider-why-i-built-improo.webp');background-size:cover;background-position:center;"></div>
+        <img class="slide-img" src="images/slider-why-i-built-improo.webp" alt="Why I Built Improo" loading="eager" />
         <div class="slide-overlay"></div>
         <div class="slide-content">
           <span class="slide-badge badge-mindset">Mindset</span>
@@ -216,7 +212,7 @@
       </div>
 
       <div class="slide">
-        <div class="slide-bg" style="background-image:url('images/quit-after-3-weeks.webp');background-size:cover;background-position:center;"></div>
+        <img class="slide-img" src="images/quit-after-3-weeks.webp" alt="Quit After 3 Weeks" loading="eager" />
         <div class="slide-overlay"></div>
         <div class="slide-content">
           <span class="slide-badge badge-discipline">Discipline</span>
@@ -230,7 +226,7 @@
       </div>
 
       <div class="slide">
-        <div class="slide-bg" style="background-image:url('images/sleep-as-a-performance-tool.webp');background-size:cover;background-position:center;"></div>
+        <img class="slide-img" src="images/sleep-as-a-performance-tool.webp" alt="Sleep as a Performance Tool" loading="eager" />
         <div class="slide-overlay"></div>
         <div class="slide-content">
           <span class="slide-badge badge-health">Health</span>
@@ -244,7 +240,7 @@
       </div>
 
       <div class="slide">
-        <div class="slide-bg" style="background-image:url('images/identity-before-behavior.webp');background-size:cover;background-position:center;"></div>
+        <img class="slide-img" src="images/identity-before-behavior.webp" alt="Identity Before Behavior" loading="eager" />
         <div class="slide-overlay"></div>
         <div class="slide-content">
           <span class="slide-badge badge-mindset">Mindset</span>
@@ -364,14 +360,13 @@
       }
 
       grid.innerHTML = show.map(a => {
-        const imgStyle = a.img
-          ? `background-image:url('${a.img}');background-size:cover;background-position:center;`
-          : '';
-        const imgClass = a.img ? '' : cat[a.category].bg;
+        const imgHtml = a.img
+          ? `<img src="${a.img}" alt="${a.title}" loading="lazy" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;object-position:center;">`
+          : `<div style="position:absolute;top:0;left:0;width:100%;height:100%;" class="${cat[a.category].bg}"></div>`;
         return `
         <a href="${a.href}" class="card">
           <div class="card-img">
-            <div class="card-img-bg ${imgClass}" style="${imgStyle}" role="img" aria-label="${a.title}"></div>
+            ${imgHtml}
             <div class="card-img-overlay"></div>
             <span class="card-img-badge ${cat[a.category].badge}">${cat[a.category].label}</span>
           </div>
