@@ -7,209 +7,425 @@
   <meta name="description" content="Articles on health, discipline, and mindset — written for people who take their growth seriously." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --bg:#0a0d12;--bg-card:rgba(255,255,255,0.04);--border:rgba(255,255,255,0.08);
-      --border-hover:rgba(96,165,250,0.35);--text:#e8eaf0;--muted:rgba(255,255,255,0.45);
-      --faint:rgba(255,255,255,0.22);--blue:#60A5FA;--blue-bg:rgba(96,165,250,0.05);
-      --green:#22C55E;--purple:#8B5CF6;--orange:#F59E0B;
-      --font-head:'Syne',sans-serif;--font-body:'DM Sans',sans-serif;
+      --bg: #080b12;
+      --bg-card: rgba(255,255,255,0.04);
+      --border: rgba(255,255,255,0.08);
+      --border-hover: rgba(96,165,250,0.35);
+      --text: #e8eaf0;
+      --muted: rgba(255,255,255,0.5);
+      --faint: rgba(255,255,255,0.25);
+      --blue: #60A5FA;
+      --green: #22C55E;
+      --purple: #8B5CF6;
+      --orange: #F59E0B;
+      --font-head: 'Playfair Display', Georgia, serif;
+      --font-body: 'DM Sans', sans-serif;
+      --radius: 16px;
     }
-    html{scroll-behavior:smooth;}
-    body{background:var(--bg);color:var(--text);font-family:var(--font-body);font-size:15px;line-height:1.6;min-height:100vh;}
-    nav{display:flex;align-items:center;justify-content:space-between;padding:14px 48px;border-bottom:1px solid var(--border);position:sticky;top:0;background:rgba(10,13,18,0.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);z-index:100;}
-    .logo img{height:36px;width:auto;display:block;}
-    .nav-links{display:flex;gap:32px;list-style:none;}
-    .nav-links a{font-size:14px;color:var(--muted);text-decoration:none;transition:color 0.2s;}
-    .nav-links a:hover{color:var(--text);}
-    .nav-links a.active{color:var(--blue);}
-    .nav-cta{font-size:13px;font-weight:500;padding:8px 20px;border:1px solid rgba(96,165,250,0.4);border-radius:99px;color:var(--blue);text-decoration:none;transition:all 0.2s;}
-    .nav-cta:hover{background:rgba(96,165,250,0.1);}
-    .hero{padding:64px 48px 48px;border-bottom:1px solid var(--border);}
-    .hero-label{font-size:11px;font-weight:500;letter-spacing:2.5px;text-transform:uppercase;color:var(--blue);margin-bottom:16px;}
-    .hero-title{font-family:var(--font-head);font-size:clamp(32px,5vw,48px);font-weight:700;line-height:1.1;color:#fff;margin-bottom:14px;max-width:560px;}
-    .hero-sub{font-size:16px;color:var(--muted);max-width:440px;line-height:1.65;}
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--text); font-family: var(--font-body); font-size: 15px; line-height: 1.6; min-height: 100vh; }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
 
-    /* ── FILTER BUTTONS ── */
-    .filters{display:flex;gap:8px;padding:28px 48px;flex-wrap:wrap;border-bottom:1px solid var(--border);}
+    /* ── NAV ── */
+    nav { display: flex; align-items: center; justify-content: space-between; padding: 14px 48px; border-bottom: 1px solid var(--border); position: sticky; top: 0; background: rgba(8,11,18,0.92); backdrop-filter: blur(12px); z-index: 100; }
+    .logo img { height: 36px; width: auto; display: block; }
+    .nav-links { display: flex; gap: 32px; list-style: none; }
+    .nav-links a { font-size: 14px; color: var(--muted); transition: color 0.2s; }
+    .nav-links a:hover { color: var(--text); }
+    .nav-links a.active { color: var(--blue); }
+    .nav-cta { font-size: 13px; font-weight: 500; padding: 8px 20px; border: 1px solid rgba(96,165,250,0.4); border-radius: 99px; color: var(--blue); transition: all 0.2s; }
+    .nav-cta:hover { background: rgba(96,165,250,0.1); }
 
-    .filter-btn {
-      font-size: 12px;
-      font-family: var(--font-body);
-      font-weight: 500;
-      padding: 7px 18px;
-      border-radius: 99px;
-      border: 1px solid transparent;
-      background: transparent;
-      cursor: pointer;
-      transition: all 0.2s;
-      letter-spacing: 0.3px;
-    }
+    /* ── HERO SLIDER ── */
+    .slider-wrap { position: relative; overflow: hidden; height: 480px; }
+    .slides { display: flex; height: 100%; transition: transform 0.5s cubic-bezier(0.4,0,0.2,1); }
+    .slide { min-width: 100%; height: 100%; position: relative; overflow: hidden; display: flex; align-items: flex-end; }
+    .slide-bg { position: absolute; inset: 0; transition: transform 6s ease; }
+    .slide:hover .slide-bg { transform: scale(1.03); }
 
-    /* All — blue */
+    .slide-bg-mindset { background: linear-gradient(135deg, #0f0c29 0%, #1a1040 40%, #2d1b69 70%, #0a0a1a 100%); }
+    .slide-bg-discipline { background: linear-gradient(135deg, #0a1628 0%, #0d2044 40%, #1a3a6e 70%, #060e1a 100%); }
+    .slide-bg-health { background: linear-gradient(135deg, #071a0f 0%, #0d2b18 40%, #1a4d2e 70%, #040d07 100%); }
+    .slide-bg-updates { background: linear-gradient(135deg, #1a1200 0%, #2d1f00 40%, #4a3200 70%, #0d0900 100%); }
+
+    .slide-orb { position: absolute; right: 10%; top: 50%; transform: translateY(-50%); width: 320px; height: 320px; border-radius: 50%; filter: blur(60px); opacity: 0.4; pointer-events: none; }
+    .slide-orb-mindset { background: radial-gradient(circle, #8B5CF6, #4c1d95); }
+    .slide-orb-discipline { background: radial-gradient(circle, #60A5FA, #1d4ed8); }
+    .slide-orb-health { background: radial-gradient(circle, #22C55E, #14532d); }
+    .slide-orb-updates { background: radial-gradient(circle, #F59E0B, #78350f); }
+
+    .slide-overlay { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(8,11,18,0.92) 0%, rgba(8,11,18,0.6) 50%, rgba(8,11,18,0.1) 100%); }
+    .slide-content { position: relative; z-index: 2; padding: 0 56px 52px; max-width: 580px; }
+
+    .slide-badge { display: inline-flex; align-items: center; font-size: 10px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; padding: 4px 12px; border-radius: 99px; margin-bottom: 18px; }
+    .badge-mindset { background: rgba(139,92,246,0.2); color: #a78bfa; border: 1px solid rgba(139,92,246,0.3); }
+    .badge-discipline { background: rgba(96,165,250,0.2); color: #93c5fd; border: 1px solid rgba(96,165,250,0.3); }
+    .badge-health { background: rgba(34,197,94,0.2); color: #4ade80; border: 1px solid rgba(34,197,94,0.3); }
+    .badge-updates { background: rgba(245,158,11,0.2); color: #fbbf24; border: 1px solid rgba(245,158,11,0.3); }
+
+    .slide-title { font-family: var(--font-head); font-size: clamp(24px, 3.5vw, 40px); font-weight: 700; line-height: 1.15; color: #fff; margin-bottom: 14px; letter-spacing: -0.5px; }
+    .slide-desc { font-size: 14px; color: rgba(255,255,255,0.65); line-height: 1.65; margin-bottom: 20px; max-width: 460px; }
+    .slide-meta { display: flex; align-items: center; gap: 16px; }
+    .slide-date { font-size: 12px; color: var(--faint); }
+    .slide-link { font-size: 13px; font-weight: 600; color: var(--blue); display: flex; align-items: center; gap: 6px; transition: gap 0.2s; }
+    .slide-link:hover { gap: 10px; }
+
+    .slider-btn { position: absolute; top: 50%; transform: translateY(-50%); z-index: 10; width: 40px; height: 40px; border-radius: 50%; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.15); color: #fff; font-size: 18px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background 0.2s; backdrop-filter: blur(4px); }
+    .slider-btn:hover { background: rgba(255,255,255,0.2); }
+    .slider-prev { left: 16px; }
+    .slider-next { right: 16px; }
+
+    .slider-dots { position: absolute; bottom: 20px; left: 56px; display: flex; gap: 6px; z-index: 10; }
+    .slider-dot { width: 6px; height: 6px; border-radius: 99px; background: rgba(255,255,255,0.3); cursor: pointer; transition: all 0.3s; }
+    .slider-dot.active { background: var(--blue); width: 20px; }
+
+    /* ── CONTROLS ── */
+    .controls-bar { padding: 20px 48px; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+    .search-wrap { position: relative; flex-shrink: 0; }
+    .search-icon { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); color: var(--muted); pointer-events: none; }
+    .search-input { background: rgba(255,255,255,0.05); border: 1px solid var(--border); border-radius: 99px; padding: 8px 16px 8px 38px; color: var(--text); font-family: var(--font-body); font-size: 13px; width: 220px; outline: none; transition: border-color 0.2s; }
+    .search-input::placeholder { color: var(--muted); }
+    .search-input:focus { border-color: rgba(96,165,250,0.4); }
+
+    .filters { display: flex; gap: 8px; flex-wrap: wrap; }
+    .filter-btn { font-size: 12px; font-family: var(--font-body); font-weight: 500; padding: 7px 16px; border-radius: 99px; border: 1px solid transparent; background: transparent; cursor: pointer; transition: all 0.2s; }
     .filter-btn[data-filter="all"] { color: var(--blue); border-color: rgba(96,165,250,0.3); }
-    .filter-btn[data-filter="all"]:hover,
-    .filter-btn[data-filter="all"].active { background: var(--blue); border-color: var(--blue); color: #fff; font-weight: 700; }
-
-    /* Health — green */
+    .filter-btn[data-filter="all"]:hover, .filter-btn[data-filter="all"].active { background: var(--blue); border-color: var(--blue); color: #fff; font-weight: 700; }
     .filter-btn[data-filter="health"] { color: var(--green); border-color: rgba(34,197,94,0.3); }
-    .filter-btn[data-filter="health"]:hover,
-    .filter-btn[data-filter="health"].active { background: var(--green); border-color: var(--green); color: #fff; font-weight: 700; }
-
-    /* Discipline — blue */
+    .filter-btn[data-filter="health"]:hover, .filter-btn[data-filter="health"].active { background: var(--green); border-color: var(--green); color: #fff; font-weight: 700; }
     .filter-btn[data-filter="discipline"] { color: var(--blue); border-color: rgba(96,165,250,0.3); }
-    .filter-btn[data-filter="discipline"]:hover,
-    .filter-btn[data-filter="discipline"].active { background: var(--blue); border-color: var(--blue); color: #fff; font-weight: 700; }
-
-    /* Mindset — purple */
+    .filter-btn[data-filter="discipline"]:hover, .filter-btn[data-filter="discipline"].active { background: var(--blue); border-color: var(--blue); color: #fff; font-weight: 700; }
     .filter-btn[data-filter="mindset"] { color: var(--purple); border-color: rgba(139,92,246,0.3); }
-    .filter-btn[data-filter="mindset"]:hover,
-    .filter-btn[data-filter="mindset"].active { background: var(--purple); border-color: var(--purple); color: #fff; font-weight: 700; }
-
-    /* Updates — orange */
+    .filter-btn[data-filter="mindset"]:hover, .filter-btn[data-filter="mindset"].active { background: var(--purple); border-color: var(--purple); color: #fff; font-weight: 700; }
     .filter-btn[data-filter="updates"] { color: var(--orange); border-color: rgba(245,158,11,0.3); }
-    .filter-btn[data-filter="updates"]:hover,
-    .filter-btn[data-filter="updates"].active { background: var(--orange); border-color: var(--orange); color: #fff; font-weight: 700; }
+    .filter-btn[data-filter="updates"]:hover, .filter-btn[data-filter="updates"].active { background: var(--orange); border-color: var(--orange); color: #fff; font-weight: 700; }
 
-    .grid-wrap{padding:36px 48px 80px;}
-    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
-    .card{background:var(--bg-card);border:1px solid var(--border);border-radius:14px;padding:26px 24px 22px;transition:border-color 0.25s,background 0.25s,transform 0.25s;position:relative;overflow:hidden;display:flex;flex-direction:column;text-decoration:none;color:inherit;}
-    .card:hover{border-color:var(--border-hover);background:var(--blue-bg);transform:translateY(-3px);}
-    .card-accent{position:absolute;top:0;left:0;right:0;height:3px;border-radius:14px 14px 0 0;}
-    .accent-blue{background:linear-gradient(90deg,#60A5FA,#2563eb);}
-    .accent-green{background:linear-gradient(90deg,#22c55e,#16a34a);}
-    .accent-amber{background:linear-gradient(90deg,#f59e0b,#d97706);}
-    .accent-purple{background:linear-gradient(90deg,#8B5CF6,#7c3aed);}
-    .badge{display:inline-flex;align-items:center;font-size:10px;font-weight:500;letter-spacing:1.2px;text-transform:uppercase;padding:4px 11px;border-radius:99px;margin-bottom:14px;width:fit-content;}
-    .badge-health{background:rgba(34,197,94,0.12);color:#22C55E;}
-    .badge-discipline{background:rgba(96,165,250,0.12);color:#60A5FA;}
-    .badge-mindset{background:rgba(139,92,246,0.12);color:#8B5CF6;}
-    .badge-updates{background:rgba(245,158,11,0.12);color:#F59E0B;}
-    .card-title{font-family:var(--font-head);font-size:16px;font-weight:600;color:#fff;line-height:1.3;margin-bottom:10px;}
-    .card-desc{font-size:13px;color:var(--muted);line-height:1.65;margin-bottom:20px;flex-grow:1;}
-    .card-footer{display:flex;align-items:center;justify-content:space-between;margin-top:auto;padding-top:16px;border-top:1px solid rgba(255,255,255,0.06);}
-    .card-date{font-size:11px;color:var(--faint);}
-    .card-link{font-size:12px;font-weight:500;color:var(--blue);display:flex;align-items:center;gap:5px;}
-    .card-link svg{transition:transform 0.2s;}
-    .card:hover .card-link svg{transform:translateX(3px);}
-    .card-featured{grid-column:span 2;}
-    .card-featured .card-title{font-size:20px;}
-    .card-featured .card-desc{font-size:14px;}
-    .pagination{display:flex;align-items:center;justify-content:center;gap:8px;padding:0 0 80px;}
-    .page-btn{width:36px;height:36px;border-radius:8px;border:1px solid var(--border);background:transparent;color:var(--muted);font-size:13px;font-family:var(--font-body);cursor:pointer;transition:all 0.2s;display:flex;align-items:center;justify-content:center;}
-    .page-btn:hover{color:var(--text);border-color:rgba(255,255,255,0.2);}
-    .page-btn.active{background:var(--blue);color:#fff;border-color:var(--blue);}
-    footer{border-top:1px solid var(--border);padding:28px 48px;display:flex;align-items:center;justify-content:space-between;}
-    .footer-logo img{height:28px;width:auto;display:block;}
-    .footer-text{font-size:12px;color:var(--faint);}
-    .footer-links{display:flex;gap:24px;}
-    .footer-links a{font-size:12px;color:var(--muted);text-decoration:none;transition:color 0.2s;}
-    .footer-links a:hover{color:var(--text);}
-    .card[data-hidden]{display:none;}
-    @media(max-width:900px){.grid{grid-template-columns:repeat(2,1fr);}.card-featured{grid-column:span 2;}}
-    @media(max-width:580px){nav{padding:14px 20px;}.nav-links{display:none;}.hero,.filters,.grid-wrap{padding-left:20px;padding-right:20px;}.grid{grid-template-columns:1fr;}.card-featured{grid-column:span 1;}footer{padding:24px 20px;flex-direction:column;gap:14px;text-align:center;}.footer-links{flex-wrap:wrap;justify-content:center;}}
+    /* ── GRID ── */
+    .grid-wrap { padding: 32px 48px 16px; }
+    .section-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 22px; }
+    .section-title { font-family: var(--font-head); font-size: 22px; font-weight: 700; color: #fff; display: flex; align-items: center; gap: 10px; }
+
+    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+
+    .card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; display: flex; flex-direction: column; text-decoration: none; color: inherit; transition: border-color 0.25s, transform 0.25s; }
+    .card:hover { border-color: var(--border-hover); transform: translateY(-3px); }
+
+    .card-img { height: 160px; position: relative; overflow: hidden; flex-shrink: 0; }
+    .card-img-bg { position: absolute; inset: 0; transition: transform 0.4s ease; }
+    .card:hover .card-img-bg { transform: scale(1.06); }
+
+    .card-bg-mindset { background: linear-gradient(135deg, #1a0a3d 0%, #2d1b69 50%, #0f0826 100%); }
+    .card-bg-discipline { background: linear-gradient(135deg, #0a1628 0%, #1a3a6e 50%, #060e1a 100%); }
+    .card-bg-health { background: linear-gradient(135deg, #071a0f 0%, #1a4d2e 50%, #040d07 100%); }
+    .card-bg-updates { background: linear-gradient(135deg, #1a1200 0%, #4a3200 50%, #0d0900 100%); }
+
+    .card-img-overlay { position: absolute; inset: 0; background: linear-gradient(180deg, transparent 40%, rgba(8,11,18,0.65) 100%); }
+    .card-img-badge { position: absolute; top: 12px; left: 12px; font-size: 9px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; padding: 3px 10px; border-radius: 99px; }
+
+    .card-body { padding: 18px 18px 16px; display: flex; flex-direction: column; flex-grow: 1; }
+    .card-title { font-family: var(--font-head); font-size: 15px; font-weight: 700; color: #fff; line-height: 1.3; margin-bottom: 8px; }
+    .card-desc { font-size: 12px; color: var(--muted); line-height: 1.6; margin-bottom: 16px; flex-grow: 1; }
+    .card-footer-row { display: flex; align-items: center; justify-content: space-between; padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.06); }
+    .card-date { font-size: 11px; color: var(--faint); }
+    .card-read { font-size: 12px; font-weight: 600; display: flex; align-items: center; gap: 4px; transition: gap 0.2s; }
+    .card-read:hover { gap: 8px; }
+    .card-read-mindset { color: #a78bfa; }
+    .card-read-discipline { color: #93c5fd; }
+    .card-read-health { color: #4ade80; }
+    .card-read-updates { color: #fbbf24; }
+
+    .no-results { grid-column: span 3; text-align: center; padding: 60px 0; color: var(--muted); }
+
+    /* Load more */
+    .load-more-wrap { padding: 28px 48px 60px; text-align: center; }
+    .load-more-btn { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-body); font-size: 14px; font-weight: 600; color: var(--blue); background: rgba(96,165,250,0.08); border: 1px solid rgba(96,165,250,0.25); border-radius: 99px; padding: 12px 28px; cursor: pointer; transition: all 0.2s; }
+    .load-more-btn:hover { background: rgba(96,165,250,0.15); border-color: var(--blue); }
+
+    /* ── FOOTER ── */
+    footer { border-top: 1px solid var(--border); padding: 28px 48px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+    .footer-logo img { height: 28px; width: auto; display: block; }
+    .footer-text { font-size: 12px; color: var(--faint); }
+    .footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
+    .footer-links a { font-size: 12px; color: var(--muted); transition: color 0.2s; }
+    .footer-links a:hover { color: var(--text); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .grid { grid-template-columns: repeat(2, 1fr); }
+      .no-results { grid-column: span 2; }
+      .slider-wrap { height: 400px; }
+    }
+    @media (max-width: 580px) {
+      nav { padding: 14px 20px; }
+      .nav-links { display: none; }
+      .controls-bar { padding: 16px 20px; flex-direction: column; align-items: flex-start; }
+      .search-input { width: 100%; }
+      .search-wrap { width: 100%; }
+      .grid-wrap { padding: 24px 20px 16px; }
+      .load-more-wrap { padding: 20px 20px 48px; }
+      .grid { grid-template-columns: 1fr; }
+      .no-results { grid-column: span 1; }
+      .slide-content { padding: 0 24px 40px; }
+      .slider-wrap { height: 360px; }
+      .slider-dots { left: 24px; }
+      footer { padding: 24px 20px; flex-direction: column; text-align: center; }
+      .footer-links { justify-content: center; }
+    }
   </style>
 </head>
 <body>
+
   <nav>
     <a href="../index.html" class="logo"><img src="../images/logo.webp" alt="Improo" /></a>
     <ul class="nav-links">
       <li><a href="../index.html">Home</a></li>
-      <li><a href="../features.html">Features</a></li>
       <li><a href="../roadmap.html">Roadmap</a></li>
       <li><a href="index.html" class="active">Insights</a></li>
       <li><a href="../index.html#contact">Contact</a></li>
     </ul>
     <a href="../index.html#waitlist" class="nav-cta">Join waitlist</a>
   </nav>
-  <section class="hero">
-    <p class="hero-label">Insights</p>
-    <h1 class="hero-title">Build better habits.<br>Think sharper.</h1>
-    <p class="hero-sub">Articles on health, discipline, and mindset — written for people who take their growth seriously.</p>
-  </section>
-  <div class="filters">
-    <button class="filter-btn active" data-filter="all">All</button>
-    <button class="filter-btn" data-filter="health">Health</button>
-    <button class="filter-btn" data-filter="discipline">Discipline</button>
-    <button class="filter-btn" data-filter="mindset">Mindset</button>
-    <button class="filter-btn" data-filter="updates">Updates</button>
+
+  <!-- HERO SLIDER -->
+  <div class="slider-wrap">
+    <div class="slides" id="slides">
+
+      <div class="slide">
+        <div class="slide-bg slide-bg-mindset"></div>
+        <div class="slide-orb slide-orb-mindset"></div>
+        <div class="slide-overlay"></div>
+        <div class="slide-content">
+          <span class="slide-badge badge-mindset">Mindset</span>
+          <h2 class="slide-title">Why I Built Improo — The Story Behind the App</h2>
+          <p class="slide-desc">After 10 years of struggling with obesity, I had a simple realisation that changed everything. This is that story.</p>
+          <div class="slide-meta">
+            <span class="slide-date">April 25, 2026</span>
+            <a href="why-i-built-improo.html" class="slide-link">Read article <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7h9M8 3.5l3.5 3.5L8 10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="slide">
+        <div class="slide-bg slide-bg-discipline"></div>
+        <div class="slide-orb slide-orb-discipline"></div>
+        <div class="slide-overlay"></div>
+        <div class="slide-content">
+          <span class="slide-badge badge-discipline">Discipline</span>
+          <h2 class="slide-title">Why Most People Quit After 3 Weeks (And How to Be Different)</h2>
+          <p class="slide-desc">The first three weeks of any new habit feel exciting — then reality hits. Here's what the science says.</p>
+          <div class="slide-meta">
+            <span class="slide-date">April 18, 2026</span>
+            <a href="quit-after-3-weeks.html" class="slide-link">Read article <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7h9M8 3.5l3.5 3.5L8 10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="slide">
+        <div class="slide-bg slide-bg-health"></div>
+        <div class="slide-orb slide-orb-health"></div>
+        <div class="slide-overlay"></div>
+        <div class="slide-content">
+          <span class="slide-badge badge-health">Health</span>
+          <h2 class="slide-title">Sleep as a Performance Tool</h2>
+          <p class="slide-desc">Most people treat sleep as rest. High performers treat it as training. The difference is in how you approach recovery.</p>
+          <div class="slide-meta">
+            <span class="slide-date">April 12, 2026</span>
+            <a href="sleep-as-a-performance-tool.html" class="slide-link">Read article <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7h9M8 3.5l3.5 3.5L8 10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="slide">
+        <div class="slide-bg slide-bg-mindset"></div>
+        <div class="slide-orb slide-orb-mindset"></div>
+        <div class="slide-overlay"></div>
+        <div class="slide-content">
+          <span class="slide-badge badge-mindset">Mindset</span>
+          <h2 class="slide-title">Identity Before Behavior</h2>
+          <p class="slide-desc">You don't rise to your goals — you fall to the level of your identity. Change who you are first, and the habits follow.</p>
+          <div class="slide-meta">
+            <span class="slide-date">May 10, 2026</span>
+            <a href="identity-before-behavior.html" class="slide-link">Read article <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7h9M8 3.5l3.5 3.5L8 10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="slide">
+        <div class="slide-bg slide-bg-health"></div>
+        <div class="slide-orb slide-orb-health"></div>
+        <div class="slide-overlay"></div>
+        <div class="slide-content">
+          <span class="slide-badge badge-health">Health</span>
+          <h2 class="slide-title">The 10-Minute Movement Rule</h2>
+          <p class="slide-desc">If you can't find time for a full workout, you can always find 10 minutes. Done consistently, that beats nothing done perfectly.</p>
+          <div class="slide-meta">
+            <span class="slide-date">March 28, 2026</span>
+            <a href="article-5.html" class="slide-link">Read article <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7h9M8 3.5l3.5 3.5L8 10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <button class="slider-btn slider-prev" id="sliderPrev" aria-label="Previous">‹</button>
+    <button class="slider-btn slider-next" id="sliderNext" aria-label="Next">›</button>
+    <div class="slider-dots" id="sliderDots"></div>
   </div>
-  <div class="grid-wrap">
-    <div class="grid" id="article-grid">
-      <a href="quit-after-3-weeks.html" class="card card-featured" data-category="discipline">
-        <div class="card-accent accent-blue"></div>
-        <span class="badge badge-discipline">Discipline</span>
-        <h2 class="card-title">Why Most People Quit After 3 Weeks (And How to Be Different)</h2>
-        <p class="card-desc">The first three weeks of any new habit feel exciting — then reality hits. Here's what the science actually says about habit formation, and how to make it past the plateau.</p>
-        <div class="card-footer"><span class="card-date">April 18, 2026</span><span class="card-link">Read article <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M2.5 6.5h8M8 3.5l3 3-3 3" stroke="#60A5FA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
-      </a>
-      <a href="sleep-as-a-performance-tool.html" class="card" data-category="health">
-        <div class="card-accent accent-green"></div>
-        <span class="badge badge-health">Health</span>
-        <h2 class="card-title">Sleep as a Performance Tool</h2>
-        <p class="card-desc">Most people treat sleep as rest. High performers treat it as training. The difference is in how you approach recovery.</p>
-        <div class="card-footer"><span class="card-date">April 12, 2026</span><span class="card-link">Read article <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M2.5 6.5h8M8 3.5l3 3-3 3" stroke="#60A5FA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
-      </a>
-      <a href="identity-before-behavior.html" class="card" data-category="mindset">
-        <div class="card-accent accent-purple"></div>
-        <span class="badge badge-mindset">Mindset</span>
-        <h2 class="card-title">Identity Before Behavior</h2>
-        <p class="card-desc">You don't rise to your goals — you fall to the level of your identity. Change who you are first, and the habits follow naturally.</p>
-        <div class="card-footer"><span class="card-date">May 10, 2026</span><span class="card-link">Read article <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M2.5 6.5h8M8 3.5l3 3-3 3" stroke="#60A5FA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
-      </a>
-      <a href="article-4.html" class="card" data-category="updates">
-        <div class="card-accent accent-amber"></div>
-        <span class="badge badge-updates">Updates</span>
-        <h2 class="card-title">Improo App: What We're Building</h2>
-        <p class="card-desc">A first look at the core features of Improo — habit tracking, belt challenges, community groups, and more.</p>
-        <div class="card-footer"><span class="card-date">April 2, 2026</span><span class="card-link">Read article <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M2.5 6.5h8M8 3.5l3 3-3 3" stroke="#60A5FA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
-      </a>
-      <a href="why-i-built-improo.html" class="card card-featured" data-category="mindset">
-        <div class="card-accent accent-purple"></div>
-        <span class="badge badge-mindset">Mindset</span>
-        <h2 class="card-title">Why I Built Improo — The Story Behind the App</h2>
-        <p class="card-desc">After 10 years of struggling with obesity, I had a simple realisation that changed everything. This is that story — and why I built Improo.</p>
-        <div class="card-footer"><span class="card-date">April 25, 2026</span><span class="card-link">Read article <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M2.5 6.5h8M8 3.5l3 3-3 3" stroke="#60A5FA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
-      </a>
-      <a href="article-5.html" class="card" data-category="health">
-        <div class="card-accent accent-green"></div>
-        <span class="badge badge-health">Health</span>
-        <h2 class="card-title">The 10-Minute Movement Rule</h2>
-        <p class="card-desc">If you can't find time for a full workout, you can always find 10 minutes. Done consistently, that beats nothing done perfectly.</p>
-        <div class="card-footer"><span class="card-date">March 28, 2026</span><span class="card-link">Read article <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M2.5 6.5h8M8 3.5l3 3-3 3" stroke="#60A5FA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
-      </a>
+
+  <!-- SEARCH + FILTERS -->
+  <div class="controls-bar">
+    <div class="search-wrap">
+      <svg class="search-icon" width="14" height="14" viewBox="0 0 14 14" fill="none">
+        <circle cx="6" cy="6" r="4.5" stroke="currentColor" stroke-width="1.3"/>
+        <path d="M9.5 9.5L12.5 12.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+      </svg>
+      <input class="search-input" type="text" id="searchInput" placeholder="Search articles..." autocomplete="off" />
+    </div>
+    <div class="filters">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="health">Health</button>
+      <button class="filter-btn" data-filter="discipline">Discipline</button>
+      <button class="filter-btn" data-filter="mindset">Mindset</button>
+      <button class="filter-btn" data-filter="updates">Updates</button>
     </div>
   </div>
-  <div class="pagination">
-    <button class="page-btn active">1</button>
-    <button class="page-btn">2</button>
-    <button class="page-btn">3</button>
+
+  <!-- GRID -->
+  <div class="grid-wrap">
+    <div class="section-header">
+      <div class="section-title"><span>✦</span> Latest Articles</div>
+    </div>
+    <div class="grid" id="articleGrid"></div>
   </div>
+
+  <div class="load-more-wrap">
+    <button class="load-more-btn" id="loadMoreBtn">
+      Load more articles
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 2v10M3.5 8.5L7 12l3.5-3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+
   <footer>
     <a href="../index.html" class="footer-logo"><img src="../images/logo.webp" alt="Improo" /></a>
-    <span class="footer-text">© 2026 Improo. All rights reserved. &nbsp;·&nbsp; <a href="../disclaimer.html" style="color:inherit;text-decoration:underline;">Disclaimer</a> &nbsp;·&nbsp; <a href="../privacy-policy.html" style="color:inherit;text-decoration:underline;">Privacy Policy</a> &nbsp;·&nbsp; <a href="../terms-of-service.html" style="color:inherit;text-decoration:underline;">Terms of Service</a></span>
+    <span class="footer-text">© 2026 Improo. All rights reserved.</span>
     <div class="footer-links">
       <a href="../index.html">Home</a>
       <a href="index.html">Insights</a>
-      <a href="../index.html#contact">Contact</a>
+      <a href="../disclaimer.html">Disclaimer</a>
+      <a href="../privacy-policy.html">Privacy Policy</a>
+      <a href="../terms-of-service.html">Terms of Service</a>
     </div>
   </footer>
+
   <script>
-    const btns=document.querySelectorAll('.filter-btn');
-    const cards=document.querySelectorAll('.card');
-    btns.forEach(btn=>{
-      btn.addEventListener('click',()=>{
-        btns.forEach(b=>b.classList.remove('active'));
+    const articles = [
+      { title: 'Identity Before Behavior', desc: "You don't rise to your goals — you fall to the level of your identity. Change who you are first, and the habits follow naturally.", category: 'mindset', date: 'May 10, 2026', href: 'identity-before-behavior.html' },
+      { title: 'Why I Built Improo — The Story Behind the App', desc: 'After 10 years of struggling with obesity, I had a simple realisation that changed everything. This is that story — and why I built Improo.', category: 'mindset', date: 'April 25, 2026', href: 'why-i-built-improo.html' },
+      { title: 'Why Most People Quit After 3 Weeks (And How to Be Different)', desc: "The first three weeks of any new habit feel exciting — then reality hits. Here's what the science actually says about habit formation.", category: 'discipline', date: 'April 18, 2026', href: 'quit-after-3-weeks.html' },
+      { title: 'Sleep as a Performance Tool', desc: 'Most people treat sleep as rest. High performers treat it as training. The difference is in how you approach recovery.', category: 'health', date: 'April 12, 2026', href: 'sleep-as-a-performance-tool.html' },
+      { title: "Improo App: What We're Building", desc: 'A first look at the core features of Improo — habit tracking, belt challenges, community groups, and more.', category: 'updates', date: 'April 2, 2026', href: 'article-4.html' },
+      { title: 'The 10-Minute Movement Rule', desc: "If you can't find time for a full workout, you can always find 10 minutes. Done consistently, that beats nothing done perfectly.", category: 'health', date: 'March 28, 2026', href: 'article-5.html' },
+    ];
+
+    const cat = {
+      mindset:    { badge: 'badge-mindset',    bg: 'card-bg-mindset',    read: 'card-read-mindset',    label: 'Mindset' },
+      discipline: { badge: 'badge-discipline', bg: 'card-bg-discipline', read: 'card-read-discipline', label: 'Discipline' },
+      health:     { badge: 'badge-health',     bg: 'card-bg-health',     read: 'card-read-health',     label: 'Health' },
+      updates:    { badge: 'badge-updates',    bg: 'card-bg-updates',    read: 'card-read-updates',    label: 'Updates' },
+    };
+
+    const BATCH = 6;
+    let visible = BATCH, activeFilter = 'all', searchQuery = '';
+
+    function filtered() {
+      return articles.filter(a => {
+        const matchCat = activeFilter === 'all' || a.category === activeFilter;
+        const matchSearch = !searchQuery || a.title.toLowerCase().includes(searchQuery) || a.desc.toLowerCase().includes(searchQuery);
+        return matchCat && matchSearch;
+      });
+    }
+
+    function renderGrid() {
+      const grid = document.getElementById('articleGrid');
+      const btn = document.getElementById('loadMoreBtn');
+      const list = filtered();
+      const show = list.slice(0, visible);
+
+      if (!show.length) {
+        grid.innerHTML = '<div class="no-results">No articles found.</div>';
+        btn.style.display = 'none';
+        return;
+      }
+
+      grid.innerHTML = show.map(a => `
+        <a href="${a.href}" class="card">
+          <div class="card-img">
+            <div class="card-img-bg ${cat[a.category].bg}"></div>
+            <div class="card-img-overlay"></div>
+            <span class="card-img-badge ${cat[a.category].badge}">${cat[a.category].label}</span>
+          </div>
+          <div class="card-body">
+            <div class="card-title">${a.title}</div>
+            <div class="card-desc">${a.desc}</div>
+            <div class="card-footer-row">
+              <span class="card-date">${a.date}</span>
+              <span class="card-read ${cat[a.category].read}">Read article <svg width="12" height="12" viewBox="0 0 14 14" fill="none"><path d="M2.5 7h9M8 3.5l3.5 3.5L8 10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+            </div>
+          </div>
+        </a>`).join('');
+
+      btn.style.display = list.length > visible ? 'inline-flex' : 'none';
+    }
+
+    document.getElementById('loadMoreBtn').addEventListener('click', () => { visible += BATCH; renderGrid(); });
+
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
-        const f=btn.dataset.filter;
-        cards.forEach(card=>{
-          const match=f==='all'||card.dataset.category===f;
-          match?card.removeAttribute('data-hidden'):card.setAttribute('data-hidden','');
-        });
+        activeFilter = btn.dataset.filter;
+        visible = BATCH;
+        renderGrid();
       });
     });
+
+    document.getElementById('searchInput').addEventListener('input', e => {
+      searchQuery = e.target.value.toLowerCase().trim();
+      visible = BATCH;
+      renderGrid();
+    });
+
+    renderGrid();
+
+    /* SLIDER */
+    const slideEls = document.querySelectorAll('.slide');
+    const dotsWrap = document.getElementById('sliderDots');
+    let current = 0, autoTimer;
+
+    slideEls.forEach((_, i) => {
+      const d = document.createElement('div');
+      d.className = 'slider-dot' + (i === 0 ? ' active' : '');
+      d.addEventListener('click', () => goTo(i));
+      dotsWrap.appendChild(d);
+    });
+
+    function goTo(n) {
+      current = (n + slideEls.length) % slideEls.length;
+      document.getElementById('slides').style.transform = `translateX(-${current * 100}%)`;
+      document.querySelectorAll('.slider-dot').forEach((d, i) => d.classList.toggle('active', i === current));
+    }
+
+    function startAuto() { autoTimer = setInterval(() => goTo(current + 1), 5000); }
+    function stopAuto() { clearInterval(autoTimer); }
+
+    document.getElementById('sliderPrev').addEventListener('click', () => { stopAuto(); goTo(current - 1); startAuto(); });
+    document.getElementById('sliderNext').addEventListener('click', () => { stopAuto(); goTo(current + 1); startAuto(); });
+
+    startAuto();
   </script>
 </body>
 </html>
