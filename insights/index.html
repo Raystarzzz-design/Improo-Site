@@ -45,7 +45,7 @@
     .slider-wrap { position: relative; overflow: hidden; height: 480px; }
     .slides { display: flex; height: 100%; transition: transform 0.5s cubic-bezier(0.4,0,0.2,1); }
     .slide { min-width: 100%; height: 100%; position: relative; overflow: hidden; display: flex; align-items: flex-end; }
-    .slide-bg { position: absolute; inset: 0; transition: transform 6s ease; }
+    .slide-bg { position: absolute; inset: 0; height: 100%; width: 100%; transition: transform 6s ease; }
     .slide:hover .slide-bg { transform: scale(1.03); }
 
     .slide-bg-mindset { background: linear-gradient(135deg, #0f0c29 0%, #1a1040 40%, #2d1b69 70%, #0a0a1a 100%); }
@@ -223,7 +223,6 @@
         </div>
       </div>
 
-      
       <div class="slide">
         <div class="slide-bg" style="background-image:url('images/sleep-as-a-performance-tool.webp');background-size:cover;background-position:center;"></div>
         <div class="slide-overlay"></div>
