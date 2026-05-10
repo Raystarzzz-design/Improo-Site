@@ -196,8 +196,7 @@
     <div class="slides" id="slides">
 
       <div class="slide">
-        <div class="slide-bg slide-bg-mindset"></div>
-        <div class="slide-orb slide-orb-mindset"></div>
+        <div class="slide-bg" style="background-image:url('images/slider-why-i-built-improo.webp');background-size:cover;background-position:center;"></div>
         <div class="slide-overlay"></div>
         <div class="slide-content">
           <span class="slide-badge badge-mindset">Mindset</span>
@@ -324,7 +323,7 @@
   <script>
     const articles = [
       { title: 'Identity Before Behavior', desc: "You don't rise to your goals — you fall to the level of your identity. Change who you are first, and the habits follow naturally.", category: 'mindset', date: 'May 10, 2026', href: 'identity-before-behavior.html' },
-      { title: 'Why I Built Improo — The Story Behind the App', desc: 'After 10 years of struggling with obesity, I had a simple realisation that changed everything. This is that story — and why I built Improo.', category: 'mindset', date: 'April 25, 2026', href: 'why-i-built-improo.html' },
+      { title: 'Why I Built Improo — The Story Behind the App', desc: 'After 10 years of struggling with obesity, I had a simple realisation that changed everything. This is that story — and why I built Improo.', category: 'mindset', date: 'April 25, 2026', href: 'why-i-built-improo.html', img: 'images/slider-why-i-built-improo.webp' },
       { title: 'Why Most People Quit After 3 Weeks (And How to Be Different)', desc: "The first three weeks of any new habit feel exciting — then reality hits. Here's what the science actually says about habit formation.", category: 'discipline', date: 'April 18, 2026', href: 'quit-after-3-weeks.html' },
       { title: 'Sleep as a Performance Tool', desc: 'Most people treat sleep as rest. High performers treat it as training. The difference is in how you approach recovery.', category: 'health', date: 'April 12, 2026', href: 'sleep-as-a-performance-tool.html' },
       { title: "Improo App: What We're Building", desc: 'A first look at the core features of Improo — habit tracking, belt challenges, community groups, and more.', category: 'updates', date: 'April 2, 2026', href: 'article-4.html' },
@@ -361,10 +360,15 @@
         return;
       }
 
-      grid.innerHTML = show.map(a => `
+      grid.innerHTML = show.map(a => {
+        const imgStyle = a.img
+          ? `background-image:url('${a.img}');background-size:cover;background-position:center;`
+          : '';
+        const imgClass = a.img ? '' : cat[a.category].bg;
+        return `
         <a href="${a.href}" class="card">
           <div class="card-img">
-            <div class="card-img-bg ${cat[a.category].bg}"></div>
+            <div class="card-img-bg ${imgClass}" style="${imgStyle}" role="img" aria-label="${a.title}"></div>
             <div class="card-img-overlay"></div>
             <span class="card-img-badge ${cat[a.category].badge}">${cat[a.category].label}</span>
           </div>
@@ -376,7 +380,8 @@
               <span class="card-read ${cat[a.category].read}">Read article <svg width="12" height="12" viewBox="0 0 14 14" fill="none"><path d="M2.5 7h9M8 3.5l3.5 3.5L8 10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
             </div>
           </div>
-        </a>`).join('');
+        </a>`;
+      }).join('');
 
       btn.style.display = list.length > visible ? 'inline-flex' : 'none';
     }
