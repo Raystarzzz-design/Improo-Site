@@ -639,7 +639,7 @@ a { color: inherit; text-decoration: none; }
    INSIGHTS PREVIEW (homepage)
    ════════════════════════════════════════ */
 
-.insights-preview { padding: 0 0 48px; }
+.insights-preview { padding: 48px 0; }
 
 .insights-preview-header {
   display: flex;
