@@ -45,6 +45,8 @@ body {
   font-family: 'Sora', Arial, sans-serif;
   background: var(--bg);
   min-height: 100vh;
+  box-shadow: inset 80px 0 120px -60px rgba(15, 31, 61, 0.06),
+              inset -80px 0 120px -60px rgba(15, 31, 61, 0.06);
 }
 
 img { display: block; max-width: 100%; }
