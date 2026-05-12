@@ -11,7 +11,6 @@
   </script>
   <script defer src="/_vercel/insights/script.js"></script>
   <style>
-    /* ── ROADMAP PAGE SPECIFIC ── */
     .page-hero {
       padding: 64px 0 48px;
       border-bottom: 1px solid var(--line);
@@ -31,6 +30,7 @@
       letter-spacing: -0.04em;
       margin: 0 0 16px;
       max-width: 600px;
+      color: var(--text);
     }
     .page-sub {
       font-size: 1.1rem;
@@ -40,9 +40,7 @@
     }
 
     /* ── PHASE FLOW ── */
-    .phases {
-      padding: 56px 0 24px;
-    }
+    .phases { padding: 56px 0 24px; }
     .phases-title {
       font-size: 11px;
       font-weight: 700;
@@ -51,13 +49,8 @@
       color: var(--muted);
       margin-bottom: 32px;
     }
-    .phase-flow {
-      display: flex;
-      flex-direction: column;
-      gap: 0;
-    }
+    .phase-flow { display: flex; flex-direction: column; gap: 0; }
 
-    /* Single phase block */
     .phase {
       display: grid;
       grid-template-columns: 180px 40px 1fr;
@@ -66,15 +59,11 @@
       position: relative;
     }
 
-    /* Left label */
-    .phase-label-wrap {
-      text-align: right;
-      padding-top: 18px;
-    }
+    .phase-label-wrap { text-align: right; padding-top: 18px; }
     .phase-name {
       font-size: 0.85rem;
       font-weight: 700;
-      color: #fff;
+      color: var(--text);
       display: block;
       margin-bottom: 4px;
     }
@@ -87,17 +76,12 @@
       border-radius: 99px;
       display: inline-block;
     }
-    .tag-done    { background: rgba(34,197,94,0.15);  color: #4ade80; }
-    .tag-active  { background: rgba(58,181,255,0.15); color: var(--blue-2); }
-    .tag-soon    { background: rgba(245,158,11,0.15); color: #fbbf24; }
-    .tag-planned { background: rgba(255,255,255,0.08); color: var(--muted); }
+    .tag-done    { background: rgba(22,163,74,0.12);  color: #16a34a; }
+    .tag-active  { background: rgba(37,99,235,0.12);  color: var(--blue); }
+    .tag-soon    { background: rgba(217,119,6,0.12);  color: #d97706; }
+    .tag-planned { background: rgba(74,111,165,0.12); color: var(--muted); }
 
-    /* Center timeline */
-    .phase-timeline {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
+    .phase-timeline { display: flex; flex-direction: column; align-items: center; }
     .phase-dot {
       width: 40px;
       height: 40px;
@@ -109,27 +93,24 @@
       flex-shrink: 0;
       z-index: 1;
       position: relative;
+      font-weight: 700;
     }
-    .dot-done    { background: linear-gradient(135deg,#22c55e,#16a34a); box-shadow: 0 0 20px rgba(34,197,94,0.35); }
-    .dot-active  { background: linear-gradient(135deg,var(--blue-2),var(--blue)); box-shadow: 0 0 20px rgba(58,181,255,0.4); }
-    .dot-soon    { background: rgba(245,158,11,0.15); border: 2px solid rgba(245,158,11,0.4); color: #fbbf24; }
-    .dot-planned { background: rgba(255,255,255,0.05); border: 2px solid rgba(255,255,255,0.12); color: var(--muted); }
+    .dot-done    { background: #16a34a; color: #fff; }
+    .dot-active  { background: var(--blue); color: #fff; }
+    .dot-soon    { background: #fff7ed; border: 2px solid #d97706; color: #d97706; }
+    .dot-planned { background: var(--bg-2); border: 2px solid var(--line-strong); color: var(--muted); }
 
-    .phase-line {
-      width: 2px;
-      flex-grow: 1;
-      min-height: 32px;
-    }
-    .line-done    { background: linear-gradient(180deg,#22c55e,rgba(34,197,94,0.2)); }
-    .line-active  { background: linear-gradient(180deg,var(--blue-2),rgba(58,181,255,0.1)); }
-    .line-soon    { background: linear-gradient(180deg,rgba(245,158,11,0.3),rgba(245,158,11,0.05)); }
-    .line-planned { background: rgba(255,255,255,0.06); }
+    .phase-line { width: 2px; flex-grow: 1; min-height: 32px; }
+    .line-done    { background: linear-gradient(180deg,#16a34a,rgba(22,163,74,0.15)); }
+    .line-active  { background: linear-gradient(180deg,var(--blue),rgba(37,99,235,0.1)); }
+    .line-soon    { background: linear-gradient(180deg,rgba(217,119,6,0.3),rgba(217,119,6,0.05)); }
+    .line-planned { background: var(--line); }
     .line-none    { background: transparent; }
 
-    /* Right content card */
+    /* ── DARK PHASE CARDS ── */
     .phase-card {
-      background: var(--panel);
-      border: 1px solid var(--line);
+      background: #0f1f3d;
+      border: 1px solid rgba(37,99,235,0.20);
       border-radius: 16px;
       padding: 22px 24px;
       margin-bottom: 24px;
@@ -137,20 +118,16 @@
     .phase-card-title {
       font-size: 1.05rem;
       font-weight: 700;
-      color: #fff;
+      color: #e0ecff;
       margin: 0 0 14px;
     }
-    .phase-items {
-      display: flex;
-      flex-direction: column;
-      gap: 9px;
-    }
+    .phase-items { display: flex; flex-direction: column; gap: 9px; }
     .phase-item {
       display: flex;
       align-items: flex-start;
       gap: 10px;
       font-size: 0.9rem;
-      color: var(--muted);
+      color: #6b8cba;
       line-height: 1.5;
     }
     .phase-item-icon {
@@ -164,13 +141,13 @@
       flex-shrink: 0;
       margin-top: 1px;
     }
-    .icon-done    { background: rgba(34,197,94,0.15);  color: #4ade80; }
-    .icon-active  { background: rgba(58,181,255,0.15); color: var(--blue-2); }
-    .icon-soon    { background: rgba(245,158,11,0.12); color: #fbbf24; }
-    .icon-planned { background: rgba(255,255,255,0.06); color: var(--muted); }
-    .item-done    { color: rgba(255,255,255,0.75); }
+    .icon-done    { background: rgba(22,163,74,0.20);  color: #4ade80; }
+    .icon-active  { background: rgba(37,99,235,0.20);  color: #93c5fd; }
+    .icon-soon    { background: rgba(217,119,6,0.15);  color: #fbbf24; }
+    .icon-planned { background: rgba(255,255,255,0.06); color: #6b8cba; }
+    .item-done    { color: #93b4d8; }
 
-    /* ── CATEGORY SECTIONS ── */
+    /* ── DARK CATEGORY CARDS ── */
     .roadmap-categories {
       padding: 24px 0 64px;
       display: grid;
@@ -178,17 +155,12 @@
       gap: 18px;
     }
     .cat-card {
-      background: var(--panel-2);
-      border: 1px solid var(--line);
+      background: #0f1f3d;
+      border: 1px solid rgba(37,99,235,0.20);
       border-radius: 20px;
       padding: 28px;
     }
-    .cat-header {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 20px;
-    }
+    .cat-header { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
     .cat-icon {
       width: 42px;
       height: 42px;
@@ -199,23 +171,23 @@
       font-size: 1.2rem;
       flex-shrink: 0;
     }
-    .cat-icon-app     { background: rgba(58,181,255,0.12); }
-    .cat-icon-website { background: rgba(168,85,247,0.12); }
-    .cat-icon-legal   { background: rgba(245,158,11,0.12); }
-    .cat-icon-mkt     { background: rgba(34,197,94,0.12);  }
+    .cat-icon-app     { background: rgba(59,130,246,0.15); }
+    .cat-icon-website { background: rgba(99,102,241,0.15); }
+    .cat-icon-legal   { background: rgba(217,119,6,0.15);  }
+    .cat-icon-mkt     { background: rgba(22,163,74,0.15);  }
 
-    .cat-title { font-size: 1.05rem; font-weight: 700; color: #fff; }
-    .cat-sub   { font-size: 0.8rem; color: var(--muted); margin-top: 2px; }
+    .cat-title { font-size: 1.05rem; font-weight: 700; color: #e0ecff; }
+    .cat-sub   { font-size: 0.8rem; color: #4a6fa5; margin-top: 2px; }
 
     .cat-items { display: flex; flex-direction: column; gap: 10px; }
-    .cat-item  {
+    .cat-item {
       display: flex;
       align-items: center;
       gap: 10px;
       font-size: 0.88rem;
-      color: var(--muted);
+      color: #4a6fa5;
     }
-    .cat-item-done { color: rgba(255,255,255,0.8); }
+    .cat-item-done { color: #93b4d8; }
     .cat-pill {
       font-size: 0.68rem;
       font-weight: 700;
@@ -226,22 +198,22 @@
       margin-left: auto;
       flex-shrink: 0;
     }
-    .pill-done    { background: rgba(34,197,94,0.12);  color: #4ade80; }
-    .pill-active  { background: rgba(58,181,255,0.12); color: var(--blue-2); }
-    .pill-soon    { background: rgba(245,158,11,0.1);  color: #fbbf24; }
-    .pill-planned { background: rgba(255,255,255,0.06); color: var(--muted); }
+    .pill-done    { background: rgba(22,163,74,0.15);   color: #4ade80; }
+    .pill-active  { background: rgba(59,130,246,0.15);  color: #93c5fd; }
+    .pill-soon    { background: rgba(217,119,6,0.15);   color: #fbbf24; }
+    .pill-planned { background: rgba(255,255,255,0.06); color: #6b8cba; }
 
     .roadmap-note {
       grid-column: span 2;
-      background: rgba(58,181,255,0.05);
-      border: 1px solid rgba(58,181,255,0.15);
+      background: rgba(37,99,235,0.06);
+      border: 1px solid rgba(37,99,235,0.18);
       border-radius: 14px;
       padding: 20px 24px;
       font-size: 0.9rem;
       color: var(--muted);
       line-height: 1.65;
     }
-    .roadmap-note strong { color: #fff; }
+    .roadmap-note strong { color: var(--text); }
 
     @media (max-width: 900px) {
       .phase { grid-template-columns: 120px 36px 1fr; }
@@ -264,34 +236,33 @@
       </a>
       <nav class="nav-links">
         <a href="index.html">Home</a>
-        <a href="index.html#features">Features</a>
         <a href="roadmap.html" class="active">Roadmap</a>
         <a href="insights/index.html">Insights</a>
         <a href="#" onclick="openPopup(); return false;">Contact</a>
       </nav>
       <div class="socials">
-        <a href="#" aria-label="Instagram">IG</a>
-        <a href="https://x.com/Improo_" aria-label="X">X</a>
-        <a href="#" aria-label="TikTok">TT</a>
+        <a href="https://www.youtube.com/@Improo_App" aria-label="Youtube">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.7 15.5V8.5l6.3 3.5-6.3 3.5z"/></svg>
+        </a>
+        <a href="https://x.com/Improo_" aria-label="X">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.3 1.5h3.3L14.1 9.9 23 22.5h-7.6l-5.3-6.9-6 6.9H.7l8-9.1L.5 1.5h7.8l4.8 6.3 5.2-6.3zm-1.2 18.9h1.8L7 3.3H5.1l12 17.1z"/></svg>
+        </a>
       </div>
     </div>
   </header>
 
   <div class="container">
 
-    <!-- HERO -->
     <div class="page-hero">
       <p class="page-label">Roadmap</p>
       <h1 class="page-title">Where we are.<br>Where we're going.</h1>
       <p class="page-sub">Improo is being built openly and honestly. Here's a transparent look at what's done, what's in progress, and what's coming next.</p>
     </div>
 
-    <!-- PHASE FLOW -->
     <div class="phases">
       <p class="phases-title">Development phases</p>
       <div class="phase-flow">
 
-        <!-- Phase 1 -->
         <div class="phase">
           <div class="phase-label-wrap">
             <span class="phase-name">Phase 1</span>
@@ -317,7 +288,6 @@
           </div>
         </div>
 
-        <!-- Phase 2 -->
         <div class="phase">
           <div class="phase-label-wrap">
             <span class="phase-name">Phase 2</span>
@@ -339,7 +309,6 @@
           </div>
         </div>
 
-        <!-- Phase 3 -->
         <div class="phase">
           <div class="phase-label-wrap">
             <span class="phase-name">Phase 3</span>
@@ -361,7 +330,6 @@
           </div>
         </div>
 
-        <!-- Phase 4 -->
         <div class="phase">
           <div class="phase-label-wrap">
             <span class="phase-name">Phase 4</span>
@@ -385,7 +353,6 @@
       </div>
     </div>
 
-    <!-- CATEGORY BREAKDOWN -->
     <div class="roadmap-categories">
 
       <div class="cat-card">
@@ -461,7 +428,7 @@
       </div>
 
       <div class="roadmap-note">
-        <strong>A note on transparency.</strong> Improo is being built by a small team with a big vision. This roadmap reflects our honest current status — not a marketing promise. Things may shift, timelines may change. We'd rather be real with you than overpromise. If you want to follow the journey, <a href="https://x.com/Improo_" style="color:var(--blue-2);">follow us on X</a> or <a href="insights/index.html" style="color:var(--blue-2);">read our Insights</a>.
+        <strong>A note on transparency.</strong> Improo is being built by a small team with a big vision. This roadmap reflects our honest current status — not a marketing promise. Things may shift, timelines may change. We'd rather be real with you than overpromise. If you want to follow the journey, <a href="https://x.com/Improo_" style="color:var(--blue);">follow us on X</a> or <a href="insights/index.html" style="color:var(--blue);">read our Insights</a>.
       </div>
 
     </div>
@@ -472,14 +439,13 @@
     <div class="container footer-grid">
       <div class="footer-brand">
         <span style="font-size:1.3rem; font-weight:700; background:linear-gradient(135deg,#60a5fa,#3b82f6); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; letter-spacing:-0.03em; font-family:'Sora',sans-serif; display:block; margin-bottom:16px;">Improo</span>
-        <p>Build your health, discipline and life with intention.</p>
+        <p>Health, weight loss, movement & mindset — together.</p>
         <small>© 2026 Improo. All rights reserved.</small>
         <small style="display:block;margin-top:6px;font-size:0.75rem;opacity:0.6;">Improo is not a medical service. Content is for informational purposes only. <a href="disclaimer.html" style="color:inherit;text-decoration:underline;">Read our disclaimer.</a></small>
       </div>
       <div class="footer-links">
         <h4>Navigation</h4>
         <a href="index.html">Home</a>
-        <a href="index.html#features">Features</a>
         <a href="roadmap.html">Roadmap</a>
         <a href="insights/index.html">Insights</a>
         <a href="disclaimer.html">Disclaimer</a>
@@ -488,9 +454,14 @@
       </div>
       <div class="footer-links">
         <h4>Follow us</h4>
-        <a href="#">Instagram</a>
-        <a href="https://x.com/Improo_">X (Twitter)</a>
-        <a href="#">TikTok</a>
+        <a href="https://www.youtube.com/@Improo_App" aria-label="Youtube">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.7 15.5V8.5l6.3 3.5-6.3 3.5z"/></svg>
+          Youtube
+        </a>
+        <a href="https://x.com/Improo_" aria-label="X">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.3 1.5h3.3L14.1 9.9 23 22.5h-7.6l-5.3-6.9-6 6.9H.7l8-9.1L.5 1.5h7.8l4.8 6.3 5.2-6.3zm-1.2 18.9h1.8L7 3.3H5.1l12 17.1z"/></svg>
+          X (Twitter)
+        </a>
       </div>
       <div class="footer-links">
         <h4>Contact</h4>
@@ -500,7 +471,6 @@
     </div>
   </footer>
 
-  <!-- CONTACT POPUP -->
   <div id="contact-popup" class="popup-overlay" onclick="handleOverlayClick(event)">
     <div class="popup-box">
       <button class="popup-close" onclick="closePopup()" aria-label="Close">
