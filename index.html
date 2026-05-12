@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Improo</title>
-  <meta name="description" content="Improo helps you build your health, discipline and life with intention." />
+  <title>Improo — Health, weight loss & movement community</title>
+  <meta name="description" content="Improo is a health and lifestyle community for people who want to lose weight, move more, and build better habits — together." />
   <link rel="stylesheet" href="styles.css" />
   <script>
     window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
@@ -13,41 +13,45 @@
 </head>
 <body>
 
+  <!-- ── HEADER / NAV ── -->
   <header class="site-header">
     <div class="container nav">
       <a href="#home" class="brand" aria-label="Improo home">
-        <img src="images/logo.webp" alt="Improo logo" class="brand-logo" />
+        <img src="images/logo.webp" alt="Improo" class="brand-logo" />
       </a>
       <nav class="nav-links">
         <a href="#home">Home</a>
-        <a href="#features">Features</a>
-        <a href="roadmap.html">Roadmap</a>
         <a href="insights/index.html">Insights</a>
+        <a href="roadmap.html">Roadmap</a>
         <a href="#" onclick="openPopup(); return false;">Contact</a>
       </nav>
       <div class="socials">
-  <a href="https://www.youtube.com/@Improo_App" aria-label="Youtube">
-    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.7 15.5V8.5l6.3 3.5-6.3 3.5z"/></svg>
-  </a>
-  <a href="https://x.com/Improo_" aria-label="X">
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.3 1.5h3.3L14.1 9.9 23 22.5h-7.6l-5.3-6.9-6 6.9H.7l8-9.1L.5 1.5h7.8l4.8 6.3 5.2-6.3zm-1.2 18.9h1.8L7 3.3H5.1l12 17.1z"/></svg>
-  </a>
-</div>
-              </div>
+        <a href="https://www.youtube.com/@Improo_App" aria-label="Youtube">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.7 15.5V8.5l6.3 3.5-6.3 3.5z"/></svg>
+        </a>
+        <a href="https://x.com/Improo_" aria-label="X">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.3 1.5h3.3L14.1 9.9 23 22.5h-7.6l-5.3-6.9-6 6.9H.7l8-9.1L.5 1.5h7.8l4.8 6.3 5.2-6.3zm-1.2 18.9h1.8L7 3.3H5.1l12 17.1z"/></svg>
+        </a>
+      </div>
     </div>
   </header>
 
   <main id="home">
 
+    <!-- ── HERO ── -->
     <section class="hero">
       <div class="container hero-grid">
 
         <div class="hero-copy">
-          <h1>Build your health, discipline and life with intention.</h1>
-          <p class="hero-text">Improo helps you stay consistent, take action and build better habits over time.</p>
+          <div class="hero-badge">
+            <span class="hero-badge-dot"></span>
+            Health · Weight loss · Movement · Mindset
+          </div>
+          <h1>Your health.<br>Your <em>journey.</em><br>Every day better.</h1>
+          <p class="hero-text">Improo is a community and content platform for people who want to lose weight, move more, and build a life they're proud of — one step at a time.</p>
           <div class="hero-actions">
-            <a href="#" class="btn btn-primary">App launching soon 🚀</a>
-            <a href="#" class="follow-link">Follow us on social media</a>
+            <a href="#waitlist" class="btn btn-primary">Join the community →</a>
+            <a href="insights/index.html" class="follow-link">Read our insights</a>
           </div>
         </div>
 
@@ -64,88 +68,164 @@
                 </div>
               </div>
               <div class="phone-notch"></div>
-              <img src="images/app.jpg" alt="Improo app preview" class="phone-screen" />
+              <img src="images/app.jpg" alt="Improo app preview" class="phone-screen" loading="lazy" />
               <div class="phone-reflection"></div>
             </div>
           </div>
         </div>
 
       </div>
-    </section>
 
-    <section id="features" class="features-section">
-      <div class="container feature-grid">
-        <article class="feature-card">
-          <div class="feature-icon">◎</div>
-          <div>
-            <h3>Stay focused</h3>
-            <p>Set goals that matter and take daily action.</p>
-          </div>
-        </article>
-        <article class="feature-card">
-          <div class="feature-icon">↗</div>
-          <div>
-            <h3>Track progress</h3>
-            <p>See your growth and build real momentum.</p>
-          </div>
-        </article>
-        <article class="feature-card">
-          <div class="feature-icon">♡</div>
-          <div>
-            <h3>Build habits</h3>
-            <p>Create lasting habits that transform your life.</p>
-          </div>
-        </article>
+      <!-- Topic strip sits inside hero section, below the grid, full-width -->
+      <div class="topic-strip">
+        <div class="topic-card">
+          <span class="tc-icon">🥗</span>
+          <div class="tc-label">Health</div>
+          <div class="tc-desc">Real advice that actually works long-term.</div>
+          <div class="tc-accent tc-blue"></div>
+        </div>
+        <div class="topic-card">
+          <span class="tc-icon">⚡</span>
+          <div class="tc-label">Weight Loss</div>
+          <div class="tc-desc">No crash diets. Just sustainable progress.</div>
+          <div class="tc-accent tc-sky"></div>
+        </div>
+        <div class="topic-card">
+          <span class="tc-icon">🏃</span>
+          <div class="tc-label">Movement</div>
+          <div class="tc-desc">Start small. Build momentum that lasts.</div>
+          <div class="tc-accent tc-teal"></div>
+        </div>
+        <div class="topic-card">
+          <span class="tc-icon">🧠</span>
+          <div class="tc-label">Mindset</div>
+          <div class="tc-desc">The shift that makes everything else stick.</div>
+          <div class="tc-accent tc-indigo"></div>
+        </div>
       </div>
     </section>
 
+    <!-- ── WHAT YOU'LL FIND — PILLARS ── -->
+    <section class="pillars-section">
+      <div class="container">
+        <div class="section-label">What you'll find here</div>
+        <h2>A platform built around real people, real progress.</h2>
+        <div class="pillars-grid">
+          <div class="pillar">
+            <div class="pillar-bar" style="background:#3b82f6"></div>
+            <span class="pillar-num">01</span>
+            <div class="pillar-title">Honest content</div>
+            <div class="pillar-body">Articles on health, weight loss, movement, and mindset — written by people who've been through it.</div>
+          </div>
+          <div class="pillar">
+            <div class="pillar-bar" style="background:#0ea5e9"></div>
+            <span class="pillar-num">02</span>
+            <div class="pillar-title">Real community</div>
+            <div class="pillar-body">Groups, challenges, and people who understand the struggle — no judgment, just support.</div>
+          </div>
+          <div class="pillar">
+            <div class="pillar-bar" style="background:#14b8a6"></div>
+            <span class="pillar-num">03</span>
+            <div class="pillar-title">Points & rewards</div>
+            <div class="pillar-body">Earn points by contributing. Your effort is recognised and rewarded within the platform.</div>
+          </div>
+          <div class="pillar">
+            <div class="pillar-bar" style="background:#6366f1"></div>
+            <span class="pillar-num">04</span>
+            <div class="pillar-title">Your pace</div>
+            <div class="pillar-body">No pressure. No perfection. Just showing up — and Improo helps you do exactly that.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── MISSION / ABOUT ── -->
     <section class="mission-section">
-  <div class="container mission-card">
+      <div class="container mission-card">
+        <div class="mission-label">Why Improo exists</div>
+        <div class="mission-grid">
 
-    <div class="mission-label">Why Improo exists</div>
-
-    <div class="mission-grid">
-      <div class="mission-copy">
-        <h2>There's no perfect diet.<br>There's only today's step.</h2>
-        <p>
-          After years of information overload, conflicting advice, and failed attempts,
-          the founder of Improo had a simple realisation: the problem was never a lack
-          of knowledge. It was the absence of clarity, consistency, and real support.
-        </p>
-        <p>
-          Improo exists to cut through the noise. To give you a clear framework,
-          practical tools, and a community of people who genuinely understand the
-          struggle — because they've been there too.
-        </p>
-        <a href="insights/why-i-built-improo.html" class="mission-link">
-          Read the full story
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-            <path d="M2.5 7h9M8 3.5l3.5 3.5L8 10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </a>
-      </div>
-
-      <div class="mission-quote">
-        <div class="mission-quote-text">
-          "I've been obese for over 10 years. I lost 11 kg — about 24 lbs — and I still have hard days. I built Improo because I needed it myself, and I couldn't find anything that truly helped."
-        </div>
-        <div class="mission-quote-author">
-          <div>
-            <span class="mission-quote-name">Ray</span>
-            <span class="mission-quote-role">Founder of Improo</span>
+          <div class="mission-copy">
+            <h2>There's no perfect diet.<br>There's only today's step.</h2>
+            <p>After years of information overload, conflicting advice, and failed attempts, the founder of Improo had a simple realisation: the problem was never a lack of knowledge. It was the absence of clarity, consistency, and real support.</p>
+            <p>Improo exists to cut through the noise — to give you a clear framework, practical tools, and a community that genuinely understands the struggle.</p>
+            <a href="insights/why-i-built-improo.html" class="mission-link">
+              Read the full story
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7h9M8 3.5l3.5 3.5L8 10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
           </div>
+
+          <div class="mission-quote">
+            <div class="mission-quote-text">"I've been obese for over 10 years. I lost 11 kg — about 24 lbs — and I still have hard days. I built Improo because I needed it myself, and I couldn't find anything that truly helped."</div>
+            <div class="mission-quote-author">
+              <div class="mission-quote-avatar">R</div>
+              <div>
+                <span class="mission-quote-name">Ray</span>
+                <span class="mission-quote-role">Founder of Improo</span>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
-    </div>
+    </section>
 
-  </div>
-</section>
+    <!-- ── INSIGHTS PREVIEW ── -->
+    <section class="insights-preview">
+      <div class="container">
+        <div class="insights-preview-header">
+          <div>
+            <div class="section-label">Latest from Improo</div>
+            <h2>Insights worth reading</h2>
+          </div>
+          <a href="insights/index.html" class="insights-preview-link">
+            All articles
+            <svg width="13" height="13" viewBox="0 0 14 14" fill="none"><path d="M2.5 7h9M8 3.5l3.5 3.5L8 10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+        <div class="insights-grid">
+          <a href="insights/why-i-built-improo.html" class="insight-card">
+            <div class="insight-card-tag">Mindset</div>
+            <h3>Why I Built Improo — The Story Behind the App</h3>
+            <div class="insight-date">April 25, 2026</div>
+          </a>
+          <a href="insights/quit-after-3-weeks.html" class="insight-card">
+            <div class="insight-card-tag">Discipline</div>
+            <h3>Why Most People Quit After 3 Weeks (And How to Be Different)</h3>
+            <div class="insight-date">April 18, 2026</div>
+          </a>
+          <a href="insights/sleep-as-a-performance-tool.html" class="insight-card">
+            <div class="insight-card-tag">Health</div>
+            <h3>Sleep as a Performance Tool</h3>
+            <div class="insight-date">April 12, 2026</div>
+          </a>
+          <a href="insights/identity-before-behavior.html" class="insight-card">
+            <div class="insight-card-tag">Mindset</div>
+            <h3>Identity Before Behavior</h3>
+            <div class="insight-date">May 10, 2026</div>
+          </a>
+        </div>
+      </div>
+    </section>
 
+    <!-- ── WAITLIST CTA ── -->
+    <section class="waitlist-section" id="waitlist">
+      <div class="container waitlist-inner">
+        <h2>Be part of it from day one.</h2>
+        <p>Join 400+ people already waiting for the launch.</p>
+        <form class="waitlist-form" onsubmit="handleWaitlist(event)">
+          <input class="waitlist-input" type="email" placeholder="your@email.com" required />
+          <button type="submit" class="waitlist-btn">Join waitlist</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- ── ROADMAP ── -->
     <section id="roadmap" class="roadmap-section">
       <div class="container roadmap-card">
         <div class="roadmap-copy">
           <h2>What's coming</h2>
-          <p>We're working hard to bring you the best experience possible.</p>
+          <p>We're building hard. Here's where we are right now.</p>
         </div>
         <div class="roadmap-steps">
           <div class="step done">
@@ -159,7 +239,7 @@
             <p>In progress</p>
           </div>
           <div class="step active">
-            <span class="dot">•••</span>
+            <span class="dot">···</span>
             <h4>Testing</h4>
             <p>Soon</p>
           </div>
@@ -174,20 +254,20 @@
 
   </main>
 
+  <!-- ── FOOTER ── -->
   <footer id="contact" class="site-footer">
     <div class="container footer-grid">
       <div class="footer-brand">
-        <img src="images/logo.webp" alt="Improo logo" class="footer-logo" />
-        <p>Build your health, discipline and life with intention.</p>
+        <img src="images/logo.webp" alt="Improo" class="footer-logo" />
+        <p>Health, weight loss, movement & mindset — together.</p>
         <small>© 2026 Improo. All rights reserved.</small>
-        <small style="display:block;margin-top:6px;font-size:0.75rem;opacity:0.6;">Improo is not a medical service. Content is for informational purposes only. <a href="disclaimer.html" style="color:inherit;text-decoration:underline;">Read our disclaimer.</a></small>
+        <small style="margin-top:6px;font-size:0.75rem;opacity:0.6;">Improo is not a medical service. Content is for informational purposes only. <a href="disclaimer.html" style="color:inherit;text-decoration:underline;">Disclaimer.</a></small>
       </div>
       <div class="footer-links">
         <h4>Navigation</h4>
         <a href="#home">Home</a>
-        <a href="#features">Features</a>
-        <a href="roadmap.html">Roadmap</a>
         <a href="insights/index.html">Insights</a>
+        <a href="roadmap.html">Roadmap</a>
         <a href="disclaimer.html">Disclaimer</a>
         <a href="privacy-policy.html">Privacy Policy</a>
         <a href="terms-of-service.html">Terms of Service</a>
@@ -195,10 +275,12 @@
       <div class="footer-links">
         <h4>Follow us</h4>
         <a href="https://www.youtube.com/@Improo_App" aria-label="Youtube">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.7 15.5V8.5l6.3 3.5-6.3 3.5z"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.7 15.5V8.5l6.3 3.5-6.3 3.5z"/></svg>
+          Youtube
         </a>
         <a href="https://x.com/Improo_" aria-label="X">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.3 1.5h3.3L14.1 9.9 23 22.5h-7.6l-5.3-6.9-6 6.9H.7l8-9.1L.5 1.5h7.8l4.8 6.3 5.2-6.3zm-1.2 18.9h1.8L7 3.3H5.1l12 17.1z"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.3 1.5h3.3L14.1 9.9 23 22.5h-7.6l-5.3-6.9-6 6.9H.7l8-9.1L.5 1.5h7.8l4.8 6.3 5.2-6.3zm-1.2 18.9h1.8L7 3.3H5.1l12 17.1z"/></svg>
+          X (Twitter)
         </a>
       </div>
       <div class="footer-links">
@@ -209,13 +291,11 @@
     </div>
   </footer>
 
-  <!-- CONTACT POPUP -->
+  <!-- ── CONTACT POPUP ── -->
   <div id="contact-popup" class="popup-overlay" onclick="handleOverlayClick(event)">
     <div class="popup-box">
       <button class="popup-close" onclick="closePopup()" aria-label="Close">
-        <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-          <path d="M2 2l14 14M16 2L2 16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-        </svg>
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M2 2l14 14M16 2L2 16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
       </button>
       <h2 class="popup-title">Get in touch</h2>
       <p class="popup-sub">We usually respond within 24 hours.</p>
@@ -248,6 +328,14 @@
       var mailto = 'mailto:contact.improo@gmail.com?subject=Contact from ' + encodeURIComponent(name) + '&body=Name: ' + encodeURIComponent(name) + '%0AEmail: ' + encodeURIComponent(email) + '%0A%0A' + encodeURIComponent(message);
       window.location.href = mailto;
       closePopup();
+    }
+    function handleWaitlist(e) {
+      e.preventDefault();
+      var input = e.target.querySelector('input[type="email"]');
+      var email = input.value;
+      if (!email) return;
+      window.location.href = 'mailto:contact.improo@gmail.com?subject=Waitlist signup&body=Please add me to the waitlist: ' + encodeURIComponent(email);
+      input.value = '';
     }
   </script>
 
