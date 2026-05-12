@@ -11,16 +11,18 @@
   </script>
   <script defer src="/_vercel/insights/script.js"></script>
   <style>
+    body { background: #dce8f8; }
+
     .page-hero {
       padding: 64px 0 48px;
-      border-bottom: 1px solid var(--line);
+      border-bottom: 1px solid rgba(37,99,235,0.15);
     }
     .page-label {
       font-size: 11px;
       font-weight: 700;
       letter-spacing: 2.5px;
       text-transform: uppercase;
-      color: var(--blue-2);
+      color: #1d4ed8;
       margin-bottom: 16px;
     }
     .page-title {
@@ -30,11 +32,11 @@
       letter-spacing: -0.04em;
       margin: 0 0 16px;
       max-width: 600px;
-      color: var(--text);
+      color: #0f1f3d;
     }
     .page-sub {
       font-size: 1.1rem;
-      color: var(--muted);
+      color: #3b5a8a;
       max-width: 520px;
       line-height: 1.65;
     }
@@ -46,7 +48,7 @@
       font-weight: 700;
       letter-spacing: 2px;
       text-transform: uppercase;
-      color: var(--muted);
+      color: #3b5a8a;
       margin-bottom: 32px;
     }
     .phase-flow { display: flex; flex-direction: column; gap: 0; }
@@ -63,7 +65,7 @@
     .phase-name {
       font-size: 0.85rem;
       font-weight: 700;
-      color: var(--text);
+      color: #0f1f3d;
       display: block;
       margin-bottom: 4px;
     }
@@ -76,10 +78,10 @@
       border-radius: 99px;
       display: inline-block;
     }
-    .tag-done    { background: rgba(22,163,74,0.12);  color: #16a34a; }
-    .tag-active  { background: rgba(37,99,235,0.12);  color: var(--blue); }
-    .tag-soon    { background: rgba(217,119,6,0.12);  color: #d97706; }
-    .tag-planned { background: rgba(74,111,165,0.12); color: var(--muted); }
+    .tag-done    { background: #bbf7d0; color: #14532d; }
+    .tag-active  { background: #bfdbfe; color: #1e3a8a; }
+    .tag-soon    { background: #fde68a; color: #78350f; }
+    .tag-planned { background: #e0f2fe; color: #075985; }
 
     .phase-timeline { display: flex; flex-direction: column; align-items: center; }
     .phase-dot {
@@ -95,30 +97,37 @@
       position: relative;
       font-weight: 700;
     }
-    .dot-done    { background: #16a34a; color: #fff; }
-    .dot-active  { background: var(--blue); color: #fff; }
-    .dot-soon    { background: #fff7ed; border: 2px solid #d97706; color: #d97706; }
-    .dot-planned { background: var(--bg-2); border: 2px solid var(--line-strong); color: var(--muted); }
+    .dot-done    { background: #15803d; color: #fff; }
+    .dot-active  { background: #1d4ed8; color: #fff; }
+    .dot-soon    { background: #fde68a; border: 2px solid #b45309; color: #b45309; }
+    .dot-planned { background: #e0f2fe; border: 2px solid #60a5fa; color: #0369a1; }
 
     .phase-line { width: 2px; flex-grow: 1; min-height: 32px; }
-    .line-done    { background: linear-gradient(180deg,#16a34a,rgba(22,163,74,0.15)); }
-    .line-active  { background: linear-gradient(180deg,var(--blue),rgba(37,99,235,0.1)); }
-    .line-soon    { background: linear-gradient(180deg,rgba(217,119,6,0.3),rgba(217,119,6,0.05)); }
-    .line-planned { background: var(--line); }
+    .line-done    { background: linear-gradient(180deg,#15803d,rgba(21,128,61,0.1)); }
+    .line-active  { background: linear-gradient(180deg,#1d4ed8,rgba(29,78,216,0.1)); }
+    .line-soon    { background: linear-gradient(180deg,rgba(180,83,9,0.4),rgba(180,83,9,0.04)); }
+    .line-planned { background: rgba(147,197,253,0.3); }
     .line-none    { background: transparent; }
 
-    /* ── DARK PHASE CARDS ── */
+    /* ── PHASE CARDS ── */
     .phase-card {
-      background: #0f1f3d;
-      border: 1px solid rgba(37,99,235,0.20);
-      border-radius: 16px;
+      background: #fff;
+      border: 1px solid #93c5fd;
+      border-left: 4px solid #1d4ed8;
+      border-radius: 0 12px 12px 0;
       padding: 22px 24px;
-      margin-bottom: 24px;
+      margin-bottom: 20px;
+      box-shadow: 0 1px 4px rgba(37,99,235,0.07);
     }
+    .phase-card-done   { border-left-color: #15803d; }
+    .phase-card-active { border-left-color: #1d4ed8; }
+    .phase-card-soon   { border-left-color: #b45309; }
+    .phase-card-planned{ border-left-color: #60a5fa; }
+
     .phase-card-title {
       font-size: 1.05rem;
       font-weight: 700;
-      color: #e0ecff;
+      color: #0f1f3d;
       margin: 0 0 14px;
     }
     .phase-items { display: flex; flex-direction: column; gap: 9px; }
@@ -127,7 +136,7 @@
       align-items: flex-start;
       gap: 10px;
       font-size: 0.9rem;
-      color: #6b8cba;
+      color: #3b5a8a;
       line-height: 1.5;
     }
     .phase-item-icon {
@@ -141,26 +150,27 @@
       flex-shrink: 0;
       margin-top: 1px;
     }
-    .icon-done    { background: rgba(22,163,74,0.20);  color: #4ade80; }
-    .icon-active  { background: rgba(37,99,235,0.20);  color: #93c5fd; }
-    .icon-soon    { background: rgba(217,119,6,0.15);  color: #fbbf24; }
-    .icon-planned { background: rgba(255,255,255,0.06); color: #6b8cba; }
-    .item-done    { color: #93b4d8; }
+    .icon-done    { background: #bbf7d0; color: #15803d; }
+    .icon-active  { background: #bfdbfe; color: #1d4ed8; }
+    .icon-soon    { background: #fde68a; color: #b45309; }
+    .icon-planned { background: #e0f2fe; color: #0369a1; }
+    .item-done    { color: #1e3a5f; }
 
-    /* ── DARK CATEGORY CARDS ── */
+    /* ── CATEGORY CARDS ── */
     .roadmap-categories {
       padding: 24px 0 64px;
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 18px;
+      gap: 16px;
     }
     .cat-card {
-      background: #0f1f3d;
-      border: 1px solid rgba(37,99,235,0.20);
-      border-radius: 20px;
-      padding: 28px;
+      background: #fff;
+      border: 1px solid #93c5fd;
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: 0 1px 4px rgba(37,99,235,0.07);
     }
-    .cat-header { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
+    .cat-header { display: flex; align-items: center; gap: 12px; margin-bottom: 18px; }
     .cat-icon {
       width: 42px;
       height: 42px;
@@ -171,13 +181,13 @@
       font-size: 1.2rem;
       flex-shrink: 0;
     }
-    .cat-icon-app     { background: rgba(59,130,246,0.15); }
-    .cat-icon-website { background: rgba(99,102,241,0.15); }
-    .cat-icon-legal   { background: rgba(217,119,6,0.15);  }
-    .cat-icon-mkt     { background: rgba(22,163,74,0.15);  }
+    .cat-icon-app     { background: #dbeafe; }
+    .cat-icon-website { background: #ede9fe; }
+    .cat-icon-legal   { background: #fef3c7; }
+    .cat-icon-mkt     { background: #dcfce7; }
 
-    .cat-title { font-size: 1.05rem; font-weight: 700; color: #e0ecff; }
-    .cat-sub   { font-size: 0.8rem; color: #4a6fa5; margin-top: 2px; }
+    .cat-title { font-size: 1rem; font-weight: 700; color: #0f1f3d; }
+    .cat-sub   { font-size: 0.8rem; color: #3b5a8a; margin-top: 2px; }
 
     .cat-items { display: flex; flex-direction: column; gap: 10px; }
     .cat-item {
@@ -185,9 +195,9 @@
       align-items: center;
       gap: 10px;
       font-size: 0.88rem;
-      color: #4a6fa5;
+      color: #3b5a8a;
     }
-    .cat-item-done { color: #93b4d8; }
+    .cat-item-done { color: #1e3a5f; font-weight: 500; }
     .cat-pill {
       font-size: 0.68rem;
       font-weight: 700;
@@ -198,22 +208,24 @@
       margin-left: auto;
       flex-shrink: 0;
     }
-    .pill-done    { background: rgba(22,163,74,0.15);   color: #4ade80; }
-    .pill-active  { background: rgba(59,130,246,0.15);  color: #93c5fd; }
-    .pill-soon    { background: rgba(217,119,6,0.15);   color: #fbbf24; }
-    .pill-planned { background: rgba(255,255,255,0.06); color: #6b8cba; }
+    .pill-done    { background: #bbf7d0; color: #14532d; }
+    .pill-active  { background: #bfdbfe; color: #1e3a8a; }
+    .pill-soon    { background: #fde68a; color: #78350f; }
+    .pill-planned { background: #e0f2fe; color: #075985; }
 
     .roadmap-note {
       grid-column: span 2;
-      background: rgba(37,99,235,0.06);
-      border: 1px solid rgba(37,99,235,0.18);
-      border-radius: 14px;
+      background: #fff;
+      border: 1px solid #93c5fd;
+      border-left: 4px solid #2563eb;
+      border-radius: 0 12px 12px 0;
       padding: 20px 24px;
       font-size: 0.9rem;
-      color: var(--muted);
+      color: #3b5a8a;
       line-height: 1.65;
+      box-shadow: 0 1px 4px rgba(37,99,235,0.07);
     }
-    .roadmap-note strong { color: var(--text); }
+    .roadmap-note strong { color: #0f1f3d; }
 
     @media (max-width: 900px) {
       .phase { grid-template-columns: 120px 36px 1fr; }
@@ -272,7 +284,7 @@
             <div class="phase-dot dot-done">✓</div>
             <div class="phase-line line-done"></div>
           </div>
-          <div class="phase-card">
+          <div class="phase-card phase-card-done">
             <p class="phase-card-title">Foundation & core screens</p>
             <div class="phase-items">
               <div class="phase-item item-done"><span class="phase-item-icon icon-done">✓</span>Feed, Profile & navigation structure</div>
@@ -297,7 +309,7 @@
             <div class="phase-dot dot-active">→</div>
             <div class="phase-line line-active"></div>
           </div>
-          <div class="phase-card">
+          <div class="phase-card phase-card-active">
             <p class="phase-card-title">Completion & content</p>
             <div class="phase-items">
               <div class="phase-item"><span class="phase-item-icon icon-active">→</span>Groups — filling in functionality & content structure</div>
@@ -318,14 +330,14 @@
             <div class="phase-dot dot-soon">◌</div>
             <div class="phase-line line-soon"></div>
           </div>
-          <div class="phase-card">
+          <div class="phase-card phase-card-soon">
             <p class="phase-card-title">Testing & refinement</p>
             <div class="phase-items">
               <div class="phase-item"><span class="phase-item-icon icon-soon">○</span>Internal testing with real users</div>
               <div class="phase-item"><span class="phase-item-icon icon-soon">○</span>Points system — buying, earning & sending points</div>
               <div class="phase-item"><span class="phase-item-icon icon-soon">○</span>Payment integration (Stripe)</div>
               <div class="phase-item"><span class="phase-item-icon icon-soon">○</span>Performance & stability improvements</div>
-              <div class="phase-item"><span class="phase-item-icon icon-soon">○</span>App Store & Google Play preparation</div>
+              <div class="phase-item"><span class="phase-item-icon icon-soon">○</span>App Store & Google Play preparation — Android beta mid 2026</div>
             </div>
           </div>
         </div>
@@ -339,7 +351,7 @@
             <div class="phase-dot dot-planned">+</div>
             <div class="phase-line line-none"></div>
           </div>
-          <div class="phase-card">
+          <div class="phase-card phase-card-planned">
             <p class="phase-card-title">Launch</p>
             <div class="phase-items">
               <div class="phase-item"><span class="phase-item-icon icon-planned">○</span>Public launch on App Store & Google Play</div>
@@ -428,7 +440,7 @@
       </div>
 
       <div class="roadmap-note">
-        <strong>A note on transparency.</strong> Improo is being built by a small team with a big vision. This roadmap reflects our honest current status — not a marketing promise. Things may shift, timelines may change. We'd rather be real with you than overpromise. If you want to follow the journey, <a href="https://x.com/Improo_" style="color:var(--blue);">follow us on X</a> or <a href="insights/index.html" style="color:var(--blue);">read our Insights</a>.
+        <strong>A note on transparency.</strong> Improo is being built by a small team with a big vision. This roadmap reflects our honest current status — not a marketing promise. Things may shift, timelines may change. We'd rather be real with you than overpromise. If you want to follow the journey, <a href="https://x.com/Improo_" style="color:#1d4ed8;">follow us on X</a> or <a href="insights/index.html" style="color:#1d4ed8;">read our Insights</a>.
       </div>
 
     </div>
