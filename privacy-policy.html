@@ -1,136 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="robots" content="noindex, nofollow">
-  <title>Privacy Policy — Improo</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Privacy Policy – Improo</title>
+  <meta name="description" content="Read the Privacy Policy for the Improo platform and app." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700&family=Lora:ital,wght@0,400;1,400;1,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <script>
+    window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+  </script>
+  <script defer src="/_vercel/insights/script.js"></script>
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      font-size: 15px;
-      line-height: 1.7;
-      color: #1a1a1a;
-      background: #ffffff;
-      padding: 2rem 1rem;
-    }
-    .container {
-      max-width: 680px;
-      margin: 0 auto;
-    }
-    .header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 2rem;
-      padding-bottom: 1rem;
-      border-bottom: 1px solid #e5e5e5;
-    }
-    .header p {
-      font-size: 13px;
-      color: #6b6b6b;
-    }
-    .badge {
-      font-size: 12px;
-      padding: 3px 10px;
-      border-radius: 6px;
-      background: #f0fdf4;
-      color: #16a34a;
-      border: 1px solid #bbf7d0;
-    }
-    .intro {
-      margin-bottom: 2rem;
-      color: #6b6b6b;
-      font-size: 14px;
-    }
-    .section {
-      margin-bottom: 2rem;
-    }
-    h2 {
-      font-size: 16px;
-      font-weight: 500;
-      margin-bottom: 0.75rem;
-      color: #1a1a1a;
-    }
-    p { margin-bottom: 0.75rem; }
-    p:last-child { margin-bottom: 0; }
-    ul {
-      padding-left: 1.25rem;
-      margin-bottom: 0;
-    }
-    ul li { margin-bottom: 0.4rem; }
-    ul li:last-child { margin-bottom: 0; }
-    .sublabel {
-      font-weight: 500;
-      font-size: 14px;
-      color: #6b6b6b;
-      margin-bottom: 0.75rem;
-      margin-top: 0;
-    }
+    /* Privacy-specific: info box and table styling using site theme */
     .info-box {
       margin-top: 1rem;
-      padding: 0.875rem 1rem;
-      background: #eff6ff;
-      border-radius: 8px;
-      border: 1px solid #bfdbfe;
+      padding: 14px 18px;
+      background: var(--blue-pale);
+      border-radius: 10px;
+      border: 1px solid var(--line-strong);
       font-size: 13px;
-      color: #1d4ed8;
+      color: var(--blue-dark);
     }
     .info-box p { margin: 0; }
-    table {
+
+    .table-wrapper {
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      overflow: hidden;
+      margin: 16px 0;
+    }
+
+    .article-body table {
       width: 100%;
       border-collapse: collapse;
       font-size: 14px;
-      table-layout: fixed;
     }
-    .table-wrapper {
-      border: 1px solid #e5e5e5;
-      border-radius: 8px;
-      overflow: hidden;
-    }
-    thead tr { background: #f9f9f9; }
-    th {
+
+    .article-body thead tr { background: var(--bg-2); }
+
+    .article-body thead th {
       text-align: left;
-      padding: 10px 14px;
-      font-weight: 500;
-      border-bottom: 1px solid #e5e5e5;
+      padding: 10px 16px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--blue);
+      border-bottom: 1px solid var(--line);
     }
-    th:first-child { width: 60%; }
-    td { padding: 10px 14px; }
-    tr:not(:last-child) td { border-bottom: 1px solid #e5e5e5; }
-    td:last-child { color: #6b6b6b; }
-    strong { font-weight: 500; }
-    a { color: #2563eb; text-decoration: none; }
-    a:hover { text-decoration: underline; }
+
+    .article-body tbody td {
+      padding: 12px 16px;
+      color: var(--muted);
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+      line-height: 1.6;
+    }
+
+    .article-body tbody tr:last-child td { border-bottom: none; }
+    .article-body tbody tr:hover td { background: var(--bg); }
+
+    .sublabel {
+      font-weight: 600;
+      font-size: 13px;
+      color: var(--muted);
+      margin: 16px 0 8px;
+    }
+
     .contact-box {
-      padding: 1.25rem;
-      background: #f9f9f9;
-      border-radius: 8px;
-      border: 1px solid #e5e5e5;
+      padding: 24px 28px;
+      background: var(--panel-2);
+      border-radius: var(--radius-md);
+      border: 1px solid var(--line);
+      margin-top: 8px;
     }
-    .contact-box h2 { margin-bottom: 0.5rem; }
+    .contact-box h2 { margin-bottom: 10px !important; margin-top: 0 !important; }
   </style>
 </head>
 <body>
-  <div class="container">
 
-    <div class="header">
-      <p>Last updated: May 9, 2025</p>
-      <span class="badge">Launch-ready</span>
+  <header class="site-header">
+    <div class="container">
+      <nav class="nav">
+        <a href="index.html">
+          <span style="font-family:'Lora',serif;font-size:1.5rem;font-weight:400;font-style:italic;background:linear-gradient(135deg,#2563EB,#60a5fa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Improo</span>
+        </a>
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="insights/index.html">Insights</a>
+          <a href="roadmap.html">Roadmap</a>
+          <a href="index.html#contact">Contact</a>
+        </div>
+        <div class="socials">
+          <a href="#" aria-label="YouTube">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          </a>
+          <a href="#" aria-label="X / Twitter">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+        </div>
+      </nav>
     </div>
+  </header>
 
-    <p class="intro">This Privacy Policy explains how Improo collects, uses, and protects your personal information when you use our website (improo.vercel.app) and the Improo app. By using Improo, you agree to the practices described in this policy.</p>
+  <div class="article-wrap">
 
-    <div class="section">
+    <a href="index.html" class="back-link">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+        <path d="M9 2L4 7l5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      Back to home
+    </a>
+
+    <header class="article-header">
+      <span class="article-badge">Legal</span>
+      <h1 class="article-title">Privacy Policy</h1>
+      <div class="article-meta">
+        <span>Last updated: May 9, 2025</span>
+      </div>
+    </header>
+
+    <article class="article-body">
+
+      <p>This Privacy Policy explains how Improo collects, uses, and protects your personal information when you use our website (improo.vercel.app) and the Improo app. By using Improo, you agree to the practices described in this policy.</p>
+
       <h2>1. Who is responsible for your data</h2>
       <p>Improo is operated by R. Lousberg. If you have any questions about how your data is handled, you can contact us at <a href="mailto:contact.improo@gmail.com">contact.improo@gmail.com</a>.</p>
-    </div>
 
-    <div class="section">
       <h2>2. What data we collect</h2>
       <p class="sublabel">On the website (improo.vercel.app)</p>
-      <ul style="margin-bottom: 1rem;">
+      <ul>
         <li>Email address — if you sign up for our newsletter or contact us</li>
         <li>Usage data — pages visited, time on site, browser type (via analytics tools)</li>
         <li>Cookie data — see section 7</li>
@@ -146,9 +149,7 @@
       <div class="info-box">
         <p>Health data (weight, steps, fasting, nutrition) is considered a special category of personal data under GDPR (Article 9). We only process this data based on your explicit consent, which you provide when you choose to use these features.</p>
       </div>
-    </div>
 
-    <div class="section">
       <h2>3. Why we collect your data</h2>
       <div class="table-wrapper">
         <table>
@@ -168,20 +169,16 @@
           </tbody>
         </table>
       </div>
-    </div>
 
-    <div class="section">
       <h2>4. How long we keep your data</h2>
       <ul>
         <li>Account data: retained for as long as your account is active, plus 30 days after deletion to allow for recovery</li>
         <li>Health data: deleted immediately upon account deletion or upon your request</li>
-        <li>Points and transaction history: individual transaction records are retained for 3 months, after which they are automatically deleted. Aggregated profile data (such as total scores and ranking figures) is retained for as long as your account is active, as it is functionally necessary for the operation of the platform.</li>
+        <li>Points and transaction history: individual transaction records are retained for 3 months, after which they are automatically deleted. Aggregated profile data is retained for as long as your account is active.</li>
         <li>Newsletter email: retained until you unsubscribe</li>
         <li>Analytics data: retained for a maximum of 26 months</li>
       </ul>
-    </div>
 
-    <div class="section">
       <h2>5. Who we share your data with</h2>
       <p>We do not sell your personal data. We work with the following third-party service providers who may process data on our behalf:</p>
       <ul>
@@ -190,10 +187,8 @@
         <li><strong>Stripe</strong> — payment processing (website purchases, phase 2)</li>
         <li><strong>Email provider</strong> — newsletter delivery (to be updated)</li>
       </ul>
-      <p style="margin-top: 0.75rem; font-size: 14px; color: #6b6b6b;">All providers are bound by data processing agreements and are required to handle your data in accordance with applicable privacy laws.</p>
-    </div>
+      <p>All providers are bound by data processing agreements and are required to handle your data in accordance with applicable privacy laws.</p>
 
-    <div class="section">
       <h2>6. Your rights</h2>
       <p>Under the GDPR, you have the following rights regarding your personal data:</p>
       <ul>
@@ -204,34 +199,59 @@
         <li><strong>Objection</strong> — object to processing based on legitimate interest</li>
         <li><strong>Withdraw consent</strong> — withdraw consent at any time without affecting prior processing</li>
       </ul>
-      <p style="margin-top: 0.75rem;">To exercise any of these rights, contact us at <a href="mailto:contact.improo@gmail.com">contact.improo@gmail.com</a>. We will respond within 30 days. If you believe your rights have not been respected, you have the right to lodge a complaint with your national data protection authority.</p>
-    </div>
+      <p>To exercise any of these rights, contact us at <a href="mailto:contact.improo@gmail.com">contact.improo@gmail.com</a>. We will respond within 30 days.</p>
 
-    <div class="section">
       <h2>7. Cookies</h2>
       <p>The Improo website uses cookies — small text files stored on your device. We use:</p>
       <ul>
         <li><strong>Functional cookies</strong> — necessary for the website to work correctly</li>
         <li><strong>Analytics cookies</strong> — to understand how visitors use the site (requires your consent)</li>
       </ul>
-      <p style="margin-top: 0.75rem;">You can manage or disable cookies through your browser settings at any time. The Improo app does not use browser cookies.</p>
-    </div>
+      <p>You can manage or disable cookies through your browser settings at any time. The Improo app does not use browser cookies.</p>
 
-    <div class="section">
       <h2>8. Data security</h2>
       <p>We take reasonable technical and organisational measures to protect your personal data against unauthorised access, loss, or misuse. No method of transmission over the internet is 100% secure. If you believe your data has been compromised, please contact us immediately.</p>
-    </div>
 
-    <div class="section">
       <h2>9. Changes to this policy</h2>
       <p>We may update this Privacy Policy from time to time. Changes will be reflected by updating the date at the top of this page. For significant changes, we will notify registered users via email or an in-app notification. Continued use of the platform after changes are published constitutes acceptance of the updated policy.</p>
-    </div>
 
-    <div class="contact-box">
-      <h2>Contact</h2>
-      <p>For any privacy-related questions or requests, contact us at <a href="mailto:contact.improo@gmail.com">contact.improo@gmail.com</a>. We aim to respond within 30 days.</p>
-    </div>
+      <div class="contact-box">
+        <h2>Contact</h2>
+        <p>For any privacy-related questions or requests, contact us at <a href="mailto:contact.improo@gmail.com">contact.improo@gmail.com</a>. We aim to respond within 30 days.</p>
+      </div>
+
+    </article>
 
   </div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <span style="font-family:'Lora',serif;font-size:1.4rem;font-weight:400;font-style:italic;background:linear-gradient(135deg,#60a5fa,#93c5fd);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;display:block;margin-bottom:16px;">Improo</span>
+          <p>Build your health, discipline and life with intention.</p>
+          <small>© 2026 Improo. All rights reserved.</small>
+        </div>
+        <div class="footer-links">
+          <h4>Platform</h4>
+          <a href="index.html">Home</a>
+          <a href="insights/index.html">Insights</a>
+          <a href="roadmap.html">Roadmap</a>
+        </div>
+        <div class="footer-links">
+          <h4>Legal</h4>
+          <a href="disclaimer.html">Disclaimer</a>
+          <a href="privacy-policy.html">Privacy Policy</a>
+          <a href="terms-of-service.html">Terms of Service</a>
+        </div>
+        <div class="footer-links">
+          <h4>Follow</h4>
+          <a href="#">YouTube</a>
+          <a href="#">X / Twitter</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
 </body>
 </html>
