@@ -3,26 +3,106 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Disclaimer – Improo</title>
-  <meta name="description" content="Improo is not a medical service. Read our full disclaimer here." />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Privacy Policy – Improo</title>
+  <meta name="description" content="Read the Privacy Policy for the Improo platform and app." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700&family=Lora:ital,wght@0,400;1,400;1,600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
   <script>
     window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
   </script>
   <script defer src="/_vercel/insights/script.js"></script>
+  <style>
+    /* Privacy-specific: info box and table styling using site theme */
+    .info-box {
+      margin-top: 1rem;
+      padding: 14px 18px;
+      background: var(--blue-pale);
+      border-radius: 10px;
+      border: 1px solid var(--line-strong);
+      font-size: 13px;
+      color: var(--blue-dark);
+    }
+    .info-box p { margin: 0; }
+
+    .table-wrapper {
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      overflow: hidden;
+      margin: 16px 0;
+    }
+
+    .article-body table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+
+    .article-body thead tr { background: var(--bg-2); }
+
+    .article-body thead th {
+      text-align: left;
+      padding: 10px 16px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--blue);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .article-body tbody td {
+      padding: 12px 16px;
+      color: var(--muted);
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+      line-height: 1.6;
+    }
+
+    .article-body tbody tr:last-child td { border-bottom: none; }
+    .article-body tbody tr:hover td { background: var(--bg); }
+
+    .sublabel {
+      font-weight: 600;
+      font-size: 13px;
+      color: var(--muted);
+      margin: 16px 0 8px;
+    }
+
+    .contact-box {
+      padding: 24px 28px;
+      background: var(--panel-2);
+      border-radius: var(--radius-md);
+      border: 1px solid var(--line);
+      margin-top: 8px;
+    }
+    .contact-box h2 { margin-bottom: 10px !important; margin-top: 0 !important; }
+  </style>
 </head>
 <body>
 
   <header class="site-header">
-    <div class="container nav">
-      <a href="index.html">
-        <img src="images/logo.png" alt="Improo" class="brand-logo" />
-      </a>
-      <nav class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="index.html#features">Features</a>
-        <a href="roadmap.html">Roadmap</a>
-        <a href="insights/index.html">Insights</a>
+    <div class="container">
+      <nav class="nav">
+        <a href="index.html">
+          <span style="font-family:'Lora',serif;font-size:1.5rem;font-weight:400;font-style:italic;background:linear-gradient(135deg,#2563EB,#60a5fa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Improo</span>
+        </a>
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="insights/index.html">Insights</a>
+          <a href="roadmap.html">Roadmap</a>
+          <a href="index.html#contact">Contact</a>
+        </div>
+        <div class="socials">
+          <a href="#" aria-label="YouTube">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          </a>
+          <a href="#" aria-label="X / Twitter">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+        </div>
       </nav>
     </div>
   </header>
@@ -38,7 +118,7 @@
 
     <header class="article-header">
       <span class="article-badge">Legal</span>
-      <h1 class="article-title">Disclaimer</h1>
+      <h1 class="article-title">Privacy Policy</h1>
       <div class="article-meta">
         <span>Last updated: May 9, 2025</span>
       </div>
@@ -46,54 +126,129 @@
 
     <article class="article-body">
 
-      <h2>Not medical advice</h2>
-      <p>The content published on improo.vercel.app — including articles, posts, app features, and any other material — is intended for general informational and educational purposes only. Nothing on this website or within the Improo app constitutes medical advice, diagnosis, or treatment.</p>
-      <p>Always seek the guidance of a qualified healthcare professional before making any changes to your diet, physical activity, medication, or overall health routine. Never disregard professional medical advice or delay seeking it because of something you have read on this website.</p>
-      <p>Health tracking features available within the Improo app — including weight logging, step tracking, fasting timers, and nutrition tracking — are provided for personal reference only and do not constitute medical monitoring or supervision.</p>
+      <p>This Privacy Policy explains how Improo collects, uses, and protects your personal information when you use our website (improo.vercel.app) and the Improo app. By using Improo, you agree to the practices described in this policy.</p>
 
-      <h2>Age requirement</h2>
-      <p>Improo is intended for users aged 16 and older. By creating an account or using this platform, you confirm that you meet this age requirement. If you are under 16, please do not use this platform or submit any personal information.</p>
+      <h2>1. Who is responsible for your data</h2>
+      <p>Improo is operated by R. Lousberg. If you have any questions about how your data is handled, you can contact us at <a href="mailto:contact.improo@gmail.com">contact.improo@gmail.com</a>.</p>
 
-      <h2>No guarantees on results</h2>
-      <p>Health and fitness results vary from person to person. Any progress, outcomes, or experiences shared on this website — including those of the founder — are individual results and are not a guarantee that you will achieve the same. Improo does not promise specific weight loss, fitness improvements, or health outcomes.</p>
+      <h2>2. What data we collect</h2>
+      <p class="sublabel">On the website (improo.vercel.app)</p>
+      <ul>
+        <li>Email address — if you sign up for our newsletter or contact us</li>
+        <li>Usage data — pages visited, time on site, browser type (via analytics tools)</li>
+        <li>Cookie data — see section 7</li>
+      </ul>
+      <p class="sublabel">In the Improo app</p>
+      <ul>
+        <li>Account information — name and email address</li>
+        <li>Health data — weight logs, step counts, fasting records, and nutrition data that you choose to enter</li>
+        <li>Community content — posts, comments, and reactions you share on the platform</li>
+        <li>Activity data — points earned, challenges completed, and platform interactions</li>
+        <li>Device information — device type and operating system (for technical support purposes)</li>
+      </ul>
+      <div class="info-box">
+        <p>Health data (weight, steps, fasting, nutrition) is considered a special category of personal data under GDPR (Article 9). We only process this data based on your explicit consent, which you provide when you choose to use these features.</p>
+      </div>
 
-      <h2>Third-party sources and research</h2>
-      <p>Where articles reference scientific studies or third-party research, we provide links to the original sources. Improo does not claim ownership of this research and presents it for informational purposes only. Scientific understanding evolves — if you believe any information is outdated or inaccurate, please contact us.</p>
+      <h2>3. Why we collect your data</h2>
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Purpose</th>
+              <th>Legal basis</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Creating and managing your account</td><td>Performance of a contract</td></tr>
+            <tr><td>Providing app features (tracking, community)</td><td>Performance of a contract</td></tr>
+            <tr><td>Processing health tracking data</td><td>Explicit consent</td></tr>
+            <tr><td>Sending newsletters or updates</td><td>Consent</td></tr>
+            <tr><td>Improving platform performance</td><td>Legitimate interest</td></tr>
+            <tr><td>Complying with legal obligations</td><td>Legal obligation</td></tr>
+          </tbody>
+        </table>
+      </div>
 
-      <h2>Community content</h2>
-      <p>Once the Improo app is live, users will be able to share content within the community. Improo does not endorse or verify user-generated content. Content shared by community members does not represent the views of Improo and should not be taken as medical or professional advice.</p>
+      <h2>4. How long we keep your data</h2>
+      <ul>
+        <li>Account data: retained for as long as your account is active, plus 30 days after deletion to allow for recovery</li>
+        <li>Health data: deleted immediately upon account deletion or upon your request</li>
+        <li>Points and transaction history: individual transaction records are retained for 3 months, after which they are automatically deleted. Aggregated profile data is retained for as long as your account is active.</li>
+        <li>Newsletter email: retained until you unsubscribe</li>
+        <li>Analytics data: retained for a maximum of 26 months</li>
+      </ul>
 
-      <h2>External links</h2>
-      <p>This website may contain links to external websites, including affiliate links. Improo is not responsible for the content, accuracy, privacy practices, or products of those sites. Links are provided for convenience and do not imply endorsement. Where affiliate links are present, this will be clearly disclosed.</p>
+      <h2>5. Who we share your data with</h2>
+      <p>We do not sell your personal data. We work with the following third-party service providers who may process data on our behalf:</p>
+      <ul>
+        <li><strong>Vercel</strong> — website hosting</li>
+        <li><strong>Google</strong> — app distribution (Google Play), analytics, and account services</li>
+        <li><strong>Stripe</strong> — payment processing (website purchases, phase 2)</li>
+        <li><strong>Email provider</strong> — newsletter delivery (to be updated)</li>
+      </ul>
+      <p>All providers are bound by data processing agreements and are required to handle your data in accordance with applicable privacy laws.</p>
 
-      <h2>Governing law</h2>
-      <p>This disclaimer and your use of the Improo platform are governed by applicable law. Any disputes arising from or relating to the use of this platform shall be subject to the jurisdiction of the competent courts, without prejudice to any mandatory consumer rights applicable in your country of residence.</p>
+      <h2>6. Your rights</h2>
+      <p>Under the GDPR, you have the following rights regarding your personal data:</p>
+      <ul>
+        <li><strong>Access</strong> — request a copy of the data we hold about you</li>
+        <li><strong>Correction</strong> — request that inaccurate data be corrected</li>
+        <li><strong>Deletion</strong> — request that your data be deleted ("right to be forgotten")</li>
+        <li><strong>Portability</strong> — request your data in a machine-readable format</li>
+        <li><strong>Objection</strong> — object to processing based on legitimate interest</li>
+        <li><strong>Withdraw consent</strong> — withdraw consent at any time without affecting prior processing</li>
+      </ul>
+      <p>To exercise any of these rights, contact us at <a href="mailto:contact.improo@gmail.com">contact.improo@gmail.com</a>. We will respond within 30 days.</p>
 
-      <h2>Changes to this disclaimer</h2>
-      <p>Improo reserves the right to update or modify this disclaimer at any time. Changes will be reflected by updating the "last updated" date at the top of this page. Continued use of the platform after changes are made constitutes acceptance of the updated disclaimer.</p>
+      <h2>7. Cookies</h2>
+      <p>The Improo website uses cookies — small text files stored on your device. We use:</p>
+      <ul>
+        <li><strong>Functional cookies</strong> — necessary for the website to work correctly</li>
+        <li><strong>Analytics cookies</strong> — to understand how visitors use the site (requires your consent)</li>
+      </ul>
+      <p>You can manage or disable cookies through your browser settings at any time. The Improo app does not use browser cookies.</p>
 
-      <h2>Contact</h2>
-      <p>If you have questions about this disclaimer or any content on this website, you can reach us at <a href="mailto:contact.improo@gmail.com">contact.improo@gmail.com</a>.</p>
+      <h2>8. Data security</h2>
+      <p>We take reasonable technical and organisational measures to protect your personal data against unauthorised access, loss, or misuse. No method of transmission over the internet is 100% secure. If you believe your data has been compromised, please contact us immediately.</p>
+
+      <h2>9. Changes to this policy</h2>
+      <p>We may update this Privacy Policy from time to time. Changes will be reflected by updating the date at the top of this page. For significant changes, we will notify registered users via email or an in-app notification. Continued use of the platform after changes are published constitutes acceptance of the updated policy.</p>
+
+      <div class="contact-box">
+        <h2>Contact</h2>
+        <p>For any privacy-related questions or requests, contact us at <a href="mailto:contact.improo@gmail.com">contact.improo@gmail.com</a>. We aim to respond within 30 days.</p>
+      </div>
 
     </article>
 
   </div>
 
   <footer class="site-footer">
-    <div class="container footer-grid">
-      <div class="footer-brand">
-        <img src="images/logo.webp" alt="Improo" class="footer-logo" />
-        <p>Build your health, discipline and life with intention.</p>
-        <small>© 2026 Improo. All rights reserved.</small>
-      </div>
-      <div class="footer-links">
-        <h4>Navigate</h4>
-        <a href="index.html">Home</a>
-        <a href="insights/index.html">Insights</a>
-        <a href="roadmap.html">Roadmap</a>
-        <a href="disclaimer.html">Disclaimer</a>
-        <a href="privacy-policy.html">Privacy Policy</a>
-        <a href="terms-of-service.html">Terms of Service</a>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <span style="font-family:'Lora',serif;font-size:1.4rem;font-weight:400;font-style:italic;background:linear-gradient(135deg,#60a5fa,#93c5fd);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;display:block;margin-bottom:16px;">Improo</span>
+          <p>Build your health, discipline and life with intention.</p>
+          <small>© 2026 Improo. All rights reserved.</small>
+        </div>
+        <div class="footer-links">
+          <h4>Platform</h4>
+          <a href="index.html">Home</a>
+          <a href="insights/index.html">Insights</a>
+          <a href="roadmap.html">Roadmap</a>
+        </div>
+        <div class="footer-links">
+          <h4>Legal</h4>
+          <a href="disclaimer.html">Disclaimer</a>
+          <a href="privacy-policy.html">Privacy Policy</a>
+          <a href="terms-of-service.html">Terms of Service</a>
+        </div>
+        <div class="footer-links">
+          <h4>Follow</h4>
+          <a href="#">YouTube</a>
+          <a href="#">X / Twitter</a>
+        </div>
       </div>
     </div>
   </footer>
