@@ -1,1 +1,822 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What is Keto? — Improo Guide</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+  :root {
+    --bg: #f7f4ef;
+    --surface: #ffffff;
+    --surface-2: #f0ece4;
+    --border: #e2ddd5;
+    --text: #1a1714;
+    --muted: #8a8278;
+    --accent: #2d6a4f;
+    --accent-light: rgba(45,106,79,0.08);
+    --accent-mid: rgba(45,106,79,0.18);
+    --warn: #c0392b;
+    --warn-light: rgba(192,57,43,0.07);
+    --serif: 'Lora', Georgia, serif;
+    --sans: 'Outfit', sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    font-size: 16px;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* HEADER */
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(247,244,239,0.92);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+    padding: 16px clamp(20px, 5vw, 80px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .logo {
+    font-family: var(--serif);
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--text);
+    text-decoration: none;
+  }
+  .logo span { color: var(--accent); }
+  .guide-badge {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--accent);
+    background: var(--accent-light);
+    border: 1px solid var(--accent-mid);
+    padding: 5px 12px;
+    border-radius: 100px;
+  }
+
+  /* LAYOUT */
+  .page {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 clamp(20px, 5vw, 80px);
+  }
+
+  /* HERO */
+  .hero {
+    padding: 72px 0 56px;
+    border-bottom: 1px solid var(--border);
+  }
+  .hero-meta {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 28px;
+  }
+  .hero-cat {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+  .hero-sep { color: var(--border); }
+  .hero-time { font-size: 13px; color: var(--muted); }
+
+  .hero h1 {
+    font-family: var(--serif);
+    font-size: clamp(38px, 6vw, 72px);
+    font-weight: 700;
+    line-height: 1.08;
+    letter-spacing: -1.5px;
+    color: var(--text);
+    max-width: 700px;
+    margin-bottom: 24px;
+  }
+  .hero-subtitle {
+    font-size: 18px;
+    font-weight: 300;
+    color: var(--muted);
+    max-width: 560px;
+    line-height: 1.6;
+  }
+
+  /* TOC */
+  .toc {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 28px 32px;
+    margin: 48px 0 0;
+    display: inline-block;
+    min-width: 280px;
+  }
+  .toc-title {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 16px;
+  }
+  .toc ol {
+    list-style: none;
+    counter-reset: toc;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .toc ol li { counter-increment: toc; display: flex; align-items: baseline; gap: 10px; }
+  .toc ol li::before {
+    content: counter(toc, decimal-leading-zero);
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--accent);
+    min-width: 20px;
+  }
+  .toc ol li a {
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--text);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .toc ol li a:hover { color: var(--accent); }
+
+  /* CONTENT GRID */
+  .content-wrap {
+    display: grid;
+    grid-template-columns: 1fr 280px;
+    gap: 60px;
+    align-items: start;
+    padding: 64px 0 80px;
+  }
+  @media (max-width: 860px) {
+    .content-wrap { grid-template-columns: 1fr; }
+    .sidebar { display: none; }
+  }
+
+  /* SECTIONS */
+  .article-section {
+    margin-bottom: 60px;
+    padding-bottom: 60px;
+    border-bottom: 1px solid var(--border);
+  }
+  .article-section:last-child { border-bottom: none; }
+
+  .section-tag {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 12px;
+    display: block;
+  }
+
+  .article-section h2 {
+    font-family: var(--serif);
+    font-size: clamp(24px, 3vw, 36px);
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.5px;
+    color: var(--text);
+    margin-bottom: 20px;
+  }
+
+  .article-section p {
+    font-size: 16px;
+    font-weight: 300;
+    color: rgba(26,23,20,0.82);
+    margin-bottom: 18px;
+    line-height: 1.8;
+    max-width: 640px;
+  }
+
+  /* CALLOUT */
+  .callout {
+    background: var(--accent-light);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 10px 10px 0;
+    padding: 22px 26px;
+    margin: 28px 0;
+  }
+  .callout p {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 17px;
+    color: var(--text) !important;
+    margin: 0 !important;
+    max-width: none !important;
+  }
+
+  /* WHO GRID */
+  .who-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin: 24px 0;
+  }
+  @media (max-width: 580px) { .who-grid { grid-template-columns: 1fr; } }
+
+  .who-card {
+    border-radius: 12px;
+    padding: 24px 22px;
+    border: 1px solid;
+  }
+  .who-card.fit {
+    background: var(--accent-light);
+    border-color: var(--accent-mid);
+  }
+  .who-card.less {
+    background: var(--warn-light);
+    border-color: rgba(192,57,43,0.15);
+  }
+  .who-card-title {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+  .who-card.fit .who-card-title { color: var(--accent); }
+  .who-card.less .who-card-title { color: var(--warn); }
+
+  .who-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .who-list li {
+    font-size: 14px;
+    font-weight: 400;
+    color: rgba(26,23,20,0.8);
+    padding-left: 20px;
+    position: relative;
+    line-height: 1.5;
+  }
+  .who-card.fit .who-list li::before { content: '✓'; position: absolute; left: 0; color: var(--accent); font-weight: 600; }
+  .who-card.less .who-list li::before { content: '·'; position: absolute; left: 0; color: var(--warn); font-weight: 600; font-size: 18px; line-height: 1; }
+
+  /* PROS CONS */
+  .pros-cons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin: 24px 0;
+  }
+  @media (max-width: 580px) { .pros-cons { grid-template-columns: 1fr; } }
+
+  .pc-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px 22px;
+  }
+  .pc-title {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .pc-card.pros .pc-title { color: var(--accent); }
+  .pc-card.cons .pc-title { color: var(--warn); }
+
+  .pc-list { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+  .pc-list li {
+    font-size: 14px;
+    font-weight: 400;
+    color: rgba(26,23,20,0.8);
+    padding-left: 22px;
+    position: relative;
+    line-height: 1.5;
+  }
+  .pc-card.pros .pc-list li::before { content: '+'; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
+  .pc-card.cons .pc-list li::before { content: '–'; position: absolute; left: 0; color: var(--warn); font-weight: 700; }
+
+  .keto-flu-note {
+    background: rgba(192,57,43,0.05);
+    border: 1px solid rgba(192,57,43,0.15);
+    border-radius: 10px;
+    padding: 18px 20px;
+    margin-top: 20px;
+    font-size: 13px;
+    color: rgba(26,23,20,0.75);
+    line-height: 1.6;
+  }
+  .keto-flu-note strong { color: var(--warn); }
+
+  /* SCIENCE */
+  .study-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px 26px;
+    margin: 16px 0;
+    display: grid;
+    grid-template-columns: 40px 1fr;
+    gap: 16px;
+    align-items: start;
+  }
+  .study-num {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    background: var(--accent-light);
+    border: 1px solid var(--accent-mid);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--accent);
+    flex-shrink: 0;
+  }
+  .study-body {}
+  .study-title {
+    font-family: var(--serif);
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 6px;
+  }
+  .study-text {
+    font-size: 14px;
+    font-weight: 300;
+    color: rgba(26,23,20,0.75);
+    line-height: 1.6;
+    margin: 0 !important;
+    max-width: none !important;
+  }
+  .study-source {
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 8px;
+    font-style: italic;
+  }
+
+  /* SUMMARY */
+  .summary-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin: 20px 0;
+  }
+  .summary-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    font-size: 15px;
+    font-weight: 400;
+    color: rgba(26,23,20,0.85);
+    line-height: 1.55;
+  }
+  .sum-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--accent);
+    flex-shrink: 0;
+    margin-top: 7px;
+  }
+
+  /* IMPROO TIP */
+  .improo-tip {
+    background: var(--accent);
+    border-radius: 14px;
+    padding: 28px 32px;
+    margin: 24px 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  .tip-icon {
+    font-size: 22px;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .tip-body {}
+  .tip-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.6);
+    margin-bottom: 8px;
+  }
+  .tip-text {
+    font-size: 16px;
+    font-weight: 400;
+    color: #ffffff;
+    line-height: 1.6;
+    margin: 0 !important;
+    max-width: none !important;
+  }
+
+  /* PRODUCTS */
+  .product-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin: 20px 0;
+  }
+  @media (max-width: 500px) { .product-grid { grid-template-columns: 1fr; } }
+  .product-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 22px 20px;
+    transition: border-color 0.2s, transform 0.2s;
+    cursor: default;
+  }
+  .product-card:hover { border-color: var(--accent-mid); transform: translateY(-2px); }
+  .product-emoji { font-size: 28px; margin-bottom: 12px; }
+  .product-name {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 6px;
+  }
+  .product-desc {
+    font-size: 13px;
+    font-weight: 300;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+  .product-tag {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--accent);
+    background: var(--accent-light);
+    padding: 3px 8px;
+    border-radius: 4px;
+    margin-top: 10px;
+  }
+
+  /* SOURCES */
+  .sources-list { list-style: none; display: flex; flex-direction: column; gap: 14px; margin-top: 16px; }
+  .sources-list li { display: flex; gap: 12px; align-items: flex-start; }
+  .src-num {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--accent);
+    background: var(--accent-light);
+    width: 22px;
+    height: 22px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .src-text { font-size: 13px; color: var(--muted); line-height: 1.5; }
+  .src-text a { color: var(--accent); text-decoration: none; }
+  .src-text a:hover { text-decoration: underline; }
+
+  /* SIDEBAR */
+  .sidebar { position: sticky; top: 80px; }
+  .sidebar-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 24px 22px;
+    margin-bottom: 20px;
+  }
+  .sidebar-title {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 14px;
+  }
+  .sidebar-stat {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .stat-item { display: flex; flex-direction: column; gap: 3px; }
+  .stat-value {
+    font-family: var(--serif);
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--accent);
+    line-height: 1;
+  }
+  .stat-desc { font-size: 12px; color: var(--muted); line-height: 1.4; }
+  .stat-divider { height: 1px; background: var(--border); }
+
+  /* FOOTER */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 32px clamp(20px, 5vw, 80px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .footer-brand { font-family: var(--serif); font-size: 18px; font-weight: 700; }
+  .footer-brand span { color: var(--accent); }
+  .footer-note { font-size: 12px; color: var(--muted); }
+
+  /* ANIMATIONS */
+  .reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .reveal.visible { opacity: 1; transform: none; }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <a href="#" class="logo">Im<span>p</span>roo</a>
+  <span class="guide-badge">Guide</span>
+</header>
+
+<div class="page">
+
+  <!-- HERO -->
+  <div class="hero reveal">
+    <div class="hero-meta">
+      <span class="hero-cat">Nutrition</span>
+      <span class="hero-sep">/</span>
+      <span class="hero-time">5 min read</span>
+    </div>
+    <h1>What is the Ketogenic Diet?</h1>
+    <p class="hero-subtitle">A clear, honest overview of how keto works, who it may suit, and what the research actually says — without the hype.</p>
+
+    <div class="toc">
+      <div class="toc-title">In this guide</div>
+      <ol>
+        <li><a href="#intro">Introduction</a></li>
+        <li><a href="#how">How it works</a></li>
+        <li><a href="#who">Who is it for?</a></li>
+        <li><a href="#pros-cons">Pros & cons</a></li>
+        <li><a href="#science">What the science says</a></li>
+        <li><a href="#summary">Summary</a></li>
+        <li><a href="#tip">Improo tip</a></li>
+        <li><a href="#products">Related products</a></li>
+        <li><a href="#sources">Sources</a></li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="content-wrap">
+    <main>
+
+      <!-- 1. INTRO -->
+      <div class="article-section reveal" id="intro">
+        <span class="section-tag">01 — Introduction</span>
+        <h2>What is keto?</h2>
+        <p>
+          The ketogenic diet — commonly called keto — is a way of eating that is very low in carbohydrates, moderate in protein, and high in fat. By drastically reducing carbohydrate intake, the body is pushed into a metabolic state called ketosis, where it burns fat as its primary fuel instead of glucose. It is not a new concept — the diet was originally developed in the 1920s as a clinical treatment for epilepsy.
+        </p>
+      </div>
+
+      <!-- 2. HOW IT WORKS -->
+      <div class="article-section reveal" id="how">
+        <span class="section-tag">02 — Mechanism</span>
+        <h2>What happens in your body?</h2>
+        <p>
+          Under normal circumstances, your body runs on glucose — a sugar derived from carbohydrates. When you eat very few carbs (typically under 50g per day), your glucose supply runs low and your liver begins converting stored fat into molecules called <strong>ketone bodies</strong>. These ketones then serve as an alternative energy source for your brain and muscles.
+        </p>
+        <p>
+          This shift usually takes two to four days of consistent low-carb eating to occur. Once in ketosis, fat — both dietary and stored body fat — becomes the body's dominant fuel. Insulin levels drop significantly during this process, which also plays a role in how keto affects weight and blood sugar.
+        </p>
+
+        <div class="callout">
+          <p>Ketosis is not a disease state — it is a natural metabolic response the human body has used for thousands of years during periods of low food availability.</p>
+        </div>
+      </div>
+
+      <!-- 3. WHO IS IT FOR -->
+      <div class="article-section reveal" id="who">
+        <span class="section-tag">03 — Suitability</span>
+        <h2>Who is it for?</h2>
+        <p>Keto is not a one-size-fits-all approach. It may be a better fit for some people than others — and that largely depends on your health situation, lifestyle, and personal relationship with food.</p>
+
+        <div class="who-grid">
+          <div class="who-card fit">
+            <div class="who-card-title">May be suitable for</div>
+            <ul class="who-list">
+              <li>People who have struggled with results from traditional calorie counting</li>
+              <li>Those with insulin resistance or type 2 diabetes (under medical supervision)</li>
+              <li>People who feel better with stable energy throughout the day</li>
+              <li>Those who find high-fat foods naturally satiating</li>
+              <li>People managing epilepsy (clinically validated use)</li>
+            </ul>
+          </div>
+          <div class="who-card less">
+            <div class="who-card-title">Less suited for</div>
+            <ul class="who-list">
+              <li>People with certain metabolic or kidney conditions — consult a doctor first</li>
+              <li>High-performance athletes who rely heavily on carbohydrates for fuel</li>
+              <li>Those who find eliminating carbs mentally or socially difficult to sustain</li>
+              <li>People with a history of disordered eating — highly restrictive diets carry risk</li>
+              <li>Pregnant or breastfeeding women without medical guidance</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. PROS & CONS -->
+      <div class="article-section reveal" id="pros-cons">
+        <span class="section-tag">04 — Honest assessment</span>
+        <h2>Pros & cons</h2>
+
+        <div class="pros-cons">
+          <div class="pc-card pros">
+            <div class="pc-title">↑ Potential benefits</div>
+            <ul class="pc-list">
+              <li>Effective for short-to-medium term weight loss in many people</li>
+              <li>Can improve blood sugar stability and reduce insulin spikes</li>
+              <li>Many people report reduced hunger and fewer cravings</li>
+              <li>May improve HDL cholesterol and triglyceride levels</li>
+              <li>Clinically proven to reduce seizure frequency in epilepsy</li>
+            </ul>
+          </div>
+          <div class="pc-card cons">
+            <div class="pc-title">↓ Potential drawbacks</div>
+            <ul class="pc-list">
+              <li>The "keto flu" during the first 1–2 weeks (see below)</li>
+              <li>Difficult to maintain socially — most meals contain carbs</li>
+              <li>May raise LDL cholesterol in some individuals</li>
+              <li>Risk of nutrient deficiencies without careful planning</li>
+              <li>Long-term adherence rates are generally low</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="keto-flu-note">
+          <strong>What is the keto flu?</strong> During the first one to two weeks of keto, many people experience symptoms including headaches, fatigue, irritability, brain fog, and nausea. This is commonly called the "keto flu" and occurs as your body adapts to using fat instead of glucose. It typically resolves on its own, and staying well-hydrated and maintaining electrolyte intake (sodium, potassium, magnesium) can help reduce symptoms.
+        </div>
+      </div>
+
+      <!-- 5. SCIENCE -->
+      <div class="article-section reveal" id="science">
+        <span class="section-tag">05 — Research</span>
+        <h2>What does the science say?</h2>
+        <p>Research on ketogenic diets has grown significantly over the past two decades. The evidence is promising in some areas, more mixed in others. Here is an honest summary.</p>
+
+        <div class="study-card">
+          <div class="study-num">[1]</div>
+          <div class="study-body">
+            <div class="study-title">Weight loss: short-term advantage, long-term parity</div>
+            <p class="study-text">A 2013 meta-analysis published in the <em>British Journal of Nutrition</em> found that very low-carbohydrate ketogenic diets led to greater weight loss compared to low-fat diets at 12 months — even when calories were not explicitly restricted. However, the difference narrowed over longer periods, suggesting adherence is the main determinant of long-term success.</p>
+            <div class="study-source">Bueno et al. (2013). British Journal of Nutrition, 110(7), 1178–1187. PubMed ID: 23651522</div>
+          </div>
+        </div>
+
+        <div class="study-card">
+          <div class="study-num">[2]</div>
+          <div class="study-body">
+            <div class="study-title">Blood sugar & type 2 diabetes: strong evidence</div>
+            <p class="study-text">A 2018 review published in <em>Diabetes & Metabolic Syndrome: Clinical Research & Reviews</em> concluded that ketogenic diets can meaningfully reduce HbA1c levels and fasting blood glucose in people with type 2 diabetes, sometimes allowing for medication reduction under supervision. The effect on blood sugar control is one of the most consistently supported findings in keto research.</p>
+            <div class="study-source">Batch et al. (2020). Nutrients, 12(7), 2005. PubMed ID: 32645999</div>
+          </div>
+        </div>
+
+        <p>On cholesterol, the picture is less clear. Keto reliably improves HDL ("good") cholesterol and lowers triglycerides. However, LDL ("bad") cholesterol may increase in some individuals, particularly those consuming large amounts of saturated fat. Anyone with existing cardiovascular risk factors should consult a physician before starting.</p>
+      </div>
+
+      <!-- 6. SUMMARY -->
+      <div class="article-section reveal" id="summary">
+        <span class="section-tag">06 — Summary</span>
+        <h2>The short version</h2>
+        <ul class="summary-list">
+          <li><div class="sum-dot"></div><span>Keto is a very low-carb, high-fat diet that shifts your body into a fat-burning state called ketosis.</span></li>
+          <li><div class="sum-dot"></div><span>It can be effective for weight loss and blood sugar management, particularly in the short to medium term.</span></li>
+          <li><div class="sum-dot"></div><span>The "keto flu" is a common and temporary adjustment phase during the first week or two.</span></li>
+          <li><div class="sum-dot"></div><span>It is not suitable for everyone — people with certain health conditions should seek medical advice before starting.</span></li>
+          <li><div class="sum-dot"></div><span>Like any diet, the biggest predictor of success is whether you can actually sustain it long-term.</span></li>
+        </ul>
+      </div>
+
+      <!-- 7. IMPROO TIP -->
+      <div class="article-section reveal" id="tip">
+        <span class="section-tag">07 — Improo tip</span>
+        <h2>How Improo can help</h2>
+        <div class="improo-tip">
+          <div class="tip-icon">💡</div>
+          <div class="tip-body">
+            <div class="tip-label">Practical tip</div>
+            <p class="tip-text">Use the Improo nutrition tracker to log your daily carbohydrate intake — keeping carbs under 50g is the key threshold for most people to reach and maintain ketosis, and tracking makes that number real instead of estimated.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 8. PRODUCTS -->
+      <div class="article-section reveal" id="products">
+        <span class="section-tag">08 — Related products</span>
+        <h2>Useful if you try keto</h2>
+        <p>These two product categories are commonly used by people following a ketogenic diet. Specific brands are listed separately in the Improo product directory.</p>
+
+        <div class="product-grid">
+          <div class="product-card">
+            <div class="product-emoji">🧪</div>
+            <div class="product-name">Ketone test strips</div>
+            <div class="product-desc">Urine-based strips that indicate whether your body is producing ketones. Useful in the first few weeks to confirm you have entered ketosis. Less accurate over time as your body adapts.</div>
+            <div class="product-tag">Measurement</div>
+          </div>
+          <div class="product-card">
+            <div class="product-emoji">📖</div>
+            <div class="product-name">Keto nutrition guide</div>
+            <div class="product-desc">A structured book covering the science, meal planning, and common mistakes of ketogenic eating. Useful for people who want to approach it methodically rather than improvising.</div>
+            <div class="product-tag">Education</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 9. SOURCES -->
+      <div class="article-section reveal" id="sources">
+        <span class="section-tag">09 — Sources</span>
+        <h2>References</h2>
+        <ul class="sources-list">
+          <li>
+            <div class="src-num">1</div>
+            <div class="src-text">Bueno, N.B. et al. (2013). <em>Very-low-carbohydrate ketogenic diet v. low-fat diet for long-term weight loss: a meta-analysis of randomised controlled trials.</em> British Journal of Nutrition, 110(7), 1178–1187. <a href="https://pubmed.ncbi.nlm.nih.gov/23651522/" target="_blank">PubMed: 23651522</a></div>
+          </li>
+          <li>
+            <div class="src-num">2</div>
+            <div class="src-text">Batch, J.T. et al. (2020). <em>Advantages and Disadvantages of the Ketogenic Diet: A Review Article.</em> Nutrients, 12(7), 2005. <a href="https://pubmed.ncbi.nlm.nih.gov/32645999/" target="_blank">PubMed: 32645999</a></div>
+          </li>
+          <li>
+            <div class="src-num">3</div>
+            <div class="src-text">Harvard T.H. Chan School of Public Health. <em>Diet Review: Ketogenic Diet for Weight Loss.</em> The Nutrition Source. <a href="https://www.hsph.harvard.edu/nutritionsource/healthy-weight/diet-reviews/ketogenic-diet/" target="_blank">hsph.harvard.edu</a></div>
+          </li>
+        </ul>
+      </div>
+
+    </main>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="sidebar-card">
+        <div class="sidebar-title">Key numbers</div>
+        <div class="sidebar-stat">
+          <div class="stat-item">
+            <div class="stat-value">&lt;50g</div>
+            <div class="stat-desc">Daily carbs needed to reach ketosis for most people</div>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <div class="stat-value">2–4</div>
+            <div class="stat-desc">Days it typically takes to enter ketosis</div>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <div class="stat-value">70%</div>
+            <div class="stat-desc">Approximate fat intake as % of total calories on keto</div>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <div class="stat-value">1920s</div>
+            <div class="stat-desc">When keto was first developed — as a treatment for epilepsy</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sidebar-card">
+        <div class="sidebar-title">Disclaimer</div>
+        <p style="font-size:12px;color:var(--muted);line-height:1.6;">This guide is for informational purposes only and does not constitute medical advice. If you have a health condition or take medication, consult your doctor before making significant dietary changes.</p>
+      </div>
+    </aside>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-brand">Im<span>p</span>roo</div>
+  <div class="footer-note">Nutrition Guide · Science-based · Not medical advice</div>
+</footer>
+
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.08 });
+  reveals.forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
