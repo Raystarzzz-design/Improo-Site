@@ -16,12 +16,23 @@
   <style>
     /* ── INSIGHTS-PAGE SPECIFIC STYLES ── */
 
+    /* Slider outer wrapper — voor achtergrond/border */
+    .slider-outer {
+      background: var(--bg);
+      border-bottom: 1px solid var(--line);
+      padding: 24px 0;
+    }
+
     /* Slider */
     .slider-wrap {
       position: relative;
       overflow: hidden;
       height: 480px;
-      border-bottom: 1px solid var(--line);
+      width: min(1180px, calc(100% - 48px));
+      margin: 0 auto;
+      border-radius: 20px;
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow-md);
     }
 
     .slides {
@@ -424,7 +435,8 @@
       .grid { grid-template-columns: 1fr; }
       .no-results { grid-column: span 1; }
       .slide-content { padding: 0 24px 40px; }
-      .slider-wrap { height: 360px; }
+      .slider-wrap { height: 340px; border-radius: 12px; width: calc(100% - 32px); }
+      .slider-outer { padding: 16px 0; }
       .slider-dots { left: 24px; }
     }
   </style>
@@ -457,6 +469,7 @@
   </header>
 
   <!-- HERO SLIDER -->
+  <div class="slider-outer">
   <div class="slider-wrap">
     <div class="slides" id="slides">
 
@@ -535,6 +548,7 @@
     <button class="slider-btn slider-prev" id="sliderPrev" aria-label="Previous">‹</button>
     <button class="slider-btn slider-next" id="sliderNext" aria-label="Next">›</button>
     <div class="slider-dots" id="sliderDots"></div>
+  </div>
   </div>
 
   <!-- SEARCH + FILTERS -->
