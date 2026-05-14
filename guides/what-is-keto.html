@@ -401,29 +401,38 @@
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
-      padding: 20px;
+      padding: 18px;
       min-height: 280px;
     }
-    .prod-visual.mct  { background: linear-gradient(160deg, #dbeafe 0%, #bfdbfe 50%, #e0f2fe 100%); }
-    .prod-visual.scan { background: linear-gradient(160deg, #eff6ff 0%, #dbeafe 50%, #e0e7ff 100%); }
+    .prod-visual img {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+    .prod-visual.mct  { background: linear-gradient(160deg, #93c5fd 0%, #60a5fa 40%, #bfdbfe 100%); }
+    .prod-visual.scan { background: linear-gradient(160deg, #a5b4fc 0%, #818cf8 40%, #bfdbfe 100%); }
 
     .prod-badge {
       position: relative;
       z-index: 2;
       display: inline-flex;
       align-items: center;
-      gap: 6px;
-      background: rgba(255,255,255,0.92);
-      border: 1px solid rgba(37,99,235,0.15);
-      border-radius: 20px;
-      padding: 5px 12px 5px 8px;
-      font-size: 10px;
+      gap: 7px;
+      background: rgba(255,255,255,0.96);
+      border: 1.5px solid rgba(37,99,235,0.22);
+      border-radius: 22px;
+      padding: 7px 14px 7px 10px;
+      font-size: 11px;
       font-weight: 700;
+      letter-spacing: 0.3px;
       color: var(--blue-dark);
       backdrop-filter: blur(8px);
       align-self: flex-start;
+      box-shadow: 0 2px 10px rgba(37,99,235,0.12);
     }
-    .prod-badge-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--blue); }
+    .prod-badge-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--blue); }
 
     .prod-content { padding: 26px 26px 22px; display: flex; flex-direction: column; }
     .prod-category { font-size: 9px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--blue-light); margin-bottom: 8px; }
@@ -448,19 +457,25 @@
     .prod-cta {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      background: var(--blue);
+      gap: 10px;
+      background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
       color: #fff;
-      font-size: 13px;
-      font-weight: 600;
-      padding: 11px 20px;
-      border-radius: 24px;
-      transition: background 0.2s, box-shadow 0.2s, gap 0.2s;
-      box-shadow: 0 4px 14px rgba(37,99,235,0.25);
+      font-size: 14px;
+      font-weight: 700;
+      padding: 13px 24px;
+      border-radius: 28px;
+      transition: background 0.2s, box-shadow 0.2s, gap 0.2s, transform 0.2s;
+      box-shadow: 0 6px 20px rgba(37,99,235,0.30);
       align-self: flex-start;
       margin-bottom: 10px;
+      letter-spacing: 0.1px;
     }
-    .prod-cta:hover { background: var(--blue-dark); gap: 12px; box-shadow: 0 6px 20px rgba(37,99,235,0.35); }
+    .prod-cta:hover {
+      background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%);
+      gap: 16px;
+      box-shadow: 0 10px 28px rgba(37,99,235,0.42);
+      transform: translateY(-1px);
+    }
     .prod-affiliate { font-size: 10.5px; color: var(--muted-light); }
 
     /* Sources */
@@ -781,7 +796,7 @@
           <!-- MCT Oil card -->
           <a href="https://amzn.to/4wvAlTj" target="_blank" class="prod-card">
             <div class="prod-visual mct">
-              <img src="../images/products/mct-oil.png" alt="MCT Oil" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:contain;padding:24px;" />
+              <img src="../images/products/mct-oil.png" alt="Nature's Way Organic MCT Oil" />
               <div class="prod-badge">
                 <div class="prod-badge-dot"></div>
                 Best Overall
@@ -811,7 +826,7 @@
           <!-- KETOSCAN card -->
           <a href="https://amzn.to/4nx2sgS" target="_blank" class="prod-card">
             <div class="prod-visual scan">
-              <img src="../images/products/ketoscan.png" alt="KETOSCAN" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:contain;padding:24px;" />
+              <img src="../images/products/ketoscan.png" alt="V2 KETOSCAN Mini" />
               <div class="prod-badge" style="border-color:rgba(99,102,241,0.2);">
                 <div class="prod-badge-dot" style="background:#6366f1;"></div>
                 Good Ratings
