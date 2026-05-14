@@ -565,39 +565,55 @@
 
         <!-- Hero visual — clock/fasting window illustration -->
         <div class="hero-visual-wrap reveal">
-          <svg viewBox="0 0 340 380" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;position:absolute;top:0;left:0;">
-            <!-- Background -->
-            <circle cx="270" cy="80" r="130" fill="rgba(37,99,235,0.05)"/>
-            <circle cx="70" cy="310" r="90" fill="rgba(96,165,250,0.06)"/>
-            <!-- Clock face -->
-            <circle cx="170" cy="170" r="100" fill="rgba(255,255,255,0.6)" stroke="rgba(37,99,235,0.15)" stroke-width="2"/>
-            <circle cx="170" cy="170" r="90" fill="none" stroke="rgba(37,99,235,0.07)" stroke-width="1"/>
-            <!-- Fasting arc (16h = 240 degrees) -->
-            <path d="M 170 80 A 90 90 0 1 1 80 170" stroke="rgba(37,99,235,0.25)" stroke-width="12" fill="none" stroke-linecap="round"/>
-            <!-- Eating arc (8h = 120 degrees) -->
-            <path d="M 80 170 A 90 90 0 0 1 170 80" stroke="rgba(22,163,74,0.3)" stroke-width="12" fill="none" stroke-linecap="round"/>
-            <!-- Center -->
-            <circle cx="170" cy="170" r="6" fill="rgba(37,99,235,0.5)"/>
-            <!-- Clock hands -->
-            <line x1="170" y1="170" x2="170" y2="95" stroke="rgba(37,99,235,0.6)" stroke-width="2.5" stroke-linecap="round"/>
-            <line x1="170" y1="170" x2="218" y2="194" stroke="rgba(37,99,235,0.4)" stroke-width="2" stroke-linecap="round"/>
-            <!-- Labels -->
-            <text x="170" y="58" text-anchor="middle" font-size="10" fill="rgba(37,99,235,0.55)" font-family="Sora,sans-serif" font-weight="600">12</text>
-            <text x="270" y="174" text-anchor="middle" font-size="10" fill="rgba(37,99,235,0.45)" font-family="Sora,sans-serif">3</text>
-            <text x="170" y="286" text-anchor="middle" font-size="10" fill="rgba(37,99,235,0.45)" font-family="Sora,sans-serif">6</text>
-            <text x="72" y="174" text-anchor="middle" font-size="10" fill="rgba(37,99,235,0.45)" font-family="Sora,sans-serif">9</text>
-            <!-- Legend -->
-            <rect x="100" y="295" width="12" height="4" rx="2" fill="rgba(37,99,235,0.4)"/>
-            <text x="116" y="301" font-size="9" fill="rgba(37,99,235,0.6)" font-family="Sora,sans-serif">16h fasting</text>
-            <rect x="185" y="295" width="12" height="4" rx="2" fill="rgba(22,163,74,0.5)"/>
-            <text x="201" y="301" font-size="9" fill="rgba(22,163,74,0.7)" font-family="Sora,sans-serif">8h eating</text>
-          </svg>
-          <div style="position:absolute;bottom:20px;left:20px;right:20px;">
-            <div style="background:rgba(255,255,255,0.9);backdrop-filter:blur(12px);border:1px solid rgba(37,99,235,0.12);border-radius:12px;padding:13px 16px;">
-              <div style="font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--blue-light);margin-bottom:4px;">The 16:8 window</div>
-              <div style="font-size:12px;color:var(--muted);font-weight:300;line-height:1.5;">Fast for 16 hours, eat within an 8-hour window. Most people skip breakfast and eat between 12pm and 8pm.</div>
-            </div>
-          </div>
+  <svg width="100%" viewBox="0 0 680 620" role="img" xmlns="http://www.w3.org/2000/svg" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+    <title>16:8 Intermittent Fasting Window</title>
+    <defs>
+      <radialGradient id="bgGrad" cx="50%" cy="30%" r="70%"><stop offset="0%" stop-color="#e8eeff"/><stop offset="60%" stop-color="#eaf5ee"/><stop offset="100%" stop-color="#f0f8ff"/></radialGradient>
+      <radialGradient id="blobGreen" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#c8f0d8" stop-opacity="0.7"/><stop offset="100%" stop-color="#c8f0d8" stop-opacity="0"/></radialGradient>
+      <radialGradient id="blobBlue" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#c5d8f8" stop-opacity="0.6"/><stop offset="100%" stop-color="#c5d8f8" stop-opacity="0"/></radialGradient>
+    </defs>
+    <rect x="0" y="0" width="680" height="620" rx="0" fill="url(#bgGrad)"/>
+    <ellipse cx="560" cy="80" rx="130" ry="110" fill="url(#blobBlue)"/>
+    <ellipse cx="120" cy="480" rx="160" ry="120" fill="url(#blobGreen)"/>
+    <text x="108" y="180" font-size="16" fill="#7090c0" opacity="0.6">✦</text>
+    <text x="560" y="280" font-size="12" fill="#7090c0" opacity="0.5">✦</text>
+    <text x="80" y="310" font-size="10" fill="#70b090" opacity="0.5">✦</text>
+    <circle cx="340" cy="240" r="158" fill="white" opacity="0.5"/>
+    <path d="M 340 92 A 148 148 0 1 1 211.8 314" fill="none" stroke="#7b9de8" stroke-width="22" stroke-linecap="round" opacity="0.85"/>
+    <path d="M 211.8 314 A 148 148 0 0 1 340 92" fill="none" stroke="#72c99a" stroke-width="22" stroke-linecap="round" opacity="0.82"/>
+    <circle cx="340" cy="92" r="8" fill="white" stroke="#7b9de8" stroke-width="2.5"/>
+    <circle cx="211.8" cy="314" r="8" fill="white" stroke="#72c99a" stroke-width="2.5"/>
+    <circle cx="340" cy="240" r="118" fill="white" opacity="0.88"/>
+    <line x1="340" y1="95" x2="340" y2="108" stroke="#b0c0d8" stroke-width="2"/>
+    <line x1="484" y1="240" x2="471" y2="240" stroke="#b0c0d8" stroke-width="2"/>
+    <line x1="340" y1="385" x2="340" y2="372" stroke="#b0c0d8" stroke-width="2"/>
+    <line x1="196" y1="240" x2="209" y2="240" stroke="#b0c0d8" stroke-width="2"/>
+    <text x="340" y="204" text-anchor="middle" font-family="'Sora',sans-serif" font-size="11" font-weight="700" fill="#4a6fa5" letter-spacing="3">FASTING</text>
+    <text x="340" y="244" text-anchor="middle" font-family="'Lora',serif" font-size="52" font-weight="600" fill="#2d4fa0">16</text>
+    <text x="380" y="244" font-family="'Sora',sans-serif" font-size="14" fill="#5a7ab8" font-weight="400">hrs</text>
+    <line x1="290" y1="258" x2="390" y2="258" stroke="#dde8f0" stroke-width="1"/>
+    <text x="340" y="280" text-anchor="middle" font-family="'Sora',sans-serif" font-size="10" font-weight="700" fill="#3a9a6a" letter-spacing="2.5">EATING WINDOW</text>
+    <text x="340" y="316" text-anchor="middle" font-family="'Lora',serif" font-size="46" font-weight="600" fill="#2e9060">8</text>
+    <text x="366" y="316" font-family="'Sora',sans-serif" font-size="14" fill="#4aaa80" font-weight="400">hrs</text>
+    <text x="340" y="66" text-anchor="middle" font-family="'Sora',sans-serif" font-size="13" font-weight="600" fill="#5a7ab8">12AM</text>
+    <text x="340" y="48" text-anchor="middle" font-size="14" fill="#7b9de8">☽</text>
+    <text x="530" y="235" text-anchor="start" font-family="'Sora',sans-serif" font-size="13" font-weight="600" fill="#5a7ab8">6AM</text>
+    <text x="340" y="426" text-anchor="middle" font-family="'Sora',sans-serif" font-size="13" font-weight="600" fill="#3a9a6a">12PM</text>
+    <text x="340" y="447" text-anchor="middle" font-size="14" fill="#72c99a">☀</text>
+    <text x="150" y="235" text-anchor="end" font-family="'Sora',sans-serif" font-size="13" font-weight="600" fill="#3a9a6a">6PM</text>
+    <path d="M 160 260 Q 120 340 160 400" fill="none" stroke="#72c99a" stroke-width="1.5" stroke-dasharray="4 4" opacity="0.5"/>
+    <rect x="60" y="480" width="560" height="110" rx="16" fill="white" opacity="0.92"/>
+    <circle cx="108" cy="535" r="28" fill="#e8eeff"/>
+    <text x="108" y="542" text-anchor="middle" font-size="22" fill="#5a7ab8">📅</text>
+    <line x1="150" y1="500" x2="150" y2="570" stroke="#d0ddf0" stroke-width="1.5"/>
+    <text x="170" y="516" font-family="'Sora',sans-serif" font-size="11" font-weight="700" fill="#2d4fa0" letter-spacing="2">THE 16:8 WINDOW</text>
+    <text x="170" y="538" font-family="'Sora',sans-serif" font-size="13" font-weight="300" fill="#4a6fa5">Fast for 16 hours, eat within an 8-hour window.</text>
+    <text x="170" y="556" font-family="'Sora',sans-serif" font-size="13" font-weight="300" fill="#4a6fa5">Most people eat between</text>
+    <text x="170" y="574" font-family="'Sora',sans-serif" font-size="13" font-weight="600" fill="#3a9a6a">12pm</text>
+    <text x="214" y="574" font-family="'Sora',sans-serif" font-size="13" font-weight="300" fill="#4a6fa5"> and </text>
+    <text x="248" y="574" font-family="'Sora',sans-serif" font-size="13" font-weight="600" fill="#3a9a6a">8pm.</text>
+  </svg>
+</div>
         </div>
       </div>
     </section>
