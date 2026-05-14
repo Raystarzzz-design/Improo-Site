@@ -1296,3 +1296,32 @@ a { color: inherit; text-decoration: none; }
   .footer-grid   { grid-template-columns: 1fr; }
   .topic-strip   { grid-template-columns: 1fr; }
 }
+/* ── MOBILE HOMEPAGE FIXES ── */
+@media (max-width: 600px) {
+
+  /* Hero heading kleiner */
+  .hero-copy h1 {
+    font-size: 2rem;
+    line-height: 1.15;
+  }
+
+  /* Stat cards: 1 kolom ipv 3 */
+  .hero-visual > div {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* How improvement works: 2 kolommen ipv 6 */
+  .hero > section > div > div[style*="repeat(6"] {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  /* Hero grid: onder elkaar */
+  .hero-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Padding hero kleiner */
+  .hero {
+    padding-top: 24px;
+  }
+}
