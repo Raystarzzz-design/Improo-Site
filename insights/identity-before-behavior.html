@@ -21,10 +21,8 @@
       --text-muted: #7b8099;
       --accent-blue: #3366cc;
       --accent-blue-light: #e8eef8;
-      --accent-purple: #7c3aed;
-      --accent-purple-light: #ede9fe;
-      --tag-bg: #ede9fe;
-      --tag-color: #5b21b6;
+      --tag-bg: #e0e6f5;
+      --tag-color: #3d5a99;
       --sans: 'Inter', system-ui, sans-serif;
     }
 
@@ -171,8 +169,8 @@
 
     /* PULLQUOTE */
     .pullquote {
-      border-left: 3px solid var(--accent-purple);
-      background: var(--accent-purple-light);
+      border-left: 3px solid var(--accent-blue);
+      background: var(--accent-blue-light);
       border-radius: 0 8px 8px 0;
       padding: 1.25rem 1.5rem;
       margin: 2rem 0;
@@ -205,12 +203,12 @@
       transition: border-color 0.2s;
     }
 
-    .identity-item:hover { border-color: #c4b5fd; }
+    .identity-item:hover { border-color: #93c5fd; }
 
     .identity-icon {
       width: 36px; height: 36px;
       border-radius: 10px;
-      background: var(--accent-purple-light);
+      background: var(--accent-blue-light);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -255,10 +253,10 @@
       position: absolute;
       top: 0; left: 0; right: 0;
       height: 2px;
-      background: linear-gradient(90deg, var(--accent-purple), transparent);
+      background: linear-gradient(90deg, var(--accent-blue), transparent);
     }
 
-    .proof-card:hover { border-color: #c4b5fd; }
+    .proof-card:hover { border-color: #93c5fd; }
 
     .proof-action {
       font-size: 14px;
@@ -270,7 +268,7 @@
 
     .proof-arrow {
       font-size: 16px;
-      color: var(--accent-purple);
+      color: var(--accent-blue);
       margin-bottom: 6px;
     }
 
@@ -302,7 +300,7 @@
     .stat-number {
       font-size: 2.4rem;
       font-weight: 800;
-      color: var(--accent-purple);
+      color: var(--accent-blue);
       line-height: 1;
       margin-bottom: 8px;
       letter-spacing: -0.03em;
@@ -330,14 +328,14 @@
       transition: border-color 0.2s;
     }
 
-    .science-card:hover { border-color: #c4b5fd; }
+    .science-card:hover { border-color: #93c5fd; }
 
     .science-tag {
       font-size: 10px;
       font-weight: 700;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: var(--accent-purple);
+      color: var(--accent-blue);
       margin-bottom: 10px;
       display: block;
     }
@@ -373,7 +371,7 @@
       padding: 20px 18px;
     }
 
-    .path-card.accent { border-color: #c4b5fd; background: var(--accent-purple-light); }
+    .path-card.accent { border-color: #93c5fd; background: var(--accent-blue-light); }
 
     .path-title {
       font-size: 11px;
@@ -384,7 +382,7 @@
       margin-bottom: 12px;
     }
 
-    .path-card.accent .path-title { color: var(--accent-purple); }
+    .path-card.accent .path-title { color: var(--accent-blue); }
 
     .path-list {
       list-style: none;
@@ -432,7 +430,7 @@
     .kp-bullet {
       width: 7px; height: 7px;
       border-radius: 50%;
-      background: var(--accent-purple);
+      background: var(--accent-blue);
       flex-shrink: 0;
       margin-top: 8px;
     }
@@ -441,8 +439,8 @@
 
     /* CTA */
     .cta-block {
-      background: var(--accent-purple-light);
-      border: 1px solid #c4b5fd;
+      background: var(--accent-blue-light);
+      border: 1px solid #c0d0ea;
       border-radius: 16px;
       padding: 2.5rem 2rem;
       text-align: center;
@@ -460,7 +458,7 @@
 
     .cta-btn {
       display: inline-block;
-      background: var(--accent-purple);
+      background: var(--accent-blue);
       color: #fff;
       padding: 12px 28px;
       border-radius: 24px;
@@ -503,7 +501,7 @@
       transition: border-color 0.2s;
     }
 
-    .more-card:hover { border-color: #c4b5fd; }
+    .more-card:hover { border-color: #93c5fd; }
 
     .more-card-tag {
       font-size: 11px;
@@ -561,6 +559,8 @@
     .footer-links a:hover { color: var(--text); }
     footer p { font-size: 12px; color: var(--text-muted); }
 
+    .hl-blue { color: #3b82f6; font-style: italic; }
+
     @media (max-width: 600px) {
       nav { padding: 0 1rem; }
       .nav-links li:not(:last-child) { display: none; }
@@ -590,7 +590,7 @@
 
   <span class="article-tag">Mindset</span>
 
-  <h1>Identity before behavior</h1>
+  <h1>Identity <em class="hl-blue">before</em> behavior</h1>
 
   <p class="article-lead">Why lasting change starts with who you believe you are — not what you decide to do.</p>
 
@@ -606,7 +606,7 @@
 
     <p>Most people try to change their lives by changing their behavior first. They pick a new diet, a new routine, a new schedule. It works for a week, maybe two. Then it falls apart — not because they're weak, but because their actions were fighting their identity.</p>
 
-    <h2>Behavior follows identity</h2>
+    <h2>Behavior follows <em class="hl-blue">identity</em></h2>
 
     <p>Your habits are a mirror of how you see yourself. When someone deeply believes "I'm not the type of person who exercises" or "I always quit," healthy behavior will never feel natural — it will always feel like an effort against the current.</p>
 
@@ -642,7 +642,7 @@
       </div>
     </div>
 
-    <h2>Small actions are evidence</h2>
+    <h2>Small actions are <em class="hl-blue">evidence</em></h2>
 
     <p>Identity doesn't change in a single breakthrough moment. It shifts through repetition — through small, consistent actions that your brain registers as proof of who you're becoming.</p>
 
@@ -668,7 +668,7 @@
 
     <p>None of these feel dramatic in the moment. That's the point. Identity isn't built by grand gestures — it's built by the ordinary things you do when no one's watching.</p>
 
-    <h2>Know yourself before changing yourself</h2>
+    <h2>Know yourself before <em class="hl-blue">changing</em> yourself</h2>
 
     <p>One of the most common reasons people fail at self-improvement is not a lack of effort — it's a lack of self-awareness. They're following a system designed for someone else.</p>
 
@@ -738,7 +738,7 @@
       </div>
     </div>
 
-    <h2>Progress is not a straight line</h2>
+    <h2>Progress is not a <em class="hl-blue">straight line</em></h2>
 
     <p>Everyone who has ever built something real has gone through periods of stagnation, setbacks, and doubt. This is not a sign of failure — it's a predictable feature of growth.</p>
 
@@ -752,7 +752,7 @@
 
     <hr class="divider" />
 
-    <p>Stop trying to change what you do. <strong>Change who you are.</strong> Identity-based growth isn't faster or easier. But it's the only kind that actually lasts. Start small. Stay consistent. Let the evidence build.</p>
+    <p>Stop trying to change what you do. <strong><em class="hl-blue">Change who you are.</em></strong> Identity-based growth isn't faster or easier. But it's the only kind that actually lasts. Start small. Stay consistent. Let the evidence build.</p>
 
   </div>
 
