@@ -41,8 +41,16 @@
     nav {
       background: var(--bg-white);
       border-bottom: 1px solid var(--border);
-      padding: 0 2.5rem;
       height: 64px;
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-inner {
+      max-width: 1180px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 0 2.5rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -572,14 +580,16 @@
 
 <!-- NAV -->
 <nav>
-  <a href="../index.html" class="nav-logo">Improo</a>
-  <ul class="nav-links">
-    <li><a href="../index.html">Home</a></li>
-    <li><a href="../index.html#features">Features</a></li>
-    <li><a href="../roadmap.html">Roadmap</a></li>
-    <li><a href="index.html">Insights</a></li>
-    <li><a href="../index.html#waitlist" class="nav-cta">Get early access</a></li>
-  </ul>
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo">Improo</a>
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../index.html#features">Features</a></li>
+      <li><a href="../roadmap.html">Roadmap</a></li>
+      <li><a href="index.html">Insights</a></li>
+      <li><a href="../index.html#waitlist" class="nav-cta">Get early access</a></li>
+    </ul>
+  </div>
 </nav>
 
 <main class="article-wrapper">
