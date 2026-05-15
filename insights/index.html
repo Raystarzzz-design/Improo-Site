@@ -16,14 +16,12 @@
   <style>
     /* ── INSIGHTS-PAGE SPECIFIC STYLES ── */
 
-    /* Slider outer wrapper — voor achtergrond/border */
     .slider-outer {
       background: var(--bg);
       border-bottom: 1px solid var(--line);
       padding: 24px 0;
     }
 
-    /* Slider */
     .slider-wrap {
       position: relative;
       overflow: hidden;
@@ -61,7 +59,6 @@
 
     .slide:hover .slide-img { transform: scale(1.03); }
 
-    /* Light overlay — foto zichtbaar, tekst leesbaar */
     .slide-overlay {
       position: absolute;
       inset: 0;
@@ -73,7 +70,6 @@
       );
     }
 
-    /* Gradient-only slides (geen foto) */
     .slide-bg-mindset    { background: linear-gradient(135deg, #ede9fe 0%, #c4b5fd 50%, #ddd6fe 100%); }
     .slide-bg-discipline { background: linear-gradient(135deg, #dbeafe 0%, #93c5fd 50%, #bfdbfe 100%); }
     .slide-bg-health     { background: linear-gradient(135deg, #dcfce7 0%, #86efac 50%, #bbf7d0 100%); }
@@ -86,7 +82,6 @@
       max-width: 580px;
     }
 
-    /* Badge kleuren licht thema */
     .slide-badge {
       display: inline-flex;
       align-items: center;
@@ -142,7 +137,6 @@
     }
     .slide-link:hover { gap: 10px; }
 
-    /* Slider controls */
     .slider-btn {
       position: absolute;
       top: 50%;
@@ -184,7 +178,6 @@
     }
     .slider-dot.active { background: var(--blue); width: 20px; }
 
-    /* Controls bar */
     .controls-bar {
       padding: 20px 0;
       border-bottom: 1px solid var(--line);
@@ -245,7 +238,6 @@
     .filter-btn.active[data-filter="mindset"]    { background: #7c3aed;       border-color: #7c3aed;       color: #fff; font-weight: 700; }
     .filter-btn.active[data-filter="updates"]    { background: #d97706;       border-color: #d97706;       color: #fff; font-weight: 700; }
 
-    /* Grid */
     .grid-wrap {
       width: min(1180px, calc(100% - 48px));
       margin: 0 auto;
@@ -275,7 +267,6 @@
       gap: 18px;
     }
 
-    /* Article cards — lichte pastel gradients */
     .card {
       background: var(--panel);
       border: 1px solid var(--line);
@@ -313,13 +304,11 @@
 
     .card:hover .card-img img { transform: scale(1.06); }
 
-    /* Pastel gradients voor kaarten zonder foto */
     .card-bg-mindset    { background: linear-gradient(135deg, #f5f3ff 0%, #ede9fe 50%, #ddd6fe 100%); }
     .card-bg-discipline { background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 50%, #bfdbfe 100%); }
     .card-bg-health     { background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 50%, #bbf7d0 100%); }
     .card-bg-updates    { background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 50%, #fde68a 100%); }
 
-    /* Lichte overlay op card foto */
     .card-img-overlay {
       position: absolute;
       inset: 0;
@@ -394,7 +383,6 @@
       color: var(--muted);
     }
 
-    /* Load more */
     .load-more-wrap {
       width: min(1180px, calc(100% - 48px));
       margin: 0 auto;
@@ -419,7 +407,6 @@
     }
     .load-more-btn:hover { background: #d0e8ff; border-color: var(--blue); }
 
-    /* Responsive */
     @media (max-width: 900px) {
       .grid { grid-template-columns: repeat(2, 1fr); }
       .no-results { grid-column: span 2; }
@@ -448,12 +435,12 @@
     <div class="container">
       <nav class="nav">
         <a href="../index.html">
-         <span style="font-size:1.6rem; font-weight:700; background:linear-gradient(135deg,#3b9ef5,#2563eb); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; letter-spacing:-0.03em; font-family:'Sora',sans-serif;">Improo</span> 
+         <span style="font-size:1.6rem; font-weight:700; background:linear-gradient(135deg,#3b9ef5,#2563eb); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; letter-spacing:-0.03em; font-family:'Sora',sans-serif;">Improo</span>
         </a>
         <div class="nav-links">
           <a href="../index.html">Home</a>
           <a href="index.html" class="active">Articles</a>
-<a href="../guides/index.html">Guides</a>
+          <a href="../guides/index.html">Guides</a>
           <a href="../roadmap.html">Roadmap</a>
           <a href="../index.html#contact">Contact</a>
         </div>
@@ -530,16 +517,17 @@
         </div>
       </div>
 
+      <!-- ✦ UPDATED: was "The 10-Minute Movement Rule" → now nutrition article -->
       <div class="slide">
         <div style="position:absolute;inset:0;" class="card-bg-health"></div>
         <div class="slide-overlay"></div>
         <div class="slide-content">
           <span class="slide-badge badge-health">Health</span>
-          <h2 class="slide-title">The 10-Minute Movement Rule</h2>
-          <p class="slide-desc">If you can't find time for a full workout, you can always find 10 minutes. Done consistently, that beats nothing done perfectly.</p>
+          <h2 class="slide-title">Why Nutrition and Movement Work Better Together</h2>
+          <p class="slide-desc">Most people try one thing at a time — diet or exercise. But the research consistently shows that combined approaches win long-term.</p>
           <div class="slide-meta">
-            <span class="slide-date">March 28, 2026</span>
-            <a href="article-5.html" class="slide-link">Read article <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7h9M8 3.5l3.5 3.5L8 10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            <span class="slide-date">May 15, 2026</span>
+            <a href="nutrition-movement-combined.html" class="slide-link">Read article <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7h9M8 3.5l3.5 3.5L8 10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
           </div>
         </div>
       </div>
@@ -624,7 +612,8 @@
       { title: 'Why Most People Quit After 3 Weeks (And How to Be Different)', desc: "The first three weeks of any new habit feel exciting — then reality hits. Here's what the science actually says about habit formation.", category: 'discipline', date: 'April 18, 2026', href: 'quit-after-3-weeks.html', img: 'images/quit-after-3-weeks.webp' },
       { title: 'Sleep as a Performance Tool', desc: 'Most people treat sleep as rest. High performers treat it as training. The difference is in how you approach recovery.', category: 'health', date: 'April 12, 2026', href: 'sleep-as-a-performance-tool.html', img: 'images/sleep-as-a-performance-tool.webp' },
       { title: "Improo App: What We're Building", desc: 'A first look at the core features of Improo — habit tracking, belt challenges, community groups, and more.', category: 'updates', date: 'April 2, 2026', href: 'article-4.html' },
-      { title: 'The 10-Minute Movement Rule', desc: "If you can't find time for a full workout, you can always find 10 minutes. Done consistently, that beats nothing done perfectly.", category: 'health', date: 'March 28, 2026', href: 'article-5.html' },
+      /* ✦ UPDATED: was article-5 / The 10-Minute Movement Rule */
+      { title: 'Why Nutrition and Movement Work Better Together', desc: "Most people try one thing at a time — diet or exercise. But the research consistently shows combined approaches win. Here's what the evidence says.", category: 'health', date: 'May 15, 2026', href: 'nutrition-movement-combined.html' },
     ];
 
     const cat = {
