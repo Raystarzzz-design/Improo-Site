@@ -1,7 +1,7 @@
 # STATUS.md — Improo Website
 
 ## Last updated
-16 May 2026
+16 May 2026 (session 2)
 
 ---
 
@@ -132,6 +132,16 @@ Both share the same brand, colors, and Supabase backend.
    listed in the insights index or on the homepage — it may be unpublished/draft.
 
 ---
+
+## Completed this session (session 2)
+
+- `why-i-built-improo.html` — nav hersteld (logo, links, social icons), broken "More Insights" links gefixed, footer bijgewerkt
+- `identity-before-behavior.html` — nav-container breedte gelijkgetrokken met artikel (740px)
+- `guides.html` — Magnesium kaart geactiveerd (donker + "Read guide →" link)
+- `guides/Magnesium.html` — volledig herschreven: zelfde layout/kleur/fonts als intermittent-fasting.html, vertaald naar Engels, product cards bijgewerkt (Oura Ring 4 + NEW AGE Magnesium Complex), Improo tip sectie verwijderd, secties hernummerd
+- `images/products/magnesium-glycinate.webp` — productafbeelding toegevoegd
+- `images/products/oura-ring.webp` — productafbeelding toegevoegd
+- CLAUDE.md en STATUS.md aangemaakt voor Improo-Site project
 
 ## What still needs to be built
 
