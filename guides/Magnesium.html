@@ -3,648 +3,1014 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wat is Magnesium? — Improo Guide</title>
   <meta name="description" content="Alles over magnesium: waarvoor het goed is, welke vormen het beste werken, wanneer je het inneemt en wat de wetenschap zegt. Een eerlijke, onderbouwde gids van Improo." />
-  <title>Magnesium: Wat Het Doet, Waarom Je Het Nodig Hebt — Improo Guide</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700&family=Lora:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+  <script>
+    window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+  </script>
+  <script defer src="/_vercel/insights/script.js"></script>
+
   <style>
-    :root {
-      --bg:         #ffffff;
-      --surface:    #f8f8f6;
-      --surface2:   #f0f0ec;
-      --border:     #e5e5e0;
-      --highlight:  #f4f2ea;
-      --text:       #1a1a1a;
-      --text-muted: #555550;
-      --text-dim:   #999990;
-      --green:      #2d6a4f;
-      --green-bg:   #edf7f2;
-      --green-bdr:  #c3e6d4;
-      --red:        #c0392b;
-      --red-bg:     #fdf0ee;
-      --red-bdr:    #f5c6c0;
-      --radius:     10px;
-      --max:        760px;
-    }
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: 'Inter', sans-serif;
-      font-size: 17px;
-      line-height: 1.75;
-      -webkit-font-smoothing: antialiased;
+    body { overflow-x: hidden; }
+
+    .article-wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      width: 100%;
     }
 
-    /* NAV */
-    nav {
-      display: flex; justify-content: space-between; align-items: center;
-      padding: 18px 36px;
-      border-bottom: 1px solid var(--border);
-      position: sticky; top: 0;
-      background: rgba(255,255,255,0.97);
-      backdrop-filter: blur(10px);
-      z-index: 100;
+    #read-progress {
+      position: fixed;
+      top: 0; left: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--blue), #60a5fa);
+      width: 0%;
+      z-index: 999;
+      transition: width 0.1s linear;
     }
-    .logo { font-weight: 700; font-size: 17px; color: var(--text); text-decoration: none; letter-spacing: -0.3px; }
-    .nav-links { display: flex; gap: 28px; list-style: none; }
-    .nav-links a { font-size: 14px; color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
-    .nav-links a:hover { color: var(--text); }
-
-    /* LAYOUT */
-    .wrap { max-width: calc(var(--max) + 72px); margin: 0 auto; padding: 0 36px; }
-
-    /* BREADCRUMB */
-    .breadcrumb { padding: 24px 36px 0; max-width: calc(var(--max) + 72px); margin: 0 auto; }
-    .breadcrumb a { font-size: 13px; color: var(--text-dim); text-decoration: none; }
-    .breadcrumb a:hover { color: var(--text); }
 
     /* HERO */
-    .hero { max-width: calc(var(--max) + 72px); margin: 0 auto; padding: 36px 36px 28px; }
-    .category-tag {
-      display: inline-block;
-      background: var(--text); color: #fff;
-      font-size: 10px; font-weight: 700; letter-spacing: 1.8px; text-transform: uppercase;
-      padding: 5px 11px; border-radius: 4px; margin-bottom: 20px;
-    }
-    h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(34px, 5vw, 54px);
-      line-height: 1.08; font-weight: 700; letter-spacing: -1.5px;
-      margin-bottom: 18px; max-width: 680px;
-    }
-    h1 em { font-style: italic; }
-    .hero-sub { font-size: 16px; color: var(--text-muted); max-width: 580px; line-height: 1.65; margin-bottom: 24px; }
-    .meta-row {
-      display: flex; gap: 20px; flex-wrap: wrap;
-      font-size: 12px; color: var(--text-dim);
-      border-top: 1px solid var(--border); padding-top: 16px;
-    }
-    .meta-row span { color: var(--text-muted); }
+    .guide-hero { padding: 52px 0 0; }
 
-    /* STATS */
-    .stats-strip {
-      display: grid; grid-template-columns: repeat(3,1fr);
-      gap: 1px; background: var(--border);
-      border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden;
-      max-width: calc(var(--max) + 72px); margin: 0 auto 36px; padding: 0 36px;
+    .hero-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: 20px;
     }
-    .stat { background: var(--surface); padding: 22px 18px; text-align: center; }
-    .stat-num { font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 700; color: var(--text); display: block; }
-    .stat-label { font-size: 11px; color: var(--text-dim); margin-top: 5px; line-height: 1.4; }
+    .hero-kicker::before {
+      content: '';
+      display: block;
+      width: 28px; height: 1px;
+      background: var(--blue);
+    }
+
+    .hero-layout {
+      display: grid;
+      grid-template-columns: 1fr 260px;
+      gap: 48px;
+      align-items: start;
+      padding-bottom: 48px;
+      border-bottom: 1px solid var(--line);
+    }
+    @media (max-width: 900px) {
+      .hero-layout { grid-template-columns: 1fr; }
+      .hero-visual-wrap { display: none; }
+    }
+
+    .guide-hero h1 {
+      font-family: 'Lora', serif;
+      font-size: clamp(2.2rem, 5vw, 3.6rem);
+      font-weight: 400;
+      line-height: 1.1;
+      color: #0c1a2e;
+      margin: 0 0 20px;
+      letter-spacing: -0.02em;
+      max-width: 660px;
+    }
+    .guide-hero h1 em { font-style: italic; color: var(--blue); }
+
+    .hero-meta {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-size: 12px;
+      color: var(--muted-light);
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+    }
+    .hero-meta-dot { width: 3px; height: 3px; border-radius: 50%; background: var(--muted-light); }
+
+    .hero-intro {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: var(--muted);
+      max-width: 580px;
+      font-weight: 300;
+      margin-bottom: 32px;
+    }
+
+    .hero-facts {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--line);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      overflow: hidden;
+      margin-bottom: 32px;
+    }
+    .hero-fact { background: var(--panel); padding: 18px 16px; text-align: center; }
+    .hero-fact-value {
+      font-family: 'Lora', serif;
+      font-size: 1.7rem;
+      font-weight: 600;
+      color: var(--blue);
+      display: block;
+      line-height: 1;
+      margin-bottom: 5px;
+    }
+    .hero-fact-label { font-size: 11px; color: var(--muted-light); line-height: 1.4; }
+    @media (max-width: 480px) { .hero-facts { grid-template-columns: 1fr; } }
+
+    .hero-visual-wrap {
+      position: relative;
+      height: 340px;
+      border-radius: 24px;
+      overflow: hidden;
+      background: linear-gradient(135deg, #dbeafe 0%, #eff6ff 60%, #ecfdf5 100%);
+      border: 1px solid var(--line);
+    }
 
     /* TOC */
-    .toc { max-width: calc(var(--max) + 72px); margin: 0 auto 44px; padding: 0 36px; }
-    .toc-box { background: var(--highlight); border: 1px solid var(--border); border-radius: var(--radius); padding: 22px 26px; }
-    .toc-heading { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: var(--text-dim); margin-bottom: 14px; }
-    .toc-list { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 5px 28px; }
-    .toc-list li a { font-size: 13px; color: var(--text-muted); text-decoration: none; }
-    .toc-list li a:hover { color: var(--text); }
+    .toc {
+      background: var(--panel-2);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 22px 26px;
+    }
+    .toc-title { font-size: 9px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--muted-light); margin-bottom: 14px; }
+    .toc ol { list-style: none; counter-reset: toc; display: flex; flex-direction: column; gap: 10px; }
+    .toc ol li { counter-increment: toc; display: flex; align-items: baseline; gap: 12px; }
+    .toc ol li::before { content: counter(toc, decimal-leading-zero); font-size: 9px; font-weight: 700; color: var(--blue-light); min-width: 20px; }
+    .toc ol li a { font-size: 13px; color: var(--muted); text-decoration: none; transition: color 0.2s; line-height: 1.4; }
+    .toc ol li a:hover { color: var(--blue); }
 
-    /* CONTENT */
-    .content { max-width: calc(var(--max) + 72px); margin: 0 auto; padding: 0 36px 80px; }
-    .section { margin-bottom: 60px; }
-    .section-label { font-size: 11px; font-weight: 700; color: var(--text-dim); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px; }
-    h2 { font-family: 'Playfair Display', serif; font-size: 30px; font-weight: 700; letter-spacing: -0.5px; margin-bottom: 18px; line-height: 1.2; }
-    h3 { font-size: 16px; font-weight: 700; margin: 26px 0 10px; color: var(--text); }
-    p { margin-bottom: 16px; color: var(--text-muted); }
-    p:last-child { margin-bottom: 0; }
-    strong { color: var(--text); font-weight: 600; }
-    a { color: var(--text); text-decoration: underline; text-underline-offset: 3px; }
-    a:hover { opacity: 0.7; }
+    /* LAYOUT */
+    .guide-body {
+      display: grid;
+      grid-template-columns: 1fr 272px;
+      gap: 64px;
+      align-items: start;
+      padding: 56px 0 96px;
+    }
+    @media (max-width: 960px) {
+      .guide-body { grid-template-columns: 1fr; }
+      .guide-sidebar { display: none; }
+    }
 
-    /* CALLOUT */
-    .callout { background: var(--highlight); border-left: 3px solid var(--text); border-radius: 0 var(--radius) var(--radius) 0; padding: 18px 22px; margin: 24px 0; }
-    .callout-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: var(--text-dim); margin-bottom: 8px; }
-    .callout p { font-size: 15px; color: var(--text-muted); margin: 0; line-height: 1.6; }
+    /* SECTIONS */
+    .guide-section { margin-bottom: 64px; padding-bottom: 64px; border-bottom: 1px solid var(--line); }
+    .guide-section:last-child { border-bottom: none; margin-bottom: 0; }
 
-    /* FORMS GRID */
-    .forms-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 20px 0; }
-    .form-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 18px; }
-    .form-card.top { border-top: 2px solid var(--text); }
-    .form-badge { display: inline-block; background: var(--text); color: #fff; font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; padding: 3px 7px; border-radius: 3px; margin-bottom: 8px; }
-    .form-name { font-size: 15px; font-weight: 700; color: var(--text); margin-bottom: 4px; }
-    .form-use { font-size: 11px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 8px; }
-    .form-desc { font-size: 13px; color: var(--text-muted); line-height: 1.5; }
+    .section-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--blue-light);
+      margin-bottom: 14px;
+    }
+    .section-eyebrow::after { content: ''; flex: 1; max-width: 36px; height: 1px; background: var(--line-strong); }
 
-    /* RESEARCH */
-    .research-block { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 22px 24px; margin: 16px 0; }
-    .research-num { font-size: 10px; font-weight: 700; color: var(--text-dim); text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 6px; }
-    .research-title { font-size: 15px; font-weight: 700; margin-bottom: 10px; color: var(--text); }
-    .research-body { font-size: 14px; color: var(--text-muted); line-height: 1.65; margin-bottom: 12px; }
-    .research-cite { font-size: 12px; color: var(--text-dim); font-style: italic; }
+    .guide-section h2 {
+      font-family: 'Lora', serif;
+      font-size: clamp(1.4rem, 2.8vw, 2rem);
+      font-weight: 400;
+      line-height: 1.2;
+      color: #0c1a2e;
+      margin: 0 0 22px;
+    }
 
-    /* PROS CONS */
-    .pros-cons { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 20px 0; }
-    .pros { background: var(--green-bg); border: 1px solid var(--green-bdr); border-radius: var(--radius); padding: 20px; }
-    .cons { background: var(--red-bg); border: 1px solid var(--red-bdr); border-radius: var(--radius); padding: 20px; }
-    .pc-title { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; }
-    .pros .pc-title { color: var(--green); }
-    .cons .pc-title { color: var(--red); }
-    .pc-list { list-style: none; }
-    .pc-list li { font-size: 14px; color: var(--text-muted); padding: 7px 0; border-bottom: 1px solid rgba(0,0,0,0.06); line-height: 1.5; }
-    .pc-list li:last-child { border-bottom: none; }
-    .pros .pc-list li::before { content: "↑ "; color: var(--green); }
-    .cons .pc-list li::before { content: "↓ "; color: var(--red); }
+    .guide-section h3 {
+      font-size: 15px;
+      font-weight: 700;
+      color: #0c1a2e;
+      margin: 28px 0 10px;
+    }
 
-    /* DOSAGE TABLE */
-    .dosage-table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 14px; }
-    .dosage-table th { background: var(--surface2); color: var(--text-dim); font-size: 10px; text-transform: uppercase; letter-spacing: 1px; padding: 11px 14px; text-align: left; border-bottom: 1px solid var(--border); font-weight: 600; }
-    .dosage-table td { padding: 12px 14px; border-bottom: 1px solid var(--border); color: var(--text-muted); vertical-align: top; }
-    .dosage-table tr:last-child td { border-bottom: none; }
-    .dosage-table td:first-child { color: var(--text); font-weight: 600; }
+    .guide-section p { font-size: 0.97rem; font-weight: 300; color: var(--muted); margin-bottom: 18px; line-height: 1.85; max-width: 640px; }
 
-    /* KEY NUMBERS */
-    .key-numbers { display: grid; grid-template-columns: repeat(4,1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; margin: 28px 0; }
-    .kn-cell { background: var(--surface); padding: 18px 14px; text-align: center; }
-    .kn-val { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: var(--text); display: block; }
-    .kn-label { font-size: 11px; color: var(--text-dim); margin-top: 4px; line-height: 1.35; }
+    .callout {
+      border-left: 3px solid var(--blue);
+      padding: 20px 24px;
+      background: linear-gradient(135deg, rgba(37,99,235,0.04), rgba(96,165,250,0.06));
+      border-radius: 0 12px 12px 0;
+      margin: 28px 0;
+    }
+    .callout p { margin: 0; color: var(--blue-dark); font-style: italic; font-size: 1rem; line-height: 1.7; max-width: none; }
+    .callout-label { font-size: 9px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--blue-light); margin-bottom: 8px; }
 
-    /* BULLET LIST */
-    .bullet-list { list-style: none; margin: 16px 0; }
-    .bullet-list li { padding: 10px 0 10px 22px; border-bottom: 1px solid var(--border); color: var(--text-muted); font-size: 15px; position: relative; line-height: 1.55; }
-    .bullet-list li:last-child { border-bottom: none; }
-    .bullet-list li::before { content: "—"; position: absolute; left: 0; color: var(--text-dim); }
+    .insight-box {
+      background: linear-gradient(135deg, #0f1f3d 0%, #1e3a6e 100%);
+      border-radius: 16px;
+      padding: 28px 30px;
+      margin: 28px 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .insight-box::before {
+      content: '';
+      position: absolute;
+      top: -40px; right: -40px;
+      width: 160px; height: 160px;
+      border-radius: 50%;
+      background: rgba(96,165,250,0.07);
+    }
+    .insight-label { font-size: 9px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: rgba(96,165,250,0.65); margin-bottom: 10px; display: block; }
+    .insight-box p { margin: 0; color: rgba(255,255,255,0.88); font-size: 0.97rem; line-height: 1.72; font-weight: 300; max-width: none; }
+    .insight-box strong { color: #fff; font-weight: 600; }
 
-    /* MISTAKE */
-    .mistake { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px 22px; margin: 12px 0; }
-    .mistake-title { font-size: 14px; font-weight: 700; color: var(--text); margin-bottom: 7px; }
-    .mistake p { font-size: 14px; color: var(--text-muted); margin: 0; }
+    .opinion-box {
+      background: linear-gradient(135deg, #1e3a6e 0%, #1e40af 100%);
+      border-radius: 16px;
+      padding: 28px 30px;
+      margin: 28px 0;
+      position: relative;
+      overflow: hidden;
+      border-left: 4px solid #60a5fa;
+    }
+    .opinion-label { font-size: 9px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: rgba(147,197,253,0.8); margin-bottom: 10px; display: block; }
+    .opinion-box p { margin: 0; color: rgba(255,255,255,0.92); font-size: 1rem; line-height: 1.75; font-weight: 300; max-width: none; font-style: italic; }
+    .opinion-box strong { color: #93c5fd; font-weight: 600; font-style: normal; }
 
-    /* AFFILIATE */
-    .affiliate-grid { display: flex; flex-direction: column; gap: 16px; margin: 20px 0; }
-    .aff-card {
-      display: grid; grid-template-columns: 110px 1fr auto; gap: 22px; align-items: start;
-      background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
-      padding: 22px; text-decoration: none; color: inherit;
+    /* Forms grid */
+    .forms-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 24px 0; }
+    @media (max-width: 580px) { .forms-grid { grid-template-columns: 1fr; } }
+
+    .form-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 22px 20px;
       transition: border-color 0.2s, box-shadow 0.2s;
     }
-    .aff-card:hover { border-color: #bbb; box-shadow: 0 4px 20px rgba(0,0,0,0.07); text-decoration: none; }
-    .aff-img-wrap {
-      width: 110px; height: 110px;
-      background: var(--surface2); border-radius: 8px;
+    .form-card:hover { border-color: var(--line-strong); box-shadow: var(--shadow); }
+    .form-card.featured {
+      background: linear-gradient(135deg, rgba(37,99,235,0.05), rgba(96,165,250,0.07));
+      border-color: rgba(37,99,235,0.18);
+    }
+    .form-badge {
+      display: inline-block;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 3px 8px;
+      border-radius: 6px;
+      margin-bottom: 10px;
+      background: rgba(37,99,235,0.1);
+      color: var(--blue-dark);
+    }
+    .form-name { font-size: 15px; font-weight: 700; color: #0c1a2e; margin-bottom: 4px; }
+    .form-use { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--blue-light); margin-bottom: 8px; }
+    .form-desc { font-size: 13px; color: var(--muted); line-height: 1.65; font-weight: 300; }
+
+    /* Who grid (pros/cons) */
+    .who-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 24px 0; }
+    @media (max-width: 580px) { .who-grid { grid-template-columns: 1fr; } }
+    .who-card { border-radius: 16px; padding: 22px 20px; border: 1px solid; }
+    .who-card.fit { background: linear-gradient(135deg, rgba(37,99,235,0.04), rgba(96,165,250,0.06)); border-color: rgba(37,99,235,0.14); }
+    .who-card.less { background: linear-gradient(135deg, rgba(220,38,38,0.03), rgba(239,68,68,0.05)); border-color: rgba(220,38,38,0.12); }
+    .who-card-title { font-size: 9px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 14px; }
+    .who-card.fit .who-card-title { color: var(--blue); }
+    .who-card.less .who-card-title { color: #dc2626; }
+    .who-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .who-list li { font-size: 13.5px; color: var(--muted); padding-left: 20px; position: relative; line-height: 1.55; font-weight: 300; }
+    .who-card.fit .who-list li::before  { content: '+'; position: absolute; left: 0; color: var(--blue); font-weight: 700; }
+    .who-card.less .who-list li::before { content: '–'; position: absolute; left: 0; color: #dc2626; font-weight: 700; }
+
+    /* Study cards */
+    .study-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 22px 24px;
+      margin: 16px 0;
+      display: grid;
+      grid-template-columns: 38px 1fr;
+      gap: 16px;
+      align-items: start;
+      transition: box-shadow 0.2s, border-color 0.2s;
+    }
+    .study-card:hover { border-color: var(--line-strong); box-shadow: var(--shadow); }
+    .study-num {
+      width: 34px; height: 34px; border-radius: 9px;
+      background: var(--blue-pale); border: 1px solid var(--line-strong);
       display: flex; align-items: center; justify-content: center;
-      font-size: 38px; flex-shrink: 0;
+      font-size: 11px; font-weight: 700; color: var(--blue-dark); flex-shrink: 0;
     }
-    .aff-body { flex: 1; min-width: 0; }
-    .aff-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: var(--text-dim); margin-bottom: 6px; }
-    .aff-name { font-size: 16px; font-weight: 700; color: var(--text); margin-bottom: 6px; }
-    .aff-sub { font-size: 13px; color: var(--text-muted); margin-bottom: 12px; line-height: 1.5; }
-    .aff-why { list-style: none; margin-bottom: 12px; }
-    .aff-why li { font-size: 13px; color: var(--text-muted); padding: 3px 0; line-height: 1.45; }
-    .aff-why li::before { content: "✓ "; color: var(--green); font-weight: 700; }
-    .aff-tags { display: flex; gap: 6px; flex-wrap: wrap; }
-    .aff-tag { background: var(--surface2); border: 1px solid var(--border); border-radius: 4px; font-size: 11px; color: var(--text-dim); padding: 3px 8px; }
-    .aff-cta-wrap { display: flex; flex-direction: column; align-items: flex-end; gap: 8px; padding-top: 2px; flex-shrink: 0; }
-    .aff-btn {
-      display: inline-block; background: var(--text); color: #fff;
-      font-size: 13px; font-weight: 600; padding: 10px 18px; border-radius: 6px;
-      text-decoration: none; white-space: nowrap; transition: opacity 0.2s;
+    .study-title { font-size: 14px; font-weight: 600; color: #0c1a2e; margin-bottom: 8px; }
+    .study-text  { font-size: 13.5px; font-weight: 300; color: var(--muted); line-height: 1.7; margin: 0; }
+    .study-source { font-size: 11px; color: var(--muted-light); margin-top: 10px; font-style: italic; }
+
+    /* Dosage table */
+    .dosage-table { width: 100%; border-collapse: collapse; margin: 24px 0; font-size: 13.5px; }
+    .dosage-table th { background: var(--panel-2); color: var(--muted-light); font-size: 10px; text-transform: uppercase; letter-spacing: 1px; padding: 11px 14px; text-align: left; border-bottom: 1px solid var(--line); font-weight: 700; }
+    .dosage-table td { padding: 12px 14px; border-bottom: 1px solid var(--line); color: var(--muted); vertical-align: top; font-weight: 300; }
+    .dosage-table tr:last-child td { border-bottom: none; }
+    .dosage-table td:first-child { color: #0c1a2e; font-weight: 600; }
+    .dosage-table tr:hover td { background: var(--panel); }
+
+    /* Summary list */
+    .summary-list { list-style: none; display: flex; flex-direction: column; gap: 14px; margin: 20px 0; }
+    .summary-list li { display: flex; align-items: flex-start; gap: 14px; font-size: 14.5px; font-weight: 300; color: var(--muted); line-height: 1.65; }
+    .sum-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--blue); flex-shrink: 0; margin-top: 7px; }
+
+    /* Improo tip */
+    .improo-tip {
+      background: linear-gradient(135deg, var(--blue) 0%, #1d4ed8 100%);
+      border-radius: 18px;
+      padding: 28px 30px;
+      margin: 24px 0;
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      box-shadow: 0 8px 32px rgba(37,99,235,0.22);
     }
-    .aff-btn:hover { opacity: 0.8; text-decoration: none; }
-    .aff-note { font-size: 11px; color: var(--text-dim); text-align: right; white-space: nowrap; }
-    .aff-footer { font-size: 12px; color: var(--text-dim); margin-top: 8px; }
+    .tip-icon { font-size: 22px; flex-shrink: 0; margin-top: 2px; }
+    .tip-label { font-size: 9px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 7px; }
+    .tip-text { font-size: 14px; line-height: 1.7; font-weight: 300; margin: 0; color: #fff; }
 
-    /* SOURCES */
-    .sources-list { list-style: none; }
-    .sources-list li { display: flex; gap: 14px; padding: 14px 0; border-bottom: 1px solid var(--border); font-size: 14px; color: var(--text-muted); line-height: 1.55; }
-    .sources-list li:last-child { border-bottom: none; }
-    .src-num { font-size: 11px; font-weight: 700; color: var(--text-dim); min-width: 18px; flex-shrink: 0; padding-top: 2px; }
-
-    /* IMPROO TIP */
-    .improo-tip { background: var(--highlight); border: 1px solid var(--border); border-radius: var(--radius); padding: 26px 28px; margin: 36px 0; }
-    .tip-icon { font-size: 26px; margin-bottom: 10px; display: block; }
-    .tip-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: var(--text-dim); margin-bottom: 10px; }
-    .improo-tip p { font-size: 15px; color: var(--text-muted); margin: 0; }
-
-    /* DISCLAIMER */
-    .disclaimer { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px 20px; margin: 36px 0 0; }
-    .disclaimer p { font-size: 12px; color: var(--text-dim); margin: 0; line-height: 1.6; }
-
-    /* FOOTER */
-    footer { border-top: 1px solid var(--border); padding: 40px 36px; display: grid; grid-template-columns: 1.2fr 1fr 1fr; gap: 32px; max-width: 1100px; margin: 60px auto 0; }
-    .footer-brand p { font-size: 13px; color: var(--text-dim); margin-top: 10px; line-height: 1.6; }
-    .footer-col h4 { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.2px; color: var(--text-dim); margin-bottom: 14px; }
-    .footer-col ul { list-style: none; }
-    .footer-col ul li { margin-bottom: 8px; }
-    .footer-col ul li a { font-size: 13px; color: var(--text-muted); text-decoration: none; }
-    .footer-col ul li a:hover { color: var(--text); }
-    .footer-bottom { text-align: center; padding: 16px 36px 28px; font-size: 12px; color: var(--text-dim); border-top: 1px solid var(--border); }
-
-    /* RESPONSIVE */
-    @media (max-width: 640px) {
-      nav { padding: 14px 18px; }
-      .nav-links { display: none; }
-      .breadcrumb, .hero, .toc, .content { padding-left: 18px; padding-right: 18px; }
-      .stats-strip { padding: 0 18px; grid-template-columns: 1fr; }
-      .forms-grid, .pros-cons { grid-template-columns: 1fr; }
-      .key-numbers { grid-template-columns: repeat(2,1fr); }
-      .toc-list { grid-template-columns: 1fr; }
-      .aff-card { grid-template-columns: 1fr; }
-      .aff-cta-wrap { align-items: flex-start; }
-      footer { grid-template-columns: 1fr; padding: 28px 18px; }
+    /* Products */
+    .prod-card {
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      overflow: hidden;
+      background: var(--panel);
+      margin-bottom: 20px;
+      transition: box-shadow 0.3s ease, border-color 0.3s ease, transform 0.25s ease;
+      text-decoration: none;
+      color: inherit;
     }
+    .prod-card:hover { box-shadow: 0 16px 48px rgba(37,99,235,0.12); border-color: rgba(37,99,235,0.22); transform: translateY(-2px); }
+    @media (max-width: 680px) { .prod-card { grid-template-columns: 1fr; } .prod-visual { height: 180px; } }
+
+    .prod-visual {
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      padding: 18px;
+      min-height: 220px;
+    }
+    .prod-visual.mg-glycinate { background: linear-gradient(160deg, #dbeafe 0%, #bfdbfe 40%, #ede9fe 100%); }
+    .prod-visual.mg-threonate  { background: linear-gradient(160deg, #d1fae5 0%, #a7f3d0 40%, #bfdbfe 100%); }
+
+    .prod-badge {
+      position: relative; z-index: 2;
+      display: inline-flex; align-items: center; gap: 7px;
+      background: rgba(255,255,255,0.96);
+      border: 1.5px solid rgba(37,99,235,0.22);
+      border-radius: 22px;
+      padding: 7px 14px 7px 10px;
+      font-size: 11px; font-weight: 700; letter-spacing: 0.3px;
+      color: var(--blue-dark);
+      backdrop-filter: blur(8px);
+      align-self: flex-start;
+      box-shadow: 0 2px 10px rgba(37,99,235,0.12);
+    }
+    .prod-badge-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--blue); }
+    .prod-visual-icon { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); font-size: 64px; opacity: 0.3; }
+
+    .prod-content { padding: 26px 26px 22px; display: flex; flex-direction: column; }
+    .prod-category { font-size: 9px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--blue-light); margin-bottom: 8px; }
+    .prod-name { font-family: 'Lora', serif; font-size: 1.2rem; font-weight: 600; color: #0c1a2e; line-height: 1.25; margin-bottom: 12px; }
+    .prod-summary { font-size: 13.5px; color: var(--muted); line-height: 1.7; font-weight: 300; margin-bottom: 14px; }
+
+    .prod-why {
+      background: linear-gradient(135deg, rgba(37,99,235,0.07) 0%, rgba(96,165,250,0.05) 100%);
+      border: 1px solid rgba(37,99,235,0.14);
+      border-radius: 12px;
+      padding: 18px 20px;
+      margin-bottom: 18px;
+    }
+    .prod-why-label {
+      display: flex; align-items: center; gap: 8px;
+      font-size: 10px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase;
+      color: var(--blue-dark); margin-bottom: 10px;
+    }
+    .prod-why-label::before { content: '✦'; font-size: 11px; color: var(--blue); flex-shrink: 0; }
+    .prod-why p { font-size: 13px; color: var(--muted); line-height: 1.75; margin: 0; font-weight: 300; }
+
+    .prod-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 16px; }
+    .prod-tag { font-size: 11px; background: rgba(22,163,74,0.09); color: #15803d; padding: 4px 10px; border-radius: 20px; font-weight: 600; border: 1px solid rgba(22,163,74,0.15); }
+
+    .prod-cta {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+      color: #fff; font-size: 14px; font-weight: 700;
+      padding: 13px 24px; border-radius: 28px;
+      transition: background 0.2s, box-shadow 0.2s, gap 0.2s, transform 0.2s;
+      box-shadow: 0 6px 20px rgba(37,99,235,0.30);
+      align-self: flex-start; margin-bottom: 10px;
+    }
+    .prod-cta:hover { background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%); gap: 16px; box-shadow: 0 10px 28px rgba(37,99,235,0.42); transform: translateY(-1px); }
+    .prod-affiliate { font-size: 10.5px; color: var(--muted-light); }
+
+    /* Sources */
+    .sources-list { list-style: none; display: flex; flex-direction: column; gap: 14px; margin-top: 16px; }
+    .sources-list li { display: flex; gap: 12px; align-items: flex-start; }
+    .src-num { font-size: 10px; font-weight: 700; color: var(--blue-dark); background: var(--blue-pale); width: 24px; height: 24px; border-radius: 6px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
+    .src-text { font-size: 12.5px; color: var(--muted-light); line-height: 1.6; }
+    .src-text a { color: var(--blue); text-decoration: none; }
+    .src-text a:hover { text-decoration: underline; }
+
+    /* Sidebar */
+    .guide-sidebar { position: sticky; top: 88px; display: flex; flex-direction: column; gap: 16px; }
+    .sidebar-card { background: var(--panel); border: 1px solid var(--line); border-radius: 16px; padding: 20px 18px; box-shadow: var(--shadow); }
+    .sidebar-title { font-size: 9px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--muted-light); margin-bottom: 16px; }
+    .stat-item { display: flex; flex-direction: column; gap: 4px; margin-bottom: 16px; }
+    .stat-value { font-family: 'Lora', serif; font-size: 2.1rem; font-weight: 600; font-style: italic; color: var(--blue); line-height: 1; }
+    .stat-desc { font-size: 12px; color: var(--muted); line-height: 1.45; font-weight: 300; }
+    .stat-divider { height: 1px; background: var(--line); margin: 4px 0 16px; }
+    .sidebar-disclaimer { font-size: 11px; color: var(--muted-light); line-height: 1.65; font-weight: 300; }
+
+    /* Warning box */
+    .warning-box {
+      background: rgba(220,38,38,0.03);
+      border: 1px solid rgba(220,38,38,0.12);
+      border-radius: 12px;
+      padding: 18px 22px;
+      margin-top: 20px;
+      font-size: 13.5px;
+      color: var(--muted);
+      line-height: 1.65;
+      font-weight: 300;
+    }
+    .warning-box strong { color: #dc2626; font-weight: 600; }
+
+    /* Animations */
+    .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.55s ease, transform 0.55s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
   </style>
 </head>
 <body>
 
-<nav>
-  <a href="/index.html" class="logo">Improo</a>
-  <ul class="nav-links">
-    <li><a href="/index.html">Home</a></li>
-    <li><a href="/insights/index.html">Artikelen</a></li>
-    <li><a href="/guides.html">Guides</a></li>
-    <li><a href="/roadmap.html">Roadmap</a></li>
-    <li><a href="/index.html#contact">Contact</a></li>
-  </ul>
-</nav>
+  <div id="read-progress"></div>
 
-<div class="breadcrumb">
-  <a href="/guides.html">← Terug naar Guides</a>
-</div>
-
-<header class="hero">
-  <span class="category-tag">Supplement Guide</span>
-  <h1>Wat is <em>Magnesium</em>?</h1>
-  <p class="hero-sub">Magnesium is een van de meest onderzochte — en meest onderschatte — mineralen die er zijn. Deze guide snijdt door de ruis en vertelt je wat er echt toe doet.</p>
-  <div class="meta-row">
-    <span>9 min lezen</span>
-    <span>Onderbouwd met onderzoek</span>
-    <span>Geen medisch advies</span>
-  </div>
-</header>
-
-<div class="stats-strip">
-  <div class="stat">
-    <span class="stat-num">300+</span>
-    <span class="stat-label">Lichaamsprocessen waarbij magnesium betrokken is</span>
-  </div>
-  <div class="stat">
-    <span class="stat-num">~48%</span>
-    <span class="stat-label">Van volwassenen krijgt structureel te weinig magnesium</span>
-  </div>
-  <div class="stat">
-    <span class="stat-num">310–420mg</span>
-    <span class="stat-label">Aanbevolen dagelijkse hoeveelheid per dag</span>
-  </div>
-</div>
-
-<div class="toc">
-  <div class="toc-box">
-    <p class="toc-heading">In deze guide</p>
-    <ol class="toc-list">
-      <li><a href="#intro">Wat is magnesium?</a></li>
-      <li><a href="#benefits">Wat doet het voor je lichaam</a></li>
-      <li><a href="#extra">Extra voordelen die mensen vergeten</a></li>
-      <li><a href="#forms">Welke vorm werkt het beste</a></li>
-      <li><a href="#science">Wat de wetenschap zegt</a></li>
-      <li><a href="#dosering">Hoe en wanneer innemen</a></li>
-      <li><a href="#fouten">Veelgemaakte fouten</a></li>
-      <li><a href="#samenvatting">De korte versie</a></li>
-      <li><a href="#tip">Improo tip</a></li>
-      <li><a href="#products">Onze aanbevelingen</a></li>
-      <li><a href="#bronnen">Bronnen</a></li>
-    </ol>
-  </div>
-</div>
-
-<main class="content">
-
-  <!-- 01 -->
-  <section class="section" id="intro">
-    <p class="section-label">01 — Inleiding</p>
-    <h2>Wat is magnesium eigenlijk?</h2>
-    <p>Magnesium is een essentieel mineraal — wat betekent dat je lichaam het niet zelf aanmaakt. Je moet het via voeding of suppletie binnenkrijgen. En toch is het een van de meest voorkomende tekorten bij volwassenen wereldwijd.</p>
-    <p>Het mineraal is betrokken bij meer dan 300 enzymatische processen in het lichaam. Van energieproductie tot DNA-herstel, van spierfunctie tot neurotransmitters in de hersenen. Het is geen leuk extraatje — het is een basisbehoefte.</p>
-    <p>Het probleem? Moderne voeding — bewerkte producten, weinig groenten, weinig noten — levert structureel te weinig magnesium. Bovendien verbruiken stress, alcohol, intensief sporten en cafeïne extra magnesium. Wij zien dit steeds terug: mensen die goed proberen te eten, maar toch structureel tekort komen.</p>
-    <div class="callout">
-      <p class="callout-label">Kernpunt</p>
-      <p>Magnesium is geen trendsupplement. Het is een mineraal waaraan een groot deel van de volwassen bevolking structureel te weinig heeft — met meetbare gevolgen voor slaap, energie, stress en spieren.</p>
+  <!-- NAV -->
+  <header class="site-header">
+    <div class="container">
+      <nav class="nav">
+        <a href="../index.html">
+          <span style="font-size:1.6rem;font-weight:700;background:linear-gradient(135deg,#3b9ef5,#2563eb);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:-0.03em;font-family:'Sora',sans-serif;">Improo</span>
+        </a>
+        <div class="nav-links">
+          <a href="../index.html">Home</a>
+          <a href="../insights/index.html">Articles</a>
+          <a href="../guides.html" class="active">Guides</a>
+          <a href="../roadmap.html">Roadmap</a>
+          <a href="../index.html#contact">Contact</a>
+        </div>
+        <div class="socials">
+          <a href="https://www.youtube.com/@Improo_App" aria-label="YouTube">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.7 15.5V8.5l6.3 3.5-6.3 3.5z"/></svg>
+          </a>
+          <a href="https://x.com/Improo_" aria-label="X">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+        </div>
+      </nav>
     </div>
-  </section>
+  </header>
 
-  <!-- 02 -->
-  <section class="section" id="benefits">
-    <p class="section-label">02 — Functies</p>
-    <h2>Wat doet magnesium voor je lichaam?</h2>
-    <p>Magnesium is geen one-trick pony. Het werkt op meerdere systemen tegelijkertijd. Hieronder de meest relevante functies — niet als marketinglijstje, maar met context waarom het ertoe doet.</p>
+  <div class="article-wrap">
 
-    <h3>Energieproductie (ATP)</h3>
-    <p>Elke cel in je lichaam gebruikt ATP als brandstof. ATP is alleen biologisch actief als het gebonden is aan een magnesiumion. Zonder voldoende magnesium kan je lichaam energie niet goed aanmaken of gebruiken. <strong>Vermoeidheid zonder duidelijke oorzaak</strong> is een van de eerste signalen van een tekort.</p>
+    <a href="../guides.html" class="back-link" style="margin-top:36px;display:inline-flex;align-items:center;gap:6px;font-size:13px;color:var(--muted);transition:color 0.2s;">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M9 2L4 7l5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Terug naar Guides
+    </a>
 
-    <h3>Spierfunctie en herstel</h3>
-    <p>Magnesium is essentieel voor spiercontractie én -ontspanning. Calcium zorgt ervoor dat een spier samentrekt — magnesium zorgt dat die spier ook weer loslaat. Bij een tekort: krampen, spierstijfheid en trager herstel. Wij raden sporters altijd aan om magnesium als eerste te checken als herstel niet op gang komt.</p>
+    <!-- HERO -->
+    <section class="guide-hero">
+      <div class="hero-layout">
+        <div class="hero-left reveal">
+          <div class="hero-kicker">Supplement Guide</div>
+          <h1>Wat is <em>Magnesium</em>?</h1>
+          <div class="hero-meta">
+            <span>9 min lezen</span>
+            <div class="hero-meta-dot"></div>
+            <span>Onderbouwd met onderzoek</span>
+            <div class="hero-meta-dot"></div>
+            <span>Geen medisch advies</span>
+          </div>
+          <p class="hero-intro">Magnesium is een van de meest onderzochte — en meest onderschatte — mineralen. Bijna de helft van de volwassenen krijgt structureel te weinig. Deze guide vertelt je wat het doet, welke vorm werkt, en wanneer je het inneemt.</p>
 
-    <h3>Zenuwstelsel en stressrespons</h3>
-    <p>Magnesium moduleert het sympathische zenuwstelsel — het systeem dat de vecht-of-vlucht respons aanstuurt. Het fungeert als een natuurlijke NMDA-receptorblokker, wat de prikkelgevoeligheid van zenuwcellen verlaagt. <strong>Minder magnesium = overactief zenuwstelsel = meer stressgevoeligheid.</strong></p>
+          <div class="hero-facts">
+            <div class="hero-fact reveal">
+              <span class="hero-fact-value">300+</span>
+              <span class="hero-fact-label">Lichaamsprocessen waarbij magnesium betrokken is</span>
+            </div>
+            <div class="hero-fact reveal">
+              <span class="hero-fact-value">~48%</span>
+              <span class="hero-fact-label">Van volwassenen krijgt structureel te weinig magnesium</span>
+            </div>
+            <div class="hero-fact reveal">
+              <span class="hero-fact-value">4–8 wk</span>
+              <span class="hero-fact-label">Gemiddeld voor een meetbaar effect bij slaap en stemming</span>
+            </div>
+          </div>
 
-    <h3>Bloedsuikerregulatie</h3>
-    <p>Magnesium speelt een rol bij de werking van insuline en de opname van glucose door cellen. Lage magnesiumniveaus zijn sterk geassocieerd met insulineresistentie en een verhoogd risico op type 2 diabetes.</p>
-
-    <h3>Hartgezondheid</h3>
-    <p>Het hart is een spier — en heeft dus constant magnesium nodig voor een regelmatig ritme. Magnesium helpt bloeddruk reguleren en verlaagt het risico op hartritmestoornissen. In klinische settings wordt magnesiuminfuus ingezet bij bepaalde ritmestoornissen.</p>
-  </section>
-
-  <!-- 03 -->
-  <section class="section" id="extra">
-    <p class="section-label">03 — Extra voordelen</p>
-    <h2>De voordelen die mensen vergeten</h2>
-    <p>Magnesium staat bekend om slaap en krampen. Maar de effecten gaan verder. Dit zijn de gebieden waarbij wij zien dat mensen het meest verrast zijn.</p>
-
-    <h3>Slaapkwaliteit</h3>
-    <p>Magnesium activeert het parasympathische zenuwstelsel en verhoogt GABA-niveaus — een remmende neurotransmitter die de hersenen helpt ontspannen. Meerdere studies tonen aan dat magnesiumsuppletie de slaapkwaliteit, inslaapduur en diepe slaap significant verbetert, met name bij mensen boven de 50.</p>
-
-    <h3>Angst en stemming</h3>
-    <p>Magnesiumtekort is gelinkt aan verhoogde angstgevoelens en depressieve symptomen. Magnesium reguleert zowel serotonine als dopamine — twee neurotransmitters die direct invloed hebben op stemming. Een meta-analyse uit 2017 concludeerde dat suppletie angstreductie ondersteunt, met name bij mensen met mild tot matig angstniveau.</p>
-
-    <h3>Migrainepreventie</h3>
-    <p>Dit is een onderbelicht gebruik. Mensen die regelmatig migraine hebben, vertonen gemiddeld lagere magnesiumniveaus in het bloed. De American Migraine Foundation erkent magnesium als mogelijke preventieve behandeling. Studies laten zien dat dagelijks 600 mg magnesiumoxide de frequentie van aanvallen significant kan verlagen.</p>
-
-    <h3>Botdichtheid</h3>
-    <p>Calcium krijgt alle aandacht als het om botten gaat — maar magnesium is net zo belangrijk. Het reguleert calciuminname in botcellen en activeert vitamine D. <strong>Zonder voldoende magnesium werkt vitamine D minder effectief.</strong></p>
-
-    <div class="callout">
-      <p class="callout-label">Wat wij zien</p>
-      <p>Veel mensen die ons vertellen dat ze slecht slapen, veel stress ervaren en vermoeid wakker worden, blijken bij nader inzien structureel te weinig magnesium te krijgen. Het is niet altijd de oorzaak — maar het is vaker de factor dan mensen denken.</p>
-    </div>
-  </section>
-
-  <!-- 04 -->
-  <section class="section" id="forms">
-    <p class="section-label">04 — Vormen</p>
-    <h2>Welke vorm werkt het beste?</h2>
-    <p>Niet alle magnesium is gelijk. De vorm bepaalt hoe goed het wordt opgenomen en wat het primair doet. Dit is het grootste misverstand bij magnesiumsuppletie: mensen kopen de goedkoopste vorm en vragen zich af waarom ze niets merken.</p>
-
-    <div class="forms-grid">
-      <div class="form-card top">
-        <span class="form-badge">Beste keuze slaap</span>
-        <div class="form-name">Magnesium Glycinaat</div>
-        <div class="form-use">Slaap · Angst · Ontspanning</div>
-        <p class="form-desc">Gebonden aan glycine — een aminozuur met een eigen kalmerend effect. Hoge biologische beschikbaarheid, zacht voor de maag. De eerste keuze voor de meeste mensen.</p>
-      </div>
-      <div class="form-card top">
-        <span class="form-badge">Beste keuze hersenen</span>
-        <div class="form-name">Magnesium L-Threonate</div>
-        <div class="form-use">Cognitie · Geheugen · Focus</div>
-        <p class="form-desc">De enige vorm die de bloed-hersenbarrière significant kan passeren. Ontwikkeld door MIT-onderzoekers. Duurder, maar uniek voor cognitieve ondersteuning.</p>
-      </div>
-      <div class="form-card">
-        <div class="form-name">Magnesium Malaat</div>
-        <div class="form-use">Energie · Sport · Herstel</div>
-        <p class="form-desc">Gebonden aan appelzuur dat ook betrokken is bij energieproductie. Goed voor sporters. Overdag innemen voor het beste effect.</p>
-      </div>
-      <div class="form-card">
-        <div class="form-name">Magnesium Citraat</div>
-        <div class="form-use">Algemeen · Budget · Constipatie</div>
-        <p class="form-desc">Goed opneembaar en betaalbaar. Heeft een mild laxerend effect — positief bij constipatie, maar let op bij hoge doseringen.</p>
-      </div>
-      <div class="form-card">
-        <div class="form-name">Magnesium Oxide</div>
-        <div class="form-use">Migraine · Hoge dosering</div>
-        <p class="form-desc">Lage opneembaarheid (~4%), maar bevat veel elementair magnesium per tablet. Gebruikt in migraineonderzoek. Niet de eerste keuze voor dagelijks gebruik.</p>
-      </div>
-      <div class="form-card">
-        <div class="form-name">Magnesium Tauraat</div>
-        <div class="form-use">Hart · Bloeddruk</div>
-        <p class="form-desc">Gebonden aan taurine, dat ook hartbeschermende eigenschappen heeft. Interessant voor mensen met cardiovasculaire aandachtspunten.</p>
-      </div>
-    </div>
-
-    <div class="callout">
-      <p class="callout-label">Onze aanbeveling</p>
-      <p>Voor de meeste mensen is <strong>magnesium glycinaat</strong> het beste startpunt — hoge opneembaarheid, goed voor slaap, zacht voor de maag en breed gedocumenteerd. Wil je cognitieve ondersteuning erbij? Voeg L-Threonate toe. Ben je actief sporter? Overweeg malaat overdag.</p>
-    </div>
-  </section>
-
-  <!-- 05 -->
-  <section class="section" id="science">
-    <p class="section-label">05 — Onderzoek</p>
-    <h2>Wat zegt de wetenschap?</h2>
-    <p>Magnesium is een van de best-onderzochte mineralen. Hieronder drie robuuste studies — niet de meest optimistische uitkomsten, maar de meest betrouwbare.</p>
-
-    <div class="research-block">
-      <p class="research-num">[1] Slaapkwaliteit</p>
-      <p class="research-title">Magnesiumsuppletie verbetert slaap bij oudere volwassenen</p>
-      <p class="research-body">Een gerandomiseerde dubbelblinde studie uit 2012 in het <em>Journal of Research in Medical Sciences</em> onderzocht 46 ouderen met slaapproblemen. De groep die 500 mg magnesium per dag ontving, toonde significante verbeteringen in inslaapduur, slaapefficiëntie en serum melatoninespiegels ten opzichte van de placebogroep. Resultaten waren meetbaar na 8 weken.</p>
-      <p class="research-cite">Abbasi et al. (2012). Journal of Research in Medical Sciences, 17(12), 1161–1169. PubMed ID: 23853635</p>
-    </div>
-
-    <div class="research-block">
-      <p class="research-num">[2] Angst en stemming</p>
-      <p class="research-title">Magnesium en angstreductie — een systematische review</p>
-      <p class="research-body">Een meta-analyse in <em>Nutrients</em> (2017) analyseerde 18 studies naar de relatie tussen magnesium en angst. Conclusie: suppletie ondersteunt angstreductie, met name bij mensen met subklinische angststoornissen. Het effect was het sterkst bij mensen met een vastgesteld tekort — een groep die groter is dan de meeste mensen denken.</p>
-      <p class="research-cite">Boyle, N.B. et al. (2017). Nutrients, 9(5), 429. PubMed ID: 28445426</p>
-    </div>
-
-    <div class="research-block">
-      <p class="research-num">[3] Insulinegevoeligheid en diabetes</p>
-      <p class="research-title">Magnesiumtekort als risicofactor voor type 2 diabetes</p>
-      <p class="research-body">Een meta-analyse in <em>Diabetes Care</em> analyseerde data van meer dan 536.000 deelnemers. Elke 100 mg hogere magnesiuminname per dag was geassocieerd met een 15% lager risico op type 2 diabetes — mechanistisch gekoppeld aan de rol van magnesium in insulinesignalering op celniveau.</p>
-      <p class="research-cite">Fang, M. et al. (2016). Diabetes Care, 39(8), 1405–1412. PubMed ID: 27372871</p>
-    </div>
-  </section>
-
-  <!-- 06 -->
-  <section class="section" id="dosering">
-    <p class="section-label">06 — Gebruik</p>
-    <h2>Hoe en wanneer innemen?</h2>
-    <p>De juiste timing en dosering maken een groot verschil. Dit is wat de praktijk leert:</p>
-
-    <table class="dosage-table">
-      <thead>
-        <tr><th>Doel</th><th>Aanbevolen vorm</th><th>Dosering</th><th>Timing</th></tr>
-      </thead>
-      <tbody>
-        <tr><td>Slaap &amp; ontspanning</td><td>Glycinaat</td><td>200–400 mg</td><td>30–60 min voor het slapen</td></tr>
-        <tr><td>Energie &amp; sport</td><td>Malaat</td><td>300–400 mg</td><td>'s Ochtends of voor training</td></tr>
-        <tr><td>Cognitie</td><td>L-Threonate</td><td>1.500–2.000 mg*</td><td>Verdeeld over de dag</td></tr>
-        <tr><td>Migraineprev.</td><td>Oxide of Citraat</td><td>400–600 mg</td><td>Consistent dagelijks</td></tr>
-        <tr><td>Algemeen tekort</td><td>Citraat of Glycinaat</td><td>200–350 mg</td><td>Bij de maaltijd</td></tr>
-      </tbody>
-    </table>
-    <p style="font-size:12px;color:var(--text-dim);margin-top:-8px;">* L-Threonate doseringen zijn gebaseerd op het totale zoutgewicht. Elementair magnesiumgehalte is lager (~144 mg per 2g L-Threonate).</p>
-
-    <div class="key-numbers">
-      <div class="kn-cell"><span class="kn-val">310mg</span><span class="kn-label">ADH vrouwen 19–30 jr</span></div>
-      <div class="kn-cell"><span class="kn-val">400mg</span><span class="kn-label">ADH mannen 19–30 jr</span></div>
-      <div class="kn-cell"><span class="kn-val">350mg</span><span class="kn-label">Veilige bovengrens supplement</span></div>
-      <div class="kn-cell"><span class="kn-val">8 wk</span><span class="kn-label">Gemiddeld voor meetbaar effect</span></div>
-    </div>
-
-    <p>Neem magnesium niet tegelijk in met zink of calcium in hoge doseringen — deze mineralen concurreren om dezelfde opname-receptoren. Spatieer ze over de dag als je meerdere supplementen gebruikt.</p>
-  </section>
-
-  <!-- 07 -->
-  <section class="section" id="fouten">
-    <p class="section-label">07 — Veelgemaakte fouten</p>
-    <h2>Wat mensen verkeerd doen</h2>
-
-    <div class="mistake">
-      <p class="mistake-title">Fout 1: De goedkoopste vorm kopen</p>
-      <p>Magnesiumoxide is de meest verkochte vorm vanwege de lage prijs — maar heeft een biologische beschikbaarheid van slechts ~4%. Kies voor glycinaat of citraat als startpunt.</p>
-    </div>
-    <div class="mistake">
-      <p class="mistake-title">Fout 2: Te vroeg stoppen</p>
-      <p>Magnesium bouwt op over weken, niet dagen. De meeste voordelen voor slaap en stemming worden pas na 4–8 weken meetbaar. Mensen stoppen te vroeg en concluderen dat het "niets doet."</p>
-    </div>
-    <div class="mistake">
-      <p class="mistake-title">Fout 3: Verkeerd moment innemen</p>
-      <p>Als je magnesium neemt voor slaap en je neemt het bij het ontbijt, mis je het effect. Het kalmerend effect van glycinaat is het sterkst 30–60 minuten voor het slapen.</p>
-    </div>
-    <div class="mistake">
-      <p class="mistake-title">Fout 4: Denken dat voeding voldoende is</p>
-      <p>In theorie haal je voldoende magnesium uit noten, zaden en donkere bladgroenten. In de praktijk eten de meeste mensen hier te weinig van — en is de magnesiumconcentratie in voedsel de afgelopen decennia gedaald door uitgeputte landbouwgronden.</p>
-    </div>
-
-    <div class="callout">
-      <p class="callout-label">De echte conclusie</p>
-      <p>Magnesiumsuppletie werkt — maar dan wel de juiste vorm, op het juiste moment, lang genoeg. Wij zien te vaak dat mensen "het geprobeerd hebben" op basis van verkeerde verwachtingen of de verkeerde productkeuze. Doe het goed of doe het niet.</p>
-    </div>
-  </section>
-
-  <!-- 08 -->
-  <section class="section" id="samenvatting">
-    <p class="section-label">08 — Samenvatting</p>
-    <h2>De korte versie</h2>
-    <ul class="bullet-list">
-      <li>Magnesium is betrokken bij meer dan 300 processen in het lichaam — van energieproductie tot hersenfunctie en spierherstel.</li>
-      <li>Bijna de helft van de volwassenen krijgt structureel te weinig magnesium binnen via voeding.</li>
-      <li>De beste vorm voor de meeste mensen is <strong>magnesium glycinaat</strong> — hoge opneembaarheid, goed voor slaap, zacht voor de maag.</li>
-      <li>Voor cognitieve ondersteuning is <strong>magnesium L-Threonate</strong> de enige vorm die de bloed-hersenbarrière effectief passeert.</li>
-      <li>Effect voor slaap en stemming is meetbaar na 4–8 weken consistent gebruik — niet na drie dagen.</li>
-      <li>Neem het voor slaap 30–60 minuten voor het slapen. Voor energie en sport overdag.</li>
-      <li>Goedkoop magnesiumoxide heeft een biologische beschikbaarheid van ~4% — vrijwel weggegooid geld.</li>
-    </ul>
-  </section>
-
-  <!-- 09 -->
-  <section class="section" id="tip">
-    <div class="improo-tip">
-      <span class="tip-icon">💡</span>
-      <p class="tip-label">Improo tip</p>
-      <p>Gebruik de Improo supplement-tracker (beschikbaar zomer 2026) om je magnesiuminname en effecten bij te houden. Wij raden aan om minimaal 8 weken consistent bij te houden — slaapkwaliteit, energieniveau en stressgevoeligheid — zodat je zelf kunt zien wat het doet. Suppletie zonder tracking is gissen. Met tracking weet je het.</p>
-    </div>
-  </section>
-
-  <!-- 10 AFFILIATE -->
-  <section class="section" id="products">
-    <p class="section-label">10 — Onze aanbevelingen</p>
-    <h2>Wat wij daadwerkelijk zouden gebruiken</h2>
-    <p>Dit zijn producten die een magnesiumroutine zinvol aanvullen. Wij kiezen op kwaliteit van ingrediënten en transparantie van de fabrikant — niet op commissiepercentage.</p>
-
-    <div class="affiliate-grid">
-
-      <a class="aff-card" href="https://amzn.to/3PleywY" target="_blank" rel="noopener">
-        <div class="aff-img-wrap">💊</div>
-        <div class="aff-body">
-          <p class="aff-label">Meest aanbevolen · Slaap &amp; Ontspanning</p>
-          <p class="aff-name">Magnesium Glycinaat 400mg</p>
-          <p class="aff-sub">De vorm die wij als eerste aanbevelen voor de meeste mensen. Hoge opneembaarheid, geen maagproblemen, ideaal 's avonds voor het slapen.</p>
-          <ul class="aff-why">
-            <li>Gebonden aan glycine — ondersteunt ook slaap op zichzelf</li>
-            <li>Geen laxerend bijeffect bij normale doseringen</li>
-            <li>Vrij van onnodige vulstoffen en kunstmatige toevoegingen</li>
-            <li>Breed gedocumenteerd in klinisch onderzoek</li>
-          </ul>
-          <div class="aff-tags">
-            <span class="aff-tag">Slaap</span>
-            <span class="aff-tag">Angst</span>
-            <span class="aff-tag">Dagelijks gebruik</span>
+          <div class="toc">
+            <div class="toc-title">In deze guide</div>
+            <ol>
+              <li><a href="#intro">Wat is magnesium?</a></li>
+              <li><a href="#benefits">Wat doet het voor je lichaam?</a></li>
+              <li><a href="#extra">Extra voordelen die mensen vergeten</a></li>
+              <li><a href="#forms">Welke vorm werkt het beste?</a></li>
+              <li><a href="#science">Wat de wetenschap zegt</a></li>
+              <li><a href="#dosering">Hoe en wanneer innemen?</a></li>
+              <li><a href="#fouten">Veelgemaakte fouten</a></li>
+              <li><a href="#samenvatting">De korte versie</a></li>
+              <li><a href="#tip">Improo tip</a></li>
+              <li><a href="#products">Onze aanbevelingen</a></li>
+              <li><a href="#sources">Bronnen</a></li>
+            </ol>
           </div>
         </div>
-        <div class="aff-cta-wrap">
-          <span class="aff-btn">Bekijk op Amazon</span>
-          <span class="aff-note">Affiliate link</span>
-        </div>
-      </a>
 
-      <a class="aff-card" href="https://amzn.to/4eO4d7a" target="_blank" rel="noopener">
-        <div class="aff-img-wrap">🧠</div>
-        <div class="aff-body">
-          <p class="aff-label">Voor cognitie · Magtein / L-Threonate</p>
-          <p class="aff-name">Magnesium L-Threonate (Magtein)</p>
-          <p class="aff-sub">De enige magnesiumvorm die de bloed-hersenbarrière effectief passeert. Ontwikkeld door MIT-onderzoekers. Duurder — maar er is geen alternatief als cognitie het doel is.</p>
-          <ul class="aff-why">
-            <li>Enige vorm met bewezen toegang tot hersenweefsel</li>
-            <li>Ondersteunt geheugen, focus en synaptische plasticiteit</li>
-            <li>Gepatenteerde Magtein-formule — het origineel uit het onderzoek</li>
-            <li>Combineerbaar met glycinaat voor een volledig profiel</li>
-          </ul>
-          <div class="aff-tags">
-            <span class="aff-tag">Cognitie</span>
-            <span class="aff-tag">Focus</span>
-            <span class="aff-tag">Geheugen</span>
+        <!-- Hero visual -->
+        <div class="hero-visual-wrap reveal">
+          <svg width="100%" viewBox="0 0 260 340" xmlns="http://www.w3.org/2000/svg" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+            <defs>
+              <radialGradient id="mgBg" cx="50%" cy="40%" r="65%"><stop offset="0%" stop-color="#e8eeff"/><stop offset="100%" stop-color="#ecfdf5"/></radialGradient>
+            </defs>
+            <rect width="260" height="340" fill="url(#mgBg)"/>
+            <!-- Periodic table card -->
+            <rect x="50" y="60" width="160" height="180" rx="18" fill="white" opacity="0.85" stroke="#c7d8f0" stroke-width="1.5"/>
+            <rect x="50" y="60" width="160" height="44" rx="18" fill="#2563eb" opacity="0.9"/>
+            <rect x="50" y="88" width="160" height="16" rx="0" fill="#2563eb" opacity="0.9"/>
+            <text x="130" y="90" text-anchor="middle" font-family="'Sora',sans-serif" font-size="10" font-weight="700" fill="rgba(255,255,255,0.7)" letter-spacing="2">MINERAAL</text>
+            <text x="130" y="172" text-anchor="middle" font-family="'Lora',serif" font-size="72" font-weight="600" fill="#1e3a6e">Mg</text>
+            <text x="130" y="204" text-anchor="middle" font-family="'Sora',sans-serif" font-size="11" font-weight="300" fill="#4a6fa5">Magnesium</text>
+            <text x="130" y="222" text-anchor="middle" font-family="'Lora',serif" font-size="16" fill="#7090c0">24.305</text>
+            <text x="68" y="96" font-family="'Sora',sans-serif" font-size="13" font-weight="700" fill="white">12</text>
+            <!-- Bottom stats -->
+            <rect x="32" y="272" width="196" height="52" rx="12" fill="white" opacity="0.9"/>
+            <text x="68" y="293" text-anchor="middle" font-family="'Lora',serif" font-size="18" font-weight="600" fill="#2563eb">300+</text>
+            <text x="68" y="308" text-anchor="middle" font-family="'Sora',sans-serif" font-size="9" fill="#6080a8">processen</text>
+            <line x1="115" y1="278" x2="115" y2="318" stroke="#dde8f4" stroke-width="1"/>
+            <text x="160" y="293" text-anchor="middle" font-family="'Lora',serif" font-size="18" font-weight="600" fill="#2563eb">48%</text>
+            <text x="160" y="308" text-anchor="middle" font-family="'Sora',sans-serif" font-size="9" fill="#6080a8">heeft tekort</text>
+            <!-- Decorative dots -->
+            <circle cx="38" cy="80" r="4" fill="rgba(37,99,235,0.15)"/>
+            <circle cx="222" cy="240" r="6" fill="rgba(46,204,138,0.18)"/>
+            <circle cx="30" cy="200" r="5" fill="rgba(96,165,250,0.2)"/>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- BODY -->
+    <div class="guide-body">
+      <main>
+
+        <!-- 01 INTRO -->
+        <div class="guide-section reveal" id="intro">
+          <div class="section-eyebrow">01 — Inleiding</div>
+          <h2>Wat is magnesium eigenlijk?</h2>
+          <p>Magnesium is een essentieel mineraal — wat betekent dat je lichaam het niet zelf aanmaakt. Je moet het via voeding of suppletie binnenkrijgen. En toch is het een van de meest voorkomende tekorten bij volwassenen wereldwijd.</p>
+          <p>Het mineraal is betrokken bij meer dan 300 enzymatische processen in het lichaam. Van energieproductie tot DNA-herstel, van spierfunctie tot neurotransmitters in de hersenen. Het is geen leuk extraatje — het is een basisbehoefte.</p>
+          <p>Het probleem? Moderne voeding — bewerkte producten, weinig groenten, weinig noten — levert structureel te weinig magnesium. Bovendien verbruiken stress, alcohol, intensief sporten en cafeïne extra magnesium. Wij zien dit steeds terug: mensen die goed proberen te eten, maar toch structureel tekort komen.</p>
+          <div class="insight-box">
+            <span class="insight-label">Kernpunt</span>
+            <p>Magnesium is geen trendsupplement. Het is een mineraal waaraan een groot deel van de volwassen bevolking structureel te weinig heeft — met <strong>meetbare gevolgen voor slaap, energie, stress en spieren</strong>.</p>
           </div>
         </div>
-        <div class="aff-cta-wrap">
-          <span class="aff-btn">Bekijk op Amazon</span>
-          <span class="aff-note">Affiliate link</span>
+
+        <!-- 02 BENEFITS -->
+        <div class="guide-section reveal" id="benefits">
+          <div class="section-eyebrow">02 — Functies</div>
+          <h2>Wat doet magnesium voor je lichaam?</h2>
+          <p>Magnesium is geen one-trick pony. Het werkt op meerdere systemen tegelijkertijd. Hieronder de meest relevante functies — niet als marketinglijstje, maar met context waarom het ertoe doet.</p>
+
+          <h3>Energieproductie (ATP)</h3>
+          <p>Elke cel in je lichaam gebruikt ATP als brandstof. ATP is alleen biologisch actief als het gebonden is aan een magnesiumion. Zonder voldoende magnesium kan je lichaam energie niet goed aanmaken of gebruiken. <strong>Vermoeidheid zonder duidelijke oorzaak</strong> is een van de eerste signalen van een tekort.</p>
+
+          <h3>Spierfunctie en herstel</h3>
+          <p>Magnesium is essentieel voor spiercontractie én -ontspanning. Calcium zorgt ervoor dat een spier samentrekt — magnesium zorgt dat die spier ook weer loslaat. Bij een tekort: krampen, spierstijfheid en trager herstel. Wij raden sporters altijd aan om magnesium als eerste te checken als herstel niet op gang komt.</p>
+
+          <h3>Zenuwstelsel en stressrespons</h3>
+          <p>Magnesium moduleert het sympathische zenuwstelsel — het systeem dat de vecht-of-vlucht respons aanstuurt. Het fungeert als een natuurlijke NMDA-receptorblokker, wat de prikkelgevoeligheid van zenuwcellen verlaagt. <strong>Minder magnesium = overactief zenuwstelsel = meer stressgevoeligheid.</strong></p>
+
+          <h3>Bloedsuikerregulatie</h3>
+          <p>Magnesium speelt een rol bij de werking van insuline en de opname van glucose door cellen. Lage magnesiumniveaus zijn sterk geassocieerd met insulineresistentie en een verhoogd risico op type 2 diabetes.</p>
+
+          <h3>Hartgezondheid</h3>
+          <p>Het hart is een spier — en heeft dus constant magnesium nodig voor een regelmatig ritme. Magnesium helpt bloeddruk reguleren en verlaagt het risico op hartritmestoornissen. In klinische settings wordt magnesiuminfuus ingezet bij bepaalde ritmestoornissen.</p>
         </div>
-      </a>
 
+        <!-- 03 EXTRA -->
+        <div class="guide-section reveal" id="extra">
+          <div class="section-eyebrow">03 — Extra voordelen</div>
+          <h2>De voordelen die mensen vergeten</h2>
+          <p>Magnesium staat bekend om slaap en krampen. Maar de effecten gaan verder. Dit zijn de gebieden waarbij wij zien dat mensen het meest verrast zijn.</p>
+
+          <h3>Slaapkwaliteit</h3>
+          <p>Magnesium activeert het parasympathische zenuwstelsel en verhoogt GABA-niveaus — een remmende neurotransmitter die de hersenen helpt ontspannen. Meerdere studies tonen aan dat magnesiumsuppletie de slaapkwaliteit, inslaapduur en diepe slaap significant verbetert, met name bij mensen boven de 50.</p>
+
+          <h3>Angst en stemming</h3>
+          <p>Magnesiumtekort is gelinkt aan verhoogde angstgevoelens en depressieve symptomen. Magnesium reguleert zowel serotonine als dopamine — twee neurotransmitters die direct invloed hebben op stemming. Een meta-analyse uit 2017 concludeerde dat suppletie angstreductie ondersteunt, met name bij mensen met mild tot matig angstniveau.</p>
+
+          <h3>Migrainepreventie</h3>
+          <p>Dit is een onderbelicht gebruik. Mensen die regelmatig migraine hebben, vertonen gemiddeld lagere magnesiumniveaus in het bloed. De American Migraine Foundation erkent magnesium als mogelijke preventieve behandeling. Studies laten zien dat dagelijks 600 mg magnesiumoxide de frequentie van aanvallen significant kan verlagen.</p>
+
+          <h3>Botdichtheid</h3>
+          <p>Calcium krijgt alle aandacht als het om botten gaat — maar magnesium is net zo belangrijk. Het reguleert calciuminname in botcellen en activeert vitamine D. <strong>Zonder voldoende magnesium werkt vitamine D minder effectief.</strong></p>
+
+          <div class="callout">
+            <div class="callout-label">Wat wij zien</div>
+            <p>Veel mensen die ons vertellen dat ze slecht slapen, veel stress ervaren en vermoeid wakker worden, blijken bij nader inzien structureel te weinig magnesium te krijgen. Het is niet altijd de oorzaak — maar het is vaker de factor dan mensen denken.</p>
+          </div>
+        </div>
+
+        <!-- 04 FORMS -->
+        <div class="guide-section reveal" id="forms">
+          <div class="section-eyebrow">04 — Vormen</div>
+          <h2>Welke vorm werkt het beste?</h2>
+          <p>Niet alle magnesium is gelijk. De vorm bepaalt hoe goed het wordt opgenomen en wat het primair doet. Dit is het grootste misverstand bij magnesiumsuppletie: mensen kopen de goedkoopste vorm en vragen zich af waarom ze niets merken.</p>
+
+          <div class="forms-grid">
+            <div class="form-card featured">
+              <span class="form-badge">Beste keuze slaap</span>
+              <div class="form-name">Magnesium Glycinaat</div>
+              <div class="form-use">Slaap · Angst · Ontspanning</div>
+              <p class="form-desc">Gebonden aan glycine — een aminozuur met een eigen kalmerend effect. Hoge biologische beschikbaarheid, zacht voor de maag. De eerste keuze voor de meeste mensen.</p>
+            </div>
+            <div class="form-card featured">
+              <span class="form-badge">Beste keuze hersenen</span>
+              <div class="form-name">Magnesium L-Threonate</div>
+              <div class="form-use">Cognitie · Geheugen · Focus</div>
+              <p class="form-desc">De enige vorm die de bloed-hersenbarrière significant kan passeren. Ontwikkeld door MIT-onderzoekers. Duurder, maar uniek voor cognitieve ondersteuning.</p>
+            </div>
+            <div class="form-card">
+              <div class="form-name">Magnesium Malaat</div>
+              <div class="form-use">Energie · Sport · Herstel</div>
+              <p class="form-desc">Gebonden aan appelzuur dat ook betrokken is bij energieproductie. Goed voor sporters. Overdag innemen voor het beste effect.</p>
+            </div>
+            <div class="form-card">
+              <div class="form-name">Magnesium Citraat</div>
+              <div class="form-use">Algemeen · Budget · Constipatie</div>
+              <p class="form-desc">Goed opneembaar en betaalbaar. Heeft een mild laxerend effect — positief bij constipatie, maar let op bij hoge doseringen.</p>
+            </div>
+            <div class="form-card">
+              <div class="form-name">Magnesium Oxide</div>
+              <div class="form-use">Migraine · Hoge dosering</div>
+              <p class="form-desc">Lage opneembaarheid (~4%), maar bevat veel elementair magnesium per tablet. Gebruikt in migraineonderzoek. Niet de eerste keuze voor dagelijks gebruik.</p>
+            </div>
+            <div class="form-card">
+              <div class="form-name">Magnesium Tauraat</div>
+              <div class="form-use">Hart · Bloeddruk</div>
+              <p class="form-desc">Gebonden aan taurine, dat ook hartbeschermende eigenschappen heeft. Interessant voor mensen met cardiovasculaire aandachtspunten.</p>
+            </div>
+          </div>
+
+          <div class="opinion-box">
+            <span class="opinion-label">Onze aanbeveling</span>
+            <p>Voor de meeste mensen is <strong>magnesium glycinaat</strong> het beste startpunt — hoge opneembaarheid, goed voor slaap, zacht voor de maag en breed gedocumenteerd. Wil je cognitieve ondersteuning erbij? Voeg L-Threonate toe. Ben je actief sporter? Overweeg malaat overdag.</p>
+          </div>
+        </div>
+
+        <!-- 05 SCIENCE -->
+        <div class="guide-section reveal" id="science">
+          <div class="section-eyebrow">05 — Onderzoek</div>
+          <h2>Wat zegt de wetenschap?</h2>
+          <p>Magnesium is een van de best-onderzochte mineralen. Hieronder drie robuuste studies — niet de meest optimistische uitkomsten, maar de meest betrouwbare.</p>
+
+          <div class="study-card">
+            <div class="study-num">[1]</div>
+            <div>
+              <div class="study-title">Slaapkwaliteit verbetert significant bij suppletie</div>
+              <p class="study-text">Een gerandomiseerde dubbelblinde studie uit 2012 in het <em>Journal of Research in Medical Sciences</em> onderzocht 46 ouderen met slaapproblemen. De groep die 500 mg magnesium per dag ontving, toonde significante verbeteringen in inslaapduur, slaapefficiëntie en serum melatoninespiegels ten opzichte van de placebogroep. Resultaten waren meetbaar na 8 weken.</p>
+              <div class="study-source">Abbasi et al. (2012). Journal of Research in Medical Sciences, 17(12), 1161–1169. PubMed ID: 23853635</div>
+            </div>
+          </div>
+
+          <div class="study-card">
+            <div class="study-num">[2]</div>
+            <div>
+              <div class="study-title">Magnesium en angstreductie — een systematische review</div>
+              <p class="study-text">Een meta-analyse in <em>Nutrients</em> (2017) analyseerde 18 studies naar de relatie tussen magnesium en angst. Conclusie: suppletie ondersteunt angstreductie, met name bij mensen met subklinische angststoornissen. Het effect was het sterkst bij mensen met een vastgesteld tekort — een groep die groter is dan de meeste mensen denken.</p>
+              <div class="study-source">Boyle, N.B. et al. (2017). Nutrients, 9(5), 429. PubMed ID: 28445426</div>
+            </div>
+          </div>
+
+          <div class="study-card">
+            <div class="study-num">[3]</div>
+            <div>
+              <div class="study-title">Magnesiumtekort als risicofactor voor type 2 diabetes</div>
+              <p class="study-text">Een meta-analyse in <em>Diabetes Care</em> analyseerde data van meer dan 536.000 deelnemers. Elke 100 mg hogere magnesiuminname per dag was geassocieerd met een 15% lager risico op type 2 diabetes — mechanistisch gekoppeld aan de rol van magnesium in insulinesignalering op celniveau.</p>
+              <div class="study-source">Fang, M. et al. (2016). Diabetes Care, 39(8), 1405–1412. PubMed ID: 27372871</div>
+            </div>
+          </div>
+
+          <div class="insight-box">
+            <span class="insight-label">Wat dit voor jou betekent</span>
+            <p>Het bewijs voor magnesium is sterk — en gaat <strong>verder dan slaap alleen</strong>. De effecten op insulinegevoeligheid, angst en spierherstel zijn goed gedocumenteerd. Dat gezegd: resultaten zijn het sterkst bij mensen met een bestaand tekort. En dat blijkt een grote groep.</p>
+          </div>
+        </div>
+
+        <!-- 06 DOSERING -->
+        <div class="guide-section reveal" id="dosering">
+          <div class="section-eyebrow">06 — Gebruik</div>
+          <h2>Hoe en wanneer innemen?</h2>
+          <p>De juiste timing en dosering maken een groot verschil. Dit is wat de praktijk leert:</p>
+
+          <table class="dosage-table">
+            <thead>
+              <tr><th>Doel</th><th>Aanbevolen vorm</th><th>Dosering</th><th>Timing</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Slaap & ontspanning</td><td>Glycinaat</td><td>200–400 mg</td><td>30–60 min voor het slapen</td></tr>
+              <tr><td>Energie & sport</td><td>Malaat</td><td>300–400 mg</td><td>'s Ochtends of voor training</td></tr>
+              <tr><td>Cognitie</td><td>L-Threonate</td><td>1.500–2.000 mg*</td><td>Verdeeld over de dag</td></tr>
+              <tr><td>Migrainepreventie</td><td>Oxide of Citraat</td><td>400–600 mg</td><td>Consistent dagelijks</td></tr>
+              <tr><td>Algemeen tekort</td><td>Citraat of Glycinaat</td><td>200–350 mg</td><td>Bij de maaltijd</td></tr>
+            </tbody>
+          </table>
+          <p style="font-size:12px;color:var(--muted-light);margin-top:-8px;">* L-Threonate doseringen zijn gebaseerd op het totale zoutgewicht. Elementair magnesiumgehalte is lager (~144 mg per 2g L-Threonate).</p>
+
+          <div class="callout">
+            <div class="callout-label">Belangrijke combinatieregel</div>
+            <p>Neem magnesium niet tegelijk in met zink of calcium in hoge doseringen — deze mineralen concurreren om dezelfde opname-receptoren. Spatieer ze over de dag als je meerdere supplementen gebruikt.</p>
+          </div>
+
+          <div class="warning-box">
+            <strong>Let op:</strong> Raadpleeg een arts of diëtist voordat je supplementen gebruikt, zeker als je medicijnen gebruikt of een gezondheidstoestand hebt. Deze guide is uitsluitend voor informatiedoeleinden.
+          </div>
+        </div>
+
+        <!-- 07 FOUTEN -->
+        <div class="guide-section reveal" id="fouten">
+          <div class="section-eyebrow">07 — Veelgemaakte fouten</div>
+          <h2>Wat mensen verkeerd doen</h2>
+          <p>Na jaren van magnesium als mainstream supplement worden dezelfde fouten keer op keer gemaakt. Dit zijn de fouten die het meeste verschil maken.</p>
+
+          <div class="callout">
+            <p><strong>Fout 1: De goedkoopste vorm kopen.</strong> Magnesiumoxide is de meest verkochte vorm vanwege de lage prijs — maar heeft een biologische beschikbaarheid van slechts ~4%. Kies voor glycinaat of citraat als startpunt.</p>
+          </div>
+
+          <div class="callout">
+            <p><strong>Fout 2: Te vroeg stoppen.</strong> Magnesium bouwt op over weken, niet dagen. De meeste voordelen voor slaap en stemming worden pas na 4–8 weken meetbaar. Mensen stoppen te vroeg en concluderen dat het "niets doet."</p>
+          </div>
+
+          <div class="callout">
+            <p><strong>Fout 3: Verkeerd moment innemen.</strong> Als je magnesium neemt voor slaap en je neemt het bij het ontbijt, mis je het effect. Het kalmerend effect van glycinaat is het sterkst 30–60 minuten voor het slapen.</p>
+          </div>
+
+          <div class="callout">
+            <p><strong>Fout 4: Denken dat voeding voldoende is.</strong> In theorie haal je voldoende magnesium uit noten, zaden en donkere bladgroenten. In de praktijk eten de meeste mensen hier te weinig van — en is de magnesiumconcentratie in voedsel de afgelopen decennia gedaald door uitgeputte landbouwgronden.</p>
+          </div>
+
+          <div class="opinion-box">
+            <span class="opinion-label">De echte conclusie</span>
+            <p>Magnesiumsuppletie werkt — maar dan wel <strong>de juiste vorm, op het juiste moment, lang genoeg</strong>. Wij zien te vaak dat mensen "het geprobeerd hebben" op basis van verkeerde verwachtingen of de verkeerde productkeuze. Doe het goed of doe het niet.</p>
+          </div>
+        </div>
+
+        <!-- 08 SAMENVATTING -->
+        <div class="guide-section reveal" id="samenvatting">
+          <div class="section-eyebrow">08 — Samenvatting</div>
+          <h2>De korte versie</h2>
+          <ul class="summary-list">
+            <li><div class="sum-dot"></div><span>Magnesium is betrokken bij meer dan 300 processen in het lichaam — van energieproductie tot hersenfunctie en spierherstel.</span></li>
+            <li><div class="sum-dot"></div><span>Bijna de helft van de volwassenen krijgt structureel te weinig magnesium binnen via voeding.</span></li>
+            <li><div class="sum-dot"></div><span>De beste vorm voor de meeste mensen is <strong>magnesium glycinaat</strong> — hoge opneembaarheid, goed voor slaap, zacht voor de maag.</span></li>
+            <li><div class="sum-dot"></div><span>Voor cognitieve ondersteuning is <strong>magnesium L-Threonate</strong> de enige vorm die de bloed-hersenbarrière effectief passeert.</span></li>
+            <li><div class="sum-dot"></div><span>Effect voor slaap en stemming is meetbaar na 4–8 weken consistent gebruik — niet na drie dagen.</span></li>
+            <li><div class="sum-dot"></div><span>Neem het voor slaap 30–60 minuten voor het slapen. Voor energie en sport overdag.</span></li>
+            <li><div class="sum-dot"></div><span>Goedkoop magnesiumoxide heeft een biologische beschikbaarheid van ~4% — vrijwel weggegooid geld.</span></li>
+          </ul>
+        </div>
+
+        <!-- 09 IMPROO TIP -->
+        <div class="guide-section reveal" id="tip">
+          <div class="section-eyebrow">09 — Improo tip</div>
+          <h2>Hoe Improo kan helpen</h2>
+          <div class="improo-tip">
+            <div class="tip-icon">💡</div>
+            <div>
+              <div class="tip-label">Praktische tip</div>
+              <p class="tip-text">Gebruik de Improo supplement-tracker (beschikbaar zomer 2026) om je magnesiuminname en effecten bij te houden. Wij raden aan om minimaal 8 weken consistent bij te houden — slaapkwaliteit, energieniveau en stressgevoeligheid — zodat je zelf kunt zien wat het doet. Suppletie zonder tracking is gissen. Met tracking weet je het.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 10 PRODUCTS -->
+        <div class="guide-section reveal" id="products">
+          <div class="section-eyebrow">10 — Onze aanbevelingen</div>
+          <h2>Wat wij daadwerkelijk zouden gebruiken</h2>
+          <p style="max-width:600px;">Dit zijn producten die een magnesiumroutine zinvol aanvullen. Wij kiezen op kwaliteit van ingrediënten en transparantie van de fabrikant — niet op commissiepercentage.</p>
+
+          <a href="https://amzn.to/3PleywY" target="_blank" rel="noopener" class="prod-card">
+            <div class="prod-visual mg-glycinate">
+              <div class="prod-badge">
+                <div class="prod-badge-dot"></div>
+                Meest aanbevolen
+              </div>
+              <div class="prod-visual-icon">💊</div>
+            </div>
+            <div class="prod-content">
+              <div class="prod-category">Supplement · Slaap & Ontspanning</div>
+              <div class="prod-name">Magnesium Glycinaat 400mg</div>
+              <p class="prod-summary">De vorm die wij als eerste aanbevelen voor de meeste mensen. Hoge opneembaarheid, geen maagproblemen, ideaal 's avonds voor het slapen.</p>
+              <div class="prod-why">
+                <div class="prod-why-label">Waarom wij dit kiezen</div>
+                <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px;">
+                  <li style="font-size:13px;color:var(--muted);font-weight:300;">✓ Gebonden aan glycine — ondersteunt ook slaap op zichzelf</li>
+                  <li style="font-size:13px;color:var(--muted);font-weight:300;">✓ Geen laxerend bijeffect bij normale doseringen</li>
+                  <li style="font-size:13px;color:var(--muted);font-weight:300;">✓ Vrij van onnodige vulstoffen en kunstmatige toevoegingen</li>
+                  <li style="font-size:13px;color:var(--muted);font-weight:300;">✓ Breed gedocumenteerd in klinisch onderzoek</li>
+                </ul>
+              </div>
+              <div class="prod-tags">
+                <span class="prod-tag">Slaap</span>
+                <span class="prod-tag">Angst</span>
+                <span class="prod-tag">Dagelijks gebruik</span>
+              </div>
+              <div class="prod-cta">
+                Bekijk op Amazon
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M8 4l3 3-3 3" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div class="prod-affiliate">Affiliate link — wij ontvangen mogelijk een kleine commissie, zonder extra kosten voor jou</div>
+            </div>
+          </a>
+
+          <a href="https://amzn.to/4eO4d7a" target="_blank" rel="noopener" class="prod-card">
+            <div class="prod-visual mg-threonate">
+              <div class="prod-badge" style="border-color:rgba(22,163,74,0.25);">
+                <div class="prod-badge-dot" style="background:#16a34a;"></div>
+                Voor cognitie
+              </div>
+              <div class="prod-visual-icon">🧠</div>
+            </div>
+            <div class="prod-content">
+              <div class="prod-category">Supplement · Cognitie & Focus</div>
+              <div class="prod-name">Magnesium L-Threonate (Magtein)</div>
+              <p class="prod-summary">De enige magnesiumvorm die de bloed-hersenbarrière effectief passeert. Ontwikkeld door MIT-onderzoekers. Duurder — maar er is geen alternatief als cognitie het doel is.</p>
+              <div class="prod-why">
+                <div class="prod-why-label">Waarom wij dit kiezen</div>
+                <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px;">
+                  <li style="font-size:13px;color:var(--muted);font-weight:300;">✓ Enige vorm met bewezen toegang tot hersenweefsel</li>
+                  <li style="font-size:13px;color:var(--muted);font-weight:300;">✓ Ondersteunt geheugen, focus en synaptische plasticiteit</li>
+                  <li style="font-size:13px;color:var(--muted);font-weight:300;">✓ Gepatenteerde Magtein-formule — het origineel uit het onderzoek</li>
+                  <li style="font-size:13px;color:var(--muted);font-weight:300;">✓ Combineerbaar met glycinaat voor een volledig profiel</li>
+                </ul>
+              </div>
+              <div class="prod-tags">
+                <span class="prod-tag">Cognitie</span>
+                <span class="prod-tag">Focus</span>
+                <span class="prod-tag">Geheugen</span>
+              </div>
+              <div class="prod-cta">
+                Bekijk op Amazon
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M8 4l3 3-3 3" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div class="prod-affiliate">Affiliate link — wij ontvangen mogelijk een kleine commissie, zonder extra kosten voor jou</div>
+            </div>
+          </a>
+        </div>
+
+        <!-- 11 SOURCES -->
+        <div class="guide-section reveal" id="sources">
+          <div class="section-eyebrow">11 — Bronnen</div>
+          <h2>Referenties</h2>
+          <ul class="sources-list">
+            <li>
+              <div class="src-num">1</div>
+              <div class="src-text">Abbasi, B. et al. (2012). <em>The effect of magnesium supplementation on primary insomnia in elderly.</em> Journal of Research in Medical Sciences, 17(12), 1161–1169. <a href="https://pubmed.ncbi.nlm.nih.gov/23853635/" target="_blank">PubMed: 23853635</a></div>
+            </li>
+            <li>
+              <div class="src-num">2</div>
+              <div class="src-text">Boyle, N.B. et al. (2017). <em>The Effects of Magnesium Supplementation on Subjective Anxiety and Stress.</em> Nutrients, 9(5), 429. <a href="https://pubmed.ncbi.nlm.nih.gov/28445426/" target="_blank">PubMed: 28445426</a></div>
+            </li>
+            <li>
+              <div class="src-num">3</div>
+              <div class="src-text">Fang, M. et al. (2016). <em>Dietary magnesium intake and the risk of type 2 diabetes.</em> Diabetes Care, 39(8), 1405–1412. <a href="https://pubmed.ncbi.nlm.nih.gov/27372871/" target="_blank">PubMed: 27372871</a></div>
+            </li>
+            <li>
+              <div class="src-num">4</div>
+              <div class="src-text">DiNicolantonio, J.J. et al. (2018). <em>Subclinical magnesium deficiency: a principal driver of cardiovascular disease.</em> Open Heart, 5(1). <a href="https://pubmed.ncbi.nlm.nih.gov/29387426/" target="_blank">PubMed: 29387426</a></div>
+            </li>
+            <li>
+              <div class="src-num">5</div>
+              <div class="src-text">Gröber, U. et al. (2015). <em>Magnesium in Prevention and Therapy.</em> Nutrients, 7(9), 8199–8226. <a href="https://pubmed.ncbi.nlm.nih.gov/26404370/" target="_blank">PubMed: 26404370</a></div>
+            </li>
+          </ul>
+        </div>
+
+      </main>
+
+      <!-- SIDEBAR -->
+      <aside class="guide-sidebar">
+        <div class="sidebar-card">
+          <div class="sidebar-title">Kerngetallen</div>
+          <div class="stat-item">
+            <div class="stat-value">300+</div>
+            <div class="stat-desc">Enzymatische processen in het lichaam waarbij magnesium betrokken is</div>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <div class="stat-value">~48%</div>
+            <div class="stat-desc">Van volwassenen heeft een structureel magnesiumtekort</div>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <div class="stat-value">4–8wk</div>
+            <div class="stat-desc">Gemiddeld voor een meetbaar effect op slaap en stemming</div>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item" style="margin-bottom:0;">
+            <div class="stat-value">350mg</div>
+            <div class="stat-desc">Veilige bovengrens voor suppletie per dag</div>
+          </div>
+        </div>
+
+        <div class="sidebar-card">
+          <div class="sidebar-title">Vormen op een rij</div>
+          <div style="display:flex;flex-direction:column;gap:8px;">
+            <div style="display:flex;align-items:center;gap:10px;font-size:12px;color:var(--muted);font-weight:300;">
+              <span style="color:var(--blue);font-weight:700;">✓</span> Glycinaat — slaap & angst
+            </div>
+            <div style="display:flex;align-items:center;gap:10px;font-size:12px;color:var(--muted);font-weight:300;">
+              <span style="color:var(--blue);font-weight:700;">✓</span> L-Threonate — cognitie
+            </div>
+            <div style="display:flex;align-items:center;gap:10px;font-size:12px;color:var(--muted);font-weight:300;">
+              <span style="color:var(--blue);font-weight:700;">✓</span> Malaat — energie & sport
+            </div>
+            <div style="display:flex;align-items:center;gap:10px;font-size:12px;color:var(--muted);font-weight:300;">
+              <span style="color:var(--blue);font-weight:700;">✓</span> Citraat — algemeen, budget
+            </div>
+            <div style="height:1px;background:var(--line);margin:4px 0;"></div>
+            <div style="display:flex;align-items:center;gap:10px;font-size:12px;color:var(--muted);font-weight:300;">
+              <span style="color:#dc2626;font-weight:700;">×</span> Oxide — slechte opname (~4%)
+            </div>
+          </div>
+        </div>
+
+        <div class="sidebar-card">
+          <div class="sidebar-title">Disclaimer</div>
+          <p class="sidebar-disclaimer">Deze guide is uitsluitend voor informatiedoeleinden en vormt geen medisch advies. Raadpleeg een arts of diëtist voordat je supplementen gebruikt, zeker als je medicijnen gebruikt of een gezondheidstoestand hebt.</p>
+        </div>
+      </aside>
     </div>
-    <p class="aff-footer">Affiliate link — wij ontvangen mogelijk een kleine commissie als je via deze links koopt, zonder extra kosten voor jou. Wij bevelen alleen producten aan die wij zelf zouden gebruiken.</p>
-  </section>
 
-  <!-- 11 -->
-  <section class="section" id="bronnen">
-    <p class="section-label">11 — Bronnen</p>
-    <h2>Referenties</h2>
-    <ul class="sources-list">
-      <li>
-        <span class="src-num">1</span>
-        <span>Abbasi, B. et al. (2012). <em>The effect of magnesium supplementation on primary insomnia in elderly.</em> Journal of Research in Medical Sciences, 17(12), 1161–1169. <a href="https://pubmed.ncbi.nlm.nih.gov/23853635/" target="_blank">PubMed: 23853635</a></span>
-      </li>
-      <li>
-        <span class="src-num">2</span>
-        <span>Boyle, N.B. et al. (2017). <em>The Effects of Magnesium Supplementation on Subjective Anxiety and Stress.</em> Nutrients, 9(5), 429. <a href="https://pubmed.ncbi.nlm.nih.gov/28445426/" target="_blank">PubMed: 28445426</a></span>
-      </li>
-      <li>
-        <span class="src-num">3</span>
-        <span>Fang, M. et al. (2016). <em>Dietary magnesium intake and the risk of type 2 diabetes.</em> Diabetes Care, 39(8), 1405–1412. <a href="https://pubmed.ncbi.nlm.nih.gov/27372871/" target="_blank">PubMed: 27372871</a></span>
-      </li>
-      <li>
-        <span class="src-num">4</span>
-        <span>DiNicolantonio, J.J. et al. (2018). <em>Subclinical magnesium deficiency: a principal driver of cardiovascular disease.</em> Open Heart, 5(1). <a href="https://pubmed.ncbi.nlm.nih.gov/29387426/" target="_blank">PubMed: 29387426</a> — <strong>Aanbevolen voor verder lezen</strong></span>
-      </li>
-      <li>
-        <span class="src-num">5</span>
-        <span>Gröber, U. et al. (2015). <em>Magnesium in Prevention and Therapy.</em> Nutrients, 7(9), 8199–8226. <a href="https://pubmed.ncbi.nlm.nih.gov/26404370/" target="_blank">PubMed: 26404370</a> — <strong>Aanbevolen voor verder lezen</strong></span>
-      </li>
-    </ul>
-  </section>
-
-  <div class="disclaimer">
-    <p><strong>Disclaimer:</strong> Deze guide is uitsluitend bedoeld voor informatiedoeleinden en vormt geen medisch advies. Raadpleeg een arts of diëtist voordat je supplementen gebruikt, zeker als je medicijnen gebruikt of een gezondheidstoestand hebt.</p>
   </div>
 
-</main>
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <span style="font-size:1.3rem;font-weight:700;background:linear-gradient(135deg,#60a5fa,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:-0.03em;font-family:'Sora',sans-serif;display:block;margin-bottom:16px;">Improo</span>
+          <p>Health, weight loss, movement & mindset — together.</p>
+          <small>© 2026 Improo. All rights reserved.</small>
+        </div>
+        <div class="footer-links">
+          <h4>Navigation</h4>
+          <a href="../index.html">Home</a>
+          <a href="../insights/index.html">Articles</a>
+          <a href="../guides.html">Guides</a>
+          <a href="../roadmap.html">Roadmap</a>
+        </div>
+        <div class="footer-links">
+          <h4>Legal</h4>
+          <a href="../disclaimer.html">Disclaimer</a>
+          <a href="../privacy-policy.html">Privacy Policy</a>
+          <a href="../terms-of-service.html">Terms of Service</a>
+        </div>
+        <div class="footer-links">
+          <h4>Follow</h4>
+          <a href="https://www.youtube.com/@Improo_App">YouTube</a>
+          <a href="https://x.com/Improo_">X (Twitter)</a>
+        </div>
+      </div>
+    </div>
+  </footer>
 
-<footer>
-  <div class="footer-brand">
-    <a href="/index.html" class="logo">Improo</a>
-    <p>Health, weight loss, movement & mindset — together.</p>
-  </div>
-  <div class="footer-col">
-    <h4>Navigatie</h4>
-    <ul>
-      <li><a href="/index.html">Home</a></li>
-      <li><a href="/insights/index.html">Artikelen</a></li>
-      <li><a href="/guides.html">Guides</a></li>
-      <li><a href="/roadmap.html">Roadmap</a></li>
-    </ul>
-  </div>
-  <div class="footer-col">
-    <h4>Juridisch</h4>
-    <ul>
-      <li><a href="/disclaimer.html">Disclaimer</a></li>
-      <li><a href="/privacy-policy.html">Privacybeleid</a></li>
-      <li><a href="/terms-of-service.html">Gebruiksvoorwaarden</a></li>
-    </ul>
-  </div>
-</footer>
-<div class="footer-bottom">© 2026 Improo. All rights reserved.</div>
+  <script>
+    const bar = document.getElementById('read-progress');
+    window.addEventListener('scroll', () => {
+      const doc = document.documentElement;
+      const pct = (doc.scrollTop / (doc.scrollHeight - doc.clientHeight)) * 100;
+      bar.style.width = Math.min(pct, 100) + '%';
+    }, { passive: true });
+
+    const reveals = document.querySelectorAll('.reveal');
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
+      });
+    }, { threshold: 0.06 });
+    reveals.forEach(el => obs.observe(el));
+  </script>
 
 </body>
 </html>
