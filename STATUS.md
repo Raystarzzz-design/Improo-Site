@@ -1,7 +1,7 @@
 # STATUS.md — Improo Website
 
 ## Last updated
-16 May 2026 (session 2)
+20 May 2026 (session 3)
 
 ---
 
@@ -132,6 +132,11 @@ Both share the same brand, colors, and Supabase backend.
    listed in the insights index or on the homepage — it may be unpublished/draft.
 
 ---
+
+## Completed this session (session 3)
+
+- `insights/still-here-still-building.html` — nieuw artikel opgehaald van GitHub, blauw-italic `<em>` toegevoegd aan alle h2-koppen, stress-depletion cycle SVG volledig herbouwd als cirkeldiagram met dikke pijlen (zoals referentieafbeelding)
+- `insights/index.html` — aanpassingen opgehaald van GitHub
 
 ## Completed this session (session 2)
 
