@@ -14,14 +14,11 @@
   </script>
   <script defer src="/_vercel/insights/script.js"></script>
   <style>
-    /* ── INSIGHTS-PAGE SPECIFIC STYLES ── */
-
     .slider-outer {
       background: var(--bg);
       border-bottom: 1px solid var(--line);
       padding: 24px 0;
     }
-
     .slider-wrap {
       position: relative;
       overflow: hidden;
@@ -32,13 +29,11 @@
       border: 1px solid var(--line);
       box-shadow: var(--shadow-md);
     }
-
     .slides {
       display: flex;
       height: 100%;
       transition: transform 0.5s cubic-bezier(0.4,0,0.2,1);
     }
-
     .slide {
       min-width: 100%;
       height: 100%;
@@ -47,7 +42,6 @@
       display: flex;
       align-items: flex-end;
     }
-
     .slide-img {
       position: absolute;
       top: 0; left: 0;
@@ -56,9 +50,7 @@
       object-position: center;
       transition: transform 6s ease;
     }
-
     .slide:hover .slide-img { transform: scale(1.03); }
-
     .slide-overlay {
       position: absolute;
       inset: 0;
@@ -69,19 +61,16 @@
         rgba(255,255,255,0.10) 100%
       );
     }
-
     .slide-bg-mindset    { background: linear-gradient(135deg, #ede9fe 0%, #c4b5fd 50%, #ddd6fe 100%); }
     .slide-bg-discipline { background: linear-gradient(135deg, #dbeafe 0%, #93c5fd 50%, #bfdbfe 100%); }
     .slide-bg-health     { background: linear-gradient(135deg, #dcfce7 0%, #86efac 50%, #bbf7d0 100%); }
     .slide-bg-updates    { background: linear-gradient(135deg, #fef3c7 0%, #fcd34d 50%, #fde68a 100%); }
-
     .slide-content {
       position: relative;
       z-index: 2;
       padding: 0 56px 52px;
       max-width: 580px;
     }
-
     .slide-badge {
       display: inline-flex;
       align-items: center;
@@ -93,12 +82,10 @@
       border-radius: 99px;
       margin-bottom: 18px;
     }
-
     .badge-mindset    { background: rgba(124,58,237,0.12); color: #7c3aed; border: 1px solid rgba(124,58,237,0.25); }
     .badge-discipline { background: rgba(37,99,235,0.12);  color: #2563eb; border: 1px solid rgba(37,99,235,0.25); }
     .badge-health     { background: rgba(22,163,74,0.12);  color: #16a34a; border: 1px solid rgba(22,163,74,0.25); }
     .badge-updates    { background: rgba(217,119,6,0.12);  color: #d97706; border: 1px solid rgba(217,119,6,0.25); }
-
     .slide-title {
       font-family: 'Lora', Georgia, serif;
       font-size: clamp(22px, 3.2vw, 36px);
@@ -108,7 +95,6 @@
       margin-bottom: 14px;
       letter-spacing: -0.02em;
     }
-
     .slide-desc {
       font-size: 14px;
       color: var(--muted);
@@ -117,15 +103,12 @@
       max-width: 460px;
       font-weight: 300;
     }
-
     .slide-meta {
       display: flex;
       align-items: center;
       gap: 16px;
     }
-
     .slide-date { font-size: 12px; color: var(--muted-light); }
-
     .slide-link {
       font-size: 13px;
       font-weight: 600;
@@ -136,7 +119,6 @@
       transition: gap 0.2s;
     }
     .slide-link:hover { gap: 10px; }
-
     .slider-btn {
       position: absolute;
       top: 50%;
@@ -159,7 +141,6 @@
     .slider-btn:hover { background: #fff; box-shadow: var(--shadow-md); }
     .slider-prev { left: 16px; }
     .slider-next { right: 16px; }
-
     .slider-dots {
       position: absolute;
       bottom: 20px;
@@ -168,7 +149,6 @@
       gap: 6px;
       z-index: 10;
     }
-
     .slider-dot {
       width: 6px; height: 6px;
       border-radius: 99px;
@@ -177,7 +157,6 @@
       transition: all 0.3s;
     }
     .slider-dot.active { background: var(--blue); width: 20px; }
-
     .controls-bar {
       padding: 20px 0;
       border-bottom: 1px solid var(--line);
@@ -188,9 +167,7 @@
       width: min(1180px, calc(100% - 48px));
       margin: 0 auto;
     }
-
     .search-wrap { position: relative; flex-shrink: 0; }
-
     .search-icon {
       position: absolute;
       left: 14px;
@@ -199,7 +176,6 @@
       color: var(--muted-light);
       pointer-events: none;
     }
-
     .search-input {
       background: var(--panel);
       border: 1px solid var(--line-strong);
@@ -214,9 +190,7 @@
     }
     .search-input::placeholder { color: var(--muted-light); }
     .search-input:focus { border-color: var(--blue); box-shadow: 0 0 0 3px rgba(37,99,235,0.08); }
-
     .filters { display: flex; gap: 8px; flex-wrap: wrap; }
-
     .filter-btn {
       font-size: 12px;
       font-family: 'Sora', sans-serif;
@@ -229,28 +203,23 @@
       cursor: pointer;
       transition: all 0.2s;
     }
-
     .filter-btn:hover { border-color: var(--blue); color: var(--blue); }
-
     .filter-btn.active[data-filter="all"]        { background: var(--blue);   border-color: var(--blue);   color: #fff; font-weight: 700; }
     .filter-btn.active[data-filter="health"]     { background: #16a34a;       border-color: #16a34a;       color: #fff; font-weight: 700; }
     .filter-btn.active[data-filter="discipline"] { background: var(--blue);   border-color: var(--blue);   color: #fff; font-weight: 700; }
     .filter-btn.active[data-filter="mindset"]    { background: #7c3aed;       border-color: #7c3aed;       color: #fff; font-weight: 700; }
     .filter-btn.active[data-filter="updates"]    { background: #d97706;       border-color: #d97706;       color: #fff; font-weight: 700; }
-
     .grid-wrap {
       width: min(1180px, calc(100% - 48px));
       margin: 0 auto;
       padding: 32px 0 16px;
     }
-
     .section-header {
       display: flex;
       align-items: center;
       justify-content: space-between;
       margin-bottom: 22px;
     }
-
     .section-title {
       font-family: 'Lora', serif;
       font-size: 1.3rem;
@@ -260,13 +229,11 @@
       align-items: center;
       gap: 10px;
     }
-
     .grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 18px;
     }
-
     .card {
       background: var(--panel);
       border: 1px solid var(--line);
@@ -279,20 +246,17 @@
       transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s;
       box-shadow: var(--shadow);
     }
-
     .card:hover {
       border-color: var(--line-strong);
       transform: translateY(-3px);
       box-shadow: var(--shadow-md);
     }
-
     .card-img {
       height: 160px;
       position: relative;
       overflow: hidden;
       flex-shrink: 0;
     }
-
     .card-img img {
       position: absolute;
       top: 0; left: 0;
@@ -301,20 +265,16 @@
       object-position: center;
       transition: transform 0.4s ease;
     }
-
     .card:hover .card-img img { transform: scale(1.06); }
-
     .card-bg-mindset    { background: linear-gradient(135deg, #f5f3ff 0%, #ede9fe 50%, #ddd6fe 100%); }
     .card-bg-discipline { background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 50%, #bfdbfe 100%); }
     .card-bg-health     { background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 50%, #bbf7d0 100%); }
     .card-bg-updates    { background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 50%, #fde68a 100%); }
-
     .card-img-overlay {
       position: absolute;
       inset: 0;
       background: linear-gradient(180deg, transparent 40%, rgba(255,255,255,0.35) 100%);
     }
-
     .card-img-badge {
       position: absolute;
       top: 12px; left: 12px;
@@ -325,14 +285,12 @@
       padding: 3px 10px;
       border-radius: 99px;
     }
-
     .card-body {
       padding: 18px 18px 16px;
       display: flex;
       flex-direction: column;
       flex-grow: 1;
     }
-
     .card-title {
       font-family: 'Lora', serif;
       font-size: 15px;
@@ -341,7 +299,6 @@
       line-height: 1.35;
       margin-bottom: 8px;
     }
-
     .card-desc {
       font-size: 12px;
       color: var(--muted);
@@ -350,7 +307,6 @@
       flex-grow: 1;
       font-weight: 300;
     }
-
     .card-footer-row {
       display: flex;
       align-items: center;
@@ -358,9 +314,7 @@
       padding-top: 12px;
       border-top: 1px solid var(--line);
     }
-
     .card-date { font-size: 11px; color: var(--muted-light); }
-
     .card-read {
       font-size: 12px;
       font-weight: 600;
@@ -370,26 +324,22 @@
       transition: gap 0.2s;
     }
     .card-read:hover { gap: 8px; }
-
     .card-read-mindset    { color: #7c3aed; }
     .card-read-discipline { color: var(--blue); }
     .card-read-health     { color: #16a34a; }
     .card-read-updates    { color: #d97706; }
-
     .no-results {
       grid-column: span 3;
       text-align: center;
       padding: 60px 0;
       color: var(--muted);
     }
-
     .load-more-wrap {
       width: min(1180px, calc(100% - 48px));
       margin: 0 auto;
       padding: 28px 0 60px;
       text-align: center;
     }
-
     .load-more-btn {
       display: inline-flex;
       align-items: center;
@@ -406,13 +356,11 @@
       transition: all 0.2s;
     }
     .load-more-btn:hover { background: #d0e8ff; border-color: var(--blue); }
-
     @media (max-width: 900px) {
       .grid { grid-template-columns: repeat(2, 1fr); }
       .no-results { grid-column: span 2; }
       .slider-wrap { height: 400px; }
     }
-
     @media (max-width: 580px) {
       .controls-bar { padding: 16px 20px; flex-direction: column; align-items: flex-start; width: 100%; }
       .search-input { width: 100%; }
@@ -517,25 +465,25 @@
         </div>
       </div>
 
-      <!-- ✦ UPDATED: was "The 10-Minute Movement Rule" → now nutrition article -->
+      <!-- ✦ UPDATED: was "Improo App: What We're Building" → now Still Here. Still Building. -->
       <div class="slide">
-        <img class="slide-img" src="images/nutrition-movement.webp" alt="Why Nutrition and Movement Work Better Together" loading="eager" />
+        <img class="slide-img" src="images/still-here-still-building.webp" alt="Still Here. Still Building." loading="eager" />
         <div class="slide-overlay"></div>
         <div class="slide-content">
-          <span class="slide-badge badge-health">Health</span>
-          <h2 class="slide-title">Why Nutrition and Movement Work Better Together</h2>
-          <p class="slide-desc">Most people try one thing at a time — diet or exercise. But the research consistently shows that combined approaches win long-term.</p>
+          <span class="slide-badge badge-mindset">Mindset</span>
+          <h2 class="slide-title">Still Here. Still Building.</h2>
+          <p class="slide-desc">On the voice that tells you to quit, the wins nobody celebrates but you, and what it really means to build a life on your own terms.</p>
           <div class="slide-meta">
-            <span class="slide-date">May 15, 2026</span>
-            <a href="nutrition-movement-combined.html" class="slide-link">Read article <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7h9M8 3.5l3.5 3.5L8 10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            <span class="slide-date">May 20, 2026</span>
+            <a href="still-here-still-building.html" class="slide-link">Read article <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7h9M8 3.5l3.5 3.5L8 10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
           </div>
         </div>
       </div>
 
     </div>
 
-    <button class="slider-btn slider-prev" id="sliderPrev" aria-label="Previous">‹</button>
-    <button class="slider-btn slider-next" id="sliderNext" aria-label="Next">›</button>
+    <button class="slider-btn slider-prev" id="sliderPrev" aria-label="Previous">&#8249;</button>
+    <button class="slider-btn slider-next" id="sliderNext" aria-label="Next">&#8250;</button>
     <div class="slider-dots" id="sliderDots"></div>
   </div>
   </div>
@@ -607,13 +555,12 @@
 
   <script>
     const articles = [
+      { title: 'Still Here. Still Building.', desc: 'On the voice that tells you to quit, the wins nobody celebrates but you, and what it really means to build a life on your own terms.', category: 'mindset', date: 'May 20, 2026', href: 'still-here-still-building.html', img: 'images/still-here-still-building.webp' },
       { title: 'Identity Before Behavior', desc: "You don't rise to your goals — you fall to the level of your identity. Change who you are first, and the habits follow naturally.", category: 'mindset', date: 'May 10, 2026', href: 'identity-before-behavior.html', img: 'images/identity-before-behavior.webp' },
+      { title: 'Why Nutrition and Movement Work Better Together', desc: "Most people try one thing at a time — diet or exercise. But the research consistently shows combined approaches win. Here's what the evidence says.", category: 'health', date: 'May 15, 2026', href: 'nutrition-movement-combined.html', img: 'images/nutrition-movement.webp' },
       { title: 'Why I Built Improo — The Story Behind the App', desc: 'After 10 years of struggling with obesity, I had a simple realisation that changed everything. This is that story — and why I built Improo.', category: 'mindset', date: 'April 25, 2026', href: 'why-i-built-improo.html', img: 'images/slider-why-i-built-improo.webp' },
       { title: 'Why Most People Quit After 3 Weeks (And How to Be Different)', desc: "The first three weeks of any new habit feel exciting — then reality hits. Here's what the science actually says about habit formation.", category: 'discipline', date: 'April 18, 2026', href: 'quit-after-3-weeks.html', img: 'images/quit-after-3-weeks.webp' },
       { title: 'Sleep as a Performance Tool', desc: 'Most people treat sleep as rest. High performers treat it as training. The difference is in how you approach recovery.', category: 'health', date: 'April 12, 2026', href: 'sleep-as-a-performance-tool.html', img: 'images/sleep-as-a-performance-tool.webp' },
-      { title: "Improo App: What We're Building", desc: 'A first look at the core features of Improo — habit tracking, belt challenges, community groups, and more.', category: 'updates', date: 'April 2, 2026', href: 'article-4.html' },
-      /* ✦ UPDATED: was article-5 / The 10-Minute Movement Rule */
-      { title: 'Why Nutrition and Movement Work Better Together', desc: "Most people try one thing at a time — diet or exercise. But the research consistently shows combined approaches win. Here's what the evidence says.", category: 'health', date: 'May 15, 2026', href: 'nutrition-movement-combined.html', img: 'images/nutrition-movement.webp' },
     ];
 
     const cat = {
