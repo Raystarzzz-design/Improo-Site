@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="On the voice that tells you to quit, the wins nobody celebrates but you, and what it really means to build a life on your own terms." />
+  <title>Still Here. Still Building. — Improo Guide</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg:         #eef2f7;
+      --surface:    #ffffff;
+      --surface2:   #e4eaf3;
+      --border:     #d6dfe9;
+      --highlight:  #dce6f5;
+      --accent:     #3b5bdb;
+      --accent-bg:  #eef1fd;
+      --accent-bdr: #c5cff7;
+      --text:       #1a2340;
+      --text-muted: #4a5568;
+      --text-dim:   #8896a8;
+      --green:      #1e6b45;
+      --green-bg:   #e8f5ee;
+      --green-bdr:  #b8deca;
+      --red:        #b91c1c;
+      --red-bg:     #fef2f2;
+      --red-bdr:    #fecaca;
+      --radius:     10px;
+      --max:        760px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      font-size: 17px;
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* NAV */
+    nav {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 18px 36px;
+      border-bottom: 1px solid var(--border);
+      position: sticky; top: 0;
+      background: rgba(238,242,247,0.97);
+      backdrop-filter: blur(10px);
+      z-index: 100;
+    }
+    .logo { font-weight: 700; font-size: 17px; color: var(--text); text-decoration: none; letter-spacing: -0.3px; }
+    .nav-links { display: flex; gap: 28px; list-style: none; }
+    .nav-links a { font-size: 14px; color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--accent); }
+
+    /* BREADCRUMB */
+    .breadcrumb { padding: 24px 36px 0; max-width: calc(var(--max) + 72px); margin: 0 auto; }
+    .breadcrumb a { font-size: 13px; color: var(--text-dim); text-decoration: none; transition: color 0.2s; }
+    .breadcrumb a:hover { color: var(--accent); }
+
+    /* HERO */
+    .hero { max-width: calc(var(--max) + 72px); margin: 0 auto; padding: 36px 36px 28px; }
+    .category-tag {
+      display: inline-block;
+      background: var(--accent); color: #fff;
+      font-size: 10px; font-weight: 700; letter-spacing: 1.8px; text-transform: uppercase;
+      padding: 5px 11px; border-radius: 4px; margin-bottom: 20px;
+    }
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(34px, 5vw, 54px);
+      line-height: 1.08; font-weight: 700; letter-spacing: -1.5px;
+      margin-bottom: 18px; max-width: 680px;
+    }
+    h1 em { font-style: italic; color: var(--accent); }
+    .hero-sub { font-size: 16px; color: var(--text-muted); max-width: 580px; line-height: 1.65; margin-bottom: 24px; }
+    .meta-row {
+      display: flex; gap: 20px; flex-wrap: wrap;
+      font-size: 12px; color: var(--text-dim);
+      border-top: 1px solid var(--border); padding-top: 16px;
+    }
+    .meta-row span { color: var(--text-muted); }
+
+    /* STATS */
+    .stats-strip {
+      display: grid; grid-template-columns: repeat(3,1fr);
+      gap: 1px; background: var(--border);
+      border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden;
+      max-width: calc(var(--max) + 72px); margin: 0 auto 36px; padding: 0 36px;
+    }
+    .stat { background: var(--surface); padding: 22px 18px; text-align: center; }
+    .stat-num { font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 700; color: var(--accent); display: block; }
+    .stat-label { font-size: 11px; color: var(--text-dim); margin-top: 5px; line-height: 1.4; }
+
+    /* TOC */
+    .toc { max-width: calc(var(--max) + 72px); margin: 0 auto 44px; padding: 0 36px; }
+    .toc-box { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 22px 26px; }
+    .toc-heading { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: var(--text-dim); margin-bottom: 14px; }
+    .toc-list { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 5px 28px; }
+    .toc-list li a { font-size: 13px; color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
+    .toc-list li a:hover { color: var(--accent); }
+
+    /* CONTENT */
+    .content { max-width: calc(var(--max) + 72px); margin: 0 auto; padding: 0 36px 80px; }
+    .section { margin-bottom: 60px; }
+    .section-label {
+      font-size: 11px; font-weight: 700; color: var(--accent);
+      text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .section-label::after { content: ''; flex: 0 0 32px; height: 1px; background: var(--accent-bdr); }
+    h2 { font-family: 'Playfair Display', serif; font-size: 30px; font-weight: 700; letter-spacing: -0.5px; margin-bottom: 18px; line-height: 1.2; color: var(--text); }
+    h3 { font-size: 16px; font-weight: 700; margin: 26px 0 10px; color: var(--text); }
+    p { margin-bottom: 16px; color: var(--text-muted); }
+    p:last-child { margin-bottom: 0; }
+    strong { color: var(--text); font-weight: 600; }
+    a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
+    a:hover { opacity: 0.75; }
+
+    /* CALLOUT */
+    .callout {
+      background: var(--accent-bg);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      padding: 18px 22px; margin: 24px 0;
+    }
+    .callout-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: var(--accent); margin-bottom: 8px; }
+    .callout p { font-size: 15px; color: var(--text-muted); margin: 0; line-height: 1.6; }
+
+    /* PULL QUOTE */
+    .pull-quote {
+      border-top: 2px solid var(--accent);
+      border-bottom: 2px solid var(--accent);
+      padding: 28px 0; margin: 36px 0; text-align: center;
+    }
+    .pull-quote p {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px; font-style: italic; color: var(--text); line-height: 1.4; margin: 0;
+    }
+    .pull-quote cite { display: block; font-size: 12px; font-style: normal; color: var(--text-dim); margin-top: 12px; letter-spacing: 1px; text-transform: uppercase; }
+
+    /* SCENARIO */
+    .scenario {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      padding: 24px 26px; margin: 28px 0;
+    }
+    .scenario-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: var(--accent); margin-bottom: 10px; }
+    .scenario-name { font-size: 15px; font-weight: 700; color: var(--text); margin-bottom: 10px; font-style: italic; }
+    .scenario p { font-size: 15px; color: var(--text-muted); margin: 0; line-height: 1.65; }
+
+    /* TECHNIQUE CARDS */
+    .technique-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin: 24px 0; }
+    .technique-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-top: 2px solid var(--accent);
+      border-radius: var(--radius); padding: 20px 18px;
+    }
+    .tech-num { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: var(--accent); margin-bottom: 8px; }
+    .tech-title { font-size: 14px; font-weight: 700; color: var(--text); margin-bottom: 8px; }
+    .tech-desc { font-size: 13px; color: var(--text-muted); line-height: 1.55; margin: 0; }
+
+    /* WIN LIST */
+    .win-list { list-style: none; margin: 20px 0; }
+    .win-list li {
+      display: flex; gap: 16px; align-items: baseline;
+      padding: 16px 0; border-bottom: 1px solid var(--border);
+      font-size: 15px; color: var(--text-muted); line-height: 1.6;
+    }
+    .win-list li:last-child { border-bottom: none; }
+    .win-arrow { font-size: 15px; color: var(--accent); flex-shrink: 0; font-weight: 700; }
+
+    /* BULLET LIST */
+    .bullet-list { list-style: none; margin: 16px 0; }
+    .bullet-list li { padding: 10px 0 10px 22px; border-bottom: 1px solid var(--border); color: var(--text-muted); font-size: 15px; position: relative; line-height: 1.55; }
+    .bullet-list li:last-child { border-bottom: none; }
+    .bullet-list li::before { content: "—"; position: absolute; left: 0; color: var(--accent); }
+
+    /* SVG FIGURE */
+    .svg-figure {
+      margin: 32px 0;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px 24px 20px;
+      text-align: center;
+    }
+    .svg-caption { font-size: 12px; color: var(--text-dim); margin-top: 14px; text-align: center; font-style: italic; }
+
+    /* RESEARCH */
+    .research-block { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 22px 24px; margin: 16px 0; }
+    .research-num { font-size: 10px; font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 6px; }
+    .research-title { font-size: 15px; font-weight: 700; margin-bottom: 10px; color: var(--text); }
+    .research-body { font-size: 14px; color: var(--text-muted); line-height: 1.65; margin-bottom: 12px; }
+    .research-cite { font-size: 12px; color: var(--text-dim); font-style: italic; }
+
+    /* SOURCES */
+    .sources-list { list-style: none; }
+    .sources-list li { display: flex; gap: 14px; padding: 14px 0; border-bottom: 1px solid var(--border); font-size: 14px; color: var(--text-muted); line-height: 1.55; }
+    .sources-list li:last-child { border-bottom: none; }
+    .src-num { font-size: 11px; font-weight: 700; color: var(--accent); min-width: 18px; flex-shrink: 0; padding-top: 2px; }
+
+    /* DISCLAIMER */
+    .disclaimer { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px 20px; margin: 36px 0 0; }
+    .disclaimer p { font-size: 12px; color: var(--text-dim); margin: 0; line-height: 1.6; }
+
+    /* FOOTER */
+    footer { border-top: 1px solid var(--border); padding: 40px 36px; display: grid; grid-template-columns: 1.2fr 1fr 1fr; gap: 32px; max-width: 1100px; margin: 60px auto 0; }
+    .footer-brand p { font-size: 13px; color: var(--text-dim); margin-top: 10px; line-height: 1.6; }
+    .footer-col h4 { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.2px; color: var(--text-dim); margin-bottom: 14px; }
+    .footer-col ul { list-style: none; }
+    .footer-col ul li { margin-bottom: 8px; }
+    .footer-col ul li a { font-size: 13px; color: var(--text-muted); text-decoration: none; }
+    .footer-col ul li a:hover { color: var(--accent); }
+    .footer-bottom { text-align: center; padding: 16px 36px 28px; font-size: 12px; color: var(--text-dim); border-top: 1px solid var(--border); }
+
+    /* RESPONSIVE */
+    @media (max-width: 640px) {
+      nav { padding: 14px 18px; }
+      .nav-links { display: none; }
+      .breadcrumb, .hero, .toc, .content { padding-left: 18px; padding-right: 18px; }
+      .stats-strip { padding: 0 18px; grid-template-columns: 1fr; }
+      .technique-grid { grid-template-columns: 1fr; }
+      .toc-list { grid-template-columns: 1fr; }
+      footer { grid-template-columns: 1fr; padding: 28px 18px; }
+      .pull-quote p { font-size: 18px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="/index.html" class="logo">Improo</a>
+  <ul class="nav-links">
+    <li><a href="/index.html">Home</a></li>
+    <li><a href="/insights/index.html">Articles</a></li>
+    <li><a href="/guides.html">Guides</a></li>
+    <li><a href="/roadmap.html">Roadmap</a></li>
+    <li><a href="/index.html#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="breadcrumb">
+  <a href="/guides.html">← Back to Guides</a>
+</div>
+
+<header class="hero">
+  <span class="category-tag">Mindset Guide</span>
+  <h1>Still Here.<br><em>Still Building.</em></h1>
+  <p class="hero-sub">On the voice that tells you to quit, the wins nobody celebrates but you, and what it really means to build a life on your own terms.</p>
+  <div class="meta-row">
+    <span>12 min read</span>
+    <span>Research-backed</span>
+    <span>Not medical advice</span>
+  </div>
+</header>
+
+<div class="stats-strip">
+  <div class="stat">
+    <span class="stat-num">95%</span>
+    <span class="stat-label">Of long-term failures trace back to quitting in the middle — not the start</span>
+  </div>
+  <div class="stat">
+    <span class="stat-num">3×</span>
+    <span class="stat-label">More durable: intrinsic vs. external motivation (Deci & Ryan)</span>
+  </div>
+  <div class="stat">
+    <span class="stat-num">Identity</span>
+    <span class="stat-label">Is the only thing that sustains behaviour when motivation runs out</span>
+  </div>
+</div>
+
+<div class="toc">
+  <div class="toc-box">
+    <p class="toc-heading">In this guide</p>
+    <ol class="toc-list">
+      <li><a href="#mark">The story of Mark</a></li>
+      <li><a href="#identity">Identity before outcome</a></li>
+      <li><a href="#voice">The voice in your head</a></li>
+      <li><a href="#techniques">Three techniques that work</a></li>
+      <li><a href="#performing">Stop performing your journey</a></li>
+      <li><a href="#mental">Mental health is the foundation</a></li>
+      <li><a href="#wins">Celebrate the wins nobody sees</a></li>
+      <li><a href="#longgame">The long game</a></li>
+      <li><a href="#summary">The short version</a></li>
+      <li><a href="#sources">Sources</a></li>
+    </ol>
+  </div>
+</div>
+
+<main class="content">
+
+  <!-- 01 MARK -->
+  <section class="section" id="mark">
+    <p class="section-label">01 — Where it starts</p>
+    <h2>The Thursday evening nobody talks about</h2>
+
+    <p>It was a Thursday evening. Mark had planned everything. His running shoes were by the door, his route was set: five kilometres through the park, nothing complicated, just fresh air and movement after a week that had taken more out of him than he expected.</p>
+
+    <p>But by the time he got home, the workweek had hollowed him out. Three back-to-back meetings, a project that would not cooperate, and the particular kind of exhaustion that is not just physical but mental — the kind that sits behind your eyes. He told himself he would leave in ten minutes. Then twenty. Then he was on the couch, phone in hand, watching the minutes disappear.</p>
+
+    <p>He recognised the feeling eventually. Not guilt exactly, but a low and familiar disappointment. The doomscrolling had taken another evening. Another plan, quietly shelved.</p>
+
+    <!-- SVG: rest vs avoidance -->
+    <div class="svg-figure">
+      <svg viewBox="0 0 680 190" xmlns="http://www.w3.org/2000/svg" width="100%" style="max-width:680px;">
+        <defs>
+          <linearGradient id="gGreen" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" style="stop-color:#e8f5ee"/>
+            <stop offset="100%" style="stop-color:#b8deca"/>
+          </linearGradient>
+          <linearGradient id="gRed" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" style="stop-color:#fef2f2"/>
+            <stop offset="100%" style="stop-color:#fecaca"/>
+          </linearGradient>
+        </defs>
+        <!-- Left: Genuine Rest -->
+        <rect x="0" y="10" width="315" height="170" rx="10" fill="url(#gGreen)" stroke="#b8deca" stroke-width="1"/>
+        <text x="157" y="42" font-family="Inter,sans-serif" font-size="10" font-weight="700" fill="#1e6b45" text-anchor="middle" letter-spacing="1.8">GENUINE REST</text>
+        <line x1="30" y1="52" x2="284" y2="52" stroke="#b8deca" stroke-width="1"/>
+        <text x="157" y="75" font-family="Inter,sans-serif" font-size="13" fill="#4a5568" text-anchor="middle">Body or mind genuinely needs recovery</text>
+        <text x="157" y="98" font-family="Inter,sans-serif" font-size="13" fill="#4a5568" text-anchor="middle">You feel calm after stopping</text>
+        <text x="157" y="121" font-family="Inter,sans-serif" font-size="13" fill="#4a5568" text-anchor="middle">It's a conscious decision</text>
+        <text x="157" y="144" font-family="Inter,sans-serif" font-size="13" fill="#4a5568" text-anchor="middle">Energy returns afterward</text>
+        <text x="157" y="168" font-family="Inter,sans-serif" font-size="12" font-weight="600" fill="#1e6b45" text-anchor="middle">✓ The right call</text>
+
+        <!-- Divider -->
+        <text x="340" y="102" font-family="Inter,sans-serif" font-size="13" fill="#8896a8" text-anchor="middle">vs</text>
+
+        <!-- Right: Avoidance -->
+        <rect x="365" y="10" width="315" height="170" rx="10" fill="url(#gRed)" stroke="#fecaca" stroke-width="1"/>
+        <text x="522" y="42" font-family="Inter,sans-serif" font-size="10" font-weight="700" fill="#b91c1c" text-anchor="middle" letter-spacing="1.8">AVOIDANCE</text>
+        <line x1="395" y1="52" x2="649" y2="52" stroke="#fecaca" stroke-width="1"/>
+        <text x="522" y="75" font-family="Inter,sans-serif" font-size="13" fill="#4a5568" text-anchor="middle">Scrolling to escape the decision</text>
+        <text x="522" y="98" font-family="Inter,sans-serif" font-size="13" fill="#4a5568" text-anchor="middle">Low-grade guilt lingers after</text>
+        <text x="522" y="121" font-family="Inter,sans-serif" font-size="13" fill="#4a5568" text-anchor="middle">Time disappears unintentionally</text>
+        <text x="522" y="144" font-family="Inter,sans-serif" font-size="13" fill="#4a5568" text-anchor="middle">You feel worse, not better</text>
+        <text x="522" y="168" font-family="Inter,sans-serif" font-size="12" font-weight="600" fill="#b91c1c" text-anchor="middle">↓ Learn to recognise this</text>
+      </svg>
+      <p class="svg-caption">Knowing the difference between rest and avoidance is one of the most important skills you can develop.</p>
+    </div>
+
+    <p>Mark knew the difference. So he put the phone down, laced up his shoes, and made himself one promise: just get outside. Two kilometres, maybe less. Enough to have done something. Enough to break the pattern.</p>
+
+    <p>He walked 5.5 kilometres.</p>
+
+    <div class="callout">
+      <p class="callout-label">The point</p>
+      <p>The point is not to never skip a day. The point is not to let one skipped day become the story you tell yourself about who you are. <strong>Coming back is the entire skill.</strong> The faster you catch yourself and return, the stronger that pattern becomes.</p>
+    </div>
+  </section>
+
+  <!-- 02 IDENTITY -->
+  <section class="section" id="identity">
+    <p class="section-label">02 — Identity</p>
+    <h2>Who you are, before what you want</h2>
+
+    <p>Before we talk about weight, habits, routines, or goals, we need to talk about something more fundamental: <strong>identity</strong>. Every sustainable change in behaviour starts with a shift in how you see yourself.</p>
+
+    <p>Most people approach change backwards. They say <em>I want to lose 15 kilos</em> and then try to build habits around that outcome. But outcome-based thinking is fragile. When the scale doesn't move for two weeks, there is suddenly nothing holding the behaviour in place.</p>
+
+    <p>Identity-based change works differently. Instead of asking what you want to achieve, you ask <strong>who you want to become</strong>. Someone who moves their body because it is part of who they are. Someone who chooses the meal that makes them feel strong. Someone who does not need external validation to know they are on the right path.</p>
+
+    <!-- SVG: outcome vs identity chain -->
+    <div class="svg-figure">
+      <svg viewBox="0 0 680 240" xmlns="http://www.w3.org/2000/svg" width="100%" style="max-width:680px;">
+        <!-- OUTCOME row label -->
+        <text x="20" y="28" font-family="Inter,sans-serif" font-size="10" font-weight="700" fill="#b91c1c" letter-spacing="1.5">OUTCOME-BASED</text>
+        <!-- Chain -->
+        <rect x="20" y="38" width="130" height="48" rx="7" fill="#fef2f2" stroke="#fecaca"/>
+        <text x="85" y="58" font-family="Inter,sans-serif" font-size="12" fill="#4a5568" text-anchor="middle">Set a goal</text>
+        <text x="85" y="76" font-family="Inter,sans-serif" font-size="11" fill="#8896a8" text-anchor="middle">"Lose 15 kg"</text>
+        <text x="162" y="67" font-family="Inter,sans-serif" font-size="18" fill="#d6dfe9" text-anchor="middle">→</text>
+        <rect x="176" y="38" width="130" height="48" rx="7" fill="#fef2f2" stroke="#fecaca"/>
+        <text x="241" y="58" font-family="Inter,sans-serif" font-size="12" fill="#4a5568" text-anchor="middle">Build habits</text>
+        <text x="241" y="76" font-family="Inter,sans-serif" font-size="11" fill="#8896a8" text-anchor="middle">Motivation-driven</text>
+        <text x="318" y="67" font-family="Inter,sans-serif" font-size="18" fill="#d6dfe9" text-anchor="middle">→</text>
+        <rect x="332" y="38" width="130" height="48" rx="7" fill="#fef2f2" stroke="#fecaca"/>
+        <text x="397" y="58" font-family="Inter,sans-serif" font-size="12" fill="#b91c1c" text-anchor="middle">Scale stalls</text>
+        <text x="397" y="76" font-family="Inter,sans-serif" font-size="11" fill="#b91c1c" text-anchor="middle">Nothing holds it</text>
+        <text x="474" y="67" font-family="Inter,sans-serif" font-size="18" fill="#fecaca" text-anchor="middle">→</text>
+        <rect x="488" y="38" width="130" height="48" rx="7" fill="#fef2f2" stroke="#fecaca"/>
+        <text x="553" y="58" font-family="Inter,sans-serif" font-size="12" fill="#b91c1c" text-anchor="middle">Quit</text>
+        <text x="553" y="76" font-family="Inter,sans-serif" font-size="11" fill="#b91c1c" text-anchor="middle">Goal feels gone</text>
+
+        <!-- Divider -->
+        <line x1="20" y1="115" x2="660" y2="115" stroke="#d6dfe9" stroke-width="1" stroke-dasharray="5,4"/>
+
+        <!-- IDENTITY row label -->
+        <text x="20" y="142" font-family="Inter,sans-serif" font-size="10" font-weight="700" fill="#3b5bdb" letter-spacing="1.5">IDENTITY-BASED</text>
+        <!-- Chain -->
+        <rect x="20" y="152" width="130" height="48" rx="7" fill="#eef1fd" stroke="#c5cff7"/>
+        <text x="85" y="172" font-family="Inter,sans-serif" font-size="12" fill="#3b5bdb" text-anchor="middle">Define identity</text>
+        <text x="85" y="190" font-family="Inter,sans-serif" font-size="11" fill="#8896a8" text-anchor="middle">"I am someone who…"</text>
+        <text x="162" y="181" font-family="Inter,sans-serif" font-size="18" fill="#c5cff7" text-anchor="middle">→</text>
+        <rect x="176" y="152" width="130" height="48" rx="7" fill="#eef1fd" stroke="#c5cff7"/>
+        <text x="241" y="172" font-family="Inter,sans-serif" font-size="12" fill="#3b5bdb" text-anchor="middle">Habits follow</text>
+        <text x="241" y="190" font-family="Inter,sans-serif" font-size="11" fill="#8896a8" text-anchor="middle">Values-driven</text>
+        <text x="318" y="181" font-family="Inter,sans-serif" font-size="18" fill="#c5cff7" text-anchor="middle">→</text>
+        <rect x="332" y="152" width="130" height="48" rx="7" fill="#eef1fd" stroke="#c5cff7"/>
+        <text x="397" y="172" font-family="Inter,sans-serif" font-size="12" fill="#3b5bdb" text-anchor="middle">Hard week hits</text>
+        <text x="397" y="190" font-family="Inter,sans-serif" font-size="11" fill="#3b5bdb" text-anchor="middle">Identity holds</text>
+        <text x="474" y="181" font-family="Inter,sans-serif" font-size="18" fill="#c5cff7" text-anchor="middle">→</text>
+        <rect x="488" y="152" width="130" height="48" rx="7" fill="#eef1fd" stroke="#c5cff7"/>
+        <text x="553" y="172" font-family="Inter,sans-serif" font-size="12" fill="#3b5bdb" text-anchor="middle">Keep going</text>
+        <text x="553" y="190" font-family="Inter,sans-serif" font-size="11" fill="#3b5bdb" text-anchor="middle">Self-reinforcing</text>
+      </svg>
+      <p class="svg-caption">Outcome-based thinking collapses when results stall. Identity-based thinking self-reinforces with every small action.</p>
+    </div>
+
+    <p>This is not a motivational trick. It is backed by decades of research in behavioural psychology. When behaviour aligns with identity, it sustains itself. When it does not, willpower eventually runs out — because <strong>willpower is a finite resource and identity is not</strong>.</p>
+
+    <div class="scenario">
+      <p class="scenario-label">Real scenario — Thomas</p>
+      <p class="scenario-name">"I kept waiting to feel like a different person before I started acting like one."</p>
+      <p>Thomas had spent three years telling himself he would start eating better once things calmed down. Work, stress, kids — there was always a reason. Then a friend asked him a simple question: <em>what would the healthier version of you do right now, today?</em> He paused. Then he said: probably not the takeout. So he cooked instead. Within six months, he was that person — not because he transformed, but because he decided to act like the person he wanted to be before he felt like that person.</p>
+    </div>
+  </section>
+
+  <!-- 03 VOICE -->
+  <section class="section" id="voice">
+    <p class="section-label">03 — The inner critic</p>
+    <h2>The voice in your head is not always telling the truth</h2>
+
+    <p>Here is something nobody warns you about before you start making real changes: <strong>the loudest opposition will not come from your environment. It will come from inside your own mind.</strong></p>
+
+    <p><em>You have already ruined today, so what does it matter. Everyone will notice you are struggling. You have tried this before and it did not work. Who do you think you are?</em></p>
+
+    <p>These thoughts feel like facts. They are not. They are patterns — deeply worn grooves in the brain's neural pathways built over years of repetition. Cognitive behavioural research consistently shows that negative self-talk is not an accurate reflection of reality. It is a habit, and habits can be changed.</p>
+
+    <!-- SVG: cognitive defusion -->
+    <div class="svg-figure">
+      <svg viewBox="0 0 680 150" xmlns="http://www.w3.org/2000/svg" width="100%" style="max-width:680px;">
+        <rect x="0" y="0" width="680" height="150" rx="10" fill="#f8faff" stroke="#d6dfe9"/>
+        <!-- Brain node -->
+        <circle cx="80" cy="75" r="44" fill="#eef1fd" stroke="#c5cff7"/>
+        <text x="80" y="70" font-family="Inter,sans-serif" font-size="24" text-anchor="middle">🧠</text>
+        <text x="80" y="94" font-family="Inter,sans-serif" font-size="11" fill="#8896a8" text-anchor="middle">Your mind</text>
+
+        <!-- Arrow 1 -->
+        <line x1="132" y1="75" x2="190" y2="75" stroke="#d6dfe9" stroke-width="1.5" stroke-dasharray="4,3"/>
+
+        <!-- Fused thought -->
+        <rect x="196" y="38" width="182" height="74" rx="8" fill="#fef2f2" stroke="#fecaca"/>
+        <text x="287" y="62" font-family="Inter,sans-serif" font-size="13" fill="#b91c1c" text-anchor="middle" font-style="italic">"I am a failure."</text>
+        <text x="287" y="82" font-family="Inter,sans-serif" font-size="11" fill="#8896a8" text-anchor="middle">Feels like fact — stops action</text>
+        <text x="287" y="100" font-family="Inter,sans-serif" font-size="11" fill="#b91c1c" font-weight="600" text-anchor="middle">You obey it automatically</text>
+
+        <!-- Gap label -->
+        <text x="408" y="70" font-family="Inter,sans-serif" font-size="22" fill="#c5cff7" text-anchor="middle">→</text>
+        <text x="408" y="88" font-family="Inter,sans-serif" font-size="10" fill="#8896a8" text-anchor="middle">The gap</text>
+
+        <!-- Defused thought -->
+        <rect x="428" y="38" width="230" height="74" rx="8" fill="#eef1fd" stroke="#c5cff7"/>
+        <text x="543" y="60" font-family="Inter,sans-serif" font-size="13" fill="#3b5bdb" text-anchor="middle" font-style="italic">"I notice the thought</text>
+        <text x="543" y="78" font-family="Inter,sans-serif" font-size="13" fill="#3b5bdb" text-anchor="middle" font-style="italic">that I am failing."</text>
+        <text x="543" y="98" font-family="Inter,sans-serif" font-size="11" fill="#3b5bdb" font-weight="600" text-anchor="middle">Creates space — creates choice</text>
+      </svg>
+      <p class="svg-caption">Cognitive defusion (Hayes, ACT) — the gap between having a thought and becoming it — is where your power lives.</p>
+    </div>
+
+    <p>The first step is the hardest: you have to learn to <strong>observe the thought rather than become it</strong>. There is a difference between thinking <em>I am a failure</em> and noticing <em>I am having the thought that I am a failure</em>. That gap, small as it sounds, is everything.</p>
+
+    <p>Psychologist Steven Hayes, founder of Acceptance and Commitment Therapy, calls this <strong>cognitive defusion</strong>: the ability to step back from a thought and see it for what it is — just a thought, not a command and not a verdict. You do not have to fight the voice or silence it. You just stop obeying it automatically.</p>
+  </section>
+
+  <!-- 04 TECHNIQUES -->
+  <section class="section" id="techniques">
+    <p class="section-label">04 — Tools</p>
+    <h2>Three techniques that actually work</h2>
+
+    <div class="technique-grid">
+      <div class="technique-card">
+        <p class="tech-num">Technique 01</p>
+        <p class="tech-title">Name it to tame it</p>
+        <p class="tech-desc">When a negative thought arrives, label it out loud or in writing. <em>"There is the voice telling me I will fail."</em> Labelling activates the prefrontal cortex and reduces the emotional charge of the thought.</p>
+      </div>
+      <div class="technique-card">
+        <p class="tech-num">Technique 02</p>
+        <p class="tech-title">Ask: is this useful?</p>
+        <p class="tech-desc">Not <em>"is this true?"</em> — that opens a debate. Ask instead: <em>does believing this move me forward or backward?</em> If it moves you backward, you are allowed to set it down.</p>
+      </div>
+      <div class="technique-card">
+        <p class="tech-num">Technique 03</p>
+        <p class="tech-title">Replace verdict with question</p>
+        <p class="tech-desc"><em>"I always give up"</em> becomes <em>"What is one thing I can do right now to stay in this?"</em> A question opens a door. A verdict slams one shut.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05 PERFORMING -->
+  <section class="section" id="performing">
+    <p class="section-label">05 — Social pressure</p>
+    <h2>Stop performing your journey for other people</h2>
+
+    <p>We live in a time when transformation is public by default. Progress photos, accountability posts, streaks shared online. Community support is genuinely valuable — we know from the research that social connection strengthens follow-through. But there is a shadow side that rarely gets named.</p>
+
+    <p>When your journey is performed for an audience, you become vulnerable to their reactions. A post that gets few likes feels like confirmation that the effort is not worth it. A comment from someone who doubts you lands like a verdict. <strong>You start making choices based on what will look good rather than what will actually help you grow.</strong></p>
+
+    <div class="callout">
+      <p class="callout-label">The deeper problem</p>
+      <p>When you need other people's approval to keep going, you have outsourced your motivation to a source you cannot control. And that source will let you down — not because people are cruel, but because they are busy, distracted, and fighting their own battles.</p>
+    </div>
+
+    <p>The goal is to reach a place where your consistency is between you and you. Where you do the workout nobody sees. Where you make the better choice at the dinner table with no one watching. Where the reward is not the compliment but the quiet knowledge that you are someone who keeps their word to themselves.</p>
+
+    <p>Research by Deci and Ryan on self-determination theory shows that intrinsic motivation — doing something because it aligns with your values rather than because it earns approval — is dramatically more durable than motivation driven by external rewards or judgement.</p>
+
+    <div class="pull-quote">
+      <p>"People's opinions of your journey say far more about their own fears and limitations than about your potential."</p>
+      <cite>Build yourself regardless.</cite>
+    </div>
+  </section>
+
+  <!-- 06 MENTAL HEALTH -->
+  <section class="section" id="mental">
+    <p class="section-label">06 — The foundation</p>
+    <h2>Mental health is not separate from physical health</h2>
+
+    <p>This needs to be said clearly, because the fitness industry has spent decades pretending otherwise: <strong>you cannot sustainably change your body while ignoring your mind.</strong></p>
+
+    <p>Chronic stress elevates cortisol, which disrupts sleep, increases cravings, and makes disciplined decision-making physiologically harder. Anxiety and depression do not just affect mood. They affect energy, motivation, and the brain's capacity for long-term thinking.</p>
+
+    <!-- SVG: stress cycle -->
+    <div class="svg-figure">
+      <svg viewBox="0 0 680 220" xmlns="http://www.w3.org/2000/svg" width="100%" style="max-width:680px;">
+        <text x="340" y="22" font-family="Inter,sans-serif" font-size="10" font-weight="700" fill="#8896a8" text-anchor="middle" letter-spacing="1.8">THE STRESS–DEPLETION CYCLE</text>
+        <defs>
+          <marker id="arrBlue" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto">
+            <path d="M0,0 L0,7 L7,3.5 z" fill="#c5cff7"/>
+          </marker>
+        </defs>
+        <!-- Nodes -->
+        <circle cx="340" cy="68" r="40" fill="#eef1fd" stroke="#c5cff7"/>
+        <text x="340" y="63" font-family="Inter,sans-serif" font-size="12" font-weight="600" fill="#3b5bdb" text-anchor="middle">Chronic</text>
+        <text x="340" y="80" font-family="Inter,sans-serif" font-size="12" font-weight="600" fill="#3b5bdb" text-anchor="middle">Stress</text>
+
+        <circle cx="556" cy="138" r="40" fill="#fef2f2" stroke="#fecaca"/>
+        <text x="556" y="133" font-family="Inter,sans-serif" font-size="12" font-weight="600" fill="#b91c1c" text-anchor="middle">Poor</text>
+        <text x="556" y="150" font-family="Inter,sans-serif" font-size="12" font-weight="600" fill="#b91c1c" text-anchor="middle">Sleep</text>
+
+        <circle cx="450" cy="198" r="40" fill="#fef2f2" stroke="#fecaca"/>
+        <text x="450" y="193" font-family="Inter,sans-serif" font-size="11" font-weight="600" fill="#b91c1c" text-anchor="middle">↑ Cravings</text>
+        <text x="450" y="210" font-family="Inter,sans-serif" font-size="11" fill="#b91c1c" text-anchor="middle">& cortisol</text>
+
+        <circle cx="230" cy="198" r="40" fill="#fef2f2" stroke="#fecaca"/>
+        <text x="230" y="193" font-family="Inter,sans-serif" font-size="11" font-weight="600" fill="#b91c1c" text-anchor="middle">Low</text>
+        <text x="230" y="210" font-family="Inter,sans-serif" font-size="11" fill="#b91c1c" text-anchor="middle">willpower</text>
+
+        <circle cx="124" cy="138" r="40" fill="#fef2f2" stroke="#fecaca"/>
+        <text x="124" y="133" font-family="Inter,sans-serif" font-size="11" font-weight="600" fill="#b91c1c" text-anchor="middle">Decision</text>
+        <text x="124" y="150" font-family="Inter,sans-serif" font-size="11" fill="#b91c1c" text-anchor="middle">fatigue</text>
+
+        <!-- Arrows -->
+        <path d="M 373 90 Q 488 98 524 116" stroke="#c5cff7" stroke-width="1.5" fill="none" marker-end="url(#arrBlue)"/>
+        <path d="M 532 166 Q 508 188 488 194" stroke="#c5cff7" stroke-width="1.5" fill="none" marker-end="url(#arrBlue)"/>
+        <path d="M 410 198 Q 340 210 270 200" stroke="#c5cff7" stroke-width="1.5" fill="none" marker-end="url(#arrBlue)"/>
+        <path d="M 196 186 Q 152 172 148 160" stroke="#c5cff7" stroke-width="1.5" fill="none" marker-end="url(#arrBlue)"/>
+        <path d="M 110 108 Q 196 76 306 70" stroke="#c5cff7" stroke-width="1.5" fill="none" marker-end="url(#arrBlue)"/>
+
+        <!-- Centre label -->
+        <text x="340" y="148" font-family="Inter,sans-serif" font-size="11" fill="#8896a8" text-anchor="middle">Break the</text>
+        <text x="340" y="165" font-family="Inter,sans-serif" font-size="11" fill="#3b5bdb" font-weight="600" text-anchor="middle">cycle ↗</text>
+      </svg>
+      <p class="svg-caption">Chronic stress creates a self-reinforcing loop. Treating mental health directly is the fastest way to break it — not pushing harder through it.</p>
+    </div>
+
+    <p>This is not an excuse. It is context. The person who is struggling to get off the couch at 7 PM after a brutal week of emotional weight is not lazy. They are <strong>depleted</strong>. Depleted people need recovery, not punishment.</p>
+
+    <p>Taking your mental health seriously is not a detour from your goals. It is the fastest route to them. That means sleep — Matthew Walker's research shows that sleep deprivation impairs metabolism, hunger regulation, and cognitive function within 48 hours. It means finding stress management that actually works for you. And it means being honest with yourself about the difference between a hard day that needs pushing through and a season that needs gentleness.</p>
+
+    <div class="scenario">
+      <p class="scenario-label">Real scenario — Sophie</p>
+      <p class="scenario-name">"I thought I was failing at discipline. I was actually failing at recovery."</p>
+      <p>Sophie had been trying to build a consistent exercise habit for two years. It would work for three weeks and then fall apart. She thought she lacked willpower. A therapist helped her see the pattern differently: she was exercising to manage anxiety, but never addressing the anxiety itself. She was trying to outrun a storm rather than finding shelter. Once she started treating her mental health as the foundation rather than the obstacle, the habit finally stuck. Not because she became tougher, but because she became more honest.</p>
+    </div>
+  </section>
+
+  <!-- 07 WINS -->
+  <section class="section" id="wins">
+    <p class="section-label">07 — The real progress</p>
+    <h2>Celebrate the wins nobody else can see</h2>
+
+    <p>The culture around transformation is obsessed with visible results. Before-and-after photos, numbers, sizes. These things are not meaningless — measurable progress matters. But they are an incomplete picture of what is actually happening.</p>
+
+    <p>The real wins — the ones that predict long-term success — are almost always invisible. The people who sustain change are not necessarily the ones who lost the most weight fastest. They are the ones who learned to recognise and honour the small internal shifts that nobody else can measure.</p>
+
+    <ul class="win-list">
+      <li>
+        <span class="win-arrow">→</span>
+        <span>You chose the walk over the couch on a day you had nothing left. That is not a small thing. <strong>That is identity in action.</strong></span>
+      </li>
+      <li>
+        <span class="win-arrow">→</span>
+        <span>You caught the negative thought before it made the decision for you. That pause is a skill you built. It did not exist before.</span>
+      </li>
+      <li>
+        <span class="win-arrow">→</span>
+        <span>You had a hard day and did not spiral. You felt the pull toward old habits and stayed anyway. That is not luck. <strong>That is who you are becoming.</strong></span>
+      </li>
+      <li>
+        <span class="win-arrow">→</span>
+        <span>You lowered the bar and showed up anyway. Two kilometres instead of five, half a workout instead of none. The version of you that does something small still beats the version that waits for perfect conditions.</span>
+      </li>
+      <li>
+        <span class="win-arrow">→</span>
+        <span>You came back after the slip. <strong>This one is the most important.</strong> Anyone can start. The person who comes back after the fall is the person who will actually make it.</span>
+      </li>
+    </ul>
+
+    <div class="callout">
+      <p class="callout-label">The neuroscience</p>
+      <p>The brain's dopamine system is not only activated by big rewards. It is activated by <strong>progress toward a goal</strong>. Every small win, consciously acknowledged, reinforces the neural pathway that says <em>this is who I am and this is what I do</em>. Celebrating is not self-indulgence. It is neurologically sound strategy. Write it down. Say it to yourself. Mean it.</p>
+    </div>
+  </section>
+
+  <!-- 08 LONG GAME -->
+  <section class="section" id="longgame">
+    <p class="section-label">08 — The middle</p>
+    <h2>The long game is the only game worth playing</h2>
+
+    <p>There will be a week — maybe more than one — where nothing seems to be working. The scale has not moved. You are tired. The motivation that felt so clear a month ago has blurred, and you start asking whether any of this is actually worth it.</p>
+
+    <p>This is not a crisis. <strong>This is the middle.</strong> Every meaningful journey has one. It is long, it is unglamorous, and it is where most people turn around because turning around feels like relief and the middle feels like nothing.</p>
+
+    <!-- SVG: the journey arc -->
+    <div class="svg-figure">
+      <svg viewBox="0 0 680 185" xmlns="http://www.w3.org/2000/svg" width="100%" style="max-width:680px;">
+        <defs>
+          <marker id="arrNav" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto">
+            <path d="M0,0 L0,7 L7,3.5 z" fill="#3b5bdb"/>
+          </marker>
+        </defs>
+        <!-- Grid lines subtle -->
+        <line x1="40" y1="20" x2="40" y2="155" stroke="#d6dfe9" stroke-width="0.5"/>
+        <line x1="640" y1="20" x2="640" y2="155" stroke="#d6dfe9" stroke-width="0.5"/>
+        <line x1="40" y1="155" x2="640" y2="155" stroke="#d6dfe9" stroke-width="0.5"/>
+
+        <!-- Dashed future path -->
+        <path d="M 360 125 Q 460 90 540 55 Q 600 30 640 28" stroke="#c5cff7" stroke-width="2" fill="none" stroke-dasharray="6,4"/>
+        <!-- Solid path so far -->
+        <path d="M 40 145 Q 110 50 190 105 Q 270 155 360 125" stroke="#3b5bdb" stroke-width="2.5" fill="none" marker-end="url(#arrNav)"/>
+
+        <!-- Points -->
+        <circle cx="40" cy="145" r="5" fill="#3b5bdb"/>
+        <text x="40" y="172" font-family="Inter,sans-serif" font-size="10" fill="#4a5568" text-anchor="middle">Start</text>
+
+        <circle cx="120" cy="62" r="5" fill="#1e6b45"/>
+        <text x="120" y="50" font-family="Inter,sans-serif" font-size="10" fill="#1e6b45" text-anchor="middle">Early wins</text>
+
+        <circle cx="270" cy="155" r="5" fill="#b91c1c"/>
+        <text x="270" y="173" font-family="Inter,sans-serif" font-size="10" fill="#b91c1c" text-anchor="middle">The dip</text>
+
+        <!-- Most quit annotation -->
+        <line x1="360" y1="125" x2="360" y2="178" stroke="#d6dfe9" stroke-width="1" stroke-dasharray="3,3"/>
+        <text x="360" y="183" font-family="Inter,sans-serif" font-size="10" fill="#8896a8" text-anchor="middle">Most quit here</text>
+
+        <!-- Identity forged label -->
+        <rect x="148" y="80" width="160" height="26" rx="5" fill="#eef1fd" stroke="#c5cff7"/>
+        <text x="228" y="98" font-family="Inter,sans-serif" font-size="11" font-weight="600" fill="#3b5bdb" text-anchor="middle">← Identity is forged here</text>
+
+        <!-- Future -->
+        <circle cx="540" cy="55" r="4" fill="#8896a8" stroke="#d6dfe9"/>
+        <text x="540" y="43" font-family="Inter,sans-serif" font-size="10" fill="#8896a8" text-anchor="middle">Compound gains</text>
+        <circle cx="640" cy="28" r="4" fill="#8896a8" stroke="#d6dfe9"/>
+        <text x="640" y="18" font-family="Inter,sans-serif" font-size="10" fill="#8896a8" text-anchor="middle">You, later</text>
+      </svg>
+      <p class="svg-caption">The middle — the unglamorous stretch between early wins and compound results — is where most people quit, and where character is actually built.</p>
+    </div>
+
+    <p>But the middle is where identity is forged. It is where you find out what you are actually made of — not by rising to a peak moment but by staying with something difficult when there is no peak moment on the horizon. <strong>The people who come out the other side are not the ones who felt the most motivated. They are the ones who decided, quietly and privately and without applause, to keep going anyway.</strong></p>
+
+    <div class="pull-quote">
+      <p>"You do not find out who you are in the good weeks.<br>You find out in the middle, and then you choose."</p>
+    </div>
+
+    <p>So wherever you are right now — whether you are beginning, struggling, rebuilding, or just trying to stay honest with yourself — know this: the fact that you are still here, still thinking about this, still asking how to do better, means something. It means you have not given up on yourself. And that is the most important data point there is.</p>
+  </section>
+
+  <!-- 09 SUMMARY -->
+  <section class="section" id="summary">
+    <p class="section-label">09 — The short version</p>
+    <h2>What this comes down to</h2>
+
+    <ul class="bullet-list">
+      <li>The difference between rest and avoidance is something you can learn to feel. One leaves you recharged. The other leaves you hollow.</li>
+      <li>Identity-based change outlasts outcome-based thinking. <strong>Ask who you want to become, not what you want to achieve.</strong></li>
+      <li>The voice in your head is not telling the truth. It is a habit — and habits can be unlearned. You do not have to silence it. You just stop obeying it.</li>
+      <li>Stop performing your progress for people who are not watching. Build for yourself. Intrinsic motivation lasts. External validation does not.</li>
+      <li><strong>Mental health is not the obstacle. It is the foundation.</strong> Treat it as such and everything else becomes easier.</li>
+      <li>The invisible wins — catching a thought, coming back after a slip, lowering the bar and showing up anyway — are the real data. Celebrate them.</li>
+      <li>The middle is where identity is built. Everyone hits it. The ones who come out the other side are the ones who stayed.</li>
+      <li>The fact that you are still here, still thinking about this — that means something. <strong>Keep building.</strong></li>
+    </ul>
+  </section>
+
+  <!-- 10 SOURCES -->
+  <section class="section" id="sources">
+    <p class="section-label">10 — Sources</p>
+    <h2>Research & references</h2>
+
+    <ul class="sources-list">
+      <li>
+        <span class="src-num">1</span>
+        <span>Lally, P. et al. (2010). <em>How are habits formed: Modelling habit formation in the real world.</em> European Journal of Social Psychology, 40(6), 998–1009.</span>
+      </li>
+      <li>
+        <span class="src-num">2</span>
+        <span>Duckworth, A.L. et al. (2007). <em>Grit: Perseverance and passion for long-term goals.</em> Journal of Personality and Social Psychology, 92(6), 1087–1101.</span>
+      </li>
+      <li>
+        <span class="src-num">3</span>
+        <span>Hayes, S.C. (2004). <em>Acceptance and Commitment Therapy, Relational Frame Theory, and the Third Wave of Behavioral and Cognitive Therapies.</em> Behavior Therapy, 35(4), 639–665.</span>
+      </li>
+      <li>
+        <span class="src-num">4</span>
+        <span>Deci, E.L. & Ryan, R.M. (2000). <em>The "what" and "why" of goal pursuits: Human needs and the self-determination of behavior.</em> Psychological Inquiry, 11(4), 227–268.</span>
+      </li>
+      <li>
+        <span class="src-num">5</span>
+        <span>Walker, M. (2017). <em>Why We Sleep: Unlocking the Power of Sleep and Dreams.</em> Scribner.</span>
+      </li>
+      <li>
+        <span class="src-num">6</span>
+        <span>Clear, J. (2018). <em>Atomic Habits: An Easy & Proven Way to Build Good Habits & Break Bad Ones.</em> Avery.</span>
+      </li>
+      <li>
+        <span class="src-num">7</span>
+        <span>Fogg, B.J. (2019). <em>Tiny Habits: The Small Changes That Change Everything.</em> Houghton Mifflin Harcourt.</span>
+      </li>
+    </ul>
+  </section>
+
+  <div class="disclaimer">
+    <p><strong>Disclaimer:</strong> This guide is for informational purposes only and does not constitute medical or psychological advice. If you are experiencing mental health difficulties, please speak with a qualified professional.</p>
+  </div>
+
+</main>
+
+<footer>
+  <div class="footer-brand">
+    <a href="/index.html" class="logo">Improo</a>
+    <p>Health, weight loss, movement & mindset — together.</p>
+  </div>
+  <div class="footer-col">
+    <h4>Navigation</h4>
+    <ul>
+      <li><a href="/index.html">Home</a></li>
+      <li><a href="/insights/index.html">Articles</a></li>
+      <li><a href="/guides.html">Guides</a></li>
+      <li><a href="/roadmap.html">Roadmap</a></li>
+    </ul>
+  </div>
+  <div class="footer-col">
+    <h4>Legal</h4>
+    <ul>
+      <li><a href="/disclaimer.html">Disclaimer</a></li>
+      <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+      <li><a href="/terms-of-service.html">Terms of Service</a></li>
+    </ul>
+  </div>
+</footer>
+<div class="footer-bottom">© 2026 Improo. All rights reserved.</div>
+
+</body>
+</html>
