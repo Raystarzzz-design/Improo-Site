@@ -529,44 +529,63 @@
 
     <!-- SVG: stress cycle -->
     <div class="svg-figure">
-      <svg viewBox="0 0 680 250" xmlns="http://www.w3.org/2000/svg" width="100%" style="max-width:680px;">
-        <text x="340" y="22" font-family="Inter,sans-serif" font-size="10" font-weight="700" fill="#8896a8" text-anchor="middle" letter-spacing="1.8">THE STRESS–DEPLETION CYCLE</text>
+      <svg viewBox="0 0 680 425" xmlns="http://www.w3.org/2000/svg" width="100%" style="max-width:680px;">
         <defs>
-          <marker id="arrBlue" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto">
-            <path d="M0,0 L0,7 L7,3.5 z" fill="#c5cff7"/>
+          <marker id="ahB" markerWidth="14" markerHeight="10" refX="12" refY="5" orient="auto" markerUnits="userSpaceOnUse">
+            <path d="M 0 0 L 14 5 L 0 10 Z" fill="#a8b8f0"/>
+          </marker>
+          <marker id="ahR" markerWidth="14" markerHeight="10" refX="12" refY="5" orient="auto" markerUnits="userSpaceOnUse">
+            <path d="M 0 0 L 14 5 L 0 10 Z" fill="#fca5a5"/>
           </marker>
         </defs>
-        <!-- Nodes -->
-        <circle cx="340" cy="68" r="40" fill="#eef1fd" stroke="#c5cff7"/>
-        <text x="340" y="63" font-family="Inter,sans-serif" font-size="12" font-weight="600" fill="#3b5bdb" text-anchor="middle">Chronic</text>
-        <text x="340" y="80" font-family="Inter,sans-serif" font-size="12" font-weight="600" fill="#3b5bdb" text-anchor="middle">Stress</text>
 
-        <circle cx="556" cy="138" r="40" fill="#fef2f2" stroke="#fecaca"/>
-        <text x="556" y="133" font-family="Inter,sans-serif" font-size="12" font-weight="600" fill="#b91c1c" text-anchor="middle">Poor</text>
-        <text x="556" y="150" font-family="Inter,sans-serif" font-size="12" font-weight="600" fill="#b91c1c" text-anchor="middle">Sleep</text>
+        <!-- Title -->
+        <text x="340" y="18" font-family="Inter,sans-serif" font-size="10" font-weight="700" fill="#8896a8" text-anchor="middle" letter-spacing="2">THE STRESS–DEPLETION CYCLE</text>
 
-        <circle cx="450" cy="198" r="40" fill="#fef2f2" stroke="#fecaca"/>
-        <text x="450" y="193" font-family="Inter,sans-serif" font-size="11" font-weight="600" fill="#b91c1c" text-anchor="middle">↑ Cravings</text>
-        <text x="450" y="210" font-family="Inter,sans-serif" font-size="11" fill="#b91c1c" text-anchor="middle">& cortisol</text>
+        <!-- Background ring -->
+        <circle cx="340" cy="230" r="160" fill="none" stroke="#f0f2fa" stroke-width="38"/>
 
-        <circle cx="230" cy="198" r="40" fill="#fef2f2" stroke="#fecaca"/>
-        <text x="230" y="193" font-family="Inter,sans-serif" font-size="11" font-weight="600" fill="#b91c1c" text-anchor="middle">Low</text>
-        <text x="230" y="210" font-family="Inter,sans-serif" font-size="11" fill="#b91c1c" text-anchor="middle">willpower</text>
+        <!-- Arc: Chronic Stress → Poor Sleep (283°→329°) -->
+        <path d="M 376 74 A 160 160 0 0 1 477 148" stroke="#b8caf8" stroke-width="22" fill="none" stroke-linecap="round" marker-end="url(#ahB)"/>
+        <!-- Arc: Poor Sleep → ↑ Cravings (355°→41°) -->
+        <path d="M 499 216 A 160 160 0 0 1 461 335" stroke="#fca5a5" stroke-width="22" fill="none" stroke-linecap="round" marker-end="url(#ahR)"/>
+        <!-- Arc: ↑ Cravings → Low willpower (67°→113°) -->
+        <path d="M 403 377 A 160 160 0 0 1 277 377" stroke="#fca5a5" stroke-width="22" fill="none" stroke-linecap="round" marker-end="url(#ahR)"/>
+        <!-- Arc: Low willpower → Decision fatigue (139°→185°) -->
+        <path d="M 219 335 A 160 160 0 0 1 181 216" stroke="#fca5a5" stroke-width="22" fill="none" stroke-linecap="round" marker-end="url(#ahR)"/>
+        <!-- Arc: Decision fatigue → Chronic Stress (211°→257°) -->
+        <path d="M 203 148 A 160 160 0 0 1 304 74" stroke="#b8caf8" stroke-width="22" fill="none" stroke-linecap="round" marker-end="url(#ahB)"/>
 
-        <circle cx="124" cy="138" r="40" fill="#fef2f2" stroke="#fecaca"/>
-        <text x="124" y="133" font-family="Inter,sans-serif" font-size="11" font-weight="600" fill="#b91c1c" text-anchor="middle">Decision</text>
-        <text x="124" y="150" font-family="Inter,sans-serif" font-size="11" fill="#b91c1c" text-anchor="middle">fatigue</text>
+        <!-- Center circle -->
+        <circle cx="340" cy="230" r="72" fill="white" stroke="#dde5f5" stroke-width="1.5"/>
+        <text x="340" y="221" font-family="Inter,sans-serif" font-size="10" font-weight="700" fill="#8896a8" text-anchor="middle" letter-spacing="1.5">BREAK</text>
+        <text x="340" y="238" font-family="Inter,sans-serif" font-size="10" font-weight="700" fill="#3b5bdb" text-anchor="middle" letter-spacing="1.5">THE CYCLE</text>
+        <text x="340" y="256" font-family="Inter,sans-serif" font-size="16" fill="#3b5bdb" text-anchor="middle">↗</text>
 
-        <!-- Arrows -->
-        <path d="M 373 90 Q 488 98 524 116" stroke="#c5cff7" stroke-width="1.5" fill="none" marker-end="url(#arrBlue)"/>
-        <path d="M 532 166 Q 508 188 488 194" stroke="#c5cff7" stroke-width="1.5" fill="none" marker-end="url(#arrBlue)"/>
-        <path d="M 410 198 Q 340 210 270 200" stroke="#c5cff7" stroke-width="1.5" fill="none" marker-end="url(#arrBlue)"/>
-        <path d="M 196 186 Q 152 172 148 160" stroke="#c5cff7" stroke-width="1.5" fill="none" marker-end="url(#arrBlue)"/>
-        <path d="M 110 108 Q 196 76 306 70" stroke="#c5cff7" stroke-width="1.5" fill="none" marker-end="url(#arrBlue)"/>
+        <!-- Node 0: Chronic Stress (top, 270°) -->
+        <circle cx="340" cy="70" r="46" fill="#eef1fd" stroke="#c5cff7" stroke-width="2.5"/>
+        <text x="340" y="63" font-family="Inter,sans-serif" font-size="12" font-weight="700" fill="#3b5bdb" text-anchor="middle">Chronic</text>
+        <text x="340" y="80" font-family="Inter,sans-serif" font-size="12" font-weight="700" fill="#3b5bdb" text-anchor="middle">Stress</text>
 
-        <!-- Centre label -->
-        <text x="340" y="148" font-family="Inter,sans-serif" font-size="11" fill="#8896a8" text-anchor="middle">Break the</text>
-        <text x="340" y="165" font-family="Inter,sans-serif" font-size="11" fill="#3b5bdb" font-weight="600" text-anchor="middle">cycle ↗</text>
+        <!-- Node 1: Poor Sleep (top-right, 342°) -->
+        <circle cx="492" cy="181" r="46" fill="#fef2f2" stroke="#fecaca" stroke-width="2.5"/>
+        <text x="492" y="174" font-family="Inter,sans-serif" font-size="12" font-weight="600" fill="#b91c1c" text-anchor="middle">Poor</text>
+        <text x="492" y="191" font-family="Inter,sans-serif" font-size="12" font-weight="600" fill="#b91c1c" text-anchor="middle">Sleep</text>
+
+        <!-- Node 2: ↑ Cravings (bottom-right, 54°) -->
+        <circle cx="434" cy="359" r="46" fill="#fef2f2" stroke="#fecaca" stroke-width="2.5"/>
+        <text x="434" y="351" font-family="Inter,sans-serif" font-size="11" font-weight="600" fill="#b91c1c" text-anchor="middle">↑ Cravings</text>
+        <text x="434" y="368" font-family="Inter,sans-serif" font-size="11" fill="#b91c1c" text-anchor="middle">&amp; cortisol</text>
+
+        <!-- Node 3: Low willpower (bottom-left, 126°) -->
+        <circle cx="246" cy="359" r="46" fill="#fef2f2" stroke="#fecaca" stroke-width="2.5"/>
+        <text x="246" y="351" font-family="Inter,sans-serif" font-size="12" font-weight="600" fill="#b91c1c" text-anchor="middle">Low</text>
+        <text x="246" y="368" font-family="Inter,sans-serif" font-size="12" fill="#b91c1c" text-anchor="middle">willpower</text>
+
+        <!-- Node 4: Decision fatigue (top-left, 198°) -->
+        <circle cx="188" cy="181" r="46" fill="#fef2f2" stroke="#fecaca" stroke-width="2.5"/>
+        <text x="188" y="174" font-family="Inter,sans-serif" font-size="12" font-weight="600" fill="#b91c1c" text-anchor="middle">Decision</text>
+        <text x="188" y="191" font-family="Inter,sans-serif" font-size="12" fill="#b91c1c" text-anchor="middle">fatigue</text>
       </svg>
       <p class="svg-caption">Chronic stress creates a self-reinforcing loop. Treating mental health directly is the fastest way to break it — not pushing harder through it.</p>
     </div>
