@@ -1,0 +1,1290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>What Is the Carnivore Diet? — Improo Guide</title>
+  <meta name="description" content="A straight-talking guide to the carnivore diet — what it is, how it works, why some people swear by it, and where the science still leaves room for debate." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700&family=Lora:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+  <script>
+    window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+  </script>
+  <script defer src="/_vercel/insights/script.js"></script>
+
+  <style>
+    /* ═══════════════════════════════════════════
+       BASE
+    ═══════════════════════════════════════════ */
+    body { overflow-x: hidden; }
+
+    .article-wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      width: 100%;
+    }
+
+    /* ═══════════════════════════════════════════
+       READING PROGRESS BAR
+    ═══════════════════════════════════════════ */
+    #read-progress {
+      position: fixed;
+      top: 0; left: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--blue), #60a5fa);
+      width: 0%;
+      z-index: 999;
+      transition: width 0.1s linear;
+    }
+
+    /* ═══════════════════════════════════════════
+       HERO
+    ═══════════════════════════════════════════ */
+    .guide-hero { padding: 52px 0 0; }
+
+    .hero-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: 20px;
+    }
+    .hero-kicker::before {
+      content: '';
+      display: block;
+      width: 28px; height: 1px;
+      background: var(--blue);
+    }
+
+    .hero-layout {
+      display: grid;
+      grid-template-columns: 1fr 340px;
+      gap: 48px;
+      align-items: start;
+      padding-bottom: 48px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    @media (max-width: 900px) {
+      .hero-layout { grid-template-columns: 1fr; }
+      .hero-visual-wrap { display: none; }
+    }
+
+    .guide-hero h1 {
+      font-family: 'Lora', serif;
+      font-size: clamp(2.2rem, 5vw, 3.6rem);
+      font-weight: 400;
+      line-height: 1.1;
+      color: #0c1a2e;
+      margin: 0 0 20px;
+      letter-spacing: -0.02em;
+      max-width: 660px;
+    }
+    .guide-hero h1 em { font-style: italic; color: var(--blue); }
+
+    .hero-meta {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-size: 12px;
+      color: var(--muted-light);
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+    }
+    .hero-meta-dot { width: 3px; height: 3px; border-radius: 50%; background: var(--muted-light); }
+
+    .hero-intro {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: var(--muted);
+      max-width: 580px;
+      font-weight: 300;
+      margin-bottom: 32px;
+    }
+
+    /* Quick facts strip */
+    .hero-facts {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--line);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      overflow: hidden;
+      margin-bottom: 32px;
+    }
+    .hero-fact {
+      background: var(--panel);
+      padding: 18px 16px;
+      text-align: center;
+    }
+    .hero-fact-value {
+      font-family: 'Lora', serif;
+      font-size: 1.7rem;
+      font-weight: 600;
+      color: var(--blue);
+      display: block;
+      line-height: 1;
+      margin-bottom: 5px;
+    }
+    .hero-fact-label {
+      font-size: 11px;
+      color: var(--muted-light);
+      line-height: 1.4;
+    }
+    @media (max-width: 480px) { .hero-facts { grid-template-columns: 1fr; } }
+
+    /* Hero visual */
+    .hero-visual-wrap {
+      position: relative;
+      height: 380px;
+      border-radius: 24px;
+      overflow: hidden;
+      background: linear-gradient(135deg, #dbeafe 0%, #eff6ff 60%, #ecfdf5 100%);
+      border: 1px solid var(--line);
+    }
+
+    /* TOC */
+    .toc {
+      background: var(--panel-2);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 22px 26px;
+    }
+    .toc-title {
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--muted-light);
+      margin-bottom: 14px;
+    }
+    .toc ol { list-style: none; counter-reset: toc; display: flex; flex-direction: column; gap: 10px; }
+    .toc ol li { counter-increment: toc; display: flex; align-items: baseline; gap: 12px; }
+    .toc ol li::before {
+      content: counter(toc, decimal-leading-zero);
+      font-size: 9px; font-weight: 700;
+      color: var(--blue-light);
+      min-width: 20px;
+    }
+    .toc ol li a { font-size: 13px; color: var(--muted); text-decoration: none; transition: color 0.2s; line-height: 1.4; }
+    .toc ol li a:hover { color: var(--blue); }
+
+    /* ═══════════════════════════════════════════
+       MAIN LAYOUT
+    ═══════════════════════════════════════════ */
+    .guide-body {
+      display: grid;
+      grid-template-columns: 1fr 272px;
+      gap: 64px;
+      align-items: start;
+      padding: 56px 0 96px;
+    }
+    @media (max-width: 960px) {
+      .guide-body { grid-template-columns: 1fr; }
+      .guide-sidebar { display: none; }
+    }
+
+    /* ═══════════════════════════════════════════
+       SECTIONS
+    ═══════════════════════════════════════════ */
+    .guide-section {
+      margin-bottom: 64px;
+      padding-bottom: 64px;
+      border-bottom: 1px solid var(--line);
+    }
+    .guide-section:last-child { border-bottom: none; margin-bottom: 0; }
+
+    .section-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--blue-light);
+      margin-bottom: 14px;
+    }
+    .section-eyebrow::after {
+      content: '';
+      flex: 1; max-width: 36px;
+      height: 1px;
+      background: var(--line-strong);
+    }
+
+    .guide-section h2 {
+      font-family: 'Lora', serif;
+      font-size: clamp(1.4rem, 2.8vw, 2rem);
+      font-weight: 400;
+      line-height: 1.2;
+      color: #0c1a2e;
+      margin: 0 0 22px;
+    }
+
+    .guide-section p {
+      font-size: 0.97rem;
+      font-weight: 300;
+      color: var(--muted);
+      margin-bottom: 18px;
+      line-height: 1.85;
+      max-width: 640px;
+    }
+
+    /* Callout */
+    .callout {
+      border-left: 3px solid var(--blue);
+      padding: 20px 24px;
+      background: linear-gradient(135deg, rgba(37,99,235,0.04), rgba(96,165,250,0.06));
+      border-radius: 0 12px 12px 0;
+      margin: 28px 0;
+    }
+    .callout p { margin: 0; color: var(--blue-dark); font-style: italic; font-size: 1rem; line-height: 1.7; max-width: none; }
+
+    /* Insight box */
+    .insight-box {
+      background: linear-gradient(135deg, #0f1f3d 0%, #1e3a6e 100%);
+      border-radius: 16px;
+      padding: 28px 30px;
+      margin: 28px 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .insight-box::before {
+      content: '';
+      position: absolute;
+      top: -40px; right: -40px;
+      width: 160px; height: 160px;
+      border-radius: 50%;
+      background: rgba(96,165,250,0.07);
+    }
+    .insight-label {
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: rgba(96,165,250,0.65);
+      margin-bottom: 10px;
+      display: block;
+    }
+    .insight-box p { margin: 0; color: rgba(255,255,255,0.88); font-size: 0.97rem; line-height: 1.72; font-weight: 300; max-width: none; }
+    .insight-box strong { color: #fff; font-weight: 600; }
+
+    /* Who grid */
+    .who-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 24px 0; }
+    @media (max-width: 580px) { .who-grid { grid-template-columns: 1fr; } }
+
+    .who-card { border-radius: 16px; padding: 22px 20px; border: 1px solid; }
+    .who-card.fit  { background: linear-gradient(135deg, rgba(37,99,235,0.04), rgba(96,165,250,0.06)); border-color: rgba(37,99,235,0.14); }
+    .who-card.less { background: linear-gradient(135deg, rgba(220,38,38,0.03), rgba(239,68,68,0.05)); border-color: rgba(220,38,38,0.12); }
+
+    .who-card-title { font-size: 9px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 14px; }
+    .who-card.fit  .who-card-title { color: var(--blue); }
+    .who-card.less .who-card-title { color: #dc2626; }
+
+    .who-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .who-list li { font-size: 13.5px; color: var(--muted); padding-left: 20px; position: relative; line-height: 1.55; font-weight: 300; }
+    .who-card.fit  .who-list li::before { content: '✓'; position: absolute; left: 0; color: var(--blue); font-weight: 700; font-size: 12px; top: 1px; }
+    .who-card.less .who-list li::before { content: '×'; position: absolute; left: 0; color: #dc2626; font-weight: 700; font-size: 14px; line-height: 1.2; }
+
+    /* Food columns */
+    .food-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; margin: 24px 0; }
+    @media (max-width: 580px) { .food-grid { grid-template-columns: 1fr; } }
+
+    .food-col { border-radius: 16px; padding: 20px 18px; border: 1px solid; }
+    .food-col.allowed { background: linear-gradient(135deg, rgba(37,99,235,0.04), rgba(96,165,250,0.05)); border-color: rgba(37,99,235,0.14); }
+    .food-col.optional { background: linear-gradient(135deg, rgba(250,204,21,0.05), rgba(251,191,36,0.07)); border-color: rgba(250,204,21,0.22); }
+    .food-col.avoid    { background: linear-gradient(135deg, rgba(220,38,38,0.03), rgba(239,68,68,0.04)); border-color: rgba(220,38,38,0.12); }
+
+    .food-col-title { font-size: 9px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 12px; }
+    .food-col.allowed  .food-col-title { color: var(--blue); }
+    .food-col.optional .food-col-title { color: #b45309; }
+    .food-col.avoid    .food-col-title { color: #dc2626; }
+
+    .food-list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .food-list li { font-size: 13px; color: var(--muted); padding-left: 18px; position: relative; line-height: 1.5; font-weight: 300; }
+    .food-col.allowed  .food-list li::before { content: '✓'; position: absolute; left: 0; color: var(--blue); font-weight: 700; font-size: 11px; top: 1px; }
+    .food-col.optional .food-list li::before { content: '◌'; position: absolute; left: 0; color: #b45309; font-weight: 700; font-size: 11px; }
+    .food-col.avoid    .food-list li::before { content: '×'; position: absolute; left: 0; color: #dc2626; font-weight: 700; font-size: 13px; line-height: 1.2; }
+
+    /* Pros cons */
+    .pros-cons { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 24px 0; }
+    @media (max-width: 580px) { .pros-cons { grid-template-columns: 1fr; } }
+
+    .pc-card { background: var(--panel); border: 1px solid var(--line); border-radius: 16px; padding: 22px 20px; }
+    .pc-title { font-size: 9px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 16px; }
+    .pc-card.pros .pc-title { color: var(--blue); }
+    .pc-card.cons .pc-title { color: #dc2626; }
+
+    .pc-list { list-style: none; display: flex; flex-direction: column; gap: 11px; }
+    .pc-list li { font-size: 13.5px; color: var(--muted); padding-left: 22px; position: relative; line-height: 1.55; font-weight: 300; }
+    .pc-card.pros .pc-list li::before { content: '+'; position: absolute; left: 0; color: var(--blue); font-weight: 700; }
+    .pc-card.cons .pc-list li::before { content: '–'; position: absolute; left: 0; color: #dc2626; font-weight: 700; }
+
+    .warning-box {
+      background: rgba(220,38,38,0.03);
+      border: 1px solid rgba(220,38,38,0.12);
+      border-radius: 12px;
+      padding: 18px 22px;
+      margin-top: 20px;
+      font-size: 13.5px;
+      color: var(--muted);
+      line-height: 1.65;
+      font-weight: 300;
+    }
+    .warning-box strong { color: #dc2626; font-weight: 600; }
+
+    /* Study cards */
+    .study-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 22px 24px;
+      margin: 16px 0;
+      display: grid;
+      grid-template-columns: 38px 1fr;
+      gap: 16px;
+      align-items: start;
+      transition: box-shadow 0.2s, border-color 0.2s;
+    }
+    .study-card:hover { border-color: var(--line-strong); box-shadow: var(--shadow); }
+    .study-num {
+      width: 34px; height: 34px;
+      border-radius: 9px;
+      background: var(--blue-pale);
+      border: 1px solid var(--line-strong);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 11px; font-weight: 700; color: var(--blue-dark);
+      flex-shrink: 0;
+    }
+    .study-title  { font-size: 14px; font-weight: 600; color: #0c1a2e; margin-bottom: 8px; }
+    .study-text   { font-size: 13.5px; font-weight: 300; color: var(--muted); line-height: 1.7; margin: 0; }
+    .study-source { font-size: 11px; color: var(--muted-light); margin-top: 10px; font-style: italic; }
+
+    /* Mistakes list */
+    .mistake-list { display: flex; flex-direction: column; gap: 16px; margin: 24px 0; }
+    .mistake-item { display: grid; grid-template-columns: 36px 1fr; gap: 14px; align-items: start; }
+    .mistake-num {
+      width: 34px; height: 34px; border-radius: 9px;
+      background: rgba(220,38,38,0.07); border: 1px solid rgba(220,38,38,0.14);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 12px; font-weight: 700; color: #dc2626; flex-shrink: 0;
+    }
+    .mistake-title { font-size: 14px; font-weight: 600; color: #0c1a2e; margin-bottom: 5px; }
+    .mistake-desc  { font-size: 13.5px; font-weight: 300; color: var(--muted); line-height: 1.65; margin: 0; }
+
+    /* Summary */
+    .summary-list { list-style: none; display: flex; flex-direction: column; gap: 14px; margin: 20px 0; }
+    .summary-list li { display: flex; align-items: flex-start; gap: 14px; font-size: 14.5px; font-weight: 300; color: var(--muted); line-height: 1.65; }
+    .sum-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--blue); flex-shrink: 0; margin-top: 7px; }
+
+    /* Improo tip */
+    .improo-tip {
+      background: linear-gradient(135deg, var(--blue) 0%, #1d4ed8 100%);
+      border-radius: 18px;
+      padding: 28px 30px;
+      margin: 24px 0;
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      box-shadow: 0 8px 32px rgba(37,99,235,0.22);
+    }
+    .tip-icon { font-size: 22px; flex-shrink: 0; margin-top: 2px; }
+    .tip-label { font-size: 9px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 7px; }
+    .tip-text { font-size: 14px; line-height: 1.7; font-weight: 300; margin: 0; }
+    .improo-tip .tip-text  { color: #ffffff !important; }
+    .improo-tip .tip-label { color: rgba(255,255,255,0.55) !important; }
+
+    /* ═══════════════════════════════════════════
+       PRODUCT CARDS
+    ═══════════════════════════════════════════ */
+    .products-intro { font-size: 0.97rem; font-weight: 300; color: var(--muted); line-height: 1.8; max-width: 600px; margin-bottom: 32px; }
+
+    .prod-card {
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      overflow: hidden;
+      background: var(--panel);
+      margin-bottom: 20px;
+      transition: box-shadow 0.3s ease, border-color 0.3s ease, transform 0.25s ease;
+      text-decoration: none;
+      color: inherit;
+    }
+    .prod-card:hover {
+      box-shadow: 0 16px 48px rgba(37,99,235,0.12);
+      border-color: rgba(37,99,235,0.22);
+      transform: translateY(-2px);
+    }
+    @media (max-width: 680px) {
+      .prod-card { grid-template-columns: 1fr; }
+      .prod-visual { height: 180px; }
+    }
+
+    .prod-visual {
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      padding: 18px;
+      min-height: 280px;
+    }
+    .prod-visual img {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: center;
+      scale: 1.05;
+    }
+    .prod-visual.elec { background: linear-gradient(160deg, #bfdbfe 0%, #93c5fd 40%, #dbeafe 100%); }
+    .prod-visual.salt { background: linear-gradient(160deg, #e0f2fe 0%, #bae6fd 40%, #f0f9ff 100%); }
+
+    .prod-badge {
+      position: relative;
+      z-index: 2;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: rgba(255,255,255,0.96);
+      border: 1.5px solid rgba(37,99,235,0.22);
+      border-radius: 22px;
+      padding: 7px 14px 7px 10px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+      color: var(--blue-dark);
+      backdrop-filter: blur(8px);
+      align-self: flex-start;
+      box-shadow: 0 2px 10px rgba(37,99,235,0.12);
+    }
+    .prod-badge-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--blue); }
+
+    .prod-content { padding: 26px 26px 22px; display: flex; flex-direction: column; }
+    .prod-category { font-size: 9px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--blue-light); margin-bottom: 8px; }
+    .prod-name { font-family: 'Lora', serif; font-size: 1.2rem; font-weight: 600; color: #0c1a2e; line-height: 1.25; margin-bottom: 12px; }
+    .prod-summary { font-size: 13.5px; color: var(--muted); line-height: 1.7; font-weight: 300; margin-bottom: 14px; }
+
+    .prod-why {
+      background: linear-gradient(135deg, rgba(37,99,235,0.07) 0%, rgba(96,165,250,0.05) 100%);
+      border: 1px solid rgba(37,99,235,0.14);
+      border-radius: 12px;
+      padding: 18px 20px;
+      margin-bottom: 18px;
+      margin-top: 6px;
+    }
+    .prod-why-label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--blue-dark);
+      margin-bottom: 10px;
+    }
+    .prod-why-label::before { content: '✦'; font-size: 11px; color: var(--blue); flex-shrink: 0; }
+    .prod-why p { font-size: 13px; color: var(--muted); line-height: 1.75; margin: 0; font-weight: 300; max-width: 92%; }
+
+    .prod-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 16px; }
+    .prod-tag {
+      font-size: 11px;
+      background: rgba(22,163,74,0.09);
+      color: #15803d;
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-weight: 600;
+      border: 1px solid rgba(22,163,74,0.15);
+    }
+
+    .prod-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+      color: #fff;
+      font-size: 14px;
+      font-weight: 700;
+      padding: 13px 24px;
+      border-radius: 28px;
+      transition: background 0.2s, box-shadow 0.2s, gap 0.2s, transform 0.2s;
+      box-shadow: 0 6px 20px rgba(37,99,235,0.30);
+      align-self: flex-start;
+      margin-bottom: 10px;
+      letter-spacing: 0.1px;
+    }
+    .prod-cta:hover {
+      background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%);
+      gap: 16px;
+      box-shadow: 0 10px 28px rgba(37,99,235,0.42);
+      transform: translateY(-1px);
+    }
+    .prod-affiliate { font-size: 10.5px; color: var(--muted-light); }
+
+    /* Practical steps */
+    .steps-list { display: flex; flex-direction: column; gap: 0; margin: 24px 0; }
+    .step-item { display: grid; grid-template-columns: 36px 1fr; gap: 16px; align-items: stretch; }
+    .step-left { display: flex; flex-direction: column; align-items: center; }
+    .step-num {
+      width: 34px; height: 34px; border-radius: 50%;
+      background: var(--blue-pale); border: 1px solid var(--line-strong);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 12px; font-weight: 700; color: var(--blue-dark); flex-shrink: 0;
+    }
+    .step-connector { width: 2px; flex: 1; background: var(--line); margin: 6px auto 0; min-height: 20px; }
+    .step-item:last-child .step-connector { display: none; }
+    .step-body { padding-bottom: 22px; }
+    .step-title { font-size: 14px; font-weight: 600; color: #0c1a2e; margin-bottom: 5px; margin-top: 6px; }
+    .step-desc  { font-size: 13.5px; font-weight: 300; color: var(--muted); line-height: 1.65; margin: 0; }
+
+    /* Sources */
+    .sources-list { list-style: none; display: flex; flex-direction: column; gap: 14px; margin-top: 16px; }
+    .sources-list li { display: flex; gap: 12px; align-items: flex-start; }
+    .src-num {
+      font-size: 10px; font-weight: 700;
+      color: var(--blue-dark); background: var(--blue-pale);
+      width: 24px; height: 24px; border-radius: 6px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; margin-top: 1px;
+    }
+    .src-text { font-size: 12.5px; color: var(--muted-light); line-height: 1.6; }
+    .src-text a { color: var(--blue); text-decoration: none; }
+    .src-text a:hover { text-decoration: underline; }
+
+    /* ═══════════════════════════════════════════
+       SIDEBAR
+    ═══════════════════════════════════════════ */
+    .guide-sidebar { position: sticky; top: 88px; display: flex; flex-direction: column; gap: 16px; }
+
+    .sidebar-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 20px 18px;
+      box-shadow: var(--shadow);
+    }
+    .sidebar-title { font-size: 9px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--muted-light); margin-bottom: 16px; }
+    .stat-item { display: flex; flex-direction: column; gap: 4px; margin-bottom: 16px; }
+    .stat-value { font-family: 'Lora', serif; font-size: 2.1rem; font-weight: 600; font-style: italic; color: var(--blue); line-height: 1; }
+    .stat-desc { font-size: 12px; color: var(--muted); line-height: 1.45; font-weight: 300; }
+    .stat-divider { height: 1px; background: var(--line); margin: 4px 0 16px; }
+
+    .stages { display: flex; flex-direction: column; gap: 0; }
+    .stage { display: flex; align-items: flex-start; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--line); }
+    .stage:last-child { border-bottom: none; padding-bottom: 0; }
+    .stage-num {
+      width: 26px; height: 26px; border-radius: 50%;
+      background: var(--blue-pale); border: 1px solid var(--line-strong);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 11px; font-weight: 700; color: var(--blue-dark); flex-shrink: 0;
+    }
+    .stage-title { font-size: 12px; font-weight: 600; color: #0c1a2e; margin-bottom: 2px; }
+    .stage-desc  { font-size: 11px; color: var(--muted-light); line-height: 1.45; }
+    .sidebar-disclaimer { font-size: 11px; color: var(--muted-light); line-height: 1.65; font-weight: 300; }
+
+    /* ═══════════════════════════════════════════
+       ANIMATIONS
+    ═══════════════════════════════════════════ */
+    .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.55s ease, transform 0.55s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+  </style>
+</head>
+<body>
+
+  <div id="read-progress"></div>
+
+  <!-- NAV -->
+  <header class="site-header">
+    <div class="container">
+      <nav class="nav">
+        <a href="../index.html">
+          <span style="font-size:1.6rem;font-weight:700;background:linear-gradient(135deg,#3b9ef5,#2563eb);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:-0.03em;font-family:'Sora',sans-serif;">Improo</span>
+        </a>
+        <div class="nav-links">
+          <a href="../index.html">Home</a>
+          <a href="../insights/index.html">Articles</a>
+          <a href="../guides.html" class="active">Guides</a>
+          <a href="../roadmap.html">Roadmap</a>
+          <a href="../index.html#contact">Contact</a>
+        </div>
+        <div class="socials">
+          <a href="https://www.youtube.com/@Improo_App" aria-label="YouTube">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.7 15.5V8.5l6.3 3.5-6.3 3.5z"/></svg>
+          </a>
+          <a href="https://x.com/Improo_" aria-label="X">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <div class="article-wrap">
+
+    <a href="../guides.html" style="margin-top:36px;display:inline-flex;align-items:center;gap:6px;font-size:13px;color:var(--muted);transition:color 0.2s;text-decoration:none;">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M9 2L4 7l5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Back to Guides
+    </a>
+
+    <!-- HERO -->
+    <section class="guide-hero">
+      <div class="hero-layout">
+        <div class="hero-left reveal">
+          <div class="hero-kicker">Nutrition Guide</div>
+          <h1>What is the <em>Carnivore</em> Diet?</h1>
+          <div class="hero-meta">
+            <span>9 min read</span>
+            <div class="hero-meta-dot"></div>
+            <span>Evidence-aware</span>
+            <div class="hero-meta-dot"></div>
+            <span>Not medical advice</span>
+          </div>
+          <p class="hero-intro">A straight-talking guide to the carnivore diet — what it is, how it works, why some people swear by it, and where the science still leaves room for debate.</p>
+
+          <div class="hero-facts">
+            <div class="hero-fact reveal">
+              <span class="hero-fact-value">0–10g</span>
+              <span class="hero-fact-label">Daily carbs on most carnivore approaches</span>
+            </div>
+            <div class="hero-fact reveal">
+              <span class="hero-fact-value">2–14</span>
+              <span class="hero-fact-label">Days for adaptation symptoms to settle</span>
+            </div>
+            <div class="hero-fact reveal">
+              <span class="hero-fact-value">100%</span>
+              <span class="hero-fact-label">Animal-based intake in the strictest version</span>
+            </div>
+          </div>
+
+          <div class="toc">
+            <div class="toc-title">In this guide</div>
+            <ol>
+              <li><a href="#intro">What is the carnivore diet?</a></li>
+              <li><a href="#mechanism">What happens in your body?</a></li>
+              <li><a href="#motivation">Why people try it</a></li>
+              <li><a href="#foods">What you can and cannot eat</a></li>
+              <li><a href="#pros-cons">Benefits &amp; drawbacks</a></li>
+              <li><a href="#science">What the research says</a></li>
+              <li><a href="#mistakes">Common beginner mistakes</a></li>
+              <li><a href="#summary">The short version</a></li>
+              <li><a href="#advice">Our practical advice</a></li>
+              <li><a href="#products">Our recommendations</a></li>
+              <li><a href="#sources">Further reading &amp; research</a></li>
+            </ol>
+          </div>
+        </div>
+
+        <!-- Hero SVG visual -->
+        <div class="hero-visual-wrap reveal">
+          <svg viewBox="0 0 340 380" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;position:absolute;top:0;left:0;">
+            <!-- Background atmosphere -->
+            <circle cx="270" cy="80"  r="120" fill="rgba(37,99,235,0.05)"/>
+            <circle cx="60"  cy="300" r="100" fill="rgba(96,165,250,0.06)"/>
+            <!-- Outer orbit ring -->
+            <circle cx="170" cy="195" r="130" fill="none" stroke="rgba(37,99,235,0.06)" stroke-width="1.5" stroke-dasharray="6 5"/>
+            <!-- Connection lines from center -->
+            <line x1="170" y1="195" x2="170" y2="82"  stroke="rgba(37,99,235,0.14)" stroke-width="1.5" stroke-dasharray="5 4"/>
+            <line x1="170" y1="195" x2="278" y2="158" stroke="rgba(37,99,235,0.11)" stroke-width="1.5" stroke-dasharray="5 4"/>
+            <line x1="170" y1="195" x2="240" y2="305" stroke="rgba(37,99,235,0.10)" stroke-width="1.5" stroke-dasharray="5 4"/>
+            <line x1="170" y1="195" x2="100" y2="305" stroke="rgba(96,165,250,0.12)" stroke-width="1.5" stroke-dasharray="5 4"/>
+            <line x1="170" y1="195" x2="62"  y2="158" stroke="rgba(96,165,250,0.12)" stroke-width="1.5" stroke-dasharray="5 4"/>
+            <!-- Center node -->
+            <circle cx="170" cy="195" r="50" fill="rgba(37,99,235,0.10)" stroke="rgba(37,99,235,0.22)" stroke-width="1.5"/>
+            <text x="170" y="190" text-anchor="middle" dominant-baseline="middle" font-size="10" fill="rgba(29,78,216,0.85)" font-family="Sora,sans-serif" font-weight="700">Animal</text>
+            <text x="170" y="204" text-anchor="middle" dominant-baseline="middle" font-size="10" fill="rgba(29,78,216,0.85)" font-family="Sora,sans-serif" font-weight="700">Only</text>
+            <!-- Satellite: Beef (top) -->
+            <circle cx="170" cy="68" r="34" fill="rgba(37,99,235,0.11)" stroke="rgba(37,99,235,0.20)" stroke-width="1.5"/>
+            <text x="170" y="72" text-anchor="middle" dominant-baseline="middle" font-size="11" fill="rgba(29,78,216,0.80)" font-family="Sora,sans-serif" font-weight="600">Beef</text>
+            <!-- Satellite: Fish (right) -->
+            <circle cx="280" cy="155" r="30" fill="rgba(96,165,250,0.12)" stroke="rgba(96,165,250,0.22)" stroke-width="1.5"/>
+            <text x="280" y="159" text-anchor="middle" dominant-baseline="middle" font-size="11" fill="rgba(29,78,216,0.72)" font-family="Sora,sans-serif" font-weight="600">Fish</text>
+            <!-- Satellite: Eggs (bottom right) -->
+            <circle cx="243" cy="312" r="28" fill="rgba(37,99,235,0.08)" stroke="rgba(37,99,235,0.16)" stroke-width="1.5"/>
+            <text x="243" y="316" text-anchor="middle" dominant-baseline="middle" font-size="11" fill="rgba(29,78,216,0.68)" font-family="Sora,sans-serif" font-weight="600">Eggs</text>
+            <!-- Satellite: Butter (bottom left) -->
+            <circle cx="97"  cy="312" r="28" fill="rgba(37,99,235,0.08)" stroke="rgba(37,99,235,0.16)" stroke-width="1.5"/>
+            <text x="97"  y="316" text-anchor="middle" dominant-baseline="middle" font-size="10" fill="rgba(29,78,216,0.68)" font-family="Sora,sans-serif" font-weight="600">Butter</text>
+            <!-- Satellite: Organs (left) -->
+            <circle cx="60"  cy="155" r="30" fill="rgba(29,78,216,0.07)" stroke="rgba(29,78,216,0.14)" stroke-width="1.5"/>
+            <text x="60"  y="159" text-anchor="middle" dominant-baseline="middle" font-size="10" fill="rgba(29,78,216,0.65)" font-family="Sora,sans-serif" font-weight="600">Organs</text>
+          </svg>
+          <!-- Info chip at bottom -->
+          <div style="position:absolute;bottom:20px;left:20px;right:20px;">
+            <div style="background:rgba(255,255,255,0.92);backdrop-filter:blur(12px);border:1px solid rgba(37,99,235,0.12);border-radius:12px;padding:13px 16px;">
+              <div style="font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--blue-light);margin-bottom:4px;">The core principle</div>
+              <div style="font-size:12px;color:var(--muted);font-weight:300;line-height:1.5;">Remove every plant food. Eat only what comes from an animal. Let protein and fat do the work.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BODY -->
+    <div class="guide-body">
+      <main>
+
+        <!-- 01 Intro -->
+        <div class="guide-section reveal" id="intro">
+          <div class="section-eyebrow">01 — Introduction</div>
+          <h2>What is the carnivore diet?</h2>
+          <p>The carnivore diet is an eating approach built entirely — or almost entirely — around animal foods. Meat, fish, eggs, animal fats, and sometimes dairy become the foundation of every meal, while plant foods are heavily restricted or removed completely.</p>
+          <p>At first glance, it sounds extreme. But after digging deeper into both the science and the real-world experiences of long-term followers, it becomes clear why the diet has exploded in popularity over the last few years.</p>
+          <p>Most people start carnivore for one of three reasons: <strong>weight loss</strong>, digestive or autoimmune issues, or <strong>simplicity and appetite control</strong>.</p>
+          <p>Unlike keto, where the goal is usually ketosis through low carbohydrates, carnivore goes one step further by eliminating nearly all plant-based foods entirely. That means no grains, no vegetables, no fruit, no legumes, and usually no sugar.</p>
+          <p>For some people, that level of restriction feels freeing. Fewer decisions, fewer cravings, fewer processed foods. Others find it socially difficult and unnecessarily limiting. The reality sits somewhere in the middle.</p>
+          <div class="insight-box">
+            <span class="insight-label">Key insight</span>
+            <p>One reason many people report feeling better on carnivore may not be because meat is "magic" — but because they <strong>remove ultra-processed foods, liquid calories, excessive sugar, and highly palatable snack foods all at once.</strong> That alone can radically change energy intake, hunger levels, and blood sugar stability.</p>
+          </div>
+        </div>
+
+        <!-- 02 Mechanism -->
+        <div class="guide-section reveal" id="mechanism">
+          <div class="section-eyebrow">02 — Mechanism</div>
+          <h2>What happens in your body?</h2>
+          <p>When carbohydrates disappear from the diet, insulin levels generally decrease and the body begins relying more heavily on fat for fuel. In many cases, carnivore naturally pushes people into ketosis — especially when meals are built around fatty cuts of meat.</p>
+          <p>Your body starts using dietary fat, stored body fat, and ketones produced by the liver as primary fuel sources instead of glucose. This metabolic shift can affect hunger hormones, water retention, energy levels, and even mental clarity.</p>
+
+          <!-- Macro comparison SVG -->
+          <svg viewBox="0 0 460 175" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;margin:28px 0;border-radius:14px;background:rgba(239,246,255,0.55);border:1px solid rgba(37,99,235,0.09);">
+            <text x="16" y="22" font-size="8.5" font-weight="700" letter-spacing="1.8" fill="rgba(59,90,138,0.55)" font-family="Sora,sans-serif">MACRONUTRIENT SPLIT — CARNIVORE VS OTHER DIETS</text>
+            <!-- Carnivore row -->
+            <text x="16" y="58" font-size="11.5" font-weight="600" fill="#0c1a2e" font-family="Sora,sans-serif">Carnivore</text>
+            <rect x="108" y="43" width="228" height="26" rx="5" fill="#2563eb"/>
+            <text x="222" y="60" text-anchor="middle" font-size="9" font-weight="700" fill="rgba(255,255,255,0.92)" font-family="Sora,sans-serif">~70% fat</text>
+            <rect x="336" y="43" width="96" height="26" rx="5" fill="#60a5fa"/>
+            <text x="384" y="60" text-anchor="middle" font-size="9" font-weight="700" fill="rgba(255,255,255,0.9)" font-family="Sora,sans-serif">~30% protein</text>
+            <!-- Keto row -->
+            <text x="16" y="100" font-size="11.5" font-weight="600" fill="#0c1a2e" font-family="Sora,sans-serif">Keto</text>
+            <rect x="108" y="85" width="228" height="26" rx="5" fill="#2563eb" opacity="0.72"/>
+            <text x="222" y="102" text-anchor="middle" font-size="9" font-weight="700" fill="rgba(255,255,255,0.88)" font-family="Sora,sans-serif">~70% fat</text>
+            <rect x="336" y="85" width="80" height="26" rx="5" fill="#93c5fd"/>
+            <text x="376" y="102" text-anchor="middle" font-size="9" font-weight="700" fill="rgba(29,78,216,0.85)" font-family="Sora,sans-serif">25%</text>
+            <rect x="416" y="85" width="16" height="26" rx="4" fill="#cbd5e1"/>
+            <!-- Western row -->
+            <text x="16" y="142" font-size="11.5" font-weight="600" fill="#0c1a2e" font-family="Sora,sans-serif">Western</text>
+            <rect x="108" y="127" width="112" height="26" rx="5" fill="#2563eb" opacity="0.55"/>
+            <text x="164" y="144" text-anchor="middle" font-size="9" font-weight="700" fill="rgba(255,255,255,0.85)" font-family="Sora,sans-serif">35%</text>
+            <rect x="220" y="127" width="48" height="26" rx="5" fill="#93c5fd" opacity="0.7"/>
+            <text x="244" y="144" text-anchor="middle" font-size="9" font-weight="700" fill="rgba(29,78,216,0.8)" font-family="Sora,sans-serif">15%</text>
+            <rect x="268" y="127" width="164" height="26" rx="5" fill="#94a3b8"/>
+            <text x="350" y="144" text-anchor="middle" font-size="9" font-weight="700" fill="rgba(255,255,255,0.9)" font-family="Sora,sans-serif">~50% carbs</text>
+            <!-- Legend -->
+            <rect x="108" y="160" width="10" height="8" rx="2" fill="#2563eb"/>
+            <text x="122" y="168" font-size="10" fill="#4a6fa5" font-family="Sora,sans-serif">Fat</text>
+            <rect x="158" y="160" width="10" height="8" rx="2" fill="#60a5fa"/>
+            <text x="172" y="168" font-size="10" fill="#4a6fa5" font-family="Sora,sans-serif">Protein</text>
+            <rect x="226" y="160" width="10" height="8" rx="2" fill="#94a3b8"/>
+            <text x="240" y="168" font-size="10" fill="#4a6fa5" font-family="Sora,sans-serif">Carbs</text>
+          </svg>
+
+          <p>One thing repeatedly observed in carnivore communities is how often people describe the same pattern: the first week feels rough, the second week feels stable, and hunger becomes dramatically more manageable afterward. That adaptation period matters.</p>
+          <p>During the early phase, many people experience fatigue, headaches, muscle cramps, irritability, and digestive changes — often called the "adaptation phase." Electrolytes become extremely important here, especially sodium and potassium.</p>
+          <div class="callout">
+            <p>Protein and fat together are incredibly filling. Many carnivore followers naturally end up eating fewer calories without intentionally restricting food — not because the diet is magic, but because satiety signals work more effectively.</p>
+          </div>
+        </div>
+
+        <!-- 03 Motivation -->
+        <div class="guide-section reveal" id="motivation">
+          <div class="section-eyebrow">03 — Motivation</div>
+          <h2>Why do people try carnivore?</h2>
+          <p>The carnivore diet is rarely just about eating steak. Most people arrive at it after years of trying different approaches that did not work long-term.</p>
+          <div class="who-grid">
+            <div class="who-card fit">
+              <div class="who-card-title">Common reasons people switch</div>
+              <ul class="who-list">
+                <li>Constant hunger on traditional diets</li>
+                <li>Blood sugar instability and energy crashes</li>
+                <li>Digestive discomfort after certain plant foods</li>
+                <li>Simplicity and reduced food decision fatigue</li>
+                <li>Weight loss plateaus after other approaches failed</li>
+                <li>Autoimmune symptom management</li>
+              </ul>
+            </div>
+            <div class="who-card less">
+              <div class="who-card-title">What disappears automatically</div>
+              <ul class="who-list">
+                <li>Late-night snacking</li>
+                <li>Emotional eating triggers</li>
+                <li>Ultra-processed convenience foods</li>
+                <li>Hidden calories in sauces and drinks</li>
+                <li>Variety-driven overeating</li>
+                <li>Most social food temptation</li>
+              </ul>
+            </div>
+          </div>
+          <p>The simplicity is a bigger factor than most people realise. When meals become "meat + eggs + water," a lot of modern eating habits disappear automatically. For some people, that structure creates consistency for the first time in years. For others, it becomes too restrictive to maintain socially or mentally.</p>
+        </div>
+
+        <!-- 04 Food choices -->
+        <div class="guide-section reveal" id="foods">
+          <div class="section-eyebrow">04 — Food choices</div>
+          <h2>What can you eat on carnivore?</h2>
+          <p>The strict version of carnivore focuses entirely on animal-based foods. Some followers take a more flexible approach — including small amounts of dairy or coffee — while others go full zero-plant.</p>
+          <div class="food-grid">
+            <div class="food-col allowed">
+              <div class="food-col-title">Always allowed</div>
+              <ul class="food-list">
+                <li>Beef (all cuts)</li>
+                <li>Lamb &amp; pork</li>
+                <li>Chicken &amp; turkey</li>
+                <li>Fish &amp; seafood</li>
+                <li>Eggs</li>
+                <li>Butter &amp; lard</li>
+                <li>Salt</li>
+                <li>Organ meats</li>
+              </ul>
+            </div>
+            <div class="food-col optional">
+              <div class="food-col-title">Some include</div>
+              <ul class="food-list">
+                <li>Hard cheeses</li>
+                <li>Greek yogurt</li>
+                <li>Heavy cream</li>
+                <li>Coffee</li>
+                <li>Sparkling water</li>
+                <li>Bone broth</li>
+              </ul>
+            </div>
+            <div class="food-col avoid">
+              <div class="food-col-title">Removed entirely</div>
+              <ul class="food-list">
+                <li>All grains &amp; bread</li>
+                <li>Fruit &amp; vegetables</li>
+                <li>Sugar &amp; sweeteners</li>
+                <li>Seed oils</li>
+                <li>Processed snacks</li>
+                <li>Legumes &amp; nuts</li>
+              </ul>
+            </div>
+          </div>
+          <div class="insight-box">
+            <span class="insight-label">Common mistake</span>
+            <p>Carnivore is <strong>not a "plain chicken breast" diet.</strong> Without enough fat intake, energy levels crash quickly and hunger becomes harder to manage. Fatty cuts like ribeye, minced beef with higher fat percentages, salmon, eggs, and butter consistently work better than ultra-lean meals.</p>
+          </div>
+        </div>
+
+        <!-- 05 Pros cons -->
+        <div class="guide-section reveal" id="pros-cons">
+          <div class="section-eyebrow">05 — Honest assessment</div>
+          <h2>Benefits &amp; drawbacks</h2>
+          <div class="pros-cons">
+            <div class="pc-card pros">
+              <div class="pc-title">↑ Potential benefits</div>
+              <ul class="pc-list">
+                <li>Reduced hunger and cravings</li>
+                <li>Simpler meal planning</li>
+                <li>Weight loss through improved satiety</li>
+                <li>Better blood sugar stability for some</li>
+                <li>Fewer ultra-processed foods consumed</li>
+                <li>Many anecdotal digestive improvements</li>
+                <li>Easier adherence for structure-seekers</li>
+              </ul>
+            </div>
+            <div class="pc-card cons">
+              <div class="pc-title">↓ Potential drawbacks</div>
+              <ul class="pc-list">
+                <li>Extremely restrictive socially</li>
+                <li>Harder to maintain long-term</li>
+                <li>Lack of dietary variety</li>
+                <li>Possible micronutrient gaps if poorly planned</li>
+                <li>Digestive issues during adaptation</li>
+                <li>Limited long-term research on carnivore specifically</li>
+                <li>Higher saturated fat may concern some individuals</li>
+              </ul>
+            </div>
+          </div>
+          <div class="warning-box">
+            <strong>Where nuance matters.</strong> Online discussions around carnivore often become overly tribal. Some claim it cures everything. Others dismiss it entirely without looking at why people succeed on it. Neither side tells the full story. From what we have seen, carnivore seems to work best as a short-to-medium-term reset, a structured elimination diet, or a hunger-control strategy — not necessarily a lifetime approach for everyone.
+          </div>
+        </div>
+
+        <!-- 06 Research -->
+        <div class="guide-section reveal" id="science">
+          <div class="section-eyebrow">06 — Research</div>
+          <h2>What does the science say?</h2>
+          <p>Research specifically focused on the carnivore diet is still limited — that is important to say clearly. Most available evidence comes from low-carb and ketogenic diet research, observational surveys, and mechanistic studies around protein, satiety, and insulin response.</p>
+
+          <div class="study-card">
+            <div class="study-num">[1]</div>
+            <div>
+              <div class="study-title">High protein &amp; satiety: consistent evidence</div>
+              <p class="study-text">High-protein diets consistently show benefits for satiety and calorie control. Protein increases fullness significantly more than carbohydrates or fats alone, which may explain why many carnivore followers naturally eat less food overall without tracking anything.</p>
+              <div class="study-source">Leidy et al. (2015). American Journal of Clinical Nutrition, 101(6), 1320S–1329S. PubMed ID: 25926512</div>
+            </div>
+          </div>
+
+          <div class="study-card">
+            <div class="study-num">[2]</div>
+            <div>
+              <div class="study-title">Removing refined carbs &amp; blood sugar stability</div>
+              <p class="study-text">Removing refined carbohydrates and sugar can improve blood glucose stability in some people, particularly those with insulin resistance. Some people report major improvements in bloating, skin conditions, inflammation, or autoimmune symptoms after removing plant foods — though controlled long-term studies are still lacking.</p>
+              <div class="study-source">Westman et al. (2008). Nutrition &amp; Metabolism, 5(36). PubMed ID: 19099589</div>
+            </div>
+          </div>
+
+          <!-- Visual: research status summary -->
+          <svg viewBox="0 0 440 130" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;margin:28px 0;border-radius:14px;background:rgba(239,246,255,0.5);border:1px solid rgba(37,99,235,0.09);">
+            <text x="16" y="22" font-size="8.5" font-weight="700" letter-spacing="1.8" fill="rgba(59,90,138,0.55)" font-family="Sora,sans-serif">CURRENT EVIDENCE STRENGTH BY AREA</text>
+            <!-- Row 1: Satiety -->
+            <text x="16" y="50" font-size="11" font-weight="600" fill="#0c1a2e" font-family="Sora,sans-serif">Satiety &amp; appetite</text>
+            <rect x="150" y="39" width="260" height="16" rx="8" fill="rgba(37,99,235,0.08)"/>
+            <rect x="150" y="39" width="221" height="16" rx="8" fill="#2563eb"/>
+            <text x="378" y="50" font-size="10" font-weight="600" fill="rgba(29,78,216,0.8)" font-family="Sora,sans-serif">Strong</text>
+            <!-- Row 2: Blood sugar -->
+            <text x="16" y="77" font-size="11" font-weight="600" fill="#0c1a2e" font-family="Sora,sans-serif">Blood sugar control</text>
+            <rect x="150" y="66" width="260" height="16" rx="8" fill="rgba(37,99,235,0.08)"/>
+            <rect x="150" y="66" width="182" height="16" rx="8" fill="#2563eb" opacity="0.75"/>
+            <text x="344" y="77" font-size="10" font-weight="600" fill="rgba(29,78,216,0.75)" font-family="Sora,sans-serif">Moderate</text>
+            <!-- Row 3: Autoimmune -->
+            <text x="16" y="104" font-size="11" font-weight="600" fill="#0c1a2e" font-family="Sora,sans-serif">Autoimmune effects</text>
+            <rect x="150" y="93" width="260" height="16" rx="8" fill="rgba(37,99,235,0.08)"/>
+            <rect x="150" y="93" width="91"  height="16" rx="8" fill="#93c5fd"/>
+            <text x="250" y="104" font-size="10" font-weight="600" fill="rgba(29,78,216,0.7)" font-family="Sora,sans-serif">Limited — anecdotal</text>
+          </svg>
+
+          <p>On cholesterol, the picture is less clear. Some carnivore followers see improved triglycerides and HDL levels. Others experience substantial rises in LDL. Anyone with cardiovascular risk factors should speak with a qualified healthcare professional before making major dietary changes.</p>
+        </div>
+
+        <!-- 07 Mistakes -->
+        <div class="guide-section reveal" id="mistakes">
+          <div class="section-eyebrow">07 — Beginner mistakes</div>
+          <h2>Common mistakes people make</h2>
+          <div class="mistake-list">
+            <div class="mistake-item">
+              <div class="mistake-num">1</div>
+              <div>
+                <div class="mistake-title">Eating too little fat</div>
+                <p class="mistake-desc">Low-fat carnivore often leads to poor energy, constant hunger, and difficulty sticking with the diet. Fatty cuts are not optional — they are the fuel source.</p>
+              </div>
+            </div>
+            <div class="mistake-item">
+              <div class="mistake-num">2</div>
+              <div>
+                <div class="mistake-title">Ignoring electrolytes</div>
+                <p class="mistake-desc">When carbohydrates drop, water and sodium loss increase significantly. Most adaptation symptoms — headaches, cramps, fatigue — are electrolyte problems, not meat problems.</p>
+              </div>
+            </div>
+            <div class="mistake-item">
+              <div class="mistake-num">3</div>
+              <div>
+                <div class="mistake-title">Expecting instant results</div>
+                <p class="mistake-desc">The first week can feel rough. Judging the diet in week one is like judging a marathon by the first mile. Give the adaptation phase time before forming an opinion.</p>
+              </div>
+            </div>
+            <div class="mistake-item">
+              <div class="mistake-num">4</div>
+              <div>
+                <div class="mistake-title">Building the diet around processed meat only</div>
+                <p class="mistake-desc">A carnivore diet built entirely on low-quality processed meat is very different from one focused on whole cuts, eggs, seafood, and nutrient-dense animal foods. Quality matters.</p>
+              </div>
+            </div>
+            <div class="mistake-item">
+              <div class="mistake-num">5</div>
+              <div>
+                <div class="mistake-title">Treating every symptom as detox</div>
+                <p class="mistake-desc">Not every uncomfortable feeling is the body "healing." Persistent issues beyond the first two weeks should be taken seriously, not explained away.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 08 Summary -->
+        <div class="guide-section reveal" id="summary">
+          <div class="section-eyebrow">08 — Summary</div>
+          <h2>The short version</h2>
+          <ul class="summary-list">
+            <li><div class="sum-dot"></div><span>The carnivore diet focuses almost entirely on animal foods — meat, fish, eggs, and animal fats.</span></li>
+            <li><div class="sum-dot"></div><span>Most people use it for weight loss, appetite control, simplicity, or digestive reasons.</span></li>
+            <li><div class="sum-dot"></div><span>Many followers naturally eat fewer calories because protein and fat are highly filling.</span></li>
+            <li><div class="sum-dot"></div><span>The first adaptation phase can be difficult but often improves significantly within two weeks.</span></li>
+            <li><div class="sum-dot"></div><span>Scientific evidence is promising in some areas but still limited overall — especially compared to keto research.</span></li>
+            <li><div class="sum-dot"></div><span>It can work very well for certain individuals — but it is not automatically the best choice for everyone.</span></li>
+          </ul>
+        </div>
+
+        <!-- 09 Practical advice -->
+        <div class="guide-section reveal" id="advice">
+          <div class="section-eyebrow">09 — Practical advice</div>
+          <h2>What we would actually recommend</h2>
+          <p>If someone wants to try carnivore, a measured approach works better than going all-in blindly. The best diet is rarely the one that sounds most impressive online — it is the one you can realistically sustain.</p>
+          <div class="steps-list">
+            <div class="step-item">
+              <div class="step-left">
+                <div class="step-num">1</div>
+                <div class="step-connector"></div>
+              </div>
+              <div class="step-body">
+                <div class="step-title">Start with a 14-day trial instead of committing forever</div>
+                <p class="step-desc">Treat carnivore as a structured experiment. Track hunger, energy, digestion, cravings, sleep quality, and adherence. That information matters more than online opinions.</p>
+              </div>
+            </div>
+            <div class="step-item">
+              <div class="step-left">
+                <div class="step-num">2</div>
+                <div class="step-connector"></div>
+              </div>
+              <div class="step-body">
+                <div class="step-title">Prioritise whole foods over processed meat</div>
+                <p class="step-desc">Focus on whole cuts, eggs, seafood, and fatty protein sources with consistent meal timing and proper hydration. A sustainable version beats a perfect version.</p>
+              </div>
+            </div>
+            <div class="step-item">
+              <div class="step-left">
+                <div class="step-num">3</div>
+                <div class="step-connector"></div>
+              </div>
+              <div class="step-body">
+                <div class="step-title">Keep electrolytes and hydration high</div>
+                <p class="step-desc">Sodium, potassium, and magnesium are all lost faster on low-carb eating. Salt your food generously, drink water consistently, and consider an electrolyte supplement during adaptation.</p>
+              </div>
+            </div>
+            <div class="step-item">
+              <div class="step-left">
+                <div class="step-num">4</div>
+                <div class="step-connector"></div>
+              </div>
+              <div class="step-body">
+                <div class="step-title">Reintroduce foods carefully if using carnivore as an elimination approach</div>
+                <p class="step-desc">If your goal is identifying food sensitivities, add foods back one at a time after a baseline period. This is where carnivore delivers some of its most useful information.</p>
+              </div>
+            </div>
+          </div>
+          <div class="improo-tip">
+            <div class="tip-icon">💡</div>
+            <div>
+              <div class="tip-label">Improo tip</div>
+              <p class="tip-text">Use the Improo weight and progress tracker to document your 14-day trial. Logging your energy, hunger, and weight daily gives you actual data to decide whether carnivore is working — instead of relying on how you feel on any one particular day.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 10 Products -->
+        <div class="guide-section reveal" id="products">
+          <div class="section-eyebrow">10 — Our recommendations</div>
+          <h2>What we'd actually buy</h2>
+          <p class="products-intro">Two things matter more than anything else when starting carnivore: replacing lost electrolytes and cooking meat properly. These are the products we find genuinely useful — not the most expensive, not the most hyped.</p>
+
+          <!-- Electrolyte card -->
+          <a href="https://amzn.to/44rP1mC" target="_blank" rel="noopener" class="prod-card">
+            <div class="prod-visual elec">
+              <img src="../images/products/lmnt-electrolytes.webp" alt="LMNT Electrolyte Drink Mix" />
+              <div class="prod-badge">
+                <div class="prod-badge-dot"></div>
+                Top Pick
+              </div>
+            </div>
+            <div class="prod-content">
+              <div class="prod-category">Electrolytes · Supplement</div>
+              <div class="prod-name">LMNT Zero-Sugar Electrolyte Mix</div>
+              <p class="prod-summary">Sodium, potassium, and magnesium in the right ratios — no sugar, no fillers. Carnivore adaptation drains electrolytes fast, and most people underestimate how much this matters during the first two weeks.</p>
+              <div class="prod-why">
+                <span class="prod-why-label">Why we picked it</span>
+                <p>LMNT is specifically formulated for low-carb and zero-carb eaters. The sodium content (1000mg per packet) is higher than most electrolyte products — intentionally, because low-carb eating increases sodium excretion significantly. No sweeteners, no carbs, no unnecessary ingredients.</p>
+              </div>
+              <div class="prod-tags">
+                <span class="prod-tag">Zero sugar</span>
+                <span class="prod-tag">1000mg sodium</span>
+                <span class="prod-tag">Carnivore-formulated</span>
+              </div>
+              <div class="prod-cta">
+                View on Amazon
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M8 4l3 3-3 3" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div class="prod-affiliate">Affiliate link — we may earn a small commission at no cost to you</div>
+            </div>
+          </a>
+
+          <!-- Thermometer card -->
+          <a href="https://amzn.to/3GXmBYP" target="_blank" rel="noopener" class="prod-card">
+            <div class="prod-visual salt">
+              <img src="../images/products/meat-thermometer.webp" alt="ThermoPro Instant Read Thermometer" />
+              <div class="prod-badge" style="border-color:rgba(14,165,233,0.2);">
+                <div class="prod-badge-dot" style="background:#0ea5e9;"></div>
+                Best Value
+              </div>
+            </div>
+            <div class="prod-content">
+              <div class="prod-category">Kitchen Tool · Cooking</div>
+              <div class="prod-name">ThermoPro TP19H Instant Read Thermometer</div>
+              <p class="prod-summary">When your entire diet is meat, cooking it correctly matters. An instant-read thermometer takes the guesswork out of every steak, roast, and piece of fish — letting you cook to your exact preference safely and consistently.</p>
+              <div class="prod-why">
+                <span class="prod-why-label">Why we picked it</span>
+                <p>Reads in under 3 seconds, waterproof, folds flat, and costs less than a single ribeye steak. ThermoPro has been one of the most trusted budget thermometer brands for years — consistently rated 4.7 stars across tens of thousands of reviews. Simple, reliable, and actually useful every single day on carnivore.</p>
+              </div>
+              <div class="prod-tags">
+                <span class="prod-tag">3-second reading</span>
+                <span class="prod-tag">Waterproof</span>
+                <span class="prod-tag">4.7 ★ · 50,000+ reviews</span>
+              </div>
+              <div class="prod-cta">
+                View on Amazon
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M8 4l3 3-3 3" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div class="prod-affiliate">Affiliate link — we may earn a small commission at no cost to you</div>
+            </div>
+          </a>
+        </div>
+
+        <!-- 11 Sources -->
+        <div class="guide-section reveal" id="sources">
+          <div class="section-eyebrow">11 — Further reading &amp; research</div>
+          <h2>References</h2>
+          <ul class="sources-list">
+            <li>
+              <div class="src-num">1</div>
+              <div class="src-text">Leidy, H.J. et al. (2015). <em>The role of protein in weight loss and maintenance.</em> American Journal of Clinical Nutrition, 101(6), 1320S–1329S. <a href="https://pubmed.ncbi.nlm.nih.gov/25926512/" target="_blank" rel="noopener">PubMed: 25926512</a></div>
+            </li>
+            <li>
+              <div class="src-num">2</div>
+              <div class="src-text">Westman, E.C. et al. (2008). <em>The effect of a low-carbohydrate, ketogenic diet versus a low-glycemic index diet on glycemic control.</em> Nutrition &amp; Metabolism, 5(36). <a href="https://pubmed.ncbi.nlm.nih.gov/19099589/" target="_blank" rel="noopener">PubMed: 19099589</a></div>
+            </li>
+            <li>
+              <div class="src-num">3</div>
+              <div class="src-text">Harvard T.H. Chan School of Public Health — The Nutrition Source. <em>Protein.</em> <a href="https://www.hsph.harvard.edu/nutritionsource/what-should-you-eat/protein/" target="_blank" rel="noopener">hsph.harvard.edu</a></div>
+            </li>
+            <li>
+              <div class="src-num">4</div>
+              <div class="src-text">National Institutes of Health — MedlinePlus. <em>Low-Carbohydrate Diet.</em> <a href="https://medlineplus.gov/ency/patientinstructions/000925.htm" target="_blank" rel="noopener">medlineplus.gov</a></div>
+            </li>
+            <li>
+              <div class="src-num">5</div>
+              <div class="src-text">Examine.com. <em>Evidence-based breakdowns of nutrition science and dietary interventions.</em> <a href="https://examine.com" target="_blank" rel="noopener">examine.com</a></div>
+            </li>
+          </ul>
+          <div class="warning-box" style="margin-top:32px;">
+            <strong>Disclaimer.</strong> This guide is for educational purposes only and should not be considered medical advice. Always consult a qualified healthcare professional before making significant dietary changes, especially if you have a medical condition or take medication.
+          </div>
+        </div>
+
+      </main>
+
+      <!-- SIDEBAR -->
+      <aside class="guide-sidebar">
+        <div class="sidebar-card">
+          <div class="sidebar-title">Key numbers</div>
+          <div class="stat-item">
+            <div class="stat-value">0–10g</div>
+            <div class="stat-desc">Daily carbohydrates on a typical carnivore approach</div>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <div class="stat-value">2–14</div>
+            <div class="stat-desc">Days for adaptation symptoms to settle for most people</div>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <div class="stat-value">~70%</div>
+            <div class="stat-desc">Fat as approximate share of calories on carnivore</div>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item" style="margin-bottom:0;">
+            <div class="stat-value">100%</div>
+            <div class="stat-desc">Animal-based intake in the strict version</div>
+          </div>
+        </div>
+
+        <div class="sidebar-card">
+          <div class="sidebar-title">Adaptation stages</div>
+          <div class="stages">
+            <div class="stage">
+              <div class="stage-num">1</div>
+              <div class="stage-info">
+                <div class="stage-title">Days 1–3</div>
+                <div class="stage-desc">Glucose depletes. Electrolytes drop. This is the hardest part.</div>
+              </div>
+            </div>
+            <div class="stage">
+              <div class="stage-num">2</div>
+              <div class="stage-info">
+                <div class="stage-title">Days 4–7</div>
+                <div class="stage-desc">Fatigue peaks then begins to lift. Electrolytes critical here.</div>
+              </div>
+            </div>
+            <div class="stage">
+              <div class="stage-num">3</div>
+              <div class="stage-info">
+                <div class="stage-title">Week 2</div>
+                <div class="stage-desc">Hunger decreases significantly. Energy begins to stabilise.</div>
+              </div>
+            </div>
+            <div class="stage">
+              <div class="stage-num">4</div>
+              <div class="stage-info">
+                <div class="stage-title">Month 1+</div>
+                <div class="stage-desc">Full fat-adaptation. Cravings reduced. Real results visible.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="sidebar-card">
+          <div class="sidebar-title">Disclaimer</div>
+          <p class="sidebar-disclaimer">This guide is for informational purposes only and does not constitute medical advice. If you have a health condition or take medication, consult your doctor before making significant dietary changes.</p>
+        </div>
+      </aside>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <span style="font-size:1.3rem;font-weight:700;background:linear-gradient(135deg,#60a5fa,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:-0.03em;font-family:'Sora',sans-serif;display:block;margin-bottom:16px;">Improo</span>
+          <p>Health, weight loss, movement &amp; mindset — together.</p>
+          <small>© 2026 Improo. All rights reserved.</small>
+        </div>
+        <div class="footer-links">
+          <h4>Navigation</h4>
+          <a href="../index.html">Home</a>
+          <a href="../insights/index.html">Articles</a>
+          <a href="../guides.html">Guides</a>
+          <a href="../roadmap.html">Roadmap</a>
+        </div>
+        <div class="footer-links">
+          <h4>Legal</h4>
+          <a href="../disclaimer.html">Disclaimer</a>
+          <a href="../privacy-policy.html">Privacy Policy</a>
+          <a href="../terms-of-service.html">Terms of Service</a>
+        </div>
+        <div class="footer-links">
+          <h4>Follow</h4>
+          <a href="https://www.youtube.com/@Improo_App">YouTube</a>
+          <a href="https://x.com/Improo_">X (Twitter)</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const bar = document.getElementById('read-progress');
+    window.addEventListener('scroll', () => {
+      const doc = document.documentElement;
+      const pct = (doc.scrollTop / (doc.scrollHeight - doc.clientHeight)) * 100;
+      bar.style.width = Math.min(pct, 100) + '%';
+    }, { passive: true });
+
+    const reveals = document.querySelectorAll('.reveal');
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
+      });
+    }, { threshold: 0.06 });
+    reveals.forEach(el => obs.observe(el));
+  </script>
+
+</body>
+</html>
