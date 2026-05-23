@@ -1,7 +1,7 @@
 # STATUS.md — Improo Website
 
 ## Last updated
-20 May 2026 (session 3)
+23 May 2026 (session 4)
 
 ---
 
@@ -59,6 +59,7 @@ Both share the same brand, colors, and Supabase backend.
 |------|-------|--------|
 | `guides/intermittent-fasting.html` | What is Intermittent Fasting? | ✅ Done |
 | `guides/what-is-keto.html` | What is Keto? | ✅ Done |
+| `guides/what-is-carnivore.html` | What Is the Carnivore Diet? | ✅ Done |
 
 ### Images
 | File | Used for |
@@ -67,7 +68,7 @@ Both share the same brand, colors, and Supabase backend.
 | `images/app.jpg` | Phone mockup on homepage (app preview) |
 | `images/ray-avatar.webp` | Founder photo in mission quote |
 | `images/sleep-as-a-tool.jpg` | Article hero image |
-| `images/products/` | (subfolder — contents unknown) |
+| `images/products/` | dripdrop.png, magnesium-glycinate.webp, oura-ring.webp, mct-oil.png, ketoscan.png, lavatools-javelin.webp (upload pending) |
 
 ---
 
@@ -133,6 +134,12 @@ Both share the same brand, colors, and Supabase backend.
 
 ---
 
+## Completed this session (session 4)
+
+- `roadmap.html` — Phase 2: Groups, Backend setup en Legal framework gemarkeerd als done (groene checkmark). Phase 3: "Points system" en "Payment integration (Stripe)" verwijderd.
+- `guides/what-is-carnivore.html` — nieuw volledig uitgewerkte guide aangemaakt (11 secties, 2 inline SVG charts, hero-visual, sidebar met adaptation stages, 2 productkaarten). Productkaarten: REDMOND Re-Lyte (affiliate: https://amzn.to/4dHeD6f, image: dripdrop.png) + Lavatools Javelin (affiliate: https://amzn.to/4f4Kn7O, image: lavatools-javelin.webp — nog te uploaden).
+- `guides.html` — Carnivore Diet kaart geactiveerd in de Diets & Nutrition sectie.
+
 ## Completed this session (session 3)
 
 - `insights/still-here-still-building.html` — nieuw artikel opgehaald van GitHub, blauw-italic `<em>` toegevoegd aan alle h2-koppen, stress-depletion cycle SVG volledig herbouwd als cirkeldiagram met dikke pijlen (zoals referentieafbeelding)
@@ -154,9 +161,10 @@ Both share the same brand, colors, and Supabase backend.
 - [ ] Connect waitlist form to Supabase (real email capture)
 - [ ] Fix navigation in `why-i-built-improo.html`
 - [ ] Standardise nav order across all pages
+- [ ] Upload `lavatools-javelin.webp` naar `images/products/` (carnivore guide thermometer kaart)
 
 ### Content
-- [ ] Write the 10 "Coming soon" guides (see list above)
+- [ ] Write the remaining 9 "Coming soon" guides (Mediterranean Diet + 8 others)
 - [ ] More insight articles (aim: 1–2 per month)
 - [ ] Publish or remove `nutrition-movement-combined.html`
 
