@@ -208,6 +208,30 @@
     .bc-green-lock { background: #dcfce7; border: 1px solid #86efac; color: #166534; }
     .bc-green-desc { color: #14532d; }
 
+    /* Belt card link hover */
+    .bc-belt-card-link {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+      border-radius: var(--radius-md);
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
+    }
+    .bc-belt-card-link:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 32px rgba(37,99,235,0.13);
+    }
+    .bc-explore-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      margin-top: 16px;
+      text-decoration: none;
+      transition: gap 0.15s;
+    }
+    .bc-explore-link:hover { gap: 10px; }
+
     /* Black belt colours */
     .bc-black { background: #f1f5f9; border: 1px solid #94a3b8; }
     .bc-black-header { background: #1a1a1f; }
@@ -231,6 +255,7 @@
         <a href="index.html">Home</a>
         <a href="insights/index.html">Articles</a>
         <a href="guides.html">Guides</a>
+        <a href="Improo-belt-challenges.html" class="active">Challenges</a>
         <a href="roadmap.html">Roadmap</a>
         <a href="#" onclick="openPopup(); return false;">Contact</a>
       </nav>
@@ -295,6 +320,7 @@
         <div class="bc-belts-inner">
 
           <!-- ── YELLOW BELT ── -->
+          <a href="yellow-belt.html" class="bc-belt-card-link">
           <div class="bc-belt-card bc-yellow">
             <div class="bc-belt-header bc-yellow-header">
               <span class="bc-belt-header-emoji">🥋</span>
@@ -343,10 +369,15 @@
                 </div>
 
               </div>
+              <a href="yellow-belt.html" class="bc-explore-link" style="color:#ca8a04;">
+                Explore Yellow Belt <i class="ti ti-arrow-right" style="font-size:14px;"></i>
+              </a>
             </div>
           </div>
+          </a>
 
           <!-- ── GREEN BELT ── -->
+          <a href="green-belt.html" class="bc-belt-card-link">
           <div class="bc-belt-card bc-green">
             <div class="bc-belt-header bc-green-header">
               <span class="bc-belt-header-emoji">🥋</span>
@@ -407,10 +438,15 @@
                 </div>
 
               </div>
+              <a href="green-belt.html" class="bc-explore-link" style="color:#16a34a;">
+                Explore Green Belt <i class="ti ti-arrow-right" style="font-size:14px;"></i>
+              </a>
             </div>
           </div>
+          </a>
 
           <!-- ── BLACK BELT ── -->
+          <a href="black-belt.html" class="bc-belt-card-link">
           <div class="bc-belt-card bc-black">
             <div class="bc-belt-header bc-black-header">
               <span class="bc-belt-header-emoji">🥋</span>
@@ -460,8 +496,12 @@
                 </div>
 
               </div>
+              <a href="black-belt.html" class="bc-explore-link" style="color:#1a1a1f;">
+                Explore Black Belt <i class="ti ti-arrow-right" style="font-size:14px;"></i>
+              </a>
             </div>
           </div>
+          </a>
 
         </div>
       </div>

@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Green Belt – Improo Belt Challenges</title>
+  <meta name="description" content="Level up to Green Belt. Add structure and discipline with fasting and tracking across 4 phases — 7 to 70 days." />
+  <link rel="stylesheet" href="styles.css" />
+  <script>
+    window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+  </script>
+  <script defer src="/_vercel/insights/script.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
+  <style>
+    .belt-hero {
+      background: linear-gradient(180deg, #f0fdf4 0%, #dcfce7 50%, #fff 100%);
+      padding: 52px 0 44px;
+      border-bottom: 1px solid #86efac;
+    }
+    .belt-back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--muted);
+      margin-bottom: 20px;
+      transition: color 0.2s;
+    }
+    .belt-back-link:hover { color: var(--blue); }
+    .belt-hero-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: #14532d;
+      margin-bottom: 12px;
+    }
+    .belt-hero-title {
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: -0.04em;
+      margin: 0 0 12px;
+      color: #1a1a1f;
+    }
+    .belt-hero-tagline {
+      font-size: 1.05rem;
+      color: #14532d;
+      max-width: 500px;
+      line-height: 1.65;
+      margin: 0 0 20px;
+    }
+    .belt-hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+    }
+    .belt-hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      border-radius: 20px;
+      padding: 5px 14px;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+    .belt-content { padding: 48px 0 64px; }
+    .belt-inner {
+      max-width: 720px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+    .belt-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .belt-card-header {
+      padding: 18px 24px;
+      border-bottom: 1px solid var(--line);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .belt-card-title {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--text);
+    }
+    .belt-card-body { padding: 20px 24px; }
+    .belt-checklist { display: flex; flex-direction: column; gap: 8px; }
+    .belt-check-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 14px;
+      border-radius: 8px;
+      background: #f0fdf4;
+      border: 1px solid #86efac;
+    }
+    .belt-check-emoji { font-size: 1.2rem; flex-shrink: 0; width: 28px; text-align: center; }
+    .belt-check-label { flex: 1; font-size: 0.9rem; color: var(--text); font-weight: 500; }
+    .belt-check-badge {
+      font-size: 0.7rem;
+      font-weight: 700;
+      border-radius: 20px;
+      padding: 3px 10px;
+      white-space: nowrap;
+      letter-spacing: 0.3px;
+    }
+    .badge-auto { background: #dbeafe; color: #1d4ed8; border: 1px solid #bfdbfe; }
+    .badge-manual { background: #f1f5f9; color: #64748b; border: 1px solid #e2e8f0; }
+    .badge-new { background: #dcfce7; color: #14532d; border: 1px solid #86efac; }
+    .belt-phases { display: flex; flex-direction: column; gap: 10px; }
+    .belt-phase-row {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 14px 16px;
+      border-radius: 10px;
+      background: #f0fdf4;
+      border: 1px solid #86efac;
+    }
+    .belt-phase-num {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: #16a34a;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+    .belt-phase-info { flex: 1; }
+    .belt-phase-name { font-weight: 600; font-size: 0.9rem; color: var(--text); }
+    .belt-phase-days-label { font-size: 0.8rem; color: var(--muted); margin-top: 2px; }
+    .belt-phase-unlock {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      background: #fef9c3;
+      border: 1px solid #fde68a;
+      color: #92400e;
+      border-radius: 20px;
+      padding: 3px 10px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    .belt-why-text {
+      font-size: 0.95rem;
+      color: var(--muted);
+      line-height: 1.75;
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── HEADER / NAV ── -->
+  <header class="site-header">
+    <div class="container nav">
+      <a href="index.html" class="brand" aria-label="Improo home">
+        <span style="font-size:1.6rem; font-weight:700; background:linear-gradient(135deg,#3b9ef5,#2563eb); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; letter-spacing:-0.03em; font-family:'Sora',sans-serif;">Improo</span>
+      </a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="insights/index.html">Articles</a>
+        <a href="guides.html">Guides</a>
+        <a href="Improo-belt-challenges.html" class="active">Challenges</a>
+        <a href="roadmap.html">Roadmap</a>
+        <a href="#" onclick="openPopup(); return false;">Contact</a>
+      </nav>
+      <div class="socials">
+        <a href="https://www.youtube.com/@Improo_App" aria-label="Youtube">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.7 15.5V8.5l6.3 3.5-6.3 3.5z"/></svg>
+        </a>
+        <a href="https://x.com/Improo_" aria-label="X">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.3 1.5h3.3L14.1 9.9 23 22.5h-7.6l-5.3-6.9-6 6.9H.7l8-9.1L.5 1.5h7.8l4.8 6.3 5.2-6.3zm-1.2 18.9h1.8L7 3.3H5.1l12 17.1z"/></svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ── HERO ── -->
+    <section class="belt-hero">
+      <div class="container">
+        <a href="Improo-belt-challenges.html" class="belt-back-link">
+          <i class="ti ti-arrow-left"></i>Back to Belt Challenges
+        </a>
+        <div class="belt-hero-label">Intermediate · Belt 2 of 3</div>
+        <h1 class="belt-hero-title">🥋 Green Belt</h1>
+        <p class="belt-hero-tagline">Add structure and discipline. Introduces fasting and tracking.</p>
+        <div class="belt-hero-badges">
+          <span class="belt-hero-badge" style="background:#dcfce7; border:1px solid #86efac; color:#14532d;">
+            <i class="ti ti-check"></i>1 missed day allowed per phase
+          </span>
+          <span class="belt-hero-badge" style="background:#f0fdf4; border:1px solid #86efac; color:#166534;">
+            <i class="ti ti-layers"></i>4 phases · 7 to 70 days
+          </span>
+          <span class="belt-hero-badge" style="background:#fef9c3; border:1px solid #fde68a; color:#92400e;">
+            <i class="ti ti-lock-open"></i>Requires any Yellow Belt phase
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CONTENT ── -->
+    <section class="belt-content">
+      <div class="container">
+        <div class="belt-inner">
+
+          <!-- Daily goals -->
+          <div class="belt-card">
+            <div class="belt-card-header">
+              <i class="ti ti-checklist" style="font-size:1.1rem; color:#16a34a;"></i>
+              <span class="belt-card-title">What you do every day</span>
+            </div>
+            <div class="belt-card-body">
+              <div class="belt-checklist">
+
+                <div class="belt-check-row">
+                  <span class="belt-check-emoji">🚶</span>
+                  <span class="belt-check-label">7,000 steps today</span>
+                  <span class="belt-check-badge badge-auto">auto</span>
+                </div>
+
+                <div class="belt-check-row">
+                  <span class="belt-check-emoji">🥗</span>
+                  <span class="belt-check-label">Follow your diet</span>
+                  <span class="belt-check-badge badge-manual">manual</span>
+                </div>
+
+                <div class="belt-check-row">
+                  <span class="belt-check-emoji">💧</span>
+                  <span class="belt-check-label">Drink half a gallon of water</span>
+                  <span class="belt-check-badge badge-manual">manual</span>
+                </div>
+
+                <div class="belt-check-row">
+                  <span class="belt-check-emoji">📋</span>
+                  <span class="belt-check-label">Daily check-in / log</span>
+                  <span class="belt-check-badge badge-manual">manual</span>
+                </div>
+
+                <div class="belt-check-row">
+                  <span class="belt-check-emoji">📵</span>
+                  <span class="belt-check-label">No screen time 1 hour before sleep</span>
+                  <span class="belt-check-badge badge-manual">manual</span>
+                </div>
+
+                <div class="belt-check-row">
+                  <span class="belt-check-emoji">🌅</span>
+                  <span class="belt-check-label">Every day fresh start</span>
+                  <span class="belt-check-badge badge-manual">manual</span>
+                </div>
+
+                <div class="belt-check-row">
+                  <span class="belt-check-emoji">⏱️</span>
+                  <span class="belt-check-label">Intermittent fasting 16:8</span>
+                  <span class="belt-check-badge badge-new">new</span>
+                </div>
+
+                <div class="belt-check-row">
+                  <span class="belt-check-emoji">📊</span>
+                  <span class="belt-check-label">Weekly progress check</span>
+                  <span class="belt-check-badge badge-new">new</span>
+                </div>
+
+              </div>
+              <p style="font-size:0.8rem; color:var(--muted); margin:14px 0 0; line-height:1.6;">
+                <strong>Auto</strong> — tracked automatically by the Improo app. <strong>Manual</strong> — you confirm it during your daily check-in. <strong>New</strong> — added at Green Belt.
+              </p>
+            </div>
+          </div>
+
+          <!-- Phases -->
+          <div class="belt-card">
+            <div class="belt-card-header">
+              <i class="ti ti-timeline" style="font-size:1.1rem; color:#16a34a;"></i>
+              <span class="belt-card-title">How the phases work</span>
+            </div>
+            <div class="belt-card-body">
+              <p style="font-size:0.9rem; color:var(--muted); margin:0 0 16px; line-height:1.65;">Green Belt phases unlock as you progress through Yellow Belt. Starter and Foundation open after any Yellow phase. Discipline and Elite require specific Yellow completions.</p>
+              <div class="belt-phases">
+
+                <div class="belt-phase-row">
+                  <div class="belt-phase-num">1</div>
+                  <div class="belt-phase-info">
+                    <div class="belt-phase-name">Starter</div>
+                    <div class="belt-phase-days-label">7 days</div>
+                  </div>
+                  <div class="belt-phase-unlock"><i class="ti ti-lock-open" style="font-size:12px;"></i>any Yellow Belt phase</div>
+                </div>
+
+                <div class="belt-phase-row">
+                  <div class="belt-phase-num">2</div>
+                  <div class="belt-phase-info">
+                    <div class="belt-phase-name">Foundation</div>
+                    <div class="belt-phase-days-label">21 days</div>
+                  </div>
+                  <div class="belt-phase-unlock"><i class="ti ti-lock-open" style="font-size:12px;"></i>any Yellow Belt phase</div>
+                </div>
+
+                <div class="belt-phase-row">
+                  <div class="belt-phase-num">3</div>
+                  <div class="belt-phase-info">
+                    <div class="belt-phase-name">Discipline</div>
+                    <div class="belt-phase-days-label">45 days</div>
+                  </div>
+                  <div class="belt-phase-unlock"><i class="ti ti-lock" style="font-size:12px;"></i>Yellow Foundation</div>
+                </div>
+
+                <div class="belt-phase-row">
+                  <div class="belt-phase-num">4</div>
+                  <div class="belt-phase-info">
+                    <div class="belt-phase-name">Elite</div>
+                    <div class="belt-phase-days-label">70 days</div>
+                  </div>
+                  <div class="belt-phase-unlock"><i class="ti ti-lock" style="font-size:12px;"></i>Yellow Discipline</div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          <!-- Why this belt -->
+          <div class="belt-card">
+            <div class="belt-card-header">
+              <i class="ti ti-heart" style="font-size:1.1rem; color:#16a34a;"></i>
+              <span class="belt-card-title">Why Green Belt</span>
+            </div>
+            <div class="belt-card-body">
+              <p class="belt-why-text">Green Belt is where habits become structure. You've already proven you can show up — now you add the tools that turn daily action into real change. Fasting, tracking, and weekly reflection aren't extras. They're what separate people who try from people who transform. If you've completed any Yellow phase, you've already earned the right to be here.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CTA ── -->
+    <section class="waitlist-section" id="waitlist">
+      <div class="container waitlist-inner">
+        <h2>Ready for the next level?</h2>
+        <p>Join the waitlist and unlock Green Belt the moment the app is live.</p>
+        <form class="waitlist-form" onsubmit="handleWaitlist(event)">
+          <input class="waitlist-input" type="email" placeholder="your@email.com" required />
+          <button type="submit" class="waitlist-btn">Join waitlist</button>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ── FOOTER ── -->
+  <footer id="contact" class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <span style="font-size:1.3rem; font-weight:700; background:linear-gradient(135deg,#60a5fa,#3b82f6); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; letter-spacing:-0.03em; font-family:'Sora',sans-serif; display:block; margin-bottom:16px;">Improo</span>
+        <p>Health, weight loss, movement & mindset — together.</p>
+        <small>© 2026 Improo. All rights reserved.</small>
+        <small style="margin-top:6px;font-size:0.75rem;opacity:0.6;">Improo is not a medical service. Content is for informational purposes only. <a href="disclaimer.html" style="color:inherit;text-decoration:underline;">Disclaimer.</a></small>
+      </div>
+      <div class="footer-links">
+        <h4>Navigation</h4>
+        <a href="index.html">Home</a>
+        <a href="insights/index.html">Insights</a>
+        <a href="roadmap.html">Roadmap</a>
+        <a href="disclaimer.html">Disclaimer</a>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="terms-of-service.html">Terms of Service</a>
+      </div>
+      <div class="footer-links">
+        <h4>Follow us</h4>
+        <a href="https://www.youtube.com/@Improo_App" aria-label="Youtube">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.7 15.5V8.5l6.3 3.5-6.3 3.5z"/></svg>
+          Youtube
+        </a>
+        <a href="https://x.com/Improo_" aria-label="X">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.3 1.5h3.3L14.1 9.9 23 22.5h-7.6l-5.3-6.9-6 6.9H.7l8-9.1L.5 1.5h7.8l4.8 6.3 5.2-6.3zm-1.2 18.9h1.8L7 3.3H5.1l12 17.1z"/></svg>
+          X (Twitter)
+        </a>
+      </div>
+      <div class="footer-links">
+        <h4>Contact</h4>
+        <a href="#" onclick="openPopup(); return false;">Send us a message</a>
+        <a href="mailto:contact.improo@gmail.com">contact.improo@gmail.com</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ── CONTACT POPUP ── -->
+  <div id="contact-popup" class="popup-overlay" onclick="handleOverlayClick(event)">
+    <div class="popup-box">
+      <button class="popup-close" onclick="closePopup()" aria-label="Close">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M2 2l14 14M16 2L2 16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+      <h2 class="popup-title">Get in touch</h2>
+      <p class="popup-sub">We usually respond within 24 hours.</p>
+      <div class="popup-fields">
+        <input type="text" id="contact-name" placeholder="Your name" />
+        <input type="email" id="contact-email" placeholder="Your email" />
+        <textarea id="contact-message" placeholder="Your message" rows="5"></textarea>
+        <button class="popup-send" onclick="sendEmail()">Send message</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function openPopup() {
+      document.getElementById('contact-popup').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+    function closePopup() {
+      document.getElementById('contact-popup').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+    function handleOverlayClick(e) {
+      if (e.target === document.getElementById('contact-popup')) closePopup();
+    }
+    function sendEmail() {
+      var name    = document.getElementById('contact-name').value;
+      var email   = document.getElementById('contact-email').value;
+      var message = document.getElementById('contact-message').value;
+      if (!name || !email || !message) { alert('Please fill in all fields.'); return; }
+      var mailto = 'mailto:contact.improo@gmail.com?subject=Contact from ' + encodeURIComponent(name) + '&body=Name: ' + encodeURIComponent(name) + '%0AEmail: ' + encodeURIComponent(email) + '%0A%0A' + encodeURIComponent(message);
+      window.location.href = mailto;
+      closePopup();
+    }
+    function handleWaitlist(e) {
+      e.preventDefault();
+      var input = e.target.querySelector('input[type="email"]');
+      var email = input.value;
+      if (!email) return;
+      window.location.href = 'mailto:contact.improo@gmail.com?subject=Waitlist signup&body=Please add me to the waitlist: ' + encodeURIComponent(email);
+      input.value = '';
+    }
+  </script>
+
+</body>
+</html>
