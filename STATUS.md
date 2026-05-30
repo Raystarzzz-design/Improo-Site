@@ -1,7 +1,7 @@
 # STATUS.md — Improo Website
 
 ## Last updated
-23 May 2026 (session 4)
+30 May 2026 (session 5)
 
 ---
 
@@ -53,6 +53,14 @@ Both share the same brand, colors, and Supabase backend.
 | `insights/sleep-as-a-performance-tool.html` | Sleep as a Performance Tool | Apr 12, 2026 |
 | `insights/identity-before-behavior.html` | Identity Before Behavior | May 10, 2026 |
 | `insights/nutrition-movement-combined.html` | Nutrition + Movement Combined | Date unknown |
+
+### Belt Challenge pages
+| File | Title | Status |
+|------|-------|--------|
+| `Improo-belt-challenges.html` | Belt Challenges overview | ✅ Done |
+| `yellow-belt.html` | Yellow Belt detail (4 phases, 7–70 days) | ✅ Done |
+| `green-belt.html` | Green Belt detail (4 phases, 7–70 days) | ✅ Done |
+| `black-belt.html` | Black Belt detail (3 phases, 21–70 days) | ✅ Done |
 
 ### Guides (deep-dive explainers)
 | File | Title | Status |
@@ -133,6 +141,11 @@ Both share the same brand, colors, and Supabase backend.
    listed in the insights index or on the homepage — it may be unpublished/draft.
 
 ---
+
+## Completed this session (session 5)
+
+- `roadmap.html` — carnivore guide blauw-italic h2 accenten toegevoegd, mid-2026 note in Improo tip
+- STATUS.md bijgewerkt met belt-pagina's die Ramon via GitHub heeft toegevoegd
 
 ## Completed this session (session 4)
 
