@@ -144,7 +144,12 @@ Both share the same brand, colors, and Supabase backend.
 
 ## Completed this session (session 5)
 
-- `roadmap.html` — carnivore guide blauw-italic h2 accenten toegevoegd, mid-2026 note in Improo tip
+- `yellow-belt.html`, `green-belt.html`, `black-belt.html` — "Follow your diet" clarificatie toegevoegd; green + black bevatten link naar guides.html
+- `black-belt.html` — "Complete a real-world challenge today" clarificatie toegevoegd
+- `Improo-belt-challenges.html` — ↓ progression connectors tussen belt cards; "Already active and consistent?" zin toegevoegd aan How it works
+- `sitemap.xml` — aangemaakt met alle 20 pagina's, lastmod datums en correcte prioriteiten
+- `carnivore guide` — blauw-italic h2 accenten + mid-2026 note in Improo tip
+- Git credential helper (wincred) geconfigureerd zodat pushen weer werkt vanuit Claude Code
 - STATUS.md bijgewerkt met belt-pagina's die Ramon via GitHub heeft toegevoegd
 
 ## Completed this session (session 4)
@@ -174,7 +179,7 @@ Both share the same brand, colors, and Supabase backend.
 - [ ] Connect waitlist form to Supabase (real email capture)
 - [ ] Fix navigation in `why-i-built-improo.html`
 - [ ] Standardise nav order across all pages
-- [ ] Upload `lavatools-javelin.webp` naar `images/products/` (carnivore guide thermometer kaart)
+- [x] Upload `lavatools-javelin.webp` naar `images/products/` ✅
 
 ### Content
 - [ ] Write the remaining 9 "Coming soon" guides (Mediterranean Diet + 8 others)
