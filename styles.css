@@ -243,6 +243,85 @@ a { color: inherit; text-decoration: none; }
 
 .hero-visual { display: flex; justify-content: center; align-items: center; }
 
+/* ════════════════════════════════════════
+   HERO SLIDER
+   ════════════════════════════════════════ */
+
+.hero-slider-wrapper {
+  position: relative;
+}
+
+.hero-slides-container {
+  position: relative;
+  min-height: 300px;
+}
+
+.hero-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.hero-slide.is-active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.hero-slider-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(37, 99, 235, 0.15);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #2563eb;
+  font-size: 1.2rem;
+  line-height: 1;
+  transition: background 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px rgba(15, 31, 61, 0.10);
+}
+
+.hero-slider-arrow:hover {
+  background: #fff;
+  box-shadow: 0 4px 16px rgba(37, 99, 235, 0.20);
+}
+
+.hero-slider-prev { left: 8px; }
+.hero-slider-next { right: 8px; }
+
+.hero-slider-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  padding: 20px 0 28px;
+}
+
+.hero-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(74, 127, 212, 0.3);
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+  padding: 0;
+}
+
+.hero-dot.is-active {
+  background: #4a7fd4;
+}
+
 .phone-stage {
   position: relative;
   width: 100%;
@@ -1180,6 +1259,11 @@ a { color: inherit; text-decoration: none; }
    RESPONSIVE
    ════════════════════════════════════════ */
 
+@media (max-width: 767px) {
+  .hero-slider-prev,
+  .hero-slider-next { display: none; }
+}
+
 @media (max-width: 1100px) {
   .hero-grid,
   .roadmap-card,
@@ -1191,6 +1275,9 @@ a { color: inherit; text-decoration: none; }
 
   .hero-copy  { order: 1; }
   .hero-visual{ order: 2; }
+
+  .hero-slide--book .hero-copy  { order: 2; }
+  .hero-slide--book .hero-visual{ order: 1; }
 
   .mission-grid { grid-template-columns: 1fr; }
 

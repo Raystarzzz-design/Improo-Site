@@ -43,39 +43,89 @@
 
     <!-- ── HERO ── -->
     <section class="hero">
-      <div class="container hero-grid">
+      <div class="hero-slider-wrapper">
 
-        <div class="hero-copy">
-          <div class="hero-badge">
-            <span class="hero-badge-dot"></span>
-            Health · Weight loss · Movement · Mindset
+        <div class="hero-slides-container">
+
+          <button class="hero-slider-arrow hero-slider-prev" aria-label="Previous slide">
+            <i class="ti ti-chevron-left"></i>
+          </button>
+          <button class="hero-slider-arrow hero-slider-next" aria-label="Next slide">
+            <i class="ti ti-chevron-right"></i>
+          </button>
+
+          <!-- ── Slide 1: Main hero ── -->
+          <div class="hero-slide is-active">
+            <div class="container hero-grid">
+
+              <div class="hero-copy">
+                <div class="hero-badge">
+                  <span class="hero-badge-dot"></span>
+                  Health · Weight loss · Movement · Mindset
+                </div>
+                <h1>Your journey.<br>Small steps, real progress.<br><em>You're not alone.</em></h1>
+                <p class="hero-text">Most people quit because they feel alone and overwhelmed. We're building a community where real support, clear information and the right tools come together — join us from the start.</p>
+                <div class="hero-actions">
+                  <a href="#waitlist" class="btn btn-primary">Join the waitlist →</a>
+                  <a href="insights/index.html" class="follow-link">Read our insights</a>
+                </div>
+              </div>
+
+              <div class="hero-visual">
+                <div style="display:grid; grid-template-columns: repeat(3,1fr); gap:16px; width:100%;">
+                  <div style="background:#fff; border:1px solid rgba(37,99,235,0.10); border-radius:16px; padding:28px 16px; text-align:center; box-shadow:0 2px 12px rgba(15,31,61,0.07);">
+                    <div style="font-size:2.6rem; font-weight:700; color:#2563eb; margin-bottom:10px;">80%</div>
+                    <div style="font-size:0.82rem; color:#4a6fa5; line-height:1.5;">quit their diet within the first month</div>
+                  </div>
+                  <div style="background:#fff; border:1px solid rgba(37,99,235,0.10); border-radius:16px; padding:28px 16px; text-align:center; box-shadow:0 2px 12px rgba(15,31,61,0.07);">
+                    <div style="font-size:2.6rem; font-weight:700; color:#2563eb; margin-bottom:10px;">95%</div>
+                    <div style="font-size:0.82rem; color:#4a6fa5; line-height:1.5;">of diets fail in the long run</div>
+                  </div>
+                  <div style="background:#fff; border:1px solid rgba(37,99,235,0.10); border-radius:16px; padding:28px 16px; text-align:center; box-shadow:0 2px 12px rgba(15,31,61,0.07);">
+                    <div style="font-size:2.6rem; font-weight:700; color:#2563eb; margin-bottom:10px;">65%</div>
+                    <div style="font-size:0.82rem; color:#4a6fa5; line-height:1.5;">more success with community support</div>
+                  </div>
+                  <div style="grid-column:1/-1; text-align:center; padding:16px 0 0;">
+                    <em style="font-size:0.88rem; color:#4a6fa5;">You're not failing. The system is. Improo is building something different.</em>
+                  </div>
+                </div>
+              </div>
+
+            </div>
           </div>
-          <h1>Your journey.<br>Small steps, real progress.<br><em>You're not alone.</em></h1>
-          <p class="hero-text">Most people quit because they feel alone and overwhelmed. We're building a community where real support, clear information and the right tools come together — join us from the start.</p>
-          <div class="hero-actions">
-            <a href="#waitlist" class="btn btn-primary">Join the waitlist →</a>
-            <a href="insights/index.html" class="follow-link">Read our insights</a>
+
+          <!-- ── Slide 2: 90-Day Tracker book ── -->
+          <div class="hero-slide hero-slide--book">
+            <div class="container hero-grid">
+
+              <div class="hero-copy">
+                <div class="hero-badge">
+                  <i class="ti ti-book" style="font-size:13px;"></i>
+                  Now available on Amazon
+                </div>
+                <p style="font-size:0.72rem; color:#8892aa; letter-spacing:0.12em; text-transform:uppercase; margin:0 0 10px; font-weight:600;">Improo · 90-Day Tracker</p>
+                <h1 style="color:#1a2a4a;">Track every day.<br><em style="font-style:italic; color:#4a7fd4;">Build real habits.</em></h1>
+                <p class="hero-text">A physical 90-day tracker designed around small daily steps. No perfection required — just showing up. One day at a time.</p>
+                <div class="hero-actions">
+                  <a href="#" class="btn btn-primary">Get it on Amazon →</a>
+                  <a href="#" class="follow-link">Learn more</a>
+                </div>
+              </div>
+
+              <div class="hero-visual">
+                <div style="display:flex; justify-content:center; align-items:center; width:100%;">
+                  <img src="images/book-cover.png" alt="90-Day Habit Builder by Improo" style="width:160px; height:200px; border-radius:12px; object-fit:cover; box-shadow:0 8px 32px rgba(15,31,61,0.18);" />
+                </div>
+              </div>
+
+            </div>
           </div>
+
         </div>
 
-        <div class="hero-visual">
-          <div style="display:grid; grid-template-columns: repeat(3,1fr); gap:16px; width:100%;">
-            <div style="background:#fff; border:1px solid rgba(37,99,235,0.10); border-radius:16px; padding:28px 16px; text-align:center; box-shadow:0 2px 12px rgba(15,31,61,0.07);">
-              <div style="font-size:2.6rem; font-weight:700; color:#2563eb; margin-bottom:10px;">80%</div>
-              <div style="font-size:0.82rem; color:#4a6fa5; line-height:1.5;">quit their diet within the first month</div>
-            </div>
-            <div style="background:#fff; border:1px solid rgba(37,99,235,0.10); border-radius:16px; padding:28px 16px; text-align:center; box-shadow:0 2px 12px rgba(15,31,61,0.07);">
-              <div style="font-size:2.6rem; font-weight:700; color:#2563eb; margin-bottom:10px;">95%</div>
-              <div style="font-size:0.82rem; color:#4a6fa5; line-height:1.5;">of diets fail in the long run</div>
-            </div>
-            <div style="background:#fff; border:1px solid rgba(37,99,235,0.10); border-radius:16px; padding:28px 16px; text-align:center; box-shadow:0 2px 12px rgba(15,31,61,0.07);">
-              <div style="font-size:2.6rem; font-weight:700; color:#2563eb; margin-bottom:10px;">65%</div>
-              <div style="font-size:0.82rem; color:#4a6fa5; line-height:1.5;">more success with community support</div>
-            </div>
-            <div style="grid-column:1/-1; text-align:center; padding:16px 0 0;">
-              <em style="font-size:0.88rem; color:#4a6fa5;">You're not failing. The system is. Improo is building something different.</em>
-            </div>
-          </div>
+        <div class="hero-slider-dots">
+          <button class="hero-dot is-active" data-index="0" aria-label="Go to slide 1"></button>
+          <button class="hero-dot" data-index="1" aria-label="Go to slide 2"></button>
         </div>
 
       </div>
@@ -486,6 +536,49 @@
       window.location.href = 'mailto:contact.improo@gmail.com?subject=Waitlist signup&body=Please add me to the waitlist: ' + encodeURIComponent(email);
       input.value = '';
     }
+
+    // Hero slider
+    (function () {
+      var container = document.querySelector('.hero-slides-container');
+      var slides = container.querySelectorAll('.hero-slide');
+      var dots = document.querySelectorAll('.hero-dot');
+      var prevBtn = document.querySelector('.hero-slider-prev');
+      var nextBtn = document.querySelector('.hero-slider-next');
+      var current = 0;
+      var timer = null;
+
+      function setHeight() {
+        var maxH = 0;
+        slides.forEach(function (s) {
+          if (s.offsetHeight > maxH) maxH = s.offsetHeight;
+        });
+        if (maxH > 0) container.style.height = maxH + 'px';
+      }
+
+      function goTo(idx) {
+        slides[current].classList.remove('is-active');
+        dots[current].classList.remove('is-active');
+        current = ((idx % slides.length) + slides.length) % slides.length;
+        slides[current].classList.add('is-active');
+        dots[current].classList.add('is-active');
+      }
+
+      function resetTimer() {
+        clearInterval(timer);
+        timer = setInterval(function () { goTo(current + 1); }, 5000);
+      }
+
+      prevBtn.addEventListener('click', function () { goTo(current - 1); resetTimer(); });
+      nextBtn.addEventListener('click', function () { goTo(current + 1); resetTimer(); });
+      dots.forEach(function (dot, i) {
+        dot.addEventListener('click', function () { goTo(i); resetTimer(); });
+      });
+
+      setHeight();
+      window.addEventListener('load', setHeight);
+      window.addEventListener('resize', setHeight);
+      resetTimer();
+    }());
   </script>
 
 </body>
