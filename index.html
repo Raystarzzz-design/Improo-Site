@@ -107,7 +107,7 @@
                 <h1 style="color:#1a2a4a;">Track every day.<br><em style="font-style:italic; color:#4a7fd4;">Build real habits.</em></h1>
                 <p class="hero-text">A physical 90-day tracker designed around small daily steps. No perfection required — just showing up. One day at a time.</p>
                 <div class="hero-actions">
-                  <a href="#" class="btn btn-primary">Get it on Amazon →</a>
+                  <a href="https://www.amazon.com/dp/B0H446L1KD" target="_blank" rel="noopener" class="btn btn-primary">Get it on Amazon →</a>
                   <a href="#" class="follow-link">Learn more</a>
                 </div>
               </div>
@@ -550,9 +550,13 @@
       function setHeight() {
         var maxH = 0;
         slides.forEach(function (s) {
+          s.style.height = '';
           if (s.offsetHeight > maxH) maxH = s.offsetHeight;
         });
-        if (maxH > 0) container.style.height = maxH + 'px';
+        if (maxH > 0) {
+          container.style.height = maxH + 'px';
+          slides.forEach(function (s) { s.style.height = maxH + 'px'; });
+        }
       }
 
       function goTo(idx) {

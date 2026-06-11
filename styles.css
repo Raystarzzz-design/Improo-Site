@@ -1277,7 +1277,7 @@ a { color: inherit; text-decoration: none; }
    RESPONSIVE
    ════════════════════════════════════════ */
 
-@media (max-width: 767px) {
+@media (max-width: 1300px) {
   .hero-slider-prev,
   .hero-slider-next { display: none; }
 }
