@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Most people start at step three. They take action before they understand the pattern or set a real direction. That's why they quit." />
+  <title>Six Steps Up. Most People Skip Five. – Improo Insights</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg-page: #eef0f7;
+      --bg-white: #ffffff;
+      --bg-quote: #e8ebf5;
+      --border: #dde0ec;
+      --text: #0d1b3e;
+      --text-body: #3a3f55;
+      --text-muted: #7b8099;
+      --accent-blue: #3366cc;
+      --accent-blue-light: #e8eef8;
+      --tag-bg: #e0e6f5;
+      --tag-color: #3d5a99;
+      --sans: 'Inter', system-ui, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg-page);
+      color: var(--text);
+      font-family: var(--sans);
+      font-size: 16px;
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* NAV */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--bg-white);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-container {
+      max-width: 740px;
+      margin: 0 auto;
+      padding: 0 24px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+
+    .nav-logo {
+      font-size: 1.6rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, #3b9ef5, #2563eb);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      letter-spacing: -0.03em;
+      font-family: var(--sans);
+      text-decoration: none;
+      flex-shrink: 0;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 400;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--text); }
+
+    .nav-socials {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-shrink: 0;
+    }
+
+    .nav-socials a {
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      transition: color 0.2s;
+    }
+
+    .nav-socials a:hover { color: var(--text); }
+
+    /* LAYOUT */
+    .article-wrapper {
+      max-width: 740px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem 6rem;
+    }
+
+    .breadcrumb {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-bottom: 2rem;
+    }
+
+    .breadcrumb a {
+      color: var(--text-muted);
+      text-decoration: none;
+    }
+
+    .breadcrumb a:hover { color: var(--accent-blue); }
+
+    .article-tag {
+      display: inline-block;
+      background: var(--tag-bg);
+      color: var(--tag-color);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin-bottom: 1.25rem;
+    }
+
+    h1 {
+      font-size: clamp(1.9rem, 4.5vw, 2.5rem);
+      font-weight: 800;
+      line-height: 1.2;
+      color: var(--text);
+      margin-bottom: 1.25rem;
+      letter-spacing: -0.02em;
+    }
+
+    .article-lead {
+      font-size: 1.05rem;
+      color: var(--text-body);
+      line-height: 1.75;
+      margin-bottom: 1.75rem;
+    }
+
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 14px;
+      color: var(--text-muted);
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 2.5rem;
+    }
+
+    .meta-dot { color: var(--border); }
+
+    /* BODY */
+    .article-body h2 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--text);
+      margin: 2.75rem 0 0.85rem;
+      letter-spacing: -0.01em;
+    }
+
+    .article-body p {
+      color: var(--text-body);
+      margin-bottom: 1.2rem;
+      line-height: 1.8;
+    }
+
+    .article-body strong { color: var(--text); font-weight: 600; }
+    .article-body em { font-style: italic; }
+
+    /* PULLQUOTE */
+    .pullquote {
+      border-left: 3px solid var(--accent-blue);
+      background: var(--accent-blue-light);
+      border-radius: 0 8px 8px 0;
+      padding: 1.25rem 1.5rem;
+      margin: 2rem 0;
+    }
+
+    .pullquote p {
+      font-size: 1rem;
+      font-style: italic;
+      color: var(--text-body);
+      margin: 0;
+      line-height: 1.7;
+    }
+
+    /* IDENTITY ITEMS */
+    .identity-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin: 2rem 0;
+    }
+
+    .identity-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      background: var(--bg-white);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px 18px;
+      transition: border-color 0.2s;
+    }
+
+    .identity-item:hover { border-color: #93c5fd; }
+
+    .identity-icon {
+      width: 36px; height: 36px;
+      border-radius: 10px;
+      background: var(--accent-blue-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      flex-shrink: 0;
+    }
+
+    .identity-item-text {
+      font-size: 14px;
+      color: var(--text-body);
+      line-height: 1.6;
+      padding-top: 4px;
+    }
+
+    .identity-item-text strong {
+      color: var(--text);
+      display: block;
+      font-weight: 600;
+      margin-bottom: 2px;
+    }
+
+    /* PROOF GRID */
+    .proof-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 12px;
+      margin: 2rem 0;
+    }
+
+    .proof-card {
+      background: var(--bg-white);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px 16px;
+      position: relative;
+      overflow: hidden;
+      transition: border-color 0.2s;
+    }
+
+    .proof-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--accent-blue), transparent);
+    }
+
+    .proof-card:hover { border-color: #93c5fd; }
+
+    .proof-action {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 8px;
+      line-height: 1.4;
+    }
+
+    .proof-arrow {
+      font-size: 16px;
+      color: var(--accent-blue);
+      margin-bottom: 6px;
+    }
+
+    .proof-result {
+      font-size: 12px;
+      color: var(--text-muted);
+      font-style: italic;
+      line-height: 1.5;
+    }
+
+    /* STAT ROW */
+    .stat-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      overflow: hidden;
+      margin: 2rem 0;
+    }
+
+    .stat-cell {
+      background: var(--bg-white);
+      padding: 24px 20px;
+      text-align: center;
+    }
+
+    .stat-number {
+      font-size: 2.4rem;
+      font-weight: 800;
+      color: var(--accent-blue);
+      line-height: 1;
+      margin-bottom: 8px;
+      letter-spacing: -0.03em;
+    }
+
+    .stat-label {
+      font-size: 12px;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* PATHS GRID */
+    .paths-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin: 2rem 0;
+    }
+
+    @media (max-width: 560px) { .paths-grid { grid-template-columns: 1fr; } }
+
+    .path-card {
+      background: var(--bg-white);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px 18px;
+    }
+
+    .path-card.accent { border-color: #93c5fd; background: var(--accent-blue-light); }
+
+    .path-title {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+    }
+
+    .path-card.accent .path-title { color: var(--accent-blue); }
+
+    .path-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+
+    .path-list li {
+      font-size: 13px;
+      color: var(--text-body);
+      padding-left: 14px;
+      position: relative;
+      line-height: 1.5;
+    }
+
+    .path-list li::before {
+      content: '–';
+      position: absolute;
+      left: 0;
+      color: var(--text-muted);
+    }
+
+    /* KEY POINTS */
+    .key-points {
+      background: var(--bg-quote);
+      border-radius: 12px;
+      padding: 1.5rem 1.75rem;
+      margin: 2rem 0;
+      list-style: none;
+    }
+
+    .key-points li {
+      display: flex;
+      gap: 12px;
+      font-size: 0.95rem;
+      color: var(--text-body);
+      padding: 9px 0;
+      border-bottom: 1px solid var(--border);
+      line-height: 1.65;
+    }
+
+    .key-points li:last-child { border-bottom: none; }
+
+    .kp-bullet {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: var(--accent-blue);
+      flex-shrink: 0;
+      margin-top: 8px;
+    }
+
+    .divider { border: none; border-top: 1px solid var(--border); margin: 2.5rem 0; }
+
+    /* CTA */
+    .cta-block {
+      background: var(--accent-blue-light);
+      border: 1px solid #c0d0ea;
+      border-radius: 16px;
+      padding: 2.5rem 2rem;
+      text-align: center;
+      margin-top: 3.5rem;
+    }
+
+    .cta-block h3 {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 0.6rem;
+    }
+
+    .cta-block p { font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1.4rem; }
+
+    .cta-btn {
+      display: inline-block;
+      background: var(--accent-blue);
+      color: #fff;
+      padding: 12px 28px;
+      border-radius: 24px;
+      font-size: 14px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+
+    .cta-btn:hover { opacity: 0.85; }
+
+    /* MORE */
+    .more-insights {
+      margin-top: 4.5rem;
+      padding-top: 2.5rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .more-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 1.25rem;
+    }
+
+    .more-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+
+    .more-card {
+      background: var(--bg-white);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.25rem;
+      text-decoration: none;
+      transition: border-color 0.2s;
+    }
+
+    .more-card:hover { border-color: #93c5fd; }
+
+    .more-card-tag {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--tag-color);
+      margin-bottom: 0.5rem;
+    }
+
+    .more-card-tag.health { color: #16a34a; }
+    .more-card-tag.discipline { color: #2563eb; }
+
+    .more-card h4 {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text);
+      line-height: 1.4;
+      margin-bottom: 0.4rem;
+    }
+
+    .more-card span { font-size: 12px; color: var(--text-muted); }
+
+    /* FOOTER */
+    footer {
+      background: var(--bg-white);
+      border-top: 1px solid var(--border);
+      padding: 2.5rem 2rem;
+      text-align: center;
+    }
+
+    .footer-logo {
+      font-size: 1.3rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, #60a5fa, #3b82f6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      letter-spacing: -0.03em;
+      font-family: var(--sans);
+      display: block;
+      margin-bottom: 1rem;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      list-style: none;
+      margin-bottom: 1rem;
+    }
+
+    .footer-links a { font-size: 13px; color: var(--text-muted); text-decoration: none; }
+    .footer-links a:hover { color: var(--text); }
+    footer p { font-size: 12px; color: var(--text-muted); }
+
+    .hl-blue { color: #3b82f6; font-style: italic; }
+
+    @media (max-width: 600px) {
+      nav { padding: 0 1rem; }
+      .nav-links li:not(:last-child) { display: none; }
+      .article-wrapper { padding: 2rem 1rem 4rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<header class="site-header">
+  <div class="nav-container">
+    <a href="../index.html" class="nav-logo">Improo</a>
+    <nav class="nav-links">
+      <a href="../index.html">Home</a>
+      <a href="index.html">Articles</a>
+      <a href="../guides.html">Guides</a>
+      <a href="../roadmap.html">Roadmap</a>
+      <a href="../index.html#contact">Contact</a>
+    </nav>
+    <div class="nav-socials">
+      <a href="https://www.youtube.com/@Improo_App" aria-label="YouTube">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.7 15.5V8.5l6.3 3.5-6.3 3.5z"/></svg>
+      </a>
+      <a href="https://x.com/Improo_" aria-label="X">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.3 1.5h3.3L14.1 9.9 23 22.5h-7.6l-5.3-6.9-6 6.9H.7l8-9.1L.5 1.5h7.8l4.8 6.3 5.2-6.3zm-1.2 18.9h1.8L7 3.3H5.1l12 17.1z"/></svg>
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="article-wrapper">
+
+  <div class="breadcrumb">
+    <a href="index.html">&#8249; Back to Insights</a>
+  </div>
+
+  <span class="article-tag">Mindset</span>
+
+  <h1>Six Steps Up. Most People <em class="hl-blue">Skip Five.</em></h1>
+
+  <p class="article-lead">Most people start at step three. They take action before they understand the pattern or set a real direction. That's why they quit.</p>
+
+  <div class="article-meta">
+    <span>June 14, 2026</span>
+    <span class="meta-dot">•</span>
+    <span>Ray</span>
+    <span class="meta-dot">•</span>
+    <span>8 min read</span>
+  </div>
+
+  <div class="article-body">
+
+    <p>Think about the last time you decided to change something. Your diet, your sleep, your activity level. You probably felt the discomfort building for a while, then one day you made a decision. You downloaded an app, signed up for a gym, bought a bag of salad, told yourself this time would be different.</p>
+
+    <p>Two weeks later, you were back where you started. Not because you're weak. Not because the goal was wrong. Because you skipped the two steps that make every other step possible, and jumped straight into action with nothing underneath it.</p>
+
+    <p>Real change follows a sequence. It has six steps. Skipping them doesn't save time. It guarantees the restart.</p>
+
+    <div class="identity-list">
+      <div class="identity-item">
+        <div class="identity-icon">👁</div>
+        <div class="identity-item-text">
+          <strong>Step 1. Awareness</strong>
+          Recognise what is actually happening. Not what you wish were happening.
+        </div>
+      </div>
+      <div class="identity-item">
+        <div class="identity-icon">🎯</div>
+        <div class="identity-item-text">
+          <strong>Step 2. Intention</strong>
+          Set a small, clear direction. Not a fantasy. A next step you can name.
+        </div>
+      </div>
+      <div class="identity-item">
+        <div class="identity-icon">🔁</div>
+        <div class="identity-item-text">
+          <strong>Step 3. Action</strong>
+          Take the first step. Show up. Even when it's small.
+        </div>
+      </div>
+      <div class="identity-item">
+        <div class="identity-icon">🤝</div>
+        <div class="identity-item-text">
+          <strong>Step 4. Support</strong>
+          Find people who get it. Community keeps you moving when motivation doesn't.
+        </div>
+      </div>
+      <div class="identity-item">
+        <div class="identity-icon">📈</div>
+        <div class="identity-item-text">
+          <strong>Step 5. Progress</strong>
+          Small wins compound. Learn to notice them. They're the evidence.
+        </div>
+      </div>
+      <div class="identity-item">
+        <div class="identity-icon">⚡</div>
+        <div class="identity-item-text">
+          <strong>Step 6. Habit</strong>
+          It becomes who you are. Not what you're trying to do. Who you are.
+        </div>
+      </div>
+    </div>
+
+    <div class="pullquote">
+      <p>The sequence isn't optional. Each step builds the foundation for the one after it. Jump ahead, and you build on sand.</p>
+    </div>
+
+    <h2>Step 1. <em class="hl-blue">Awareness</em></h2>
+
+    <p>Awareness doesn't arrive in a single moment of clarity. It builds slowly, through the accumulation of small uncomfortable truths. You notice that you're out of breath climbing a flight of stairs. You see a photo of yourself and feel something pull in your chest. You realize that every Sunday feels heavy because Monday means starting over again.</p>
+
+    <p>That accumulation, that honest reckoning with the gap between where you are and where you want to be, that is awareness. And most people skip it entirely. They're not ready to sit with what they notice. So they jump to action and drag the same unexamined patterns with them.</p>
+
+    <p>Awareness isn't self-criticism. It has nothing to do with shame. It's simply the act of looking clearly at what is true. Not what you tell yourself at the end of a long day, not what you hope is true. What is actually happening right now, in your body, in your habits, in the choices you make on a Tuesday when nobody's watching.</p>
+
+    <h2>Step 2. <em class="hl-blue">Intention</em></h2>
+
+    <p>Intention is what turns a vague wish into a direction. Not a goal, necessarily. Not a deadline, a target weight, or a transformation timeline. Just a small, clear answer to the question: what am I actually moving toward?</p>
+
+    <p>People confuse intention with motivation. They wait to feel ready, to feel inspired, to have enough energy to begin. But that's not intention. That's hoping something from the outside comes in and makes the decision for you. Motivation is unreliable. Intention is a choice you make before the feeling arrives.</p>
+
+    <p>A real intention is specific enough to act on. Not "I want to be healthier," something like: I want to feel less tired by Friday. I want to walk more than I sit this week. I want one good night of sleep before the weekend. These feel small. That's the point. Big intentions without small specifics are wishful thinking with better branding.</p>
+
+    <div class="pullquote">
+      <p>You don't need to know the whole path. You need to know the next step clearly enough to take it tomorrow morning.</p>
+    </div>
+
+    <h2>Step 3. <em class="hl-blue">Action</em></h2>
+
+    <p>Now we're somewhere most people recognize. Action is the part everyone talks about. Start something. Do the thing. Show up. And that's all true, but action built on awareness and intention is a completely different experience from action taken out of guilt, desperation, or a January resolution.</p>
+
+    <p>When you've sat with what is true and chosen a direction that actually makes sense for you, the first step doesn't have to be dramatic. It can be a walk around the block. A single meal that isn't from a wrapper. Going to bed thirty minutes earlier than usual. The action doesn't transform your body on day one. It does something more important: it gives you evidence that you can show up.</p>
+
+    <p>That evidence compounds. Every time you take the step, even the small ones, especially the small ones, you make it a little easier to take the next one. Not because of willpower. Because you've started building a story about yourself that includes following through. And that story matters more than the step itself.</p>
+
+    <h2>Step 4. <em class="hl-blue">Support</em></h2>
+
+    <p>Nobody does this alone. Or rather, people try to do it alone all the time, and that is usually where things fall apart. The decision feels personal, the struggle feels personal, and so the whole thing becomes a private battle that gets exhausting very quickly.</p>
+
+    <p>Real support isn't a cheerleader telling you you're doing great. It's someone who has been where you are and doesn't pretend the hard parts aren't hard. It's a community that doesn't disappear when you have a rough week. It's accountability that comes from belonging, not from shame.</p>
+
+    <p>The research on this is consistent. People who have genuine social support for their health goals are significantly more likely to maintain them over time, not because accountability forces them to comply, but because the human brain is wired for belonging. When change feels shared, it feels survivable. You don't need a crowd. You need to not feel like the only one.</p>
+
+    <h2>Step 5. <em class="hl-blue">Progress</em></h2>
+
+    <p>Progress is rarely what people expect. It doesn't usually look like a straight line on a graph or a number dropping week after week. It looks like two decent weeks followed by a rough one. Like a plateau that goes on longer than you thought possible. Like finally making a habit feel automatic, only to lose it entirely during a stressful month and have to rebuild from a lower starting point.</p>
+
+    <p>That is still progress. What you're building isn't a performance. You're building a relationship with consistency, and like any real relationship, it has texture. The habit of noticing what's going well matters as much as the habit itself. Most people only register failure. They keep score in the wrong column.</p>
+
+    <p>Small wins deserve to be counted. A better night's sleep, a walk you didn't skip, a meal you felt genuinely good about afterward. These are the actual raw material of change. They're not consolation prizes for not doing enough. They're the proof that the sequence is working.</p>
+
+    <div class="pullquote">
+      <p>Consistency doesn't mean never stumbling. It means making coming back feel as natural as giving up used to.</p>
+    </div>
+
+    <h2>Step 6. <em class="hl-blue">Habit</em></h2>
+
+    <p>A habit is what happens when a behavior stops requiring a decision. That's the destination. Not a dramatic physical transformation, not a life that looks like an advertisement for something. Just the point at which the things that are good for you become the things you do naturally, without having to negotiate with yourself every single morning.</p>
+
+    <p>That takes time. More time than most programs promise, and more time than most people expect going in. Researchers consistently find that habits take weeks, sometimes months, to form properly. There's no shortcut through that timeline. But there's also something on the other side of it that motivation can never offer: durability.</p>
+
+    <p>When something becomes a habit, it becomes part of who you are. Not who you're trying to be. Who you are. And from that place, the next step doesn't look overwhelming. It just looks like the next step.</p>
+
+    <hr class="divider" />
+
+    <p>These six steps aren't a formula you follow once. They're a sequence that repeats as you take on harder things, bigger goals, new areas of your life. The reason most people fail isn't a lack of willpower or discipline. It's that they try to enter the sequence at step three, dragging everything they haven't yet resolved in steps one and two. Real change is slower than the internet suggests and more durable than most people believe. You don't need to rush it. You need to start it honestly, in the right order, with people around you who understand the journey. That's what Improo is built around.</p>
+
+  </div>
+
+  <div class="cta-block">
+    <h3>Walk all six steps with structure</h3>
+    <p>The Improo Belt Challenge system is built around this exact sequence. Yellow Belt, Green Belt, Black Belt. Each phase moves you further along the path, with accountability built in from the start.</p>
+    <a href="../Improo-belt-challenges.html" class="cta-btn">See the Belt Challenges</a>
+  </div>
+
+  <div class="more-insights">
+    <div class="more-label">More Insights</div>
+    <div class="more-grid">
+      <a href="identity-before-behavior.html" class="more-card">
+        <div class="more-card-tag">Mindset</div>
+        <h4>Identity Before Behavior</h4>
+        <span>May 10, 2026</span>
+      </a>
+      <a href="quit-after-3-weeks.html" class="more-card">
+        <div class="more-card-tag discipline">Discipline</div>
+        <h4>Why Most People Quit After 3 Weeks</h4>
+        <span>April 18, 2026</span>
+      </a>
+      <a href="why-i-built-improo.html" class="more-card">
+        <div class="more-card-tag">Mindset</div>
+        <h4>Why I Built Improo — The Story Behind the App</h4>
+        <span>April 25, 2026</span>
+      </a>
+    </div>
+  </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <span class="footer-logo">Improo</span>
+  <ul class="footer-links">
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="index.html">Insights</a></li>
+    <li><a href="../roadmap.html">Roadmap</a></li>
+    <li><a href="../disclaimer.html">Disclaimer</a></li>
+    <li><a href="../privacy-policy.html">Privacy Policy</a></li>
+    <li><a href="../terms-of-service.html">Terms of Service</a></li>
+  </ul>
+  <p>© 2026 Improo. All rights reserved. Improo is not a medical service. Content is for informational purposes only.</p>
+</footer>
+
+</body>
+</html>
