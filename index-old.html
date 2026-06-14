@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Improo — Health, weight loss & movement community</title>
+  <meta name="description" content="Improo is a health and lifestyle community for people who want to lose weight, move more, and build better habits — together." />
+  <link rel="stylesheet" href="styles.css" />
+  <script>
+    window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+  </script>
+  <script defer src="/_vercel/insights/script.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
+</head>
+<body>
+
+  <!-- ── HEADER / NAV ── -->
+  <header class="site-header">
+    <div class="container nav">
+      <a href="#home" class="brand" aria-label="Improo home">
+        <span style="font-size:1.6rem; font-weight:700; background:linear-gradient(135deg,#3b9ef5,#2563eb); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; letter-spacing:-0.03em; font-family:'Sora',sans-serif;">Improo</span>
+      </a>
+      <nav class="nav-links">
+        <a href="#home">Home</a>
+        <a href="insights/index.html">Articles</a>
+<a href="guides.html">Guides</a>
+        <a href="Improo-belt-challenges.html">Challenges</a>
+        <a href="roadmap.html">Roadmap</a>
+        <a href="#" onclick="openPopup(); return false;">Contact</a>
+      </nav>
+      <div class="socials">
+        <a href="https://www.youtube.com/@Improo_App" aria-label="Youtube">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.7 15.5V8.5l6.3 3.5-6.3 3.5z"/></svg>
+        </a>
+        <a href="https://x.com/Improo_" aria-label="X">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.3 1.5h3.3L14.1 9.9 23 22.5h-7.6l-5.3-6.9-6 6.9H.7l8-9.1L.5 1.5h7.8l4.8 6.3 5.2-6.3zm-1.2 18.9h1.8L7 3.3H5.1l12 17.1z"/></svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main id="home">
+
+    <!-- ── HERO ── -->
+    <section class="hero">
+      <div class="hero-slider-wrapper">
+
+        <button class="hero-slider-arrow hero-slider-prev" aria-label="Previous slide">
+          <i class="ti ti-chevron-left"></i>
+        </button>
+        <button class="hero-slider-arrow hero-slider-next" aria-label="Next slide">
+          <i class="ti ti-chevron-right"></i>
+        </button>
+
+        <div class="hero-slides-container">
+
+          <!-- ── Slide 1: Main hero ── -->
+          <div class="hero-slide is-active">
+            <div class="hero-grid">
+
+              <div class="hero-copy">
+                <div class="hero-badge">
+                  <span class="hero-badge-dot"></span>
+                  Health · Weight loss · Movement · Mindset
+                </div>
+                <h1>Your journey.<br>Small steps, real progress.<br><em>You're not alone.</em></h1>
+                <p class="hero-text">Most people quit because they feel alone and overwhelmed. We're building a community where real support, clear information and the right tools come together — join us from the start.</p>
+                <div class="hero-actions">
+                  <a href="#waitlist" class="btn btn-primary">Join the waitlist →</a>
+                  <a href="insights/index.html" class="follow-link">Read our insights</a>
+                </div>
+              </div>
+
+              <div class="hero-visual">
+                <div style="display:grid; grid-template-columns: repeat(3,1fr); gap:16px; width:100%;">
+                  <div style="background:#fff; border:1px solid rgba(37,99,235,0.10); border-radius:16px; padding:28px 16px; text-align:center; box-shadow:0 2px 12px rgba(15,31,61,0.07);">
+                    <div style="font-size:2.6rem; font-weight:700; color:#2563eb; margin-bottom:10px;">80%</div>
+                    <div style="font-size:0.82rem; color:#4a6fa5; line-height:1.5;">quit their diet within the first month</div>
+                  </div>
+                  <div style="background:#fff; border:1px solid rgba(37,99,235,0.10); border-radius:16px; padding:28px 16px; text-align:center; box-shadow:0 2px 12px rgba(15,31,61,0.07);">
+                    <div style="font-size:2.6rem; font-weight:700; color:#2563eb; margin-bottom:10px;">95%</div>
+                    <div style="font-size:0.82rem; color:#4a6fa5; line-height:1.5;">of diets fail in the long run</div>
+                  </div>
+                  <div style="background:#fff; border:1px solid rgba(37,99,235,0.10); border-radius:16px; padding:28px 16px; text-align:center; box-shadow:0 2px 12px rgba(15,31,61,0.07);">
+                    <div style="font-size:2.6rem; font-weight:700; color:#2563eb; margin-bottom:10px;">65%</div>
+                    <div style="font-size:0.82rem; color:#4a6fa5; line-height:1.5;">more success with community support</div>
+                  </div>
+                  <div style="grid-column:1/-1; text-align:center; padding:16px 0 0;">
+                    <em style="font-size:0.88rem; color:#4a6fa5;">You're not failing. The system is. Improo is building something different.</em>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- ── Slide 2: 90-Day Tracker book ── -->
+          <div class="hero-slide hero-slide--book">
+            <div class="hero-grid">
+
+              <div class="hero-copy">
+                <div class="hero-badge">
+                  <i class="ti ti-book" style="font-size:13px;"></i>
+                  Now available on Amazon
+                </div>
+                <p style="font-size:0.72rem; color:#8892aa; letter-spacing:0.12em; text-transform:uppercase; margin:0 0 10px; font-weight:600;">Improo · 90-Day Tracker</p>
+                <h1 style="color:#1a2a4a;">Track every day.<br><em style="font-style:italic; color:#4a7fd4;">Build real habits.</em></h1>
+                <p class="hero-text">A physical 90-day tracker designed around small daily steps. No perfection required — just showing up. One day at a time.</p>
+                <div class="hero-actions">
+                  <a href="https://www.amazon.com/dp/B0H446L1KD" target="_blank" rel="noopener" class="btn btn-primary">Get it on Amazon →</a>
+                  <a href="#" class="follow-link">Learn more</a>
+                </div>
+              </div>
+
+              <div class="hero-visual">
+                <div style="display:flex; justify-content:center; align-items:center; width:100%;">
+                  <img src="images/book-cover.png" alt="90-Day Habit Builder by Improo" style="width:260px; height:auto; border-radius:12px; box-shadow:0 8px 32px rgba(15,31,61,0.18);" />
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+        <div class="hero-slider-dots">
+          <button class="hero-dot is-active" data-index="0" aria-label="Go to slide 1"></button>
+          <button class="hero-dot" data-index="1" aria-label="Go to slide 2"></button>
+        </div>
+
+      </div>
+
+    <section style="display: flex; justify-content: center; padding: 2rem 1rem;">
+  <div style="background: #e8edf8; border-radius: 16px; padding: 2rem 2.5rem; max-width: 1180px; width: 100%;">
+
+    <p style="font-size: 11px; color: #8892aa; margin: 0 0 1.5rem; text-align: center; letter-spacing: 0.1em; text-transform: uppercase;">How improvement actually works</p>
+
+    <div style="display: grid; grid-template-columns: repeat(6, 1fr); gap: 0; align-items: start;">
+
+      <div style="text-align: center; padding: 0 6px; position: relative;">
+        <div style="position: absolute; top: 23px; left: calc(50% + 26px); right: 0; height: 1px; background: rgba(100,120,180,0.2);"></div>
+        <div style="width: 48px; height: 48px; border-radius: 50%; background: #fff; border: 1px solid rgba(100,130,200,0.25); display: flex; align-items: center; justify-content: center; margin: 0 auto 10px; box-shadow: 0 2px 8px rgba(80,100,180,0.08);">
+          <i class="ti ti-eye" style="font-size: 20px; color: #4a7fd4;"></i>
+        </div>
+        <p style="font-size: 12px; font-weight: 500; color: #2a3550; margin: 0 0 4px;">Awareness</p>
+        <p style="font-size: 10px; color: #8892aa; margin: 0; line-height: 1.4;">Recognise the pattern</p>
+      </div>
+
+      <div style="text-align: center; padding: 0 6px; position: relative;">
+        <div style="position: absolute; top: 23px; left: calc(50% + 26px); right: 0; height: 1px; background: rgba(100,120,180,0.2);"></div>
+        <div style="width: 48px; height: 48px; border-radius: 50%; background: #fff; border: 1px solid rgba(100,130,200,0.25); display: flex; align-items: center; justify-content: center; margin: 0 auto 10px; box-shadow: 0 2px 8px rgba(80,100,180,0.08);">
+          <i class="ti ti-target" style="font-size: 20px; color: #4a7fd4;"></i>
+        </div>
+        <p style="font-size: 12px; font-weight: 500; color: #2a3550; margin: 0 0 4px;">Intention</p>
+        <p style="font-size: 10px; color: #8892aa; margin: 0; line-height: 1.4;">Set a small clear goal</p>
+      </div>
+
+      <div style="text-align: center; padding: 0 6px; position: relative;">
+        <div style="position: absolute; top: 23px; left: calc(50% + 26px); right: 0; height: 1px; background: rgba(100,120,180,0.2);"></div>
+        <div style="width: 48px; height: 48px; border-radius: 50%; background: #fff; border: 1px solid rgba(100,130,200,0.25); display: flex; align-items: center; justify-content: center; margin: 0 auto 10px; box-shadow: 0 2px 8px rgba(80,100,180,0.08);">
+          <i class="ti ti-repeat" style="font-size: 20px; color: #2ecc8a;"></i>
+        </div>
+        <p style="font-size: 12px; font-weight: 500; color: #2a3550; margin: 0 0 4px;">Action</p>
+        <p style="font-size: 10px; color: #8892aa; margin: 0; line-height: 1.4;">Show up consistently</p>
+      </div>
+
+      <div style="text-align: center; padding: 0 6px; position: relative;">
+        <div style="position: absolute; top: 23px; left: calc(50% + 26px); right: 0; height: 1px; background: rgba(100,120,180,0.2);"></div>
+        <div style="width: 48px; height: 48px; border-radius: 50%; background: #fff; border: 1px solid rgba(100,130,200,0.25); display: flex; align-items: center; justify-content: center; margin: 0 auto 10px; box-shadow: 0 2px 8px rgba(80,100,180,0.08);">
+          <i class="ti ti-users" style="font-size: 20px; color: #2ecc8a;"></i>
+        </div>
+        <p style="font-size: 12px; font-weight: 500; color: #2a3550; margin: 0 0 4px;">Support</p>
+        <p style="font-size: 10px; color: #8892aa; margin: 0; line-height: 1.4;">Community keeps you going</p>
+      </div>
+
+      <div style="text-align: center; padding: 0 6px; position: relative;">
+        <div style="position: absolute; top: 23px; left: calc(50% + 26px); right: 0; height: 1px; background: rgba(100,120,180,0.2);"></div>
+        <div style="width: 48px; height: 48px; border-radius: 50%; background: #fff; border: 1px solid rgba(100,130,200,0.25); display: flex; align-items: center; justify-content: center; margin: 0 auto 10px; box-shadow: 0 2px 8px rgba(80,100,180,0.08);">
+          <i class="ti ti-chart-line" style="font-size: 20px; color: #efb830;"></i>
+        </div>
+        <p style="font-size: 12px; font-weight: 500; color: #2a3550; margin: 0 0 4px;">Progress</p>
+        <p style="font-size: 10px; color: #8892aa; margin: 0; line-height: 1.4;">Small wins compound</p>
+      </div>
+
+      <div style="text-align: center; padding: 0 6px;">
+        <div style="width: 48px; height: 48px; border-radius: 50%; background: #fff; border: 1px solid rgba(100,130,200,0.25); display: flex; align-items: center; justify-content: center; margin: 0 auto 10px; box-shadow: 0 2px 8px rgba(80,100,180,0.08);">
+          <i class="ti ti-bolt" style="font-size: 20px; color: #efb830;"></i>
+        </div>
+        <p style="font-size: 12px; font-weight: 500; color: #2a3550; margin: 0 0 4px;">Habit</p>
+        <p style="font-size: 10px; color: #8892aa; margin: 0; line-height: 1.4;">It becomes who you are</p>
+      </div>
+
+    </div>
+
+    <div style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid rgba(100,120,180,0.15); text-align: center;">
+      <p style="font-size: 11px; color: #8892aa; margin: 0; font-style: italic;">Most people skip straight to action — and wonder why it doesn't stick. Improo is built around all six steps.</p>
+    </div>
+
+  </div>
+</section>  
+    </section>
+
+    <!-- ── MISSION / ABOUT — directly after topic strip (fix 4) ── -->
+    <section class="mission-section">
+      <div class="container mission-card">
+        <div class="mission-label">Why Improo exists</div>
+        <div class="mission-grid">
+
+          <div class="mission-copy">
+            <h2>There's no perfect diet.<br>There's only today's step.</h2>
+            <p>After years of information overload, conflicting advice, and failed attempts, the founder of Improo had a simple realisation: the problem was never a lack of knowledge. It was the absence of clarity, consistency, and real support.</p>
+            <p>Improo exists to cut through the noise — to give you a clear framework, practical tools, and a community that genuinely understands the struggle.</p>
+            <a href="insights/why-i-built-improo.html" class="mission-link">
+              Read the full story
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7h9M8 3.5l3.5 3.5L8 10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+
+          <div class="mission-quote">
+            <div class="mission-quote-text">"I've been obese for over 10 years. I lost 11 kg — about 24 lbs — and I still have hard days. I built Improo because I needed it myself, and I couldn't find anything that truly helped."</div>
+            <div class="mission-quote-author">
+              <img src="images/ray-avatar.webp" alt="Ray, founder of Improo" style="width:44px; height:44px; border-radius:50%; object-fit:cover; object-position:center top; flex-shrink:0;" />
+              <div>
+                <span class="mission-quote-name">Ray</span>
+                <span class="mission-quote-role">Founder of Improoo</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── WHAT YOU'LL FIND — PILLARS ── -->
+    <section class="pillars-section">
+      <div class="container">
+        <div class="section-label">What you'll find here</div>
+        <h2>A platform built around real people, real progress.</h2>
+        <div class="pillars-grid">
+          <div class="pillar">
+            <div class="pillar-bar" style="background:#3b82f6"></div>
+            <span class="pillar-num">01</span>
+            <div class="pillar-title">Honest content</div>
+            <div class="pillar-body">Articles on health, weight loss, movement, and mindset — written by people who've been through it.</div>
+          </div>
+          <div class="pillar">
+            <div class="pillar-bar" style="background:#0ea5e9"></div>
+            <span class="pillar-num">02</span>
+            <div class="pillar-title">Real community</div>
+            <div class="pillar-body">A community being built around people who understand the struggle — no judgment, just real support</div>
+          </div>
+          <div class="pillar">
+            <div class="pillar-bar" style="background:#14b8a6"></div>
+            <span class="pillar-num">03</span>
+            <div class="pillar-title">Recognised by the community</div>
+            <div class="pillar-body">Good content deserves recognition. We're building a platform where the community decides what's valuable — not an algorithm</div>
+          </div>
+          <div class="pillar">
+            <div class="pillar-bar" style="background:#6366f1"></div>
+            <span class="pillar-num">04</span>
+            <div class="pillar-title">Your pace</div>
+            <div class="pillar-body">No pressure. No perfection. Just showing up — and Improo helps you do exactly that.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── APP PREVIEW + ROADMAP merged (fix 5) ── -->
+    <section style="background:#fff; padding:64px 0 52px; border-top:1px solid rgba(37,99,235,0.08); border-bottom:1px solid rgba(37,99,235,0.08);">
+      <div class="container hero-grid" style="align-items:center;">
+
+        <div class="hero-copy">
+          <div class="mission-label">The Improo app</div>
+          <h2 style="font-family:'Lora',serif; font-size:clamp(1.8rem,3vw,2.6rem); font-weight:400; line-height:1.15; color:#0f1f3d; margin:0 0 18px; letter-spacing:-0.02em;">
+            Everything you need.<br><em style="font-style:italic; color:#2563eb;">In one place.</em>
+          </h2>
+          <p style="color:#4a6fa5; font-size:1rem; line-height:1.75; margin:0 0 14px; font-weight:300;">
+            Step counter, weight tracker, fasting timer, challenges — all built into the Improo app. Track your progress and stay consistent, day by day.
+          </p>
+          <p style="color:#4a6fa5; font-size:1rem; line-height:1.75; margin:0 0 36px; font-weight:300;">
+            The Improo app is in active development and expected on Android mid-2026.
+          </p>
+
+          <div class="roadmap-steps">
+            <div class="step done">
+              <span class="dot">✓</span>
+              <h4>Planning</h4>
+              <p>Completed</p>
+            </div>
+            <div class="step done">
+              <span class="dot">✓</span>
+              <h4>Building</h4>
+              <p>In progress</p>
+            </div>
+            <div class="step active">
+              <span class="dot">···</span>
+              <h4>Testing</h4>
+              <p>Android beta — mid 2026</p>
+            </div>
+            <div class="step muted">
+              <span class="dot">＋</span>
+              <h4>Launch</h4>
+              <p>Coming soon</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="phone-stage">
+            <div class="phone-glow"></div>
+            <div class="phone-mockup">
+              <div class="phone-statusbar">
+                <span class="phone-time">9:41</span>
+                <div class="phone-icons">
+                  <svg width="16" height="11" viewBox="0 0 16 11" fill="white" opacity="0.9"><rect x="0" y="4" width="3" height="7" rx="1"/><rect x="4.5" y="2.5" width="3" height="8.5" rx="1"/><rect x="9" y="0.5" width="3" height="10.5" rx="1"/><rect x="13.5" y="0" width="2.5" height="11" rx="1" opacity="0.3"/></svg>
+                  <svg width="16" height="12" viewBox="0 0 16 12" fill="white" opacity="0.9"><path d="M8 2.4C10.4 2.4 12.6 3.4 14.1 5L15.5 3.6C13.6 1.4 10.9 0 8 0C5.1 0 2.4 1.4 0.5 3.6L1.9 5C3.4 3.4 5.6 2.4 8 2.4Z"/><path d="M8 5.6C9.6 5.6 11 6.2 12.1 7.2L13.5 5.8C12 4.4 10.1 3.6 8 3.6C5.9 3.6 4 4.4 2.5 5.8L3.9 7.2C5 6.2 6.4 5.6 8 5.6Z"/><circle cx="8" cy="10" r="2"/></svg>
+                  <svg width="25" height="12" viewBox="0 0 25 12" fill="none"><rect x="0.5" y="0.5" width="21" height="11" rx="3.5" stroke="white" stroke-opacity="0.35"/><rect x="2" y="2" width="17" height="8" rx="2" fill="white"/><path d="M23 4.5V7.5C23.8 7.2 24.5 6.4 24.5 6C24.5 5.6 23.8 4.8 23 4.5Z" fill="white" opacity="0.4"/></svg>
+                </div>
+              </div>
+              <div class="phone-notch"></div>
+              <img src="images/app.jpg" alt="Improo app preview" class="phone-screen" loading="lazy" />
+              <div class="phone-reflection"></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── BELT CHALLENGES PREVIEW ── -->
+    <section id="challenges" style="padding:64px 0; background:#f7faff; border-top:1px solid rgba(37,99,235,0.08); border-bottom:1px solid rgba(37,99,235,0.08);">
+      <div class="container">
+        <div class="section-label">The challenge system</div>
+        <h2>Belt Challenges — level up, one phase at a time.</h2>
+        <p style="color:var(--muted); font-size:1rem; line-height:1.75; max-width:560px; margin:0 0 40px; font-weight:300;">
+          Three belts. Eleven phases. Each one harder than the last. Start with Yellow and build real habits before earning your way to Green and Black Belt.
+        </p>
+        <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:20px; margin-bottom:36px;">
+
+          <div style="background:#fefce8; border:1px solid #fde68a; border-radius:var(--radius-md); box-shadow:var(--shadow); overflow:hidden;">
+            <div style="background:#ca8a04; padding:16px 20px; display:flex; align-items:center; gap:10px;">
+              <span style="font-size:1.4rem;">🥋</span>
+              <div>
+                <div style="font-size:0.7rem; font-weight:600; letter-spacing:1.5px; text-transform:uppercase; color:rgba(255,255,255,0.75);">Beginner</div>
+                <div style="font-size:1rem; font-weight:700; color:#fff;">Yellow Belt</div>
+              </div>
+            </div>
+            <div style="padding:16px 20px;">
+              <p style="color:#78350f; font-size:0.88rem; line-height:1.6; margin:0 0 12px;">Build your first healthy habits. 4 phases, 1 missed day allowed.</p>
+              <div style="display:flex; flex-wrap:wrap; gap:6px;">
+                <span style="background:#fef9c3; border:1px solid #fde68a; border-radius:20px; padding:2px 10px; font-size:0.75rem; font-weight:600; color:#92400e;">7 days</span>
+                <span style="background:#fef9c3; border:1px solid #fde68a; border-radius:20px; padding:2px 10px; font-size:0.75rem; font-weight:600; color:#92400e;">21 days</span>
+                <span style="background:#fef9c3; border:1px solid #fde68a; border-radius:20px; padding:2px 10px; font-size:0.75rem; font-weight:600; color:#92400e;">45 days</span>
+                <span style="background:#fef9c3; border:1px solid #fde68a; border-radius:20px; padding:2px 10px; font-size:0.75rem; font-weight:600; color:#92400e;">70 days</span>
+              </div>
+            </div>
+          </div>
+
+          <div style="background:#f0fdf4; border:1px solid #86efac; border-radius:var(--radius-md); box-shadow:var(--shadow); overflow:hidden;">
+            <div style="background:#16a34a; padding:16px 20px; display:flex; align-items:center; gap:10px;">
+              <span style="font-size:1.4rem;">🥋</span>
+              <div>
+                <div style="font-size:0.7rem; font-weight:600; letter-spacing:1.5px; text-transform:uppercase; color:rgba(255,255,255,0.75);">Intermediate</div>
+                <div style="font-size:1rem; font-weight:700; color:#fff;">Green Belt</div>
+              </div>
+            </div>
+            <div style="padding:16px 20px;">
+              <p style="color:#14532d; font-size:0.88rem; line-height:1.6; margin:0 0 12px;">Add structure and discipline. Introduces fasting and tracking.</p>
+              <div style="display:flex; flex-wrap:wrap; gap:6px;">
+                <span style="background:#dcfce7; border:1px solid #86efac; border-radius:20px; padding:2px 10px; font-size:0.75rem; font-weight:600; color:#14532d;">7 days</span>
+                <span style="background:#dcfce7; border:1px solid #86efac; border-radius:20px; padding:2px 10px; font-size:0.75rem; font-weight:600; color:#14532d;">21 days</span>
+                <span style="background:#dcfce7; border:1px solid #86efac; border-radius:20px; padding:2px 10px; font-size:0.75rem; font-weight:600; color:#14532d;">45 days</span>
+                <span style="background:#dcfce7; border:1px solid #86efac; border-radius:20px; padding:2px 10px; font-size:0.75rem; font-weight:600; color:#14532d;">70 days</span>
+              </div>
+            </div>
+          </div>
+
+          <div style="background:#f1f5f9; border:1px solid #94a3b8; border-radius:var(--radius-md); box-shadow:var(--shadow); overflow:hidden;">
+            <div style="background:#1a1a1f; padding:16px 20px; display:flex; align-items:center; gap:10px;">
+              <span style="font-size:1.4rem;">🥋</span>
+              <div>
+                <div style="font-size:0.7rem; font-weight:600; letter-spacing:1.5px; text-transform:uppercase; color:rgba(255,255,255,0.5);">Elite</div>
+                <div style="font-size:1rem; font-weight:700; color:#fff;">Black Belt</div>
+              </div>
+            </div>
+            <div style="padding:16px 20px;">
+              <p style="color:#334155; font-size:0.88rem; line-height:1.6; margin:0 0 12px;">No missed days. Full commitment. Identity-level transformation.</p>
+              <div style="display:flex; flex-wrap:wrap; gap:6px;">
+                <span style="background:#e2e8f0; border:1px solid #cbd5e1; border-radius:20px; padding:2px 10px; font-size:0.75rem; font-weight:600; color:#1e293b;">21 days</span>
+                <span style="background:#e2e8f0; border:1px solid #cbd5e1; border-radius:20px; padding:2px 10px; font-size:0.75rem; font-weight:600; color:#1e293b;">45 days</span>
+                <span style="background:#e2e8f0; border:1px solid #cbd5e1; border-radius:20px; padding:2px 10px; font-size:0.75rem; font-weight:600; color:#1e293b;">70 days</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <a href="Improo-belt-challenges.html" class="mission-link">
+          See the full challenge system
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2.5 7h9M8 3.5l3.5 3.5L8 10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </section>
+
+    <!-- ── INSIGHTS PREVIEW ── -->
+    <section class="insights-preview">
+      <div class="container">
+        <div class="insights-preview-header">
+          <div>
+            <div class="section-label">Latest from Improo</div>
+            <h2>Insights worth reading</h2>
+          </div>
+          <a href="insights/index.html" class="insights-preview-link">
+            All articles
+            <svg width="13" height="13" viewBox="0 0 14 14" fill="none"><path d="M2.5 7h9M8 3.5l3.5 3.5L8 10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+        <div class="insights-grid">
+          <a href="insights/why-i-built-improo.html" class="insight-card">
+            <div class="insight-card-tag">Mindset</div>
+            <h3>Why I Built Improo — The Story Behind the App</h3>
+            <div class="insight-date">April 25, 2026</div>
+          </a>
+          <a href="insights/quit-after-3-weeks.html" class="insight-card">
+            <div class="insight-card-tag">Discipline</div>
+            <h3>Why Most People Quit After 3 Weeks (And How to Be Different)</h3>
+            <div class="insight-date">April 18, 2026</div>
+          </a>
+          <a href="insights/sleep-as-a-performance-tool.html" class="insight-card">
+            <div class="insight-card-tag">Health</div>
+            <h3>Sleep as a Performance Tool</h3>
+            <div class="insight-date">April 12, 2026</div>
+          </a>
+          <a href="insights/identity-before-behavior.html" class="insight-card">
+            <div class="insight-card-tag">Mindset</div>
+            <h3>Identity Before Behavior</h3>
+            <div class="insight-date">May 10, 2026</div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── WAITLIST CTA ── -->
+    <section class="waitlist-section" id="waitlist">
+      <div class="container waitlist-inner">
+        <h2>Be part of it from day one.</h2>
+        <p>Let's build a community — together</p>
+        <form class="waitlist-form" onsubmit="handleWaitlist(event)">
+          <input class="waitlist-input" type="email" placeholder="your@email.com" required />
+          <button type="submit" class="waitlist-btn">Join waitlist</button>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ── FOOTER ── -->
+  <footer id="contact" class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <span style="font-size:1.3rem; font-weight:700; background:linear-gradient(135deg,#60a5fa,#3b82f6); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; letter-spacing:-0.03em; font-family:'Sora',sans-serif; display:block; margin-bottom:16px;">Improo</span>
+        <p>Health, weight loss, movement & mindset — together.</p>
+        <small>© 2026 Improo. All rights reserved.</small>
+        <small style="margin-top:6px;font-size:0.75rem;opacity:0.6;">Improo is not a medical service. Content is for informational purposes only. <a href="disclaimer.html" style="color:inherit;text-decoration:underline;">Disclaimer.</a></small>
+      </div>
+      <div class="footer-links">
+        <h4>Navigation</h4>
+        <a href="#home">Home</a>
+        <a href="insights/index.html">Insights</a>
+        <a href="roadmap.html">Roadmap</a>
+        <a href="disclaimer.html">Disclaimer</a>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="terms-of-service.html">Terms of Service</a>
+      </div>
+      <div class="footer-links">
+        <h4>Follow us</h4>
+        <a href="https://www.youtube.com/@Improo_App" aria-label="Youtube">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.7 15.5V8.5l6.3 3.5-6.3 3.5z"/></svg>
+          Youtube
+        </a>
+        <a href="https://x.com/Improo_" aria-label="X">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.3 1.5h3.3L14.1 9.9 23 22.5h-7.6l-5.3-6.9-6 6.9H.7l8-9.1L.5 1.5h7.8l4.8 6.3 5.2-6.3zm-1.2 18.9h1.8L7 3.3H5.1l12 17.1z"/></svg>
+          X (Twitter)
+        </a>
+      </div>
+      <div class="footer-links">
+        <h4>Contact</h4>
+        <a href="#" onclick="openPopup(); return false;">Send us a message</a>
+        <a href="mailto:contact.improo@gmail.com">contact.improo@gmail.com</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ── CONTACT POPUP ── -->
+  <div id="contact-popup" class="popup-overlay" onclick="handleOverlayClick(event)">
+    <div class="popup-box">
+      <button class="popup-close" onclick="closePopup()" aria-label="Close">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M2 2l14 14M16 2L2 16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+      <h2 class="popup-title">Get in touch</h2>
+      <p class="popup-sub">We usually respond within 24 hours.</p>
+      <div class="popup-fields">
+        <input type="text" id="contact-name" placeholder="Your name" />
+        <input type="email" id="contact-email" placeholder="Your email" />
+        <textarea id="contact-message" placeholder="Your message" rows="5"></textarea>
+        <button class="popup-send" onclick="sendEmail()">Send message</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function openPopup() {
+      document.getElementById('contact-popup').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+    function closePopup() {
+      document.getElementById('contact-popup').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+    function handleOverlayClick(e) {
+      if (e.target === document.getElementById('contact-popup')) closePopup();
+    }
+    function sendEmail() {
+      var name    = document.getElementById('contact-name').value;
+      var email   = document.getElementById('contact-email').value;
+      var message = document.getElementById('contact-message').value;
+      if (!name || !email || !message) { alert('Please fill in all fields.'); return; }
+      var mailto = 'mailto:contact.improo@gmail.com?subject=Contact from ' + encodeURIComponent(name) + '&body=Name: ' + encodeURIComponent(name) + '%0AEmail: ' + encodeURIComponent(email) + '%0A%0A' + encodeURIComponent(message);
+      window.location.href = mailto;
+      closePopup();
+    }
+    function handleWaitlist(e) {
+      e.preventDefault();
+      var input = e.target.querySelector('input[type="email"]');
+      var email = input.value;
+      if (!email) return;
+      window.location.href = 'mailto:contact.improo@gmail.com?subject=Waitlist signup&body=Please add me to the waitlist: ' + encodeURIComponent(email);
+      input.value = '';
+    }
+
+    // Hero slider
+    (function () {
+      var container = document.querySelector('.hero-slides-container');
+      var slides = container.querySelectorAll('.hero-slide');
+      var dots = document.querySelectorAll('.hero-dot');
+      var prevBtn = document.querySelector('.hero-slider-prev');
+      var nextBtn = document.querySelector('.hero-slider-next');
+      var current = 0;
+      var timer = null;
+
+      function setHeight() {
+        var maxH = 0;
+        slides.forEach(function (s) {
+          s.style.height = '';
+          if (s.offsetHeight > maxH) maxH = s.offsetHeight;
+        });
+        if (maxH > 0) {
+          container.style.height = maxH + 'px';
+          slides.forEach(function (s) { s.style.height = maxH + 'px'; });
+        }
+      }
+
+      function goTo(idx) {
+        slides[current].classList.remove('is-active');
+        dots[current].classList.remove('is-active');
+        current = ((idx % slides.length) + slides.length) % slides.length;
+        slides[current].classList.add('is-active');
+        dots[current].classList.add('is-active');
+      }
+
+      function resetTimer() {
+        clearInterval(timer);
+        timer = setInterval(function () { goTo(current + 1); }, 5000);
+      }
+
+      prevBtn.addEventListener('click', function () { goTo(current - 1); resetTimer(); });
+      nextBtn.addEventListener('click', function () { goTo(current + 1); resetTimer(); });
+      dots.forEach(function (dot, i) {
+        dot.addEventListener('click', function () { goTo(i); resetTimer(); });
+      });
+
+      setHeight();
+      window.addEventListener('load', setHeight);
+      window.addEventListener('resize', setHeight);
+      resetTimer();
+    }());
+  </script>
+
+</body>
+</html>
