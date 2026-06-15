@@ -1,0 +1,1041 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>What is Zone 2 Training? — Improo Guide</title>
+  <meta name="description" content="Everything about Zone 2 training: what it is, why it builds your aerobic base, how to find your Zone 2, and what the latest research says about longevity and metabolic health. An honest, evidence-based guide by Improo." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700&family=Lora:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+  <script>
+    window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+  </script>
+  <script defer src="/_vercel/insights/script.js"></script>
+
+  <style>
+    body { overflow-x: hidden; }
+
+    .article-wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      width: 100%;
+    }
+
+    #read-progress {
+      position: fixed;
+      top: 0; left: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--blue), #60a5fa);
+      width: 0%;
+      z-index: 999;
+      transition: width 0.1s linear;
+    }
+
+    /* HERO */
+    .guide-hero { padding: 52px 0 0; }
+
+    .hero-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: 20px;
+    }
+    .hero-kicker::before {
+      content: '';
+      display: block;
+      width: 28px; height: 1px;
+      background: var(--blue);
+    }
+
+    .hero-layout {
+      display: grid;
+      grid-template-columns: 1fr 260px;
+      gap: 48px;
+      align-items: start;
+      padding-bottom: 48px;
+      border-bottom: 1px solid var(--line);
+    }
+    @media (max-width: 900px) {
+      .hero-layout { grid-template-columns: 1fr; }
+      .hero-visual-wrap { display: none; }
+    }
+
+    .guide-hero h1 {
+      font-family: 'Lora', serif;
+      font-size: clamp(2.2rem, 5vw, 3.6rem);
+      font-weight: 400;
+      line-height: 1.1;
+      color: #0c1a2e;
+      margin: 0 0 20px;
+      letter-spacing: -0.02em;
+      max-width: 660px;
+    }
+    .guide-hero h1 em { font-style: italic; color: var(--blue); }
+
+    .hero-meta {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-size: 12px;
+      color: var(--muted-light);
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+    }
+    .hero-meta-dot { width: 3px; height: 3px; border-radius: 50%; background: var(--muted-light); }
+
+    .hero-intro {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: var(--muted);
+      max-width: 580px;
+      font-weight: 300;
+      margin-bottom: 32px;
+    }
+
+    .hero-facts {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--line);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      overflow: hidden;
+      margin-bottom: 32px;
+    }
+    .hero-fact { background: var(--panel); padding: 18px 16px; text-align: center; }
+    .hero-fact-value {
+      font-family: 'Lora', serif;
+      font-size: 1.7rem;
+      font-weight: 600;
+      color: var(--blue);
+      display: block;
+      line-height: 1;
+      margin-bottom: 5px;
+    }
+    .hero-fact-label { font-size: 11px; color: var(--muted-light); line-height: 1.4; }
+    @media (max-width: 480px) { .hero-facts { grid-template-columns: 1fr; } }
+
+    .hero-visual-wrap {
+      position: relative;
+      height: 340px;
+      border-radius: 24px;
+      overflow: hidden;
+      background: linear-gradient(135deg, #dbeafe 0%, #eff6ff 60%, #dcfce7 100%);
+      border: 1px solid var(--line);
+    }
+
+    /* TOC */
+    .toc {
+      background: var(--panel-2);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 22px 26px;
+    }
+    .toc-title { font-size: 9px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--muted-light); margin-bottom: 14px; }
+    .toc ol { list-style: none; counter-reset: toc; display: flex; flex-direction: column; gap: 10px; }
+    .toc ol li { counter-increment: toc; display: flex; align-items: baseline; gap: 12px; }
+    .toc ol li::before { content: counter(toc, decimal-leading-zero); font-size: 9px; font-weight: 700; color: var(--blue-light); min-width: 20px; }
+    .toc ol li a { font-size: 13px; color: var(--muted); text-decoration: none; transition: color 0.2s; line-height: 1.4; }
+    .toc ol li a:hover { color: var(--blue); }
+
+    /* LAYOUT */
+    .guide-body {
+      display: grid;
+      grid-template-columns: 1fr 272px;
+      gap: 64px;
+      align-items: start;
+      padding: 56px 0 96px;
+    }
+    @media (max-width: 960px) {
+      .guide-body { grid-template-columns: 1fr; }
+      .guide-sidebar { display: none; }
+    }
+
+    /* SECTIONS */
+    .guide-section { margin-bottom: 64px; padding-bottom: 64px; border-bottom: 1px solid var(--line); }
+    .guide-section:last-child { border-bottom: none; margin-bottom: 0; }
+
+    .section-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--blue-light);
+      margin-bottom: 14px;
+    }
+    .section-eyebrow::after { content: ''; flex: 1; max-width: 36px; height: 1px; background: var(--line-strong); }
+
+    .guide-section h2 {
+      font-family: 'Lora', serif;
+      font-size: clamp(1.4rem, 2.8vw, 2rem);
+      font-weight: 400;
+      line-height: 1.2;
+      color: #0c1a2e;
+      margin: 0 0 22px;
+    }
+
+    .guide-section h3 {
+      font-size: 15px;
+      font-weight: 700;
+      color: #0c1a2e;
+      margin: 28px 0 10px;
+    }
+
+    .guide-section p { font-size: 0.97rem; font-weight: 300; color: var(--muted); margin-bottom: 18px; line-height: 1.85; max-width: 640px; }
+
+    .callout {
+      border-left: 3px solid var(--blue);
+      padding: 20px 24px;
+      background: linear-gradient(135deg, rgba(37,99,235,0.04), rgba(96,165,250,0.06));
+      border-radius: 0 12px 12px 0;
+      margin: 28px 0;
+    }
+    .callout p { margin: 0; color: var(--blue-dark); font-style: italic; font-size: 1rem; line-height: 1.7; max-width: none; }
+    .callout-label { font-size: 9px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--blue-light); margin-bottom: 8px; }
+
+    .insight-box {
+      background: linear-gradient(135deg, #0f1f3d 0%, #1e3a6e 100%);
+      border-radius: 16px;
+      padding: 28px 30px;
+      margin: 28px 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .insight-box::before {
+      content: '';
+      position: absolute;
+      top: -40px; right: -40px;
+      width: 160px; height: 160px;
+      border-radius: 50%;
+      background: rgba(96,165,250,0.07);
+    }
+    .insight-label { font-size: 9px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: rgba(96,165,250,0.65); margin-bottom: 10px; display: block; }
+    .insight-box p { margin: 0; color: rgba(255,255,255,0.88); font-size: 0.97rem; line-height: 1.72; font-weight: 300; max-width: none; }
+    .insight-box strong { color: #fff; font-weight: 600; }
+
+    .opinion-box {
+      background: linear-gradient(135deg, #1e3a6e 0%, #1e40af 100%);
+      border-radius: 16px;
+      padding: 28px 30px;
+      margin: 28px 0;
+      position: relative;
+      overflow: hidden;
+      border-left: 4px solid #60a5fa;
+    }
+    .opinion-label { font-size: 9px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: rgba(147,197,253,0.8); margin-bottom: 10px; display: block; }
+    .opinion-box p { margin: 0; color: rgba(255,255,255,0.92); font-size: 1rem; line-height: 1.75; font-weight: 300; max-width: none; font-style: italic; }
+    .opinion-box strong { color: #93c5fd; font-weight: 600; font-style: normal; }
+
+    /* Methods grid */
+    .forms-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 24px 0; }
+    @media (max-width: 580px) { .forms-grid { grid-template-columns: 1fr; } }
+
+    .form-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 22px 20px;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .form-card:hover { border-color: var(--line-strong); box-shadow: var(--shadow); }
+    .form-card.featured {
+      background: linear-gradient(135deg, rgba(37,99,235,0.05), rgba(96,165,250,0.07));
+      border-color: rgba(37,99,235,0.18);
+    }
+    .form-badge {
+      display: inline-block;
+      font-size: 9px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;
+      padding: 3px 8px; border-radius: 6px; margin-bottom: 10px;
+      background: rgba(37,99,235,0.1); color: var(--blue-dark);
+    }
+    .form-badge.gold { background: rgba(217,119,6,0.1); color: #92400e; }
+    .form-name { font-size: 15px; font-weight: 700; color: #0c1a2e; margin-bottom: 4px; }
+    .form-use { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--blue-light); margin-bottom: 8px; }
+    .form-desc { font-size: 13px; color: var(--muted); line-height: 1.65; font-weight: 300; }
+
+    /* Zone bar */
+    .zone-bar {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 4px;
+      margin: 24px 0;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .zone-cell {
+      padding: 14px 8px;
+      text-align: center;
+      font-size: 11px;
+      font-weight: 600;
+      color: #fff;
+    }
+    .zone-cell .z-label { font-size: 9px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; opacity: 0.8; margin-bottom: 4px; }
+    .zone-cell .z-num { font-family: 'Lora', serif; font-size: 1.4rem; font-weight: 600; line-height: 1; margin-bottom: 3px; }
+    .zone-cell .z-pct { font-size: 10px; opacity: 0.75; }
+    .z1 { background: #16a34a; }
+    .z2 { background: #2563eb; transform: scaleY(1.08); transform-origin: bottom; border-radius: 8px 8px 0 0; box-shadow: 0 -4px 16px rgba(37,99,235,0.25); }
+    .z3 { background: #d97706; }
+    .z4 { background: #ea580c; }
+    .z5 { background: #dc2626; }
+    .zone-bar-note { font-size: 11px; color: var(--muted-light); margin-top: 8px; font-weight: 300; }
+
+    /* Study cards */
+    .study-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 22px 24px;
+      margin: 16px 0;
+      display: grid;
+      grid-template-columns: 38px 1fr;
+      gap: 16px;
+      align-items: start;
+      transition: box-shadow 0.2s, border-color 0.2s;
+    }
+    .study-card:hover { border-color: var(--line-strong); box-shadow: var(--shadow); }
+    .study-num {
+      width: 34px; height: 34px; border-radius: 9px;
+      background: var(--blue-pale); border: 1px solid var(--line-strong);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 11px; font-weight: 700; color: var(--blue-dark); flex-shrink: 0;
+    }
+    .study-title { font-size: 14px; font-weight: 600; color: #0c1a2e; margin-bottom: 8px; }
+    .study-text  { font-size: 13.5px; font-weight: 300; color: var(--muted); line-height: 1.7; margin: 0; }
+    .study-source { font-size: 11px; color: var(--muted-light); margin-top: 10px; font-style: italic; }
+    .study-source a { color: var(--blue); text-decoration: none; }
+    .study-source a:hover { text-decoration: underline; }
+
+    /* Dosage table */
+    .dosage-table { width: 100%; border-collapse: collapse; margin: 24px 0; font-size: 13.5px; }
+    .dosage-table th { background: var(--panel-2); color: var(--muted-light); font-size: 10px; text-transform: uppercase; letter-spacing: 1px; padding: 11px 14px; text-align: left; border-bottom: 1px solid var(--line); font-weight: 700; }
+    .dosage-table td { padding: 12px 14px; border-bottom: 1px solid var(--line); color: var(--muted); vertical-align: top; font-weight: 300; }
+    .dosage-table tr:last-child td { border-bottom: none; }
+    .dosage-table td:first-child { color: #0c1a2e; font-weight: 600; }
+    .dosage-table tr:hover td { background: var(--panel); }
+
+    /* Summary list */
+    .summary-list { list-style: none; display: flex; flex-direction: column; gap: 14px; margin: 20px 0; }
+    .summary-list li { display: flex; align-items: flex-start; gap: 14px; font-size: 14.5px; font-weight: 300; color: var(--muted); line-height: 1.65; }
+    .sum-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--blue); flex-shrink: 0; margin-top: 7px; }
+
+    /* Products */
+    .prod-card {
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      overflow: hidden;
+      background: var(--panel);
+      margin-bottom: 20px;
+      transition: box-shadow 0.3s ease, border-color 0.3s ease, transform 0.25s ease;
+      text-decoration: none;
+      color: inherit;
+    }
+    .prod-card:hover { box-shadow: 0 16px 48px rgba(37,99,235,0.12); border-color: rgba(37,99,235,0.22); transform: translateY(-2px); }
+    @media (max-width: 680px) { .prod-card { grid-template-columns: 1fr; } .prod-visual { height: 180px; } }
+
+    .prod-visual {
+      position: relative; overflow: hidden;
+      display: flex; flex-direction: column; justify-content: flex-start;
+      padding: 18px; min-height: 220px;
+    }
+    .prod-visual.z2-watch { background: linear-gradient(160deg, #dbeafe 0%, #bfdbfe 40%, #ede9fe 100%); }
+    .prod-visual.z2-strap { background: linear-gradient(160deg, #dcfce7 0%, #a7f3d0 40%, #bfdbfe 100%); }
+
+    .prod-badge {
+      position: relative; z-index: 2;
+      display: inline-flex; align-items: center; gap: 7px;
+      background: rgba(255,255,255,0.96);
+      border: 1.5px solid rgba(37,99,235,0.22);
+      border-radius: 22px; padding: 7px 14px 7px 10px;
+      font-size: 11px; font-weight: 700; color: var(--blue-dark);
+      backdrop-filter: blur(8px); align-self: flex-start;
+      box-shadow: 0 2px 10px rgba(37,99,235,0.12);
+    }
+    .prod-badge-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--blue); }
+    .prod-visual-icon { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); font-size: 64px; opacity: 0.25; }
+
+    .prod-content { padding: 26px 26px 22px; display: flex; flex-direction: column; }
+    .prod-category { font-size: 9px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--blue-light); margin-bottom: 8px; }
+    .prod-name { font-family: 'Lora', serif; font-size: 1.2rem; font-weight: 600; color: #0c1a2e; line-height: 1.25; margin-bottom: 12px; }
+    .prod-summary { font-size: 13.5px; color: var(--muted); line-height: 1.7; font-weight: 300; margin-bottom: 14px; }
+
+    .prod-why {
+      background: linear-gradient(135deg, rgba(37,99,235,0.07) 0%, rgba(96,165,250,0.05) 100%);
+      border: 1px solid rgba(37,99,235,0.14); border-radius: 12px;
+      padding: 18px 20px; margin-bottom: 18px;
+    }
+    .prod-why-label {
+      display: flex; align-items: center; gap: 8px;
+      font-size: 10px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase;
+      color: var(--blue-dark); margin-bottom: 10px;
+    }
+    .prod-why-label::before { content: '✦'; font-size: 11px; color: var(--blue); flex-shrink: 0; }
+    .prod-why p { font-size: 13px; color: var(--muted); line-height: 1.75; margin: 0; font-weight: 300; }
+
+    .prod-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 16px; }
+    .prod-tag { font-size: 11px; background: rgba(22,163,74,0.09); color: #15803d; padding: 4px 10px; border-radius: 20px; font-weight: 600; border: 1px solid rgba(22,163,74,0.15); }
+
+    .prod-cta {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+      color: #fff; font-size: 14px; font-weight: 700;
+      padding: 13px 24px; border-radius: 28px;
+      transition: background 0.2s, box-shadow 0.2s, gap 0.2s, transform 0.2s;
+      box-shadow: 0 6px 20px rgba(37,99,235,0.30);
+      align-self: flex-start; margin-bottom: 10px;
+    }
+    .prod-cta:hover { background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%); gap: 16px; box-shadow: 0 10px 28px rgba(37,99,235,0.42); transform: translateY(-1px); }
+    .prod-affiliate { font-size: 10.5px; color: var(--muted-light); }
+
+    /* Sources */
+    .sources-list { list-style: none; display: flex; flex-direction: column; gap: 14px; margin-top: 16px; }
+    .sources-list li { display: flex; gap: 12px; align-items: flex-start; }
+    .src-num { font-size: 10px; font-weight: 700; color: var(--blue-dark); background: var(--blue-pale); width: 24px; height: 24px; border-radius: 6px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
+    .src-text { font-size: 12.5px; color: var(--muted-light); line-height: 1.6; }
+    .src-text a { color: var(--blue); text-decoration: none; }
+    .src-text a:hover { text-decoration: underline; }
+
+    /* Sidebar */
+    .guide-sidebar { position: sticky; top: 88px; display: flex; flex-direction: column; gap: 16px; }
+    .sidebar-card { background: var(--panel); border: 1px solid var(--line); border-radius: 16px; padding: 20px 18px; box-shadow: var(--shadow); }
+    .sidebar-title { font-size: 9px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--muted-light); margin-bottom: 16px; }
+    .stat-item { display: flex; flex-direction: column; gap: 4px; margin-bottom: 16px; }
+    .stat-value { font-family: 'Lora', serif; font-size: 2.1rem; font-weight: 600; font-style: italic; color: var(--blue); line-height: 1; }
+    .stat-desc { font-size: 12px; color: var(--muted); line-height: 1.45; font-weight: 300; }
+    .stat-divider { height: 1px; background: var(--line); margin: 4px 0 16px; }
+    .sidebar-disclaimer { font-size: 11px; color: var(--muted-light); line-height: 1.65; font-weight: 300; }
+
+    /* Warning box */
+    .warning-box {
+      background: rgba(220,38,38,0.03);
+      border: 1px solid rgba(220,38,38,0.12);
+      border-radius: 12px; padding: 18px 22px; margin-top: 20px;
+      font-size: 13.5px; color: var(--muted); line-height: 1.65; font-weight: 300;
+    }
+    .warning-box strong { color: #dc2626; font-weight: 600; }
+
+    /* Animations */
+    .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.55s ease, transform 0.55s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+  </style>
+</head>
+<body>
+
+  <div id="read-progress"></div>
+
+  <!-- NAV -->
+  <header class="site-header">
+    <div class="container">
+      <nav class="nav">
+        <a href="../index.html">
+          <span style="font-size:1.6rem;font-weight:700;background:linear-gradient(135deg,#3b9ef5,#2563eb);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:-0.03em;font-family:'Sora',sans-serif;">Improo</span>
+        </a>
+        <div class="nav-links">
+          <a href="../index.html">Home</a>
+          <a href="../insights/index.html">Articles</a>
+          <a href="../guides.html" class="active">Guides</a>
+          <a href="../roadmap.html">Roadmap</a>
+          <a href="../index.html#contact">Contact</a>
+        </div>
+        <div class="socials">
+          <a href="https://www.youtube.com/@Improo_App" aria-label="YouTube">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.7 15.5V8.5l6.3 3.5-6.3 3.5z"/></svg>
+          </a>
+          <a href="https://x.com/Improo_" aria-label="X">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <div class="article-wrap">
+
+    <a href="../guides.html" class="back-link" style="margin-top:36px;display:inline-flex;align-items:center;gap:6px;font-size:13px;color:var(--muted);transition:color 0.2s;">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M9 2L4 7l5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Back to Guides
+    </a>
+
+    <!-- HERO -->
+    <section class="guide-hero">
+      <div class="hero-layout">
+        <div class="hero-left reveal">
+          <div class="hero-kicker">Training Guide</div>
+          <h1>What is <em>Zone 2</em> Training?</h1>
+          <div class="hero-meta">
+            <span>10 min read</span>
+            <div class="hero-meta-dot"></div>
+            <span>Science-backed</span>
+            <div class="hero-meta-dot"></div>
+            <span>Not medical advice</span>
+          </div>
+          <p class="hero-intro">Zone 2 is the training intensity your body is best designed for. It builds mitochondria, burns fat as fuel, improves metabolic health, and forms the aerobic foundation that makes everything else more effective. It is also the zone most people skip entirely — because it feels too easy. This guide explains what it is, why it matters, and how to actually do it.</p>
+
+          <div class="hero-facts">
+            <div class="hero-fact reveal">
+              <span class="hero-fact-value">60–70%</span>
+              <span class="hero-fact-label">Of maximum heart rate — the Zone 2 target range</span>
+            </div>
+            <div class="hero-fact reveal">
+              <span class="hero-fact-value">150+min</span>
+              <span class="hero-fact-label">Weekly Zone 2 volume recommended by longevity researchers</span>
+            </div>
+            <div class="hero-fact reveal">
+              <span class="hero-fact-value">80/20</span>
+              <span class="hero-fact-label">Rule: elite endurance athletes spend ~80% of training in Zone 2</span>
+            </div>
+          </div>
+
+          <div class="toc">
+            <div class="toc-title">In this guide</div>
+            <ol>
+              <li><a href="#intro">What is Zone 2?</a></li>
+              <li><a href="#mechanism">What happens in your body</a></li>
+              <li><a href="#beyond">Benefits beyond fitness</a></li>
+              <li><a href="#find">How to find your Zone 2</a></li>
+              <li><a href="#science">What the research says</a></li>
+              <li><a href="#structure">How to structure it</a></li>
+              <li><a href="#fouten">Common mistakes</a></li>
+              <li><a href="#samenvatting">The short version</a></li>
+              <li><a href="#products">Tools we recommend</a></li>
+              <li><a href="#sources">Sources</a></li>
+            </ol>
+          </div>
+        </div>
+
+        <!-- Hero visual -->
+        <div class="hero-visual-wrap reveal">
+          <svg width="100%" viewBox="0 0 260 340" xmlns="http://www.w3.org/2000/svg" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+            <defs>
+              <radialGradient id="z2Bg" cx="50%" cy="40%" r="65%"><stop offset="0%" stop-color="#e8f0ff"/><stop offset="100%" stop-color="#f0fdf4"/></radialGradient>
+            </defs>
+            <rect width="260" height="340" fill="url(#z2Bg)"/>
+            <!-- Zone bars -->
+            <rect x="28" y="240" width="32" height="60" rx="6" fill="#16a34a" opacity="0.8"/>
+            <rect x="68" y="190" width="32" height="110" rx="6" fill="#2563eb" opacity="0.95"/>
+            <rect x="108" y="210" width="32" height="90" rx="6" fill="#d97706" opacity="0.8"/>
+            <rect x="148" y="225" width="32" height="75" rx="6" fill="#ea580c" opacity="0.8"/>
+            <rect x="188" y="235" width="32" height="65" rx="6" fill="#dc2626" opacity="0.8"/>
+            <!-- Labels -->
+            <text x="44" y="260" text-anchor="middle" font-family="'Sora',sans-serif" font-size="9" font-weight="700" fill="white">Z1</text>
+            <text x="84" y="208" text-anchor="middle" font-family="'Sora',sans-serif" font-size="9" font-weight="700" fill="white">Z2</text>
+            <text x="124" y="228" text-anchor="middle" font-family="'Sora',sans-serif" font-size="9" font-weight="700" fill="white">Z3</text>
+            <text x="164" y="243" text-anchor="middle" font-family="'Sora',sans-serif" font-size="9" font-weight="700" fill="white">Z4</text>
+            <text x="204" y="253" text-anchor="middle" font-family="'Sora',sans-serif" font-size="9" font-weight="700" fill="white">Z5</text>
+            <!-- Title area -->
+            <rect x="28" y="50" width="204" height="120" rx="16" fill="white" opacity="0.88" stroke="#c7d8f0" stroke-width="1.5"/>
+            <text x="130" y="78" text-anchor="middle" font-family="'Sora',sans-serif" font-size="9" font-weight="700" fill="rgba(37,99,235,0.5)" letter-spacing="2">TRAINING ZONE</text>
+            <text x="130" y="122" text-anchor="middle" font-family="'Lora',serif" font-size="52" font-weight="600" fill="#2563eb">Z2</text>
+            <text x="130" y="148" text-anchor="middle" font-family="'Sora',sans-serif" font-size="10" font-weight="300" fill="#4a6fa5">60 – 70% max HR</text>
+            <!-- Glow on Z2 bar -->
+            <rect x="66" y="188" width="36" height="114" rx="7" fill="none" stroke="#2563eb" stroke-width="2" opacity="0.4"/>
+            <circle cx="36" cy="62" r="4" fill="rgba(37,99,235,0.12)"/>
+            <circle cx="224" cy="180" r="5" fill="rgba(22,163,74,0.15)"/>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- BODY -->
+    <div class="guide-body">
+      <main>
+
+        <!-- 01 INTRO -->
+        <div class="guide-section reveal" id="intro">
+          <div class="section-eyebrow">01 — Introduction</div>
+          <h2>What is Zone 2, exactly?</h2>
+          <p>Exercise intensity is typically divided into five heart rate zones, ranging from very light effort (Zone 1) to all-out maximum effort (Zone 5). Zone 2 sits in the lower end of this spectrum — an intensity where you are clearly working, but you can sustain the effort for a long time without accumulating significant fatigue.</p>
+          <p>Physiologically, Zone 2 is defined as the intensity just below your first lactate threshold (LT1) — the point at which your body begins to produce lactate faster than it can clear it. Below LT1, your aerobic system operates cleanly: slow-twitch muscle fibers dominate, fat is the primary fuel, and lactate stays low (roughly 1–2 mmol/L in blood). Above it, the picture changes rapidly.</p>
+
+          <div class="zone-bar">
+            <div class="zone-cell z1">
+              <div class="z-label">Zone 1</div>
+              <div class="z-num">Z1</div>
+              <div class="z-pct">50–60%</div>
+            </div>
+            <div class="zone-cell z2">
+              <div class="z-label">Zone 2 ★</div>
+              <div class="z-num">Z2</div>
+              <div class="z-pct">60–70%</div>
+            </div>
+            <div class="zone-cell z3">
+              <div class="z-label">Zone 3</div>
+              <div class="z-num">Z3</div>
+              <div class="z-pct">70–80%</div>
+            </div>
+            <div class="zone-cell z4">
+              <div class="z-label">Zone 4</div>
+              <div class="z-num">Z4</div>
+              <div class="z-pct">80–90%</div>
+            </div>
+            <div class="zone-cell z5">
+              <div class="z-label">Zone 5</div>
+              <div class="z-num">Z5</div>
+              <div class="z-pct">90–100%</div>
+            </div>
+          </div>
+          <p class="zone-bar-note">Heart rate zones as percentages of maximum HR. Zone 2 is highlighted — the primary aerobic training zone. Exact boundaries vary slightly between models.</p>
+
+          <p>In practical terms: a brisk walk, a comfortable jog, easy cycling, or light rowing are typical Zone 2 activities for most people. The key is that the effort feels sustainable — not too easy, not challenging enough to prevent conversation. Most recreational exercisers never spend meaningful time here, defaulting instead to Zone 3 or 4 because it "feels like a proper workout."</p>
+
+          <div class="insight-box">
+            <span class="insight-label">Key insight</span>
+            <p>Zone 2 is not just the warm-up before the real workout. It <strong>is</strong> the workout — arguably the most important one. Elite endurance athletes spend roughly 80% of their total training volume here. Most recreational exercisers spend almost none.</p>
+          </div>
+        </div>
+
+        <!-- 02 MECHANISM -->
+        <div class="guide-section reveal" id="mechanism">
+          <div class="section-eyebrow">02 — Mechanism</div>
+          <h2>What actually happens in your body</h2>
+          <p>The reason Zone 2 is so central to fitness and health comes down to mitochondria — the structures inside your cells that produce energy aerobically. Zone 2 is the primary training signal for mitochondrial biogenesis: the process by which your body builds more mitochondria and makes existing ones more efficient.</p>
+
+          <h3>Mitochondrial adaptation</h3>
+          <p>When you train consistently in Zone 2, you activate a protein called PGC-1alpha (peroxisome proliferator-activated receptor gamma coactivator 1-alpha) — considered the master regulator of mitochondrial biogenesis. PGC-1alpha signals the cell to produce more mitochondria, improve their function, and increase the density of enzymes involved in fat oxidation. Over weeks and months, this results in a measurably more efficient aerobic engine.</p>
+          <p>More mitochondria means your body can produce more energy aerobically before having to rely on less efficient anaerobic pathways. The practical result: you can work harder, longer, and with less effort — and you recover faster between efforts.</p>
+
+          <h3>Fat as fuel</h3>
+          <p>Zone 2 is the intensity at which fat oxidation is maximized for most people. Your body burns a mix of fat and carbohydrates at all intensities, but at Zone 2, the balance tilts heavily toward fat. This matters for two reasons: fat is a nearly unlimited fuel source compared to glycogen, and the ability to oxidize fat efficiently is closely linked to metabolic health markers including insulin sensitivity.</p>
+          <p>Training that improves fat oxidation capacity effectively trains your body to spare glycogen for moments when it is truly needed — high-intensity bursts, competition, or emergency effort. A well-developed aerobic base means you arrive at hard efforts with more fuel available.</p>
+
+          <h3>Lactate clearance</h3>
+          <p>Lactate produced by fast-twitch fibers during higher-intensity efforts is consumed as fuel by slow-twitch fibers — but only when those slow-twitch fibers are well trained and efficient. Zone 2 training directly improves this clearance capacity. The result is that your lactate threshold rises: you can sustain higher intensities before lactate starts accumulating and performance degrades.</p>
+
+          <div class="callout">
+            <div class="callout-label">Why most people skip it</div>
+            <p>Zone 2 feels uncomfortably easy to people who are used to training harder. It does not produce the short-term exhaustion associated with "a good workout." But the physiological adaptations it drives are not available from harder training — and cannot be shortcut by going faster.</p>
+          </div>
+        </div>
+
+        <!-- 03 BENEFITS BEYOND FITNESS -->
+        <div class="guide-section reveal" id="beyond">
+          <div class="section-eyebrow">03 — Broader benefits</div>
+          <h2>Benefits beyond athletic performance</h2>
+          <p>Zone 2 is discussed extensively in performance circles — but its implications for general health and longevity are equally compelling. Research in these areas has grown significantly in recent years, partly driven by renewed scientific and public interest in preventive medicine.</p>
+
+          <h3>Metabolic health and insulin sensitivity</h3>
+          <p>Zone 2 training improves the body's ability to oxidize fat and improves mitochondrial function in metabolic tissues — including liver and skeletal muscle. These are the same tissues that become dysfunctional in metabolic syndrome and type 2 diabetes. Research by Inigo San Millan and George Brooks has demonstrated that Zone 2 training is one of the most effective interventions for improving mitochondrial function in metabolically compromised individuals — often more so than high-intensity training.</p>
+
+          <h3>Cardiovascular health and longevity</h3>
+          <p>Cardiorespiratory fitness (VO2max) is one of the strongest predictors of longevity known to medicine. A 2009 meta-analysis in JAMA covering more than 33,000 participants found that low cardiorespiratory fitness was the single strongest predictor of all-cause mortality — stronger than smoking, hypertension, or obesity. Zone 2 training is the primary driver of VO2max improvements in untrained and moderately trained individuals.</p>
+
+          <h3>Mental health and stress resilience</h3>
+          <p>Sustained aerobic exercise at moderate intensity consistently shows antidepressant and anxiolytic effects in controlled trials. It increases brain-derived neurotrophic factor (BDNF), supports hippocampal neurogenesis, and regulates the HPA stress axis. These effects are most pronounced with the kind of sustained, moderate-intensity effort that Zone 2 represents — not brief, intense sessions.</p>
+
+          <h3>Recovery and injury prevention</h3>
+          <p>Because Zone 2 does not accumulate significant metabolic stress or oxidative damage, it can be performed frequently without the recovery cost of harder training. This makes it both a training tool and a recovery tool. Athletes who build a large Zone 2 base can typically tolerate more total training volume, recover faster between hard sessions, and remain healthier across a season.</p>
+
+          <div class="insight-box">
+            <span class="insight-label">The longevity angle</span>
+            <p>Physician and longevity researcher Peter Attia has popularized Zone 2 as a central pillar of long-term health. His position — supported by emerging research — is that <strong>VO2max and mitochondrial function are among the most modifiable determinants of healthy aging</strong>, and Zone 2 is the primary lever for both.</p>
+          </div>
+        </div>
+
+        <!-- 04 FIND YOUR ZONE 2 -->
+        <div class="guide-section reveal" id="find">
+          <div class="section-eyebrow">04 — Finding your Zone 2</div>
+          <h2>How to find your actual Zone 2</h2>
+          <p>The challenge with Zone 2 is that the exact boundary differs between individuals. Someone who is very fit may have a Zone 2 that corresponds to a 6-minute/km run. Someone just starting out may reach Zone 2 at a brisk walk. Below are the four main methods, from least to most accurate.</p>
+
+          <div class="forms-grid">
+            <div class="form-card featured">
+              <span class="form-badge">Most practical</span>
+              <div class="form-name">Talk Test</div>
+              <div class="form-use">No equipment needed</div>
+              <p class="form-desc">You should be able to speak in full, complete sentences with only slight effort. If you can sing, you are probably in Zone 1. If you can only manage a few words at a time, you have moved into Zone 3. This is the simplest and most accessible method.</p>
+            </div>
+            <div class="form-card featured">
+              <span class="form-badge">Most used</span>
+              <div class="form-name">Heart Rate Percentage</div>
+              <div class="form-use">HR monitor required</div>
+              <p class="form-desc">Target 60–70% of your maximum heart rate. Estimate max HR as 220 minus your age (rough approximation). A 40-year-old would aim for roughly 108–126 bpm. Requires a heart rate monitor — a chest strap gives the most accurate real-time readings.</p>
+            </div>
+            <div class="form-card">
+              <div class="form-name">Maffetone Method (MAF)</div>
+              <div class="form-use">Simple HR formula</div>
+              <p class="form-desc">Developed by coach Phil Maffetone: subtract your age from 180. This gives your aerobic threshold heart rate. Train at or below this number. A 40-year-old would train at or below 140 bpm. More conservative than the standard zone model, but widely used in endurance coaching.</p>
+            </div>
+            <div class="form-card">
+              <span class="form-badge gold">Gold standard</span>
+              <div class="form-name">Blood Lactate Testing</div>
+              <div class="form-use">Lab or finger-prick test</div>
+              <p class="form-desc">The most accurate method. A small blood sample measures lactate concentration at different intensities. Zone 2 corresponds to blood lactate of roughly 1.7–2.0 mmol/L — just below the first lactate threshold. Used by serious athletes and researchers. Requires a lactate meter or lab.</p>
+            </div>
+          </div>
+
+          <div class="opinion-box">
+            <span class="opinion-label">Our take</span>
+            <p>Start with the <strong>talk test</strong> combined with a <strong>heart rate monitor</strong>. Find the intensity where you can speak in full sentences and your heart rate is somewhere in the 60–70% range. Most people will be surprised by how slow this feels at first — which is exactly the point.</p>
+          </div>
+
+          <div class="callout">
+            <div class="callout-label">Important note on fitness level</div>
+            <p>If you are just starting out, your Zone 2 heart rate may be reached at a pace that feels barely like exercise. That is not a problem — it is the correct starting point. As your aerobic base develops over months, the pace at which you reach Zone 2 will increase. The zone stays the same; your fitness grows into it.</p>
+          </div>
+        </div>
+
+        <!-- 05 SCIENCE -->
+        <div class="guide-section reveal" id="science">
+          <div class="section-eyebrow">05 — Research</div>
+          <h2>What the research says</h2>
+          <p>Zone 2 has moved from niche sports science to mainstream health discussion over the past decade. Here are four foundational studies that underpin the current understanding.</p>
+
+          <div class="study-card">
+            <div class="study-num">[1]</div>
+            <div>
+              <div class="study-title">Cardiorespiratory fitness predicts mortality more strongly than any other risk factor</div>
+              <p class="study-text">A landmark 2009 meta-analysis in JAMA by Kodama et al. analysed data from 33 studies covering 102,980 participants. Low cardiorespiratory fitness (CRF) was associated with a 70% higher risk of all-cause mortality and an 56% higher risk of cardiovascular mortality compared to high CRF. Each 1-MET increase in CRF was associated with a 13% reduction in all-cause mortality risk. Zone 2 training is the primary non-competitive method for improving CRF in the general population.</p>
+              <div class="study-source">Kodama S. et al. (2009). <em>Cardiorespiratory fitness as a quantitative predictor of all-cause mortality and cardiovascular events in healthy men and women.</em> JAMA, 301(19), 2024–2035. <a href="https://pubmed.ncbi.nlm.nih.gov/19454641/" target="_blank" rel="noopener">PubMed: 19454641</a></div>
+            </div>
+          </div>
+
+          <div class="study-card">
+            <div class="study-num">[2]</div>
+            <div>
+              <div class="study-title">Zone 2 and metabolic flexibility: the San Millan & Brooks study</div>
+              <p class="study-text">A 2018 paper in Sports Medicine by San Millan and Brooks examined metabolic flexibility — the ability to switch between fat and carbohydrate as fuel — in professional cyclists and less-fit individuals. Metabolically compromised individuals showed significantly impaired fat oxidation and mitochondrial function at Zone 2 intensities. The paper argues that Zone 2 training is the most targeted intervention for restoring mitochondrial function and metabolic health, with implications for prevention and treatment of type 2 diabetes and metabolic syndrome.</p>
+              <div class="study-source">San Millán I. &amp; Brooks G.A. (2018). <em>Assessment of Metabolic Flexibility by Means of Measuring Blood Lactate, Fat, and Carbohydrate Oxidation Responses to Exercise.</em> Sports Medicine, 48(2), 467–479. <a href="https://pubmed.ncbi.nlm.nih.gov/29340987/" target="_blank" rel="noopener">PubMed: 29340987</a></div>
+            </div>
+          </div>
+
+          <div class="study-card">
+            <div class="study-num">[3]</div>
+            <div>
+              <div class="study-title">The 80/20 polarized training distribution in elite endurance athletes</div>
+              <p class="study-text">A 2010 review by Stephen Seiler in the International Journal of Sports Physiology and Performance analysed training intensity distribution across elite cross-country skiers, cyclists, rowers, and runners. Consistently, high performers distributed roughly 80% of training volume in Zone 1–2 and 20% in Zone 4–5 — a pattern Seiler termed polarized training. Zone 3 (moderate intensity) was notably underrepresented. This research challenged the common assumption that more intensity always means better results.</p>
+              <div class="study-source">Seiler S. (2010). <em>What is best practice for training intensity and duration distribution in endurance athletes?</em> International Journal of Sports Physiology and Performance, 5(3), 276–291. <a href="https://pubmed.ncbi.nlm.nih.gov/20861519/" target="_blank" rel="noopener">PubMed: 20861519</a></div>
+            </div>
+          </div>
+
+          <div class="study-card">
+            <div class="study-num">[4]</div>
+            <div>
+              <div class="study-title">Mitochondrial biogenesis and exercise: mechanisms and health implications</div>
+              <p class="study-text">A 2016 review in Annual Review of Physiology by Hood et al. examined how exercise drives mitochondrial biogenesis through PGC-1alpha signalling. The review confirmed that sustained moderate-intensity aerobic exercise is the most potent physiological stimulus for mitochondrial adaptation — more so than brief high-intensity intervals for the purpose of building mitochondrial density. The implications extend to healthy aging, as mitochondrial dysfunction is a central mechanism of age-related decline.</p>
+              <div class="study-source">Hood D.A. et al. (2016). <em>Maintenance of Skeletal Muscle Mitochondria in Health, Exercise, and Aging.</em> Annual Review of Physiology, 78, 19–41. <a href="https://pubmed.ncbi.nlm.nih.gov/26768197/" target="_blank" rel="noopener">PubMed: 26768197</a></div>
+            </div>
+          </div>
+
+          <div class="study-card">
+            <div class="study-num">[5]</div>
+            <div>
+              <div class="study-title">Aerobic exercise and depression: a meta-analysis of randomised controlled trials</div>
+              <p class="study-text">A 2016 meta-analysis in JAMA Psychiatry by Kvam et al. covering 23 randomised controlled trials found that exercise had a significant antidepressant effect — comparable in magnitude to antidepressant medication in mild-to-moderate depression. Moderate-intensity continuous aerobic exercise (the Zone 2 category) was among the most consistently effective modalities. The mechanism involves BDNF, serotonin regulation, and HPA axis normalisation.</p>
+              <div class="study-source">Kvam S. et al. (2016). <em>Exercise as a treatment for depression: A meta-analysis.</em> Journal of Affective Disorders, 202, 67–86. <a href="https://pubmed.ncbi.nlm.nih.gov/27253219/" target="_blank" rel="noopener">PubMed: 27253219</a></div>
+            </div>
+          </div>
+
+          <div class="insight-box">
+            <span class="insight-label">What this means for you</span>
+            <p>The evidence is consistent: <strong>Zone 2 builds the aerobic engine that supports every other aspect of health and performance.</strong> Whether the goal is longevity, metabolic health, mental wellbeing, or athletic performance — a well-developed Zone 2 base is foundational. It is not the only training you should do, but it is the training most people are missing.</p>
+          </div>
+        </div>
+
+        <!-- 06 STRUCTURE -->
+        <div class="guide-section reveal" id="structure">
+          <div class="section-eyebrow">06 — Structure</div>
+          <h2>How to build Zone 2 into your week</h2>
+          <p>Zone 2 training requires volume to produce meaningful adaptations. Brief Zone 2 sessions of 20–30 minutes produce limited benefit. The research and coaching consensus points to sessions of at least 45–60 minutes, with a weekly target of 150–180+ minutes for meaningful health and fitness benefits.</p>
+
+          <table class="dosage-table">
+            <thead>
+              <tr><th>Level</th><th>Weekly volume</th><th>Session length</th><th>Frequency</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Beginner</td><td>60–90 min</td><td>20–30 min</td><td>3x per week</td></tr>
+              <tr><td>Developing</td><td>120–150 min</td><td>45–60 min</td><td>3x per week</td></tr>
+              <tr><td>Established</td><td>150–200 min</td><td>60–75 min</td><td>3–4x per week</td></tr>
+              <tr><td>Performance-focused</td><td>200–300+ min</td><td>60–120 min</td><td>4–5x per week</td></tr>
+            </tbody>
+          </table>
+
+          <h3>What activities work?</h3>
+          <p>Any sustained aerobic activity can be Zone 2 — the zone is defined by intensity, not by the exercise itself. Common options: cycling (outdoor or stationary), running or jogging, brisk walking (especially on incline), rowing, swimming, elliptical. Cycling and rowing are often preferred because they are lower impact and easier to keep at a stable, controllable intensity.</p>
+
+          <h3>Combining Zone 2 with other training</h3>
+          <p>Zone 2 works best as the foundation of a broader training programme, not as a replacement for all other training. A practical structure most people can sustain: two to four Zone 2 sessions per week, plus one or two sessions of higher-intensity work (strength training, intervals, sport). The Zone 2 volume supports recovery and aerobic development; the high-intensity work builds neuromuscular and cardiovascular capacity at the other end of the spectrum.</p>
+
+          <div class="callout">
+            <div class="callout-label">The "grey zone" problem</div>
+            <p>Many recreational exercisers default to a moderate intensity that is too hard to be Zone 2 and too easy to be high-intensity — what coaches call the "grey zone" or Zone 3. This intensity produces neither the mitochondrial adaptations of Zone 2 nor the VO2max stimulus of Zone 4–5, yet it creates enough fatigue to prevent recovery. Getting out of the grey zone is one of the most impactful changes most people can make to their training.</p>
+          </div>
+
+          <div class="warning-box">
+            <strong>Note:</strong> If you have a cardiovascular condition, are new to exercise, or have any health concern, consult a doctor before starting a training programme. Heart rate based targets are approximations — individual responses vary. This guide is for informational purposes only.
+          </div>
+        </div>
+
+        <!-- 07 MISTAKES -->
+        <div class="guide-section reveal" id="fouten">
+          <div class="section-eyebrow">07 — Common mistakes</div>
+          <h2>What most people get wrong</h2>
+
+          <div class="callout">
+            <p><strong>Mistake 1: Going too hard.</strong> This is the most common error. Zone 2 should feel almost too easy, especially if you are coming from a habit of harder training. If you finish a Zone 2 session feeling exhausted, you were not in Zone 2. Use a heart rate monitor and a talk test. Slow down — even if it feels embarrassingly slow.</p>
+          </div>
+
+          <div class="callout">
+            <p><strong>Mistake 2: Sessions that are too short.</strong> Spending 20 minutes in Zone 2 is better than nothing, but the adaptations that make Zone 2 powerful — mitochondrial biogenesis, fat oxidation efficiency, lactate clearance — require sustained time at that intensity. Aim for at least 45 minutes per session to begin accumulating meaningful stimulus.</p>
+          </div>
+
+          <div class="callout">
+            <p><strong>Mistake 3: Skipping it entirely in favour of HIIT.</strong> High-intensity interval training has significant benefits, but it cannot fully replace the aerobic base that Zone 2 builds. The two stimuli are complementary, not interchangeable. A programme that is only high-intensity will develop speed but create a narrow aerobic foundation — limiting long-term progress and increasing injury risk from accumulated fatigue.</p>
+          </div>
+
+          <div class="callout">
+            <p><strong>Mistake 4: Expecting rapid results.</strong> Mitochondrial adaptations take weeks to months to become measurable. You will not feel dramatically different after two Zone 2 sessions. The payoff is cumulative — a training practice built over months produces a genuinely different cardiovascular and metabolic system. Patience and consistency are the only inputs that produce this outcome.</p>
+          </div>
+
+          <div class="callout">
+            <p><strong>Mistake 5: Using the wrong heart rate formula.</strong> The 220-minus-age formula is a population average with significant individual variation. Some people have maximum heart rates 20–30 bpm higher or lower than predicted. If the formula gives you a Zone 2 ceiling that feels suspiciously easy or hard, calibrate using the talk test instead.</p>
+          </div>
+
+          <div class="opinion-box">
+            <span class="opinion-label">The bottom line</span>
+            <p>Zone 2 feels like cheating because it does not feel like effort. That is exactly why most people skip it — and exactly why doing it consistently separates people with strong aerobic foundations from those who plateau. <strong>Slow down. Stay consistent. Let the adaptation happen over months, not days.</strong></p>
+          </div>
+        </div>
+
+        <!-- 08 SUMMARY -->
+        <div class="guide-section reveal" id="samenvatting">
+          <div class="section-eyebrow">08 — Summary</div>
+          <h2>The short version</h2>
+          <ul class="summary-list">
+            <li><div class="sum-dot"></div><span>Zone 2 is roughly 60–70% of maximum heart rate — an intensity where you can hold a conversation but are clearly working.</span></li>
+            <li><div class="sum-dot"></div><span>It is the primary training stimulus for mitochondrial biogenesis — building the aerobic engine that underlies all other fitness and metabolic health.</span></li>
+            <li><div class="sum-dot"></div><span>Elite endurance athletes spend around 80% of their training volume in Zone 2. Most recreational exercisers spend almost none.</span></li>
+            <li><div class="sum-dot"></div><span>Benefits extend beyond performance: improved insulin sensitivity, cardiovascular health, fat oxidation capacity, mental health, and longevity markers.</span></li>
+            <li><div class="sum-dot"></div><span>Find your Zone 2 using the talk test (full sentences, slight effort) and a heart rate monitor. Blood lactate testing is the gold standard but not necessary for most people.</span></li>
+            <li><div class="sum-dot"></div><span>Aim for sessions of at least 45–60 minutes, 3–4 times per week, for a total of 150+ minutes weekly.</span></li>
+            <li><div class="sum-dot"></div><span>The most common mistake: going too hard. If it feels genuinely easy, you are probably in the right zone.</span></li>
+            <li><div class="sum-dot"></div><span>Zone 2 builds slowly over months. The adaptations are real — they just are not visible after two sessions.</span></li>
+          </ul>
+        </div>
+
+        <!-- 09 PRODUCTS -->
+        <div class="guide-section reveal" id="products">
+          <div class="section-eyebrow">09 — Tools we recommend</div>
+          <h2>What actually helps</h2>
+          <p style="max-width:600px;">Zone 2 training requires only one thing: knowing your heart rate. A reliable heart rate monitor is the single most useful tool. Everything else is optional.</p>
+
+          <a href="https://www.amazon.com/s?k=polar+h10+heart+rate+monitor" target="_blank" rel="noopener" class="prod-card">
+            <div class="prod-visual z2-watch">
+              <div class="prod-badge">
+                <div class="prod-badge-dot"></div>
+                Most accurate
+              </div>
+              <div class="prod-visual-icon">❤️</div>
+            </div>
+            <div class="prod-content">
+              <div class="prod-category">Wearable · Chest Heart Rate Monitor</div>
+              <div class="prod-name">Polar H10 Heart Rate Sensor</div>
+              <p class="prod-summary">The most accurate consumer heart rate monitor available. A chest strap that broadcasts real-time heart rate to your phone, watch, or gym equipment via Bluetooth and ANT+. Significantly more accurate than wrist-based optical sensors, particularly during exercise. The standard choice for anyone who wants reliable Zone 2 data.</p>
+              <div class="prod-why">
+                <div class="prod-why-label">Why we picked it</div>
+                <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px;">
+                  <li style="font-size:13px;color:var(--muted);font-weight:300;">✓ ECG-accurate heart rate — far more reliable than optical wrist sensors</li>
+                  <li style="font-size:13px;color:var(--muted);font-weight:300;">✓ Works with any fitness app, smartwatch, or gym machine</li>
+                  <li style="font-size:13px;color:var(--muted);font-weight:300;">✓ Battery lasts 400+ hours — no charging required</li>
+                  <li style="font-size:13px;color:var(--muted);font-weight:300;">✓ Industry standard used in sports labs and clinical research</li>
+                </ul>
+              </div>
+              <div class="prod-tags">
+                <span class="prod-tag">ECG accurate</span>
+                <span class="prod-tag">Bluetooth + ANT+</span>
+                <span class="prod-tag">400hr battery</span>
+              </div>
+              <div class="prod-cta">
+                View on Amazon
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M8 4l3 3-3 3" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div class="prod-affiliate">This is a search link. We do not earn a commission on this recommendation.</div>
+            </div>
+          </a>
+
+          <a href="https://www.amazon.com/s?k=garmin+forerunner+heart+rate+gps+watch" target="_blank" rel="noopener" class="prod-card">
+            <div class="prod-visual z2-strap">
+              <div class="prod-badge" style="border-color:rgba(22,163,74,0.25);">
+                <div class="prod-badge-dot" style="background:#16a34a;"></div>
+                All-in-one
+              </div>
+              <div class="prod-visual-icon">⌚</div>
+            </div>
+            <div class="prod-content">
+              <div class="prod-category">Wearable · GPS Running Watch</div>
+              <div class="prod-name">Garmin Forerunner Series</div>
+              <p class="prod-summary">A GPS running watch with built-in heart rate monitoring, pace tracking, and automatic zone detection. Displays your current heart rate zone in real time during workouts. Optical wrist HR is less accurate than a chest strap but sufficient for most Zone 2 sessions. Best if you also want GPS tracking, workout history, and training load analysis in one device.</p>
+              <div class="prod-why">
+                <div class="prod-why-label">Why we picked it</div>
+                <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px;">
+                  <li style="font-size:13px;color:var(--muted);font-weight:300;">✓ Real-time HR zone display during workouts</li>
+                  <li style="font-size:13px;color:var(--muted);font-weight:300;">✓ GPS pace and distance — useful for outdoor Zone 2 runs or walks</li>
+                  <li style="font-size:13px;color:var(--muted);font-weight:300;">✓ Automatic training load and recovery tracking</li>
+                  <li style="font-size:13px;color:var(--muted);font-weight:300;">✓ Compatible with Polar H10 chest strap for maximum accuracy</li>
+                </ul>
+              </div>
+              <div class="prod-tags">
+                <span class="prod-tag">GPS tracking</span>
+                <span class="prod-tag">Zone display</span>
+                <span class="prod-tag">Training load</span>
+              </div>
+              <div class="prod-cta">
+                View on Amazon
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M8 4l3 3-3 3" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div class="prod-affiliate">This is a search link. We do not earn a commission on this recommendation.</div>
+            </div>
+          </a>
+        </div>
+
+        <!-- 10 SOURCES -->
+        <div class="guide-section reveal" id="sources">
+          <div class="section-eyebrow">10 — Sources</div>
+          <h2>References</h2>
+          <ul class="sources-list">
+            <li>
+              <div class="src-num">1</div>
+              <div class="src-text">Kodama S. et al. (2009). <em>Cardiorespiratory fitness as a quantitative predictor of all-cause mortality and cardiovascular events in healthy men and women: a meta-analysis.</em> JAMA, 301(19), 2024–2035. <a href="https://pubmed.ncbi.nlm.nih.gov/19454641/" target="_blank" rel="noopener">PubMed: 19454641</a></div>
+            </li>
+            <li>
+              <div class="src-num">2</div>
+              <div class="src-text">San Millán I. &amp; Brooks G.A. (2018). <em>Assessment of Metabolic Flexibility by Means of Measuring Blood Lactate, Fat, and Carbohydrate Oxidation Responses to Exercise in Professional Endurance Athletes and Less-Fit Individuals.</em> Sports Medicine, 48(2), 467–479. <a href="https://pubmed.ncbi.nlm.nih.gov/29340987/" target="_blank" rel="noopener">PubMed: 29340987</a></div>
+            </li>
+            <li>
+              <div class="src-num">3</div>
+              <div class="src-text">Seiler S. (2010). <em>What is best practice for training intensity and duration distribution in endurance athletes?</em> International Journal of Sports Physiology and Performance, 5(3), 276–291. <a href="https://pubmed.ncbi.nlm.nih.gov/20861519/" target="_blank" rel="noopener">PubMed: 20861519</a></div>
+            </li>
+            <li>
+              <div class="src-num">4</div>
+              <div class="src-text">Hood D.A. et al. (2016). <em>Maintenance of Skeletal Muscle Mitochondria in Health, Exercise, and Aging.</em> Annual Review of Physiology, 78, 19–41. <a href="https://pubmed.ncbi.nlm.nih.gov/26768197/" target="_blank" rel="noopener">PubMed: 26768197</a></div>
+            </li>
+            <li>
+              <div class="src-num">5</div>
+              <div class="src-text">Kvam S. et al. (2016). <em>Exercise as a treatment for depression: A meta-analysis.</em> Journal of Affective Disorders, 202, 67–86. <a href="https://pubmed.ncbi.nlm.nih.gov/27253219/" target="_blank" rel="noopener">PubMed: 27253219</a></div>
+            </li>
+            <li>
+              <div class="src-num">6</div>
+              <div class="src-text">Maunder E. et al. (2021). <em>Contextualising Maximal Fat Oxidation During Exercise: Determinants and Normative Values.</em> Frontiers in Physiology, 12, 599366. <a href="https://pubmed.ncbi.nlm.nih.gov/34262476/" target="_blank" rel="noopener">PubMed: 34262476</a></div>
+            </li>
+            <li>
+              <div class="src-num">7</div>
+              <div class="src-text">Lee D.C. et al. (2011). <em>Long-term effects of changes in cardiorespiratory fitness and body mass index on all-cause and cardiovascular disease mortality in men.</em> Circulation, 124(23), 2483–2490. <a href="https://pubmed.ncbi.nlm.nih.gov/22104551/" target="_blank" rel="noopener">PubMed: 22104551</a></div>
+            </li>
+          </ul>
+        </div>
+
+      </main>
+
+      <!-- SIDEBAR -->
+      <aside class="guide-sidebar">
+        <div class="sidebar-card">
+          <div class="sidebar-title">Key numbers</div>
+          <div class="stat-item">
+            <div class="stat-value">60–70%</div>
+            <div class="stat-desc">Of max heart rate — the Zone 2 target range</div>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <div class="stat-value">150+</div>
+            <div class="stat-desc">Minutes per week recommended for health benefits</div>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <div class="stat-value">80/20</div>
+            <div class="stat-desc">Elite athletes: ~80% of training in Zone 2, ~20% high intensity</div>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item" style="margin-bottom:0;">
+            <div class="stat-value">45min</div>
+            <div class="stat-desc">Minimum session length for meaningful mitochondrial stimulus</div>
+          </div>
+        </div>
+
+        <div class="sidebar-card">
+          <div class="sidebar-title">Finding Zone 2</div>
+          <div style="display:flex;flex-direction:column;gap:8px;">
+            <div style="display:flex;align-items:center;gap:10px;font-size:12px;color:var(--muted);font-weight:300;">
+              <span style="color:var(--blue);font-weight:700;">★</span> Blood lactate — gold standard
+            </div>
+            <div style="display:flex;align-items:center;gap:10px;font-size:12px;color:var(--muted);font-weight:300;">
+              <span style="color:var(--blue);font-weight:700;">✓</span> Talk test — most accessible
+            </div>
+            <div style="display:flex;align-items:center;gap:10px;font-size:12px;color:var(--muted);font-weight:300;">
+              <span style="color:var(--blue);font-weight:700;">✓</span> HR % — 60–70% max HR
+            </div>
+            <div style="display:flex;align-items:center;gap:10px;font-size:12px;color:var(--muted);font-weight:300;">
+              <span style="color:var(--blue);font-weight:700;">✓</span> MAF — 180 minus age
+            </div>
+          </div>
+        </div>
+
+        <div class="sidebar-card">
+          <div class="sidebar-title">Disclaimer</div>
+          <p class="sidebar-disclaimer">This guide is for informational purposes only and does not constitute medical advice. Consult a doctor before starting a new exercise programme, especially if you have a cardiovascular condition or have been inactive for a long time.</p>
+        </div>
+      </aside>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <span style="font-size:1.3rem;font-weight:700;background:linear-gradient(135deg,#60a5fa,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:-0.03em;font-family:'Sora',sans-serif;display:block;margin-bottom:16px;">Improo</span>
+          <p>Health, weight loss, movement & mindset — together.</p>
+          <small>© 2026 Improo. All rights reserved.</small>
+        </div>
+        <div class="footer-links">
+          <h4>Navigation</h4>
+          <a href="../index.html">Home</a>
+          <a href="../insights/index.html">Articles</a>
+          <a href="../guides.html">Guides</a>
+          <a href="../roadmap.html">Roadmap</a>
+        </div>
+        <div class="footer-links">
+          <h4>Legal</h4>
+          <a href="../disclaimer.html">Disclaimer</a>
+          <a href="../privacy-policy.html">Privacy Policy</a>
+          <a href="../terms-of-service.html">Terms of Service</a>
+        </div>
+        <div class="footer-links">
+          <h4>Follow</h4>
+          <a href="https://www.youtube.com/@Improo_App">YouTube</a>
+          <a href="https://x.com/Improo_">X (Twitter)</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const bar = document.getElementById('read-progress');
+    window.addEventListener('scroll', () => {
+      const doc = document.documentElement;
+      const pct = (doc.scrollTop / (doc.scrollHeight - doc.clientHeight)) * 100;
+      bar.style.width = Math.min(pct, 100) + '%';
+    }, { passive: true });
+
+    const reveals = document.querySelectorAll('.reveal');
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
+      });
+    }, { threshold: 0.06 });
+    reveals.forEach(el => obs.observe(el));
+  </script>
+
+</body>
+</html>
