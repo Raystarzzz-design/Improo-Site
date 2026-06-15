@@ -1,0 +1,1027 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>What is Creatine? — Improo Guide</title>
+  <meta name="description" content="Everything about creatine: what it does, which form to take, what the latest science says about brain health and aging, and how to use it correctly. An honest, evidence-based guide by Improo." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700&family=Lora:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+  <script>
+    window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+  </script>
+  <script defer src="/_vercel/insights/script.js"></script>
+
+  <style>
+    body { overflow-x: hidden; }
+
+    .article-wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      width: 100%;
+    }
+
+    #read-progress {
+      position: fixed;
+      top: 0; left: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--blue), #60a5fa);
+      width: 0%;
+      z-index: 999;
+      transition: width 0.1s linear;
+    }
+
+    /* HERO */
+    .guide-hero { padding: 52px 0 0; }
+
+    .hero-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: 20px;
+    }
+    .hero-kicker::before {
+      content: '';
+      display: block;
+      width: 28px; height: 1px;
+      background: var(--blue);
+    }
+
+    .hero-layout {
+      display: grid;
+      grid-template-columns: 1fr 260px;
+      gap: 48px;
+      align-items: start;
+      padding-bottom: 48px;
+      border-bottom: 1px solid var(--line);
+    }
+    @media (max-width: 900px) {
+      .hero-layout { grid-template-columns: 1fr; }
+      .hero-visual-wrap { display: none; }
+    }
+
+    .guide-hero h1 {
+      font-family: 'Lora', serif;
+      font-size: clamp(2.2rem, 5vw, 3.6rem);
+      font-weight: 400;
+      line-height: 1.1;
+      color: #0c1a2e;
+      margin: 0 0 20px;
+      letter-spacing: -0.02em;
+      max-width: 660px;
+    }
+    .guide-hero h1 em { font-style: italic; color: var(--blue); }
+
+    .hero-meta {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-size: 12px;
+      color: var(--muted-light);
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+    }
+    .hero-meta-dot { width: 3px; height: 3px; border-radius: 50%; background: var(--muted-light); }
+
+    .hero-intro {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: var(--muted);
+      max-width: 580px;
+      font-weight: 300;
+      margin-bottom: 32px;
+    }
+
+    .hero-facts {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--line);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      overflow: hidden;
+      margin-bottom: 32px;
+    }
+    .hero-fact { background: var(--panel); padding: 18px 16px; text-align: center; }
+    .hero-fact-value {
+      font-family: 'Lora', serif;
+      font-size: 1.7rem;
+      font-weight: 600;
+      color: var(--blue);
+      display: block;
+      line-height: 1;
+      margin-bottom: 5px;
+    }
+    .hero-fact-label { font-size: 11px; color: var(--muted-light); line-height: 1.4; }
+    @media (max-width: 480px) { .hero-facts { grid-template-columns: 1fr; } }
+
+    .hero-visual-wrap {
+      position: relative;
+      height: 340px;
+      border-radius: 24px;
+      overflow: hidden;
+      background: linear-gradient(135deg, #dbeafe 0%, #eff6ff 60%, #ecfdf5 100%);
+      border: 1px solid var(--line);
+    }
+
+    /* TOC */
+    .toc {
+      background: var(--panel-2);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 22px 26px;
+    }
+    .toc-title { font-size: 9px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--muted-light); margin-bottom: 14px; }
+    .toc ol { list-style: none; counter-reset: toc; display: flex; flex-direction: column; gap: 10px; }
+    .toc ol li { counter-increment: toc; display: flex; align-items: baseline; gap: 12px; }
+    .toc ol li::before { content: counter(toc, decimal-leading-zero); font-size: 9px; font-weight: 700; color: var(--blue-light); min-width: 20px; }
+    .toc ol li a { font-size: 13px; color: var(--muted); text-decoration: none; transition: color 0.2s; line-height: 1.4; }
+    .toc ol li a:hover { color: var(--blue); }
+
+    /* LAYOUT */
+    .guide-body {
+      display: grid;
+      grid-template-columns: 1fr 272px;
+      gap: 64px;
+      align-items: start;
+      padding: 56px 0 96px;
+    }
+    @media (max-width: 960px) {
+      .guide-body { grid-template-columns: 1fr; }
+      .guide-sidebar { display: none; }
+    }
+
+    /* SECTIONS */
+    .guide-section { margin-bottom: 64px; padding-bottom: 64px; border-bottom: 1px solid var(--line); }
+    .guide-section:last-child { border-bottom: none; margin-bottom: 0; }
+
+    .section-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--blue-light);
+      margin-bottom: 14px;
+    }
+    .section-eyebrow::after { content: ''; flex: 1; max-width: 36px; height: 1px; background: var(--line-strong); }
+
+    .guide-section h2 {
+      font-family: 'Lora', serif;
+      font-size: clamp(1.4rem, 2.8vw, 2rem);
+      font-weight: 400;
+      line-height: 1.2;
+      color: #0c1a2e;
+      margin: 0 0 22px;
+    }
+
+    .guide-section h3 {
+      font-size: 15px;
+      font-weight: 700;
+      color: #0c1a2e;
+      margin: 28px 0 10px;
+    }
+
+    .guide-section p { font-size: 0.97rem; font-weight: 300; color: var(--muted); margin-bottom: 18px; line-height: 1.85; max-width: 640px; }
+
+    .callout {
+      border-left: 3px solid var(--blue);
+      padding: 20px 24px;
+      background: linear-gradient(135deg, rgba(37,99,235,0.04), rgba(96,165,250,0.06));
+      border-radius: 0 12px 12px 0;
+      margin: 28px 0;
+    }
+    .callout p { margin: 0; color: var(--blue-dark); font-style: italic; font-size: 1rem; line-height: 1.7; max-width: none; }
+    .callout-label { font-size: 9px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--blue-light); margin-bottom: 8px; }
+
+    .insight-box {
+      background: linear-gradient(135deg, #0f1f3d 0%, #1e3a6e 100%);
+      border-radius: 16px;
+      padding: 28px 30px;
+      margin: 28px 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .insight-box::before {
+      content: '';
+      position: absolute;
+      top: -40px; right: -40px;
+      width: 160px; height: 160px;
+      border-radius: 50%;
+      background: rgba(96,165,250,0.07);
+    }
+    .insight-label { font-size: 9px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: rgba(96,165,250,0.65); margin-bottom: 10px; display: block; }
+    .insight-box p { margin: 0; color: rgba(255,255,255,0.88); font-size: 0.97rem; line-height: 1.72; font-weight: 300; max-width: none; }
+    .insight-box strong { color: #fff; font-weight: 600; }
+
+    .opinion-box {
+      background: linear-gradient(135deg, #1e3a6e 0%, #1e40af 100%);
+      border-radius: 16px;
+      padding: 28px 30px;
+      margin: 28px 0;
+      position: relative;
+      overflow: hidden;
+      border-left: 4px solid #60a5fa;
+    }
+    .opinion-label { font-size: 9px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: rgba(147,197,253,0.8); margin-bottom: 10px; display: block; }
+    .opinion-box p { margin: 0; color: rgba(255,255,255,0.92); font-size: 1rem; line-height: 1.75; font-weight: 300; max-width: none; font-style: italic; }
+    .opinion-box strong { color: #93c5fd; font-weight: 600; font-style: normal; }
+
+    /* Forms grid */
+    .forms-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 24px 0; }
+    @media (max-width: 580px) { .forms-grid { grid-template-columns: 1fr; } }
+
+    .form-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 22px 20px;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .form-card:hover { border-color: var(--line-strong); box-shadow: var(--shadow); }
+    .form-card.featured {
+      background: linear-gradient(135deg, rgba(37,99,235,0.05), rgba(96,165,250,0.07));
+      border-color: rgba(37,99,235,0.18);
+    }
+    .form-card.debunked {
+      background: rgba(220,38,38,0.02);
+      border-color: rgba(220,38,38,0.12);
+    }
+    .form-badge {
+      display: inline-block;
+      font-size: 9px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;
+      padding: 3px 8px; border-radius: 6px; margin-bottom: 10px;
+      background: rgba(37,99,235,0.1); color: var(--blue-dark);
+    }
+    .form-badge.skip { background: rgba(220,38,38,0.1); color: #dc2626; }
+    .form-name { font-size: 15px; font-weight: 700; color: #0c1a2e; margin-bottom: 4px; }
+    .form-use { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--blue-light); margin-bottom: 8px; }
+    .form-desc { font-size: 13px; color: var(--muted); line-height: 1.65; font-weight: 300; }
+
+    /* Study cards */
+    .study-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 22px 24px;
+      margin: 16px 0;
+      display: grid;
+      grid-template-columns: 38px 1fr;
+      gap: 16px;
+      align-items: start;
+      transition: box-shadow 0.2s, border-color 0.2s;
+    }
+    .study-card:hover { border-color: var(--line-strong); box-shadow: var(--shadow); }
+    .study-num {
+      width: 34px; height: 34px; border-radius: 9px;
+      background: var(--blue-pale); border: 1px solid var(--line-strong);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 11px; font-weight: 700; color: var(--blue-dark); flex-shrink: 0;
+    }
+    .study-title { font-size: 14px; font-weight: 600; color: #0c1a2e; margin-bottom: 8px; }
+    .study-text  { font-size: 13.5px; font-weight: 300; color: var(--muted); line-height: 1.7; margin: 0; }
+    .study-source { font-size: 11px; color: var(--muted-light); margin-top: 10px; font-style: italic; }
+    .study-source a { color: var(--blue); text-decoration: none; }
+    .study-source a:hover { text-decoration: underline; }
+
+    /* Dosage table */
+    .dosage-table { width: 100%; border-collapse: collapse; margin: 24px 0; font-size: 13.5px; }
+    .dosage-table th { background: var(--panel-2); color: var(--muted-light); font-size: 10px; text-transform: uppercase; letter-spacing: 1px; padding: 11px 14px; text-align: left; border-bottom: 1px solid var(--line); font-weight: 700; }
+    .dosage-table td { padding: 12px 14px; border-bottom: 1px solid var(--line); color: var(--muted); vertical-align: top; font-weight: 300; }
+    .dosage-table tr:last-child td { border-bottom: none; }
+    .dosage-table td:first-child { color: #0c1a2e; font-weight: 600; }
+    .dosage-table tr:hover td { background: var(--panel); }
+
+    /* Summary list */
+    .summary-list { list-style: none; display: flex; flex-direction: column; gap: 14px; margin: 20px 0; }
+    .summary-list li { display: flex; align-items: flex-start; gap: 14px; font-size: 14.5px; font-weight: 300; color: var(--muted); line-height: 1.65; }
+    .sum-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--blue); flex-shrink: 0; margin-top: 7px; }
+
+    /* Improo tip */
+    .improo-tip {
+      background: linear-gradient(135deg, var(--blue) 0%, #1d4ed8 100%);
+      border-radius: 18px;
+      padding: 28px 30px;
+      margin: 24px 0;
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      box-shadow: 0 8px 32px rgba(37,99,235,0.22);
+    }
+    .tip-icon { font-size: 22px; flex-shrink: 0; margin-top: 2px; }
+    .tip-label { font-size: 9px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: rgba(255,255,255,0.75); margin-bottom: 7px; }
+    .tip-text { font-size: 14px; line-height: 1.7; font-weight: 300; margin: 0; color: #fff !important; max-width: none !important; }
+
+    /* Products */
+    .prod-card {
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      overflow: hidden;
+      background: var(--panel);
+      margin-bottom: 20px;
+      transition: box-shadow 0.3s ease, border-color 0.3s ease, transform 0.25s ease;
+      text-decoration: none;
+      color: inherit;
+    }
+    .prod-card:hover { box-shadow: 0 16px 48px rgba(37,99,235,0.12); border-color: rgba(37,99,235,0.22); transform: translateY(-2px); }
+    @media (max-width: 680px) { .prod-card { grid-template-columns: 1fr; } .prod-visual { height: 180px; } }
+
+    .prod-visual {
+      position: relative; overflow: hidden;
+      display: flex; flex-direction: column; justify-content: flex-start;
+      padding: 18px; min-height: 220px;
+    }
+    .prod-visual.cr-mono { background: linear-gradient(160deg, #dbeafe 0%, #bfdbfe 40%, #ede9fe 100%); }
+    .prod-visual.cr-micro { background: linear-gradient(160deg, #d1fae5 0%, #a7f3d0 40%, #bfdbfe 100%); }
+
+    .prod-badge {
+      position: relative; z-index: 2;
+      display: inline-flex; align-items: center; gap: 7px;
+      background: rgba(255,255,255,0.96);
+      border: 1.5px solid rgba(37,99,235,0.22);
+      border-radius: 22px; padding: 7px 14px 7px 10px;
+      font-size: 11px; font-weight: 700; color: var(--blue-dark);
+      backdrop-filter: blur(8px); align-self: flex-start;
+      box-shadow: 0 2px 10px rgba(37,99,235,0.12);
+    }
+    .prod-badge-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--blue); }
+    .prod-visual-icon { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); font-size: 64px; opacity: 0.25; }
+
+    .prod-content { padding: 26px 26px 22px; display: flex; flex-direction: column; }
+    .prod-category { font-size: 9px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--blue-light); margin-bottom: 8px; }
+    .prod-name { font-family: 'Lora', serif; font-size: 1.2rem; font-weight: 600; color: #0c1a2e; line-height: 1.25; margin-bottom: 12px; }
+    .prod-summary { font-size: 13.5px; color: var(--muted); line-height: 1.7; font-weight: 300; margin-bottom: 14px; }
+
+    .prod-why {
+      background: linear-gradient(135deg, rgba(37,99,235,0.07) 0%, rgba(96,165,250,0.05) 100%);
+      border: 1px solid rgba(37,99,235,0.14); border-radius: 12px;
+      padding: 18px 20px; margin-bottom: 18px;
+    }
+    .prod-why-label {
+      display: flex; align-items: center; gap: 8px;
+      font-size: 10px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase;
+      color: var(--blue-dark); margin-bottom: 10px;
+    }
+    .prod-why-label::before { content: '✦'; font-size: 11px; color: var(--blue); flex-shrink: 0; }
+    .prod-why p { font-size: 13px; color: var(--muted); line-height: 1.75; margin: 0; font-weight: 300; }
+
+    .prod-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 16px; }
+    .prod-tag { font-size: 11px; background: rgba(22,163,74,0.09); color: #15803d; padding: 4px 10px; border-radius: 20px; font-weight: 600; border: 1px solid rgba(22,163,74,0.15); }
+
+    .prod-cta {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+      color: #fff; font-size: 14px; font-weight: 700;
+      padding: 13px 24px; border-radius: 28px;
+      transition: background 0.2s, box-shadow 0.2s, gap 0.2s, transform 0.2s;
+      box-shadow: 0 6px 20px rgba(37,99,235,0.30);
+      align-self: flex-start; margin-bottom: 10px;
+    }
+    .prod-cta:hover { background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%); gap: 16px; box-shadow: 0 10px 28px rgba(37,99,235,0.42); transform: translateY(-1px); }
+    .prod-affiliate { font-size: 10.5px; color: var(--muted-light); }
+
+    /* Sources */
+    .sources-list { list-style: none; display: flex; flex-direction: column; gap: 14px; margin-top: 16px; }
+    .sources-list li { display: flex; gap: 12px; align-items: flex-start; }
+    .src-num { font-size: 10px; font-weight: 700; color: var(--blue-dark); background: var(--blue-pale); width: 24px; height: 24px; border-radius: 6px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
+    .src-text { font-size: 12.5px; color: var(--muted-light); line-height: 1.6; }
+    .src-text a { color: var(--blue); text-decoration: none; }
+    .src-text a:hover { text-decoration: underline; }
+
+    /* Sidebar */
+    .guide-sidebar { position: sticky; top: 88px; display: flex; flex-direction: column; gap: 16px; }
+    .sidebar-card { background: var(--panel); border: 1px solid var(--line); border-radius: 16px; padding: 20px 18px; box-shadow: var(--shadow); }
+    .sidebar-title { font-size: 9px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--muted-light); margin-bottom: 16px; }
+    .stat-item { display: flex; flex-direction: column; gap: 4px; margin-bottom: 16px; }
+    .stat-value { font-family: 'Lora', serif; font-size: 2.1rem; font-weight: 600; font-style: italic; color: var(--blue); line-height: 1; }
+    .stat-desc { font-size: 12px; color: var(--muted); line-height: 1.45; font-weight: 300; }
+    .stat-divider { height: 1px; background: var(--line); margin: 4px 0 16px; }
+    .sidebar-disclaimer { font-size: 11px; color: var(--muted-light); line-height: 1.65; font-weight: 300; }
+
+    /* Warning box */
+    .warning-box {
+      background: rgba(220,38,38,0.03);
+      border: 1px solid rgba(220,38,38,0.12);
+      border-radius: 12px; padding: 18px 22px; margin-top: 20px;
+      font-size: 13.5px; color: var(--muted); line-height: 1.65; font-weight: 300;
+    }
+    .warning-box strong { color: #dc2626; font-weight: 600; }
+
+    /* Animations */
+    .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.55s ease, transform 0.55s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+  </style>
+</head>
+<body>
+
+  <div id="read-progress"></div>
+
+  <!-- NAV -->
+  <header class="site-header">
+    <div class="container">
+      <nav class="nav">
+        <a href="../index.html">
+          <span style="font-size:1.6rem;font-weight:700;background:linear-gradient(135deg,#3b9ef5,#2563eb);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:-0.03em;font-family:'Sora',sans-serif;">Improo</span>
+        </a>
+        <div class="nav-links">
+          <a href="../index.html">Home</a>
+          <a href="../insights/index.html">Articles</a>
+          <a href="../guides.html" class="active">Guides</a>
+          <a href="../roadmap.html">Roadmap</a>
+          <a href="../index.html#contact">Contact</a>
+        </div>
+        <div class="socials">
+          <a href="https://www.youtube.com/@Improo_App" aria-label="YouTube">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.7 15.5V8.5l6.3 3.5-6.3 3.5z"/></svg>
+          </a>
+          <a href="https://x.com/Improo_" aria-label="X">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <div class="article-wrap">
+
+    <a href="../guides.html" class="back-link" style="margin-top:36px;display:inline-flex;align-items:center;gap:6px;font-size:13px;color:var(--muted);transition:color 0.2s;">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M9 2L4 7l5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Back to Guides
+    </a>
+
+    <!-- HERO -->
+    <section class="guide-hero">
+      <div class="hero-layout">
+        <div class="hero-left reveal">
+          <div class="hero-kicker">Supplement Guide</div>
+          <h1>What is <em>Creatine</em>?</h1>
+          <div class="hero-meta">
+            <span>10 min read</span>
+            <div class="hero-meta-dot"></div>
+            <span>Science-backed</span>
+            <div class="hero-meta-dot"></div>
+            <span>Not medical advice</span>
+          </div>
+          <p class="hero-intro">Creatine is the most studied supplement in sports science — and one of the few with genuinely consistent, reproducible results. Recent research now extends its benefits far beyond muscle: into brain health, cognitive function, aging, and more. This guide explains everything, including which form actually works and what the latest studies say.</p>
+
+          <div class="hero-facts">
+            <div class="hero-fact reveal">
+              <span class="hero-fact-value">500+</span>
+              <span class="hero-fact-label">Peer-reviewed studies on creatine supplementation</span>
+            </div>
+            <div class="hero-fact reveal">
+              <span class="hero-fact-value">3–5g</span>
+              <span class="hero-fact-label">Daily maintenance dose shown effective in most studies</span>
+            </div>
+            <div class="hero-fact reveal">
+              <span class="hero-fact-value">4–6 wk</span>
+              <span class="hero-fact-label">Time to full muscle creatine saturation without loading</span>
+            </div>
+          </div>
+
+          <div class="toc">
+            <div class="toc-title">In this guide</div>
+            <ol>
+              <li><a href="#intro">What is creatine?</a></li>
+              <li><a href="#mechanism">How does it work?</a></li>
+              <li><a href="#beyond">Benefits beyond muscle</a></li>
+              <li><a href="#forms">Which form works best?</a></li>
+              <li><a href="#science">What the latest research says</a></li>
+              <li><a href="#dosering">How and when to take it</a></li>
+              <li><a href="#fouten">Common mistakes</a></li>
+              <li><a href="#samenvatting">The short version</a></li>
+              <li><a href="#products">Our recommendations</a></li>
+              <li><a href="#sources">Sources</a></li>
+            </ol>
+          </div>
+        </div>
+
+        <!-- Hero visual -->
+        <div class="hero-visual-wrap reveal">
+          <svg width="100%" viewBox="0 0 260 340" xmlns="http://www.w3.org/2000/svg" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+            <defs>
+              <radialGradient id="crBg" cx="50%" cy="40%" r="65%"><stop offset="0%" stop-color="#e8eeff"/><stop offset="100%" stop-color="#f0fdf4"/></radialGradient>
+            </defs>
+            <rect width="260" height="340" fill="url(#crBg)"/>
+            <rect x="40" y="50" width="180" height="200" rx="18" fill="white" opacity="0.88" stroke="#c7d8f0" stroke-width="1.5"/>
+            <rect x="40" y="50" width="180" height="44" rx="18" fill="#2563eb" opacity="0.92"/>
+            <rect x="40" y="80" width="180" height="14" rx="0" fill="#2563eb" opacity="0.92"/>
+            <text x="130" y="77" text-anchor="middle" font-family="'Sora',sans-serif" font-size="10" font-weight="700" fill="rgba(255,255,255,0.75)" letter-spacing="2">SUPPLEMENT</text>
+            <text x="130" y="168" text-anchor="middle" font-family="'Lora',serif" font-size="60" font-weight="600" fill="#1e3a6e">Cr</text>
+            <text x="130" y="195" text-anchor="middle" font-family="'Sora',sans-serif" font-size="11" font-weight="300" fill="#4a6fa5">Creatine</text>
+            <text x="130" y="215" text-anchor="middle" font-family="'Lora',serif" font-size="13" fill="#7090c0">C₄H₉N₃O₂</text>
+            <text x="58" y="90" font-family="'Sora',sans-serif" font-size="13" font-weight="700" fill="white">500+</text>
+            <text x="58" y="104" font-family="'Sora',sans-serif" font-size="7" fill="rgba(255,255,255,0.7)" letter-spacing="1">STUDIES</text>
+            <rect x="28" y="272" width="204" height="52" rx="12" fill="white" opacity="0.9"/>
+            <text x="80" y="293" text-anchor="middle" font-family="'Lora',serif" font-size="16" font-weight="600" fill="#2563eb">3–5g</text>
+            <text x="80" y="308" text-anchor="middle" font-family="'Sora',sans-serif" font-size="9" fill="#6080a8">daily dose</text>
+            <line x1="130" y1="278" x2="130" y2="318" stroke="#dde8f4" stroke-width="1"/>
+            <text x="178" y="293" text-anchor="middle" font-family="'Lora',serif" font-size="16" font-weight="600" fill="#2563eb">4–6wk</text>
+            <text x="178" y="308" text-anchor="middle" font-family="'Sora',sans-serif" font-size="9" fill="#6080a8">saturation</text>
+            <circle cx="36" cy="72" r="4" fill="rgba(37,99,235,0.15)"/>
+            <circle cx="224" cy="240" r="6" fill="rgba(46,204,138,0.18)"/>
+            <circle cx="28" cy="200" r="5" fill="rgba(96,165,250,0.2)"/>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- BODY -->
+    <div class="guide-body">
+      <main>
+
+        <!-- 01 INTRO -->
+        <div class="guide-section reveal" id="intro">
+          <div class="section-eyebrow">01 — Introduction</div>
+          <h2>What is creatine, exactly?</h2>
+          <p>Creatine is a naturally occurring compound made from three amino acids: arginine, glycine, and methionine. Your body produces it — primarily in the liver and kidneys — and stores it mostly in skeletal muscle (around 95%), with smaller amounts in the brain and heart.</p>
+          <p>You also get creatine through food. Red meat and fish are the richest dietary sources. But here is the catch: you would need to eat around 500–1,000 grams of raw beef daily to match what a standard creatine supplement provides. For most people — and especially for vegetarians and vegans, who have measurably lower baseline creatine stores — supplementation is the most practical option.</p>
+          <p>Creatine has been used in sports science since the early 1990s. It gained public attention around the 1992 Barcelona Olympics, when several medalists reportedly used it. Since then, it has accumulated one of the most robust evidence bases of any supplement ever studied.</p>
+          <div class="insight-box">
+            <span class="insight-label">Key insight</span>
+            <p>Creatine is not a steroid or stimulant. It is a natural compound your body already makes and uses. Supplementation simply <strong>increases the amount stored in your muscles and brain</strong> — allowing your body to do more with what it already knows how to do.</p>
+          </div>
+        </div>
+
+        <!-- 02 MECHANISM -->
+        <div class="guide-section reveal" id="mechanism">
+          <div class="section-eyebrow">02 — Mechanism</div>
+          <h2>How does it actually work?</h2>
+          <p>To understand creatine, you need to understand ATP. Adenosine triphosphate (ATP) is the primary energy currency of every cell in your body. When you lift, sprint, or perform any explosive movement, your muscles burn ATP extremely fast — so fast that they can only sustain maximum output for around 8–10 seconds before ATP runs out.</p>
+          <p>This is where creatine comes in. Creatine is stored in muscle as phosphocreatine, which rapidly donates a phosphate group to rebuild ATP from ADP. The result: your muscles can maintain high-intensity output for slightly longer before switching to slower energy systems. That extra capacity adds up — more reps, more power per session, more adaptation over time.</p>
+
+          <h3>What this means in practice</h3>
+          <p>The effects of creatine are most pronounced in activities lasting 1–30 seconds: explosive lifts, sprints, high-intensity interval sets. For endurance sports (long-distance running, cycling at steady state), the direct benefit is smaller — though indirect benefits through faster recovery and harder training sessions still apply.</p>
+
+          <div class="callout">
+            <div class="callout-label">Why vegetarians respond more</div>
+            <p>People who eat little or no meat have lower baseline creatine stores in their muscles. When they supplement, they start from a lower baseline — meaning the relative increase is larger and the performance benefit is often more noticeable than in meat-eaters.</p>
+          </div>
+
+          <h3>Water and muscle volume</h3>
+          <p>Creatine pulls water into muscle cells — a process called cell volumization. This is why some people notice a weight increase of 1–2 kg in the first 1–2 weeks of supplementation. This is not fat. It is intracellular water, which is associated with improved muscle protein synthesis signals. The scale goes up, but you are leaner in relative terms.</p>
+        </div>
+
+        <!-- 03 BEYOND MUSCLE -->
+        <div class="guide-section reveal" id="beyond">
+          <div class="section-eyebrow">03 — Broader benefits</div>
+          <h2>Benefits beyond muscle</h2>
+          <p>For years, creatine was discussed almost exclusively in the context of strength and power sports. That view has changed substantially. Research published between 2018 and 2024 has opened up a much broader picture — particularly around brain health, aging, and mental performance.</p>
+
+          <h3>Brain health and cognitive function</h3>
+          <p>The brain uses a significant amount of ATP — especially under mental stress, sleep deprivation, or demanding cognitive tasks. Creatine is stored in brain tissue and supports cerebral energy metabolism in the same way it does in muscle. A 2021 narrative review in <em>Nutrients</em> concluded that creatine supplementation shows promise for improving brain creatine levels and cognitive performance, particularly in situations of metabolic stress.</p>
+          <p>A 2023 review published in <em>Sports Medicine</em> (Candow et al.) found that creatine may support brain health across the lifespan — with effects seen in tasks involving memory, processing speed, and mental fatigue. This is an emerging field, and larger trials are underway, but the mechanism is well established.</p>
+
+          <h3>Sleep deprivation resilience</h3>
+          <p>One of the more surprising findings from recent research: creatine appears to partially offset the cognitive decline caused by sleep deprivation. A study by Cook et al. showed that creatine supplementation helped maintain cognitive performance in sleep-deprived subjects — more so than caffeine alone for certain tasks. For people with irregular schedules, shift workers, or new parents, this is a clinically meaningful finding.</p>
+
+          <h3>Older adults: muscle preservation</h3>
+          <p>After age 30, adults lose roughly 3–8% of muscle mass per decade — a process called sarcopenia that accelerates after 60. Multiple meta-analyses show that creatine combined with resistance training significantly improves lean mass, strength, and functional capacity in older adults beyond what training alone achieves. A 2021 analysis in <em>Nutrients</em> (Forbes et al.) covering 22 randomised trials found consistent benefits for older adults across a range of outcomes including muscle mass, leg press strength, and upper body strength.</p>
+
+          <h3>Women and creatine</h3>
+          <p>Research specifically on women and creatine has expanded significantly since 2020. A 2021 paper in <em>Nutrients</em> (Smith-Ryan et al.) reviewed evidence across the female lifespan — from athletic performance to menstrual cycle effects, pregnancy, and menopause. Women typically have 70–80% lower creatine stores than men and may respond differently across hormonal phases. The paper concluded that supplementation is not only safe but particularly relevant for women in perimenopause and beyond, where muscle and bone loss accelerate.</p>
+
+          <div class="insight-box">
+            <span class="insight-label">The bigger picture</span>
+            <p>Creatine is no longer just a gym supplement. The research increasingly positions it as a <strong>foundational support compound for energy metabolism across multiple systems</strong> — muscle, brain, and aging tissue alike. The evidence base is still growing, but the direction is consistent.</p>
+          </div>
+        </div>
+
+        <!-- 04 FORMS -->
+        <div class="guide-section reveal" id="forms">
+          <div class="section-eyebrow">04 — Forms</div>
+          <h2>Which form of creatine actually works?</h2>
+          <p>The supplement market has introduced dozens of creatine forms over the years, each marketed as superior to the last. The science tells a different story. Here is an honest breakdown.</p>
+
+          <div class="forms-grid">
+            <div class="form-card featured">
+              <span class="form-badge">Gold standard</span>
+              <div class="form-name">Creatine Monohydrate</div>
+              <div class="form-use">Strength · Power · Recovery · Brain</div>
+              <p class="form-desc">The most studied form in the world. Nearly every study showing a benefit for creatine used monohydrate. Cheap, effective, well tolerated. There is no compelling research showing any other form is meaningfully superior. Start here — and for most people, stay here.</p>
+            </div>
+            <div class="form-card featured">
+              <span class="form-badge">Best for mixing</span>
+              <div class="form-name">Micronized Creatine Monohydrate</div>
+              <div class="form-use">Same as monohydrate · Better solubility</div>
+              <p class="form-desc">Chemically identical to standard monohydrate, but the particles are smaller. This improves how it mixes in water and may slightly reduce the gritty texture some people notice. No difference in efficacy — just convenience.</p>
+            </div>
+            <div class="form-card">
+              <div class="form-name">Creatine HCl (Hydrochloride)</div>
+              <div class="form-use">Smaller dose · Less bloating claims</div>
+              <p class="form-desc">Bonded to hydrochloric acid for improved solubility. Requires a smaller dose per gram (around 1–2g vs 3–5g), and is marketed as causing less water retention. Some evidence supports better solubility, but no study has shown it to be more effective than monohydrate for actual outcomes.</p>
+            </div>
+            <div class="form-card">
+              <div class="form-name">Creatine Nitrate</div>
+              <div class="form-use">Performance · Pump · Limited data</div>
+              <p class="form-desc">Creatine bonded to nitrate, which has its own vasodilatory effects. May enhance blood flow and muscle pump during training. Some early research is promising, but the evidence base is much thinner than monohydrate. Not a first choice.</p>
+            </div>
+            <div class="form-card debunked">
+              <span class="form-badge skip">Skip it</span>
+              <div class="form-name">Kre-Alkalyn (Buffered Creatine)</div>
+              <div class="form-use">pH-buffered · No proven advantage</div>
+              <p class="form-desc">Marketed as more stable and requiring no loading. A direct head-to-head trial published in the <em>Journal of the International Society of Sports Nutrition</em> (2012) found no difference in muscle creatine saturation, body composition, or performance vs. standard monohydrate. Premium price, no premium result.</p>
+            </div>
+            <div class="form-card debunked">
+              <span class="form-badge skip">Avoid</span>
+              <div class="form-name">Creatine Ethyl Ester (CEE)</div>
+              <div class="form-use">Largely debunked</div>
+              <p class="form-desc">Once popular, CEE was studied head-to-head against monohydrate and found inferior. It converts to creatinine (a waste product) in the stomach at a high rate, meaning far less usable creatine reaches muscle tissue. Multiple studies confirm monohydrate outperforms CEE on every relevant measure.</p>
+            </div>
+          </div>
+
+          <div class="opinion-box">
+            <span class="opinion-label">Our take</span>
+            <p>Buy <strong>creatine monohydrate</strong> — ideally micronized for easier mixing. Do not pay more for HCl, Kre-Alkalyn, or any "advanced" form. The evidence does not support the premium. The cheapest monohydrate from a reputable brand will outperform most expensive alternatives based on the available research.</p>
+          </div>
+        </div>
+
+        <!-- 05 SCIENCE -->
+        <div class="guide-section reveal" id="science">
+          <div class="section-eyebrow">05 — Research</div>
+          <h2>What the latest science says</h2>
+          <p>The creatine research landscape has expanded significantly in recent years. Below are four key studies — covering muscle, brain, aging, and memory — including recent publications from 2021–2023.</p>
+
+          <div class="study-card">
+            <div class="study-num">[1]</div>
+            <div>
+              <div class="study-title">Meta-analysis confirms strength and lean mass gains in older adults</div>
+              <p class="study-text">A 2021 meta-analysis in <em>Nutrients</em> by Forbes et al. pooled data from 22 randomised controlled trials in adults over 50. Creatine supplementation combined with resistance training produced significantly greater improvements in lean mass, leg press strength, and upper body strength compared to training alone. The conclusion: creatine is one of the most effective nutritional strategies for combating age-related muscle loss.</p>
+              <div class="study-source">Forbes S.C. et al. (2021). <em>Meta-Analysis Examining the Importance of Creatine Ingestion Strategies on Lean Tissue Mass and Strength.</em> Nutrients, 13(6), 1912. <a href="https://pubmed.ncbi.nlm.nih.gov/34199025/" target="_blank" rel="noopener">PubMed: 34199025</a></div>
+            </div>
+          </div>
+
+          <div class="study-card">
+            <div class="study-num">[2]</div>
+            <div>
+              <div class="study-title">Creatine and brain health: a comprehensive 2021 review</div>
+              <p class="study-text">Roschel et al. published a narrative review in <em>Nutrients</em> examining creatine's role in brain health, covering mechanisms, clinical evidence, and populations most likely to benefit. The brain has its own creatine stores, and supplementation can increase brain creatine levels — particularly relevant in vegetarians, aging populations, and following traumatic brain injury. Cognitive benefits under conditions of mental stress or sleep deprivation were highlighted as areas of growing evidence.</p>
+              <div class="study-source">Roschel H. et al. (2021). <em>Creatine Supplementation and Brain Health.</em> Nutrients, 13(2), 586. <a href="https://pubmed.ncbi.nlm.nih.gov/33578876/" target="_blank" rel="noopener">PubMed: 33578876</a></div>
+            </div>
+          </div>
+
+          <div class="study-card">
+            <div class="study-num">[3]</div>
+            <div>
+              <div class="study-title">Creatine improves memory in healthy adults — 2023 systematic review</div>
+              <p class="study-text">A 2023 systematic review and meta-analysis in <em>Nutrition Reviews</em> by Prokopidis et al. analysed data from 10 randomised controlled trials covering 281 participants. Creatine supplementation was associated with significant improvements in memory performance in healthy individuals — with particularly pronounced effects in older adults (66+) and in vegetarians. This is one of the most robust analyses to date on creatine and cognitive outcomes in non-clinical populations.</p>
+              <div class="study-source">Prokopidis K. et al. (2023). <em>Effects of creatine supplementation on memory in healthy individuals.</em> Nutrition Reviews, 81(4), 416–427. <a href="https://pubmed.ncbi.nlm.nih.gov/36368816/" target="_blank" rel="noopener">PubMed: 36368816</a></div>
+            </div>
+          </div>
+
+          <div class="study-card">
+            <div class="study-num">[4]</div>
+            <div>
+              <div class="study-title">Creatine supplementation across the female lifespan</div>
+              <p class="study-text">A 2021 review in <em>Nutrients</em> by Smith-Ryan et al. examined creatine research specifically in women — covering athletic performance, hormonal interactions, pregnancy, and menopause. Women have 70–80% lower intramuscular creatine stores than men at baseline, and tend to show strong responses to supplementation. The paper highlighted particular relevance for women in perimenopause and post-menopause, where declining oestrogen accelerates muscle and bone loss.</p>
+              <div class="study-source">Smith-Ryan A.E. et al. (2021). <em>Creatine Supplementation in Women's Health: A Lifespan Perspective.</em> Nutrients, 13(3), 877. <a href="https://pubmed.ncbi.nlm.nih.gov/33806481/" target="_blank" rel="noopener">PubMed: 33806481</a></div>
+            </div>
+          </div>
+
+          <div class="study-card">
+            <div class="study-num">[5]</div>
+            <div>
+              <div class="study-title">Heads up for creatine: brain applications across the lifespan — 2023</div>
+              <p class="study-text">A major 2023 review in <em>Sports Medicine</em> by Candow et al. summarised the emerging evidence for creatine as a neuroprotective compound. It covered traumatic brain injury, neurodegenerative disease, depression, and age-related cognitive decline. The authors concluded that creatine holds significant promise for brain health applications, and called for more large-scale clinical trials to confirm findings already seen in smaller studies.</p>
+              <div class="study-source">Candow D.G. et al. (2023). <em>Heads Up for Creatine Supplementation and its Potential Applications for Brain Health and Function.</em> Sports Medicine, 53(Suppl 1), 49–65. <a href="https://pubmed.ncbi.nlm.nih.gov/37368234/" target="_blank" rel="noopener">PubMed: 37368234</a></div>
+            </div>
+          </div>
+
+          <div class="insight-box">
+            <span class="insight-label">What this means for you</span>
+            <p>The evidence for creatine now extends well beyond the gym. <strong>Muscle performance, brain function, memory, and healthy aging</strong> are all areas with meaningful and growing evidence. The foundational research on muscle is among the most replicated in all of supplement science — and the cognitive research is catching up fast.</p>
+          </div>
+        </div>
+
+        <!-- 06 DOSAGE -->
+        <div class="guide-section reveal" id="dosering">
+          <div class="section-eyebrow">06 — Usage</div>
+          <h2>How and when to take creatine</h2>
+          <p>Creatine dosing is more flexible than most guides suggest. There are two main approaches, and both work. The difference is in how quickly your muscles reach saturation.</p>
+
+          <table class="dosage-table">
+            <thead>
+              <tr><th>Protocol</th><th>Phase 1</th><th>Phase 2</th><th>Time to saturation</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Loading</td><td>20g/day split into 4x5g doses for 5–7 days</td><td>3–5g/day maintenance</td><td>~7 days</td></tr>
+              <tr><td>No loading</td><td>3–5g/day from day one</td><td>Continue indefinitely</td><td>~4–6 weeks</td></tr>
+            </tbody>
+          </table>
+          <p style="font-size:12px;color:var(--muted-light);margin-top:-8px;">Both protocols reach the same endpoint. Loading gets you there faster but may cause short-term GI discomfort in some people. No loading is gentler and equally effective long term.</p>
+
+          <h3>Timing: does it matter?</h3>
+          <p>Research on creatine timing is mixed, but a slight advantage for post-workout intake has been reported in some studies. The most important factor by far is consistency — taking it every day, regardless of whether you train. Creatine works through saturation, not through acute timing like caffeine. Taking it at the same time each day (with food, a shake, or alone) is the most practical approach.</p>
+
+          <h3>Does it need to be cycled?</h3>
+          <p>No. There is no evidence that creatine cycling improves outcomes or prevents tolerance. Long-term continuous supplementation (up to 5 years in some studies) has been shown to be safe. You do not need to stop and restart.</p>
+
+          <table class="dosage-table">
+            <thead>
+              <tr><th>Goal</th><th>Recommended form</th><th>Daily dose</th><th>Timing</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Strength & muscle</td><td>Monohydrate</td><td>3–5g</td><td>Post-workout or any consistent time</td></tr>
+              <tr><td>Brain & cognition</td><td>Monohydrate</td><td>5g</td><td>Morning or with a meal</td></tr>
+              <tr><td>Older adults</td><td>Monohydrate</td><td>5g</td><td>With a protein-containing meal</td></tr>
+              <tr><td>Vegetarians / vegans</td><td>Monohydrate</td><td>5g</td><td>Daily — baseline stores are lower</td></tr>
+              <tr><td>Loading phase</td><td>Monohydrate</td><td>4x5g</td><td>Spread across the day with meals</td></tr>
+            </tbody>
+          </table>
+
+          <div class="callout">
+            <div class="callout-label">About water intake</div>
+            <p>Because creatine draws water into muscle cells, adequate hydration matters more than usual. Drink at least 2–3 litres of water per day while supplementing. Dehydration combined with high-intensity exercise and creatine loading may increase cramp risk in some individuals.</p>
+          </div>
+
+          <div class="warning-box">
+            <strong>Note:</strong> Consult a doctor or dietitian before starting any supplement, especially if you have kidney disease or are taking medication. People with pre-existing kidney conditions should seek medical advice before using creatine. This guide is for informational purposes only.
+          </div>
+        </div>
+
+        <!-- 07 MISTAKES -->
+        <div class="guide-section reveal" id="fouten">
+          <div class="section-eyebrow">07 — Common mistakes</div>
+          <h2>What most people get wrong</h2>
+          <p>Creatine is one of the simplest supplements to use correctly — yet the same mistakes appear repeatedly. These are the ones that most often prevent people from getting results.</p>
+
+          <div class="callout">
+            <p><strong>Mistake 1: Buying an expensive "advanced" form.</strong> There is no published study showing Kre-Alkalyn, creatine HCl, or any buffered form outperforms basic creatine monohydrate for strength, muscle, or cognitive outcomes. You are paying extra for marketing, not for results.</p>
+          </div>
+
+          <div class="callout">
+            <p><strong>Mistake 2: Taking it inconsistently.</strong> Creatine works by saturating your muscles over time. Missing days does not cause acute harm, but it slows the saturation process. Daily use — even on rest days — is what maintains the effect. Treat it like a daily commitment, not a pre-workout stimulant.</p>
+          </div>
+
+          <div class="callout">
+            <p><strong>Mistake 3: Expecting to "feel" it.</strong> Creatine is not a stimulant. There is no immediate sensation, no energy rush, no instant feedback. The effect is structural — more phosphocreatine in muscle — and the outcome shows up in performance over weeks, not in how you feel on day one. People who stop early rarely gave it a real chance.</p>
+          </div>
+
+          <div class="callout">
+            <p><strong>Mistake 4: Worrying about kidney damage.</strong> This concern is based on a misunderstanding. Creatine increases creatinine in urine — a metabolic byproduct that labs use to assess kidney function. This can make standard kidney markers look slightly elevated in people who supplement, which sometimes triggers unnecessary concern. In people with healthy kidneys, decades of research show no adverse renal effects from standard doses.</p>
+          </div>
+
+          <div class="callout">
+            <p><strong>Mistake 5: Not drinking enough water.</strong> The volumisation effect of creatine means your muscles are holding more water. If you are not adequately hydrated, this can contribute to muscle cramping during intense exercise. This is not a reason to avoid creatine — it is a reason to drink more water.</p>
+          </div>
+
+          <div class="opinion-box">
+            <span class="opinion-label">The bottom line</span>
+            <p>Creatine is the closest thing to a sure bet in supplement science. <strong>Buy cheap monohydrate, take 3–5g daily, stay consistent, drink water.</strong> That is genuinely all there is to it. The complexity comes from the marketing industry, not from the research.</p>
+          </div>
+        </div>
+
+        <!-- 08 SUMMARY -->
+        <div class="guide-section reveal" id="samenvatting">
+          <div class="section-eyebrow">08 — Summary</div>
+          <h2>The short version</h2>
+          <ul class="summary-list">
+            <li><div class="sum-dot"></div><span>Creatine is a natural compound your body already makes and stores in muscle and brain tissue. Supplementation increases those stores.</span></li>
+            <li><div class="sum-dot"></div><span>It works by replenishing ATP faster during high-intensity effort — allowing more output before fatigue sets in.</span></li>
+            <li><div class="sum-dot"></div><span>Recent research (2021–2023) shows significant benefits for brain health, memory, cognitive resilience under sleep deprivation, and healthy aging.</span></li>
+            <li><div class="sum-dot"></div><span><strong>Creatine monohydrate</strong> is the gold standard. No other form has been shown to outperform it in real outcomes. Micronized is the same thing with better solubility.</span></li>
+            <li><div class="sum-dot"></div><span>Kre-Alkalyn and Creatine Ethyl Ester are not better — and CEE has been shown to be worse. Avoid premium forms without evidence.</span></li>
+            <li><div class="sum-dot"></div><span>Standard dose: 3–5g daily. Loading (20g/day for 5–7 days) is optional — it speeds up saturation but produces the same endpoint.</span></li>
+            <li><div class="sum-dot"></div><span>Consistency matters more than timing. Take it every day — including rest days. Drink plenty of water.</span></li>
+            <li><div class="sum-dot"></div><span>Women, vegetarians, and adults over 50 tend to see the most pronounced benefits due to lower baseline creatine stores.</span></li>
+          </ul>
+        </div>
+
+        <!-- 09 PRODUCTS -->
+        <div class="guide-section reveal" id="products">
+          <div class="section-eyebrow">09 — Our recommendations</div>
+          <h2>What we would actually use</h2>
+          <p style="max-width:600px;">We recommend based on ingredient quality, third-party testing, and value. For creatine, that almost always means plain micronized monohydrate from a trusted brand — nothing more is needed.</p>
+
+          <a href="https://www.amazon.com/s?k=optimum+nutrition+micronized+creatine+monohydrate" target="_blank" rel="noopener" class="prod-card">
+            <div class="prod-visual cr-mono">
+              <div class="prod-badge">
+                <div class="prod-badge-dot"></div>
+                Most recommended
+              </div>
+              <div class="prod-visual-icon">💪</div>
+            </div>
+            <div class="prod-content">
+              <div class="prod-category">Supplement · Creatine Monohydrate</div>
+              <div class="prod-name">Optimum Nutrition Micronized Creatine Monohydrate</div>
+              <p class="prod-summary">One of the most widely used creatine products in the world. Unflavored micronized monohydrate — mixes cleanly into water or a shake, no taste, no grit. Third-party tested, Informed Sport certified. 5g per serving. Nothing else added.</p>
+              <div class="prod-why">
+                <div class="prod-why-label">Why we picked it</div>
+                <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px;">
+                  <li style="font-size:13px;color:var(--muted);font-weight:300;">✓ Pure micronized monohydrate — the most studied form</li>
+                  <li style="font-size:13px;color:var(--muted);font-weight:300;">✓ Informed Sport certified — tested for banned substances</li>
+                  <li style="font-size:13px;color:var(--muted);font-weight:300;">✓ Mixes cleanly — no grit, no taste, no filler ingredients</li>
+                  <li style="font-size:13px;color:var(--muted);font-weight:300;">✓ Excellent value — cost per gram is very low</li>
+                </ul>
+              </div>
+              <div class="prod-tags">
+                <span class="prod-tag">Monohydrate</span>
+                <span class="prod-tag">3rd party tested</span>
+                <span class="prod-tag">Unflavored</span>
+              </div>
+              <div class="prod-cta">
+                View on Amazon
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M8 4l3 3-3 3" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div class="prod-affiliate">This is a search link. We do not earn a commission on this recommendation.</div>
+            </div>
+          </a>
+
+          <a href="https://www.amazon.com/s?k=thorne+creatine" target="_blank" rel="noopener" class="prod-card">
+            <div class="prod-visual cr-micro">
+              <div class="prod-badge" style="border-color:rgba(22,163,74,0.25);">
+                <div class="prod-badge-dot" style="background:#16a34a;"></div>
+                Premium quality
+              </div>
+              <div class="prod-visual-icon">🧬</div>
+            </div>
+            <div class="prod-content">
+              <div class="prod-category">Supplement · Creatine Monohydrate · NSF Certified</div>
+              <div class="prod-name">Thorne Creatine</div>
+              <p class="prod-summary">Thorne is one of the most trusted names in evidence-based supplementation. Their creatine is NSF Certified for Sport — the most rigorous third-party certification available. Suitable for competitive athletes who are subject to drug testing. Slightly higher price for premium quality assurance.</p>
+              <div class="prod-why">
+                <div class="prod-why-label">Why we picked it</div>
+                <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px;">
+                  <li style="font-size:13px;color:var(--muted);font-weight:300;">✓ NSF Certified for Sport — highest available certification standard</li>
+                  <li style="font-size:13px;color:var(--muted);font-weight:300;">✓ Used and trusted by professional athletes and clinical settings</li>
+                  <li style="font-size:13px;color:var(--muted);font-weight:300;">✓ Pure monohydrate — no additives, no fillers</li>
+                  <li style="font-size:13px;color:var(--muted);font-weight:300;">✓ Brand with a long track record in evidence-based supplementation</li>
+                </ul>
+              </div>
+              <div class="prod-tags">
+                <span class="prod-tag">NSF Certified</span>
+                <span class="prod-tag">Sport safe</span>
+                <span class="prod-tag">No fillers</span>
+              </div>
+              <div class="prod-cta">
+                View on Amazon
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M8 4l3 3-3 3" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div class="prod-affiliate">This is a search link. We do not earn a commission on this recommendation.</div>
+            </div>
+          </a>
+        </div>
+
+        <!-- 10 SOURCES -->
+        <div class="guide-section reveal" id="sources">
+          <div class="section-eyebrow">10 — Sources</div>
+          <h2>References</h2>
+          <ul class="sources-list">
+            <li>
+              <div class="src-num">1</div>
+              <div class="src-text">Forbes S.C. et al. (2021). <em>Meta-Analysis Examining the Importance of Creatine Ingestion Strategies on Lean Tissue Mass and Strength in Older Adults.</em> Nutrients, 13(6), 1912. <a href="https://pubmed.ncbi.nlm.nih.gov/34199025/" target="_blank" rel="noopener">PubMed: 34199025</a></div>
+            </li>
+            <li>
+              <div class="src-num">2</div>
+              <div class="src-text">Roschel H. et al. (2021). <em>Creatine Supplementation and Brain Health.</em> Nutrients, 13(2), 586. <a href="https://pubmed.ncbi.nlm.nih.gov/33578876/" target="_blank" rel="noopener">PubMed: 33578876</a></div>
+            </li>
+            <li>
+              <div class="src-num">3</div>
+              <div class="src-text">Prokopidis K. et al. (2023). <em>Effects of creatine supplementation on memory in healthy individuals: a systematic review and meta-analysis.</em> Nutrition Reviews, 81(4), 416–427. <a href="https://pubmed.ncbi.nlm.nih.gov/36368816/" target="_blank" rel="noopener">PubMed: 36368816</a></div>
+            </li>
+            <li>
+              <div class="src-num">4</div>
+              <div class="src-text">Smith-Ryan A.E. et al. (2021). <em>Creatine Supplementation in Women's Health: A Lifespan Perspective.</em> Nutrients, 13(3), 877. <a href="https://pubmed.ncbi.nlm.nih.gov/33806481/" target="_blank" rel="noopener">PubMed: 33806481</a></div>
+            </li>
+            <li>
+              <div class="src-num">5</div>
+              <div class="src-text">Candow D.G. et al. (2023). <em>Heads Up for Creatine Supplementation and its Potential Applications for Brain Health and Function.</em> Sports Medicine, 53(Suppl 1), 49–65. <a href="https://pubmed.ncbi.nlm.nih.gov/37368234/" target="_blank" rel="noopener">PubMed: 37368234</a></div>
+            </li>
+            <li>
+              <div class="src-num">6</div>
+              <div class="src-text">Buford T.W. et al. (2007). <em>International Society of Sports Nutrition position stand: creatine supplementation and exercise.</em> Journal of the International Society of Sports Nutrition, 4, 6. <a href="https://pubmed.ncbi.nlm.nih.gov/17908288/" target="_blank" rel="noopener">PubMed: 17908288</a></div>
+            </li>
+            <li>
+              <div class="src-num">7</div>
+              <div class="src-text">Jagim A.R. et al. (2012). <em>A buffered form of creatine does not promote greater changes in muscle creatine content, body composition, or training adaptations than creatine monohydrate.</em> Journal of the International Society of Sports Nutrition, 9(1), 43. <a href="https://pubmed.ncbi.nlm.nih.gov/22971354/" target="_blank" rel="noopener">PubMed: 22971354</a> (Kre-Alkalyn vs. monohydrate)</div>
+            </li>
+            <li>
+              <div class="src-num">8</div>
+              <div class="src-text">Avgerinos K.I. et al. (2018). <em>Effects of creatine supplementation on cognitive function of healthy individuals.</em> Experimental Gerontology, 108, 166–173. <a href="https://pubmed.ncbi.nlm.nih.gov/29704637/" target="_blank" rel="noopener">PubMed: 29704637</a></div>
+            </li>
+          </ul>
+        </div>
+
+      </main>
+
+      <!-- SIDEBAR -->
+      <aside class="guide-sidebar">
+        <div class="sidebar-card">
+          <div class="sidebar-title">Key numbers</div>
+          <div class="stat-item">
+            <div class="stat-value">500+</div>
+            <div class="stat-desc">Peer-reviewed studies on creatine</div>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <div class="stat-value">3–5g</div>
+            <div class="stat-desc">Daily maintenance dose shown effective across studies</div>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <div class="stat-value">4–6wk</div>
+            <div class="stat-desc">Time to full muscle saturation without loading</div>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item" style="margin-bottom:0;">
+            <div class="stat-value">95%</div>
+            <div class="stat-desc">Of body's creatine stored in skeletal muscle</div>
+          </div>
+        </div>
+
+        <div class="sidebar-card">
+          <div class="sidebar-title">Forms at a glance</div>
+          <div style="display:flex;flex-direction:column;gap:8px;">
+            <div style="display:flex;align-items:center;gap:10px;font-size:12px;color:var(--muted);font-weight:300;">
+              <span style="color:var(--blue);font-weight:700;">★</span> Monohydrate — gold standard
+            </div>
+            <div style="display:flex;align-items:center;gap:10px;font-size:12px;color:var(--muted);font-weight:300;">
+              <span style="color:var(--blue);font-weight:700;">✓</span> Micronized — same, mixes better
+            </div>
+            <div style="display:flex;align-items:center;gap:10px;font-size:12px;color:var(--muted);font-weight:300;">
+              <span style="color:var(--blue);font-weight:700;">~</span> HCl — smaller dose, less data
+            </div>
+            <div style="display:flex;align-items:center;gap:10px;font-size:12px;color:var(--muted);font-weight:300;">
+              <span style="color:var(--blue);font-weight:700;">~</span> Nitrate — limited research
+            </div>
+            <div style="height:1px;background:var(--line);margin:4px 0;"></div>
+            <div style="display:flex;align-items:center;gap:10px;font-size:12px;color:var(--muted);font-weight:300;">
+              <span style="color:#dc2626;font-weight:700;">×</span> Kre-Alkalyn — no proven advantage
+            </div>
+            <div style="display:flex;align-items:center;gap:10px;font-size:12px;color:var(--muted);font-weight:300;">
+              <span style="color:#dc2626;font-weight:700;">×</span> Ethyl Ester — debunked
+            </div>
+          </div>
+        </div>
+
+        <div class="sidebar-card">
+          <div class="sidebar-title">Disclaimer</div>
+          <p class="sidebar-disclaimer">This guide is for informational purposes only and does not constitute medical advice. Consult a doctor or dietitian before starting any supplement, especially if you have kidney disease, take medication, or have a health condition.</p>
+        </div>
+      </aside>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <span style="font-size:1.3rem;font-weight:700;background:linear-gradient(135deg,#60a5fa,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:-0.03em;font-family:'Sora',sans-serif;display:block;margin-bottom:16px;">Improo</span>
+          <p>Health, weight loss, movement & mindset — together.</p>
+          <small>© 2026 Improo. All rights reserved.</small>
+        </div>
+        <div class="footer-links">
+          <h4>Navigation</h4>
+          <a href="../index.html">Home</a>
+          <a href="../insights/index.html">Articles</a>
+          <a href="../guides.html">Guides</a>
+          <a href="../roadmap.html">Roadmap</a>
+        </div>
+        <div class="footer-links">
+          <h4>Legal</h4>
+          <a href="../disclaimer.html">Disclaimer</a>
+          <a href="../privacy-policy.html">Privacy Policy</a>
+          <a href="../terms-of-service.html">Terms of Service</a>
+        </div>
+        <div class="footer-links">
+          <h4>Follow</h4>
+          <a href="https://www.youtube.com/@Improo_App">YouTube</a>
+          <a href="https://x.com/Improo_">X (Twitter)</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const bar = document.getElementById('read-progress');
+    window.addEventListener('scroll', () => {
+      const doc = document.documentElement;
+      const pct = (doc.scrollTop / (doc.scrollHeight - doc.clientHeight)) * 100;
+      bar.style.width = Math.min(pct, 100) + '%';
+    }, { passive: true });
+
+    const reveals = document.querySelectorAll('.reveal');
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
+      });
+    }, { threshold: 0.06 });
+    reveals.forEach(el => obs.observe(el));
+  </script>
+
+</body>
+</html>
