@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>What is Habit Stacking? — Improo Guide</title>
+  <meta name="description" content="Habit stacking explained: how anchoring new behaviors to existing ones creates lasting change. An evidence-based guide covering the science, methods, and common mistakes." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700&family=Lora:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+  <script>
+    window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+  </script>
+  <script defer src="/_vercel/insights/script.js"></script>
+
+  <style>
+    body { overflow-x: hidden; }
+
+    .article-wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      width: 100%;
+    }
+
+    #read-progress {
+      position: fixed;
+      top: 0; left: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--blue), #60a5fa);
+      width: 0%;
+      z-index: 999;
+      transition: width 0.1s linear;
+    }
+
+    /* HERO */
+    .guide-hero { padding: 52px 0 0; }
+
+    .hero-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: 20px;
+    }
+    .hero-kicker::before {
+      content: '';
+      display: block;
+      width: 28px; height: 1px;
+      background: var(--blue);
+    }
+
+    .hero-layout {
+      display: grid;
+      grid-template-columns: 1fr 260px;
+      gap: 48px;
+      align-items: start;
+      padding-bottom: 48px;
+      border-bottom: 1px solid var(--line);
+    }
+    @media (max-width: 900px) {
+      .hero-layout { grid-template-columns: 1fr; }
+      .hero-visual-wrap { display: none; }
+    }
+
+    .guide-hero h1 {
+      font-family: 'Lora', serif;
+      font-size: clamp(2.2rem, 5vw, 3.6rem);
+      font-weight: 400;
+      line-height: 1.1;
+      color: #0c1a2e;
+      margin: 0 0 20px;
+      letter-spacing: -0.02em;
+      max-width: 660px;
+    }
+    .guide-hero h1 em { font-style: italic; color: var(--blue); }
+
+    .hero-meta {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-size: 12px;
+      color: var(--muted-light);
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+    }
+    .hero-meta-dot { width: 3px; height: 3px; border-radius: 50%; background: var(--muted-light); }
+
+    .hero-intro {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: var(--muted);
+      max-width: 580px;
+      font-weight: 300;
+      margin-bottom: 32px;
+    }
+
+    .hero-facts {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--line);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      overflow: hidden;
+      margin-bottom: 32px;
+    }
+    .hero-fact { background: var(--panel); padding: 18px 16px; text-align: center; }
+    .hero-fact-value {
+      font-family: 'Lora', serif;
+      font-size: 1.7rem;
+      font-weight: 600;
+      color: var(--blue);
+      display: block;
+      line-height: 1;
+      margin-bottom: 5px;
+    }
+    .hero-fact-label { font-size: 11px; color: var(--muted-light); line-height: 1.4; }
+    @media (max-width: 480px) { .hero-facts { grid-template-columns: 1fr; } }
+
+    .hero-visual-wrap {
+      position: relative;
+      height: 340px;
+      border-radius: 24px;
+      overflow: hidden;
+      background: linear-gradient(135deg, #dbeafe 0%, #eff6ff 60%, #ecfdf5 100%);
+      border: 1px solid var(--line);
+    }
+
+    /* TOC */
+    .toc {
+      background: var(--panel-2);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 22px 26px;
+    }
+    .toc-title { font-size: 9px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--muted-light); margin-bottom: 14px; }
+    .toc ol { list-style: none; counter-reset: toc; display: flex; flex-direction: column; gap: 10px; }
+    .toc ol li { counter-increment: toc; display: flex; align-items: baseline; gap: 12px; }
+    .toc ol li::before { content: counter(toc, decimal-leading-zero); font-size: 9px; font-weight: 700; color: var(--blue-light); min-width: 20px; }
+    .toc ol li a { font-size: 13px; color: var(--muted); text-decoration: none; transition: color 0.2s; line-height: 1.4; }
+    .toc ol li a:hover { color: var(--blue); }
+
+    /* LAYOUT */
+    .guide-body {
+      display: grid;
+      grid-template-columns: 1fr 272px;
+      gap: 64px;
+      align-items: start;
+      padding: 56px 0 96px;
+    }
+    @media (max-width: 960px) {
+      .guide-body { grid-template-columns: 1fr; }
+      .guide-sidebar { display: none; }
+    }
+
+    /* SECTIONS */
+    .guide-section { margin-bottom: 64px; padding-bottom: 64px; border-bottom: 1px solid var(--line); }
+    .guide-section:last-child { border-bottom: none; margin-bottom: 0; }
+
+    .section-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--blue-light);
+      margin-bottom: 14px;
+    }
+    .section-eyebrow::after { content: ''; flex: 1; max-width: 36px; height: 1px; background: var(--line-strong); }
+
+    .guide-section h2 {
+      font-family: 'Lora', serif;
+      font-size: clamp(1.4rem, 2.8vw, 2rem);
+      font-weight: 400;
+      line-height: 1.2;
+      color: #0c1a2e;
+      margin: 0 0 22px;
+    }
+
+    .guide-section h3 {
+      font-size: 15px;
+      font-weight: 700;
+      color: #0c1a2e;
+      margin: 28px 0 10px;
+    }
+
+    .guide-section p { font-size: 0.97rem; font-weight: 300; color: var(--muted); margin-bottom: 18px; line-height: 1.85; max-width: 640px; }
+
+    .callout {
+      border-left: 3px solid var(--blue);
+      padding: 20px 24px;
+      background: linear-gradient(135deg, rgba(37,99,235,0.04), rgba(96,165,250,0.06));
+      border-radius: 0 12px 12px 0;
+      margin: 28px 0;
+    }
+    .callout p { margin: 0; color: var(--blue-dark); font-style: italic; font-size: 1rem; line-height: 1.7; max-width: none; }
+    .callout-label { font-size: 9px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--blue-light); margin-bottom: 8px; }
+
+    .insight-box {
+      background: linear-gradient(135deg, #0f1f3d 0%, #1e3a6e 100%);
+      border-radius: 16px;
+      padding: 28px 30px;
+      margin: 28px 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .insight-box::before {
+      content: '';
+      position: absolute;
+      top: -40px; right: -40px;
+      width: 160px; height: 160px;
+      border-radius: 50%;
+      background: rgba(96,165,250,0.07);
+    }
+    .insight-label { font-size: 9px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: rgba(96,165,250,0.65); margin-bottom: 10px; display: block; }
+    .insight-box p { margin: 0; color: rgba(255,255,255,0.88); font-size: 0.97rem; line-height: 1.72; font-weight: 300; max-width: none; }
+    .insight-box strong { color: #fff; font-weight: 600; }
+
+    .opinion-box {
+      background: linear-gradient(135deg, #1e3a6e 0%, #1e40af 100%);
+      border-radius: 16px;
+      padding: 28px 30px;
+      margin: 28px 0;
+      position: relative;
+      overflow: hidden;
+      border-left: 4px solid #60a5fa;
+    }
+    .opinion-label { font-size: 9px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: rgba(147,197,253,0.8); margin-bottom: 10px; display: block; }
+    .opinion-box p { margin: 0; color: rgba(255,255,255,0.92); font-size: 1rem; line-height: 1.75; font-weight: 300; max-width: none; font-style: italic; }
+    .opinion-box strong { color: #93c5fd; font-weight: 600; font-style: normal; }
+
+    /* Forms grid */
+    .forms-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 24px 0; }
+    @media (max-width: 580px) { .forms-grid { grid-template-columns: 1fr; } }
+
+    .form-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 22px 20px;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .form-card:hover { border-color: var(--line-strong); box-shadow: var(--shadow); }
+    .form-card.featured {
+      background: linear-gradient(135deg, rgba(37,99,235,0.05), rgba(96,165,250,0.07));
+      border-color: rgba(37,99,235,0.18);
+    }
+    .form-badge {
+      display: inline-block;
+      font-size: 9px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;
+      padding: 3px 8px; border-radius: 6px; margin-bottom: 10px;
+      background: rgba(37,99,235,0.1); color: var(--blue-dark);
+    }
+    .form-name { font-size: 15px; font-weight: 700; color: #0c1a2e; margin-bottom: 4px; }
+    .form-use { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--blue-light); margin-bottom: 8px; }
+    .form-desc { font-size: 13px; color: var(--muted); line-height: 1.65; font-weight: 300; }
+
+    /* Study cards */
+    .study-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 22px 24px;
+      margin: 16px 0;
+      display: grid;
+      grid-template-columns: 38px 1fr;
+      gap: 16px;
+      align-items: start;
+      transition: box-shadow 0.2s, border-color 0.2s;
+    }
+    .study-card:hover { border-color: var(--line-strong); box-shadow: var(--shadow); }
+    .study-num {
+      width: 34px; height: 34px; border-radius: 9px;
+      background: var(--blue-pale); border: 1px solid var(--line-strong);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 11px; font-weight: 700; color: var(--blue-dark); flex-shrink: 0;
+    }
+    .study-title { font-size: 14px; font-weight: 600; color: #0c1a2e; margin-bottom: 8px; }
+    .study-text  { font-size: 13.5px; font-weight: 300; color: var(--muted); line-height: 1.7; margin: 0; }
+    .study-source { font-size: 11px; color: var(--muted-light); margin-top: 10px; font-style: italic; }
+    .study-source a { color: var(--blue); text-decoration: none; }
+    .study-source a:hover { text-decoration: underline; }
+
+    /* Dosage table */
+    .dosage-table { width: 100%; border-collapse: collapse; margin: 24px 0; font-size: 13.5px; }
+    .dosage-table th { background: var(--panel-2); color: var(--muted-light); font-size: 10px; text-transform: uppercase; letter-spacing: 1px; padding: 11px 14px; text-align: left; border-bottom: 1px solid var(--line); font-weight: 700; }
+    .dosage-table td { padding: 12px 14px; border-bottom: 1px solid var(--line); color: var(--muted); vertical-align: top; font-weight: 300; }
+    .dosage-table tr:last-child td { border-bottom: none; }
+    .dosage-table td:first-child { color: #0c1a2e; font-weight: 600; }
+    .dosage-table tr:hover td { background: var(--panel); }
+
+    /* Summary list */
+    .summary-list { list-style: none; display: flex; flex-direction: column; gap: 14px; margin: 20px 0; }
+    .summary-list li { display: flex; align-items: flex-start; gap: 14px; font-size: 14.5px; font-weight: 300; color: var(--muted); line-height: 1.65; }
+    .sum-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--blue); flex-shrink: 0; margin-top: 7px; }
+
+    /* Products */
+    .prod-card {
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      overflow: hidden;
+      background: var(--panel);
+      margin-bottom: 20px;
+      transition: box-shadow 0.3s ease, border-color 0.3s ease, transform 0.25s ease;
+      text-decoration: none;
+      color: inherit;
+    }
+    .prod-card:hover { box-shadow: 0 16px 48px rgba(37,99,235,0.12); border-color: rgba(37,99,235,0.22); transform: translateY(-2px); }
+    @media (max-width: 680px) { .prod-card { grid-template-columns: 1fr; } .prod-visual { height: 180px; } }
+
+    .prod-visual {
+      position: relative; overflow: hidden;
+      display: flex; flex-direction: column; justify-content: flex-start;
+      padding: 18px; min-height: 220px;
+    }
+    .prod-visual.guide-book-1 { background: linear-gradient(160deg, #dbeafe 0%, #bfdbfe 40%, #ede9fe 100%); }
+    .prod-visual.guide-book-2 { background: linear-gradient(160deg, #d1fae5 0%, #a7f3d0 40%, #bfdbfe 100%); }
+
+    .prod-badge {
+      position: relative; z-index: 2;
+      display: inline-flex; align-items: center; gap: 7px;
+      background: rgba(255,255,255,0.96);
+      border: 1.5px solid rgba(37,99,235,0.22);
+      border-radius: 22px; padding: 7px 14px 7px 10px;
+      font-size: 11px; font-weight: 700; color: var(--blue-dark);
+      backdrop-filter: blur(8px); align-self: flex-start;
+      box-shadow: 0 2px 10px rgba(37,99,235,0.12);
+    }
+    .prod-badge-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--blue); }
+    .prod-visual-icon { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); font-size: 64px; opacity: 0.25; }
+
+    .prod-content { padding: 26px 26px 22px; display: flex; flex-direction: column; }
+    .prod-category { font-size: 9px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--blue-light); margin-bottom: 8px; }
+    .prod-name { font-family: 'Lora', serif; font-size: 1.2rem; font-weight: 600; color: #0c1a2e; line-height: 1.25; margin-bottom: 12px; }
+    .prod-summary { font-size: 13.5px; color: var(--muted); line-height: 1.7; font-weight: 300; margin-bottom: 14px; }
+
+    .prod-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 16px; }
+    .prod-tag { font-size: 11px; background: rgba(22,163,74,0.09); color: #15803d; padding: 4px 10px; border-radius: 20px; font-weight: 600; border: 1px solid rgba(22,163,74,0.15); }
+
+    .prod-cta {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+      color: #fff; font-size: 14px; font-weight: 700;
+      padding: 13px 24px; border-radius: 28px;
+      transition: background 0.2s, box-shadow 0.2s, gap 0.2s, transform 0.2s;
+      box-shadow: 0 6px 20px rgba(37,99,235,0.30);
+      align-self: flex-start; margin-bottom: 10px;
+    }
+    .prod-cta:hover { background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%); gap: 16px; box-shadow: 0 10px 28px rgba(37,99,235,0.42); transform: translateY(-1px); }
+    .prod-affiliate { font-size: 10.5px; color: var(--muted-light); }
+
+    /* Sources */
+    .sources-list { list-style: none; display: flex; flex-direction: column; gap: 14px; margin-top: 16px; }
+    .sources-list li { display: flex; gap: 12px; align-items: flex-start; }
+    .src-num { font-size: 10px; font-weight: 700; color: var(--blue-dark); background: var(--blue-pale); width: 24px; height: 24px; border-radius: 6px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
+    .src-text { font-size: 12.5px; color: var(--muted-light); line-height: 1.6; }
+    .src-text a { color: var(--blue); text-decoration: none; }
+    .src-text a:hover { text-decoration: underline; }
+
+    /* Sidebar */
+    .guide-sidebar { position: sticky; top: 88px; display: flex; flex-direction: column; gap: 16px; }
+    .sidebar-card { background: var(--panel); border: 1px solid var(--line); border-radius: 16px; padding: 20px 18px; box-shadow: var(--shadow); }
+    .sidebar-title { font-size: 9px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--muted-light); margin-bottom: 16px; }
+    .stat-item { display: flex; flex-direction: column; gap: 4px; margin-bottom: 16px; }
+    .stat-value { font-family: 'Lora', serif; font-size: 2.1rem; font-weight: 600; font-style: italic; color: var(--blue); line-height: 1; }
+    .stat-desc { font-size: 12px; color: var(--muted); line-height: 1.45; font-weight: 300; }
+    .stat-divider { height: 1px; background: var(--line); margin: 4px 0 16px; }
+    .sidebar-disclaimer { font-size: 11px; color: var(--muted-light); line-height: 1.65; font-weight: 300; }
+
+    /* Animations */
+    .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.55s ease, transform 0.55s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+  </style>
+</head>
+<body>
+
+  <div id="read-progress"></div>
+
+  <!-- NAV -->
+  <header class="site-header">
+    <div class="container">
+      <nav class="nav">
+        <a href="../index.html">
+          <span style="font-size:1.6rem;font-weight:700;background:linear-gradient(135deg,#3b9ef5,#2563eb);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:-0.03em;font-family:'Sora',sans-serif;">Improo</span>
+        </a>
+        <div class="nav-links">
+          <a href="../index.html">Home</a>
+          <a href="../insights/index.html">Articles</a>
+          <a href="../guides.html" class="active">Guides</a>
+          <a href="../roadmap.html">Roadmap</a>
+          <a href="../index.html#contact">Contact</a>
+        </div>
+        <div class="socials">
+          <a href="https://www.youtube.com/@Improo_App" aria-label="YouTube">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.7 15.5V8.5l6.3 3.5-6.3 3.5z"/></svg>
+          </a>
+          <a href="https://x.com/Improo_" aria-label="X">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <div class="article-wrap">
+
+    <a href="../guides.html" class="back-link" style="margin-top:36px;display:inline-flex;align-items:center;gap:6px;font-size:13px;color:var(--muted);transition:color 0.2s;">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M9 2L4 7l5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Back to Guides
+    </a>
+
+    <!-- HERO -->
+    <section class="guide-hero">
+      <div class="hero-layout">
+        <div class="hero-left reveal">
+          <div class="hero-kicker">Mindset Guide</div>
+          <h1>What is <em>Habit Stacking</em>?</h1>
+          <div class="hero-meta">
+            <span>10 min read</span>
+            <div class="hero-meta-dot"></div>
+            <span>Science-backed</span>
+            <div class="hero-meta-dot"></div>
+            <span>Not medical advice</span>
+          </div>
+          <p class="hero-intro">Habit stacking is one of the most effective behavior-change strategies known. Instead of relying on motivation or reminders, it anchors a new behavior to something you already do automatically. This guide explains how it works, why it works, and how to build stacks that actually last.</p>
+
+          <div class="hero-facts">
+            <div class="hero-fact reveal">
+              <span class="hero-fact-value">40%</span>
+              <span class="hero-fact-label">of daily actions are automatic habits, not conscious choices</span>
+            </div>
+            <div class="hero-fact reveal">
+              <span class="hero-fact-value">66 days</span>
+              <span class="hero-fact-label">average time to form a new habit, per UCL research</span>
+            </div>
+            <div class="hero-fact reveal">
+              <span class="hero-fact-value">2–4x</span>
+              <span class="hero-fact-label">higher habit retention when tied to an existing anchor behavior</span>
+            </div>
+          </div>
+
+          <div class="toc">
+            <div class="toc-title">In this guide</div>
+            <ol>
+              <li><a href="#intro">What is habit stacking?</a></li>
+              <li><a href="#mechanism">How does it work?</a></li>
+              <li><a href="#willpower">Why it beats willpower</a></li>
+              <li><a href="#types">Types of habit stacks</a></li>
+              <li><a href="#science">What the research says</a></li>
+              <li><a href="#how-to">How to build your first stack</a></li>
+              <li><a href="#mistakes">Common mistakes</a></li>
+              <li><a href="#summary">The short version</a></li>
+              <li><a href="#products">Recommended reading</a></li>
+              <li><a href="#sources">Sources</a></li>
+            </ol>
+          </div>
+        </div>
+
+        <!-- Hero visual -->
+        <div class="hero-visual-wrap reveal">
+          <svg width="100%" viewBox="0 0 260 340" xmlns="http://www.w3.org/2000/svg" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+            <defs>
+              <radialGradient id="hsBg" cx="50%" cy="40%" r="65%"><stop offset="0%" stop-color="#e8eeff"/><stop offset="100%" stop-color="#f0f9ff"/></radialGradient>
+            </defs>
+            <rect width="260" height="340" fill="url(#hsBg)"/>
+            <rect x="50" y="240" width="160" height="36" rx="10" fill="#2563eb" opacity="0.9"/>
+            <text x="130" y="263" text-anchor="middle" font-family="'Sora',sans-serif" font-size="11" font-weight="600" fill="white">EXISTING HABIT</text>
+            <rect x="62" y="196" width="136" height="36" rx="10" fill="#3b82f6" opacity="0.85"/>
+            <text x="130" y="219" text-anchor="middle" font-family="'Sora',sans-serif" font-size="11" font-weight="600" fill="white">NEW BEHAVIOR</text>
+            <rect x="74" y="152" width="112" height="36" rx="10" fill="#60a5fa" opacity="0.80"/>
+            <text x="130" y="175" text-anchor="middle" font-family="'Sora',sans-serif" font-size="11" font-weight="600" fill="white">NEXT HABIT</text>
+            <rect x="86" y="108" width="88" height="36" rx="10" fill="#93c5fd" opacity="0.75"/>
+            <text x="130" y="131" text-anchor="middle" font-family="'Sora',sans-serif" font-size="10" font-weight="600" fill="#1e3a6e">AND MORE...</text>
+            <line x1="130" y1="242" x2="130" y2="232" stroke="#1d4ed8" stroke-width="2" stroke-dasharray="3,2"/>
+            <line x1="130" y1="198" x2="130" y2="188" stroke="#2563eb" stroke-width="2" stroke-dasharray="3,2"/>
+            <line x1="130" y1="154" x2="130" y2="144" stroke="#3b82f6" stroke-width="2" stroke-dasharray="3,2"/>
+            <rect x="30" y="44" width="200" height="28" rx="8" fill="rgba(37,99,235,0.08)" stroke="rgba(37,99,235,0.2)" stroke-width="1"/>
+            <text x="130" y="63" text-anchor="middle" font-family="'Lora',serif" font-size="11" font-style="italic" fill="#1e3a6e">After I [A], I will [B]</text>
+            <circle cx="36" cy="200" r="5" fill="rgba(96,165,250,0.2)"/>
+            <circle cx="224" cy="120" r="7" fill="rgba(37,99,235,0.12)"/>
+            <circle cx="220" cy="290" r="4" fill="rgba(147,197,253,0.3)"/>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- BODY -->
+    <div class="guide-body">
+      <main>
+
+        <!-- 01 INTRO -->
+        <div class="guide-section reveal" id="intro">
+          <div class="section-eyebrow">01 — Introduction</div>
+          <h2>What is habit stacking?</h2>
+          <p>Habit stacking is the practice of linking a new behavior directly to an existing one. The formula, popularized by James Clear in <em>Atomic Habits</em> (2018), is simple: "After I [CURRENT HABIT], I will [NEW HABIT]." The existing habit acts as a cue — a reliable trigger that fires automatically, pulling the new behavior along with it.</p>
+          <p>The concept builds on decades of research in habit psychology. Your brain forms habits by encoding sequences of behavior into neural circuits. Once a habit is established, it runs with minimal conscious input — freeing cognitive resources for other things. Habit stacking exploits this property: by attaching a new behavior to an existing circuit, you borrow the automaticity that already exists.</p>
+          <p>Example stacks that work: "After I pour my morning coffee, I will write one thing I am grateful for." "After I sit down at my desk, I will open my water bottle and take three sips." "After I brush my teeth at night, I will do two minutes of stretching."</p>
+          <div class="insight-box">
+            <span class="insight-label">Key insight</span>
+            <p>Habit stacking does not create motivation from scratch. It <strong>reduces the cognitive work required to begin a new behavior</strong> — by attaching it to a moment that already exists in your day.</p>
+          </div>
+        </div>
+
+        <!-- 02 MECHANISM -->
+        <div class="guide-section reveal" id="mechanism">
+          <div class="section-eyebrow">02 — How it works</div>
+          <h2>How does it work?</h2>
+
+          <h3>The habit loop</h3>
+          <p>Every habit follows a three-part cycle: cue, routine, reward. The cue triggers the behavior; the routine is the behavior itself; the reward is the outcome that reinforces the loop. Habit stacking works by inserting a new routine between an existing cue and the moment that follows it.</p>
+
+          <h3>Neural encoding</h3>
+          <p>Habits are encoded in the basal ganglia — a part of the brain responsible for procedural memory and automatic behavior. When a habit is well established, the brain chunks the entire sequence into a single unit that fires automatically when the cue appears. By stacking a new behavior onto an existing cue, you start building a new chunk around an anchor that already fires reliably.</p>
+
+          <h3>Friction reduction</h3>
+          <p>One of the biggest barriers to new habits is activation energy — the mental effort required to initiate a behavior. A well-chosen existing habit eliminates this barrier: you do not have to remember to do the new thing, set a reminder, or find the motivation. The existing behavior does that work for you.</p>
+
+          <div class="callout">
+            <div class="callout-label">Choose your anchor carefully</div>
+            <p>The strongest habit stacks use high-frequency anchors — behaviors that happen every single day, at a predictable time, in a predictable location. Morning coffee, brushing teeth, sitting down to work. The more consistent the anchor, the more reliable the stack.</p>
+          </div>
+        </div>
+
+        <!-- 03 WILLPOWER -->
+        <div class="guide-section reveal" id="willpower">
+          <div class="section-eyebrow">03 — Mindset</div>
+          <h2>Why it beats willpower</h2>
+          <p>Willpower is a limited resource. Research consistently shows that it depletes throughout the day — a phenomenon called decision fatigue — making new behaviors harder to sustain in the afternoon or evening. Habit stacking sidesteps this problem entirely: because the behavior is triggered by an existing cue rather than by a deliberate decision, it does not draw on the same willpower reserves.</p>
+          <p>The failure mode of most habit attempts is not lack of intention — it is lack of a reliable trigger. People intend to exercise, meditate, or read — but when the moment arrives, they are tired, distracted, or simply forget. Habit stacking provides an automatic trigger that exists regardless of motivation level.</p>
+
+          <h3>Temptation bundling</h3>
+          <p>A related strategy — also supported by research — pairs a desired behavior with an existing habit to make it more appealing. Listening to a podcast only while walking is an example. The enjoyment of the podcast becomes part of the habit loop, reinforcing the walking behavior through an anticipated reward.</p>
+
+          <div class="opinion-box">
+            <span class="opinion-label">Our take</span>
+            <p>Most habit failures are not a discipline problem. They are a <strong>design problem</strong>. Habit stacking is a design solution — it removes the need for daily decisions and makes the behavior the path of least resistance.</p>
+          </div>
+        </div>
+
+        <!-- 04 TYPES -->
+        <div class="guide-section reveal" id="types">
+          <div class="section-eyebrow">04 — Types</div>
+          <h2>Types of habit stacks</h2>
+          <p>There are several approaches to habit stacking, each suited to different situations and behavioral goals.</p>
+
+          <div class="forms-grid">
+            <div class="form-card featured">
+              <span class="form-badge">Most common</span>
+              <div class="form-name">Sequential Stacking</div>
+              <div class="form-use">After I [A], I will [B]</div>
+              <p class="form-desc">Linear chain of behaviors, one following the other. The most straightforward format. Works best with behaviors of similar duration and location.</p>
+            </div>
+            <div class="form-card featured">
+              <span class="form-badge">High motivation</span>
+              <div class="form-name">Habit Bundling</div>
+              <div class="form-use">Pair want with need</div>
+              <p class="form-desc">Pair a behavior you want to do with one you need to do. Only listen to your favourite podcast during walks. Only watch a specific show while folding laundry. The enjoyment of one reinforces the other.</p>
+            </div>
+            <div class="form-card">
+              <div class="form-name">Location Anchoring</div>
+              <div class="form-use">Environment-based</div>
+              <p class="form-desc">Attach the new behavior to a specific place rather than a specific action. "When I sit at my desk, I open my water bottle." The location becomes the cue, reducing reliance on a preceding behavior.</p>
+            </div>
+            <div class="form-card">
+              <div class="form-name">Scaled Stacking</div>
+              <div class="form-use">For starting small</div>
+              <p class="form-desc">Chain a tiny version of the new behavior onto an existing one. "After I brush my teeth, I will do one push-up." Over time, the stack scales up naturally. Used in BJ Fogg's Tiny Habits method.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 05 SCIENCE -->
+        <div class="guide-section reveal" id="science">
+          <div class="section-eyebrow">05 — Research</div>
+          <h2>What the research says</h2>
+          <p>Habit stacking is grounded in a robust body of behavioral science. Here are four key studies that underpin the approach.</p>
+
+          <div class="study-card">
+            <div class="study-num">[1]</div>
+            <div>
+              <div class="study-title">Lally P. et al. (2010) — How habits are formed</div>
+              <p class="study-text">A study of 96 participants over 12 weeks found that habits take an average of 66 days to form — ranging from 18 to 254 days depending on the person and behavior. Crucially, missing a single day did not meaningfully disrupt the formation process. The study emphasizes consistency over perfection.</p>
+              <div class="study-source">European Journal of Social Psychology, 40(6), 998–1009. <a href="https://doi.org/10.1002/ejsp.674" target="_blank" rel="noopener">https://doi.org/10.1002/ejsp.674</a></div>
+            </div>
+          </div>
+
+          <div class="study-card">
+            <div class="study-num">[2]</div>
+            <div>
+              <div class="study-title">Gollwitzer PM (1999) — Implementation intentions</div>
+              <p class="study-text">A seminal paper in <em>American Psychologist</em> examined "implementation intentions" — if-then plans that specify when, where, and how a behavior will be performed. Studies showed that implementation intentions significantly increased follow-through rates on a range of health and behavioral goals. Habit stacking is an applied form of implementation intention.</p>
+              <div class="study-source">American Psychologist, 54(7), 493–503. <a href="https://pubmed.ncbi.nlm.nih.gov/10450953/" target="_blank" rel="noopener">PubMed: 10450953</a></div>
+            </div>
+          </div>
+
+          <div class="study-card">
+            <div class="study-num">[3]</div>
+            <div>
+              <div class="study-title">Wood W. &amp; Neal DT (2007) — A new look at habits</div>
+              <p class="study-text">A major review in <em>Psychological Review</em> argued that habits are context-dependent automatic responses to environmental cues — not conscious decisions. The review found that approximately 40–45% of daily behaviors are habitual. It also showed that habit strength is most influenced by contextual stability — consistent cues in consistent environments.</p>
+              <div class="study-source">Psychological Review, 114(4), 843–863. <a href="https://pubmed.ncbi.nlm.nih.gov/17907866/" target="_blank" rel="noopener">PubMed: 17907866</a></div>
+            </div>
+          </div>
+
+          <div class="study-card">
+            <div class="study-num">[4]</div>
+            <div>
+              <div class="study-title">Gardner B. et al. (2012) — Making health habitual</div>
+              <p class="study-text">A review in the <em>British Journal of General Practice</em> examined the behavioral science of habit formation in the context of health behavior change. The paper concluded that existing habits are powerful contextual cues for new behaviors, and that health interventions are more likely to succeed when they leverage existing routines rather than requiring the construction of new contexts from scratch.</p>
+              <div class="study-source">British Journal of General Practice. <a href="https://pubmed.ncbi.nlm.nih.gov/23211256/" target="_blank" rel="noopener">PubMed: 23211256</a></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 06 HOW TO -->
+        <div class="guide-section reveal" id="how-to">
+          <div class="section-eyebrow">06 — How to use it</div>
+          <h2>How to build your first stack</h2>
+          <p>Building a reliable habit stack takes five steps. The process is simple — but each step matters.</p>
+
+          <table class="dosage-table">
+            <thead>
+              <tr><th>Step</th><th>Action</th><th>Example</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Step 1</td><td>Choose your anchor</td><td>Pick a habit you already do every day without thinking — morning coffee, brushing teeth, sitting at your desk</td></tr>
+              <tr><td>Step 2</td><td>Choose a small new behavior</td><td>The new behavior should take 2 minutes or less to start. Too large a behavior creates friction.</td></tr>
+              <tr><td>Step 3</td><td>Write the formula</td><td>"After I [anchor], I will [new behavior]." Write it down. Make it specific.</td></tr>
+              <tr><td>Step 4</td><td>Create environmental cues</td><td>Place the new habit's tools next to where the anchor happens. Running shoes by the door. Journal on the coffee table.</td></tr>
+              <tr><td>Step 5</td><td>Track for 30 days</td><td>Consistency matters more than perfection. Missing one day is fine — missing two in a row is a warning sign.</td></tr>
+            </tbody>
+          </table>
+
+          <div class="callout">
+            <div class="callout-label">Start with one</div>
+            <p>Start with one stack, not five. The temptation to overhaul your routine at once is one of the most common reasons habit stacking fails. One solid stack built over 60–90 days is worth more than five simultaneous stacks that collapse after two weeks.</p>
+          </div>
+        </div>
+
+        <!-- 07 MISTAKES -->
+        <div class="guide-section reveal" id="mistakes">
+          <div class="section-eyebrow">07 — Common mistakes</div>
+          <h2>Common mistakes</h2>
+          <p>These are the patterns that most reliably cause habit stacks to fail — and how to avoid them.</p>
+
+          <div class="callout">
+            <p><strong>Mistake 1: Choosing an anchor that is too irregular.</strong> A habit that happens "most mornings" is not a reliable anchor. Choose something that happens every single day, at roughly the same time, in the same place.</p>
+          </div>
+
+          <div class="callout">
+            <p><strong>Mistake 2: Making the new behavior too large.</strong> Stacking "30 minutes of meditation" onto morning coffee will fail. Stack "close my eyes for 60 seconds" first. The behavior can grow once the stack is established.</p>
+          </div>
+
+          <div class="callout">
+            <p><strong>Mistake 3: Building too many stacks at once.</strong> Each new stack requires a period of deliberate attention before it becomes automatic. Adding multiple stacks simultaneously splits that attention and reduces the likelihood any of them stick.</p>
+          </div>
+
+          <div class="callout">
+            <p><strong>Mistake 4: Choosing a poor anchor-behavior fit.</strong> The anchor and new behavior should feel logically connected, and they should happen in the same location. Stacking "exercise" onto "checking email at your desk" creates a spatial mismatch that undermines the automaticity.</p>
+          </div>
+
+          <div class="callout">
+            <p><strong>Mistake 5: Stopping when it feels forced.</strong> New stacks feel awkward for the first few weeks — that is not failure, that is the normal phase before automaticity develops. Most people quit during this phase and conclude the approach "doesn't work."</p>
+          </div>
+        </div>
+
+        <!-- 08 SUMMARY -->
+        <div class="guide-section reveal" id="summary">
+          <div class="section-eyebrow">08 — Summary</div>
+          <h2>The short version</h2>
+          <ul class="summary-list">
+            <li><div class="sum-dot"></div><span>Habit stacking attaches a new behavior to an existing one, using the existing habit as a reliable automatic trigger.</span></li>
+            <li><div class="sum-dot"></div><span>The core formula: "After I [current habit], I will [new habit]." Simple, specific, and written down.</span></li>
+            <li><div class="sum-dot"></div><span>It works by reducing activation energy and bypassing the willpower required to initiate a behavior from a standing start.</span></li>
+            <li><div class="sum-dot"></div><span>The strongest anchors are behaviors that happen every day, at the same time, in the same place.</span></li>
+            <li><div class="sum-dot"></div><span>Research shows habits take an average of 66 days to form — consistency matters more than perfection.</span></li>
+            <li><div class="sum-dot"></div><span>Start with one small stack. Build a second one only once the first feels automatic.</span></li>
+            <li><div class="sum-dot"></div><span>Environmental design matters: place the tools for your new habit where the anchor happens.</span></li>
+          </ul>
+        </div>
+
+        <!-- 09 PRODUCTS -->
+        <div class="guide-section reveal" id="products">
+          <div class="section-eyebrow">09 — Recommended reading</div>
+          <h2>Books worth reading</h2>
+          <p style="max-width:600px;">These two books are the clearest, most evidence-based treatments of habit formation available. Both directly inform the strategies in this guide.</p>
+
+          <a href="https://www.amazon.com/s?k=atomic+habits+james+clear" target="_blank" rel="noopener" class="prod-card">
+            <div class="prod-visual guide-book-1">
+              <div class="prod-badge">
+                <div class="prod-badge-dot"></div>
+                Most recommended
+              </div>
+              <div class="prod-visual-icon">📖</div>
+            </div>
+            <div class="prod-content">
+              <div class="prod-category">Book · Habit Formation</div>
+              <div class="prod-name">Atomic Habits by James Clear</div>
+              <p class="prod-summary">The most widely read book on habit formation in the past decade. Clear explains habit stacking, implementation intentions, and identity-based change with clarity and practical depth. The habit stacking formula in this guide comes directly from this book.</p>
+              <div class="prod-tags">
+                <span class="prod-tag">Habit stacking</span>
+                <span class="prod-tag">Identity-based</span>
+                <span class="prod-tag">Evidence-based</span>
+              </div>
+              <div class="prod-cta">
+                View on Amazon
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M8 4l3 3-3 3" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div class="prod-affiliate">This is a search link. We do not earn a commission on this recommendation.</div>
+            </div>
+          </a>
+
+          <a href="https://www.amazon.com/s?k=tiny+habits+bj+fogg" target="_blank" rel="noopener" class="prod-card">
+            <div class="prod-visual guide-book-2">
+              <div class="prod-badge" style="border-color:rgba(22,163,74,0.25);">
+                <div class="prod-badge-dot" style="background:#16a34a;"></div>
+                Deep science
+              </div>
+              <div class="prod-visual-icon">🧠</div>
+            </div>
+            <div class="prod-content">
+              <div class="prod-category">Book · Behavior Design</div>
+              <div class="prod-name">Tiny Habits by BJ Fogg</div>
+              <p class="prod-summary">BJ Fogg is a Stanford researcher who spent decades studying behavior design. Tiny Habits covers the science of anchoring, motivation, and making behaviors small enough to stick — directly relevant to habit stacking and starting small.</p>
+              <div class="prod-tags">
+                <span class="prod-tag">Tiny habits</span>
+                <span class="prod-tag">Behavior design</span>
+                <span class="prod-tag">Stanford research</span>
+              </div>
+              <div class="prod-cta">
+                View on Amazon
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M8 4l3 3-3 3" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div class="prod-affiliate">This is a search link. We do not earn a commission on this recommendation.</div>
+            </div>
+          </a>
+        </div>
+
+        <!-- 10 SOURCES -->
+        <div class="guide-section reveal" id="sources">
+          <div class="section-eyebrow">10 — Sources</div>
+          <h2>References</h2>
+          <ul class="sources-list">
+            <li>
+              <div class="src-num">1</div>
+              <div class="src-text">Lally P. et al. (2010). How are habits formed: Modelling habit formation in the real world. <em>European Journal of Social Psychology</em>, 40(6), 998–1009. <a href="https://doi.org/10.1002/ejsp.674" target="_blank" rel="noopener">https://doi.org/10.1002/ejsp.674</a></div>
+            </li>
+            <li>
+              <div class="src-num">2</div>
+              <div class="src-text">Gollwitzer PM (1999). Implementation intentions: Strong effects of simple plans. <em>American Psychologist</em>, 54(7), 493–503. <a href="https://pubmed.ncbi.nlm.nih.gov/10450953/" target="_blank" rel="noopener">PubMed: 10450953</a></div>
+            </li>
+            <li>
+              <div class="src-num">3</div>
+              <div class="src-text">Wood W. &amp; Neal DT (2007). A new look at habits and the habit-goal interface. <em>Psychological Review</em>, 114(4), 843–863. <a href="https://pubmed.ncbi.nlm.nih.gov/17907866/" target="_blank" rel="noopener">PubMed: 17907866</a></div>
+            </li>
+            <li>
+              <div class="src-num">4</div>
+              <div class="src-text">Gardner B. et al. (2012). Making health habitual: the psychology of 'habit-formation' and general practice. <em>British Journal of General Practice</em>. <a href="https://pubmed.ncbi.nlm.nih.gov/23211256/" target="_blank" rel="noopener">PubMed: 23211256</a></div>
+            </li>
+          </ul>
+        </div>
+
+      </main>
+
+      <!-- SIDEBAR -->
+      <aside class="guide-sidebar">
+        <div class="sidebar-card">
+          <div class="sidebar-title">Key numbers</div>
+          <div class="stat-item">
+            <div class="stat-value">40%</div>
+            <div class="stat-desc">of daily behavior is automatic — driven by habit, not decisions</div>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <div class="stat-value">66d</div>
+            <div class="stat-desc">average time to form a new habit (UCL, 2010)</div>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <div class="stat-value">2–4x</div>
+            <div class="stat-desc">higher retention when tied to an existing anchor</div>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item" style="margin-bottom:0;">
+            <div class="stat-value">1</div>
+            <div class="stat-desc">the number of stacks to start with — not five</div>
+          </div>
+        </div>
+
+        <div class="sidebar-card">
+          <div class="sidebar-title">Stack types at a glance</div>
+          <div style="display:flex;flex-direction:column;gap:8px;">
+            <div style="display:flex;align-items:center;gap:10px;font-size:12px;color:var(--muted);font-weight:300;">
+              <span style="color:var(--blue);font-weight:700;">★</span> Sequential — After A, do B
+            </div>
+            <div style="display:flex;align-items:center;gap:10px;font-size:12px;color:var(--muted);font-weight:300;">
+              <span style="color:var(--blue);font-weight:700;">✓</span> Bundling — pair want &amp; need
+            </div>
+            <div style="display:flex;align-items:center;gap:10px;font-size:12px;color:var(--muted);font-weight:300;">
+              <span style="color:var(--blue);font-weight:700;">✓</span> Location — place as cue
+            </div>
+            <div style="display:flex;align-items:center;gap:10px;font-size:12px;color:var(--muted);font-weight:300;">
+              <span style="color:var(--blue);font-weight:700;">✓</span> Scaled — start tiny
+            </div>
+          </div>
+        </div>
+
+        <div class="sidebar-card">
+          <div class="sidebar-title">Disclaimer</div>
+          <p class="sidebar-disclaimer">This guide is for informational purposes only and does not constitute medical or psychological advice. Consult a professional if you are dealing with clinical behavioral or mental health concerns.</p>
+        </div>
+      </aside>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <span style="font-size:1.3rem;font-weight:700;background:linear-gradient(135deg,#60a5fa,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:-0.03em;font-family:'Sora',sans-serif;display:block;margin-bottom:16px;">Improo</span>
+          <p>Health, weight loss, movement &amp; mindset — together.</p>
+          <small>© 2026 Improo. All rights reserved.</small>
+        </div>
+        <div class="footer-links">
+          <h4>Navigation</h4>
+          <a href="../index.html">Home</a>
+          <a href="../insights/index.html">Articles</a>
+          <a href="../guides.html">Guides</a>
+          <a href="../roadmap.html">Roadmap</a>
+        </div>
+        <div class="footer-links">
+          <h4>Legal</h4>
+          <a href="../disclaimer.html">Disclaimer</a>
+          <a href="../privacy-policy.html">Privacy Policy</a>
+          <a href="../terms-of-service.html">Terms of Service</a>
+        </div>
+        <div class="footer-links">
+          <h4>Follow</h4>
+          <a href="https://www.youtube.com/@Improo_App">YouTube</a>
+          <a href="https://x.com/Improo_">X (Twitter)</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const bar = document.getElementById('read-progress');
+    window.addEventListener('scroll', () => {
+      const doc = document.documentElement;
+      const pct = (doc.scrollTop / (doc.scrollHeight - doc.clientHeight)) * 100;
+      bar.style.width = Math.min(pct, 100) + '%';
+    }, { passive: true });
+
+    const reveals = document.querySelectorAll('.reveal');
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
+      });
+    }, { threshold: 0.06 });
+    reveals.forEach(el => obs.observe(el));
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>What is the 2-Minute Rule? — Improo Guide</title>
+  <meta name="description" content="The 2-Minute Rule explained: why making the starting version of any habit take two minutes or less is the most effective way to overcome the barrier of beginning. An evidence-based mindset guide." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700&family=Lora:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+  <script>
+    window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+  </script>
+  <script defer src="/_vercel/insights/script.js"></script>
+
+  <style>
+    body { overflow-x: hidden; }
+
+    .article-wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      width: 100%;
+    }
+
+    #read-progress {
+      position: fixed;
+      top: 0; left: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--blue), #60a5fa);
+      width: 0%;
+      z-index: 999;
+      transition: width 0.1s linear;
+    }
+
+    /* HERO */
+    .guide-hero { padding: 52px 0 0; }
+
+    .hero-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: 20px;
+    }
+    .hero-kicker::before {
+      content: '';
+      display: block;
+      width: 28px; height: 1px;
+      background: var(--blue);
+    }
+
+    .hero-layout {
+      display: grid;
+      grid-template-columns: 1fr 260px;
+      gap: 48px;
+      align-items: start;
+      padding-bottom: 48px;
+      border-bottom: 1px solid var(--line);
+    }
+    @media (max-width: 900px) {
+      .hero-layout { grid-template-columns: 1fr; }
+      .hero-visual-wrap { display: none; }
+    }
+
+    .guide-hero h1 {
+      font-family: 'Lora', serif;
+      font-size: clamp(2.2rem, 5vw, 3.6rem);
+      font-weight: 400;
+      line-height: 1.1;
+      color: #0c1a2e;
+      margin: 0 0 20px;
+      letter-spacing: -0.02em;
+      max-width: 660px;
+    }
+    .guide-hero h1 em { font-style: italic; color: var(--blue); }
+
+    .hero-meta {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-size: 12px;
+      color: var(--muted-light);
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+    }
+    .hero-meta-dot { width: 3px; height: 3px; border-radius: 50%; background: var(--muted-light); }
+
+    .hero-intro {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: var(--muted);
+      max-width: 580px;
+      font-weight: 300;
+      margin-bottom: 32px;
+    }
+
+    .hero-facts {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--line);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      overflow: hidden;
+      margin-bottom: 32px;
+    }
+    .hero-fact { background: var(--panel); padding: 18px 16px; text-align: center; }
+    .hero-fact-value {
+      font-family: 'Lora', serif;
+      font-size: 1.7rem;
+      font-weight: 600;
+      color: var(--blue);
+      display: block;
+      line-height: 1;
+      margin-bottom: 5px;
+    }
+    .hero-fact-label { font-size: 11px; color: var(--muted-light); line-height: 1.4; }
+    @media (max-width: 480px) { .hero-facts { grid-template-columns: 1fr; } }
+
+    .hero-visual-wrap {
+      position: relative;
+      height: 340px;
+      border-radius: 24px;
+      overflow: hidden;
+      background: linear-gradient(135deg, #dbeafe 0%, #eff6ff 60%, #ecfdf5 100%);
+      border: 1px solid var(--line);
+    }
+
+    /* TOC */
+    .toc {
+      background: var(--panel-2);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 22px 26px;
+    }
+    .toc-title { font-size: 9px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--muted-light); margin-bottom: 14px; }
+    .toc ol { list-style: none; counter-reset: toc; display: flex; flex-direction: column; gap: 10px; }
+    .toc ol li { counter-increment: toc; display: flex; align-items: baseline; gap: 12px; }
+    .toc ol li::before { content: counter(toc, decimal-leading-zero); font-size: 9px; font-weight: 700; color: var(--blue-light); min-width: 20px; }
+    .toc ol li a { font-size: 13px; color: var(--muted); text-decoration: none; transition: color 0.2s; line-height: 1.4; }
+    .toc ol li a:hover { color: var(--blue); }
+
+    /* LAYOUT */
+    .guide-body {
+      display: grid;
+      grid-template-columns: 1fr 272px;
+      gap: 64px;
+      align-items: start;
+      padding: 56px 0 96px;
+    }
+    @media (max-width: 960px) {
+      .guide-body { grid-template-columns: 1fr; }
+      .guide-sidebar { display: none; }
+    }
+
+    /* SECTIONS */
+    .guide-section { margin-bottom: 64px; padding-bottom: 64px; border-bottom: 1px solid var(--line); }
+    .guide-section:last-child { border-bottom: none; margin-bottom: 0; }
+
+    .section-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--blue-light);
+      margin-bottom: 14px;
+    }
+    .section-eyebrow::after { content: ''; flex: 1; max-width: 36px; height: 1px; background: var(--line-strong); }
+
+    .guide-section h2 {
+      font-family: 'Lora', serif;
+      font-size: clamp(1.4rem, 2.8vw, 2rem);
+      font-weight: 400;
+      line-height: 1.2;
+      color: #0c1a2e;
+      margin: 0 0 22px;
+    }
+
+    .guide-section h3 {
+      font-size: 15px;
+      font-weight: 700;
+      color: #0c1a2e;
+      margin: 28px 0 10px;
+    }
+
+    .guide-section p { font-size: 0.97rem; font-weight: 300; color: var(--muted); margin-bottom: 18px; line-height: 1.85; max-width: 640px; }
+
+    .callout {
+      border-left: 3px solid var(--blue);
+      padding: 20px 24px;
+      background: linear-gradient(135deg, rgba(37,99,235,0.04), rgba(96,165,250,0.06));
+      border-radius: 0 12px 12px 0;
+      margin: 28px 0;
+    }
+    .callout p { margin: 0; color: var(--blue-dark); font-style: italic; font-size: 1rem; line-height: 1.7; max-width: none; }
+    .callout-label { font-size: 9px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--blue-light); margin-bottom: 8px; }
+
+    .insight-box {
+      background: linear-gradient(135deg, #0f1f3d 0%, #1e3a6e 100%);
+      border-radius: 16px;
+      padding: 28px 30px;
+      margin: 28px 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .insight-box::before {
+      content: '';
+      position: absolute;
+      top: -40px; right: -40px;
+      width: 160px; height: 160px;
+      border-radius: 50%;
+      background: rgba(96,165,250,0.07);
+    }
+    .insight-label { font-size: 9px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: rgba(96,165,250,0.65); margin-bottom: 10px; display: block; }
+    .insight-box p { margin: 0; color: rgba(255,255,255,0.88); font-size: 0.97rem; line-height: 1.72; font-weight: 300; max-width: none; }
+    .insight-box strong { color: #fff; font-weight: 600; }
+
+    .opinion-box {
+      background: linear-gradient(135deg, #1e3a6e 0%, #1e40af 100%);
+      border-radius: 16px;
+      padding: 28px 30px;
+      margin: 28px 0;
+      position: relative;
+      overflow: hidden;
+      border-left: 4px solid #60a5fa;
+    }
+    .opinion-label { font-size: 9px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: rgba(147,197,253,0.8); margin-bottom: 10px; display: block; }
+    .opinion-box p { margin: 0; color: rgba(255,255,255,0.92); font-size: 1rem; line-height: 1.75; font-weight: 300; max-width: none; font-style: italic; }
+    .opinion-box strong { color: #93c5fd; font-weight: 600; font-style: normal; }
+
+    /* Forms grid */
+    .forms-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 24px 0; }
+    @media (max-width: 580px) { .forms-grid { grid-template-columns: 1fr; } }
+
+    .form-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 22px 20px;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .form-card:hover { border-color: var(--line-strong); box-shadow: var(--shadow); }
+    .form-card.featured {
+      background: linear-gradient(135deg, rgba(37,99,235,0.05), rgba(96,165,250,0.07));
+      border-color: rgba(37,99,235,0.18);
+    }
+    .form-badge {
+      display: inline-block;
+      font-size: 9px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;
+      padding: 3px 8px; border-radius: 6px; margin-bottom: 10px;
+      background: rgba(37,99,235,0.1); color: var(--blue-dark);
+    }
+    .form-name { font-size: 15px; font-weight: 700; color: #0c1a2e; margin-bottom: 4px; }
+    .form-use { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--blue-light); margin-bottom: 8px; }
+    .form-desc { font-size: 13px; color: var(--muted); line-height: 1.65; font-weight: 300; }
+
+    /* Study cards */
+    .study-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 22px 24px;
+      margin: 16px 0;
+      display: grid;
+      grid-template-columns: 38px 1fr;
+      gap: 16px;
+      align-items: start;
+      transition: box-shadow 0.2s, border-color 0.2s;
+    }
+    .study-card:hover { border-color: var(--line-strong); box-shadow: var(--shadow); }
+    .study-num {
+      width: 34px; height: 34px; border-radius: 9px;
+      background: var(--blue-pale); border: 1px solid var(--line-strong);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 11px; font-weight: 700; color: var(--blue-dark); flex-shrink: 0;
+    }
+    .study-title { font-size: 14px; font-weight: 600; color: #0c1a2e; margin-bottom: 8px; }
+    .study-text  { font-size: 13.5px; font-weight: 300; color: var(--muted); line-height: 1.7; margin: 0; }
+    .study-source { font-size: 11px; color: var(--muted-light); margin-top: 10px; font-style: italic; }
+    .study-source a { color: var(--blue); text-decoration: none; }
+    .study-source a:hover { text-decoration: underline; }
+
+    /* Dosage table */
+    .dosage-table { width: 100%; border-collapse: collapse; margin: 24px 0; font-size: 13.5px; }
+    .dosage-table th { background: var(--panel-2); color: var(--muted-light); font-size: 10px; text-transform: uppercase; letter-spacing: 1px; padding: 11px 14px; text-align: left; border-bottom: 1px solid var(--line); font-weight: 700; }
+    .dosage-table td { padding: 12px 14px; border-bottom: 1px solid var(--line); color: var(--muted); vertical-align: top; font-weight: 300; }
+    .dosage-table tr:last-child td { border-bottom: none; }
+    .dosage-table td:first-child { color: #0c1a2e; font-weight: 600; }
+    .dosage-table tr:hover td { background: var(--panel); }
+
+    /* Summary list */
+    .summary-list { list-style: none; display: flex; flex-direction: column; gap: 14px; margin: 20px 0; }
+    .summary-list li { display: flex; align-items: flex-start; gap: 14px; font-size: 14.5px; font-weight: 300; color: var(--muted); line-height: 1.65; }
+    .sum-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--blue); flex-shrink: 0; margin-top: 7px; }
+
+    /* Products */
+    .prod-card {
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      overflow: hidden;
+      background: var(--panel);
+      margin-bottom: 20px;
+      transition: box-shadow 0.3s ease, border-color 0.3s ease, transform 0.25s ease;
+      text-decoration: none;
+      color: inherit;
+    }
+    .prod-card:hover { box-shadow: 0 16px 48px rgba(37,99,235,0.12); border-color: rgba(37,99,235,0.22); transform: translateY(-2px); }
+    @media (max-width: 680px) { .prod-card { grid-template-columns: 1fr; } .prod-visual { height: 180px; } }
+
+    .prod-visual {
+      position: relative; overflow: hidden;
+      display: flex; flex-direction: column; justify-content: flex-start;
+      padding: 18px; min-height: 220px;
+    }
+    .prod-visual.guide-book-1 { background: linear-gradient(160deg, #dbeafe 0%, #bfdbfe 40%, #ede9fe 100%); }
+    .prod-visual.guide-book-2 { background: linear-gradient(160deg, #d1fae5 0%, #a7f3d0 40%, #bfdbfe 100%); }
+
+    .prod-badge {
+      position: relative; z-index: 2;
+      display: inline-flex; align-items: center; gap: 7px;
+      background: rgba(255,255,255,0.96);
+      border: 1.5px solid rgba(37,99,235,0.22);
+      border-radius: 22px; padding: 7px 14px 7px 10px;
+      font-size: 11px; font-weight: 700; color: var(--blue-dark);
+      backdrop-filter: blur(8px); align-self: flex-start;
+      box-shadow: 0 2px 10px rgba(37,99,235,0.12);
+    }
+    .prod-badge-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--blue); }
+    .prod-visual-icon { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); font-size: 64px; opacity: 0.25; }
+
+    .prod-content { padding: 26px 26px 22px; display: flex; flex-direction: column; }
+    .prod-category { font-size: 9px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--blue-light); margin-bottom: 8px; }
+    .prod-name { font-family: 'Lora', serif; font-size: 1.2rem; font-weight: 600; color: #0c1a2e; line-height: 1.25; margin-bottom: 12px; }
+    .prod-summary { font-size: 13.5px; color: var(--muted); line-height: 1.7; font-weight: 300; margin-bottom: 14px; }
+
+    .prod-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 16px; }
+    .prod-tag { font-size: 11px; background: rgba(22,163,74,0.09); color: #15803d; padding: 4px 10px; border-radius: 20px; font-weight: 600; border: 1px solid rgba(22,163,74,0.15); }
+
+    .prod-cta {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+      color: #fff; font-size: 14px; font-weight: 700;
+      padding: 13px 24px; border-radius: 28px;
+      transition: background 0.2s, box-shadow 0.2s, gap 0.2s, transform 0.2s;
+      box-shadow: 0 6px 20px rgba(37,99,235,0.30);
+      align-self: flex-start; margin-bottom: 10px;
+    }
+    .prod-cta:hover { background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%); gap: 16px; box-shadow: 0 10px 28px rgba(37,99,235,0.42); transform: translateY(-1px); }
+    .prod-affiliate { font-size: 10.5px; color: var(--muted-light); }
+
+    /* Sources */
+    .sources-list { list-style: none; display: flex; flex-direction: column; gap: 14px; margin-top: 16px; }
+    .sources-list li { display: flex; gap: 12px; align-items: flex-start; }
+    .src-num { font-size: 10px; font-weight: 700; color: var(--blue-dark); background: var(--blue-pale); width: 24px; height: 24px; border-radius: 6px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
+    .src-text { font-size: 12.5px; color: var(--muted-light); line-height: 1.6; }
+    .src-text a { color: var(--blue); text-decoration: none; }
+    .src-text a:hover { text-decoration: underline; }
+
+    /* Sidebar */
+    .guide-sidebar { position: sticky; top: 88px; display: flex; flex-direction: column; gap: 16px; }
+    .sidebar-card { background: var(--panel); border: 1px solid var(--line); border-radius: 16px; padding: 20px 18px; box-shadow: var(--shadow); }
+    .sidebar-title { font-size: 9px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--muted-light); margin-bottom: 16px; }
+    .stat-item { display: flex; flex-direction: column; gap: 4px; margin-bottom: 16px; }
+    .stat-value { font-family: 'Lora', serif; font-size: 2.1rem; font-weight: 600; font-style: italic; color: var(--blue); line-height: 1; }
+    .stat-desc { font-size: 12px; color: var(--muted); line-height: 1.45; font-weight: 300; }
+    .stat-divider { height: 1px; background: var(--line); margin: 4px 0 16px; }
+    .sidebar-disclaimer { font-size: 11px; color: var(--muted-light); line-height: 1.65; font-weight: 300; }
+
+    /* Animations */
+    .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.55s ease, transform 0.55s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+  </style>
+</head>
+<body>
+
+  <div id="read-progress"></div>
+
+  <!-- NAV -->
+  <header class="site-header">
+    <div class="container">
+      <nav class="nav">
+        <a href="../index.html">
+          <span style="font-size:1.6rem;font-weight:700;background:linear-gradient(135deg,#3b9ef5,#2563eb);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:-0.03em;font-family:'Sora',sans-serif;">Improo</span>
+        </a>
+        <div class="nav-links">
+          <a href="../index.html">Home</a>
+          <a href="../insights/index.html">Articles</a>
+          <a href="../guides.html" class="active">Guides</a>
+          <a href="../roadmap.html">Roadmap</a>
+          <a href="../index.html#contact">Contact</a>
+        </div>
+        <div class="socials">
+          <a href="https://www.youtube.com/@Improo_App" aria-label="YouTube">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.7 15.5V8.5l6.3 3.5-6.3 3.5z"/></svg>
+          </a>
+          <a href="https://x.com/Improo_" aria-label="X">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <div class="article-wrap">
+
+    <a href="../guides.html" class="back-link" style="margin-top:36px;display:inline-flex;align-items:center;gap:6px;font-size:13px;color:var(--muted);transition:color 0.2s;">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M9 2L4 7l5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Back to Guides
+    </a>
+
+    <!-- HERO -->
+    <section class="guide-hero">
+      <div class="hero-layout">
+        <div class="hero-left reveal">
+          <div class="hero-kicker">Mindset Guide</div>
+          <h1>What is the <em>2-Minute</em> Rule?</h1>
+          <div class="hero-meta">
+            <span>10 min read</span>
+            <div class="hero-meta-dot"></div>
+            <span>Science-backed</span>
+            <div class="hero-meta-dot"></div>
+            <span>Not medical advice</span>
+          </div>
+          <p class="hero-intro">The 2-Minute Rule is one of the simplest and most effective strategies in behavior design. The idea: when starting a new habit, the first version of it should take no more than two minutes. Not because two minutes is enough — but because starting is the hardest part, and two minutes makes starting almost impossible to refuse.</p>
+
+          <div class="hero-facts">
+            <div class="hero-fact reveal">
+              <span class="hero-fact-value">2 min</span>
+              <span class="hero-fact-label">the maximum time a new habit's starting version should take</span>
+            </div>
+            <div class="hero-fact reveal">
+              <span class="hero-fact-value">&lt;2 min</span>
+              <span class="hero-fact-label">David Allen's version: if a task takes less than 2 minutes, do it now</span>
+            </div>
+            <div class="hero-fact reveal">
+              <span class="hero-fact-value">#1</span>
+              <span class="hero-fact-label">activation energy — the barrier to starting — is the most common reason habits fail</span>
+            </div>
+          </div>
+
+          <div class="toc">
+            <div class="toc-title">In this guide</div>
+            <ol>
+              <li><a href="#intro">What is the 2-Minute Rule?</a></li>
+              <li><a href="#starting">Why starting is the real problem</a></li>
+              <li><a href="#gateway">The gateway habit concept</a></li>
+              <li><a href="#versions">Two versions of the rule</a></li>
+              <li><a href="#science">What the research says</a></li>
+              <li><a href="#how-to">How to apply it</a></li>
+              <li><a href="#mistakes">Common mistakes</a></li>
+              <li><a href="#summary">The short version</a></li>
+              <li><a href="#products">Recommended reading</a></li>
+              <li><a href="#sources">Sources</a></li>
+            </ol>
+          </div>
+        </div>
+
+        <!-- Hero visual -->
+        <div class="hero-visual-wrap reveal">
+          <svg width="100%" viewBox="0 0 260 340" xmlns="http://www.w3.org/2000/svg" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+            <defs>
+              <radialGradient id="tmrBg" cx="50%" cy="40%" r="65%"><stop offset="0%" stop-color="#e8eeff"/><stop offset="100%" stop-color="#f0f9ff"/></radialGradient>
+            </defs>
+            <rect width="260" height="340" fill="url(#tmrBg)"/>
+            <!-- Clock face -->
+            <circle cx="130" cy="155" r="80" fill="white" opacity="0.9" stroke="rgba(37,99,235,0.2)" stroke-width="2"/>
+            <circle cx="130" cy="155" r="74" fill="none" stroke="rgba(37,99,235,0.08)" stroke-width="8"/>
+            <!-- Clock center dot -->
+            <circle cx="130" cy="155" r="5" fill="#2563eb"/>
+            <!-- Minute hand pointing to 2 minutes (12 o'clock = 0, clockwise) -->
+            <line x1="130" y1="155" x2="130" y2="90" stroke="#2563eb" stroke-width="3" stroke-linecap="round"/>
+            <!-- Second hand at 2-min mark -->
+            <line x1="130" y1="155" x2="155" y2="98" stroke="#60a5fa" stroke-width="2" stroke-linecap="round" opacity="0.7"/>
+            <!-- Clock tick marks -->
+            <line x1="130" y1="82" x2="130" y2="90" stroke="#1e3a6e" stroke-width="2" stroke-linecap="round" opacity="0.3"/>
+            <line x1="148" y1="86" x2="144" y2="93" stroke="#1e3a6e" stroke-width="1.5" stroke-linecap="round" opacity="0.2"/>
+            <line x1="163" y1="97" x2="157" y2="103" stroke="#1e3a6e" stroke-width="1.5" stroke-linecap="round" opacity="0.2"/>
+            <!-- 2 min label -->
+            <text x="130" y="178" text-anchor="middle" font-family="'Lora',serif" font-size="22" font-weight="600" fill="#2563eb">2</text>
+            <text x="130" y="194" text-anchor="middle" font-family="'Sora',sans-serif" font-size="8" font-weight="700" fill="#4a6fa5" letter-spacing="2">MINUTES</text>
+            <!-- Bottom text -->
+            <rect x="30" y="272" width="200" height="44" rx="10" fill="white" opacity="0.88" stroke="rgba(37,99,235,0.15)" stroke-width="1"/>
+            <text x="130" y="290" text-anchor="middle" font-family="'Sora',sans-serif" font-size="8" font-weight="700" fill="#1e3a6e" letter-spacing="1.5">STARTING IS THE</text>
+            <text x="130" y="306" text-anchor="middle" font-family="'Lora',serif" font-size="11" font-style="italic" fill="#4a6fa5">hardest part</text>
+            <!-- Decorative -->
+            <circle cx="36" cy="120" r="5" fill="rgba(96,165,250,0.2)"/>
+            <circle cx="224" cy="230" r="7" fill="rgba(37,99,235,0.12)"/>
+            <circle cx="44" cy="260" r="4" fill="rgba(147,197,253,0.3)"/>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- BODY -->
+    <div class="guide-body">
+      <main>
+
+        <!-- 01 INTRO -->
+        <div class="guide-section reveal" id="intro">
+          <div class="section-eyebrow">01 — Introduction</div>
+          <h2>What is the 2-Minute Rule?</h2>
+          <p>The 2-Minute Rule exists in two forms, each addressing a different problem. James Clear's version, from <em>Atomic Habits</em> (2018), says that any new habit should be scaled down to take two minutes or less to start. You do not meditate for 20 minutes — you sit down and close your eyes for two minutes. You do not read 30 pages — you open the book. You do not go to the gym — you put on your workout clothes.</p>
+          <p>David Allen's version, from <em>Getting Things Done</em> (2001), applies to tasks: if something takes less than two minutes to complete, do it immediately rather than adding it to a list. Responding to a short email, washing the mug, putting the form away — do it now. The administrative overhead of logging and re-encountering it later costs more time than doing it in the moment.</p>
+          <p>Both versions address the same fundamental problem: the activation energy required to begin. Two minutes is not about the task — it is about removing the barrier to starting.</p>
+          <div class="insight-box">
+            <span class="insight-label">Key insight</span>
+            <p>Most habits do not fail because they are too hard to maintain. They fail because <strong>starting — on any given day — requires more energy than the person has available</strong>. The 2-Minute Rule is a solution to starting, not to sustaining.</p>
+          </div>
+        </div>
+
+        <!-- 02 STARTING -->
+        <div class="guide-section reveal" id="starting">
+          <div class="section-eyebrow">02 — The real barrier</div>
+          <h2>Why starting is the real problem</h2>
+          <p>Activation energy is a concept from chemistry: the minimum energy input required to initiate a reaction. Applied to behavior, it describes the mental resistance that stands between intention and action. Starting a workout feels harder than finishing one. Opening a book feels harder than reading the next chapter. This is not laziness — it is a feature of how the brain prioritizes effort.</p>
+          <p>Research in behavioral psychology has consistently found that the perceived effort of beginning an action is often far larger than the actual effort required. Once you have started, inertia carries you forward. The decision to continue feels much easier than the original decision to begin.</p>
+          <p>The 2-Minute Rule exploits this property: by making the starting version of a habit trivially small, it eliminates most of the activation energy. The two-minute version is the easy part. What comes after — the full meditation session, the long run, the complete reading chapter — follows naturally from the momentum of having started.</p>
+        </div>
+
+        <!-- 03 GATEWAY -->
+        <div class="guide-section reveal" id="gateway">
+          <div class="section-eyebrow">03 — The gateway habit</div>
+          <h2>The gateway habit concept</h2>
+          <p>The two-minute version of a habit is not the destination — it is the gateway. The goal is not to meditate for exactly two minutes every day for the rest of your life. The goal is to establish the cue-routine pattern so reliably that longer sessions become easy extensions of something that already happens automatically.</p>
+          <p>James Clear describes this as "mastering the art of showing up." Before optimizing a habit, you first need to make it consistent. Consistency requires the bar to be low enough that no excuse can override it. Two minutes is almost always below that bar.</p>
+          <p>Once the gateway habit is established — once sitting down to meditate at the same time each day has become automatic — extending the session to 5, 10, or 20 minutes becomes a separate and much easier decision. The hard work was getting there. The two minutes handled that.</p>
+
+          <div class="callout">
+            <div class="callout-label">Mastering the art of showing up</div>
+            <p>You are not optimizing for two-minute sessions. You are optimizing for the moment of beginning — so that the beginning becomes automatic, and the full session can follow without friction.</p>
+          </div>
+        </div>
+
+        <!-- 04 VERSIONS -->
+        <div class="guide-section reveal" id="versions">
+          <div class="section-eyebrow">04 — Two versions</div>
+          <h2>Two versions of the rule</h2>
+          <p>Depending on whether you are building a new habit or managing tasks, the rule applies differently — but both address the same underlying problem.</p>
+
+          <div class="forms-grid">
+            <div class="form-card featured">
+              <span class="form-badge">For new habits</span>
+              <div class="form-name">Clear's Version</div>
+              <div class="form-use">Scale down · Start small</div>
+              <p class="form-desc">Scale any new habit down to its two-minute starting version. "Exercise" becomes "put on workout clothes." "Read" becomes "open the book." "Meditate" becomes "sit and close your eyes." The two-minute version establishes the pattern; duration grows later.</p>
+            </div>
+            <div class="form-card featured">
+              <span class="form-badge">For tasks</span>
+              <div class="form-name">Allen's Version</div>
+              <div class="form-use">Do it now · Clear the queue</div>
+              <p class="form-desc">From <em>Getting Things Done</em>: if a task takes less than two minutes, do it immediately. Do not add it to a list, schedule it, or defer it. The mental cost of managing it later exceeds the cost of doing it now. Clears backlog and maintains momentum.</p>
+            </div>
+            <div class="form-card">
+              <div class="form-name">Temptation Bundling</div>
+              <div class="form-use">Motivation boost</div>
+              <p class="form-desc">Pair the two-minute habit with something enjoyable. Only listen to a specific podcast during the first two minutes of a workout. Only drink a specific coffee during the first two minutes of journaling. The enjoyment reduces activation energy further.</p>
+            </div>
+            <div class="form-card">
+              <div class="form-name">Implementation Intention</div>
+              <div class="form-use">Timing anchor</div>
+              <p class="form-desc">Specify exactly when and where the two-minute habit will happen. "When I sit down at my desk each morning, I will write one sentence in my journal." Specificity dramatically increases follow-through rates in research.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 05 SCIENCE -->
+        <div class="guide-section reveal" id="science">
+          <div class="section-eyebrow">05 — Research</div>
+          <h2>What the research says</h2>
+          <p>The 2-Minute Rule is supported by a body of research spanning behavior design, implementation intentions, and large-scale habit change studies.</p>
+
+          <div class="study-card">
+            <div class="study-num">[1]</div>
+            <div>
+              <div class="study-title">Fogg BJ (2019) — Tiny Habits and behavior design</div>
+              <p class="study-text">BJ Fogg's decades of research at Stanford's Behavior Design Lab led to the Tiny Habits method — making new behaviors so small they require minimal motivation to perform. Fogg's research found that motivation is inherently variable and unreliable, while behavior design (making the behavior easier) produces more consistent results. The two-minute rule is an application of this principle. His work underpins the idea that the gateway version of a habit is not a compromise — it is the correct starting point.</p>
+              <div class="study-source">Fogg BJ (2019). <em>Tiny Habits: The Small Changes That Change Everything.</em> Houghton Mifflin Harcourt. <a href="https://www.amazon.com/s?k=tiny+habits+bj+fogg" target="_blank" rel="noopener">View on Amazon</a></div>
+            </div>
+          </div>
+
+          <div class="study-card">
+            <div class="study-num">[2]</div>
+            <div>
+              <div class="study-title">Gollwitzer PM (1999) — Implementation intentions</div>
+              <p class="study-text">Research on implementation intentions found that specifying when, where, and how a behavior will be performed — the if-then planning format — dramatically increased follow-through. Relevant to the 2-Minute Rule because specifying the exact moment the two-minute version will happen is the behavioral complement to making the version itself small. The combination of small + specific is significantly more effective than either alone.</p>
+              <div class="study-source">American Psychologist, 54(7), 493–503. <a href="https://pubmed.ncbi.nlm.nih.gov/10450953/" target="_blank" rel="noopener">PubMed: 10450953</a></div>
+            </div>
+          </div>
+
+          <div class="study-card">
+            <div class="study-num">[3]</div>
+            <div>
+              <div class="study-title">Milkman KL et al. (2021) — Megastudy on behavior change</div>
+              <p class="study-text">A 2021 megastudy published in <em>Nature</em> covering 61,293 gym-goers tested 54 different behavior change strategies. The most effective strategies shared a common feature: they reduced friction at the moment of initiation. Strategies that addressed starting — rather than sustaining — produced the largest and most consistent effects on exercise behavior.</p>
+              <div class="study-source">Nature, 600(7889), 404–409. <a href="https://pubmed.ncbi.nlm.nih.gov/34880498/" target="_blank" rel="noopener">PubMed: 34880498</a></div>
+            </div>
+          </div>
+
+          <div class="study-card">
+            <div class="study-num">[4]</div>
+            <div>
+              <div class="study-title">Wood W. &amp; Neal DT (2007) — Context and habit formation</div>
+              <p class="study-text">Research on habits found that environmental context — the when and where of a behavior — is one of the strongest predictors of habit formation speed. Behaviors performed in consistent contexts with minimal variation become automatic faster than behaviors with variable triggers. The 2-Minute Rule works best when the two-minute starting version is always performed in the same context.</p>
+              <div class="study-source">Psychological Review, 114(4), 843–863. <a href="https://pubmed.ncbi.nlm.nih.gov/17907866/" target="_blank" rel="noopener">PubMed: 17907866</a></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 06 HOW TO -->
+        <div class="guide-section reveal" id="how-to">
+          <div class="section-eyebrow">06 — How to apply it</div>
+          <h2>How to apply it</h2>
+          <p>Applying the 2-Minute Rule correctly requires five steps. The temptation to skip ahead — or to extend too early — is the most common failure mode.</p>
+
+          <table class="dosage-table">
+            <thead>
+              <tr><th>Step</th><th>Action</th><th>Example</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Step 1</td><td>Choose a habit</td><td>Be specific. Not "exercise more." "Do a workout in the morning."</td></tr>
+              <tr><td>Step 2</td><td>Identify the two-minute version</td><td>What is the absolute minimum starting action? "Put on workout clothes." "Open the journal." "Stand on the yoga mat."</td></tr>
+              <tr><td>Step 3</td><td>Attach it to an anchor</td><td>When does this happen? "After morning coffee." "When I sit at my desk." Make it specific.</td></tr>
+              <tr><td>Step 4</td><td>Do only the two-minute version for the first two weeks</td><td>Do not try to extend it yet. Two minutes, every day, no exceptions. Build the pattern first.</td></tr>
+              <tr><td>Step 5</td><td>Scale naturally</td><td>After two weeks of consistent starting, extend the session by two minutes each week. The starting is already automatic — now let duration follow.</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- 07 MISTAKES -->
+        <div class="guide-section reveal" id="mistakes">
+          <div class="section-eyebrow">07 — Common mistakes</div>
+          <h2>Common mistakes</h2>
+          <p>These five mistakes account for most of the ways the 2-Minute Rule fails in practice.</p>
+
+          <div class="callout">
+            <p><strong>Mistake 1: Treating the two-minute version as the permanent version.</strong> The two-minute rule is about starting, not about staying at two minutes forever. Once the habit is consistent, duration scales naturally. If you never extend beyond two minutes, the rule has served its purpose in establishing the pattern — but most people will naturally extend.</p>
+          </div>
+
+          <div class="callout">
+            <p><strong>Mistake 2: Picking two-minute versions that are not the real starting action.</strong> "Think about going to the gym" is not a two-minute version of going to the gym. "Put on gym clothes and pick up your bag" is. The two-minute version should be a physical action that creates forward momentum.</p>
+          </div>
+
+          <div class="callout">
+            <p><strong>Mistake 3: Applying it to everything at once.</strong> The 2-Minute Rule works for establishing one or two new habits. Applying it to ten things simultaneously means none of them get the sustained attention needed to become automatic. Sequence, not parallel.</p>
+          </div>
+
+          <div class="callout">
+            <p><strong>Mistake 4: Using Allen's version as an excuse to avoid planning.</strong> David Allen's version is specifically for small tasks — not for everything. Applying it to significant work ("I'll just do this quickly") bypasses the planning that larger tasks need and produces rushed, low-quality output.</p>
+          </div>
+
+          <div class="callout">
+            <p><strong>Mistake 5: Quitting when the two minutes feels pointless.</strong> The first two weeks of a two-minute habit will feel meaningless. Two minutes of stretching after brushing teeth seems trivial. It is not trivial — it is the identity and pattern-building phase. The triviality is the feature, not the bug.</p>
+          </div>
+        </div>
+
+        <!-- 08 SUMMARY -->
+        <div class="guide-section reveal" id="summary">
+          <div class="section-eyebrow">08 — Summary</div>
+          <h2>The short version</h2>
+          <ul class="summary-list">
+            <li><div class="sum-dot"></div><span>The 2-Minute Rule makes the starting version of any habit so small that no excuse can override it. Two minutes is almost always possible.</span></li>
+            <li><div class="sum-dot"></div><span>James Clear's version: scale any new habit down to its two-minute starting form. Establish consistency before optimizing duration.</span></li>
+            <li><div class="sum-dot"></div><span>David Allen's version: if a task takes less than two minutes, do it immediately. Do not queue it.</span></li>
+            <li><div class="sum-dot"></div><span>The rule addresses activation energy — the barrier to beginning — rather than the difficulty of the habit itself. Starting is the hardest part.</span></li>
+            <li><div class="sum-dot"></div><span>The two-minute version is a gateway, not a destination. Duration extends naturally once the pattern is established.</span></li>
+            <li><div class="sum-dot"></div><span>Pair it with an anchor habit and a specific time and place for maximum effectiveness.</span></li>
+            <li><div class="sum-dot"></div><span>The first two weeks will feel trivial. That is normal — the pattern is building even when the output seems meaningless.</span></li>
+          </ul>
+        </div>
+
+        <!-- 09 PRODUCTS -->
+        <div class="guide-section reveal" id="products">
+          <div class="section-eyebrow">09 — Recommended reading</div>
+          <h2>Books worth reading</h2>
+          <p style="max-width:600px;">Both of these books develop the 2-Minute Rule concept in depth — Clear from the habit-formation angle, Fogg from the behavior design angle.</p>
+
+          <a href="https://www.amazon.com/s?k=atomic+habits+james+clear" target="_blank" rel="noopener" class="prod-card">
+            <div class="prod-visual guide-book-1">
+              <div class="prod-badge">
+                <div class="prod-badge-dot"></div>
+                Most recommended
+              </div>
+              <div class="prod-visual-icon">📖</div>
+            </div>
+            <div class="prod-content">
+              <div class="prod-category">Book · Habit Formation</div>
+              <div class="prod-name">Atomic Habits by James Clear</div>
+              <p class="prod-summary">The most widely read book on habit formation in the past decade. Clear explains the 2-Minute Rule, habit stacking, implementation intentions, and identity-based change with clarity and practical depth. This is where the habit-focused version of the rule comes from.</p>
+              <div class="prod-tags">
+                <span class="prod-tag">2-Minute Rule</span>
+                <span class="prod-tag">Habit formation</span>
+                <span class="prod-tag">Evidence-based</span>
+              </div>
+              <div class="prod-cta">
+                View on Amazon
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M8 4l3 3-3 3" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div class="prod-affiliate">This is a search link. We do not earn a commission on this recommendation.</div>
+            </div>
+          </a>
+
+          <a href="https://www.amazon.com/s?k=tiny+habits+bj+fogg" target="_blank" rel="noopener" class="prod-card">
+            <div class="prod-visual guide-book-2">
+              <div class="prod-badge" style="border-color:rgba(22,163,74,0.25);">
+                <div class="prod-badge-dot" style="background:#16a34a;"></div>
+                Deep science
+              </div>
+              <div class="prod-visual-icon">🧠</div>
+            </div>
+            <div class="prod-content">
+              <div class="prod-category">Book · Behavior Design</div>
+              <div class="prod-name">Tiny Habits by BJ Fogg</div>
+              <p class="prod-summary">BJ Fogg is a Stanford researcher who spent decades studying behavior design. Tiny Habits covers the science of anchoring, motivation, and making behaviors small enough to stick. Fogg's research directly underpins the scientific case for the 2-Minute Rule approach.</p>
+              <div class="prod-tags">
+                <span class="prod-tag">Tiny habits</span>
+                <span class="prod-tag">Behavior design</span>
+                <span class="prod-tag">Stanford research</span>
+              </div>
+              <div class="prod-cta">
+                View on Amazon
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M8 4l3 3-3 3" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div class="prod-affiliate">This is a search link. We do not earn a commission on this recommendation.</div>
+            </div>
+          </a>
+        </div>
+
+        <!-- 10 SOURCES -->
+        <div class="guide-section reveal" id="sources">
+          <div class="section-eyebrow">10 — Sources</div>
+          <h2>References</h2>
+          <ul class="sources-list">
+            <li>
+              <div class="src-num">1</div>
+              <div class="src-text">Fogg BJ (2019). <em>Tiny Habits: The Small Changes That Change Everything.</em> Houghton Mifflin Harcourt. <a href="https://www.amazon.com/s?k=tiny+habits+bj+fogg" target="_blank" rel="noopener">View on Amazon</a></div>
+            </li>
+            <li>
+              <div class="src-num">2</div>
+              <div class="src-text">Gollwitzer PM (1999). Implementation intentions: Strong effects of simple plans. <em>American Psychologist</em>, 54(7), 493–503. <a href="https://pubmed.ncbi.nlm.nih.gov/10450953/" target="_blank" rel="noopener">PubMed: 10450953</a></div>
+            </li>
+            <li>
+              <div class="src-num">3</div>
+              <div class="src-text">Milkman KL et al. (2021). Megastudy: Behaviour change strategies for exercise. <em>Nature</em>, 600(7889), 404–409. <a href="https://pubmed.ncbi.nlm.nih.gov/34880498/" target="_blank" rel="noopener">PubMed: 34880498</a></div>
+            </li>
+            <li>
+              <div class="src-num">4</div>
+              <div class="src-text">Wood W. &amp; Neal DT (2007). A new look at habits. <em>Psychological Review</em>, 114(4), 843–863. <a href="https://pubmed.ncbi.nlm.nih.gov/17907866/" target="_blank" rel="noopener">PubMed: 17907866</a></div>
+            </li>
+            <li>
+              <div class="src-num">5</div>
+              <div class="src-text">Allen D (2001). <em>Getting Things Done: The Art of Stress-Free Productivity.</em> Penguin Books. <a href="https://www.amazon.com/s?k=getting+things+done+david+allen" target="_blank" rel="noopener">View on Amazon</a></div>
+            </li>
+          </ul>
+        </div>
+
+      </main>
+
+      <!-- SIDEBAR -->
+      <aside class="guide-sidebar">
+        <div class="sidebar-card">
+          <div class="sidebar-title">Key numbers</div>
+          <div class="stat-item">
+            <div class="stat-value">2</div>
+            <div class="stat-desc">minutes — the maximum for any starting version of a new habit</div>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <div class="stat-value">61k</div>
+            <div class="stat-desc">gym-goers in the 2021 Nature megastudy on behavior change</div>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <div class="stat-value">#1</div>
+            <div class="stat-desc">activation energy — starting — is the most common habit failure point</div>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item" style="margin-bottom:0;">
+            <div class="stat-value">2wk</div>
+            <div class="stat-desc">do only the two-minute version — then extend naturally</div>
+          </div>
+        </div>
+
+        <div class="sidebar-card">
+          <div class="sidebar-title">Two versions at a glance</div>
+          <div style="display:flex;flex-direction:column;gap:8px;">
+            <div style="display:flex;align-items:center;gap:10px;font-size:12px;color:var(--muted);font-weight:300;">
+              <span style="color:var(--blue);font-weight:700;">★</span> Clear — scale habits to 2 min
+            </div>
+            <div style="display:flex;align-items:center;gap:10px;font-size:12px;color:var(--muted);font-weight:300;">
+              <span style="color:var(--blue);font-weight:700;">✓</span> Allen — do tasks under 2 min now
+            </div>
+            <div style="height:1px;background:var(--line);margin:4px 0;"></div>
+            <div style="display:flex;align-items:center;gap:10px;font-size:12px;color:var(--muted);font-weight:300;">
+              <span style="color:#15803d;font-weight:700;">+</span> Pair with anchor &amp; specific time
+            </div>
+            <div style="display:flex;align-items:center;gap:10px;font-size:12px;color:var(--muted);font-weight:300;">
+              <span style="color:#15803d;font-weight:700;">+</span> Two-minute = gateway, not goal
+            </div>
+          </div>
+        </div>
+
+        <div class="sidebar-card">
+          <div class="sidebar-title">Disclaimer</div>
+          <p class="sidebar-disclaimer">This guide is for informational purposes only and does not constitute medical or psychological advice. Consult a professional if you are dealing with clinical behavioral or mental health concerns.</p>
+        </div>
+      </aside>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <span style="font-size:1.3rem;font-weight:700;background:linear-gradient(135deg,#60a5fa,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:-0.03em;font-family:'Sora',sans-serif;display:block;margin-bottom:16px;">Improo</span>
+          <p>Health, weight loss, movement &amp; mindset — together.</p>
+          <small>© 2026 Improo. All rights reserved.</small>
+        </div>
+        <div class="footer-links">
+          <h4>Navigation</h4>
+          <a href="../index.html">Home</a>
+          <a href="../insights/index.html">Articles</a>
+          <a href="../guides.html">Guides</a>
+          <a href="../roadmap.html">Roadmap</a>
+        </div>
+        <div class="footer-links">
+          <h4>Legal</h4>
+          <a href="../disclaimer.html">Disclaimer</a>
+          <a href="../privacy-policy.html">Privacy Policy</a>
+          <a href="../terms-of-service.html">Terms of Service</a>
+        </div>
+        <div class="footer-links">
+          <h4>Follow</h4>
+          <a href="https://www.youtube.com/@Improo_App">YouTube</a>
+          <a href="https://x.com/Improo_">X (Twitter)</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const bar = document.getElementById('read-progress');
+    window.addEventListener('scroll', () => {
+      const doc = document.documentElement;
+      const pct = (doc.scrollTop / (doc.scrollHeight - doc.clientHeight)) * 100;
+      bar.style.width = Math.min(pct, 100) + '%';
+    }, { passive: true });
+
+    const reveals = document.querySelectorAll('.reveal');
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
+      });
+    }, { threshold: 0.06 });
+    reveals.forEach(el => obs.observe(el));
+  </script>
+
+</body>
+</html>

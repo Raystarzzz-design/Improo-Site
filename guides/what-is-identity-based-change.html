@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>What is Identity-Based Change? — Improo Guide</title>
+  <meta name="description" content="Identity-based change explained: why lasting behavioral transformation starts with shifting who you believe yourself to be — not your goals or habits. An evidence-based mindset guide." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700&family=Lora:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+  <script>
+    window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+  </script>
+  <script defer src="/_vercel/insights/script.js"></script>
+
+  <style>
+    body { overflow-x: hidden; }
+
+    .article-wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      width: 100%;
+    }
+
+    #read-progress {
+      position: fixed;
+      top: 0; left: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--blue), #60a5fa);
+      width: 0%;
+      z-index: 999;
+      transition: width 0.1s linear;
+    }
+
+    /* HERO */
+    .guide-hero { padding: 52px 0 0; }
+
+    .hero-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: 20px;
+    }
+    .hero-kicker::before {
+      content: '';
+      display: block;
+      width: 28px; height: 1px;
+      background: var(--blue);
+    }
+
+    .hero-layout {
+      display: grid;
+      grid-template-columns: 1fr 260px;
+      gap: 48px;
+      align-items: start;
+      padding-bottom: 48px;
+      border-bottom: 1px solid var(--line);
+    }
+    @media (max-width: 900px) {
+      .hero-layout { grid-template-columns: 1fr; }
+      .hero-visual-wrap { display: none; }
+    }
+
+    .guide-hero h1 {
+      font-family: 'Lora', serif;
+      font-size: clamp(2.2rem, 5vw, 3.6rem);
+      font-weight: 400;
+      line-height: 1.1;
+      color: #0c1a2e;
+      margin: 0 0 20px;
+      letter-spacing: -0.02em;
+      max-width: 660px;
+    }
+    .guide-hero h1 em { font-style: italic; color: var(--blue); }
+
+    .hero-meta {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-size: 12px;
+      color: var(--muted-light);
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+    }
+    .hero-meta-dot { width: 3px; height: 3px; border-radius: 50%; background: var(--muted-light); }
+
+    .hero-intro {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: var(--muted);
+      max-width: 580px;
+      font-weight: 300;
+      margin-bottom: 32px;
+    }
+
+    .hero-facts {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--line);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      overflow: hidden;
+      margin-bottom: 32px;
+    }
+    .hero-fact { background: var(--panel); padding: 18px 16px; text-align: center; }
+    .hero-fact-value {
+      font-family: 'Lora', serif;
+      font-size: 1.7rem;
+      font-weight: 600;
+      color: var(--blue);
+      display: block;
+      line-height: 1;
+      margin-bottom: 5px;
+    }
+    .hero-fact-label { font-size: 11px; color: var(--muted-light); line-height: 1.4; }
+    @media (max-width: 480px) { .hero-facts { grid-template-columns: 1fr; } }
+
+    .hero-visual-wrap {
+      position: relative;
+      height: 340px;
+      border-radius: 24px;
+      overflow: hidden;
+      background: linear-gradient(135deg, #dbeafe 0%, #eff6ff 60%, #ecfdf5 100%);
+      border: 1px solid var(--line);
+    }
+
+    /* TOC */
+    .toc {
+      background: var(--panel-2);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 22px 26px;
+    }
+    .toc-title { font-size: 9px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--muted-light); margin-bottom: 14px; }
+    .toc ol { list-style: none; counter-reset: toc; display: flex; flex-direction: column; gap: 10px; }
+    .toc ol li { counter-increment: toc; display: flex; align-items: baseline; gap: 12px; }
+    .toc ol li::before { content: counter(toc, decimal-leading-zero); font-size: 9px; font-weight: 700; color: var(--blue-light); min-width: 20px; }
+    .toc ol li a { font-size: 13px; color: var(--muted); text-decoration: none; transition: color 0.2s; line-height: 1.4; }
+    .toc ol li a:hover { color: var(--blue); }
+
+    /* LAYOUT */
+    .guide-body {
+      display: grid;
+      grid-template-columns: 1fr 272px;
+      gap: 64px;
+      align-items: start;
+      padding: 56px 0 96px;
+    }
+    @media (max-width: 960px) {
+      .guide-body { grid-template-columns: 1fr; }
+      .guide-sidebar { display: none; }
+    }
+
+    /* SECTIONS */
+    .guide-section { margin-bottom: 64px; padding-bottom: 64px; border-bottom: 1px solid var(--line); }
+    .guide-section:last-child { border-bottom: none; margin-bottom: 0; }
+
+    .section-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--blue-light);
+      margin-bottom: 14px;
+    }
+    .section-eyebrow::after { content: ''; flex: 1; max-width: 36px; height: 1px; background: var(--line-strong); }
+
+    .guide-section h2 {
+      font-family: 'Lora', serif;
+      font-size: clamp(1.4rem, 2.8vw, 2rem);
+      font-weight: 400;
+      line-height: 1.2;
+      color: #0c1a2e;
+      margin: 0 0 22px;
+    }
+
+    .guide-section h3 {
+      font-size: 15px;
+      font-weight: 700;
+      color: #0c1a2e;
+      margin: 28px 0 10px;
+    }
+
+    .guide-section p { font-size: 0.97rem; font-weight: 300; color: var(--muted); margin-bottom: 18px; line-height: 1.85; max-width: 640px; }
+
+    .callout {
+      border-left: 3px solid var(--blue);
+      padding: 20px 24px;
+      background: linear-gradient(135deg, rgba(37,99,235,0.04), rgba(96,165,250,0.06));
+      border-radius: 0 12px 12px 0;
+      margin: 28px 0;
+    }
+    .callout p { margin: 0; color: var(--blue-dark); font-style: italic; font-size: 1rem; line-height: 1.7; max-width: none; }
+    .callout-label { font-size: 9px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--blue-light); margin-bottom: 8px; }
+
+    .insight-box {
+      background: linear-gradient(135deg, #0f1f3d 0%, #1e3a6e 100%);
+      border-radius: 16px;
+      padding: 28px 30px;
+      margin: 28px 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .insight-box::before {
+      content: '';
+      position: absolute;
+      top: -40px; right: -40px;
+      width: 160px; height: 160px;
+      border-radius: 50%;
+      background: rgba(96,165,250,0.07);
+    }
+    .insight-label { font-size: 9px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: rgba(96,165,250,0.65); margin-bottom: 10px; display: block; }
+    .insight-box p { margin: 0; color: rgba(255,255,255,0.88); font-size: 0.97rem; line-height: 1.72; font-weight: 300; max-width: none; }
+    .insight-box strong { color: #fff; font-weight: 600; }
+
+    .opinion-box {
+      background: linear-gradient(135deg, #1e3a6e 0%, #1e40af 100%);
+      border-radius: 16px;
+      padding: 28px 30px;
+      margin: 28px 0;
+      position: relative;
+      overflow: hidden;
+      border-left: 4px solid #60a5fa;
+    }
+    .opinion-label { font-size: 9px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: rgba(147,197,253,0.8); margin-bottom: 10px; display: block; }
+    .opinion-box p { margin: 0; color: rgba(255,255,255,0.92); font-size: 1rem; line-height: 1.75; font-weight: 300; max-width: none; font-style: italic; }
+    .opinion-box strong { color: #93c5fd; font-weight: 600; font-style: normal; }
+
+    /* Forms grid */
+    .forms-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 24px 0; }
+    @media (max-width: 580px) { .forms-grid { grid-template-columns: 1fr; } }
+
+    .form-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 22px 20px;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .form-card:hover { border-color: var(--line-strong); box-shadow: var(--shadow); }
+    .form-card.featured {
+      background: linear-gradient(135deg, rgba(37,99,235,0.05), rgba(96,165,250,0.07));
+      border-color: rgba(37,99,235,0.18);
+    }
+    .form-badge {
+      display: inline-block;
+      font-size: 9px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;
+      padding: 3px 8px; border-radius: 6px; margin-bottom: 10px;
+      background: rgba(37,99,235,0.1); color: var(--blue-dark);
+    }
+    .form-name { font-size: 15px; font-weight: 700; color: #0c1a2e; margin-bottom: 4px; }
+    .form-use { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--blue-light); margin-bottom: 8px; }
+    .form-desc { font-size: 13px; color: var(--muted); line-height: 1.65; font-weight: 300; }
+
+    /* Study cards */
+    .study-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 22px 24px;
+      margin: 16px 0;
+      display: grid;
+      grid-template-columns: 38px 1fr;
+      gap: 16px;
+      align-items: start;
+      transition: box-shadow 0.2s, border-color 0.2s;
+    }
+    .study-card:hover { border-color: var(--line-strong); box-shadow: var(--shadow); }
+    .study-num {
+      width: 34px; height: 34px; border-radius: 9px;
+      background: var(--blue-pale); border: 1px solid var(--line-strong);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 11px; font-weight: 700; color: var(--blue-dark); flex-shrink: 0;
+    }
+    .study-title { font-size: 14px; font-weight: 600; color: #0c1a2e; margin-bottom: 8px; }
+    .study-text  { font-size: 13.5px; font-weight: 300; color: var(--muted); line-height: 1.7; margin: 0; }
+    .study-source { font-size: 11px; color: var(--muted-light); margin-top: 10px; font-style: italic; }
+    .study-source a { color: var(--blue); text-decoration: none; }
+    .study-source a:hover { text-decoration: underline; }
+
+    /* Dosage table */
+    .dosage-table { width: 100%; border-collapse: collapse; margin: 24px 0; font-size: 13.5px; }
+    .dosage-table th { background: var(--panel-2); color: var(--muted-light); font-size: 10px; text-transform: uppercase; letter-spacing: 1px; padding: 11px 14px; text-align: left; border-bottom: 1px solid var(--line); font-weight: 700; }
+    .dosage-table td { padding: 12px 14px; border-bottom: 1px solid var(--line); color: var(--muted); vertical-align: top; font-weight: 300; }
+    .dosage-table tr:last-child td { border-bottom: none; }
+    .dosage-table td:first-child { color: #0c1a2e; font-weight: 600; }
+    .dosage-table tr:hover td { background: var(--panel); }
+
+    /* Summary list */
+    .summary-list { list-style: none; display: flex; flex-direction: column; gap: 14px; margin: 20px 0; }
+    .summary-list li { display: flex; align-items: flex-start; gap: 14px; font-size: 14.5px; font-weight: 300; color: var(--muted); line-height: 1.65; }
+    .sum-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--blue); flex-shrink: 0; margin-top: 7px; }
+
+    /* Products */
+    .prod-card {
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      overflow: hidden;
+      background: var(--panel);
+      margin-bottom: 20px;
+      transition: box-shadow 0.3s ease, border-color 0.3s ease, transform 0.25s ease;
+      text-decoration: none;
+      color: inherit;
+    }
+    .prod-card:hover { box-shadow: 0 16px 48px rgba(37,99,235,0.12); border-color: rgba(37,99,235,0.22); transform: translateY(-2px); }
+    @media (max-width: 680px) { .prod-card { grid-template-columns: 1fr; } .prod-visual { height: 180px; } }
+
+    .prod-visual {
+      position: relative; overflow: hidden;
+      display: flex; flex-direction: column; justify-content: flex-start;
+      padding: 18px; min-height: 220px;
+    }
+    .prod-visual.guide-book-1 { background: linear-gradient(160deg, #dbeafe 0%, #bfdbfe 40%, #ede9fe 100%); }
+    .prod-visual.guide-book-2 { background: linear-gradient(160deg, #d1fae5 0%, #a7f3d0 40%, #bfdbfe 100%); }
+
+    .prod-badge {
+      position: relative; z-index: 2;
+      display: inline-flex; align-items: center; gap: 7px;
+      background: rgba(255,255,255,0.96);
+      border: 1.5px solid rgba(37,99,235,0.22);
+      border-radius: 22px; padding: 7px 14px 7px 10px;
+      font-size: 11px; font-weight: 700; color: var(--blue-dark);
+      backdrop-filter: blur(8px); align-self: flex-start;
+      box-shadow: 0 2px 10px rgba(37,99,235,0.12);
+    }
+    .prod-badge-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--blue); }
+    .prod-visual-icon { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); font-size: 64px; opacity: 0.25; }
+
+    .prod-content { padding: 26px 26px 22px; display: flex; flex-direction: column; }
+    .prod-category { font-size: 9px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--blue-light); margin-bottom: 8px; }
+    .prod-name { font-family: 'Lora', serif; font-size: 1.2rem; font-weight: 600; color: #0c1a2e; line-height: 1.25; margin-bottom: 12px; }
+    .prod-summary { font-size: 13.5px; color: var(--muted); line-height: 1.7; font-weight: 300; margin-bottom: 14px; }
+
+    .prod-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 16px; }
+    .prod-tag { font-size: 11px; background: rgba(22,163,74,0.09); color: #15803d; padding: 4px 10px; border-radius: 20px; font-weight: 600; border: 1px solid rgba(22,163,74,0.15); }
+
+    .prod-cta {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+      color: #fff; font-size: 14px; font-weight: 700;
+      padding: 13px 24px; border-radius: 28px;
+      transition: background 0.2s, box-shadow 0.2s, gap 0.2s, transform 0.2s;
+      box-shadow: 0 6px 20px rgba(37,99,235,0.30);
+      align-self: flex-start; margin-bottom: 10px;
+    }
+    .prod-cta:hover { background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%); gap: 16px; box-shadow: 0 10px 28px rgba(37,99,235,0.42); transform: translateY(-1px); }
+    .prod-affiliate { font-size: 10.5px; color: var(--muted-light); }
+
+    /* Sources */
+    .sources-list { list-style: none; display: flex; flex-direction: column; gap: 14px; margin-top: 16px; }
+    .sources-list li { display: flex; gap: 12px; align-items: flex-start; }
+    .src-num { font-size: 10px; font-weight: 700; color: var(--blue-dark); background: var(--blue-pale); width: 24px; height: 24px; border-radius: 6px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
+    .src-text { font-size: 12.5px; color: var(--muted-light); line-height: 1.6; }
+    .src-text a { color: var(--blue); text-decoration: none; }
+    .src-text a:hover { text-decoration: underline; }
+
+    /* Sidebar */
+    .guide-sidebar { position: sticky; top: 88px; display: flex; flex-direction: column; gap: 16px; }
+    .sidebar-card { background: var(--panel); border: 1px solid var(--line); border-radius: 16px; padding: 20px 18px; box-shadow: var(--shadow); }
+    .sidebar-title { font-size: 9px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--muted-light); margin-bottom: 16px; }
+    .stat-item { display: flex; flex-direction: column; gap: 4px; margin-bottom: 16px; }
+    .stat-value { font-family: 'Lora', serif; font-size: 2.1rem; font-weight: 600; font-style: italic; color: var(--blue); line-height: 1; }
+    .stat-desc { font-size: 12px; color: var(--muted); line-height: 1.45; font-weight: 300; }
+    .stat-divider { height: 1px; background: var(--line); margin: 4px 0 16px; }
+    .sidebar-disclaimer { font-size: 11px; color: var(--muted-light); line-height: 1.65; font-weight: 300; }
+
+    /* Animations */
+    .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.55s ease, transform 0.55s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+  </style>
+</head>
+<body>
+
+  <div id="read-progress"></div>
+
+  <!-- NAV -->
+  <header class="site-header">
+    <div class="container">
+      <nav class="nav">
+        <a href="../index.html">
+          <span style="font-size:1.6rem;font-weight:700;background:linear-gradient(135deg,#3b9ef5,#2563eb);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:-0.03em;font-family:'Sora',sans-serif;">Improo</span>
+        </a>
+        <div class="nav-links">
+          <a href="../index.html">Home</a>
+          <a href="../insights/index.html">Articles</a>
+          <a href="../guides.html" class="active">Guides</a>
+          <a href="../roadmap.html">Roadmap</a>
+          <a href="../index.html#contact">Contact</a>
+        </div>
+        <div class="socials">
+          <a href="https://www.youtube.com/@Improo_App" aria-label="YouTube">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.7 15.5V8.5l6.3 3.5-6.3 3.5z"/></svg>
+          </a>
+          <a href="https://x.com/Improo_" aria-label="X">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <div class="article-wrap">
+
+    <a href="../guides.html" class="back-link" style="margin-top:36px;display:inline-flex;align-items:center;gap:6px;font-size:13px;color:var(--muted);transition:color 0.2s;">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M9 2L4 7l5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Back to Guides
+    </a>
+
+    <!-- HERO -->
+    <section class="guide-hero">
+      <div class="hero-layout">
+        <div class="hero-left reveal">
+          <div class="hero-kicker">Mindset Guide</div>
+          <h1>What is <em>Identity-Based</em> Change?</h1>
+          <div class="hero-meta">
+            <span>11 min read</span>
+            <div class="hero-meta-dot"></div>
+            <span>Science-backed</span>
+            <div class="hero-meta-dot"></div>
+            <span>Not medical advice</span>
+          </div>
+          <p class="hero-intro">Most people try to change their behavior. Identity-based change says that is the wrong starting point. Lasting change begins with shifting how you see yourself — because behavior follows identity, not the other way around. This guide explains the psychology behind this idea and how to actually apply it.</p>
+
+          <div class="hero-facts">
+            <div class="hero-fact reveal">
+              <span class="hero-fact-value">40%</span>
+              <span class="hero-fact-label">of daily behavior is habitual — driven by identity, not decisions</span>
+            </div>
+            <div class="hero-fact reveal">
+              <span class="hero-fact-value">3 layers</span>
+              <span class="hero-fact-label">outcomes, processes, identity — identity is the deepest and most durable</span>
+            </div>
+            <div class="hero-fact reveal">
+              <span class="hero-fact-value">2x</span>
+              <span class="hero-fact-label">more durable habit retention in people who tie habits to self-identity</span>
+            </div>
+          </div>
+
+          <div class="toc">
+            <div class="toc-title">In this guide</div>
+            <ol>
+              <li><a href="#intro">What is identity-based change?</a></li>
+              <li><a href="#layers">The three layers of behavior change</a></li>
+              <li><a href="#motivation">Why identity outlasts motivation</a></li>
+              <li><a href="#how-it-shifts">How identity shifts actually happen</a></li>
+              <li><a href="#science">What the research says</a></li>
+              <li><a href="#how-to">How to start shifting your identity</a></li>
+              <li><a href="#mistakes">Common mistakes</a></li>
+              <li><a href="#summary">The short version</a></li>
+              <li><a href="#products">Recommended reading</a></li>
+              <li><a href="#sources">Sources</a></li>
+            </ol>
+          </div>
+        </div>
+
+        <!-- Hero visual -->
+        <div class="hero-visual-wrap reveal">
+          <svg width="100%" viewBox="0 0 260 340" xmlns="http://www.w3.org/2000/svg" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+            <defs>
+              <radialGradient id="ibcBg" cx="50%" cy="40%" r="65%"><stop offset="0%" stop-color="#e8eeff"/><stop offset="100%" stop-color="#f0f9ff"/></radialGradient>
+            </defs>
+            <rect width="260" height="340" fill="url(#ibcBg)"/>
+            <!-- Three concentric rings representing the 3 layers -->
+            <circle cx="130" cy="170" r="100" fill="none" stroke="rgba(37,99,235,0.10)" stroke-width="32"/>
+            <circle cx="130" cy="170" r="64" fill="none" stroke="rgba(37,99,235,0.18)" stroke-width="28"/>
+            <circle cx="130" cy="170" r="32" fill="#2563eb" opacity="0.9"/>
+            <!-- Layer labels -->
+            <text x="130" y="175" text-anchor="middle" font-family="'Sora',sans-serif" font-size="9" font-weight="700" fill="white" letter-spacing="1">IDENTITY</text>
+            <text x="130" y="118" text-anchor="middle" font-family="'Sora',sans-serif" font-size="9" fill="rgba(30,58,110,0.7)" font-weight="600">PROCESSES</text>
+            <text x="130" y="60" text-anchor="middle" font-family="'Sora',sans-serif" font-size="9" fill="rgba(30,58,110,0.5)" font-weight="600">OUTCOMES</text>
+            <!-- Evidence votes -->
+            <rect x="20" y="270" width="220" height="44" rx="10" fill="white" opacity="0.88" stroke="rgba(37,99,235,0.15)" stroke-width="1"/>
+            <text x="130" y="288" text-anchor="middle" font-family="'Sora',sans-serif" font-size="8" font-weight="700" fill="#1e3a6e" letter-spacing="1.5">EVERY ACTION IS A VOTE</text>
+            <text x="130" y="304" text-anchor="middle" font-family="'Lora',serif" font-size="10" font-style="italic" fill="#4a6fa5">for who you are becoming</text>
+            <!-- Decorative dots -->
+            <circle cx="36" cy="100" r="5" fill="rgba(96,165,250,0.2)"/>
+            <circle cx="224" cy="230" r="7" fill="rgba(37,99,235,0.12)"/>
+            <circle cx="220" cy="80" r="4" fill="rgba(147,197,253,0.3)"/>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- BODY -->
+    <div class="guide-body">
+      <main>
+
+        <!-- 01 INTRO -->
+        <div class="guide-section reveal" id="intro">
+          <div class="section-eyebrow">01 — Introduction</div>
+          <h2>What is identity-based change?</h2>
+          <p>Identity-based change is the idea that lasting behavioral transformation requires a shift in self-concept — in who you believe yourself to be — rather than in goals or habits alone. The concept was popularized by James Clear in <em>Atomic Habits</em> (2018), but is rooted in decades of research in social psychology, self-perception theory, and motivational science.</p>
+          <p>The typical approach to change is outcome-focused: "I want to lose 10 kg." Or process-focused: "I will go to the gym three times a week." Identity-based change adds a third, deeper layer: "I am someone who takes care of their body." The behavior follows from that identity — not from willpower, not from a goal written on a whiteboard.</p>
+          <p>The difference sounds subtle. In practice it is not. Someone who identifies as "a person who exercises" does not need to decide each morning whether to work out. It is part of who they are. The behavior is no longer a choice that requires energy — it is an expression of self.</p>
+          <div class="insight-box">
+            <span class="insight-label">Key insight</span>
+            <p>Identity-based change does not eliminate difficulty. It changes the <strong>source of motivation</strong> from external pressure (goals, deadlines, fear) to internal coherence — the desire to act in ways that are consistent with who you believe you are.</p>
+          </div>
+        </div>
+
+        <!-- 02 LAYERS -->
+        <div class="guide-section reveal" id="layers">
+          <div class="section-eyebrow">02 — The three layers</div>
+          <h2>The three layers of behavior change</h2>
+          <p>Behavior change can be approached from three levels. Most people start at the wrong one.</p>
+
+          <div class="forms-grid">
+            <div class="form-card">
+              <div class="form-name">Layer 1: Outcomes</div>
+              <div class="form-use">What you want to achieve</div>
+              <p class="form-desc">Goals, results, metrics. Most change attempts start here. The problem is that outcomes are external and time-limited — once reached, the motivational pull disappears.</p>
+            </div>
+            <div class="form-card">
+              <div class="form-name">Layer 2: Processes</div>
+              <div class="form-use">How you achieve it</div>
+              <p class="form-desc">Systems, habits, routines. Better than outcome-focus, but still susceptible to willpower depletion and inconsistency if not anchored to identity.</p>
+            </div>
+            <div class="form-card featured">
+              <span class="form-badge">Deepest layer</span>
+              <div class="form-name">Layer 3: Identity</div>
+              <div class="form-use">Who you believe you are</div>
+              <p class="form-desc">This is the deepest layer. When identity and behavior align, the behavior becomes self-sustaining. When they conflict, behavior eventually reverts.</p>
+            </div>
+            <div class="form-card featured">
+              <span class="form-badge">The shift in practice</span>
+              <div class="form-name">Applied identity change</div>
+              <div class="form-use">Evidence accumulates</div>
+              <p class="form-desc">Instead of "I want to run a 5K" — "I am becoming a runner." Every run is evidence. Every skip is a small contradiction. Over time, the evidence accumulates into a genuine identity shift.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 03 MOTIVATION -->
+        <div class="guide-section reveal" id="motivation">
+          <div class="section-eyebrow">03 — Psychology</div>
+          <h2>Why identity outlasts motivation</h2>
+          <p>Motivation fluctuates. Some mornings you are energized; most mornings you are not. A behavior that depends on motivation is a behavior that will be inconsistent. Identity is more stable — your sense of who you are does not change day to day.</p>
+          <p>Self-perception theory (Bem, 1972) provides the psychological mechanism: we infer our identity from our own behavior. When you act like a healthy person repeatedly — even in small ways — your brain updates its model of who you are. The identity shift does not have to precede the behavior. It develops alongside it, reinforced by accumulated evidence.</p>
+          <p>This is why "fake it till you make it" contains a kernel of truth. Acting as if you are already the person you want to become — even before you fully believe it — actually accelerates the identity shift. Each aligned action is a vote cast for the new identity.</p>
+
+          <div class="callout">
+            <div class="callout-label">Evidence-based identity</div>
+            <p>The most powerful identity statements are not affirmations — they are evidence-based observations. Not "I am a healthy person" (which can feel false). But "I have gone for a walk every morning this week. That is what I do now."</p>
+          </div>
+        </div>
+
+        <!-- 04 HOW IT SHIFTS -->
+        <div class="guide-section reveal" id="how-it-shifts">
+          <div class="section-eyebrow">04 — Mechanisms</div>
+          <h2>How identity shifts actually happen</h2>
+          <p>Identity does not change through declarations. It changes through repeated actions and accumulated evidence. Here are the four main mechanisms.</p>
+
+          <div class="forms-grid">
+            <div class="form-card featured">
+              <span class="form-badge">Most powerful</span>
+              <div class="form-name">Small consistent actions</div>
+              <div class="form-use">Evidence accumulates</div>
+              <p class="form-desc">Identity is not declared — it is accumulated. Small, repeated actions that are consistent with the desired identity gradually shift self-perception more reliably than single dramatic events.</p>
+            </div>
+            <div class="form-card featured">
+              <span class="form-badge">Core model</span>
+              <div class="form-name">The evidence model</div>
+              <div class="form-use">Every vote counts</div>
+              <p class="form-desc">Each action is treated as a vote for the type of person you are becoming. Missing one is not failure — it is one vote in the wrong direction. What matters is the overall tally.</p>
+            </div>
+            <div class="form-card">
+              <div class="form-name">Social identity</div>
+              <div class="form-use">Social context</div>
+              <p class="form-desc">The groups you belong to shape identity. People who join communities of runners start identifying as runners. Community support is a significant predictor of sustained behavior change.</p>
+            </div>
+            <div class="form-card">
+              <div class="form-name">Environment design</div>
+              <div class="form-use">Physical cues</div>
+              <p class="form-desc">Your environment sends constant signals about who you are. A kitchen stocked with whole foods, running shoes by the door, a book on the nightstand — these cues reinforce the identity you are building without requiring willpower.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 05 SCIENCE -->
+        <div class="guide-section reveal" id="science">
+          <div class="section-eyebrow">05 — Research</div>
+          <h2>What the research says</h2>
+          <p>Identity-based change draws from multiple lines of research in social psychology, motivational science, and behavior change. Here are four foundational studies.</p>
+
+          <div class="study-card">
+            <div class="study-num">[1]</div>
+            <div>
+              <div class="study-title">Bem DJ (1972) — Self-perception theory</div>
+              <p class="study-text">Daryl Bem proposed that people come to know their own attitudes, emotions, and internal states partly by inferring them from observations of their own behavior. This foundational theory explains why acting consistently with a desired identity — even before fully believing it — actually changes self-perception. It is the psychological engine behind identity-based change.</p>
+              <div class="study-source">Advances in Experimental Social Psychology, 6, 1–62. <a href="https://www.sciencedirect.com/science/article/abs/pii/S0065260108601774" target="_blank" rel="noopener">View paper</a></div>
+            </div>
+          </div>
+
+          <div class="study-card">
+            <div class="study-num">[2]</div>
+            <div>
+              <div class="study-title">Deci EL &amp; Ryan RM (2000) — Self-determination theory</div>
+              <p class="study-text">A landmark paper laid out self-determination theory — one of the most influential frameworks in motivational psychology. The theory distinguishes between intrinsic motivation (rooted in values and identity) and extrinsic motivation (rewards, deadlines, social pressure). Research consistently shows that intrinsically motivated behavior is more persistent, more creative, and more resistant to setbacks. Identity-based motivation is fundamentally intrinsic.</p>
+              <div class="study-source">Psychological Inquiry, 11(4), 227–268. <a href="https://doi.org/10.1207/S15327965PLI1104_01" target="_blank" rel="noopener">https://doi.org/10.1207/S15327965PLI1104_01</a></div>
+            </div>
+          </div>
+
+          <div class="study-card">
+            <div class="study-num">[3]</div>
+            <div>
+              <div class="study-title">Oyserman D. et al. (2006) — Identity-based motivation</div>
+              <p class="study-text">Daphna Oyserman's research on identity-based motivation showed that when people connect their behavior to their identity — "people like me do this" — they are significantly more likely to persist with difficult goals, including health behaviors. The research found that identity cues in the environment could trigger motivated action without any explicit goal-setting.</p>
+              <div class="study-source">Journal of Personality and Social Psychology, 91(6), 1116–1132. <a href="https://pubmed.ncbi.nlm.nih.gov/17144774/" target="_blank" rel="noopener">PubMed: 17144774</a></div>
+            </div>
+          </div>
+
+          <div class="study-card">
+            <div class="study-num">[4]</div>
+            <div>
+              <div class="study-title">Prochaska JO &amp; DiClemente CC (1983) — Stages of change</div>
+              <p class="study-text">The transtheoretical model of behavior change identified six stages through which people move when adopting and sustaining new behaviors. The research found that identity shift — moving from "I am not someone who does X" to "I am someone who does X" — corresponds closely to the transition between contemplation and action, and is one of the most significant predictors of sustained long-term change.</p>
+              <div class="study-source">Journal of Consulting and Clinical Psychology, 51(3), 390–395. <a href="https://pubmed.ncbi.nlm.nih.gov/6863699/" target="_blank" rel="noopener">PubMed: 6863699</a></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 06 HOW TO -->
+        <div class="guide-section reveal" id="how-to">
+          <div class="section-eyebrow">06 — How to start</div>
+          <h2>How to start shifting your identity</h2>
+          <p>Identity shifts do not happen overnight. They require a deliberate process of small actions, accumulated evidence, and environment design. Here is how to begin.</p>
+
+          <table class="dosage-table">
+            <thead>
+              <tr><th>Step</th><th>Action</th><th>What this looks like</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Step 1</td><td>Define the identity you want</td><td>Not the outcome. "I am someone who moves their body daily." "I am someone who prioritizes sleep." Specific, present-tense, realistic.</td></tr>
+              <tr><td>Step 2</td><td>Find one small action that matches it</td><td>The smallest version of what that person would do. Two minutes counts. The point is the vote.</td></tr>
+              <tr><td>Step 3</td><td>Do it consistently for two weeks</td><td>Two weeks of small, consistent action generates the first evidence base for the new identity.</td></tr>
+              <tr><td>Step 4</td><td>Acknowledge the evidence</td><td>At the end of each week, name what you did. "I walked every day this week. That is what I do now." Evidence stated aloud reinforces the identity shift.</td></tr>
+              <tr><td>Step 5</td><td>Build the environment</td><td>Arrange your physical environment to reflect the identity you are building. What would the person you are becoming keep in their kitchen, on their desk, by their bed?</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- 07 MISTAKES -->
+        <div class="guide-section reveal" id="mistakes">
+          <div class="section-eyebrow">07 — Common mistakes</div>
+          <h2>Common mistakes</h2>
+          <p>These are the patterns that most reliably undermine identity-based change — and how to avoid them.</p>
+
+          <div class="callout">
+            <p><strong>Mistake 1: Starting with identity statements rather than evidence.</strong> Repeating "I am a healthy person" without any supporting behavior creates cognitive dissonance — your brain knows it is not true yet. Start with evidence first. Identity follows.</p>
+          </div>
+
+          <div class="callout">
+            <p><strong>Mistake 2: Setting the bar too high.</strong> Trying to act like the most extreme version of your desired identity on day one — training like an elite athlete, eating perfectly — produces failure that undermines the identity you are trying to build. Start with the smallest possible version.</p>
+          </div>
+
+          <div class="callout">
+            <p><strong>Mistake 3: Treating setbacks as identity failures.</strong> Missing a day, a week, or a month does not mean the identity is wrong. It means the evidence count decreased temporarily. What matters is returning — and the speed of returning tells you how strong the identity is becoming.</p>
+          </div>
+
+          <div class="callout">
+            <p><strong>Mistake 4: Ignoring the social environment.</strong> If your social group consistently models behaviors that conflict with your desired identity, the friction is enormous. Finding even one community — online or offline — that reflects your desired identity dramatically accelerates the shift.</p>
+          </div>
+
+          <div class="callout">
+            <p><strong>Mistake 5: Confusing identity-based change with affirmations.</strong> Positive affirmations without behavioral backing are psychological noise. The only thing that builds identity is action. The affirmation comes after the evidence, not before it.</p>
+          </div>
+        </div>
+
+        <!-- 08 SUMMARY -->
+        <div class="guide-section reveal" id="summary">
+          <div class="section-eyebrow">08 — Summary</div>
+          <h2>The short version</h2>
+          <ul class="summary-list">
+            <li><div class="sum-dot"></div><span>Most change attempts focus on outcomes (what you want) or processes (what you do). Identity-based change focuses on who you are.</span></li>
+            <li><div class="sum-dot"></div><span>Identity is the deepest layer — and the most durable. Behavior that is consistent with identity does not require willpower.</span></li>
+            <li><div class="sum-dot"></div><span>Self-perception theory shows that we build identity through our behavior. You do not have to believe it first — you act, and the belief develops through accumulated evidence.</span></li>
+            <li><div class="sum-dot"></div><span>Every aligned action is a vote for the identity you are building. Every missed day is one vote in the other direction. The tally is what matters.</span></li>
+            <li><div class="sum-dot"></div><span>Start small. The first evidence should be almost impossible to fail at. Two minutes counts.</span></li>
+            <li><div class="sum-dot"></div><span>The environment matters: design your physical space to reinforce the identity you are building.</span></li>
+            <li><div class="sum-dot"></div><span>Setbacks are not identity failures — they are pauses in evidence accumulation. What matters is how quickly you return.</span></li>
+          </ul>
+        </div>
+
+        <!-- 09 PRODUCTS -->
+        <div class="guide-section reveal" id="products">
+          <div class="section-eyebrow">09 — Recommended reading</div>
+          <h2>Books worth reading</h2>
+          <p style="max-width:600px;">Both of these books directly address the psychology of identity and behavior change. They are the clearest treatments of this topic available.</p>
+
+          <a href="https://www.amazon.com/s?k=atomic+habits+james+clear" target="_blank" rel="noopener" class="prod-card">
+            <div class="prod-visual guide-book-1">
+              <div class="prod-badge">
+                <div class="prod-badge-dot"></div>
+                Most recommended
+              </div>
+              <div class="prod-visual-icon">📖</div>
+            </div>
+            <div class="prod-content">
+              <div class="prod-category">Book · Habit Formation</div>
+              <div class="prod-name">Atomic Habits by James Clear</div>
+              <p class="prod-summary">The most widely read book on habit formation in the past decade. Clear explains habit stacking, implementation intentions, and identity-based change with clarity and practical depth. The identity-based framework in this guide comes directly from this book.</p>
+              <div class="prod-tags">
+                <span class="prod-tag">Habit stacking</span>
+                <span class="prod-tag">Identity-based</span>
+                <span class="prod-tag">Evidence-based</span>
+              </div>
+              <div class="prod-cta">
+                View on Amazon
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M8 4l3 3-3 3" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div class="prod-affiliate">This is a search link. We do not earn a commission on this recommendation.</div>
+            </div>
+          </a>
+
+          <a href="https://www.amazon.com/s?k=tiny+habits+bj+fogg" target="_blank" rel="noopener" class="prod-card">
+            <div class="prod-visual guide-book-2">
+              <div class="prod-badge" style="border-color:rgba(22,163,74,0.25);">
+                <div class="prod-badge-dot" style="background:#16a34a;"></div>
+                Deep science
+              </div>
+              <div class="prod-visual-icon">🧠</div>
+            </div>
+            <div class="prod-content">
+              <div class="prod-category">Book · Behavior Design</div>
+              <div class="prod-name">Tiny Habits by BJ Fogg</div>
+              <p class="prod-summary">BJ Fogg is a Stanford researcher who spent decades studying behavior design. Tiny Habits covers the science of anchoring, motivation, and making behaviors small enough to stick — directly relevant to building identity through small, consistent evidence.</p>
+              <div class="prod-tags">
+                <span class="prod-tag">Tiny habits</span>
+                <span class="prod-tag">Behavior design</span>
+                <span class="prod-tag">Stanford research</span>
+              </div>
+              <div class="prod-cta">
+                View on Amazon
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M8 4l3 3-3 3" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div class="prod-affiliate">This is a search link. We do not earn a commission on this recommendation.</div>
+            </div>
+          </a>
+        </div>
+
+        <!-- 10 SOURCES -->
+        <div class="guide-section reveal" id="sources">
+          <div class="section-eyebrow">10 — Sources</div>
+          <h2>References</h2>
+          <ul class="sources-list">
+            <li>
+              <div class="src-num">1</div>
+              <div class="src-text">Bem DJ (1972). Self-perception theory. <em>Advances in Experimental Social Psychology</em>, 6, 1–62. <a href="https://www.sciencedirect.com/science/article/abs/pii/S0065260108601774" target="_blank" rel="noopener">View paper</a></div>
+            </li>
+            <li>
+              <div class="src-num">2</div>
+              <div class="src-text">Deci EL &amp; Ryan RM (2000). The "what" and "why" of goal pursuits. <em>Psychological Inquiry</em>, 11(4), 227–268. <a href="https://doi.org/10.1207/S15327965PLI1104_01" target="_blank" rel="noopener">https://doi.org/10.1207/S15327965PLI1104_01</a></div>
+            </li>
+            <li>
+              <div class="src-num">3</div>
+              <div class="src-text">Oyserman D. et al. (2006). The path from values to action. <em>Journal of Personality and Social Psychology</em>, 91(6), 1116–1132. <a href="https://pubmed.ncbi.nlm.nih.gov/17144774/" target="_blank" rel="noopener">PubMed: 17144774</a></div>
+            </li>
+            <li>
+              <div class="src-num">4</div>
+              <div class="src-text">Prochaska JO &amp; DiClemente CC (1983). Stages of change. <em>Journal of Consulting and Clinical Psychology</em>, 51(3), 390–395. <a href="https://pubmed.ncbi.nlm.nih.gov/6863699/" target="_blank" rel="noopener">PubMed: 6863699</a></div>
+            </li>
+            <li>
+              <div class="src-num">5</div>
+              <div class="src-text">Wood W. &amp; Neal DT (2007). A new look at habits. <em>Psychological Review</em>, 114(4), 843–863. <a href="https://pubmed.ncbi.nlm.nih.gov/17907866/" target="_blank" rel="noopener">PubMed: 17907866</a></div>
+            </li>
+          </ul>
+        </div>
+
+      </main>
+
+      <!-- SIDEBAR -->
+      <aside class="guide-sidebar">
+        <div class="sidebar-card">
+          <div class="sidebar-title">Key numbers</div>
+          <div class="stat-item">
+            <div class="stat-value">3</div>
+            <div class="stat-desc">layers of change: outcomes, processes, identity</div>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <div class="stat-value">40%</div>
+            <div class="stat-desc">of daily behavior driven by identity, not conscious choice</div>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <div class="stat-value">3x</div>
+            <div class="stat-desc">more persistent: intrinsic motivation vs. extrinsic</div>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item" style="margin-bottom:0;">
+            <div class="stat-value">→</div>
+            <div class="stat-desc">evidence beats intention — always act first</div>
+          </div>
+        </div>
+
+        <div class="sidebar-card">
+          <div class="sidebar-title">The 3 layers at a glance</div>
+          <div style="display:flex;flex-direction:column;gap:8px;">
+            <div style="display:flex;align-items:center;gap:10px;font-size:12px;color:var(--muted);font-weight:300;">
+              <span style="color:var(--blue);font-weight:700;">★</span> Identity — deepest, most durable
+            </div>
+            <div style="display:flex;align-items:center;gap:10px;font-size:12px;color:var(--muted);font-weight:300;">
+              <span style="color:var(--blue);font-weight:700;">✓</span> Processes — habits &amp; systems
+            </div>
+            <div style="display:flex;align-items:center;gap:10px;font-size:12px;color:var(--muted);font-weight:300;">
+              <span style="color:var(--blue);font-weight:700;">~</span> Outcomes — goals &amp; metrics
+            </div>
+            <div style="height:1px;background:var(--line);margin:4px 0;"></div>
+            <div style="display:flex;align-items:center;gap:10px;font-size:12px;color:var(--muted);font-weight:300;">
+              <span style="color:#15803d;font-weight:700;">✓</span> Start small, build evidence
+            </div>
+          </div>
+        </div>
+
+        <div class="sidebar-card">
+          <div class="sidebar-title">Disclaimer</div>
+          <p class="sidebar-disclaimer">This guide is for informational purposes only and does not constitute medical or psychological advice. Consult a professional if you are dealing with clinical behavioral or mental health concerns.</p>
+        </div>
+      </aside>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <span style="font-size:1.3rem;font-weight:700;background:linear-gradient(135deg,#60a5fa,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:-0.03em;font-family:'Sora',sans-serif;display:block;margin-bottom:16px;">Improo</span>
+          <p>Health, weight loss, movement &amp; mindset — together.</p>
+          <small>© 2026 Improo. All rights reserved.</small>
+        </div>
+        <div class="footer-links">
+          <h4>Navigation</h4>
+          <a href="../index.html">Home</a>
+          <a href="../insights/index.html">Articles</a>
+          <a href="../guides.html">Guides</a>
+          <a href="../roadmap.html">Roadmap</a>
+        </div>
+        <div class="footer-links">
+          <h4>Legal</h4>
+          <a href="../disclaimer.html">Disclaimer</a>
+          <a href="../privacy-policy.html">Privacy Policy</a>
+          <a href="../terms-of-service.html">Terms of Service</a>
+        </div>
+        <div class="footer-links">
+          <h4>Follow</h4>
+          <a href="https://www.youtube.com/@Improo_App">YouTube</a>
+          <a href="https://x.com/Improo_">X (Twitter)</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const bar = document.getElementById('read-progress');
+    window.addEventListener('scroll', () => {
+      const doc = document.documentElement;
+      const pct = (doc.scrollTop / (doc.scrollHeight - doc.clientHeight)) * 100;
+      bar.style.width = Math.min(pct, 100) + '%';
+    }, { passive: true });
+
+    const reveals = document.querySelectorAll('.reveal');
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
+      });
+    }, { threshold: 0.06 });
+    reveals.forEach(el => obs.observe(el));
+  </script>
+
+</body>
+</html>
