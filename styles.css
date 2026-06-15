@@ -1419,9 +1419,13 @@ body.home-v2 { font-size: 17px; -webkit-font-smoothing: antialiased; }
 }
 .home-v2 .brand {
   font-family: 'Sora', Arial, sans-serif; font-size: 25px;
-  font-weight: 700; letter-spacing: -.02em; color: var(--blue-deep);
+  font-weight: 700; letter-spacing: -.02em;
+  background: linear-gradient(135deg, #3b9ef5, #2563eb);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
-.home-v2 .brand span { color: var(--blue); }
+.home-v2 .brand span { color: inherit; -webkit-text-fill-color: inherit; }
 .home-v2 .nav-links a { color: var(--text); opacity: .8; font-size: 14.5px; font-weight: 400; }
 .home-v2 .nav-links a:hover { opacity: 1; color: var(--blue); }
 .home-v2 .socials { display: flex; align-items: center; gap: 18px; }
