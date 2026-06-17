@@ -109,6 +109,34 @@
     <priority>0.8</priority>
   </url>
 
+  <url>
+    <loc>https://improo.vercel.app/guides/what-is-mediterranean-diet.html</loc>
+    <lastmod>2026-06-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://improo.vercel.app/guides/what-is-whey-protein.html</loc>
+    <lastmod>2026-06-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://improo.vercel.app/guides/what-is-progressive-overload.html</loc>
+    <lastmod>2026-06-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://improo.vercel.app/guides/what-is-hiit.html</loc>
+    <lastmod>2026-06-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
   <!-- ── ROADMAP ── -->
   <url>
     <loc>https://improo.vercel.app/roadmap.html</loc>

@@ -1,0 +1,1010 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VG3CEDGXWP"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-VG3CEDGXWP');
+</script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>What is HIIT? — Improo Guide</title>
+  <meta name="description" content="HIIT explained clearly: what it is, how it works, the research behind it, when it helps and when it doesn't, and how to actually do it correctly." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700&family=Lora:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+  <script>
+    window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+  </script>
+  <script defer src="/_vercel/insights/script.js"></script>
+
+  <style>
+    body { overflow-x: hidden; }
+
+    .article-wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      width: 100%;
+    }
+
+    #read-progress {
+      position: fixed;
+      top: 0; left: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--blue), #60a5fa);
+      width: 0%;
+      z-index: 999;
+      transition: width 0.1s linear;
+    }
+
+    /* HERO */
+    .guide-hero { padding: 52px 0 0; }
+
+    .hero-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: 20px;
+    }
+    .hero-kicker::before {
+      content: '';
+      display: block;
+      width: 28px; height: 1px;
+      background: var(--blue);
+    }
+
+    .hero-layout {
+      display: grid;
+      grid-template-columns: 1fr 260px;
+      gap: 48px;
+      align-items: start;
+      padding-bottom: 48px;
+      border-bottom: 1px solid var(--line);
+    }
+    @media (max-width: 900px) {
+      .hero-layout { grid-template-columns: 1fr; }
+      .hero-visual-wrap { display: none; }
+    }
+
+    .guide-hero h1 {
+      font-family: 'Lora', serif;
+      font-size: clamp(2.2rem, 5vw, 3.6rem);
+      font-weight: 400;
+      line-height: 1.1;
+      color: #0c1a2e;
+      margin: 0 0 20px;
+      letter-spacing: -0.02em;
+      max-width: 660px;
+    }
+    .guide-hero h1 em { font-style: italic; color: var(--blue); }
+
+    .hero-meta {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-size: 12px;
+      color: var(--muted-light);
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+    }
+    .hero-meta-dot { width: 3px; height: 3px; border-radius: 50%; background: var(--muted-light); }
+
+    .hero-intro {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: var(--muted);
+      max-width: 580px;
+      font-weight: 300;
+      margin-bottom: 32px;
+    }
+
+    .hero-facts {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--line);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      overflow: hidden;
+      margin-bottom: 32px;
+    }
+    .hero-fact { background: var(--panel); padding: 18px 16px; text-align: center; }
+    .hero-fact-value {
+      font-family: 'Lora', serif;
+      font-size: 1.7rem;
+      font-weight: 600;
+      color: var(--blue);
+      display: block;
+      line-height: 1;
+      margin-bottom: 5px;
+    }
+    .hero-fact-label { font-size: 11px; color: var(--muted-light); line-height: 1.4; }
+    @media (max-width: 480px) { .hero-facts { grid-template-columns: 1fr; } }
+
+    .hero-visual-wrap {
+      position: relative;
+      height: 340px;
+      border-radius: 24px;
+      overflow: hidden;
+      background: linear-gradient(135deg, #fff7ed 0%, #fed7aa 60%, #fee2e2 100%);
+      border: 1px solid var(--line);
+    }
+
+    /* TOC */
+    .toc {
+      background: var(--panel-2);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 22px 26px;
+    }
+    .toc-title { font-size: 9px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--muted-light); margin-bottom: 14px; }
+    .toc ol { list-style: none; counter-reset: toc; display: flex; flex-direction: column; gap: 10px; }
+    .toc ol li { counter-increment: toc; display: flex; align-items: baseline; gap: 12px; }
+    .toc ol li::before { content: counter(toc, decimal-leading-zero); font-size: 9px; font-weight: 700; color: var(--blue-light); min-width: 20px; }
+    .toc ol li a { font-size: 13px; color: var(--muted); text-decoration: none; transition: color 0.2s; line-height: 1.4; }
+    .toc ol li a:hover { color: var(--blue); }
+
+    /* LAYOUT */
+    .guide-body {
+      display: grid;
+      grid-template-columns: 1fr 272px;
+      gap: 64px;
+      align-items: start;
+      padding: 56px 0 96px;
+    }
+    @media (max-width: 960px) {
+      .guide-body { grid-template-columns: 1fr; }
+      .guide-sidebar { display: none; }
+    }
+
+    /* SECTIONS */
+    .guide-section { margin-bottom: 64px; padding-bottom: 64px; border-bottom: 1px solid var(--line); }
+    .guide-section:last-child { border-bottom: none; margin-bottom: 0; }
+
+    .section-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--blue-light);
+      margin-bottom: 14px;
+    }
+    .section-eyebrow::after { content: ''; flex: 1; max-width: 36px; height: 1px; background: var(--line-strong); }
+
+    .guide-section h2 {
+      font-family: 'Lora', serif;
+      font-size: clamp(1.4rem, 2.8vw, 2rem);
+      font-weight: 400;
+      line-height: 1.2;
+      color: #0c1a2e;
+      margin: 0 0 22px;
+    }
+
+    .guide-section h3 {
+      font-size: 15px;
+      font-weight: 700;
+      color: #0c1a2e;
+      margin: 28px 0 10px;
+    }
+
+    .guide-section p { font-size: 0.97rem; font-weight: 300; color: var(--muted); margin-bottom: 18px; line-height: 1.85; max-width: 640px; }
+
+    .callout {
+      border-left: 3px solid var(--blue);
+      padding: 20px 24px;
+      background: linear-gradient(135deg, rgba(37,99,235,0.04), rgba(96,165,250,0.06));
+      border-radius: 0 12px 12px 0;
+      margin: 28px 0;
+    }
+    .callout p { margin: 0; color: var(--blue-dark); font-style: italic; font-size: 1rem; line-height: 1.7; max-width: none; }
+    .callout-label { font-size: 9px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--blue-light); margin-bottom: 8px; }
+
+    .insight-box {
+      background: linear-gradient(135deg, #0f1f3d 0%, #1e3a6e 100%);
+      border-radius: 16px;
+      padding: 28px 30px;
+      margin: 28px 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .insight-box::before {
+      content: '';
+      position: absolute;
+      top: -40px; right: -40px;
+      width: 160px; height: 160px;
+      border-radius: 50%;
+      background: rgba(96,165,250,0.07);
+    }
+    .insight-label { font-size: 9px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: rgba(96,165,250,0.65); margin-bottom: 10px; display: block; }
+    .insight-box p { margin: 0; color: rgba(255,255,255,0.88); font-size: 0.97rem; line-height: 1.72; font-weight: 300; max-width: none; }
+    .insight-box strong { color: #fff; font-weight: 600; }
+
+    .opinion-box {
+      background: linear-gradient(135deg, #1e3a6e 0%, #1e40af 100%);
+      border-radius: 16px;
+      padding: 28px 30px;
+      margin: 28px 0;
+      position: relative;
+      overflow: hidden;
+      border-left: 4px solid #60a5fa;
+    }
+    .opinion-label { font-size: 9px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: rgba(147,197,253,0.8); margin-bottom: 10px; display: block; }
+    .opinion-box p { margin: 0; color: rgba(255,255,255,0.92); font-size: 1rem; line-height: 1.75; font-weight: 300; max-width: none; font-style: italic; }
+    .opinion-box strong { color: #93c5fd; font-weight: 600; font-style: normal; }
+
+    /* Forms grid */
+    .forms-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 24px 0; }
+    @media (max-width: 580px) { .forms-grid { grid-template-columns: 1fr; } }
+
+    .form-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 22px 20px;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .form-card:hover { border-color: var(--line-strong); box-shadow: var(--shadow); }
+    .form-card.featured {
+      background: linear-gradient(135deg, rgba(37,99,235,0.05), rgba(96,165,250,0.07));
+      border-color: rgba(37,99,235,0.18);
+    }
+    .form-card.debunked {
+      background: rgba(220,38,38,0.02);
+      border-color: rgba(220,38,38,0.12);
+    }
+    .form-badge {
+      display: inline-block;
+      font-size: 9px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;
+      padding: 3px 8px; border-radius: 6px; margin-bottom: 10px;
+      background: rgba(37,99,235,0.1); color: var(--blue-dark);
+    }
+    .form-badge.skip { background: rgba(220,38,38,0.1); color: #dc2626; }
+    .form-name { font-size: 15px; font-weight: 700; color: #0c1a2e; margin-bottom: 4px; }
+    .form-use { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--blue-light); margin-bottom: 8px; }
+    .form-desc { font-size: 13px; color: var(--muted); line-height: 1.65; font-weight: 300; }
+
+    /* Study cards */
+    .study-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 22px 24px;
+      margin: 16px 0;
+      display: grid;
+      grid-template-columns: 38px 1fr;
+      gap: 16px;
+      align-items: start;
+      transition: box-shadow 0.2s, border-color 0.2s;
+    }
+    .study-card:hover { border-color: var(--line-strong); box-shadow: var(--shadow); }
+    .study-num {
+      width: 34px; height: 34px; border-radius: 9px;
+      background: var(--blue-pale); border: 1px solid var(--line-strong);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 11px; font-weight: 700; color: var(--blue-dark); flex-shrink: 0;
+    }
+    .study-title { font-size: 14px; font-weight: 600; color: #0c1a2e; margin-bottom: 8px; }
+    .study-text  { font-size: 13.5px; font-weight: 300; color: var(--muted); line-height: 1.7; margin: 0; }
+    .study-source { font-size: 11px; color: var(--muted-light); margin-top: 10px; font-style: italic; }
+    .study-source a { color: var(--blue); text-decoration: none; }
+    .study-source a:hover { text-decoration: underline; }
+
+    /* Dosage table */
+    .dosage-table { width: 100%; border-collapse: collapse; margin: 24px 0; font-size: 13.5px; }
+    .dosage-table th { background: var(--panel-2); color: var(--muted-light); font-size: 10px; text-transform: uppercase; letter-spacing: 1px; padding: 11px 14px; text-align: left; border-bottom: 1px solid var(--line); font-weight: 700; }
+    .dosage-table td { padding: 12px 14px; border-bottom: 1px solid var(--line); color: var(--muted); vertical-align: top; font-weight: 300; }
+    .dosage-table tr:last-child td { border-bottom: none; }
+    .dosage-table td:first-child { color: #0c1a2e; font-weight: 600; }
+    .dosage-table tr:hover td { background: var(--panel); }
+
+    /* Summary list */
+    .summary-list { list-style: none; display: flex; flex-direction: column; gap: 14px; margin: 20px 0; }
+    .summary-list li { display: flex; align-items: flex-start; gap: 14px; font-size: 14.5px; font-weight: 300; color: var(--muted); line-height: 1.65; }
+    .sum-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--blue); flex-shrink: 0; margin-top: 7px; }
+
+    /* Improo tip */
+    .improo-tip {
+      background: linear-gradient(135deg, var(--blue) 0%, #1d4ed8 100%);
+      border-radius: 18px;
+      padding: 28px 30px;
+      margin: 24px 0;
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      box-shadow: 0 8px 32px rgba(37,99,235,0.22);
+    }
+    .tip-icon { font-size: 22px; flex-shrink: 0; margin-top: 2px; }
+    .tip-label { font-size: 9px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: rgba(255,255,255,0.75); margin-bottom: 7px; }
+    .tip-text { font-size: 14px; line-height: 1.7; font-weight: 300; margin: 0; color: #fff !important; max-width: none !important; }
+
+    /* Products */
+    .prod-card {
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      overflow: hidden;
+      background: var(--panel);
+      margin-bottom: 20px;
+      transition: box-shadow 0.3s ease, border-color 0.3s ease, transform 0.25s ease;
+      text-decoration: none;
+      color: inherit;
+    }
+    .prod-card:hover { box-shadow: 0 16px 48px rgba(37,99,235,0.12); border-color: rgba(37,99,235,0.22); transform: translateY(-2px); }
+    @media (max-width: 680px) { .prod-card { grid-template-columns: 1fr; } .prod-visual { height: 180px; } }
+
+    .prod-visual {
+      position: relative; overflow: hidden;
+      display: flex; flex-direction: column; justify-content: flex-start;
+      padding: 18px; min-height: 220px;
+    }
+    .prod-visual.hiit-primary { background: linear-gradient(160deg, #fff7ed 0%, #fed7aa 40%, #fee2e2 100%); }
+    .prod-visual.hiit-secondary { background: linear-gradient(160deg, #fef3c7 0%, #fde68a 40%, #fff7ed 100%); }
+
+    .prod-badge {
+      position: relative; z-index: 2;
+      display: inline-flex; align-items: center; gap: 7px;
+      background: rgba(255,255,255,0.96);
+      border: 1.5px solid rgba(37,99,235,0.22);
+      border-radius: 22px; padding: 7px 14px 7px 10px;
+      font-size: 11px; font-weight: 700; color: var(--blue-dark);
+      backdrop-filter: blur(8px); align-self: flex-start;
+      box-shadow: 0 2px 10px rgba(37,99,235,0.12);
+    }
+    .prod-badge-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--blue); }
+    .prod-visual-icon { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); font-size: 64px; opacity: 0.25; }
+
+    .prod-content { padding: 26px 26px 22px; display: flex; flex-direction: column; }
+    .prod-category { font-size: 9px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--blue-light); margin-bottom: 8px; }
+    .prod-name { font-family: 'Lora', serif; font-size: 1.2rem; font-weight: 600; color: #0c1a2e; line-height: 1.25; margin-bottom: 12px; }
+    .prod-summary { font-size: 13.5px; color: var(--muted); line-height: 1.7; font-weight: 300; margin-bottom: 14px; }
+
+    .prod-why {
+      background: linear-gradient(135deg, rgba(37,99,235,0.07) 0%, rgba(96,165,250,0.05) 100%);
+      border: 1px solid rgba(37,99,235,0.14); border-radius: 12px;
+      padding: 18px 20px; margin-bottom: 18px;
+    }
+    .prod-why-label {
+      display: flex; align-items: center; gap: 8px;
+      font-size: 10px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase;
+      color: var(--blue-dark); margin-bottom: 10px;
+    }
+    .prod-why-label::before { content: '✦'; font-size: 11px; color: var(--blue); flex-shrink: 0; }
+    .prod-why p { font-size: 13px; color: var(--muted); line-height: 1.75; margin: 0; font-weight: 300; }
+
+    .prod-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 16px; }
+    .prod-tag { font-size: 11px; background: rgba(22,163,74,0.09); color: #15803d; padding: 4px 10px; border-radius: 20px; font-weight: 600; border: 1px solid rgba(22,163,74,0.15); }
+
+    .prod-cta {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+      color: #fff; font-size: 14px; font-weight: 700;
+      padding: 13px 24px; border-radius: 28px;
+      transition: background 0.2s, box-shadow 0.2s, gap 0.2s, transform 0.2s;
+      box-shadow: 0 6px 20px rgba(37,99,235,0.30);
+      align-self: flex-start; margin-bottom: 10px;
+    }
+    .prod-cta:hover { background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%); gap: 16px; box-shadow: 0 10px 28px rgba(37,99,235,0.42); transform: translateY(-1px); }
+    .prod-affiliate { font-size: 10.5px; color: var(--muted-light); }
+
+    /* Sources */
+    .sources-list { list-style: none; display: flex; flex-direction: column; gap: 14px; margin-top: 16px; }
+    .sources-list li { display: flex; gap: 12px; align-items: flex-start; }
+    .src-num { font-size: 10px; font-weight: 700; color: var(--blue-dark); background: var(--blue-pale); width: 24px; height: 24px; border-radius: 6px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
+    .src-text { font-size: 12.5px; color: var(--muted-light); line-height: 1.6; }
+    .src-text a { color: var(--blue); text-decoration: none; }
+    .src-text a:hover { text-decoration: underline; }
+
+    /* Sidebar */
+    .guide-sidebar { position: sticky; top: 88px; display: flex; flex-direction: column; gap: 16px; }
+    .sidebar-card { background: var(--panel); border: 1px solid var(--line); border-radius: 16px; padding: 20px 18px; box-shadow: var(--shadow); }
+    .sidebar-title { font-size: 9px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--muted-light); margin-bottom: 16px; }
+    .stat-item { display: flex; flex-direction: column; gap: 4px; margin-bottom: 16px; }
+    .stat-value { font-family: 'Lora', serif; font-size: 2.1rem; font-weight: 600; font-style: italic; color: var(--blue); line-height: 1; }
+    .stat-desc { font-size: 12px; color: var(--muted); line-height: 1.45; font-weight: 300; }
+    .stat-divider { height: 1px; background: var(--line); margin: 4px 0 16px; }
+    .sidebar-disclaimer { font-size: 11px; color: var(--muted-light); line-height: 1.65; font-weight: 300; }
+
+    /* Warning box */
+    .warning-box {
+      background: rgba(220,38,38,0.03);
+      border: 1px solid rgba(220,38,38,0.12);
+      border-radius: 12px; padding: 18px 22px; margin-top: 20px;
+      font-size: 13.5px; color: var(--muted); line-height: 1.65; font-weight: 300;
+    }
+    .warning-box strong { color: #dc2626; font-weight: 600; }
+
+    /* Animations */
+    .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.55s ease, transform 0.55s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+  </style>
+</head>
+<body>
+
+  <div id="read-progress"></div>
+
+  <!-- NAV -->
+  <header class="site-header">
+
+    <div class="container">
+      <nav class="nav">
+        <a href="../index.html">
+          <span style="font-size:1.6rem;font-weight:700;background:linear-gradient(135deg,#3b9ef5,#2563eb);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:-0.03em;font-family:'Sora',sans-serif;">Improo</span>
+        </a>
+        <div class="nav-links">
+          <a href="../index.html">Home</a>
+          <a href="../insights/index.html">Articles</a>
+          <a href="../guides.html" class="active">Guides</a>
+          <a href="../roadmap.html">Roadmap</a>
+          <a href="../index.html#contact">Contact</a>
+        </div>
+        <div class="socials">
+          <a href="https://www.youtube.com/@Improo_App" aria-label="YouTube">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.7 15.5V8.5l6.3 3.5-6.3 3.5z"/></svg>
+          </a>
+          <a href="https://x.com/Improo_" aria-label="X">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <div class="article-wrap">
+
+    <a href="../guides.html" class="back-link" style="margin-top:36px;display:inline-flex;align-items:center;gap:6px;font-size:13px;color:var(--muted);transition:color 0.2s;">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M9 2L4 7l5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Back to Guides
+    </a>
+
+    <!-- HERO -->
+    <section class="guide-hero">
+      <div class="hero-layout">
+        <div class="hero-left reveal">
+          <div class="hero-kicker">Movement Guide</div>
+          <h1>What is <em>HIIT</em>?</h1>
+          <div class="hero-meta">
+            <span>10 min read</span>
+            <div class="hero-meta-dot"></div>
+            <span>Science-backed</span>
+            <div class="hero-meta-dot"></div>
+            <span>Not medical advice</span>
+          </div>
+          <p class="hero-intro">High-intensity interval training has been one of the most researched training methods of the past two decades. Studies show it can produce cardiovascular adaptations comparable to much longer moderate-intensity sessions in a fraction of the time — but it comes with important caveats. This guide explains what HIIT is, how it works, what the research actually says, and when it is the right tool for the job.</p>
+
+          <div class="hero-facts">
+            <div class="hero-fact reveal">
+              <span class="hero-fact-value">20–30 min</span>
+              <span class="hero-fact-label">Total session time typically needed for a complete HIIT workout</span>
+            </div>
+            <div class="hero-fact reveal">
+              <span class="hero-fact-value">2–3×/wk</span>
+              <span class="hero-fact-label">Optimal HIIT frequency to balance adaptation with recovery</span>
+            </div>
+            <div class="hero-fact reveal">
+              <span class="hero-fact-value">15%</span>
+              <span class="hero-fact-label">Average VO2max improvement from HIIT in studies on previously inactive adults</span>
+            </div>
+          </div>
+
+          <div class="toc">
+            <div class="toc-title">In this guide</div>
+            <ol>
+              <li><a href="#intro">What is HIIT?</a></li>
+              <li><a href="#mechanism">How does it work?</a></li>
+              <li><a href="#beyond">Benefits beyond fat loss</a></li>
+              <li><a href="#forms">Types of HIIT</a></li>
+              <li><a href="#science">What the research says</a></li>
+              <li><a href="#dosering">How to do it</a></li>
+              <li><a href="#fouten">Common mistakes</a></li>
+              <li><a href="#samenvatting">The short version</a></li>
+              <li><a href="#products">Equipment recommendations</a></li>
+              <li><a href="#sources">Sources</a></li>
+            </ol>
+          </div>
+        </div>
+
+        <!-- Hero visual -->
+        <div class="hero-visual-wrap reveal">
+          <svg width="100%" viewBox="0 0 260 340" xmlns="http://www.w3.org/2000/svg" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+            <defs>
+              <radialGradient id="hiitBg" cx="50%" cy="40%" r="65%"><stop offset="0%" stop-color="#fff7ed"/><stop offset="100%" stop-color="#fee2e2"/></radialGradient>
+            </defs>
+            <rect width="260" height="340" fill="url(#hiitBg)"/>
+            <rect x="40" y="50" width="180" height="200" rx="18" fill="white" opacity="0.88" stroke="#fcd5a0" stroke-width="1.5"/>
+            <rect x="40" y="50" width="180" height="44" rx="18" fill="#ea580c" opacity="0.88"/>
+            <rect x="40" y="80" width="180" height="14" rx="0" fill="#ea580c" opacity="0.88"/>
+            <text x="130" y="77" text-anchor="middle" font-family="'Sora',sans-serif" font-size="10" font-weight="700" fill="rgba(255,255,255,0.75)" letter-spacing="2">MOVEMENT</text>
+            <text x="130" y="168" text-anchor="middle" font-family="'Lora',serif" font-size="48" font-weight="600" fill="#c2410c">HIIT</text>
+            <text x="130" y="195" text-anchor="middle" font-family="'Sora',sans-serif" font-size="11" font-weight="300" fill="#92400e">High-Intensity Intervals</text>
+            <text x="130" y="215" text-anchor="middle" font-family="'Lora',serif" font-size="12" fill="#b45309">80–95% max HR</text>
+            <text x="58" y="90" font-family="'Sora',sans-serif" font-size="11" font-weight="700" fill="white">15%</text>
+            <text x="58" y="104" font-family="'Sora',sans-serif" font-size="7" fill="rgba(255,255,255,0.7)" letter-spacing="1">VO2MAX GAIN</text>
+            <rect x="28" y="272" width="204" height="52" rx="12" fill="white" opacity="0.9"/>
+            <text x="80" y="293" text-anchor="middle" font-family="'Lora',serif" font-size="14" font-weight="600" fill="#ea580c">20–30 min</text>
+            <text x="80" y="308" text-anchor="middle" font-family="'Sora',sans-serif" font-size="9" fill="#92400e">per session</text>
+            <line x1="130" y1="278" x2="130" y2="318" stroke="#fddcb5" stroke-width="1"/>
+            <text x="178" y="293" text-anchor="middle" font-family="'Lora',serif" font-size="14" font-weight="600" fill="#ea580c">2–3×/wk</text>
+            <text x="178" y="308" text-anchor="middle" font-family="'Sora',sans-serif" font-size="9" fill="#92400e">optimal freq</text>
+            <circle cx="36" cy="72" r="4" fill="rgba(234,88,12,0.18)"/>
+            <circle cx="224" cy="240" r="6" fill="rgba(251,191,36,0.22)"/>
+            <circle cx="28" cy="200" r="5" fill="rgba(234,88,12,0.15)"/>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- BODY -->
+    <div class="guide-body">
+      <main>
+
+        <!-- 01 INTRO -->
+        <div class="guide-section reveal" id="intro">
+          <div class="section-eyebrow">01 — Introduction</div>
+          <h2>What is HIIT, exactly?</h2>
+          <p>HIIT stands for High-Intensity Interval Training. It describes any workout that alternates between short bursts of near-maximal effort and periods of rest or low-intensity recovery. The defining characteristic is the contrast between high and low intensity — not any specific exercise, duration, or format.</p>
+          <p>A HIIT session might involve sprint intervals on a bike, rowing machine efforts, jump rope bursts, bodyweight circuits, or running sprints. What makes it HIIT is the effort level during the work intervals (typically 80–95% of maximum heart rate or a perceived exertion of 8–9 out of 10) and the structured recovery between intervals.</p>
+          <p>HIIT is not just doing cardio harder. It is a specific training methodology with distinct physiological effects — and distinct limitations.</p>
+          <div class="insight-box">
+            <span class="insight-label">Key insight</span>
+            <p>HIIT is most powerful as a time-efficient tool that produces cardiovascular and metabolic adaptations comparable to much longer moderate-intensity sessions. It is not superior to all other training — it is <strong>a specific tool with specific use cases</strong>. Zone 2 training, strength training, and HIIT each produce different adaptations and should coexist in a balanced training plan.</p>
+          </div>
+        </div>
+
+        <!-- 02 MECHANISM -->
+        <div class="guide-section reveal" id="mechanism">
+          <div class="section-eyebrow">02 — Mechanism</div>
+          <h2>How does it actually work?</h2>
+
+          <h3>EPOC — the afterburn effect</h3>
+          <p>After high-intensity exercise, your body continues consuming oxygen at an elevated rate for hours — a phenomenon called Excess Post-Exercise Oxygen Consumption (EPOC), or the afterburn effect. This elevated metabolism means HIIT burns calories beyond the session itself. The magnitude is real but often overstated in marketing: typical EPOC adds 6–15% more calorie burn after a session — meaningful, not magic.</p>
+
+          <h3>VO2max improvements</h3>
+          <p>HIIT is one of the most effective methods for improving VO2max — the maximum rate at which your body can use oxygen during exercise. VO2max is one of the strongest predictors of cardiovascular health, longevity, and athletic performance. HIIT stimulates cardiovascular and mitochondrial adaptations that improve oxygen delivery and utilisation faster than moderate steady-state cardio in most research comparisons.</p>
+
+          <h3>Metabolic adaptations</h3>
+          <p>HIIT improves insulin sensitivity, glycogen storage capacity, and mitochondrial density in skeletal muscle. Research from the Gibala lab at McMaster University found that these adaptations are similar to those produced by much longer endurance training — but occur in significantly less time.</p>
+
+          <div class="callout">
+            <div class="callout-label">The key mechanism</div>
+            <p>The cardiovascular adaptations from HIIT are driven primarily by the total time spent at high intensity — not the exercise mode. Sprints, bike intervals, rowing, burpees, and swimming sprints all produce similar central cardiovascular adaptations when effort is equivalent. Choose the modality you can execute safely and recover from consistently.</p>
+          </div>
+        </div>
+
+        <!-- 03 BEYOND FAT LOSS -->
+        <div class="guide-section reveal" id="beyond">
+          <div class="section-eyebrow">03 — Broader benefits</div>
+          <h2>Benefits beyond fat loss</h2>
+
+          <h3>Cardiovascular health</h3>
+          <p>Multiple meta-analyses confirm HIIT reduces resting blood pressure, improves endothelial function (blood vessel wall health), and lowers LDL cholesterol in both healthy and at-risk populations. A 2017 meta-analysis found that HIIT produced larger improvements in VO2max than moderate-intensity continuous training at equivalent time commitments.</p>
+
+          <h3>Insulin sensitivity</h3>
+          <p>HIIT significantly improves insulin sensitivity in both healthy and diabetic populations. This is clinically important because poor insulin sensitivity underpins type 2 diabetes, obesity, and metabolic syndrome. A single HIIT session can improve insulin sensitivity for 24–72 hours post-exercise — making it one of the most potent tools for metabolic health.</p>
+
+          <h3>Mental health</h3>
+          <p>Growing research links high-intensity exercise to improved mood, reduced anxiety, and antidepressant effects. HIIT produces large acute increases in endorphins, dopamine, and BDNF (Brain-Derived Neurotrophic Factor) — a protein that supports neural plasticity and is reduced in depression. Multiple studies show that high-intensity exercise produces larger BDNF releases than moderate-intensity exercise.</p>
+
+          <h3>Time efficiency</h3>
+          <p>The practical advantage of HIIT is time. A landmark 2016 study by Gillen et al. found that 10 minutes of HIIT (including 3×20-second all-out sprints) performed three times per week produced similar cardiovascular and metabolic adaptations to 150 minutes of moderate-intensity exercise per week — the standard public health recommendation. That is 30 minutes per week versus 150 minutes.</p>
+
+          <div class="insight-box">
+            <span class="insight-label">The bigger picture</span>
+            <p>HIIT is not just a shortcut to fat loss — the research places it as one of the most powerful tools for <strong>insulin sensitivity, cardiovascular health, VO2max, and metabolic function</strong> available in exercise science. The time efficiency is a secondary benefit; the primary value is the depth of physiological adaptation per minute of training.</p>
+          </div>
+        </div>
+
+        <!-- 04 TYPES OF HIIT -->
+        <div class="guide-section reveal" id="forms">
+          <div class="section-eyebrow">04 — Formats</div>
+          <h2>Types of HIIT</h2>
+          <p>The term HIIT encompasses several distinct training formats. Each produces cardiovascular and metabolic adaptations through the same core mechanism — high effort intervals — but differs in structure, equipment needs, and best use cases.</p>
+
+          <div class="forms-grid">
+            <div class="form-card featured">
+              <span class="form-badge">Most studied</span>
+              <div class="form-name">Sprint Intervals</div>
+              <div class="form-use">Running, cycling, rowing, or swimming</div>
+              <p class="form-desc">Alternating near-maximal effort sprints (10–30 seconds) with full rest or very easy movement (1–3 min). The most extensively researched HIIT format. Produces strong VO2max and cardiovascular improvements. Can be done on almost any cardio equipment.</p>
+            </div>
+            <div class="form-card featured">
+              <span class="form-badge">Time-efficient</span>
+              <div class="form-name">Tabata Protocol</div>
+              <div class="form-use">4 minutes total · Aerobic + anaerobic</div>
+              <p class="form-desc">20 seconds maximal effort, 10 seconds rest, repeated 8 times = 4 minutes. Developed by Japanese researcher Dr. Izumi Tabata. Produces both aerobic and anaerobic adaptations simultaneously. True Tabata requires near-maximal effort — if the last 2 rounds feel easy, you are not going hard enough.</p>
+            </div>
+            <div class="form-card">
+              <span class="form-badge">No equipment</span>
+              <div class="form-name">HIIT Circuits</div>
+              <div class="form-use">Bodyweight · Home-friendly</div>
+              <p class="form-desc">Alternating between different exercises (burpees, jump squats, mountain climbers) at high effort, with rest between rounds. Accessible without equipment. Produces similar cardiovascular benefits with an added muscular endurance component. Excellent entry point for beginners.</p>
+            </div>
+            <div class="form-card">
+              <span class="form-badge">Low impact</span>
+              <div class="form-name">Bike Sprints</div>
+              <div class="form-use">Stationary or assault bike · Joint-friendly</div>
+              <p class="form-desc">Sprint efforts on a stationary or assault bike eliminate impact force — lower injury risk than running sprints. Assault bikes are particularly effective because arm + leg engagement increases total workload. Best choice for overweight individuals or those with lower limb injuries.</p>
+            </div>
+            <div class="form-card">
+              <span class="form-badge">Structured format</span>
+              <div class="form-name">EMOM / AMRAP</div>
+              <div class="form-use">Gym · CrossFit-style structure</div>
+              <p class="form-desc">EMOM (Every Minute On the Minute): complete a set number of reps at the start of each minute, rest for the remainder. AMRAP (As Many Rounds As Possible): max work within a time period. Both create interval-like cardiovascular stress through structured workload density.</p>
+            </div>
+            <div class="form-card">
+              <span class="form-badge">Research-backed variation</span>
+              <div class="form-name">30-20-10 Protocol</div>
+              <div class="form-use">Running or cycling · 5-min blocks</div>
+              <p class="form-desc">30 seconds easy, 20 seconds moderate, 10 seconds near-maximal, repeated 5 times per block. Developed by Danish researchers. Well studied with demonstrated improvements in VO2max, blood pressure, and performance in just a few weeks of training.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 05 SCIENCE -->
+        <div class="guide-section reveal" id="science">
+          <div class="section-eyebrow">05 — Research</div>
+          <h2>What the research says</h2>
+          <p>HIIT is one of the most studied training methods in exercise science. Below are five key studies that represent the strongest evidence for its effects on cardiovascular fitness, metabolic health, and time efficiency.</p>
+
+          <div class="study-card">
+            <div class="study-num">[1]</div>
+            <div>
+              <div class="study-title">Gibala MJ et al. (2006) — Sprint interval vs endurance training</div>
+              <p class="study-text">One of the landmark HIIT studies compared 2.5 hours of sprint interval training over 2 weeks to 10.5 hours of traditional endurance training. Both groups produced similar increases in citrate synthase activity (mitochondrial adaptation) and muscle glycogen capacity. This established that interval training could produce equivalent adaptations in 75% less time.</p>
+              <div class="study-source">Journal of Physiology, 575(3), 901–911. PubMed: 16829713. <a href="https://pubmed.ncbi.nlm.nih.gov/16829713/" target="_blank" rel="noopener">https://pubmed.ncbi.nlm.nih.gov/16829713/</a></div>
+            </div>
+          </div>
+
+          <div class="study-card">
+            <div class="study-num">[2]</div>
+            <div>
+              <div class="study-title">Batacan RB et al. (2017) — Meta-analysis: HIIT and cardiometabolic health</div>
+              <p class="study-text">This meta-analysis of 65 studies examined HIIT effects across body composition, cardiometabolic health, and physical fitness. HIIT produced significant improvements in VO2max, waist circumference, blood pressure, and blood glucose. High-volume HIIT was more effective for body composition, while even low-volume HIIT improved cardiovascular fitness markedly.</p>
+              <div class="study-source">British Journal of Sports Medicine, 51(6), 494–503. PubMed: 26702056. <a href="https://pubmed.ncbi.nlm.nih.gov/26702056/" target="_blank" rel="noopener">https://pubmed.ncbi.nlm.nih.gov/26702056/</a></div>
+            </div>
+          </div>
+
+          <div class="study-card">
+            <div class="study-num">[3]</div>
+            <div>
+              <div class="study-title">Weston KS et al. (2014) — HIIT in cardiometabolic disease</div>
+              <p class="study-text">A systematic review and meta-analysis found HIIT is safe and significantly more effective than moderate-intensity continuous training for improving VO2max in patients with chronic metabolic and cardiovascular diseases — producing 1.5× greater VO2max improvements. No serious adverse events were reported across the included studies.</p>
+              <div class="study-source">British Journal of Sports Medicine, 48(16), 1227–1234. PubMed: 24144135. <a href="https://pubmed.ncbi.nlm.nih.gov/24144135/" target="_blank" rel="noopener">https://pubmed.ncbi.nlm.nih.gov/24144135/</a></div>
+            </div>
+          </div>
+
+          <div class="study-card">
+            <div class="study-num">[4]</div>
+            <div>
+              <div class="study-title">Gillen JB et al. (2016) — 10 minutes of HIIT vs 50 minutes moderate</div>
+              <p class="study-text">This 12-week RCT compared 3 weekly sessions of 10-minute HIIT (3×20-second all-out sprints on a bike) to 3 weekly sessions of 45-minute moderate-intensity cycling. Both groups produced nearly identical improvements in VO2max, insulin sensitivity, and skeletal muscle mitochondrial density — despite the HIIT group committing 30 minutes per week vs. 150 minutes.</p>
+              <div class="study-source">PLoS ONE, 11(4), e0154075. PubMed: 27115137. <a href="https://pubmed.ncbi.nlm.nih.gov/27115137/" target="_blank" rel="noopener">https://pubmed.ncbi.nlm.nih.gov/27115137/</a></div>
+            </div>
+          </div>
+
+          <div class="study-card">
+            <div class="study-num">[5]</div>
+            <div>
+              <div class="study-title">Ramos JS et al. (2015) — HIIT and blood pressure</div>
+              <p class="study-text">This meta-analysis of 13 trials examined HIIT's effects on resting blood pressure. HIIT produced significantly greater reductions in systolic and diastolic blood pressure compared to moderate-intensity training — particularly in overweight and obese participants. The effect size was clinically meaningful and comparable to the effect of antihypertensive medication in mild hypertension.</p>
+              <div class="study-source">British Journal of Sports Medicine, 49(20), 1314–1322. PubMed: 25431071. <a href="https://pubmed.ncbi.nlm.nih.gov/25431071/" target="_blank" rel="noopener">https://pubmed.ncbi.nlm.nih.gov/25431071/</a></div>
+            </div>
+          </div>
+
+          <div class="insight-box">
+            <span class="insight-label">What this means for you</span>
+            <p>HIIT is one of the most time-efficient and effective tools in exercise science. The evidence supports its use for <strong>VO2max improvement, insulin sensitivity, blood pressure, and cardiovascular health</strong> — not just fat loss. The limiting factor is recovery capacity: HIIT demands more rest than moderate exercise, and frequency must be managed accordingly.</p>
+          </div>
+        </div>
+
+        <!-- 06 HOW TO DO IT -->
+        <div class="guide-section reveal" id="dosering">
+          <div class="section-eyebrow">06 — Protocol</div>
+          <h2>How to do it correctly</h2>
+          <p>HIIT dosing depends on your goal, current fitness level, and recovery capacity. The table below gives evidence-based starting points for the most common goals.</p>
+
+          <table class="dosage-table">
+            <thead>
+              <tr><th>Goal</th><th>Format</th><th>Work interval</th><th>Rest ratio</th><th>Sessions/week</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Cardiovascular fitness</td><td>Sprint intervals</td><td>30 sec all-out</td><td>1:2 (60 sec rest)</td><td>2–3×</td></tr>
+              <tr><td>Time-efficient option</td><td>Tabata</td><td>20 sec maximal</td><td>1:0.5 (10 sec)</td><td>2–3×</td></tr>
+              <tr><td>Beginners</td><td>Bike or walking intervals</td><td>20 sec hard</td><td>1:3 (60 sec easy)</td><td>2×</td></tr>
+              <tr><td>Fat loss + muscle</td><td>HIIT circuits</td><td>40 sec work</td><td>1:1 (40 sec rest)</td><td>2–3×</td></tr>
+              <tr><td>VO2max improvement</td><td>30-20-10</td><td>10 sec sprint</td><td>Built into format</td><td>2–3×</td></tr>
+            </tbody>
+          </table>
+
+          <h3>How hard should you actually go?</h3>
+          <p>True HIIT work intervals should feel like an 8–9 out of 10 effort. If you can hold a conversation, maintain perfect posture, or look around the gym during your "HIIT" intervals — you are not doing HIIT. You are doing moderate-intensity cardio in an interval format. Both have value; only one produces the HIIT-specific adaptations documented in the research.</p>
+
+          <h3>Rest intervals matter as much as work intervals</h3>
+          <p>The recovery between intervals is not wasted time — it is the mechanism that allows the next interval to be performed at high intensity. Too little rest means the next interval cannot be executed properly, degrading the training stimulus. For true sprint efforts (90%+ max HR), a work:rest ratio of at least 1:2 is needed. Shorter rest works for lower-intensity circuit formats.</p>
+
+          <div class="callout">
+            <div class="callout-label">Starting safely</div>
+            <p>If you are new to HIIT, begin with 2 sessions per week at no more than 20 minutes total. Use a low-impact format (bike, walking intervals) rather than running sprints. Perceived exertion 7–8/10 for the first 4 weeks — not 9–10. Build the capacity to train at high intensity before training AT high intensity.</p>
+          </div>
+        </div>
+
+        <!-- 07 MISTAKES -->
+        <div class="guide-section reveal" id="fouten">
+          <div class="section-eyebrow">07 — Common mistakes</div>
+          <h2>What most people get wrong</h2>
+          <p>HIIT is one of the most frequently misunderstood training methods. These are the five mistakes that most often prevent people from getting results — or lead to overtraining and injury.</p>
+
+          <div class="callout">
+            <div class="callout-label">Mistake 1</div>
+            <p><strong>Not going hard enough.</strong> Many people label a moderately-challenging cardio workout as HIIT. True HIIT requires near-maximal effort during work intervals — an effort you cannot sustain for more than 20–40 seconds. If you finish a session feeling generally tired but not breathless during intervals, the intensity was not at HIIT level.</p>
+          </div>
+
+          <div class="callout">
+            <div class="callout-label">Mistake 2</div>
+            <p><strong>Doing HIIT every day.</strong> HIIT is a high-fatigue modality that taxes the central nervous system significantly. More than 3 sessions per week produces diminishing returns and increased injury risk for most people. 2–3 HIIT sessions per week with Zone 2 or strength training on other days is optimal for most goals.</p>
+          </div>
+
+          <div class="callout">
+            <div class="callout-label">Mistake 3</div>
+            <p><strong>Using HIIT to replace all other training.</strong> HIIT builds cardiovascular fitness and metabolic conditioning. It does not build aerobic base, develop muscular strength, or produce the mitochondrial density that Zone 2 training creates. The best training plans combine HIIT, Zone 2, and strength — not HIIT exclusively.</p>
+          </div>
+
+          <div class="callout">
+            <div class="callout-label">Mistake 4</div>
+            <p><strong>Incorrect work:rest ratios.</strong> Too little rest means each subsequent interval is performed at lower intensity — gradually degrading the stimulus until the workout becomes moderate-intensity cardio. Rest long enough between sprint intervals (at least 1:1, ideally 1:2 for true sprint efforts) to allow meaningful recovery.</p>
+          </div>
+
+          <div class="callout">
+            <div class="callout-label">Mistake 5</div>
+            <p><strong>Judging the session by how exhausted it leaves you.</strong> A well-structured HIIT session oscillates: very hard during intervals, near-recovery during rest. If you feel uniformly destroyed throughout with no recovery between intervals, the work:rest balance is wrong. Effective HIIT has clear contrast between work and rest — not continuous suffering.</p>
+          </div>
+
+          <div class="opinion-box">
+            <span class="opinion-label">Our take</span>
+            <p>HIIT earns its reputation — when done correctly. <strong>20–30 minutes, 2–3 times per week, at genuine near-maximal effort</strong> produces cardiovascular and metabolic adaptations that take moderate-intensity training two to three times as long to achieve. But most people either do not go hard enough, or go so hard so often that recovery becomes the limiting factor. Quality over frequency, always.</p>
+          </div>
+        </div>
+
+        <!-- 08 SUMMARY -->
+        <div class="guide-section reveal" id="samenvatting">
+          <div class="section-eyebrow">08 — Summary</div>
+          <h2>The short version</h2>
+          <ul class="summary-list">
+            <li><div class="sum-dot"></div><span>HIIT alternates between near-maximal effort bursts and recovery periods. The defining feature is the intensity contrast — not the specific exercise.</span></li>
+            <li><div class="sum-dot"></div><span>It works through EPOC (elevated post-exercise metabolism), VO2max improvements, mitochondrial adaptations, and insulin sensitivity benefits.</span></li>
+            <li><div class="sum-dot"></div><span>A 2016 study found 10 minutes of HIIT 3×/week produced equivalent cardiovascular and metabolic adaptations to 150 minutes of moderate exercise per week.</span></li>
+            <li><div class="sum-dot"></div><span>Benefits extend well beyond fat loss: cardiovascular health, blood pressure reduction, insulin sensitivity, mental health, and VO2max improvement are all robustly documented.</span></li>
+            <li><div class="sum-dot"></div><span>Optimal frequency: 2–3 sessions per week. More than 3 leads to diminishing returns and increased injury risk for most people.</span></li>
+            <li><div class="sum-dot"></div><span>True HIIT requires 80–95% max heart rate during work intervals. If you can speak comfortably, the intensity is insufficient.</span></li>
+            <li><div class="sum-dot"></div><span>HIIT complements but does not replace Zone 2 training or strength training. A balanced plan includes all three modalities.</span></li>
+          </ul>
+        </div>
+
+        <!-- 09 PRODUCTS -->
+        <div class="guide-section reveal" id="products">
+          <div class="section-eyebrow">09 — Equipment recommendations</div>
+          <h2>Equipment we recommend</h2>
+          <p style="max-width:600px;">You do not need much equipment for effective HIIT — but these two tools make training more precise and more effective.</p>
+
+          <a href="https://www.amazon.com/s?k=polar+h10+heart+rate+monitor+chest+strap" target="_blank" rel="noopener" class="prod-card">
+            <div class="prod-visual hiit-primary">
+              <div class="prod-badge">
+                <div class="prod-badge-dot"></div>
+                Most accurate
+              </div>
+              <div class="prod-visual-icon">❤️</div>
+            </div>
+            <div class="prod-content">
+              <div class="prod-category">Equipment · Heart Rate Monitor</div>
+              <div class="prod-name">Polar H10 Heart Rate Chest Strap</div>
+              <p class="prod-summary">Knowing your actual heart rate zones is essential for training HIIT correctly. The Polar H10 is the gold standard in consumer heart rate monitoring — consistently more accurate than optical wrist-based monitors, especially during high-intensity movement. Used by exercise science researchers as a reference device. Pairs with any training app.</p>
+              <div class="prod-why">
+                <div class="prod-why-label">Why we picked it</div>
+                <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px;">
+                  <li style="font-size:13px;color:var(--muted);font-weight:300;">✓ Clinically accurate — used in exercise research studies</li>
+                  <li style="font-size:13px;color:var(--muted);font-weight:300;">✓ Chest strap picks up signal reliably during explosive movement</li>
+                  <li style="font-size:13px;color:var(--muted);font-weight:300;">✓ Pairs with Garmin, Apple Watch, Wahoo, and most training apps</li>
+                  <li style="font-size:13px;color:var(--muted);font-weight:300;">✓ Long battery life — months on a single battery</li>
+                </ul>
+              </div>
+              <div class="prod-tags">
+                <span class="prod-tag">Accurate HR</span>
+                <span class="prod-tag">Chest strap</span>
+                <span class="prod-tag">Research-grade</span>
+              </div>
+              <div class="prod-cta">
+                View on Amazon
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M8 4l3 3-3 3" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div class="prod-affiliate">This is a search link. We do not earn a commission on this recommendation.</div>
+            </div>
+          </a>
+
+          <a href="https://www.amazon.com/s?k=speed+jump+rope+training+fitness" target="_blank" rel="noopener" class="prod-card">
+            <div class="prod-visual hiit-secondary">
+              <div class="prod-badge" style="border-color:rgba(217,119,6,0.25);">
+                <div class="prod-badge-dot" style="background:#d97706;"></div>
+                Best value
+              </div>
+              <div class="prod-visual-icon">⚡</div>
+            </div>
+            <div class="prod-content">
+              <div class="prod-category">Equipment · No gym needed</div>
+              <div class="prod-name">A Speed Jump Rope</div>
+              <p class="prod-summary">One of the most effective and underrated HIIT tools. Jump rope intervals — 30 seconds of maximum-speed jumping followed by 30 seconds of rest — produce genuine cardiovascular stress comparable to bike or rowing intervals. Requires almost no space, costs almost nothing, and travels anywhere. Ideal for home training or travel.</p>
+              <div class="prod-why">
+                <div class="prod-why-label">Why we picked it</div>
+                <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px;">
+                  <li style="font-size:13px;color:var(--muted);font-weight:300;">✓ Genuine HIIT-level cardiovascular demand in a compact tool</li>
+                  <li style="font-size:13px;color:var(--muted);font-weight:300;">✓ Requires no gym, no machine, no space</li>
+                  <li style="font-size:13px;color:var(--muted);font-weight:300;">✓ Improves coordination and footwork alongside cardiovascular fitness</li>
+                  <li style="font-size:13px;color:var(--muted);font-weight:300;">✓ Cost per use is essentially zero</li>
+                </ul>
+              </div>
+              <div class="prod-tags">
+                <span class="prod-tag">Budget-friendly</span>
+                <span class="prod-tag">Portable</span>
+                <span class="prod-tag">No-gym</span>
+              </div>
+              <div class="prod-cta">
+                View on Amazon
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M8 4l3 3-3 3" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div class="prod-affiliate">This is a search link. We do not earn a commission on this recommendation.</div>
+            </div>
+          </a>
+        </div>
+
+        <!-- 10 SOURCES -->
+        <div class="guide-section reveal" id="sources">
+          <div class="section-eyebrow">10 — Sources</div>
+          <h2>References</h2>
+          <ul class="sources-list">
+            <li>
+              <div class="src-num">1</div>
+              <div class="src-text">Gibala MJ et al. (2006). <em>Short-term sprint interval versus traditional endurance training: similar initial adaptations in human skeletal muscle and exercise performance.</em> Journal of Physiology, 575(3), 901–911. <a href="https://pubmed.ncbi.nlm.nih.gov/16829713/" target="_blank" rel="noopener">PubMed: 16829713</a></div>
+            </li>
+            <li>
+              <div class="src-num">2</div>
+              <div class="src-text">Batacan RB et al. (2017). <em>Effects of high-intensity interval training on cardiometabolic health: a systematic review and meta-analysis of intervention studies.</em> British Journal of Sports Medicine, 51(6), 494–503. <a href="https://pubmed.ncbi.nlm.nih.gov/26702056/" target="_blank" rel="noopener">PubMed: 26702056</a></div>
+            </li>
+            <li>
+              <div class="src-num">3</div>
+              <div class="src-text">Weston KS et al. (2014). <em>High-intensity interval training in patients with lifestyle-induced cardiometabolic disease: a systematic review and meta-analysis.</em> British Journal of Sports Medicine, 48(16), 1227–1234. <a href="https://pubmed.ncbi.nlm.nih.gov/24144135/" target="_blank" rel="noopener">PubMed: 24144135</a></div>
+            </li>
+            <li>
+              <div class="src-num">4</div>
+              <div class="src-text">Gillen JB et al. (2016). <em>Twelve Weeks of Sprint Interval Training Improves Indices of Cardiometabolic Health Similar to Traditional Endurance Training despite a Five-Fold Lower Exercise Volume and Time Commitment.</em> PLoS ONE, 11(4), e0154075. <a href="https://pubmed.ncbi.nlm.nih.gov/27115137/" target="_blank" rel="noopener">PubMed: 27115137</a></div>
+            </li>
+            <li>
+              <div class="src-num">5</div>
+              <div class="src-text">Ramos JS et al. (2015). <em>The impact of high-intensity interval training versus moderate-intensity continuous training on vascular function: a systematic review and meta-analysis.</em> British Journal of Sports Medicine, 49(20), 1314–1322. <a href="https://pubmed.ncbi.nlm.nih.gov/25431071/" target="_blank" rel="noopener">PubMed: 25431071</a></div>
+            </li>
+          </ul>
+        </div>
+
+      </main>
+
+      <!-- SIDEBAR -->
+      <aside class="guide-sidebar">
+        <div class="sidebar-card">
+          <div class="sidebar-title">Key numbers</div>
+          <div class="stat-item">
+            <div class="stat-value">20–30 min</div>
+            <div class="stat-desc">Typical session length for a complete HIIT workout</div>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <div class="stat-value">2–3×/wk</div>
+            <div class="stat-desc">Optimal weekly frequency to balance adaptation with recovery</div>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <div class="stat-value">15%</div>
+            <div class="stat-desc">Average VO2max gain from HIIT in previously inactive adults</div>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item" style="margin-bottom:0;">
+            <div class="stat-value">1:2</div>
+            <div class="stat-desc">Recommended work:rest ratio for true sprint intervals</div>
+          </div>
+        </div>
+
+        <div class="sidebar-card">
+          <div class="sidebar-title">HIIT types at a glance</div>
+          <div style="display:flex;flex-direction:column;gap:8px;">
+            <div style="display:flex;align-items:center;gap:10px;font-size:12px;color:var(--muted);font-weight:300;">
+              <span style="color:var(--blue);font-weight:700;">★</span> Sprint intervals — most studied
+            </div>
+            <div style="display:flex;align-items:center;gap:10px;font-size:12px;color:var(--muted);font-weight:300;">
+              <span style="color:var(--blue);font-weight:700;">★</span> Tabata — 4 min, time-efficient
+            </div>
+            <div style="display:flex;align-items:center;gap:10px;font-size:12px;color:var(--muted);font-weight:300;">
+              <span style="color:var(--blue);font-weight:700;">~</span> Circuits — no equipment
+            </div>
+            <div style="display:flex;align-items:center;gap:10px;font-size:12px;color:var(--muted);font-weight:300;">
+              <span style="color:var(--blue);font-weight:700;">~</span> Bike sprints — low impact
+            </div>
+            <div style="display:flex;align-items:center;gap:10px;font-size:12px;color:var(--muted);font-weight:300;">
+              <span style="color:var(--blue);font-weight:700;">~</span> EMOM/AMRAP — structured
+            </div>
+            <div style="display:flex;align-items:center;gap:10px;font-size:12px;color:var(--muted);font-weight:300;">
+              <span style="color:var(--blue);font-weight:700;">~</span> 30-20-10 — research-backed
+            </div>
+          </div>
+        </div>
+
+        <div class="sidebar-card">
+          <div class="sidebar-title">Disclaimer</div>
+          <p class="sidebar-disclaimer">This guide is for informational purposes only and does not constitute medical advice. Consult a doctor before starting a high-intensity exercise program, especially if you have cardiovascular conditions, joint issues, or have been sedentary for an extended period.</p>
+        </div>
+      </aside>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <span style="font-size:1.3rem;font-weight:700;background:linear-gradient(135deg,#60a5fa,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:-0.03em;font-family:'Sora',sans-serif;display:block;margin-bottom:16px;">Improo</span>
+          <p>Health, weight loss, movement &amp; mindset — together.</p>
+          <small>© 2026 Improo. All rights reserved.</small>
+        </div>
+        <div class="footer-links">
+          <h4>Navigation</h4>
+          <a href="../index.html">Home</a>
+          <a href="../insights/index.html">Articles</a>
+          <a href="../guides.html">Guides</a>
+          <a href="../roadmap.html">Roadmap</a>
+        </div>
+        <div class="footer-links">
+          <h4>Legal</h4>
+          <a href="../disclaimer.html">Disclaimer</a>
+          <a href="../privacy-policy.html">Privacy Policy</a>
+          <a href="../terms-of-service.html">Terms of Service</a>
+        </div>
+        <div class="footer-links">
+          <h4>Follow</h4>
+          <a href="https://www.youtube.com/@Improo_App">YouTube</a>
+          <a href="https://x.com/Improo_">X (Twitter)</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const bar = document.getElementById('read-progress');
+    window.addEventListener('scroll', () => {
+      const doc = document.documentElement;
+      const pct = (doc.scrollTop / (doc.scrollHeight - doc.clientHeight)) * 100;
+      bar.style.width = Math.min(pct, 100) + '%';
+    }, { passive: true });
+
+    const reveals = document.querySelectorAll('.reveal');
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
+      });
+    }, { threshold: 0.06 });
+    reveals.forEach(el => obs.observe(el));
+  </script>
+
+</body>
+</html>

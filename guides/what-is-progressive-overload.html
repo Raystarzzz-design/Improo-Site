@@ -1,0 +1,1020 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VG3CEDGXWP"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-VG3CEDGXWP');
+</script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>What is Progressive Overload? — Improo Guide</title>
+  <meta name="description" content="Progressive overload is the most important principle in training. This guide explains what it is, how to apply it, and what the research shows about making it work long-term." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700&family=Lora:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+  <script>
+    window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+  </script>
+  <script defer src="/_vercel/insights/script.js"></script>
+
+  <style>
+    body { overflow-x: hidden; }
+
+    .article-wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      width: 100%;
+    }
+
+    #read-progress {
+      position: fixed;
+      top: 0; left: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--blue), #60a5fa);
+      width: 0%;
+      z-index: 999;
+      transition: width 0.1s linear;
+    }
+
+    /* HERO */
+    .guide-hero { padding: 52px 0 0; }
+
+    .hero-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: 20px;
+    }
+    .hero-kicker::before {
+      content: '';
+      display: block;
+      width: 28px; height: 1px;
+      background: var(--blue);
+    }
+
+    .hero-layout {
+      display: grid;
+      grid-template-columns: 1fr 260px;
+      gap: 48px;
+      align-items: start;
+      padding-bottom: 48px;
+      border-bottom: 1px solid var(--line);
+    }
+    @media (max-width: 900px) {
+      .hero-layout { grid-template-columns: 1fr; }
+      .hero-visual-wrap { display: none; }
+    }
+
+    .guide-hero h1 {
+      font-family: 'Lora', serif;
+      font-size: clamp(2.2rem, 5vw, 3.6rem);
+      font-weight: 400;
+      line-height: 1.1;
+      color: #0c1a2e;
+      margin: 0 0 20px;
+      letter-spacing: -0.02em;
+      max-width: 660px;
+    }
+    .guide-hero h1 em { font-style: italic; color: var(--blue); }
+
+    .hero-meta {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-size: 12px;
+      color: var(--muted-light);
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+    }
+    .hero-meta-dot { width: 3px; height: 3px; border-radius: 50%; background: var(--muted-light); }
+
+    .hero-intro {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: var(--muted);
+      max-width: 580px;
+      font-weight: 300;
+      margin-bottom: 32px;
+    }
+
+    .hero-facts {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--line);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      overflow: hidden;
+      margin-bottom: 32px;
+    }
+    .hero-fact { background: var(--panel); padding: 18px 16px; text-align: center; }
+    .hero-fact-value {
+      font-family: 'Lora', serif;
+      font-size: 1.7rem;
+      font-weight: 600;
+      color: var(--blue);
+      display: block;
+      line-height: 1;
+      margin-bottom: 5px;
+    }
+    .hero-fact-label { font-size: 11px; color: var(--muted-light); line-height: 1.4; }
+    @media (max-width: 480px) { .hero-facts { grid-template-columns: 1fr; } }
+
+    .hero-visual-wrap {
+      position: relative;
+      height: 340px;
+      border-radius: 24px;
+      overflow: hidden;
+      background: linear-gradient(135deg, #dbeafe 0%, #eff6ff 60%, #ecfdf5 100%);
+      border: 1px solid var(--line);
+    }
+
+    /* TOC */
+    .toc {
+      background: var(--panel-2);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 22px 26px;
+    }
+    .toc-title { font-size: 9px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--muted-light); margin-bottom: 14px; }
+    .toc ol { list-style: none; counter-reset: toc; display: flex; flex-direction: column; gap: 10px; }
+    .toc ol li { counter-increment: toc; display: flex; align-items: baseline; gap: 12px; }
+    .toc ol li::before { content: counter(toc, decimal-leading-zero); font-size: 9px; font-weight: 700; color: var(--blue-light); min-width: 20px; }
+    .toc ol li a { font-size: 13px; color: var(--muted); text-decoration: none; transition: color 0.2s; line-height: 1.4; }
+    .toc ol li a:hover { color: var(--blue); }
+
+    /* LAYOUT */
+    .guide-body {
+      display: grid;
+      grid-template-columns: 1fr 272px;
+      gap: 64px;
+      align-items: start;
+      padding: 56px 0 96px;
+    }
+    @media (max-width: 960px) {
+      .guide-body { grid-template-columns: 1fr; }
+      .guide-sidebar { display: none; }
+    }
+
+    /* SECTIONS */
+    .guide-section { margin-bottom: 64px; padding-bottom: 64px; border-bottom: 1px solid var(--line); }
+    .guide-section:last-child { border-bottom: none; margin-bottom: 0; }
+
+    .section-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--blue-light);
+      margin-bottom: 14px;
+    }
+    .section-eyebrow::after { content: ''; flex: 1; max-width: 36px; height: 1px; background: var(--line-strong); }
+
+    .guide-section h2 {
+      font-family: 'Lora', serif;
+      font-size: clamp(1.4rem, 2.8vw, 2rem);
+      font-weight: 400;
+      line-height: 1.2;
+      color: #0c1a2e;
+      margin: 0 0 22px;
+    }
+
+    .guide-section h3 {
+      font-size: 15px;
+      font-weight: 700;
+      color: #0c1a2e;
+      margin: 28px 0 10px;
+    }
+
+    .guide-section p { font-size: 0.97rem; font-weight: 300; color: var(--muted); margin-bottom: 18px; line-height: 1.85; max-width: 640px; }
+
+    .callout {
+      border-left: 3px solid var(--blue);
+      padding: 20px 24px;
+      background: linear-gradient(135deg, rgba(37,99,235,0.04), rgba(96,165,250,0.06));
+      border-radius: 0 12px 12px 0;
+      margin: 28px 0;
+    }
+    .callout p { margin: 0; color: var(--blue-dark); font-style: italic; font-size: 1rem; line-height: 1.7; max-width: none; }
+    .callout-label { font-size: 9px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--blue-light); margin-bottom: 8px; }
+
+    .insight-box {
+      background: linear-gradient(135deg, #0f1f3d 0%, #1e3a6e 100%);
+      border-radius: 16px;
+      padding: 28px 30px;
+      margin: 28px 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .insight-box::before {
+      content: '';
+      position: absolute;
+      top: -40px; right: -40px;
+      width: 160px; height: 160px;
+      border-radius: 50%;
+      background: rgba(96,165,250,0.07);
+    }
+    .insight-label { font-size: 9px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: rgba(96,165,250,0.65); margin-bottom: 10px; display: block; }
+    .insight-box p { margin: 0; color: rgba(255,255,255,0.88); font-size: 0.97rem; line-height: 1.72; font-weight: 300; max-width: none; }
+    .insight-box strong { color: #fff; font-weight: 600; }
+
+    .opinion-box {
+      background: linear-gradient(135deg, #1e3a6e 0%, #1e40af 100%);
+      border-radius: 16px;
+      padding: 28px 30px;
+      margin: 28px 0;
+      position: relative;
+      overflow: hidden;
+      border-left: 4px solid #60a5fa;
+    }
+    .opinion-label { font-size: 9px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: rgba(147,197,253,0.8); margin-bottom: 10px; display: block; }
+    .opinion-box p { margin: 0; color: rgba(255,255,255,0.92); font-size: 1rem; line-height: 1.75; font-weight: 300; max-width: none; font-style: italic; }
+    .opinion-box strong { color: #93c5fd; font-weight: 600; font-style: normal; }
+
+    /* Forms grid */
+    .forms-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 24px 0; }
+    @media (max-width: 580px) { .forms-grid { grid-template-columns: 1fr; } }
+
+    .form-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 22px 20px;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .form-card:hover { border-color: var(--line-strong); box-shadow: var(--shadow); }
+    .form-card.featured {
+      background: linear-gradient(135deg, rgba(37,99,235,0.05), rgba(96,165,250,0.07));
+      border-color: rgba(37,99,235,0.18);
+    }
+    .form-card.debunked {
+      background: rgba(220,38,38,0.02);
+      border-color: rgba(220,38,38,0.12);
+    }
+    .form-badge {
+      display: inline-block;
+      font-size: 9px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;
+      padding: 3px 8px; border-radius: 6px; margin-bottom: 10px;
+      background: rgba(37,99,235,0.1); color: var(--blue-dark);
+    }
+    .form-badge.skip { background: rgba(220,38,38,0.1); color: #dc2626; }
+    .form-name { font-size: 15px; font-weight: 700; color: #0c1a2e; margin-bottom: 4px; }
+    .form-use { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--blue-light); margin-bottom: 8px; }
+    .form-desc { font-size: 13px; color: var(--muted); line-height: 1.65; font-weight: 300; }
+
+    /* Study cards */
+    .study-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 22px 24px;
+      margin: 16px 0;
+      display: grid;
+      grid-template-columns: 38px 1fr;
+      gap: 16px;
+      align-items: start;
+      transition: box-shadow 0.2s, border-color 0.2s;
+    }
+    .study-card:hover { border-color: var(--line-strong); box-shadow: var(--shadow); }
+    .study-num {
+      width: 34px; height: 34px; border-radius: 9px;
+      background: var(--blue-pale); border: 1px solid var(--line-strong);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 11px; font-weight: 700; color: var(--blue-dark); flex-shrink: 0;
+    }
+    .study-title { font-size: 14px; font-weight: 600; color: #0c1a2e; margin-bottom: 8px; }
+    .study-text  { font-size: 13.5px; font-weight: 300; color: var(--muted); line-height: 1.7; margin: 0; }
+    .study-source { font-size: 11px; color: var(--muted-light); margin-top: 10px; font-style: italic; }
+    .study-source a { color: var(--blue); text-decoration: none; }
+    .study-source a:hover { text-decoration: underline; }
+
+    /* Dosage table */
+    .dosage-table { width: 100%; border-collapse: collapse; margin: 24px 0; font-size: 13.5px; }
+    .dosage-table th { background: var(--panel-2); color: var(--muted-light); font-size: 10px; text-transform: uppercase; letter-spacing: 1px; padding: 11px 14px; text-align: left; border-bottom: 1px solid var(--line); font-weight: 700; }
+    .dosage-table td { padding: 12px 14px; border-bottom: 1px solid var(--line); color: var(--muted); vertical-align: top; font-weight: 300; }
+    .dosage-table tr:last-child td { border-bottom: none; }
+    .dosage-table td:first-child { color: #0c1a2e; font-weight: 600; }
+    .dosage-table tr:hover td { background: var(--panel); }
+
+    /* Summary list */
+    .summary-list { list-style: none; display: flex; flex-direction: column; gap: 14px; margin: 20px 0; }
+    .summary-list li { display: flex; align-items: flex-start; gap: 14px; font-size: 14.5px; font-weight: 300; color: var(--muted); line-height: 1.65; }
+    .sum-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--blue); flex-shrink: 0; margin-top: 7px; }
+
+    /* Improo tip */
+    .improo-tip {
+      background: linear-gradient(135deg, var(--blue) 0%, #1d4ed8 100%);
+      border-radius: 18px;
+      padding: 28px 30px;
+      margin: 24px 0;
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      box-shadow: 0 8px 32px rgba(37,99,235,0.22);
+    }
+    .tip-icon { font-size: 22px; flex-shrink: 0; margin-top: 2px; }
+    .tip-label { font-size: 9px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: rgba(255,255,255,0.75); margin-bottom: 7px; }
+    .tip-text { font-size: 14px; line-height: 1.7; font-weight: 300; margin: 0; color: #fff !important; max-width: none !important; }
+
+    /* Products */
+    .prod-card {
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      overflow: hidden;
+      background: var(--panel);
+      margin-bottom: 20px;
+      transition: box-shadow 0.3s ease, border-color 0.3s ease, transform 0.25s ease;
+      text-decoration: none;
+      color: inherit;
+    }
+    .prod-card:hover { box-shadow: 0 16px 48px rgba(37,99,235,0.12); border-color: rgba(37,99,235,0.22); transform: translateY(-2px); }
+    @media (max-width: 680px) { .prod-card { grid-template-columns: 1fr; } .prod-visual { height: 180px; } }
+
+    .prod-visual {
+      position: relative; overflow: hidden;
+      display: flex; flex-direction: column; justify-content: flex-start;
+      padding: 18px; min-height: 220px;
+    }
+    .prod-visual.prog-primary { background: linear-gradient(160deg, #fee2e2 0%, #fecaca 40%, #fde8c8 100%); }
+    .prod-visual.prog-secondary { background: linear-gradient(160deg, #fef3c7 0%, #fde68a 40%, #fee2e2 100%); }
+
+    .prod-badge {
+      position: relative; z-index: 2;
+      display: inline-flex; align-items: center; gap: 7px;
+      background: rgba(255,255,255,0.96);
+      border: 1.5px solid rgba(37,99,235,0.22);
+      border-radius: 22px; padding: 7px 14px 7px 10px;
+      font-size: 11px; font-weight: 700; color: var(--blue-dark);
+      backdrop-filter: blur(8px); align-self: flex-start;
+      box-shadow: 0 2px 10px rgba(37,99,235,0.12);
+    }
+    .prod-badge-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--blue); }
+    .prod-visual-icon { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); font-size: 64px; opacity: 0.25; }
+
+    .prod-content { padding: 26px 26px 22px; display: flex; flex-direction: column; }
+    .prod-category { font-size: 9px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--blue-light); margin-bottom: 8px; }
+    .prod-name { font-family: 'Lora', serif; font-size: 1.2rem; font-weight: 600; color: #0c1a2e; line-height: 1.25; margin-bottom: 12px; }
+    .prod-summary { font-size: 13.5px; color: var(--muted); line-height: 1.7; font-weight: 300; margin-bottom: 14px; }
+
+    .prod-why {
+      background: linear-gradient(135deg, rgba(37,99,235,0.07) 0%, rgba(96,165,250,0.05) 100%);
+      border: 1px solid rgba(37,99,235,0.14); border-radius: 12px;
+      padding: 18px 20px; margin-bottom: 18px;
+    }
+    .prod-why-label {
+      display: flex; align-items: center; gap: 8px;
+      font-size: 10px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase;
+      color: var(--blue-dark); margin-bottom: 10px;
+    }
+    .prod-why-label::before { content: '✦'; font-size: 11px; color: var(--blue); flex-shrink: 0; }
+    .prod-why p { font-size: 13px; color: var(--muted); line-height: 1.75; margin: 0; font-weight: 300; }
+
+    .prod-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 16px; }
+    .prod-tag { font-size: 11px; background: rgba(22,163,74,0.09); color: #15803d; padding: 4px 10px; border-radius: 20px; font-weight: 600; border: 1px solid rgba(22,163,74,0.15); }
+
+    .prod-cta {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+      color: #fff; font-size: 14px; font-weight: 700;
+      padding: 13px 24px; border-radius: 28px;
+      transition: background 0.2s, box-shadow 0.2s, gap 0.2s, transform 0.2s;
+      box-shadow: 0 6px 20px rgba(37,99,235,0.30);
+      align-self: flex-start; margin-bottom: 10px;
+    }
+    .prod-cta:hover { background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%); gap: 16px; box-shadow: 0 10px 28px rgba(37,99,235,0.42); transform: translateY(-1px); }
+    .prod-affiliate { font-size: 10.5px; color: var(--muted-light); }
+
+    /* Sources */
+    .sources-list { list-style: none; display: flex; flex-direction: column; gap: 14px; margin-top: 16px; }
+    .sources-list li { display: flex; gap: 12px; align-items: flex-start; }
+    .src-num { font-size: 10px; font-weight: 700; color: var(--blue-dark); background: var(--blue-pale); width: 24px; height: 24px; border-radius: 6px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
+    .src-text { font-size: 12.5px; color: var(--muted-light); line-height: 1.6; }
+    .src-text a { color: var(--blue); text-decoration: none; }
+    .src-text a:hover { text-decoration: underline; }
+
+    /* Sidebar */
+    .guide-sidebar { position: sticky; top: 88px; display: flex; flex-direction: column; gap: 16px; }
+    .sidebar-card { background: var(--panel); border: 1px solid var(--line); border-radius: 16px; padding: 20px 18px; box-shadow: var(--shadow); }
+    .sidebar-title { font-size: 9px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--muted-light); margin-bottom: 16px; }
+    .stat-item { display: flex; flex-direction: column; gap: 4px; margin-bottom: 16px; }
+    .stat-value { font-family: 'Lora', serif; font-size: 2.1rem; font-weight: 600; font-style: italic; color: var(--blue); line-height: 1; }
+    .stat-desc { font-size: 12px; color: var(--muted); line-height: 1.45; font-weight: 300; }
+    .stat-divider { height: 1px; background: var(--line); margin: 4px 0 16px; }
+    .sidebar-disclaimer { font-size: 11px; color: var(--muted-light); line-height: 1.65; font-weight: 300; }
+
+    /* Warning box */
+    .warning-box {
+      background: rgba(220,38,38,0.03);
+      border: 1px solid rgba(220,38,38,0.12);
+      border-radius: 12px; padding: 18px 22px; margin-top: 20px;
+      font-size: 13.5px; color: var(--muted); line-height: 1.65; font-weight: 300;
+    }
+    .warning-box strong { color: #dc2626; font-weight: 600; }
+
+    /* Animations */
+    .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.55s ease, transform 0.55s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+  </style>
+</head>
+<body>
+
+  <div id="read-progress"></div>
+
+  <!-- NAV -->
+  <header class="site-header">
+
+    <div class="container">
+      <nav class="nav">
+        <a href="../index.html">
+          <span style="font-size:1.6rem;font-weight:700;background:linear-gradient(135deg,#3b9ef5,#2563eb);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:-0.03em;font-family:'Sora',sans-serif;">Improo</span>
+        </a>
+        <div class="nav-links">
+          <a href="../index.html">Home</a>
+          <a href="../insights/index.html">Articles</a>
+          <a href="../guides.html" class="active">Guides</a>
+          <a href="../roadmap.html">Roadmap</a>
+          <a href="../index.html#contact">Contact</a>
+        </div>
+        <div class="socials">
+          <a href="https://www.youtube.com/@Improo_App" aria-label="YouTube">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.7 15.5V8.5l6.3 3.5-6.3 3.5z"/></svg>
+          </a>
+          <a href="https://x.com/Improo_" aria-label="X">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <div class="article-wrap">
+
+    <a href="../guides.html" class="back-link" style="margin-top:36px;display:inline-flex;align-items:center;gap:6px;font-size:13px;color:var(--muted);transition:color 0.2s;">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M9 2L4 7l5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Back to Guides
+    </a>
+
+    <!-- HERO -->
+    <section class="guide-hero">
+      <div class="hero-layout">
+        <div class="hero-left reveal">
+          <div class="hero-kicker">Movement Guide</div>
+          <h1>What is <em>Progressive</em> Overload?</h1>
+          <div class="hero-meta">
+            <span>10 min read</span>
+            <div class="hero-meta-dot"></div>
+            <span>Science-backed</span>
+            <div class="hero-meta-dot"></div>
+            <span>Not medical advice</span>
+          </div>
+          <p class="hero-intro">Progressive overload is the single most important principle in exercise science. Without it, no training plan works long-term. With it, almost any plan will produce results. This guide explains what it is, why your body responds to it the way it does, and how to apply it across different goals and fitness levels.</p>
+
+          <div class="hero-facts">
+            <div class="hero-fact reveal">
+              <span class="hero-fact-value">#1</span>
+              <span class="hero-fact-label">The most fundamental principle in all of resistance training and endurance science</span>
+            </div>
+            <div class="hero-fact reveal">
+              <span class="hero-fact-value">2–10%</span>
+              <span class="hero-fact-label">Weekly increase in training load that optimally stimulates adaptation without injury</span>
+            </div>
+            <div class="hero-fact reveal">
+              <span class="hero-fact-value">6–12 wk</span>
+              <span class="hero-fact-label">Typical adaptation cycle before a new training stimulus is needed</span>
+            </div>
+          </div>
+
+          <div class="toc">
+            <div class="toc-title">In this guide</div>
+            <ol>
+              <li><a href="#intro">What is progressive overload?</a></li>
+              <li><a href="#mechanism">The science behind it</a></li>
+              <li><a href="#beyond">Beyond strength training</a></li>
+              <li><a href="#forms">Methods of progressive overload</a></li>
+              <li><a href="#science">What the research says</a></li>
+              <li><a href="#dosering">How to apply it</a></li>
+              <li><a href="#fouten">Common mistakes</a></li>
+              <li><a href="#samenvatting">The short version</a></li>
+              <li><a href="#products">Resources</a></li>
+              <li><a href="#sources">Sources</a></li>
+            </ol>
+          </div>
+        </div>
+
+        <!-- Hero visual -->
+        <div class="hero-visual-wrap reveal">
+          <svg width="100%" viewBox="0 0 260 340" xmlns="http://www.w3.org/2000/svg" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+            <defs>
+              <radialGradient id="poBg" cx="50%" cy="40%" r="65%"><stop offset="0%" stop-color="#fff1f2"/><stop offset="100%" stop-color="#fef9c3"/></radialGradient>
+            </defs>
+            <rect width="260" height="340" fill="url(#poBg)"/>
+            <!-- Progress bars -->
+            <rect x="40" y="60" width="180" height="18" rx="9" fill="#fee2e2"/>
+            <rect x="40" y="60" width="80" height="18" rx="9" fill="#ef4444" opacity="0.7"/>
+            <rect x="40" y="90" width="180" height="18" rx="9" fill="#fecaca"/>
+            <rect x="40" y="90" width="120" height="18" rx="9" fill="#f97316" opacity="0.7"/>
+            <rect x="40" y="120" width="180" height="18" rx="9" fill="#fde8c8"/>
+            <rect x="40" y="120" width="155" height="18" rx="9" fill="#eab308" opacity="0.7"/>
+            <rect x="40" y="150" width="180" height="18" rx="9" fill="#fef9c3"/>
+            <rect x="40" y="150" width="175" height="18" rx="9" fill="#22c55e" opacity="0.7"/>
+            <!-- Labels -->
+            <text x="40" y="55" font-family="'Sora',sans-serif" font-size="8" fill="#6b7280" letter-spacing="0.5">WEEK 1</text>
+            <text x="40" y="85" font-family="'Sora',sans-serif" font-size="8" fill="#6b7280" letter-spacing="0.5">WEEK 4</text>
+            <text x="40" y="115" font-family="'Sora',sans-serif" font-size="8" fill="#6b7280" letter-spacing="0.5">WEEK 8</text>
+            <text x="40" y="145" font-family="'Sora',sans-serif" font-size="8" fill="#6b7280" letter-spacing="0.5">WEEK 12</text>
+            <!-- Arrow up -->
+            <line x1="220" y1="175" x2="220" y2="50" stroke="#2563eb" stroke-width="2" stroke-dasharray="4,3"/>
+            <polygon points="220,44 215,56 225,56" fill="#2563eb"/>
+            <!-- Central stat -->
+            <rect x="28" y="200" width="204" height="88" rx="16" fill="white" opacity="0.92"/>
+            <text x="130" y="228" text-anchor="middle" font-family="'Lora',serif" font-size="36" font-weight="600" fill="#2563eb">#1</text>
+            <text x="130" y="248" text-anchor="middle" font-family="'Sora',sans-serif" font-size="9" fill="#6080a8" letter-spacing="1">TRAINING PRINCIPLE</text>
+            <line x1="60" y1="260" x2="200" y2="260" stroke="#e5e7eb" stroke-width="1"/>
+            <text x="88" y="276" text-anchor="middle" font-family="'Lora',serif" font-size="13" font-weight="600" fill="#2563eb">2–10%</text>
+            <text x="88" y="288" text-anchor="middle" font-family="'Sora',sans-serif" font-size="8" fill="#6080a8">weekly load</text>
+            <line x1="130" y1="264" x2="130" y2="284" stroke="#dde8f4" stroke-width="1"/>
+            <text x="170" y="276" text-anchor="middle" font-family="'Lora',serif" font-size="13" font-weight="600" fill="#2563eb">6–12wk</text>
+            <text x="170" y="288" text-anchor="middle" font-family="'Sora',sans-serif" font-size="8" fill="#6080a8">adapt cycle</text>
+            <circle cx="36" cy="72" r="4" fill="rgba(239,68,68,0.15)"/>
+            <circle cx="224" cy="140" r="6" fill="rgba(34,197,94,0.18)"/>
+            <circle cx="28" cy="190" r="5" fill="rgba(96,165,250,0.2)"/>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- BODY -->
+    <div class="guide-body">
+      <main>
+
+        <!-- 01 INTRO -->
+        <div class="guide-section reveal" id="intro">
+          <div class="section-eyebrow">01 — Introduction</div>
+          <h2>What is progressive overload, exactly?</h2>
+          <p>Progressive overload is the principle of systematically increasing the demands placed on your body over time. In its simplest form: if you want to get stronger, you must regularly lift more than your body is currently adapted to. If you want better endurance, you must run farther or faster than you currently can. If you keep doing the same thing, you stop improving.</p>
+          <p>The principle was formalised by Dr. Thomas DeLorme in the 1940s, when he developed a protocol of gradually increasing resistance to rehabilitate soldiers with muscle injuries during World War II. He observed that muscles responded to increasing loads by growing stronger and larger. This observation, now replicated thousands of times in controlled research, is the foundation of every effective training program that has ever existed.</p>
+          <p>The biological mechanism is straightforward: when you expose your body to a stress it is not fully adapted to, it responds by rebuilding slightly stronger than before. Over time, this cumulative adaptation produces meaningful changes in strength, muscle size, cardiovascular fitness, or whatever quality you are training.</p>
+          <div class="insight-box">
+            <span class="insight-label">Key insight</span>
+            <p>Progressive overload does not mean adding weight every single session. That is only one method. Volume, density, range of motion, rest periods, and technique precision are all valid forms of progression — and often more appropriate for intermediate and advanced trainees.</p>
+          </div>
+        </div>
+
+        <!-- 02 MECHANISM -->
+        <div class="guide-section reveal" id="mechanism">
+          <div class="section-eyebrow">02 — Mechanism</div>
+          <h2>The science behind it</h2>
+
+          <h3>The stress-recovery-adaptation cycle</h3>
+          <p>Every training session creates a temporary disruption in the body's homeostasis — muscle fibers are damaged at a microscopic level, energy stores are depleted, and the nervous system is fatigued. During the recovery period that follows, the body not only repairs this damage but rebuilds slightly above the original level — a phenomenon called supercompensation. The next training session should ideally be timed to coincide with this supercompensation peak.</p>
+          <p>If you train before full recovery, you accumulate fatigue without adaptation. If you train after the adaptation has faded (too long a gap), you return to baseline. Progressive overload works because each session presents a new, slightly higher stimulus that keeps pushing the adaptation cycle forward.</p>
+
+          <h3>General Adaptation Syndrome (GAS)</h3>
+          <p>Developed by Hans Selye in the 1930s, GAS describes the three stages of the body's response to stress: Alarm (the initial disruption), Resistance (adaptation), and Exhaustion (overtraining if stress is too severe or recovery is insufficient). Progressive overload manages this cycle deliberately — applying enough stress to produce adaptation, with enough recovery to prevent exhaustion.</p>
+
+          <div class="callout">
+            <div class="callout-label">Why the same workout stops working</div>
+            <p>The body adapts to exactly what you demand of it — nothing more. Three months of the same 3×10 squat at the same weight produces the same body. Adaptation is specific to the stimulus. When the stimulus stops changing, adaptation stops. Progression is not optional; it is the mechanism.</p>
+          </div>
+
+          <h3>What actually changes in your body</h3>
+          <p>Strength gains: Initially driven by neural adaptations (your nervous system learns to recruit more motor units more efficiently). Over weeks and months, structural changes follow: muscle fiber hypertrophy, increased connective tissue strength, and denser bone. The early gains (weeks 1–8) are largely neural; the longer-term gains are structural.</p>
+        </div>
+
+        <!-- 03 BEYOND -->
+        <div class="guide-section reveal" id="beyond">
+          <div class="section-eyebrow">03 — Broader application</div>
+          <h2>Beyond strength training</h2>
+          <p>Progressive overload applies to every form of training:</p>
+
+          <h3>Endurance</h3>
+          <p>In running or cycling, progressive overload means gradually increasing weekly mileage, pace, or intensity over time. The standard recommendation of no more than 10% weekly mileage increase is a direct application of progressive overload — enough stress to drive adaptation, not so much as to cause injury.</p>
+
+          <h3>Cardiovascular fitness (VO2max)</h3>
+          <p>VO2max — the maximum oxygen consumption during exercise — improves when you regularly exercise at intensities that challenge your cardiovascular system. Without progression, VO2max plateaus within weeks. Interval training progressively increases the intensity and volume of cardiovascular stress to continue driving adaptation.</p>
+
+          <h3>Flexibility</h3>
+          <p>Flexibility training follows the same principle: you must gradually extend beyond your current range of motion to increase it. Holding the same stretch depth session after session produces no further adaptation after initial gains. Progressive range of motion work — over weeks — produces lasting increases in flexibility.</p>
+
+          <h3>Skills and sports</h3>
+          <p>Progressive overload in skill acquisition means gradually increasing the complexity, speed, or precision demands on a movement. Athletes drill progressively harder variations before applying skills in competition conditions. The same stimulus that challenged you as a beginner is routine for an intermediate — you need a harder version.</p>
+
+          <div class="insight-box">
+            <span class="insight-label">The universal principle</span>
+            <p>Every training adaptation in every domain — strength, endurance, flexibility, skill, cardiovascular fitness — is driven by progressively increasing demands. The methods differ; the principle is identical.</p>
+          </div>
+        </div>
+
+        <!-- 04 FORMS -->
+        <div class="guide-section reveal" id="forms">
+          <div class="section-eyebrow">04 — Methods</div>
+          <h2>Methods of progressive overload</h2>
+
+          <div class="forms-grid">
+            <div class="form-card featured">
+              <span class="form-badge">Most common</span>
+              <div class="form-name">Weight / Resistance Increase</div>
+              <div class="form-use">Add load when current weight feels manageable</div>
+              <p class="form-desc">The most straightforward form: add more weight to the bar. When you can complete all reps and sets with good form, add 2.5–5kg (lower body) or 1.25–2.5kg (upper body). Works best for beginners and intermediates building linear strength. The simplest progression to track.</p>
+            </div>
+            <div class="form-card featured">
+              <span class="form-badge">For hypertrophy</span>
+              <div class="form-name">Volume Increase</div>
+              <div class="form-use">More sets or reps at the same weight</div>
+              <p class="form-desc">Going from 3×8 to 3×10 to 4×10 progressively increases total training volume — the primary driver of muscle hypertrophy according to current meta-analyses. Highly effective when weight-based progression stalls. Volume is independent of load.</p>
+            </div>
+            <div class="form-card">
+              <span class="form-badge">Advanced method</span>
+              <div class="form-name">Density / Rest Reduction</div>
+              <div class="form-use">Same work in less time</div>
+              <p class="form-desc">Complete the same weight, reps, and sets but reduce rest periods (e.g., from 90 to 60 seconds). Increases metabolic demand without changing load. Particularly useful for metabolic conditioning goals and when load-based progression has stalled.</p>
+            </div>
+            <div class="form-card">
+              <span class="form-badge">Quality focus</span>
+              <div class="form-name">Range of Motion</div>
+              <div class="form-use">Deeper, fuller movements</div>
+              <p class="form-desc">Gradually increasing the range of motion on a movement: pausing deeper at the bottom of a squat, achieving a fuller stretch at the bottom of a pull-up. Improves functional strength through a greater range and is often overlooked as a progression tool.</p>
+            </div>
+            <div class="form-card">
+              <span class="form-badge">Intermediate tool</span>
+              <div class="form-name">Frequency Increase</div>
+              <div class="form-use">More sessions per muscle per week</div>
+              <p class="form-desc">Adding an extra weekly session for a given muscle group or movement pattern — from once to twice per week, for example. More total weekly stimulus without changing per-session volume or load. Requires adequate recovery capacity.</p>
+            </div>
+            <div class="form-card">
+              <span class="form-badge">Often overlooked</span>
+              <div class="form-name">Technique Progression</div>
+              <div class="form-use">Harder exercise variations</div>
+              <p class="form-desc">Progressing to a more demanding variation: from knee push-ups to full push-ups to decline push-ups to weighted push-ups. From goblet squat to barbell squat to pause squat. Each variation demands more from the body without adding external load.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 05 SCIENCE -->
+        <div class="guide-section reveal" id="science">
+          <div class="section-eyebrow">05 — Research</div>
+          <h2>What the research says</h2>
+          <p>The evidence base for progressive overload spans decades and hundreds of controlled studies. Below are five landmark papers that established and confirmed the core principles.</p>
+
+          <div class="study-card">
+            <div class="study-num">[1]</div>
+            <div>
+              <div class="study-title">Kraemer WJ &amp; Ratamess NA (2004) — Fundamentals of resistance training</div>
+              <p class="study-text">A landmark review established the scientific basis for resistance training principles. Progressive overload — systematic increases in training volume, intensity, or frequency — was confirmed as the primary stimulus for strength and hypertrophy adaptations. The paper provided the framework used in modern evidence-based program design.</p>
+              <div class="study-source">Medicine &amp; Science in Sports &amp; Exercise, 36(4), 674–688. PubMed: 15064596. <a href="https://pubmed.ncbi.nlm.nih.gov/15064596/" target="_blank" rel="noopener">https://pubmed.ncbi.nlm.nih.gov/15064596/</a></div>
+            </div>
+          </div>
+
+          <div class="study-card">
+            <div class="study-num">[2]</div>
+            <div>
+              <div class="study-title">Schoenfeld BJ et al. (2017) — Volume and muscle hypertrophy</div>
+              <p class="study-text">This meta-analysis examined the dose-response relationship between resistance training volume (sets per week) and muscle hypertrophy. Higher weekly sets per muscle group produced greater hypertrophy, with 10+ sets per muscle per week producing significantly more growth than lower volumes. Provided the strongest evidence that progressive volume is the primary driver of hypertrophy.</p>
+              <div class="study-source">Journal of Strength and Conditioning Research, 31(12), 3508–3523. PubMed: 28967960. <a href="https://pubmed.ncbi.nlm.nih.gov/28967960/" target="_blank" rel="noopener">https://pubmed.ncbi.nlm.nih.gov/28967960/</a></div>
+            </div>
+          </div>
+
+          <div class="study-card">
+            <div class="study-num">[3]</div>
+            <div>
+              <div class="study-title">Peterson MD et al. (2011) — Meta-analysis in healthy adults</div>
+              <p class="study-text">A comprehensive meta-analysis of 140 studies found that resistance training produced significant strength improvements, with effect sizes dependent on training frequency, intensity, and volume. Critically, progressive overload — rather than any specific modality — was the common denominator in all programs producing meaningful strength gains.</p>
+              <div class="study-source">Medicine &amp; Science in Sports &amp; Exercise, 43(7), 1334–1359. PubMed: 21068680. <a href="https://pubmed.ncbi.nlm.nih.gov/21068680/" target="_blank" rel="noopener">https://pubmed.ncbi.nlm.nih.gov/21068680/</a></div>
+            </div>
+          </div>
+
+          <div class="study-card">
+            <div class="study-num">[4]</div>
+            <div>
+              <div class="study-title">Ralston GW et al. (2017) — Sets per session and strength</div>
+              <p class="study-text">This systematic review and meta-analysis found a dose-response relationship between weekly sets per muscle group and strength outcomes — more sets correlated with greater strength gains up to a volume ceiling. Supported volume-based progressive overload as valid and distinct from load-based progression.</p>
+              <div class="study-source">International Journal of Sports Physiology and Performance, 12(8), 1126–1133. PubMed: 28599136. <a href="https://pubmed.ncbi.nlm.nih.gov/28599136/" target="_blank" rel="noopener">https://pubmed.ncbi.nlm.nih.gov/28599136/</a></div>
+            </div>
+          </div>
+
+          <div class="study-card">
+            <div class="study-num">[5]</div>
+            <div>
+              <div class="study-title">Rhea MR et al. (2003) — Meta-analysis for maximal strength</div>
+              <p class="study-text">This early meta-analysis found that resistance-trained individuals required higher intensities and volumes to continue making strength gains compared to untrained individuals — directly supporting progressive overload as the mechanism driving long-term adaptation. The more adapted the individual, the greater the stimulus required.</p>
+              <div class="study-source">Medicine &amp; Science in Sports &amp; Exercise, 35(3), 456–464. PubMed: 12618575. <a href="https://pubmed.ncbi.nlm.nih.gov/12618575/" target="_blank" rel="noopener">https://pubmed.ncbi.nlm.nih.gov/12618575/</a></div>
+            </div>
+          </div>
+
+          <div class="insight-box">
+            <span class="insight-label">What this means</span>
+            <p>Every major review of resistance training reaches the same conclusion: <strong>progressive overload is not one good idea among many — it is the mechanism.</strong> Specific exercises, rep ranges, and training splits matter less than whether you are consistently progressing the stimulus over time.</p>
+          </div>
+        </div>
+
+        <!-- 06 HOW TO APPLY -->
+        <div class="guide-section reveal" id="dosering">
+          <div class="section-eyebrow">06 — Application</div>
+          <h2>How to apply it</h2>
+
+          <table class="dosage-table">
+            <thead>
+              <tr><th>Level</th><th>Primary method</th><th>How to progress</th><th>Timeline</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Beginner (0–6 months)</td><td>Weight increase</td><td>Add 2.5–5kg (lower body) or 1.25–2.5kg (upper body) when all reps are clean</td><td>Every 1–2 sessions</td></tr>
+              <tr><td>Intermediate (6–24 months)</td><td>Volume increase</td><td>Add 1–2 sets per week for lagging muscles</td><td>Every 1–2 weeks</td></tr>
+              <tr><td>Advanced (2+ years)</td><td>Periodised blocks</td><td>Rotate focus: volume block → intensity block → deload</td><td>4–6 week blocks</td></tr>
+              <tr><td>Endurance (running)</td><td>Distance</td><td>Add no more than 10% to weekly mileage</td><td>Every 1–2 weeks</td></tr>
+            </tbody>
+          </table>
+
+          <h3>The role of tracking</h3>
+          <p>Progressive overload is impossible without records. If you do not know what you did last session, you cannot improve on it. Track: exercise, weight, sets, reps, and how it felt (an RPE scale of 1–10 works well). A training log is not a nice-to-have — it is a prerequisite for consistent long-term progress.</p>
+
+          <h3>Deload weeks</h3>
+          <p>Every 4–8 weeks, reducing volume and intensity by 40–50% for one week allows full recovery and supercompensation. Deloads are not wasted weeks — they are where adaptation is consolidated. People who skip deloads typically plateau faster and carry higher injury risk than those who plan them in.</p>
+
+          <div class="callout">
+            <div class="callout-label">Beginner advantage</div>
+            <p>Beginners can progress nearly every session — a phenomenon called "newbie gains." This linear progression window (typically 6–12 months) is one of the most productive periods in a training lifetime. It does not last indefinitely, but making the most of it by progressing consistently produces a strong base for years of training ahead.</p>
+          </div>
+        </div>
+
+        <!-- 07 MISTAKES -->
+        <div class="guide-section reveal" id="fouten">
+          <div class="section-eyebrow">07 — Common mistakes</div>
+          <h2>What most people get wrong</h2>
+
+          <div class="callout">
+            <div class="callout-label">Mistake 1</div>
+            <p><strong>Adding weight too fast.</strong> Jumping load by 10kg when evidence-backed recommendations are 1.25–2.5kg for upper body. Overshooting load before technique is solid leads to injury and regression, not faster progress. Small, consistent increments compound into large adaptations.</p>
+          </div>
+
+          <div class="callout">
+            <div class="callout-label">Mistake 2</div>
+            <p><strong>Only tracking weight.</strong> Many people add weight and consider progression handled. When linear weight progression stalls — typically within 6–12 months — they stop progressing entirely, not realising that volume, density, and technique variation are available progressions. Track multiple variables.</p>
+          </div>
+
+          <div class="callout">
+            <div class="callout-label">Mistake 3</div>
+            <p><strong>Not tracking at all.</strong> Progressive overload requires knowing what you did last time to beat it this time. Without a training log, you are guessing — and guessing produces inconsistent results. Any log works: notebook, phone app, spreadsheet.</p>
+          </div>
+
+          <div class="callout">
+            <div class="callout-label">Mistake 4</div>
+            <p><strong>Training through pain to avoid losing progress.</strong> Pushing through joint pain or acute injuries to avoid missing a progression leads to chronic injury. A two-week rest costs far less than a three-month recovery from training through pain. Progress can be recovered; joint damage is much harder to reverse.</p>
+          </div>
+
+          <div class="callout">
+            <div class="callout-label">Mistake 5</div>
+            <p><strong>No deload weeks.</strong> Progressive overload accumulates fatigue alongside adaptation. Without periodic deloads, fatigue masks fitness gains and injury risk increases. Plan a deload (40–50% volume reduction) every 4–8 weeks. Performance typically improves the week after a proper deload.</p>
+          </div>
+
+          <div class="opinion-box">
+            <span class="opinion-label">The core truth</span>
+            <p>Most failed training programs fail for one reason: <strong>the stimulus stopped increasing.</strong> People repeat the same weights, the same reps, the same sets for months and wonder why they stopped improving. Progressive overload is not complicated — it just requires honesty about whether you are actually challenging your body, or just going through the motions.</p>
+          </div>
+        </div>
+
+        <!-- 08 SUMMARY -->
+        <div class="guide-section reveal" id="samenvatting">
+          <div class="section-eyebrow">08 — Summary</div>
+          <h2>The short version</h2>
+          <ul class="summary-list">
+            <li><div class="sum-dot"></div><span>Progressive overload is the principle of systematically increasing training demands over time. Without it, adaptation stops.</span></li>
+            <li><div class="sum-dot"></div><span>The mechanism: each training session creates a stress → recovery and supercompensation leaves you slightly stronger → repeated progressions compound into large adaptations over time.</span></li>
+            <li><div class="sum-dot"></div><span>It applies to all training: strength, endurance, flexibility, skill — any quality you want to improve requires progressively increasing demands.</span></li>
+            <li><div class="sum-dot"></div><span>Six valid methods: weight increase, volume increase, density (rest reduction), range of motion, frequency, and technique progression. Choose the method that fits your current level.</span></li>
+            <li><div class="sum-dot"></div><span>Beginners: add weight every 1–2 sessions. Intermediates: add volume weekly. Advanced: periodise by 4–6 week blocks.</span></li>
+            <li><div class="sum-dot"></div><span>Track everything. A training log is a prerequisite for progressive overload — not a nice-to-have.</span></li>
+            <li><div class="sum-dot"></div><span>Include deload weeks every 4–8 weeks. Adaptation requires recovery, not just more stress.</span></li>
+          </ul>
+        </div>
+
+        <!-- 09 PRODUCTS -->
+        <div class="guide-section reveal" id="products">
+          <div class="section-eyebrow">09 — Resources</div>
+          <h2>Resources we recommend</h2>
+          <p style="max-width:600px;">Two tools that make progressive overload practical — one for understanding the principles deeply, one for tracking them consistently.</p>
+
+          <a href="https://www.amazon.com/s?k=strength+training+anatomy+frederic+delavier" target="_blank" rel="noopener" class="prod-card">
+            <div class="prod-visual prog-primary">
+              <div class="prod-badge">
+                <div class="prod-badge-dot"></div>
+                Best for understanding
+              </div>
+              <div class="prod-visual-icon">💪</div>
+            </div>
+            <div class="prod-content">
+              <div class="prod-category">Book · Training &amp; Programming</div>
+              <div class="prod-name">Strength Training Anatomy by Frédéric Delavier</div>
+              <p class="prod-summary">The most comprehensive illustrated guide to strength training anatomy and exercise mechanics. Helps trainees understand which muscles each exercise targets and how to progress form safely — essential knowledge for designing intelligent progressive overload programs.</p>
+              <div class="prod-why">
+                <div class="prod-why-label">Why we picked it</div>
+                <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px;">
+                  <li style="font-size:13px;color:var(--muted);font-weight:300;">✓ Full-color anatomical illustrations for every major exercise</li>
+                  <li style="font-size:13px;color:var(--muted);font-weight:300;">✓ Explains which muscles are primary and secondary movers</li>
+                  <li style="font-size:13px;color:var(--muted);font-weight:300;">✓ Helps identify weak links and design targeted progressions</li>
+                  <li style="font-size:13px;color:var(--muted);font-weight:300;">✓ Used by coaches, physiotherapists, and serious trainees worldwide</li>
+                </ul>
+              </div>
+              <div class="prod-tags">
+                <span class="prod-tag">Anatomy</span>
+                <span class="prod-tag">Form</span>
+                <span class="prod-tag">Evidence-based</span>
+              </div>
+              <div class="prod-cta">
+                View on Amazon
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M8 4l3 3-3 3" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div class="prod-affiliate">This is a search link. We do not earn a commission on this recommendation.</div>
+            </div>
+          </a>
+
+          <a href="https://www.amazon.com/s?k=workout+training+journal+log+book" target="_blank" rel="noopener" class="prod-card">
+            <div class="prod-visual prog-secondary">
+              <div class="prod-badge" style="border-color:rgba(217,119,6,0.25);">
+                <div class="prod-badge-dot" style="background:#d97706;"></div>
+                Essential tool
+              </div>
+              <div class="prod-visual-icon">📓</div>
+            </div>
+            <div class="prod-content">
+              <div class="prod-category">Tool · Training Log</div>
+              <div class="prod-name">A Dedicated Training Journal</div>
+              <p class="prod-summary">The most important tool for progressive overload is also the simplest: a written log. Tracking lifts, sets, reps, and RPE session by session is the only way to know when to progress and when to deload. Paper has the advantage of always being available and requiring no battery or screen time.</p>
+              <div class="prod-why">
+                <div class="prod-why-label">Why we picked it</div>
+                <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px;">
+                  <li style="font-size:13px;color:var(--muted);font-weight:300;">✓ Forces you to track what you actually did — not what you planned</li>
+                  <li style="font-size:13px;color:var(--muted);font-weight:300;">✓ Makes progress visible across weeks and months</li>
+                  <li style="font-size:13px;color:var(--muted);font-weight:300;">✓ Helps identify plateaus and when to switch progression method</li>
+                  <li style="font-size:13px;color:var(--muted);font-weight:300;">✓ No app distractions — just data</li>
+                </ul>
+              </div>
+              <div class="prod-tags">
+                <span class="prod-tag">Tracking</span>
+                <span class="prod-tag">Accountability</span>
+                <span class="prod-tag">Simple</span>
+              </div>
+              <div class="prod-cta">
+                View on Amazon
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M8 4l3 3-3 3" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div class="prod-affiliate">This is a search link. We do not earn a commission on this recommendation.</div>
+            </div>
+          </a>
+        </div>
+
+        <!-- 10 SOURCES -->
+        <div class="guide-section reveal" id="sources">
+          <div class="section-eyebrow">10 — Sources</div>
+          <h2>References</h2>
+          <ul class="sources-list">
+            <li>
+              <div class="src-num">1</div>
+              <div class="src-text">Kraemer WJ &amp; Ratamess NA (2004). <em>Fundamentals of Resistance Training.</em> Medicine &amp; Science in Sports &amp; Exercise, 36(4), 674–688. <a href="https://pubmed.ncbi.nlm.nih.gov/15064596/" target="_blank" rel="noopener">PubMed: 15064596</a></div>
+            </li>
+            <li>
+              <div class="src-num">2</div>
+              <div class="src-text">Schoenfeld BJ et al. (2017). <em>Dose-response relationship between weekly resistance training volume and increases in muscle mass.</em> Journal of Strength and Conditioning Research, 31(12), 3508–3523. <a href="https://pubmed.ncbi.nlm.nih.gov/28967960/" target="_blank" rel="noopener">PubMed: 28967960</a></div>
+            </li>
+            <li>
+              <div class="src-num">3</div>
+              <div class="src-text">Peterson MD et al. (2011). <em>Resistance Exercise for Muscular Strength in Older Adults.</em> Medicine &amp; Science in Sports &amp; Exercise, 43(7), 1334–1359. <a href="https://pubmed.ncbi.nlm.nih.gov/21068680/" target="_blank" rel="noopener">PubMed: 21068680</a></div>
+            </li>
+            <li>
+              <div class="src-num">4</div>
+              <div class="src-text">Ralston GW et al. (2017). <em>The Effect of Weekly Set Volume on Strength Gain.</em> International Journal of Sports Physiology and Performance, 12(8), 1126–1133. <a href="https://pubmed.ncbi.nlm.nih.gov/28599136/" target="_blank" rel="noopener">PubMed: 28599136</a></div>
+            </li>
+            <li>
+              <div class="src-num">5</div>
+              <div class="src-text">Rhea MR et al. (2003). <em>A Meta-analysis to Determine the Dose Response for Strength Development.</em> Medicine &amp; Science in Sports &amp; Exercise, 35(3), 456–464. <a href="https://pubmed.ncbi.nlm.nih.gov/12618575/" target="_blank" rel="noopener">PubMed: 12618575</a></div>
+            </li>
+          </ul>
+        </div>
+
+      </main>
+
+      <!-- SIDEBAR -->
+      <aside class="guide-sidebar">
+        <div class="sidebar-card">
+          <div class="sidebar-title">Key numbers</div>
+          <div class="stat-item">
+            <div class="stat-value">#1</div>
+            <div class="stat-desc">#1 training principle in all of exercise science</div>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <div class="stat-value">2–10%</div>
+            <div class="stat-desc">Weekly increase in training load for optimal adaptation</div>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <div class="stat-value">6–12wk</div>
+            <div class="stat-desc">Typical adaptation cycle before a new stimulus is needed</div>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item" style="margin-bottom:0;">
+            <div class="stat-value" style="font-size:1.4rem;">Stress → Recover → Adapt</div>
+            <div class="stat-desc">The three-step cycle behind every training gain</div>
+          </div>
+        </div>
+
+        <div class="sidebar-card">
+          <div class="sidebar-title">Methods at a glance</div>
+          <div style="display:flex;flex-direction:column;gap:8px;">
+            <div style="display:flex;align-items:center;gap:10px;font-size:12px;color:var(--muted);font-weight:300;">
+              <span style="color:var(--blue);font-weight:700;">★</span> Weight increase — add load
+            </div>
+            <div style="display:flex;align-items:center;gap:10px;font-size:12px;color:var(--muted);font-weight:300;">
+              <span style="color:var(--blue);font-weight:700;">★</span> Volume — more sets/reps
+            </div>
+            <div style="display:flex;align-items:center;gap:10px;font-size:12px;color:var(--muted);font-weight:300;">
+              <span style="color:var(--blue);font-weight:700;">~</span> Density — less rest time
+            </div>
+            <div style="display:flex;align-items:center;gap:10px;font-size:12px;color:var(--muted);font-weight:300;">
+              <span style="color:var(--blue);font-weight:700;">~</span> Range of motion — fuller movement
+            </div>
+            <div style="display:flex;align-items:center;gap:10px;font-size:12px;color:var(--muted);font-weight:300;">
+              <span style="color:var(--blue);font-weight:700;">~</span> Frequency — more sessions/week
+            </div>
+            <div style="display:flex;align-items:center;gap:10px;font-size:12px;color:var(--muted);font-weight:300;">
+              <span style="color:var(--blue);font-weight:700;">~</span> Technique — harder variation
+            </div>
+          </div>
+        </div>
+
+        <div class="sidebar-card">
+          <div class="sidebar-title">Disclaimer</div>
+          <p class="sidebar-disclaimer">This guide is for informational purposes only and does not constitute medical advice. Consult a doctor or qualified fitness professional before starting or changing a training program, especially if you have an injury or health condition.</p>
+        </div>
+      </aside>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <span style="font-size:1.3rem;font-weight:700;background:linear-gradient(135deg,#60a5fa,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:-0.03em;font-family:'Sora',sans-serif;display:block;margin-bottom:16px;">Improo</span>
+          <p>Health, weight loss, movement &amp; mindset — together.</p>
+          <small>© 2026 Improo. All rights reserved.</small>
+        </div>
+        <div class="footer-links">
+          <h4>Navigation</h4>
+          <a href="../index.html">Home</a>
+          <a href="../insights/index.html">Articles</a>
+          <a href="../guides.html">Guides</a>
+          <a href="../roadmap.html">Roadmap</a>
+        </div>
+        <div class="footer-links">
+          <h4>Legal</h4>
+          <a href="../disclaimer.html">Disclaimer</a>
+          <a href="../privacy-policy.html">Privacy Policy</a>
+          <a href="../terms-of-service.html">Terms of Service</a>
+        </div>
+        <div class="footer-links">
+          <h4>Follow</h4>
+          <a href="https://www.youtube.com/@Improo_App">YouTube</a>
+          <a href="https://x.com/Improo_">X (Twitter)</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const bar = document.getElementById('read-progress');
+    window.addEventListener('scroll', () => {
+      const doc = document.documentElement;
+      const pct = (doc.scrollTop / (doc.scrollHeight - doc.clientHeight)) * 100;
+      bar.style.width = Math.min(pct, 100) + '%';
+    }, { passive: true });
+
+    const reveals = document.querySelectorAll('.reveal');
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
+      });
+    }, { threshold: 0.06 });
+    reveals.forEach(el => obs.observe(el));
+  </script>
+
+</body>
+</html>
