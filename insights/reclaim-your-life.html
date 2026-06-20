@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VG3CEDGXWP"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-VG3CEDGXWP');
+</script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="How mindless scrolling is quietly stealing your time, focus, and goals — and the small steps that take it all back." />
+  <title>Reclaim Your Life: The Truth About Doomscrolling – Improo Insights</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <script>
+    window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+  </script>
+  <script defer src="/_vercel/insights/script.js"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg-page: #eef0f7;
+      --bg-white: #ffffff;
+      --bg-quote: #e8ebf5;
+      --border: #dde0ec;
+      --text: #0d1b3e;
+      --text-body: #3a3f55;
+      --text-muted: #7b8099;
+      --accent-blue: #3366cc;
+      --accent-blue-light: #e8eef8;
+      --accent-purple: #7c3aed;
+      --accent-purple-light: #f5f3ff;
+      --tag-bg: #ede9fe;
+      --tag-color: #7c3aed;
+      --sans: 'Inter', system-ui, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg-page);
+      color: var(--text);
+      font-family: var(--sans);
+      font-size: 16px;
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* NAV */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--bg-white);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-container {
+      max-width: 740px;
+      margin: 0 auto;
+      padding: 0 24px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+
+    .nav-logo {
+      font-size: 1.6rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, #3b9ef5, #2563eb);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      letter-spacing: -0.03em;
+      font-family: var(--sans);
+      text-decoration: none;
+      flex-shrink: 0;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 400;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--text); }
+
+    .nav-socials {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-shrink: 0;
+    }
+
+    .nav-socials a {
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      transition: color 0.2s;
+    }
+
+    .nav-socials a:hover { color: var(--text); }
+
+    /* LAYOUT */
+    .article-wrapper {
+      max-width: 740px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem 6rem;
+    }
+
+    .breadcrumb {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-bottom: 2rem;
+    }
+
+    .breadcrumb a {
+      color: var(--text-muted);
+      text-decoration: none;
+    }
+
+    .breadcrumb a:hover { color: var(--accent-purple); }
+
+    .article-tag {
+      display: inline-block;
+      background: var(--tag-bg);
+      color: var(--tag-color);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin-bottom: 1.25rem;
+    }
+
+    h1 {
+      font-size: clamp(1.9rem, 4.5vw, 2.5rem);
+      font-weight: 800;
+      line-height: 1.2;
+      color: var(--text);
+      margin-bottom: 1.25rem;
+      letter-spacing: -0.02em;
+    }
+
+    .article-lead {
+      font-size: 1.05rem;
+      color: var(--text-body);
+      line-height: 1.75;
+      margin-bottom: 1.75rem;
+    }
+
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 14px;
+      color: var(--text-muted);
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 2.5rem;
+    }
+
+    .meta-dot { color: var(--border); }
+
+    /* BODY */
+    .article-body h2 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--text);
+      margin: 2.75rem 0 0.85rem;
+      letter-spacing: -0.01em;
+    }
+
+    .article-body p {
+      color: var(--text-body);
+      margin-bottom: 1.2rem;
+      line-height: 1.8;
+    }
+
+    .article-body strong { color: var(--text); font-weight: 600; }
+    .article-body em { font-style: italic; }
+
+    /* PULLQUOTE */
+    .pullquote {
+      border-left: 3px solid var(--accent-purple);
+      background: var(--accent-purple-light);
+      border-radius: 0 8px 8px 0;
+      padding: 1.25rem 1.5rem;
+      margin: 2rem 0;
+    }
+
+    .pullquote p {
+      font-size: 1rem;
+      font-style: italic;
+      color: var(--text-body);
+      margin: 0;
+      line-height: 1.7;
+    }
+
+    /* IDENTITY ITEMS */
+    .identity-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin: 2rem 0;
+    }
+
+    .identity-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      background: var(--bg-white);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px 18px;
+      transition: border-color 0.2s;
+    }
+
+    .identity-item:hover { border-color: #c4b5fd; }
+
+    .identity-icon {
+      width: 36px; height: 36px;
+      border-radius: 10px;
+      background: var(--accent-purple-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      flex-shrink: 0;
+    }
+
+    .identity-item-text {
+      font-size: 14px;
+      color: var(--text-body);
+      line-height: 1.6;
+      padding-top: 4px;
+    }
+
+    .identity-item-text strong {
+      color: var(--text);
+      display: block;
+      font-weight: 600;
+      margin-bottom: 2px;
+    }
+
+    /* STAT ROW */
+    .stat-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      overflow: hidden;
+      margin: 2rem 0;
+    }
+
+    .stat-cell {
+      background: var(--bg-white);
+      padding: 24px 20px;
+      text-align: center;
+    }
+
+    .stat-number {
+      font-size: 2.4rem;
+      font-weight: 800;
+      color: var(--accent-purple);
+      line-height: 1;
+      margin-bottom: 8px;
+      letter-spacing: -0.03em;
+    }
+
+    .stat-label {
+      font-size: 12px;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* SCIENCE GRID */
+    .science-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 12px;
+      margin: 2rem 0;
+    }
+
+    .science-card {
+      background: var(--bg-white);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 22px 18px;
+      transition: border-color 0.2s;
+    }
+
+    .science-card:hover { border-color: #c4b5fd; }
+
+    .science-tag {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent-purple);
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    .science-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 8px;
+      line-height: 1.35;
+    }
+
+    .science-body {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+
+    /* TIPS GRID */
+    .tips-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+      margin: 2rem 0;
+    }
+
+    .tip-card {
+      background: var(--bg-white);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px 18px;
+      position: relative;
+      overflow: hidden;
+      transition: border-color 0.2s;
+    }
+
+    .tip-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--accent-purple), transparent);
+    }
+
+    .tip-card:hover { border-color: #c4b5fd; }
+
+    .tip-number {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent-purple);
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .tip-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 8px;
+      line-height: 1.35;
+    }
+
+    .tip-body {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+
+    /* KEY POINTS */
+    .key-points {
+      background: var(--bg-quote);
+      border-radius: 12px;
+      padding: 1.5rem 1.75rem;
+      margin: 2rem 0;
+      list-style: none;
+    }
+
+    .key-points li {
+      display: flex;
+      gap: 12px;
+      font-size: 0.95rem;
+      color: var(--text-body);
+      padding: 9px 0;
+      border-bottom: 1px solid var(--border);
+      line-height: 1.65;
+    }
+
+    .key-points li:last-child { border-bottom: none; }
+
+    .kp-bullet {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: var(--accent-purple);
+      flex-shrink: 0;
+      margin-top: 8px;
+    }
+
+    /* COMPARISON */
+    .compare-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin: 2rem 0;
+    }
+
+    @media (max-width: 560px) { .compare-grid { grid-template-columns: 1fr; } }
+
+    .compare-card {
+      background: var(--bg-white);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px 18px;
+    }
+
+    .compare-card.accent { border-color: #c4b5fd; background: var(--accent-purple-light); }
+
+    .compare-title {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+    }
+
+    .compare-card.accent .compare-title { color: var(--accent-purple); }
+
+    .compare-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+
+    .compare-list li {
+      font-size: 13px;
+      color: var(--text-body);
+      padding-left: 14px;
+      position: relative;
+      line-height: 1.5;
+    }
+
+    .compare-list li::before {
+      content: '–';
+      position: absolute;
+      left: 0;
+      color: var(--text-muted);
+    }
+
+    .divider { border: none; border-top: 1px solid var(--border); margin: 2.5rem 0; }
+
+    /* CTA */
+    .cta-block {
+      background: var(--accent-purple-light);
+      border: 1px solid #c4b5fd;
+      border-radius: 16px;
+      padding: 2.5rem 2rem;
+      text-align: center;
+      margin-top: 3.5rem;
+    }
+
+    .cta-block h3 {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 0.6rem;
+    }
+
+    .cta-block p { font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1.4rem; }
+
+    .cta-btn {
+      display: inline-block;
+      background: var(--accent-purple);
+      color: #fff;
+      padding: 12px 28px;
+      border-radius: 24px;
+      font-size: 14px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+
+    .cta-btn:hover { opacity: 0.85; }
+
+    /* MORE */
+    .more-insights {
+      margin-top: 4.5rem;
+      padding-top: 2.5rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .more-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 1.25rem;
+    }
+
+    .more-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+
+    .more-card {
+      background: var(--bg-white);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.25rem;
+      text-decoration: none;
+      transition: border-color 0.2s;
+    }
+
+    .more-card:hover { border-color: #c4b5fd; }
+
+    .more-card-tag {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--tag-color);
+      margin-bottom: 0.5rem;
+    }
+
+    .more-card-tag.health { color: #16a34a; }
+    .more-card-tag.discipline { color: #2563eb; }
+
+    .more-card h4 {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text);
+      line-height: 1.4;
+      margin-bottom: 0.4rem;
+    }
+
+    .more-card span { font-size: 12px; color: var(--text-muted); }
+
+    /* FOOTER */
+    footer {
+      background: var(--bg-white);
+      border-top: 1px solid var(--border);
+      padding: 2.5rem 2rem;
+      text-align: center;
+    }
+
+    .footer-logo {
+      font-size: 1.3rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, #60a5fa, #3b82f6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      letter-spacing: -0.03em;
+      font-family: var(--sans);
+      display: block;
+      margin-bottom: 1rem;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      list-style: none;
+      margin-bottom: 1rem;
+    }
+
+    .footer-links a { font-size: 13px; color: var(--text-muted); text-decoration: none; }
+    .footer-links a:hover { color: var(--text); }
+    footer p { font-size: 12px; color: var(--text-muted); }
+
+    .hl-purple { color: var(--accent-purple); font-style: italic; }
+
+    @media (max-width: 600px) {
+      nav { padding: 0 1rem; }
+      .nav-links li:not(:last-child) { display: none; }
+      .article-wrapper { padding: 2rem 1rem 4rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<header class="site-header">
+  <div class="nav-container">
+    <a href="../index.html" class="nav-logo">Improo</a>
+    <nav class="nav-links">
+      <a href="../index.html">Home</a>
+      <a href="index.html">Articles</a>
+      <a href="../guides.html">Guides</a>
+      <a href="../roadmap.html">Roadmap</a>
+      <a href="../index.html#contact">Contact</a>
+    </nav>
+    <div class="nav-socials">
+      <a href="https://www.youtube.com/@Improo_App" aria-label="YouTube">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.7 15.5V8.5l6.3 3.5-6.3 3.5z"/></svg>
+      </a>
+      <a href="https://x.com/Improo_" aria-label="X">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.3 1.5h3.3L14.1 9.9 23 22.5h-7.6l-5.3-6.9-6 6.9H.7l8-9.1L.5 1.5h7.8l4.8 6.3 5.2-6.3zm-1.2 18.9h1.8L7 3.3H5.1l12 17.1z"/></svg>
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="article-wrapper">
+
+  <div class="breadcrumb">
+    <a href="index.html">&#8249; Back to Insights</a>
+  </div>
+
+  <span class="article-tag">Mindset</span>
+
+  <h1>Reclaim Your Life: The Truth About <em class="hl-purple">Doomscrolling</em></h1>
+
+  <p class="article-lead">How mindless scrolling is quietly stealing your time, your focus, and your goals — and the small, real steps that take it all back.</p>
+
+  <div class="article-meta">
+    <span>June 20, 2026</span>
+    <span class="meta-dot">•</span>
+    <span>Ray</span>
+    <span class="meta-dot">•</span>
+    <span>10 min read</span>
+  </div>
+
+  <div class="article-body">
+
+    <p>You open your phone to check one thing. Thirty minutes later, you're watching a stranger argue on the internet about something you don't care about, your coffee has gone cold, and whatever you were supposed to do has been pushed to later — again.</p>
+
+    <p>That's not laziness. That's not weakness. That's a machine doing exactly what it was designed to do. And understanding that difference is where everything changes.</p>
+
+    <h2>The loop you <em class="hl-purple">didn't sign up for</em></h2>
+
+    <p>Social media platforms are engineered by some of the most talented engineers in the world, with a single measurable goal: keeping your attention on screen as long as possible. Every swipe, every refresh, every notification is a carefully tested lever designed to create a feeling just strong enough to keep you looking — but never quite satisfied enough to stop.</p>
+
+    <p>This isn't a conspiracy theory. It's publicly documented product design. Former engineers at these companies have spoken about it. The endless feed has no bottom. The autoplay never pauses. The algorithm learns within hours what content makes your thumb slow down — and serves more of it.</p>
+
+    <div class="pullquote">
+      <p>You are not addicted to your phone. You are responding normally to something that was specifically built to be addictive. That's an important distinction.</p>
+    </div>
+
+    <p>Doomscrolling — the compulsive consumption of negative, alarming, or low-quality content — isn't a personality flaw. It's a predictable response to an unpredictable reward system. The same mechanism that makes slot machines irresistible makes the feed irresistible. You don't know what the next post will be. That uncertainty is the hook.</p>
+
+    <h2>What it's actually <em class="hl-purple">costing you</em></h2>
+
+    <p>Most people sense that scrolling is eating their time. But the damage runs deeper than wasted hours. The real cost is harder to see — and much harder to recover from.</p>
+
+    <div class="stat-row">
+      <div class="stat-cell">
+        <div class="stat-number">2h 27m</div>
+        <div class="stat-label">average daily social media use per person globally (2024)</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-number">23 min</div>
+        <div class="stat-label">to regain full focus after a single digital interruption</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-number">37%</div>
+        <div class="stat-label">higher rates of anxiety linked to heavy social media use in adults</div>
+      </div>
+    </div>
+
+    <p>Two and a half hours per day sounds manageable until you do the math: that's over 17 hours a week. Nearly a full extra working day. In a year, that's more than 37 days — gone. Not resting, not creating, not connecting. Just consuming.</p>
+
+    <div class="science-grid">
+      <div class="science-card">
+        <span class="science-tag">Attention</span>
+        <div class="science-title">The fragmented focus problem</div>
+        <p class="science-body">Every time you check your phone, you're not just losing the minutes you spend on it. Research from UC Irvine shows it takes an average of 23 minutes to return to a task at full cognitive capacity after any interruption. Five phone checks cost you two hours of real productive focus.</p>
+      </div>
+      <div class="science-card">
+        <span class="science-tag">Mental health</span>
+        <div class="science-title">Comparison and discontent</div>
+        <p class="science-body">Social media feeds are curated highlight reels. Prolonged exposure creates a continuous, unconscious comparison between your real, messy life and other people's edited best moments. Research consistently links this to elevated rates of anxiety, low self-worth, and a pervasive sense that you're falling behind.</p>
+      </div>
+      <div class="science-card">
+        <span class="science-tag">Dopamine</span>
+        <div class="science-title">The reward hijack</div>
+        <p class="science-body">Short-form content delivers tiny dopamine hits at high frequency. Over time, your brain recalibrates around these rapid rewards — making slower, deeper activities like reading, learning, or building things feel dull by comparison. It's not boredom. It's a rewired reward system.</p>
+      </div>
+    </div>
+
+    <h2>Your goals are <em class="hl-purple">waiting</em></h2>
+
+    <p>Here's the thing no one says out loud: most people already know what they want. They want to get healthier. They want to finally start that project. They want to be more present with the people they love. They want to feel like they're actually moving forward.</p>
+
+    <p>Those goals aren't gone. They're just drowned out by the feed.</p>
+
+    <p>Every hour you spend scrolling is an hour you didn't spend on what actually matters to you. And unlike money, time doesn't come back. You cannot earn back the morning you spent on your phone instead of moving your body. You cannot undo the evening you numbed away instead of having a real conversation. But you can choose differently tomorrow — and that choice compounds.</p>
+
+    <div class="pullquote">
+      <p>The life you want is on the other side of the screen. Not as a destination — as a daily practice of choosing it.</p>
+    </div>
+
+    <h2>Who you believe you are <em class="hl-purple">matters</em></h2>
+
+    <p>We've written before about <a href="identity-before-behavior.html" style="color: var(--accent-purple);">identity before behavior</a> — the idea that lasting change doesn't come from willpower, it comes from a shift in how you see yourself. The same principle applies here.</p>
+
+    <p>If you see yourself as someone who "just scrolls a lot," you'll keep scrolling. If you start to see yourself as someone who is intentional with their attention — someone who protects their focus like an asset — your relationship with your phone begins to change.</p>
+
+    <p>Not overnight. Not perfectly. But gradually, and for real.</p>
+
+    <div class="identity-list">
+      <div class="identity-item">
+        <div class="identity-icon">📵</div>
+        <div class="identity-item-text">
+          <strong>Someone who protects their mornings</strong>
+          doesn't pick up their phone first thing. They start the day on their terms.
+        </div>
+      </div>
+      <div class="identity-item">
+        <div class="identity-icon">🎯</div>
+        <div class="identity-item-text">
+          <strong>Someone who values their attention</strong>
+          doesn't give it away for free. They're deliberate about what gets their focus.
+        </div>
+      </div>
+      <div class="identity-item">
+        <div class="identity-icon">📈</div>
+        <div class="identity-item-text">
+          <strong>Someone who is building something</strong>
+          sees every hour not spent scrolling as material for what they're creating.
+        </div>
+      </div>
+      <div class="identity-item">
+        <div class="identity-icon">🔄</div>
+        <div class="identity-item-text">
+          <strong>Someone who slips but comes back</strong>
+          doesn't spiral after a bad day. They reset, not quit.
+        </div>
+      </div>
+    </div>
+
+    <h2>Practical steps that <em class="hl-purple">actually work</em></h2>
+
+    <p>This isn't about quitting social media forever or becoming a monk. It's about taking back enough of your time and focus to actually pursue what you said you wanted. Here's what works — not in theory, but in practice.</p>
+
+    <div class="tips-grid">
+      <div class="tip-card">
+        <span class="tip-number">Step 01</span>
+        <div class="tip-title">Make the phone harder to reach</div>
+        <p class="tip-body">Move apps off your home screen. Put your phone in another room when you sleep. Charge it in the kitchen. Distance doesn't cure the habit, but it interrupts the reflex long enough to make a choice.</p>
+      </div>
+      <div class="tip-card">
+        <span class="tip-number">Step 02</span>
+        <div class="tip-title">Use a blocker — like Brick</div>
+        <p class="tip-body">Brick is an app that lets you physically block distracting apps on your phone by tapping a card. When you're done, you tap again to unlock. That small physical friction is enough to break the mindless loop. It sounds simple because it is — and it works.</p>
+      </div>
+      <div class="tip-card">
+        <span class="tip-number">Step 03</span>
+        <div class="tip-title">Set screen time limits</div>
+        <p class="tip-body">Both iOS and Android have built-in screen time tools. Set a daily limit on Instagram, TikTok, or whatever pulls you most. Start with a realistic number — not zero, but less than now. Reduce it weekly. Small cuts are sustainable; cold turkey rarely is.</p>
+      </div>
+      <div class="tip-card">
+        <span class="tip-number">Step 04</span>
+        <div class="tip-title">Create phone-free zones</div>
+        <p class="tip-body">The bedroom. The dinner table. The first 30 minutes after you wake up. The last 30 minutes before you sleep. Protecting these spaces costs you nothing but delivers outsized returns in sleep quality, mental clarity, and genuine presence.</p>
+      </div>
+      <div class="tip-card">
+        <span class="tip-number">Step 05</span>
+        <div class="tip-title">Replace, don't just remove</div>
+        <p class="tip-body">Willpower is limited. If you remove scrolling without replacing it with something, you will return to scrolling. Prepare a default: a book, a walk, stretching, music, a journal. When the urge hits, you need something already waiting.</p>
+      </div>
+      <div class="tip-card">
+        <span class="tip-number">Step 06</span>
+        <div class="tip-title">Go grayscale</div>
+        <p class="tip-body">Switch your phone display to grayscale. Color is a significant part of what makes apps visually stimulating and rewarding. A gray screen is less compelling. It's not magic, but it genuinely reduces the pull. Both iOS and Android support this in accessibility settings.</p>
+      </div>
+    </div>
+
+    <h2>Small steps are <em class="hl-purple">still forward</em></h2>
+
+    <p>One of the most damaging myths about change is that it has to be dramatic to count. That unless you're doing a full digital detox, putting your phone in a drawer for thirty days, and journaling about it — nothing counts.</p>
+
+    <p>That's not how this works.</p>
+
+    <p>Putting your phone down thirty minutes earlier tonight is a step. Leaving it in your bag during lunch is a step. Choosing a ten-minute walk over ten minutes of scrolling is a step. These don't feel like much in the moment. Over weeks and months, they compound into something you'll actually feel.</p>
+
+    <div class="compare-grid">
+      <div class="compare-card">
+        <div class="compare-title">Still scrolling</div>
+        <ul class="compare-list">
+          <li>Evenings disappear into the feed</li>
+          <li>Goals stay at "I'll start soon"</li>
+          <li>Mental energy drains by noon</li>
+          <li>Sleep disrupted by blue light</li>
+          <li>Days feel identical and foggy</li>
+        </ul>
+      </div>
+      <div class="compare-card accent">
+        <div class="compare-title">Reclaiming your time</div>
+        <ul class="compare-list">
+          <li>Evenings feel longer, calmer</li>
+          <li>Goals get actual time each week</li>
+          <li>Focus returns, slowly but clearly</li>
+          <li>Sleep improves without screen triggers</li>
+          <li>Days start to feel like they belong to you</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="pullquote">
+      <p>A small step you actually take beats a perfect plan you never start. Every single time.</p>
+    </div>
+
+    <h2>You don't have to <em class="hl-purple">stand still</em></h2>
+
+    <p>Here's what doomscrolling actually steals from you: momentum. While you're watching other people's lives, your own is paused. And a paused life has a cost that doesn't show up immediately — it shows up in six months, when you're exactly where you are today and wonder why nothing changed.</p>
+
+    <p>But you're not stuck. You're just scrolling. And you can stop — not all at once, not perfectly, but gradually and genuinely.</p>
+
+    <p>Start with one zone. The bedroom. The morning. The dinner table. See what happens when that space is yours again. Notice how it feels to sit with a quiet mind for ten minutes. Notice the discomfort — and then notice that it passes. That discomfort is not danger. It's withdrawal. It's your brain adjusting to something better.</p>
+
+    <div class="key-points">
+      <li><span class="kp-bullet"></span>You are not weak for getting caught in the scroll — you're responding normally to something engineered for it.</li>
+      <li><span class="kp-bullet"></span>The real cost of doomscrolling is not just time — it's focus, momentum, sleep, and your sense of what's possible.</li>
+      <li><span class="kp-bullet"></span>Identity matters: start seeing yourself as someone who chooses their attention deliberately, and behavior follows.</li>
+      <li><span class="kp-bullet"></span>Use friction — blockers like Brick, grayscale mode, screen time limits — to break the reflex before it starts.</li>
+      <li><span class="kp-bullet"></span>Replace don't just remove: have something to do when the urge hits, or the habit will win by default.</li>
+      <li><span class="kp-bullet"></span>Small steps forward are still forward. Thirty minutes less per day is 180 hours a year. That's a lot of life.</li>
+    </div>
+
+    <h2>The life on <em class="hl-purple">the other side</em></h2>
+
+    <p>Nobody says on their deathbed that they wish they'd scrolled more. No one looks back at a great year and credits the hours they spent watching strangers argue online. What people remember — what they're proud of — is what they built, who they loved, who they became.</p>
+
+    <p>That version of your life is available to you. It doesn't require a perfect streak or a dramatic transformation. It requires small, consistent choices to use your time for things that actually matter to you — even imperfectly, even slowly, even on the hard days.</p>
+
+    <p>You don't have to be ready. You just have to start.</p>
+
+    <hr class="divider" />
+
+    <p>Put the phone down. Not forever. Just for now. <strong><em class="hl-purple">See what's there when you do.</em></strong> The life you want isn't in the feed — it's in the moments you stop scrolling long enough to actually live.</p>
+
+  </div>
+
+  <div class="cta-block">
+    <h3>Ready to take back your time?</h3>
+    <p>Improo is built around small, honest steps — tracking what matters, building habits that stick, and moving forward even when it's hard.</p>
+    <a href="../index.html#waitlist" class="cta-btn">Get early access</a>
+  </div>
+
+  <div class="more-insights">
+    <div class="more-label">More Insights</div>
+    <div class="more-grid">
+      <a href="identity-before-behavior.html" class="more-card">
+        <div class="more-card-tag">Mindset</div>
+        <h4>Identity Before Behavior</h4>
+        <span>May 10, 2026</span>
+      </a>
+      <a href="quit-after-3-weeks.html" class="more-card">
+        <div class="more-card-tag discipline">Discipline</div>
+        <h4>Why Most People Quit After 3 Weeks</h4>
+        <span>April 22, 2026</span>
+      </a>
+      <a href="still-here-still-building.html" class="more-card">
+        <div class="more-card-tag">Mindset</div>
+        <h4>Still Here. Still Building.</h4>
+        <span>May 20, 2026</span>
+      </a>
+    </div>
+  </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <span class="footer-logo">Improo</span>
+  <ul class="footer-links">
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="index.html">Insights</a></li>
+    <li><a href="../roadmap.html">Roadmap</a></li>
+    <li><a href="../disclaimer.html">Disclaimer</a></li>
+    <li><a href="../privacy-policy.html">Privacy Policy</a></li>
+    <li><a href="../terms-of-service.html">Terms of Service</a></li>
+  </ul>
+  <p>© 2026 Improo. All rights reserved. Improo is not a medical service. Content is for informational purposes only.</p>
+</footer>
+
+</body>
+</html>
