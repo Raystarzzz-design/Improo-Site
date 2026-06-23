@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VG3CEDGXWP"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-VG3CEDGXWP');
+</script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Free Health Tools – Improo</title>
+  <meta name="description" content="Free, judgment-free health calculators from Improo — starting with a BMI calculator that shows your healthy weight range and what it actually means." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700&family=Lora:ital,wght@0,400;1,400;1,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
+  <link rel="stylesheet" href="../styles.css" />
+  <script>
+    window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+  </script>
+  <script defer src="/_vercel/insights/script.js"></script>
+  <style>
+    .tools-hero {
+      background: #e8edf8;
+      border-radius: 12px;
+      padding: 2rem;
+      margin: 32px 0 40px;
+    }
+
+    .tools-hero-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #8892aa;
+      margin-bottom: 14px;
+    }
+
+    .tools-hero h1 {
+      font-family: 'Lora', serif;
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 400;
+      color: var(--text);
+      margin: 0 0 12px;
+      line-height: 1.2;
+    }
+
+    .tools-hero p {
+      font-size: 0.98rem;
+      color: var(--muted);
+      line-height: 1.7;
+      margin: 0;
+      max-width: 600px;
+      font-weight: 300;
+    }
+
+    .tools-body { padding: 0 0 64px; }
+
+    .tool-feature-card {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 32px;
+      align-items: center;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow);
+      padding: 36px;
+      text-decoration: none;
+      color: inherit;
+      transition: box-shadow 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .tool-feature-card:hover {
+      box-shadow: var(--shadow-md);
+      border-color: var(--line-strong);
+      transform: translateY(-2px);
+    }
+
+    .tool-feature-visual {
+      width: 100%;
+      aspect-ratio: 1;
+      border-radius: 20px;
+      background: linear-gradient(145deg, #dbeafe 0%, #eff6ff 55%, #f0fdf4 100%);
+      border: 1px solid var(--line);
+      display: grid;
+      place-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .tool-feature-visual i {
+      font-size: 56px;
+      color: var(--blue);
+      position: relative;
+      z-index: 1;
+    }
+
+    .tool-feature-visual::before {
+      content: '';
+      position: absolute;
+      width: 140px; height: 140px;
+      border-radius: 50%;
+      background: rgba(37,99,235,0.10);
+      top: -30px; right: -30px;
+    }
+
+    .tool-feature-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: var(--blue-pale);
+      border: 1px solid var(--line-strong);
+      color: var(--blue-dark);
+      font-size: 11px;
+      font-weight: 700;
+      padding: 5px 14px;
+      border-radius: 20px;
+      margin-bottom: 14px;
+    }
+
+    .tool-feature-badge-dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--green);
+    }
+
+    .tool-feature-card h2 {
+      font-family: 'Lora', serif;
+      font-size: clamp(1.3rem, 2.4vw, 1.7rem);
+      font-weight: 400;
+      color: var(--text);
+      margin: 0 0 10px;
+    }
+
+    .tool-feature-card p {
+      font-size: 0.94rem;
+      color: var(--muted);
+      line-height: 1.7;
+      font-weight: 300;
+      margin: 0 0 18px;
+      max-width: 480px;
+    }
+
+    .tool-feature-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--blue);
+      font-weight: 600;
+      font-size: 0.92rem;
+    }
+
+    .tool-feature-card:hover .tool-feature-cta { color: var(--blue-dark); }
+
+    @media (max-width: 680px) {
+      .tool-feature-card { grid-template-columns: 1fr; padding: 28px 24px; }
+      .tool-feature-visual { max-width: 160px; margin: 0 auto; }
+    }
+
+    .tools-disclaimer {
+      background: #f4f7fb;
+      border-left: 3px solid #4a7fd4;
+      border-radius: 0 8px 8px 0;
+      padding: 16px 20px;
+      margin-top: 32px;
+    }
+
+    .tools-disclaimer p {
+      font-size: 0.82rem;
+      color: var(--muted);
+      font-style: italic;
+      margin: 0;
+      line-height: 1.65;
+    }
+
+    @media (max-width: 480px) {
+      .tools-hero { padding: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="site-header">
+
+    <div class="container">
+      <nav class="nav">
+        <a href="../index.html">
+          <span style="font-size:1.6rem; font-weight:700; background:linear-gradient(135deg,#3b9ef5,#2563eb); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; letter-spacing:-0.03em; font-family:'Sora',sans-serif;">Improo</span>
+        </a>
+        <div class="nav-links">
+          <a href="../index.html">Home</a>
+          <a href="../insights/index.html">Articles</a>
+          <a href="../guides.html">Guides</a>
+          <a href="index.html" class="active">Tools</a>
+          <a href="../roadmap.html">Roadmap</a>
+          <a href="../index.html#contact">Contact</a>
+        </div>
+        <div class="socials">
+          <a href="https://www.youtube.com/@Improo_App" aria-label="YouTube">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.7 15.5V8.5l6.3 3.5-6.3 3.5z"/></svg>
+          </a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+
+      <!-- HERO -->
+      <div class="tools-hero">
+        <div class="tools-hero-label">Improo Tools</div>
+        <h1>Quick, free tools to check in with your body.</h1>
+        <p>No accounts, no upsells, no judgment — just simple calculators that give you a clear, honest read on where you stand right now.</p>
+      </div>
+
+      <!-- TOOLS -->
+      <div class="tools-body">
+        <a href="bmi-calculator.html" class="tool-feature-card">
+          <div class="tool-feature-visual">
+            <i class="ti ti-gauge"></i>
+          </div>
+          <div>
+            <div class="tool-feature-badge">
+              <span class="tool-feature-badge-dot"></span>
+              Free · No sign-up
+            </div>
+            <h2>BMI Calculator</h2>
+            <p>Enter your height and weight to get your BMI, your healthy weight range, and a clear, non-alarmist explanation of what it means — plus a few honest next steps.</p>
+            <span class="tool-feature-cta">Open the calculator <i class="ti ti-arrow-right"></i></span>
+          </div>
+        </a>
+
+        <div class="tools-disclaimer">
+          <p>These tools give a quick estimate, not a diagnosis. They don't replace advice from a doctor or other qualified professional.</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer id="contact" class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <span style="font-size:1.3rem; font-weight:700; background:linear-gradient(135deg,#60a5fa,#3b82f6); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; letter-spacing:-0.03em; font-family:'Sora',sans-serif; display:block; margin-bottom:16px;">Improo</span>
+          <p>Health, weight loss, movement & mindset — together.</p>
+          <small>© 2026 Improo. All rights reserved.</small>
+          <small style="margin-top:6px;font-size:0.75rem;opacity:0.6;">Improo is not a medical service. Content is for informational purposes only. <a href="../disclaimer.html" style="color:inherit;text-decoration:underline;">Disclaimer.</a></small>
+        </div>
+        <div class="footer-links">
+          <h4>Navigation</h4>
+          <a href="../index.html">Home</a>
+          <a href="../insights/index.html">Articles</a>
+          <a href="../guides.html">Guides</a>
+          <a href="index.html">Tools</a>
+          <a href="../roadmap.html">Roadmap</a>
+          <a href="../disclaimer.html">Disclaimer</a>
+          <a href="../privacy-policy.html">Privacy Policy</a>
+          <a href="../terms-of-service.html">Terms of Service</a>
+        </div>
+        <div class="footer-links">
+          <h4>Follow us</h4>
+          <a href="https://www.youtube.com/@Improo_App">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:middle;margin-right:6px;"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.7 15.5V8.5l6.3 3.5-6.3 3.5z"/></svg>
+            YouTube
+          </a>
+        </div>
+        <div class="footer-links">
+          <h4>Contact</h4>
+          <a href="mailto:contact.improo@gmail.com">contact.improo@gmail.com</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

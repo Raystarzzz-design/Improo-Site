@@ -69,7 +69,7 @@ Improo-Site/
 Elke pagina heeft dezelfde header met:
 - Links: Improo-logo (tekst, gradient blauw)
 - Nav: Home · Articles · Guides · Roadmap · Contact (popup)
-- Rechts: YouTube-icoon + X (Twitter)-icoon
+- Rechts: YouTube-icoon (X/Twitter-icoon is verwijderd van alle pagina's)
 
 Zorg dat wijzigingen aan de navigatie in **alle HTML-bestanden** worden doorgevoerd.
 
