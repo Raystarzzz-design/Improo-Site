@@ -444,6 +444,21 @@
       margin: 0;
     }
 
+    .bmi-disclaimer {
+      background: #f4f7fb;
+      border-left: 3px solid #4a7fd4;
+      border-radius: 0 8px 8px 0;
+      padding: 16px 20px;
+      margin-bottom: 48px;
+    }
+    .bmi-disclaimer p {
+      font-size: 0.82rem;
+      color: var(--muted);
+      font-style: italic;
+      margin: 0;
+      line-height: 1.65;
+    }
+
     .sora-fade-in { animation: bmiFadeUp 0.6s ease both; }
     @keyframes bmiFadeUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
   </style>
@@ -706,6 +721,10 @@
         </div>
       </div>
     </section>
+
+    <div class="bmi-disclaimer">
+      <p>This calculator is for informational purposes only and does not constitute medical advice. Consult a doctor or dietitian before making major changes to your diet or exercise routine, especially if you have a health condition.</p>
+    </div>
 
   </div>
 
