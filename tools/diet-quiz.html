@@ -217,7 +217,7 @@
     <!-- HERO -->
     <section class="diet-hero">
       <div class="diet-kicker"><span class="diet-kicker-dot"></span> Free Tool · Updates instantly</div>
-      <h1>Your diet match, <em>found honestly</em></h1>
+      <h1>The diet that <em>actually fits you</em></h1>
       <p class="diet-hero-sub">Answer a few quick questions about what you eat and how you live — see which proven diet styles actually fit your life, ranked and explained.</p>
       <div class="diet-trust-strip">
         <span><i class="ti ti-bolt"></i> Instant matches</span>
@@ -441,7 +441,7 @@
 
       var LIFESTYLE_QUESTIONS = [
         { id: 'meals', label: 'How many meals do you eat per day?', options: [
-          { val: '2', label: '2 meals' }, { val: '3', label: '3 meals' },
+          { val: '1', label: '1 meal' }, { val: '2', label: '2 meals' }, { val: '3', label: '3 meals' },
           { val: '4-5', label: '4–5 small meals' }, { val: 'varies', label: 'Varies a lot' }
         ], dflt: '3' },
         { id: 'cooking', label: 'How do most of your meals happen?', options: [
@@ -584,7 +584,7 @@
       var COOK_ANSWERS = ['cook', 'mixed', 'eatout'];
       var SOCIAL_ANSWERS = ['rarely', 'monthly', 'weekly', 'often'];
       var SCHEDULE_ANSWERS = ['structured', 'flexible', 'unpredictable'];
-      var MEALS_ANSWERS = ['2', '3', '4-5', 'varies'];
+      var MEALS_ANSWERS = ['1', '2', '3', '4-5', 'varies'];
 
       var COOK_TABLE = {
         high:   { cook: 3, mixed: 0, eatout: -3 },
@@ -607,8 +607,8 @@
       function scheduleScore(demand, ans) { return SCHEDULE_TABLE[demand][ans]; }
       function mealsScore(pattern, ans) {
         if (pattern === 'any') return 2;
-        if (pattern === 'few') return ans === '2' ? 3 : (ans === 'varies' ? 1 : -1);
-        return ans === '3' ? 3 : (ans === '2' ? 1 : -1); // 'standard'
+        if (pattern === 'few') return (ans === '1' || ans === '2') ? 3 : (ans === 'varies' ? 1 : -1);
+        return ans === '3' ? 3 : (ans === '2' ? 1 : -1); // 'standard' — 1 meal counts as a bigger deviation
       }
 
       function rangeOf(fn, demand, answers) {
