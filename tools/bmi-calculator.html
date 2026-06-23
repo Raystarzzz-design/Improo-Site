@@ -284,6 +284,8 @@
       text-transform: uppercase;
       color: var(--muted-light);
     }
+    .bmi-gauge-labels span { display: inline-flex; align-items: center; gap: 5px; }
+    .bmi-gauge-label-dot { width: 6px; height: 6px; border-radius: 50%; display: inline-block; flex-shrink: 0; }
 
     /* ═══════════════════════════════════════════
        SECTIONS (honest context, what it means)
@@ -328,6 +330,58 @@
       background: rgba(96,165,250,0.2); color: #93c5fd; font-size: 0.72rem; font-weight: 700;
       display: flex; align-items: center; justify-content: center; margin-top: 1px;
     }
+
+    /* BMI CHART */
+    .bmi-chart-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow);
+      padding: 24px;
+    }
+    @media (max-width: 600px) { .bmi-chart-card { padding: 18px 14px; } }
+
+    .bmi-chart-scroll {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      border-radius: 10px;
+      border: 1px solid var(--line);
+    }
+
+    .bmi-chart-table { border-collapse: collapse; width: 100%; min-width: 640px; }
+    .bmi-chart-table th, .bmi-chart-table td {
+      text-align: center;
+      font-size: 0.76rem;
+      padding: 9px 10px;
+      white-space: nowrap;
+    }
+    .bmi-chart-table thead th {
+      background: var(--bg-2);
+      color: var(--muted);
+      font-weight: 700;
+      font-size: 0.7rem;
+    }
+    .bmi-chart-table th.bmi-chart-corner,
+    .bmi-chart-table td.bmi-chart-rowhead {
+      position: sticky;
+      left: 0;
+      background: var(--bg-2);
+      font-weight: 700;
+      color: var(--text);
+      z-index: 2;
+      border-right: 1px solid var(--line);
+    }
+    .bmi-chart-table tbody tr:nth-child(even) td:not(.bmi-cell) { background: #f0f4fb; }
+    .bmi-chart-table td.bmi-cell { color: #fff; font-weight: 700; }
+
+    .bmi-chart-legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-top: 18px;
+    }
+    .bmi-chart-legend span { display: inline-flex; align-items: center; gap: 6px; font-size: 0.78rem; color: var(--muted); font-weight: 500; }
+    .bmi-chart-legend i { width: 10px; height: 10px; border-radius: 3px; display: inline-block; }
 
     /* CROSS-LINKS */
     .bmi-tools-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
@@ -526,14 +580,27 @@
               </linearGradient>
             </defs>
             <path d="M 20 102 A 80 80 0 0 1 180 102" fill="none" stroke="url(#bmiGaugeGradient)" stroke-width="14" stroke-linecap="round"/>
+
+            <!-- boundary ticks: 18.5 / 25 / 30 -->
+            <g stroke="#94a3b8" stroke-width="1.5">
+              <line x1="27.6" y1="67.9" x2="20.4" y2="64.5"/>
+              <line x1="75.3" y1="25.9" x2="72.8" y2="18.3"/>
+              <line x1="124.7" y1="25.9" x2="127.2" y2="18.3"/>
+            </g>
+            <g font-size="8" font-weight="700" font-family="Sora, sans-serif" fill="#64748b" text-anchor="middle">
+              <text x="15" y="62">18.5</text>
+              <text x="71" y="13">25</text>
+              <text x="129" y="13">30</text>
+            </g>
+
             <line id="bmi-gauge-needle" class="bmi-gauge-needle" x1="100" y1="102" x2="100" y2="34" stroke="#0c1a2e" stroke-width="3" stroke-linecap="round"/>
             <circle class="bmi-gauge-pivot" cx="100" cy="102" r="7"/>
           </svg>
           <div class="bmi-gauge-labels">
-            <span>Under</span>
-            <span>Normal</span>
-            <span>Over</span>
-            <span>Obese</span>
+            <span><i class="bmi-gauge-label-dot" style="background:#3b82f6"></i>Under</span>
+            <span><i class="bmi-gauge-label-dot" style="background:#16a34a"></i>Normal</span>
+            <span><i class="bmi-gauge-label-dot" style="background:#d97706"></i>Over</span>
+            <span><i class="bmi-gauge-label-dot" style="background:#dc2626"></i>Obese</span>
           </div>
         </div>
       </div>
@@ -555,6 +622,24 @@
         <h3 id="bmi-meaning-heading">Enter your details above to see your result</h3>
         <p id="bmi-meaning-summary">Once you fill in your height and weight, you'll get a short, honest read on your result here.</p>
         <ul class="bmi-meaning-list" id="bmi-meaning-list"></ul>
+      </div>
+    </section>
+
+    <!-- BMI CHART -->
+    <section class="bmi-section">
+      <h2>BMI chart for adults</h2>
+      <p>The same standard ranges apply to both men and women — the BMI formula doesn't change based on sex. Find your height and weight below to see roughly where you'd land.</p>
+      <div class="bmi-chart-card">
+        <div class="bmi-chart-scroll">
+          <table class="bmi-chart-table" id="bmi-chart-table" aria-label="BMI chart by height and weight"></table>
+        </div>
+        <div class="bmi-chart-legend">
+          <span><i style="background:#3b82f6"></i>Underweight</span>
+          <span><i style="background:#16a34a"></i>Normal</span>
+          <span><i style="background:#d97706"></i>Overweight</span>
+          <span><i style="background:#dc2626"></i>Obese</span>
+          <span><i style="background:#991b1b"></i>Severely obese</span>
+        </div>
       </div>
     </section>
 
@@ -760,6 +845,16 @@
             'Start with one consistent habit (like a daily walk or cooking one more meal at home) rather than overhauling everything at once.',
             'Track progress over months, not days — sustainable change is naturally slower, and that\'s normal.'
           ]
+        },
+        severe: {
+          label: 'Severely obese',
+          color: '#991b1b',
+          summary: "Your BMI is significantly above the typical range. That's worth taking seriously, with proper support — not through extreme or rushed measures.",
+          steps: [
+            'A doctor or dietitian can offer a supervised plan suited to your health picture — especially useful at this level.',
+            'Start with one sustainable habit rather than overhauling everything at once.',
+            'Small, consistent movement (even short walks) helps, regardless of where you\'re starting from.'
+          ]
         }
       };
 
@@ -769,6 +864,7 @@
           btn.classList.toggle('is-active', btn.getAttribute('data-unit-btn') === unit);
         });
         calculate();
+        renderChart();
       }
 
       unitBtns.forEach(function (btn) {
@@ -799,7 +895,54 @@
         if (bmi < 18.5) return 'under';
         if (bmi < 25) return 'normal';
         if (bmi < 30) return 'over';
-        return 'obese';
+        if (bmi < 40) return 'obese';
+        return 'severe';
+      }
+
+      var CHART_COLORS = { under: '#3b82f6', normal: '#16a34a', over: '#d97706', obese: '#dc2626', severe: '#991b1b' };
+
+      var CHART_RANGES = {
+        metric: {
+          heights: [150, 155, 160, 165, 170, 175, 180, 185, 190, 195, 200],
+          weights: [45, 55, 65, 75, 85, 95, 105, 115, 125, 135]
+        },
+        imperial: {
+          heights: [58, 60, 62, 64, 66, 68, 70, 72, 74, 76, 78],
+          weights: [90, 110, 130, 150, 170, 190, 210, 230, 250, 270]
+        }
+      };
+
+      function formatChartHeight(unit, h) {
+        if (unit === 'metric') return h + ' cm';
+        var ft = Math.floor(h / 12), inch = h % 12;
+        return ft + "'" + inch + '"';
+      }
+
+      function renderChart() {
+        var unit = calc.getAttribute('data-unit');
+        var ranges = CHART_RANGES[unit];
+        var table = document.getElementById('bmi-chart-table');
+        var weightUnit = unit === 'metric' ? 'kg' : 'lbs';
+
+        var html = '<thead><tr><th class="bmi-chart-corner"></th>';
+        ranges.weights.forEach(function (w) {
+          html += '<th>' + w + ' ' + weightUnit + '</th>';
+        });
+        html += '</tr></thead><tbody>';
+
+        ranges.heights.forEach(function (h) {
+          var hM = unit === 'metric' ? h / 100 : h * 0.0254;
+          html += '<tr><td class="bmi-chart-rowhead">' + formatChartHeight(unit, h) + '</td>';
+          ranges.weights.forEach(function (w) {
+            var wKg = unit === 'metric' ? w : w * 0.453592;
+            var bmi = wKg / (hM * hM);
+            var key = categoryKey(bmi);
+            html += '<td class="bmi-cell" style="background:' + CHART_COLORS[key] + '">' + Math.round(bmi) + '</td>';
+          });
+          html += '</tr>';
+        });
+        html += '</tbody>';
+        table.innerHTML = html;
       }
 
       function bmiToAngle(bmi) {
@@ -926,6 +1069,7 @@
       heightCm.value = 170;
       weightKgInput.value = 70;
       calculate();
+      renderChart();
     })();
   </script>
 
