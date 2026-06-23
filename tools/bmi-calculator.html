@@ -396,10 +396,10 @@
       text-decoration: none;
       color: inherit;
       position: relative;
-      opacity: 0.6;
       transition: box-shadow 0.2s, border-color 0.2s;
     }
     .bmi-tool-link:hover { box-shadow: var(--shadow); border-color: var(--line-strong); }
+    .bmi-tool-soon-wrap { opacity: 0.6; }
     .bmi-tool-soon {
       position: absolute; top: 18px; right: 18px;
       font-size: 9px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;
@@ -662,14 +662,13 @@
     <section class="bmi-section">
       <h2>More free tools</h2>
       <div class="bmi-tools-grid">
-        <a href="calorie-calculator.html" class="bmi-tool-link">
+        <a href="calorie-calculator.html" class="bmi-tool-link bmi-tool-soon-wrap">
           <span class="bmi-tool-soon">Coming soon</span>
           <i class="ti ti-flame bmi-tool-icon"></i>
           <h4>Calorie Calculator</h4>
           <p>Estimate your daily calorie needs based on your goals and activity level.</p>
         </a>
         <a href="diet-quiz.html" class="bmi-tool-link">
-          <span class="bmi-tool-soon">Coming soon</span>
           <i class="ti ti-salad bmi-tool-icon"></i>
           <h4>Diet Match Quiz</h4>
           <p>A two-minute quiz to find an eating style that actually fits your life.</p>

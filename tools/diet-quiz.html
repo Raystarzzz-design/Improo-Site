@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-VG3CEDGXWP"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-VG3CEDGXWP');
+</script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Diet Match Quiz — Find Your Best Fit | Improo</title>
+  <meta name="description" content="Answer a few quick questions about what you eat and how you live, and see which well-known diet styles actually fit your preferences and routine — no sign-up required." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700&family=Lora:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
+  <link rel="stylesheet" href="../styles.css" />
+  <script>
+    window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+  </script>
+  <script defer src="/_vercel/insights/script.js"></script>
+
+  <style>
+    body { overflow-x: hidden; }
+    .article-wrap { max-width: 880px; margin: 0 auto; padding: 0 24px; width: 100%; }
+    .back-link { margin-top: 36px; display: inline-flex; align-items: center; gap: 6px; font-size: 13px; color: var(--muted); transition: color 0.2s; }
+    .back-link:hover { color: var(--blue); }
+
+    /* HERO */
+    .diet-hero { padding: 40px 0 0; position: relative; text-align: center; overflow: hidden; }
+    .diet-hero::before {
+      content: '';
+      position: absolute;
+      top: -80px; left: 50%;
+      transform: translateX(-50%);
+      width: 700px; height: 380px;
+      background: radial-gradient(ellipse 60% 60% at 50% 0%, rgba(37,99,235,0.14) 0%, transparent 70%);
+      z-index: -1;
+      pointer-events: none;
+    }
+    .diet-kicker {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--blue-pale); border: 1px solid var(--line-strong); color: var(--blue-dark);
+      font-size: 11px; font-weight: 700; letter-spacing: 0.5px;
+      padding: 6px 16px; border-radius: 20px; margin-bottom: 22px;
+    }
+    .diet-kicker-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--green); animation: dietBlink 2s ease-in-out infinite; }
+    @keyframes dietBlink { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+    .diet-hero h1 {
+      font-family: 'Lora', serif; font-size: clamp(2.1rem, 5vw, 3.2rem); font-weight: 400;
+      line-height: 1.15; color: #0c1a2e; margin: 0 0 18px; letter-spacing: -0.02em;
+    }
+    .diet-hero h1 em { font-style: italic; color: var(--blue); }
+    .diet-hero-sub { font-size: 1.05rem; line-height: 1.75; color: var(--muted); max-width: 560px; margin: 0 auto 28px; font-weight: 300; }
+    .diet-trust-strip {
+      display: flex; justify-content: center; align-items: center; gap: 14px; flex-wrap: wrap;
+      margin-bottom: 44px; font-size: 12px; color: var(--muted-light); font-weight: 500;
+    }
+    .diet-trust-strip span { display: inline-flex; align-items: center; gap: 6px; }
+    .diet-trust-dot { width: 3px; height: 3px; border-radius: 50%; background: var(--muted-light); }
+    .diet-trust-strip i { color: var(--blue); font-size: 14px; }
+
+    /* QUIZ CARD */
+    .diet-quiz-card {
+      background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius-xl);
+      box-shadow: var(--shadow-md); padding: 36px; margin-bottom: 56px;
+    }
+    @media (max-width: 600px) { .diet-quiz-card { padding: 26px 18px; } }
+
+    .diet-quiz-intro { font-size: 0.92rem; color: var(--muted); font-weight: 300; margin: 0 0 24px; }
+    .diet-divider { border-top: 1px solid var(--line); margin: 32px 0; }
+    .diet-subhead { font-family: 'Lora', serif; font-size: 1.15rem; font-weight: 400; color: #0c1a2e; margin: 0 0 16px; }
+    .diet-results-note { font-size: 0.85rem; color: var(--muted-light); font-weight: 300; margin: -8px 0 20px; }
+
+    /* FOOD GROUPS */
+    .diet-food-group { margin-bottom: 26px; }
+    .diet-food-group:last-child { margin-bottom: 0; }
+    .diet-food-group-title {
+      font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;
+      color: var(--blue-light); margin-bottom: 10px;
+    }
+    .diet-food-row {
+      display: flex; align-items: center; justify-content: space-between; gap: 14px;
+      padding: 10px 0; border-bottom: 1px solid var(--line);
+    }
+    .diet-food-group:last-child .diet-food-row:last-child { border-bottom: none; }
+    .diet-food-label { font-size: 0.9rem; color: var(--text); font-weight: 500; }
+    .diet-food-label small { display: block; color: var(--muted-light); font-weight: 400; font-size: 0.78em; margin-top: 1px; }
+
+    .diet-tri-toggle { display: flex; gap: 4px; background: var(--bg-2); border-radius: 20px; padding: 3px; flex-shrink: 0; }
+    .diet-tri-btn {
+      width: 34px; height: 30px; border: none; background: transparent; border-radius: 16px;
+      font-size: 14px; cursor: pointer; display: flex; align-items: center; justify-content: center;
+      color: var(--muted-light); transition: background 0.2s, color 0.2s;
+    }
+    .diet-tri-btn[data-val="love"].is-active { background: #16a34a; color: #fff; }
+    .diet-tri-btn[data-val="neutral"].is-active { background: #94a3b8; color: #fff; }
+    .diet-tri-btn[data-val="hardno"].is-active { background: #dc2626; color: #fff; }
+
+    /* LIFESTYLE QUESTIONS */
+    .diet-lifestyle-q { margin-bottom: 22px; }
+    .diet-lifestyle-q:last-child { margin-bottom: 0; }
+    .diet-lifestyle-q label { display: block; font-size: 0.88rem; font-weight: 600; color: var(--text); margin-bottom: 10px; }
+    .diet-choice-group { display: flex; gap: 8px; flex-wrap: wrap; }
+    .diet-choice-btn {
+      border: 1.5px solid var(--line); background: var(--bg-2); color: var(--muted);
+      font-family: 'Sora', sans-serif; font-size: 0.82rem; font-weight: 600;
+      padding: 9px 16px; border-radius: 20px; cursor: pointer; transition: all 0.2s;
+    }
+    .diet-choice-btn.is-active { background: var(--blue); border-color: var(--blue); color: #fff; }
+
+    /* RESULTS */
+    .diet-result-card {
+      background: var(--bg-2); border: 1px solid var(--line); border-radius: 16px;
+      padding: 20px 22px; margin-bottom: 14px;
+    }
+    .diet-result-card:last-child { margin-bottom: 0; }
+    .diet-result-rank { font-size: 10px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; color: var(--blue-light); margin-bottom: 8px; }
+    .diet-result-head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin-bottom: 10px; }
+    .diet-result-head h3 { font-family: 'Lora', serif; font-size: 1.2rem; font-weight: 400; color: #0c1a2e; margin: 0; }
+    .diet-result-score { font-family: 'Lora', serif; font-size: 1.2rem; font-weight: 600; color: var(--blue); flex-shrink: 0; }
+    .diet-result-bar { height: 8px; border-radius: 5px; background: var(--line); overflow: hidden; margin-bottom: 14px; }
+    .diet-result-bar-fill { height: 100%; border-radius: 5px; background: linear-gradient(90deg, #60a5fa, #16a34a); transition: width 0.8s cubic-bezier(.22,1,.36,1); width: 0%; }
+    .diet-result-why { font-size: 0.88rem; color: var(--muted); line-height: 1.65; font-weight: 300; margin: 0 0 14px; }
+    .diet-result-meta { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+    .diet-sustain-pill { font-size: 10px; font-weight: 700; letter-spacing: 0.4px; text-transform: uppercase; padding: 5px 12px; border-radius: 14px; }
+    .diet-sustain-easy { background: rgba(22,163,74,0.12); color: #16a34a; }
+    .diet-sustain-moderate { background: rgba(217,119,6,0.12); color: #d97706; }
+    .diet-sustain-challenging { background: rgba(220,38,38,0.12); color: #dc2626; }
+    .diet-result-guide { font-size: 0.84rem; font-weight: 600; color: var(--blue); }
+    .diet-result-guide:hover { color: var(--blue-dark); }
+
+    /* HONEST CONTEXT + SECTIONS */
+    .diet-section { margin-bottom: 48px; }
+    .diet-section h2 { font-family: 'Lora', serif; font-size: clamp(1.3rem, 2.6vw, 1.7rem); font-weight: 400; color: #0c1a2e; margin: 0 0 16px; }
+    .diet-callout {
+      border-left: 3px solid var(--blue); padding: 20px 24px;
+      background: linear-gradient(135deg, rgba(37,99,235,0.04), rgba(96,165,250,0.06)); border-radius: 0 12px 12px 0;
+    }
+    .diet-callout p { margin: 0 0 10px; color: var(--blue-dark); font-size: 0.95rem; line-height: 1.75; }
+    .diet-callout p:last-child { margin-bottom: 0; }
+
+    /* NEXT STEPS */
+    .diet-tools-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    @media (max-width: 600px) { .diet-tools-grid { grid-template-columns: 1fr; } }
+    .diet-tool-link {
+      display: block; background: var(--panel); border: 1px solid var(--line); border-radius: 16px;
+      padding: 22px 22px 20px; text-decoration: none; color: inherit; position: relative;
+      transition: box-shadow 0.2s, border-color 0.2s;
+    }
+    .diet-tool-link:hover { box-shadow: var(--shadow); border-color: var(--line-strong); }
+    .diet-tool-soon-wrap { opacity: 0.6; }
+    .diet-tool-soon {
+      position: absolute; top: 18px; right: 18px; font-size: 9px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;
+      color: var(--muted-light); background: var(--bg-2); padding: 4px 10px; border-radius: 10px;
+    }
+    .diet-tool-icon { font-size: 22px; color: var(--blue); margin-bottom: 12px; display: block; }
+    .diet-tool-link h4 { font-size: 0.95rem; font-weight: 700; color: var(--text); margin: 0 0 6px; }
+    .diet-tool-link p { font-size: 0.82rem; color: var(--muted); line-height: 1.55; margin: 0; font-weight: 300; }
+
+    /* FAQ */
+    .diet-faq-item { border-bottom: 1px solid var(--line); }
+    .diet-faq-item:first-child { border-top: 1px solid var(--line); }
+    .diet-faq-q {
+      width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 16px;
+      background: none; border: none; text-align: left; padding: 20px 2px;
+      font-family: 'Sora', sans-serif; font-size: 0.96rem; font-weight: 600; color: var(--text); cursor: pointer;
+    }
+    .diet-faq-q i { color: var(--blue); font-size: 16px; transition: transform 0.25s ease; flex-shrink: 0; }
+    .diet-faq-item.is-open .diet-faq-q i { transform: rotate(180deg); }
+    .diet-faq-a { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+    .diet-faq-a p { font-size: 0.9rem; color: var(--muted); line-height: 1.75; font-weight: 300; padding: 0 2px 20px; margin: 0; }
+
+    /* DISCLAIMER */
+    .diet-disclaimer { background: #f4f7fb; border-left: 3px solid #4a7fd4; border-radius: 0 8px 8px 0; padding: 16px 20px; margin-bottom: 48px; }
+    .diet-disclaimer p { font-size: 0.82rem; color: var(--muted); font-style: italic; margin: 0; line-height: 1.65; }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="site-header">
+    <div class="container">
+      <nav class="nav">
+        <a href="../index.html">
+          <span style="font-size:1.6rem; font-weight:700; background:linear-gradient(135deg,#3b9ef5,#2563eb); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; letter-spacing:-0.03em; font-family:'Sora',sans-serif;">Improo</span>
+        </a>
+        <div class="nav-links">
+          <a href="../index.html">Home</a>
+          <a href="../insights/index.html">Articles</a>
+          <a href="../guides.html">Guides</a>
+          <a href="index.html" class="active">Tools</a>
+          <a href="../roadmap.html">Roadmap</a>
+          <a href="../index.html#contact">Contact</a>
+        </div>
+        <div class="socials">
+          <a href="https://www.youtube.com/@Improo_App" aria-label="YouTube">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.7 15.5V8.5l6.3 3.5-6.3 3.5z"/></svg>
+          </a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <div class="article-wrap">
+
+    <a href="index.html" class="back-link">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M9 2L4 7l5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Back to Tools
+    </a>
+
+    <!-- HERO -->
+    <section class="diet-hero">
+      <div class="diet-kicker"><span class="diet-kicker-dot"></span> Free Tool · Updates instantly</div>
+      <h1>Your diet match, <em>found honestly</em></h1>
+      <p class="diet-hero-sub">Answer a few quick questions about what you eat and how you live — see which proven diet styles actually fit your life, ranked and explained.</p>
+      <div class="diet-trust-strip">
+        <span><i class="ti ti-bolt"></i> Instant matches</span>
+        <div class="diet-trust-dot"></div>
+        <span><i class="ti ti-lock-open"></i> No sign-up</span>
+        <div class="diet-trust-dot"></div>
+        <span><i class="ti ti-stethoscope"></i> Not medical advice</span>
+      </div>
+    </section>
+
+    <!-- QUIZ -->
+    <section class="diet-quiz-card" id="diet-quiz">
+      <p class="diet-quiz-intro">Tap how you feel about each one — most people only need to touch a few. Everything else can stay "neutral".</p>
+
+      <div id="diet-food-groups"><!-- rendered by JS from FOOD_GROUPS --></div>
+
+      <div class="diet-divider"></div>
+
+      <h3 class="diet-subhead">A bit about how you live</h3>
+      <div id="diet-lifestyle-qs"><!-- rendered by JS from LIFESTYLE_QUESTIONS --></div>
+
+      <div class="diet-divider"></div>
+
+      <h3 class="diet-subhead">Your top matches</h3>
+      <p class="diet-results-note">Based on your answers — not a single definitive verdict, just where you're most likely to feel at home.</p>
+      <div id="diet-results"><!-- rendered by JS --></div>
+    </section>
+
+    <!-- HONEST CONTEXT -->
+    <section class="diet-section">
+      <h2>What this can (and can't) tell you</h2>
+      <div class="diet-callout">
+        <p>This is a preference and lifestyle fit-check, not a nutrition prescription. It looks at what you enjoy eating, how strict you're comfortable being, and how you actually live day to day — then matches that against well-documented diet styles.</p>
+        <p>It can't account for allergies, medical conditions, or goals that need a professional's input. Treat the results as a sensible starting point to research further, not a final answer.</p>
+      </div>
+    </section>
+
+    <!-- NEXT STEPS -->
+    <section class="diet-section">
+      <h2>Keep exploring</h2>
+      <div class="diet-tools-grid">
+        <a href="bmi-calculator.html" class="diet-tool-link">
+          <i class="ti ti-gauge diet-tool-icon"></i>
+          <h4>BMI Calculator</h4>
+          <p>See your BMI, your healthy weight range, and what it actually means.</p>
+        </a>
+        <a href="calorie-calculator.html" class="diet-tool-link diet-tool-soon-wrap">
+          <span class="diet-tool-soon">Coming soon</span>
+          <i class="ti ti-flame diet-tool-icon"></i>
+          <h4>Calorie Calculator</h4>
+          <p>Estimate your daily calorie needs based on your goals and activity level.</p>
+        </a>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="diet-section">
+      <h2>Frequently asked questions</h2>
+
+      <div class="diet-faq-item is-open">
+        <button class="diet-faq-q" aria-expanded="true">
+          Can I combine diet styles?
+          <i class="ti ti-chevron-down"></i>
+        </button>
+        <div class="diet-faq-a">
+          <p>Yes — plenty of people blend approaches, like eating Mediterranean-style within a 16:8 intermittent fasting window. Treat your top matches as a starting point and building blocks, not a strict box you have to pick exactly one from.</p>
+        </div>
+      </div>
+
+      <div class="diet-faq-item">
+        <button class="diet-faq-q" aria-expanded="false">
+          What if no diet matches well?
+          <i class="ti ti-chevron-down"></i>
+        </button>
+        <div class="diet-faq-a">
+          <p>If your top scores are all in a similar middle range, that usually means your preferences don't lock you into one extreme style — which is fine. A more flexible, less restrictive approach (like Mediterranean or Flexitarian) tends to work well in that case.</p>
+        </div>
+      </div>
+
+      <div class="diet-faq-item">
+        <button class="diet-faq-q" aria-expanded="false">
+          How often should I retake this quiz?
+          <i class="ti ti-chevron-down"></i>
+        </button>
+        <div class="diet-faq-a">
+          <p>Whenever your habits, schedule, or tastes change in a meaningful way. What fits your life now might not fit it in a year, so it's worth a quick re-check every so often rather than treating one result as permanent.</p>
+        </div>
+      </div>
+
+      <div class="diet-faq-item">
+        <button class="diet-faq-q" aria-expanded="false">
+          Is this medical advice?
+          <i class="ti ti-chevron-down"></i>
+        </button>
+        <div class="diet-faq-a">
+          <p>No. This tool matches diets to your preferences and routine — it's not a substitute for advice from a doctor or registered dietitian, especially if you have a health condition, take medication, or are pregnant or breastfeeding.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="diet-disclaimer">
+      <p>This quiz matches diets to your preferences and routine — it's not medical or nutritional advice. Consult a doctor or registered dietitian before making major changes to your diet, especially if you have a health condition.</p>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer id="contact" class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <span style="font-size:1.3rem;font-weight:700;background:linear-gradient(135deg,#60a5fa,#3b82f6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:-0.03em;font-family:'Sora',sans-serif;display:block;margin-bottom:16px;">Improo</span>
+          <p>Health, weight loss, movement & mindset — together.</p>
+          <small>© 2026 Improo. All rights reserved.</small>
+        </div>
+        <div class="footer-links">
+          <h4>Navigation</h4>
+          <a href="../index.html">Home</a>
+          <a href="../insights/index.html">Articles</a>
+          <a href="../guides.html">Guides</a>
+          <a href="index.html">Tools</a>
+          <a href="../roadmap.html">Roadmap</a>
+        </div>
+        <div class="footer-links">
+          <h4>Legal</h4>
+          <a href="../disclaimer.html">Disclaimer</a>
+          <a href="../privacy-policy.html">Privacy Policy</a>
+          <a href="../terms-of-service.html">Terms of Service</a>
+        </div>
+        <div class="footer-links">
+          <h4>Follow</h4>
+          <a href="https://www.youtube.com/@Improo_App">YouTube</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- FAQ structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Can I combine diet styles?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes — plenty of people blend approaches, like eating Mediterranean-style within a 16:8 intermittent fasting window. Treat your top matches as building blocks, not a strict box you have to pick exactly one from."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What if no diet matches well?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "If your top scores are all in a similar middle range, that usually means your preferences don't lock you into one extreme style. A more flexible, less restrictive approach like Mediterranean or Flexitarian tends to work well in that case."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How often should I retake this quiz?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Whenever your habits, schedule, or tastes change in a meaningful way. What fits your life now might not fit it in a year."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is this medical advice?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. This tool matches diets to your preferences and routine. It is not a substitute for advice from a doctor or registered dietitian, especially if you have a health condition, take medication, or are pregnant or breastfeeding."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <script>
+    (function () {
+
+      /* ═══════════════════════════════════════════
+         DATA — edit/add diets or questions here
+      ═══════════════════════════════════════════ */
+
+      var FOOD_GROUPS = [
+        { title: 'Proteins', items: [
+          { id: 'redMeat', label: 'Red meat', hint: 'beef, lamb, pork' },
+          { id: 'poultry', label: 'Poultry', hint: 'chicken, turkey' },
+          { id: 'fish', label: 'Fish & seafood' },
+          { id: 'eggs', label: 'Eggs' },
+          { id: 'legumes', label: 'Beans & legumes' },
+          { id: 'tofu', label: 'Tofu & soy' }
+        ]},
+        { title: 'Vegetables', items: [
+          { id: 'leafyVeg', label: 'Leafy greens & salads' },
+          { id: 'cookedVeg', label: 'Cooked / roasted vegetables' },
+          { id: 'starchyVeg', label: 'Starchy vegetables', hint: 'potatoes, corn, squash' }
+        ]},
+        { title: 'Carbs & Grains', items: [
+          { id: 'breadPasta', label: 'Bread & pasta' },
+          { id: 'rice', label: 'Rice' },
+          { id: 'wholeGrains', label: 'Whole grains', hint: 'oats, quinoa, barley' },
+          { id: 'refinedCarbs', label: 'Refined / white carbs', hint: 'white bread, sugary cereal' }
+        ]},
+        { title: 'Dairy', items: [
+          { id: 'milk', label: 'Milk' },
+          { id: 'cheese', label: 'Cheese' },
+          { id: 'yogurt', label: 'Yogurt' }
+        ]},
+        { title: 'Snacking style', items: [
+          { id: 'snacking', label: 'Frequent small snacks' },
+          { id: 'sweets', label: 'Sweets & desserts' },
+          { id: 'skipMeals', label: 'Going hours without eating', hint: 'skipping meals' }
+        ]}
+      ];
+
+      var FOOD_LABELS = {};
+      FOOD_GROUPS.forEach(function (g) { g.items.forEach(function (i) { FOOD_LABELS[i.id] = i.label.toLowerCase(); }); });
+
+      var LIFESTYLE_QUESTIONS = [
+        { id: 'meals', label: 'How many meals do you eat per day?', options: [
+          { val: '2', label: '2 meals' }, { val: '3', label: '3 meals' },
+          { val: '4-5', label: '4–5 small meals' }, { val: 'varies', label: 'Varies a lot' }
+        ], dflt: '3' },
+        { id: 'cooking', label: 'How do most of your meals happen?', options: [
+          { val: 'cook', label: 'I cook from scratch' }, { val: 'mixed', label: 'Mix of cooking & eating out' },
+          { val: 'eatout', label: 'Mostly eating out / ordering in' }
+        ], dflt: 'mixed' },
+        { id: 'social', label: 'How often do you eat socially (restaurants, gatherings)?', options: [
+          { val: 'rarely', label: 'Rarely' }, { val: 'monthly', label: 'A few times a month' },
+          { val: 'weekly', label: 'Weekly' }, { val: 'often', label: 'Several times a week' }
+        ], dflt: 'weekly' },
+        { id: 'schedule', label: 'How structured is your daily schedule?', options: [
+          { val: 'structured', label: 'Very routine' }, { val: 'flexible', label: 'Somewhat flexible' },
+          { val: 'unpredictable', label: 'Unpredictable / changes daily' }
+        ], dflt: 'flexible' }
+      ];
+
+      /* Each diet: foodWeights (signed emphasis per item, ±1 to ±3),
+         cookingDemand/socialFlexibility/scheduleDemand ('low'|'medium'|'high'),
+         mealsPattern ('few'|'standard'|'any'), restrictionLevel + sustainability for display,
+         guideUrl: existing guide page if one exists, else null. */
+      var DIETS = [
+        {
+          id: 'mediterranean', name: 'Mediterranean',
+          description: 'Fish, olive oil, vegetables, whole grains and modest amounts of everything else.',
+          guideUrl: '../guides/what-is-mediterranean-diet.html',
+          sustainability: 'Easy',
+          foodWeights: { fish: 2, leafyVeg: 2, cookedVeg: 2, legumes: 2, wholeGrains: 1, cheese: 1, yogurt: 1, redMeat: -1, refinedCarbs: -1, sweets: -1 },
+          cookingDemand: 'medium', socialFlexibility: 'high', scheduleDemand: 'low', mealsPattern: 'any'
+        },
+        {
+          id: 'keto', name: 'Keto',
+          description: 'Very low carb, high fat — built to shift your body into burning fat for fuel.',
+          guideUrl: '../guides/what-is-keto.html',
+          sustainability: 'Challenging',
+          foodWeights: { redMeat: 2, poultry: 1, fish: 2, eggs: 2, cheese: 2, breadPasta: -3, rice: -3, wholeGrains: -2, refinedCarbs: -3, sweets: -3, starchyVeg: -2, legumes: -1 },
+          cookingDemand: 'high', socialFlexibility: 'medium', scheduleDemand: 'medium', mealsPattern: 'standard'
+        },
+        {
+          id: 'paleo', name: 'Paleo',
+          description: 'Meat, fish, vegetables and fruit — modelled on foods available before farming.',
+          guideUrl: null,
+          sustainability: 'Challenging',
+          foodWeights: { redMeat: 2, poultry: 2, fish: 2, eggs: 2, leafyVeg: 2, cookedVeg: 2, starchyVeg: 1, breadPasta: -3, rice: -2, wholeGrains: -2, refinedCarbs: -3, milk: -2, cheese: -2, yogurt: -2, legumes: -2, sweets: -2 },
+          cookingDemand: 'high', socialFlexibility: 'medium', scheduleDemand: 'low', mealsPattern: 'standard'
+        },
+        {
+          id: 'intermittent-fasting', name: 'Intermittent Fasting (16:8)',
+          description: 'A daily eating window (typically 8 hours) rather than a list of foods to avoid.',
+          guideUrl: '../guides/intermittent-fasting.html',
+          sustainability: 'Moderate',
+          foodWeights: { skipMeals: 5, snacking: -2 },
+          cookingDemand: 'low', socialFlexibility: 'medium', scheduleDemand: 'high', mealsPattern: 'few'
+        },
+        {
+          id: 'low-carb', name: 'Low-Carb',
+          description: 'A lighter touch than keto — fewer starchy carbs, more protein and vegetables.',
+          guideUrl: null,
+          sustainability: 'Moderate',
+          foodWeights: { redMeat: 1, poultry: 1, fish: 2, eggs: 2, cheese: 1, leafyVeg: 2, cookedVeg: 1, breadPasta: -2, rice: -2, refinedCarbs: -2, sweets: -2, wholeGrains: -1 },
+          cookingDemand: 'medium', socialFlexibility: 'high', scheduleDemand: 'low', mealsPattern: 'any'
+        },
+        {
+          id: 'flexitarian', name: 'Flexitarian',
+          description: 'Mostly plant-based, with meat and fish enjoyed occasionally rather than daily.',
+          guideUrl: null,
+          sustainability: 'Easy',
+          foodWeights: { leafyVeg: 2, cookedVeg: 2, legumes: 2, tofu: 1, wholeGrains: 1, fish: 1, redMeat: -1, sweets: -1 },
+          cookingDemand: 'medium', socialFlexibility: 'high', scheduleDemand: 'low', mealsPattern: 'any'
+        },
+        {
+          id: 'vegetarian', name: 'Vegetarian',
+          description: 'No meat or fish, built around vegetables, grains, legumes, eggs and dairy.',
+          guideUrl: null,
+          sustainability: 'Moderate',
+          foodWeights: { leafyVeg: 2, cookedVeg: 2, legumes: 2, tofu: 2, wholeGrains: 1, milk: 1, cheese: 1, yogurt: 1, eggs: 1, redMeat: -3, poultry: -3, fish: -2 },
+          cookingDemand: 'medium', socialFlexibility: 'medium', scheduleDemand: 'low', mealsPattern: 'any'
+        },
+        {
+          id: 'vegan', name: 'Vegan',
+          description: 'No animal products at all — entirely plant-based.',
+          guideUrl: null,
+          sustainability: 'Challenging',
+          foodWeights: { leafyVeg: 2, cookedVeg: 2, legumes: 2, tofu: 2, wholeGrains: 2, starchyVeg: 1, redMeat: -3, poultry: -3, fish: -3, eggs: -3, milk: -3, cheese: -3, yogurt: -2 },
+          cookingDemand: 'high', socialFlexibility: 'low', scheduleDemand: 'low', mealsPattern: 'any'
+        },
+        {
+          id: 'whole30', name: 'Whole30',
+          description: 'A strict 30-day reset cutting out sugar, alcohol, grains, legumes and dairy.',
+          guideUrl: null,
+          sustainability: 'Challenging',
+          foodWeights: { redMeat: 1, poultry: 1, fish: 1, eggs: 1, leafyVeg: 2, cookedVeg: 2, starchyVeg: 1, breadPasta: -2, rice: -2, wholeGrains: -2, refinedCarbs: -3, milk: -2, cheese: -2, yogurt: -2, legumes: -1, sweets: -3, snacking: -2 },
+          cookingDemand: 'high', socialFlexibility: 'low', scheduleDemand: 'medium', mealsPattern: 'standard'
+        },
+        {
+          id: 'dash', name: 'DASH',
+          description: 'Designed to support healthy blood pressure — vegetables, whole grains, lean protein, less salt and sugar.',
+          guideUrl: null,
+          sustainability: 'Moderate',
+          foodWeights: { leafyVeg: 2, cookedVeg: 2, wholeGrains: 2, poultry: 1, fish: 1, legumes: 1, milk: 1, yogurt: 1, redMeat: -1, sweets: -2, refinedCarbs: -1, snacking: -1 },
+          cookingDemand: 'medium', socialFlexibility: 'high', scheduleDemand: 'low', mealsPattern: 'any'
+        },
+        {
+          id: 'carnivore', name: 'Carnivore',
+          description: 'Animal foods only — meat, fish, eggs and some dairy, nothing else.',
+          guideUrl: '../guides/what-is-carnivore.html',
+          sustainability: 'Challenging',
+          foodWeights: { redMeat: 3, poultry: 2, fish: 2, eggs: 2, cheese: 1, leafyVeg: -3, cookedVeg: -3, starchyVeg: -3, breadPasta: -3, rice: -3, wholeGrains: -3, refinedCarbs: -3, legumes: -3, tofu: -3, sweets: -2, milk: -1, yogurt: -1 },
+          cookingDemand: 'high', socialFlexibility: 'low', scheduleDemand: 'medium', mealsPattern: 'standard'
+        },
+        {
+          id: 'pescatarian', name: 'Pescatarian',
+          description: 'Vegetarian plus fish and seafood — no other meat.',
+          guideUrl: null,
+          sustainability: 'Moderate',
+          foodWeights: { fish: 3, eggs: 1, leafyVeg: 2, cookedVeg: 2, legumes: 2, tofu: 1, wholeGrains: 1, milk: 1, cheese: 1, yogurt: 1, redMeat: -3, poultry: -3 },
+          cookingDemand: 'medium', socialFlexibility: 'high', scheduleDemand: 'low', mealsPattern: 'any'
+        },
+        {
+          id: 'low-fodmap', name: 'Low-FODMAP',
+          description: 'An elimination approach often used with a dietitian to find foods that trigger digestive discomfort.',
+          guideUrl: null,
+          sustainability: 'Challenging',
+          foodWeights: { poultry: 1, fish: 1, eggs: 1, rice: 1, redMeat: 1, leafyVeg: 1, cookedVeg: 0.5, legumes: -3, milk: -2, cheese: -1, yogurt: -2, wholeGrains: -1, breadPasta: -2, sweets: -1 },
+          cookingDemand: 'high', socialFlexibility: 'low', scheduleDemand: 'medium', mealsPattern: 'standard'
+        },
+        {
+          id: 'anti-inflammatory', name: 'Anti-Inflammatory',
+          description: 'A whole-foods approach built around omega-3s, colourful produce, and less processed food.',
+          guideUrl: null,
+          sustainability: 'Easy',
+          foodWeights: { fish: 2, leafyVeg: 2, cookedVeg: 2, legumes: 1, wholeGrains: 1, tofu: 1, refinedCarbs: -2, sweets: -2, redMeat: -1, snacking: -1 },
+          cookingDemand: 'medium', socialFlexibility: 'high', scheduleDemand: 'low', mealsPattern: 'any'
+        }
+      ];
+
+      /* ═══════════════════════════════════════════
+         SCORING ENGINE
+      ═══════════════════════════════════════════ */
+
+      var COOK_ANSWERS = ['cook', 'mixed', 'eatout'];
+      var SOCIAL_ANSWERS = ['rarely', 'monthly', 'weekly', 'often'];
+      var SCHEDULE_ANSWERS = ['structured', 'flexible', 'unpredictable'];
+      var MEALS_ANSWERS = ['2', '3', '4-5', 'varies'];
+
+      var COOK_TABLE = {
+        high:   { cook: 3, mixed: 0, eatout: -3 },
+        medium: { cook: 2, mixed: 1, eatout: -1 },
+        low:    { cook: 1, mixed: 1, eatout: 1 }
+      };
+      var SOCIAL_TABLE = {
+        high:   { rarely: 1, monthly: 1, weekly: 1, often: 1 },
+        medium: { rarely: 1, monthly: 0, weekly: -1, often: -2 },
+        low:    { rarely: 2, monthly: 0, weekly: -2, often: -3 }
+      };
+      var SCHEDULE_TABLE = {
+        high:   { structured: 3, flexible: 0, unpredictable: -3 },
+        medium: { structured: 1, flexible: 1, unpredictable: 0 },
+        low:    { structured: 1, flexible: 1, unpredictable: 1 }
+      };
+
+      function cookingScore(demand, ans) { return COOK_TABLE[demand][ans]; }
+      function socialScore(flex, ans) { return SOCIAL_TABLE[flex][ans]; }
+      function scheduleScore(demand, ans) { return SCHEDULE_TABLE[demand][ans]; }
+      function mealsScore(pattern, ans) {
+        if (pattern === 'any') return 2;
+        if (pattern === 'few') return ans === '2' ? 3 : (ans === 'varies' ? 1 : -1);
+        return ans === '3' ? 3 : (ans === '2' ? 1 : -1); // 'standard'
+      }
+
+      function rangeOf(fn, demand, answers) {
+        var vals = answers.map(function (a) { return fn(demand, a); });
+        return { max: Math.max.apply(null, vals), min: Math.min.apply(null, vals) };
+      }
+
+      function scoreDiet(diet, foodAnswers, lifestyleAnswers) {
+        var raw = 0, maxScore = 0, minScore = 0;
+        var contributions = [];
+
+        Object.keys(diet.foodWeights).forEach(function (itemId) {
+          var w = diet.foodWeights[itemId];
+          var absW = Math.abs(w);
+          maxScore += absW;
+          minScore -= absW;
+          var ans = foodAnswers[itemId] || 'neutral';
+          var mult = ans === 'love' ? 1 : (ans === 'hardno' ? -1 : 0.3);
+          var contribution = w * mult;
+          raw += contribution;
+          if (ans !== 'neutral') {
+            contributions.push({ id: itemId, contribution: contribution, type: (w > 0 && ans === 'love') ? 'love' : ((w < 0 && ans === 'hardno') ? 'avoid' : null) });
+          }
+        });
+
+        var cookRange = rangeOf(cookingScore, diet.cookingDemand, COOK_ANSWERS);
+        var socialRange = rangeOf(socialScore, diet.socialFlexibility, SOCIAL_ANSWERS);
+        var schedRange = rangeOf(scheduleScore, diet.scheduleDemand, SCHEDULE_ANSWERS);
+        var mealsRange = rangeOf(mealsScore, diet.mealsPattern, MEALS_ANSWERS);
+
+        var cookPts = cookingScore(diet.cookingDemand, lifestyleAnswers.cooking);
+        var socialPts = socialScore(diet.socialFlexibility, lifestyleAnswers.social);
+        var schedPts = scheduleScore(diet.scheduleDemand, lifestyleAnswers.schedule);
+        var mealsPts = mealsScore(diet.mealsPattern, lifestyleAnswers.meals);
+
+        raw += cookPts + socialPts + schedPts + mealsPts;
+        maxScore += cookRange.max + socialRange.max + schedRange.max + mealsRange.max;
+        minScore += cookRange.min + socialRange.min + schedRange.min + mealsRange.min;
+
+        var pct = ((raw - minScore) / (maxScore - minScore)) * 100;
+        pct = Math.max(20, Math.min(96, Math.round(pct)));
+
+        var bestLifestyle = [
+          { dim: 'cooking', pts: cookPts }, { dim: 'social', pts: socialPts },
+          { dim: 'schedule', pts: schedPts }, { dim: 'meals', pts: mealsPts }
+        ].sort(function (a, b) { return b.pts - a.pts; })[0];
+
+        contributions.sort(function (a, b) { return b.contribution - a.contribution; });
+
+        return { pct: pct, topFood: contributions.filter(function (c) { return c.type && c.contribution > 0; }).slice(0, 2), bestLifestyle: bestLifestyle };
+      }
+
+      var LIFESTYLE_PHRASES = {
+        cooking: 'your cooking habits', social: 'how often you eat socially',
+        schedule: 'your daily schedule', meals: 'your meal pattern'
+      };
+
+      function explainMatch(diet, scoreResult) {
+        var clauses = scoreResult.topFood.map(function (c) {
+          var label = FOOD_LABELS[c.id];
+          return c.type === 'love' ? 'your love of ' + label : 'not missing ' + label;
+        });
+
+        var sentence;
+        if (clauses.length === 2) {
+          sentence = capitalize(clauses[0]) + ', plus ' + clauses[1] + ',';
+        } else if (clauses.length === 1) {
+          sentence = capitalize(clauses[0]);
+        } else {
+          return 'Based on your answers, ' + diet.name + ' fits your overall eating style and routine well.';
+        }
+
+        var lifestyleClause = '';
+        if (scoreResult.bestLifestyle && scoreResult.bestLifestyle.pts > 1) {
+          lifestyleClause = ', and ' + LIFESTYLE_PHRASES[scoreResult.bestLifestyle.dim] + ' fits its style well';
+        }
+
+        return sentence + ' lines up well with ' + diet.name + lifestyleClause + '.';
+      }
+
+      function capitalize(s) { return s.charAt(0).toUpperCase() + s.slice(1); }
+
+      /* ═══════════════════════════════════════════
+         STATE + RENDER
+      ═══════════════════════════════════════════ */
+
+      var foodAnswers = {};
+      FOOD_GROUPS.forEach(function (g) { g.items.forEach(function (i) { foodAnswers[i.id] = 'neutral'; }); });
+
+      var lifestyleAnswers = {};
+      LIFESTYLE_QUESTIONS.forEach(function (q) { lifestyleAnswers[q.id] = q.dflt; });
+
+      var TRI_OPTIONS = [
+        { val: 'love', icon: 'ti-heart' },
+        { val: 'neutral', icon: 'ti-minus' },
+        { val: 'hardno', icon: 'ti-x' }
+      ];
+
+      function renderFoodGroups() {
+        var wrap = document.getElementById('diet-food-groups');
+        var html = '';
+        FOOD_GROUPS.forEach(function (group) {
+          html += '<div class="diet-food-group"><div class="diet-food-group-title">' + group.title + '</div>';
+          group.items.forEach(function (item) {
+            html += '<div class="diet-food-row" data-item="' + item.id + '">';
+            html += '<span class="diet-food-label">' + item.label + (item.hint ? '<small>' + item.hint + '</small>' : '') + '</span>';
+            html += '<div class="diet-tri-toggle">';
+            TRI_OPTIONS.forEach(function (opt) {
+              var active = foodAnswers[item.id] === opt.val ? ' is-active' : '';
+              html += '<button type="button" class="diet-tri-btn' + active + '" data-val="' + opt.val + '"><i class="ti ' + opt.icon + '"></i></button>';
+            });
+            html += '</div></div>';
+          });
+          html += '</div>';
+        });
+        wrap.innerHTML = html;
+
+        wrap.querySelectorAll('.diet-food-row').forEach(function (row) {
+          var itemId = row.getAttribute('data-item');
+          row.querySelectorAll('.diet-tri-btn').forEach(function (btn) {
+            btn.addEventListener('click', function () {
+              foodAnswers[itemId] = btn.getAttribute('data-val');
+              row.querySelectorAll('.diet-tri-btn').forEach(function (b) { b.classList.toggle('is-active', b === btn); });
+              renderResults();
+            });
+          });
+        });
+      }
+
+      function renderLifestyleQuestions() {
+        var wrap = document.getElementById('diet-lifestyle-qs');
+        var html = '';
+        LIFESTYLE_QUESTIONS.forEach(function (q) {
+          html += '<div class="diet-lifestyle-q" data-question="' + q.id + '"><label>' + q.label + '</label><div class="diet-choice-group">';
+          q.options.forEach(function (opt) {
+            var active = lifestyleAnswers[q.id] === opt.val ? ' is-active' : '';
+            html += '<button type="button" class="diet-choice-btn' + active + '" data-val="' + opt.val + '">' + opt.label + '</button>';
+          });
+          html += '</div></div>';
+        });
+        wrap.innerHTML = html;
+
+        wrap.querySelectorAll('.diet-lifestyle-q').forEach(function (block) {
+          var qId = block.getAttribute('data-question');
+          block.querySelectorAll('.diet-choice-btn').forEach(function (btn) {
+            btn.addEventListener('click', function () {
+              lifestyleAnswers[qId] = btn.getAttribute('data-val');
+              block.querySelectorAll('.diet-choice-btn').forEach(function (b) { b.classList.toggle('is-active', b === btn); });
+              renderResults();
+            });
+          });
+        });
+      }
+
+      function sustainClass(label) {
+        return 'diet-sustain-' + label.toLowerCase();
+      }
+
+      function renderResults() {
+        var scored = DIETS.map(function (diet) {
+          var result = scoreDiet(diet, foodAnswers, lifestyleAnswers);
+          return { diet: diet, result: result };
+        });
+        scored.sort(function (a, b) { return b.result.pct - a.result.pct; });
+        var top = scored.slice(0, 3);
+
+        var html = top.map(function (entry, i) {
+          var diet = entry.diet, result = entry.result;
+          var guideLink = diet.guideUrl
+            ? '<a href="' + diet.guideUrl + '" class="diet-result-guide">Read our full guide on ' + diet.name + ' →</a>'
+            : '';
+          return '' +
+            '<div class="diet-result-card">' +
+              '<div class="diet-result-rank">#' + (i + 1) + ' match</div>' +
+              '<div class="diet-result-head"><h3>' + diet.name + '</h3><span class="diet-result-score">' + result.pct + '%</span></div>' +
+              '<div class="diet-result-bar"><div class="diet-result-bar-fill" style="width:' + result.pct + '%"></div></div>' +
+              '<p class="diet-result-why">' + explainMatch(diet, result) + '</p>' +
+              '<div class="diet-result-meta">' +
+                '<span class="diet-sustain-pill ' + sustainClass(diet.sustainability) + '">' + diet.sustainability + ' to sustain</span>' +
+                guideLink +
+              '</div>' +
+            '</div>';
+        }).join('');
+
+        document.getElementById('diet-results').innerHTML = html;
+
+        // animate bars in after paint
+        requestAnimationFrame(function () {
+          document.querySelectorAll('.diet-result-bar-fill').forEach(function (el) {
+            var w = el.style.width;
+            el.style.width = '0%';
+            requestAnimationFrame(function () { el.style.width = w; });
+          });
+        });
+      }
+
+      renderFoodGroups();
+      renderLifestyleQuestions();
+      renderResults();
+
+      // FAQ accordion
+      document.querySelectorAll('.diet-faq-item').forEach(function (item) {
+        var btn = item.querySelector('.diet-faq-q');
+        var answer = item.querySelector('.diet-faq-a');
+        function sync() {
+          if (item.classList.contains('is-open')) {
+            answer.style.maxHeight = answer.scrollHeight + 'px';
+            btn.setAttribute('aria-expanded', 'true');
+          } else {
+            answer.style.maxHeight = '0px';
+            btn.setAttribute('aria-expanded', 'false');
+          }
+        }
+        btn.addEventListener('click', function () {
+          item.classList.toggle('is-open');
+          sync();
+        });
+        sync();
+      });
+
+    })();
+  </script>
+
+</body>
+</html>
