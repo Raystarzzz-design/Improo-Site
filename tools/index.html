@@ -88,7 +88,6 @@
       width: 100%;
       aspect-ratio: 1;
       border-radius: 20px;
-      background: linear-gradient(145deg, #dbeafe 0%, #eff6ff 55%, #f0fdf4 100%);
       border: 1px solid var(--line);
       display: grid;
       place-items: center;
@@ -96,21 +95,41 @@
       overflow: hidden;
     }
 
-    .tool-feature-visual i {
-      font-size: 56px;
-      color: var(--blue);
-      position: relative;
-      z-index: 1;
-    }
-
-    .tool-feature-visual::before {
+    .tool-feature-visual::before,
+    .tool-feature-visual::after {
       content: '';
       position: absolute;
-      width: 140px; height: 140px;
       border-radius: 50%;
-      background: rgba(37,99,235,0.10);
-      top: -30px; right: -30px;
     }
+
+    .tool-visual-bmi {
+      background: linear-gradient(145deg, #dbeafe 0%, #eef2ff 45%, #fef3e2 100%);
+    }
+    .tool-visual-bmi::before { width: 150px; height: 150px; background: rgba(37,99,235,0.14); top: -40px; right: -40px; }
+    .tool-visual-bmi::after { width: 110px; height: 110px; background: rgba(245,158,11,0.14); bottom: -30px; left: -30px; }
+
+    .tool-mini-gauge { width: 78%; position: relative; z-index: 1; filter: drop-shadow(0 6px 14px rgba(15,31,61,0.12)); }
+
+    .tool-visual-diet {
+      background: linear-gradient(145deg, #dcfce7 0%, #fef9e7 50%, #fee2e2 100%);
+    }
+    .tool-visual-diet::before { width: 150px; height: 150px; background: rgba(22,163,74,0.14); top: -40px; right: -40px; }
+    .tool-visual-diet::after { width: 110px; height: 110px; background: rgba(220,38,38,0.12); bottom: -30px; left: -30px; }
+
+    .diet-bubble-cluster { position: relative; width: 100%; height: 100%; z-index: 1; }
+    .diet-bubble {
+      position: absolute;
+      width: 25%; height: 25%;
+      min-width: 44px; min-height: 44px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      color: #fff; font-size: 19px;
+      box-shadow: 0 8px 18px rgba(15,31,61,0.20), 0 0 0 4px #fff;
+    }
+    .diet-bubble:nth-child(1) { top: 14%; left: 12%; transform: rotate(-8deg); }
+    .diet-bubble:nth-child(2) { top: 10%; left: 54%; transform: rotate(6deg); }
+    .diet-bubble:nth-child(3) { top: 56%; left: 8%; transform: rotate(9deg); }
+    .diet-bubble:nth-child(4) { top: 52%; left: 52%; transform: rotate(-6deg); }
 
     .tool-feature-badge {
       display: inline-flex;
@@ -226,8 +245,20 @@
       <!-- TOOLS -->
       <div class="tools-body">
         <a href="bmi-calculator.html" class="tool-feature-card">
-          <div class="tool-feature-visual">
-            <i class="ti ti-gauge"></i>
+          <div class="tool-feature-visual tool-visual-bmi">
+            <svg viewBox="0 0 200 120" class="tool-mini-gauge" aria-hidden="true">
+              <defs>
+                <linearGradient id="hubGaugeGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stop-color="#60a5fa"/>
+                  <stop offset="32%" stop-color="#22c55e"/>
+                  <stop offset="62%" stop-color="#f59e0b"/>
+                  <stop offset="100%" stop-color="#ef4444"/>
+                </linearGradient>
+              </defs>
+              <path d="M 20 102 A 80 80 0 0 1 180 102" fill="none" stroke="url(#hubGaugeGradient)" stroke-width="16" stroke-linecap="round"/>
+              <line x1="100" y1="102" x2="100" y2="32" stroke="#0c1a2e" stroke-width="5" stroke-linecap="round" transform="rotate(-12 100 102)"/>
+              <circle cx="100" cy="102" r="9" fill="#0c1a2e"/>
+            </svg>
           </div>
           <div>
             <div class="tool-feature-badge">
@@ -241,8 +272,13 @@
         </a>
 
         <a href="diet-quiz.html" class="tool-feature-card" style="margin-top: 16px;">
-          <div class="tool-feature-visual">
-            <i class="ti ti-salad"></i>
+          <div class="tool-feature-visual tool-visual-diet">
+            <div class="diet-bubble-cluster">
+              <span class="diet-bubble" style="background:#16a34a;"><i class="ti ti-salad"></i></span>
+              <span class="diet-bubble" style="background:#3b82f6;"><i class="ti ti-fish"></i></span>
+              <span class="diet-bubble" style="background:#f59e0b;"><i class="ti ti-egg"></i></span>
+              <span class="diet-bubble" style="background:#dc2626;"><i class="ti ti-apple"></i></span>
+            </div>
           </div>
           <div>
             <div class="tool-feature-badge">
