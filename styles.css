@@ -1699,6 +1699,7 @@ h2.head .it { font-family: 'Lora', Georgia, serif; font-style: italic; font-weig
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  justify-content: center;
 }
 .hero-intro::after {
   content: "";
