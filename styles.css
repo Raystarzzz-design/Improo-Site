@@ -1873,3 +1873,62 @@ h2.head .it { font-family: 'Lora', Georgia, serif; font-style: italic; font-weig
   .hero-intro .rotator .slide { animation: none; opacity: 1; position: relative; }
   .hero-intro .rotator { height: auto; display: grid; gap: 10px; }
 }
+
+.hero-intro .eyebrow { position: relative; z-index: 1; }
+
+.hero-intro::before {
+  content: ""; position: absolute; left: -80px; top: -80px;
+  width: 200px; height: 200px; border-radius: 50%;
+  background: repeating-radial-gradient(circle at center,
+    transparent 0 9px, rgba(37,99,235,0.07) 9px 10px);
+  pointer-events: none;
+}
+
+.hero-intro .rotator {
+  position: relative; height: 2.9em;
+  font-size: clamp(26px, 2.6vw, 38px); line-height: 1.28;
+  width: 100%; z-index: 1;
+}
+.hero-intro .rotator .slide {
+  position: absolute; inset: 0;
+  display: flex; flex-direction: column; align-items: flex-start; justify-content: center;
+  opacity: 0;
+  font-family: 'Sora', Arial, sans-serif; font-weight: 700; letter-spacing: -0.02em;
+  color: var(--blue-deep);
+  animation: heroCycle 25s infinite;
+}
+.hero-intro .rotator .slide .accent { color: var(--blue); }
+.hero-intro .rotator .slide.brand {
+  background: linear-gradient(135deg, #3b9ef5, #2563eb);
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.hero-intro .rotator .slide:nth-child(1) { animation-delay: 0s;  }
+.hero-intro .rotator .slide:nth-child(2) { animation-delay: 5s;  }
+.hero-intro .rotator .slide:nth-child(3) { animation-delay: 10s; }
+.hero-intro .rotator .slide:nth-child(4) { animation-delay: 15s; }
+.hero-intro .rotator .slide:nth-child(5) { animation-delay: 20s; }
+@keyframes heroCycle {
+  0%   { opacity: 0; transform: translateY(12px); }
+  6%   { opacity: 1; transform: translateY(0); }
+  17%  { opacity: 1; transform: translateY(0); }
+  22%  { opacity: 0; transform: translateY(-12px); }
+  100% { opacity: 0; }
+}
+
+.hero-intro .subline {
+  margin-top: 22px; font-size: 0.98rem; color: var(--muted);
+  font-weight: 300; line-height: 1.5; position: relative; z-index: 1; max-width: 300px;
+}
+
+/* fix: "Imp" + "roo" mogen niet onder elkaar staan door flex-direction:column hierboven */
+.hero-intro .rotator .slide.brand {
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-intro .rotator .slide { animation: none; opacity: 1; position: relative; }
+  .hero-intro .rotator { height: auto; display: grid; gap: 10px; }
+}
