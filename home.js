@@ -134,7 +134,7 @@ window.addEventListener('load', function () {
 
   /* ── JOURNEY ANIMATION ── */
   var path  = document.getElementById('jprog');
-  if (!path) return;
+  if (path) {
   var jlen  = path.getTotalLength();
   var drawn = path;
   drawn.style.strokeDasharray  = jlen;
@@ -246,6 +246,7 @@ window.addEventListener('load', function () {
   start();
 
   gsap.to('.flag-cloth', { rotation: -8, transformOrigin: 'left center', duration: .6, yoyo: true, repeat: -1, ease: 'sine.inOut' });
+  } /* ── einde journey-animatie: alleen draaien als de journey-SVG nog bestaat ── */
 
   /* scroll reveals */
   gsap.utils.toArray('.reveal').forEach(function (el) {

@@ -59,148 +59,98 @@
 </header>
 
 <!-- ── HERO ── -->
-<section class="hero" id="home">
+<!-- ── HERO (nieuwe mockup-stijl) ── -->
+<section class="hero-v3" id="home">
+  <div class="wrap">
+    <div class="hero-shell">
 
-  <div class="hero-slider-wrapper">
+      <!-- bovenste rij: intro + 2 topic-kaarten -->
+      <div class="hero-top">
+        <div class="hero-intro">
+          <span class="eyebrow" data-hero>Health · Weight loss · Movement · Mindset</span>
+          <h1 data-hero>Your complete health guide.<br><span class="grad">All in one place.</span></h1>
+          <p class="lead" data-hero>Clear, practical and science-backed information about weight loss, nutrition and a healthy lifestyle. No more confusion, just results.</p>
 
-    <button class="hero-slider-arrow hero-slider-prev" aria-label="Previous slide">
-      <i class="ti ti-chevron-left"></i>
-    </button>
-    <button class="hero-slider-arrow hero-slider-next" aria-label="Next slide">
-      <i class="ti ti-chevron-right"></i>
-    </button>
+          <div class="proof-label">Trusted by the community</div>
+          <div class="proof-row">
+            <div class="proof-avatars"><span>R</span><span>M</span><span>J</span></div>
+            <div class="proof-count">15,000+</div>
+          </div>
 
-    <div class="hero-slides-container">
+          <ul class="hero-checks">
+            <li><i class="ti ti-circle-check-filled"></i> Nutrition</li>
+            <li><i class="ti ti-circle-check-filled"></i> Guides</li>
+            <li><i class="ti ti-circle-check-filled"></i> Community</li>
+            <li><i class="ti ti-circle-check-filled"></i> Tools</li>
+          </ul>
 
-      <!-- Slide 1: main hero -->
-      <div class="hero-slide is-active">
-        <span class="eyebrow" data-hero>Health · Weight loss · Movement · Mindset</span>
-        <h1 data-hero>Every journey<br>starts with <span class="grad">one step.</span><span class="alone">You're not alone.</span></h1>
-        <p class="lead" data-hero>Most people quit because they feel alone and overwhelmed. We're building a community where real support, clear information and the right tools come together — so you can keep moving forward, one step at a time.</p>
-        <div class="hero-actions" data-hero>
-          <a href="#waitlist" class="btn btn-primary">Join the waitlist →</a>
-          <a href="insights/index.html" class="btn btn-ghost">Read our insights</a>
+          <div class="hero-actions" data-hero>
+            <a href="#waitlist" class="btn btn-primary">Start your journey →</a>
+          </div>
         </div>
+
+        <a class="topic-card" href="insights/index.html">
+          <div class="topic-photo">Nutrition foto</div>
+          <div class="topic-body">
+            <h3>Nutrition</h3>
+            <p>Eat smarter. Fuel your body. Clear guidance on what to eat.</p>
+          </div>
+        </a>
+
+        <a class="topic-card" href="insights/index.html">
+          <div class="topic-photo">Training foto</div>
+          <div class="topic-body">
+            <h3>Training</h3>
+            <p>Move better. Get stronger. Practical training plans for all levels.</p>
+          </div>
+        </a>
       </div>
 
-      <!-- Slide 2: 90-Day Tracker book -->
-      <div class="hero-slide hero-slide--book">
-        <div class="hero-grid">
-          <div class="hero-copy">
-            <div class="hero-badge">
-              <i class="ti ti-book" style="font-size:13px;"></i>
-              Now available on Amazon
-            </div>
-            <p style="font-size:0.72rem;color:#8892aa;letter-spacing:0.12em;text-transform:uppercase;margin:0 0 10px;font-weight:600;">Improo · 90-Day Tracker</p>
-            <h1 style="color:#1a2a4a;">Track every day.<br><em style="font-style:italic;color:#4a7fd4;">Build real habits.</em></h1>
-            <p class="hero-text">A physical 90-day tracker designed around small daily steps. No perfection required — just showing up. One day at a time.</p>
-            <div class="hero-actions">
-              <a href="https://www.amazon.com/dp/B0H446L1KD" target="_blank" rel="noopener" class="btn btn-primary">Get it on Amazon →</a>
-              <a href="#" class="follow-link">Learn more</a>
-            </div>
-          </div>
-          <div class="hero-visual">
-            <div style="display:flex;justify-content:center;align-items:center;width:100%;">
-              <img src="images/book-cover.png" alt="90-Day Habit Builder by Improo" style="width:260px;height:auto;border-radius:12px;box-shadow:0 8px 32px rgba(15,31,61,0.18);" />
-            </div>
-          </div>
+      <!-- onderste rij: grote Sleep-kaart + 2 kaarten -->
+      <div class="hero-bottom">
+        <div class="topic-card tall">
+          <div class="topic-photo">Sleep foto</div>
+          <div class="topic-caption">Sleep</div>
         </div>
+
+        <a class="topic-card" href="insights/index.html">
+          <div class="topic-photo">Sleep &amp; recovery foto</div>
+          <div class="topic-body">
+            <h3>Sleep &amp; recovery</h3>
+            <p>Rest well. Be better. Essential tips for better sleep and recovery.</p>
+          </div>
+        </a>
+
+        <a class="topic-card" href="insights/index.html">
+          <div class="topic-photo">Recipes foto</div>
+          <div class="topic-body">
+            <h3>Healthy recipes</h3>
+            <p>Healthy &amp; tasty meal ideas. Delicious and easy to make.</p>
+          </div>
+        </a>
+      </div>
+
+      <!-- Tools + Roadmap balken -->
+      <div class="hero-wide">
+        <a class="wide-card wide-tools" href="tools/index.html">
+          <div class="wc-icons"><i class="ti ti-calculator"></i><i class="ti ti-activity-heartbeat"></i></div>
+          <div>
+            <h3>Tools</h3>
+            <p>Calculate what you need. Track your progress. Instant personalized tools.</p>
+          </div>
+        </a>
+        <a class="wide-card wide-roadmap" href="roadmap.html">
+          <div class="wc-icons"><i class="ti ti-compass"></i><i class="ti ti-route"></i></div>
+          <div>
+            <h3>Roadmap</h3>
+            <p>Step-by-step plan for your goals. Find your path to success.</p>
+            <span class="btn-mini">Explore roadmap →</span>
+          </div>
+        </a>
       </div>
 
     </div>
-
-    <div class="hero-slider-dots">
-      <button class="hero-dot is-active" data-index="0" aria-label="Go to slide 1"></button>
-      <button class="hero-dot" data-index="1" aria-label="Go to slide 2"></button>
-    </div>
-
   </div>
-
-  <!-- Journey SVG — the animated walk -->
-  <div class="journey" aria-hidden="true">
-    <svg viewBox="0 0 1440 230" preserveAspectRatio="xMidYMid meet">
-      <text class="j-tagline" x="120" y="40">Every journey is personal.</text>
-      <text id="j-tagline2" class="j-tagline2" x="445" y="40" opacity="0"></text>
-
-      <!-- goal: summit + flag -->
-      <path class="j-peak-fill" d="M1300,160 L1360,64 L1420,160 Z"/>
-      <path class="j-peak" d="M1300,160 L1360,64 L1420,160"/>
-      <path class="j-snow" d="M1360,64 L1342,92 L1352,86 L1361,100 L1372,83 L1380,96 Z"/>
-      <line class="flag-pole" x1="1360" y1="64" x2="1360" y2="36"/>
-      <path class="flag-cloth" d="M1360,38 L1384,45 L1360,53 Z"/>
-      <text class="j-label goal" x="1360" y="28" text-anchor="middle">The goal</text>
-
-      <!-- obstacle 1: weigh-in -->
-      <g class="j-ob">
-        <path class="j-rock" d="M262,160 Q290,126 318,160 Z"/>
-        <circle class="j-chip" cx="290" cy="118" r="12"/>
-        <rect class="j-ico" x="283" y="113" width="14" height="7" rx="1.5"/>
-        <line class="j-ico-l" x1="290" y1="120" x2="290" y2="127"/>
-        <text class="j-cap" x="290" y="190" text-anchor="middle">Weigh-in</text>
-      </g>
-      <!-- obstacle 2: cravings -->
-      <g class="j-ob">
-        <path class="j-rock" d="M482,160 Q510,122 538,160 Z"/>
-        <circle class="j-chip" cx="510" cy="113" r="13"/>
-        <rect class="j-ico-f" x="503" y="111" width="7" height="7" rx="1"/>
-        <rect class="j-ico-f" x="510" y="111" width="7" height="7" rx="1"/>
-        <rect class="j-ico-f" x="506.5" y="105" width="7" height="7" rx="1"/>
-        <text class="j-cap" x="510" y="190" text-anchor="middle">Cravings</text>
-      </g>
-      <!-- obstacle 3: injury (companion joins here) -->
-      <g class="j-ob">
-        <path class="j-rock injury" d="M700,160 Q730,118 760,160 Z"/>
-        <circle class="j-chip injury" cx="730" cy="110" r="13"/>
-        <line class="j-ico-x" x1="730" y1="104" x2="730" y2="117"/>
-        <line class="j-ico-x" x1="724" y1="110" x2="736" y2="110"/>
-        <text class="j-cap" x="730" y="190" text-anchor="middle">Injury</text>
-      </g>
-      <!-- obstacle 4: self-doubt -->
-      <g class="j-ob">
-        <path class="j-rock" d="M922,160 Q950,124 978,160 Z"/>
-        <circle class="j-chip" cx="950" cy="116" r="12"/>
-        <path class="j-ico-q" d="M946,113 Q946,108 951,108 Q956,108 956,112 Q956,115 951,116 L951,118"/>
-        <circle class="j-ico-qd" cx="951" cy="121.5" r="1.1"/>
-        <text class="j-cap" x="950" y="190" text-anchor="middle">Self-doubt</text>
-      </g>
-      <!-- obstacle 5: plateau -->
-      <g class="j-ob">
-        <path class="j-rock" d="M1132,160 Q1160,128 1188,160 Z"/>
-        <circle class="j-chip" cx="1160" cy="120" r="12"/>
-        <line class="j-ico-l" x1="1152" y1="120" x2="1168" y2="120"/>
-        <text class="j-cap" x="1160" y="190" text-anchor="middle">Plateau</text>
-      </g>
-
-      <text id="j-support" class="j-support" x="730" y="86" text-anchor="middle" opacity="0">+ support</text>
-
-      <path id="jline" d="M70,160 L248,160 Q290,112 332,160 L468,160 Q510,108 552,160 L686,160 Q730,100 774,160 L908,160 Q950,110 992,160 L1118,160 Q1160,114 1202,160 L1255,160 L1360,64"/>
-      <path id="jprog" d="M70,160 L248,160 Q290,112 332,160 L468,160 Q510,108 552,160 L686,160 Q730,100 774,160 L908,160 Q950,110 992,160 L1118,160 Q1160,114 1202,160 L1255,160 L1360,64"/>
-
-      <circle class="j-dot" cx="70" cy="160" r="7"/>
-      <text class="j-label" x="70" y="190" text-anchor="middle">Today's step</text>
-
-      <!-- companion: hidden until injury obstacle -->
-      <g id="companion" class="walker comp" stroke-width="3" opacity="0">
-        <circle cx="0" cy="-23" r="5"/>
-        <line x1="0" y1="-18" x2="0" y2="-2"/>
-        <g class="clegA" transform="translate(0,-2)"><line x1="0" y1="0" x2="-6" y2="15"/></g>
-        <g class="clegB" transform="translate(0,-2)"><line x1="0" y1="0" x2="6" y2="15"/></g>
-        <g class="cArmA" transform="translate(0,-13)"><line x1="0" y1="0" x2="-8" y2="7"/></g>
-        <g class="cArmB" transform="translate(0,-13)"><line x1="0" y1="0" x2="8" y2="7"/></g>
-      </g>
-
-      <!-- the traveller -->
-      <g id="walker" class="walker lead" stroke-width="3.2">
-        <circle cx="0" cy="-25" r="5.5"/>
-        <line x1="0" y1="-19.5" x2="0" y2="-2"/>
-        <g class="legA" transform="translate(0,-2)"><line x1="0" y1="0" x2="-7" y2="16"/></g>
-        <g class="legB" transform="translate(0,-2)"><line x1="0" y1="0" x2="7" y2="16"/></g>
-        <g class="armA" transform="translate(0,-14)"><line x1="0" y1="0" x2="-9" y2="8"/></g>
-        <g class="armB" transform="translate(0,-14)"><line x1="0" y1="0" x2="9" y2="8"/></g>
-      </g>
-    </svg>
-  </div>
-
 </section>
 
 <!-- ── STATS ── -->

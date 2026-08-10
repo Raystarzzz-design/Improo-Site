@@ -1667,3 +1667,159 @@ h2.head .it { font-family: 'Lora', Georgia, serif; font-style: italic; font-weig
   .foot-grid { grid-template-columns: 1fr; }
   .cta { padding: 72px 0; }
 }
+
+/* ═══════════════════════════════════════════════════════════
+   NIEUWE HERO (mockup-stijl, kaarten-grid)
+   Plak dit blok AAN HET EINDE van je bestaande styles.css.
+   Het gebruikt je eigen variabelen (--blue, --blue-pale, enz.)
+   en raakt geen enkele bestaande sectie aan.
+   ═══════════════════════════════════════════════════════════ */
+
+.hero-v3 { padding: 40px 0 56px; }
+
+.hero-shell {
+  background: var(--bg-2);
+  border-radius: var(--radius-xl);
+  padding: 22px;
+  box-shadow: var(--shadow);
+}
+
+.hero-top {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr 1fr;
+  gap: 18px;
+}
+
+/* intro-kaart linksboven */
+.hero-intro {
+  background: var(--panel-2);
+  border-radius: var(--radius-lg);
+  padding: 32px 30px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.hero-intro::after {
+  content: "";
+  position: absolute; right: -60px; bottom: -60px;
+  width: 220px; height: 220px; border-radius: 50%;
+  background: repeating-radial-gradient(circle at center,
+    transparent 0 9px, rgba(37,99,235,0.16) 9px 10px);
+  pointer-events: none;
+}
+.hero-intro .eyebrow { position: relative; z-index: 1; }
+.hero-intro h1 {
+  font-family: 'Sora', Arial, sans-serif; font-weight: 700;
+  font-size: clamp(26px, 2.7vw, 34px); line-height: 1.12;
+  letter-spacing: -0.025em; margin: 16px 0 0; color: var(--blue-deep);
+  position: relative; z-index: 1;
+}
+.hero-intro h1 .grad {
+  background: linear-gradient(120deg, var(--blue), var(--blue-light));
+  -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+}
+.hero-intro .lead {
+  font-size: 0.95rem; color: var(--muted); line-height: 1.6;
+  margin: 16px 0 0; max-width: 340px; font-weight: 300;
+  position: relative; z-index: 1;
+}
+
+.proof-label {
+  font-size: 0.7rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.1em; color: var(--muted); margin: 24px 0 10px;
+  position: relative; z-index: 1;
+}
+.proof-row { display: flex; align-items: center; gap: 12px; position: relative; z-index: 1; }
+.proof-avatars { display: flex; }
+.proof-avatars span {
+  width: 36px; height: 36px; border-radius: 50%; border: 2px solid var(--panel-2);
+  margin-left: -10px; background: var(--blue-pale);
+  display: grid; place-items: center; color: var(--blue-dark);
+  font-size: 0.8rem; font-weight: 700;
+}
+.proof-avatars span:first-child { margin-left: 0; }
+.proof-count { font-size: 1.05rem; font-weight: 700; color: var(--blue-deep); }
+
+.hero-checks {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 10px 18px;
+  margin: 22px 0 0; padding: 0; list-style: none;
+  position: relative; z-index: 1;
+}
+.hero-checks li { display: flex; align-items: center; gap: 8px; font-size: 0.88rem; color: var(--text); }
+.hero-checks i { color: var(--blue); font-size: 1.05rem; }
+
+.hero-v3 .hero-actions { display: flex; gap: 12px; margin: 26px 0 0; flex-wrap: wrap; position: relative; z-index: 1; }
+
+/* topic-kaarten met foto */
+.topic-card {
+  background: var(--panel);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  display: flex; flex-direction: column;
+  transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+}
+.topic-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 52px rgba(37,99,235,0.24);
+  border-color: var(--blue);
+}
+/* foto-placeholder — vervang later door <img loading="lazy"> */
+.topic-photo {
+  aspect-ratio: 16 / 11;
+  background:
+    linear-gradient(135deg, rgba(37,99,235,0.10), rgba(96,165,250,0.14)),
+    repeating-linear-gradient(45deg, #dbeafe 0 10px, #eaf2ff 10px 20px);
+  display: grid; place-items: center;
+  color: var(--muted); font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase;
+}
+.topic-body { padding: 14px 16px 18px; }
+.topic-body h3 {
+  margin: 0 0 6px; font-size: 0.92rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.03em; color: var(--blue-deep);
+}
+.topic-body p { margin: 0; font-size: 0.82rem; color: var(--muted); line-height: 1.45; }
+
+/* onderste rij + grote Sleep-kaart */
+.hero-bottom { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 18px; margin-top: 18px; }
+.topic-card.tall .topic-photo { aspect-ratio: auto; min-height: 200px; height: 100%; }
+.topic-card.tall .topic-caption {
+  text-align: center; padding: 12px; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.06em; font-size: 0.85rem; color: var(--blue-deep);
+}
+
+/* Tools + Roadmap brede balken */
+.hero-wide { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 18px; }
+.wide-card {
+  border-radius: var(--radius-lg); padding: 26px 28px;
+  display: grid; grid-template-columns: auto 1fr; gap: 20px; align-items: center;
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+.wide-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+.wide-card .wc-icons { display: flex; gap: 10px; font-size: 2rem; }
+.wide-card h3 { margin: 0 0 6px; font-size: 1.4rem; font-weight: 700; letter-spacing: 0.01em; }
+.wide-card p { margin: 0; font-size: 0.86rem; line-height: 1.5; opacity: 0.9; }
+.wide-tools { background: var(--blue-deep); color: #fff; }
+.wide-tools .wc-icons { color: var(--blue-light); }
+.wide-roadmap { background: linear-gradient(135deg, var(--blue), var(--blue-2)); color: #fff; }
+.wide-roadmap .wc-icons { color: #fff; }
+.wide-roadmap .btn-mini {
+  display: inline-flex; align-items: center; gap: 6px; margin-top: 12px;
+  background: #fff; color: var(--blue-dark); padding: 8px 16px; border-radius: 20px;
+  font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.03em;
+}
+
+/* ── responsief voor de nieuwe hero ── */
+@media (max-width: 900px) {
+  .hero-top { grid-template-columns: 1fr 1fr; }
+  .hero-intro { grid-column: 1 / -1; }
+  .hero-bottom { grid-template-columns: 1fr 1fr; }
+  .hero-wide { grid-template-columns: 1fr; }
+}
+@media (max-width: 560px) {
+  .hero-top { grid-template-columns: 1fr; }
+  .hero-bottom { grid-template-columns: 1fr; }
+  .hero-checks { grid-template-columns: 1fr; }
+}
