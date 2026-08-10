@@ -1852,6 +1852,7 @@ h2.head .it { font-family: 'Lora', Georgia, serif; font-style: italic; font-weig
 }
 .hero-intro .rotator .slide .accent { color: var(--blue); }
 .hero-intro .rotator .slide.brand {
+  column-gap: 0;
   background: linear-gradient(135deg, #3b9ef5, #2563eb);
   -webkit-background-clip: text; background-clip: text;
   -webkit-text-fill-color: transparent;
