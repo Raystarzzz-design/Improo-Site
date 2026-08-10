@@ -1687,7 +1687,6 @@ h2.head .it { font-family: 'Lora', Georgia, serif; font-style: italic; font-weig
 .hero-top {
   display: grid;
   grid-template-columns: 1.15fr 1fr 1fr;
-  align-items: start;
   gap: 18px;
 }
 
@@ -1770,6 +1769,8 @@ h2.head .it { font-family: 'Lora', Georgia, serif; font-style: italic; font-weig
 /* foto-placeholder — vervang later door <img loading="lazy"> */
 .topic-photo {
   aspect-ratio: 16 / 11;
+  flex: 1 1 auto;
+  min-height: 0;
   background:
     linear-gradient(135deg, rgba(37,99,235,0.10), rgba(96,165,250,0.14)),
     repeating-linear-gradient(45deg, #dbeafe 0 10px, #eaf2ff 10px 20px);
