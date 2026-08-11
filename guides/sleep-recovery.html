@@ -69,6 +69,14 @@
       margin-top: 28px;
     }
 
+    .guides-back-row {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+      margin-top: 28px;
+    }
+    .guides-back-row .guides-back { margin-top: 0; }
+
     .guides-body {
       padding: 0 0 64px;
     }
@@ -230,7 +238,10 @@
           </div>
         </div>
 
-        <a href="../insights/index.html" class="guides-back">← All articles</a>
+        <div class="guides-back-row">
+          <a href="../index.html" class="guides-back">← Home</a>
+          <a href="../guides.html" class="guides-back">← All guides</a>
+        </div>
 
         <!-- Disclaimer -->
         <div class="guides-disclaimer" style="margin-top: 28px;">
