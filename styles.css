@@ -1932,3 +1932,34 @@ h2.head .it { font-family: 'Lora', Georgia, serif; font-style: italic; font-weig
   .hero-intro .rotator .slide { animation: none; opacity: 1; position: relative; }
   .hero-intro .rotator { height: auto; display: grid; gap: 10px; }
 }
+
+/* ═══════════════════════════════════════════════════════════
+   CTA — community primary, waitlist secondary
+   ═══════════════════════════════════════════════════════════ */
+
+.cta-primary { margin-bottom: 52px; }
+
+.cta-fb-btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-size: 17px; padding: 0 34px; min-height: 58px;
+}
+.cta-fb-btn i { font-size: 21px; }
+
+.cta-secondary { max-width: 420px; margin: 0 auto; }
+.cta-secondary-text {
+  color: rgba(255,255,255,.62); font-size: 14px; line-height: 1.6;
+  margin: 0 0 18px; font-weight: 300;
+}
+.cta-secondary .form { max-width: 400px; }
+.cta-secondary .form input { padding: 0 16px; min-height: 42px; font-size: 13px; }
+
+.cta-secondary-btn {
+  background: transparent; border: 1px solid rgba(255,255,255,.35); color: #fff;
+  font-size: 13px; min-height: 42px; padding: 0 22px;
+}
+.cta-secondary-btn:hover { background: rgba(255,255,255,.12); }
+
+/* footer social icon (Facebook, matches header icon style) */
+.foot-social-icon {
+  display: inline-flex !important; align-items: center; gap: 8px;
+}
