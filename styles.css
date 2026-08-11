@@ -1963,3 +1963,5 @@ h2.head .it { font-family: 'Lora', Georgia, serif; font-style: italic; font-weig
 .foot-social-icon {
   display: inline-flex !important; align-items: center; gap: 8px;
 }
+
+.hero-fb-btn { margin-top: 20px; display: inline-flex; align-items: center; gap: 8px; }
