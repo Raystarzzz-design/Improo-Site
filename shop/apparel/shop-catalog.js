@@ -70,7 +70,8 @@
     var sorts = window.SHOP_CONSTANTS.SORTS;
     var colors = getAvailableColors(all);
 
-    var typeHtml = types.map(function (t) {
+    var allState = Object.assign({}, state, { type: '', page: 1 });
+    var typeHtml = pillLink('All', state.type === '', allState) + types.map(function (t) {
       var active = state.type === t.id;
       var newState = Object.assign({}, state, { type: active ? '' : t.id, page: 1 });
       return pillLink(t.label, active, newState);
