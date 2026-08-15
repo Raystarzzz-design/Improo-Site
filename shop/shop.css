@@ -370,12 +370,11 @@
 .shop-gallery-main {
   aspect-ratio: 4/5;
   width: 100%;
-  overflow: hidden;
   background: var(--shop-panel);
   position: relative;
   border: 1px solid var(--shop-line);
 }
-.shop-gallery-main img { width: 100%; height: 100%; object-fit: cover; }
+.shop-gallery-main > img { width: 100%; height: 100%; object-fit: cover; }
 .shop-gallery-thumbs { display: flex; gap: 10px; margin-top: 10px; }
 .shop-gallery-thumbs button {
   width: 74px; height: 92px;
@@ -388,14 +387,41 @@
 .shop-gallery-thumbs button.is-active { border-color: var(--shop-ink); }
 .shop-gallery-thumbs img { width: 100%; height: 100%; object-fit: cover; }
 
-.shop-lifestyle-label {
-  font-family: var(--shop-sans);
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--shop-muted);
-  margin: 18px 0 8px;
+/* ── floating "candid" polaroids over the main gallery photo ── */
+.shop-lifestyle-float {
+  position: absolute;
+  bottom: -32px;
+  right: 22px;
+  width: 170px;
+  height: 150px;
+  z-index: 5;
+}
+.shop-polaroid {
+  position: absolute;
+  width: 96px;
+  height: 120px;
+  padding: 0;
+  border: 6px solid var(--shop-white);
+  background: var(--shop-white);
+  box-shadow: 0 8px 20px rgba(23,20,15,0.24);
+  cursor: pointer;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transform-origin: center bottom;
+}
+.shop-polaroid img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.shop-polaroid-1 { right: 0; top: 6px; transform: rotate(-7deg); z-index: 2; }
+.shop-polaroid-2 { right: 58px; top: 0; transform: rotate(6deg); z-index: 1; }
+.shop-polaroid:hover {
+  transform: scale(1.65) rotate(0deg);
+  z-index: 10;
+  box-shadow: 0 20px 40px rgba(23,20,15,0.36);
+}
+
+@media (max-width: 520px) {
+  .shop-lifestyle-float { right: 12px; bottom: -24px; width: 130px; height: 112px; }
+  .shop-polaroid { width: 72px; height: 90px; }
+  .shop-polaroid-2 { right: 42px; }
 }
 
 .shop-placeholder-ribbon {
