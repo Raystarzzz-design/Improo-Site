@@ -17,6 +17,16 @@
     var ribbon = document.getElementById('pdp-ribbon');
     if (ribbon && !product.isPlaceholder) ribbon.style.display = 'none';
 
+    if (product.printLocation) {
+      var galleryMain = document.querySelector('.shop-gallery-main');
+      if (galleryMain) {
+        var note = document.createElement('span');
+        note.className = 'shop-badge-mini';
+        note.textContent = product.printLocation.charAt(0).toUpperCase() + product.printLocation.slice(1) + ' print';
+        galleryMain.appendChild(note);
+      }
+    }
+
     var defaultColorBtn = document.querySelector('#pdp-colors .shop-swatch.is-active');
     if (defaultColorBtn) selectedColor = defaultColorBtn.getAttribute('data-color');
 

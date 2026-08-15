@@ -29,10 +29,16 @@ window.SHOP_PRODUCTS = [
     currency: 'EUR',
     description: 'Not everyone lifts weights. Some lift people — and we don’t mind being that person. A soft, everyday tee for the friend who always answers the phone, shows up without being asked, and carries more than their fair share.',
     materials: '100% cotton (Bella+Canvas 3001), back print, unisex fit.',
+    printLocation: 'back',
     colors: [
       { name: 'Black Heather', swatch: '#1c1b1a' },
       { name: 'Navy', swatch: '#1e2340' },
-      { name: 'Heather Brown', swatch: '#5c4a3d' }
+      { name: 'Heather Brown', swatch: '#5c4a3d' },
+      { name: 'Heather Slate', swatch: '#52616f' },
+      { name: 'Autumn', swatch: '#b5502a' },
+      { name: 'Leaf', swatch: '#5a8f3c' },
+      { name: 'Heather Natural', swatch: '#d9cdb8' },
+      { name: 'Vintage White', swatch: '#f3ede1' }
     ],
     sizes: ['XS', 'S', 'M', 'L', 'XL', '2XL', '3XL', '4XL', '5XL'],
     images: {
@@ -61,6 +67,41 @@ window.SHOP_PRODUCTS = [
           gallery: [
             '/images/shop/apparel/some-lift-people-tee/heather-brown-1.webp',
             '/images/shop/apparel/some-lift-people-tee/heather-brown-2.webp'
+          ]
+        },
+        'Heather Slate': {
+          thumb: '/images/shop/apparel/some-lift-people-tee/heather-slate-thumb.webp',
+          gallery: [
+            '/images/shop/apparel/some-lift-people-tee/heather-slate-1.webp',
+            '/images/shop/apparel/some-lift-people-tee/heather-slate-2.webp'
+          ]
+        },
+        'Autumn': {
+          thumb: '/images/shop/apparel/some-lift-people-tee/autumn-thumb.webp',
+          gallery: [
+            '/images/shop/apparel/some-lift-people-tee/autumn-1.webp',
+            '/images/shop/apparel/some-lift-people-tee/autumn-2.webp'
+          ]
+        },
+        'Leaf': {
+          thumb: '/images/shop/apparel/some-lift-people-tee/leaf-thumb.webp',
+          gallery: [
+            '/images/shop/apparel/some-lift-people-tee/leaf-1.webp',
+            '/images/shop/apparel/some-lift-people-tee/leaf-2.webp'
+          ]
+        },
+        'Heather Natural': {
+          thumb: '/images/shop/apparel/some-lift-people-tee/heather-natural-thumb.webp',
+          gallery: [
+            '/images/shop/apparel/some-lift-people-tee/heather-natural-1.webp',
+            '/images/shop/apparel/some-lift-people-tee/heather-natural-2.webp'
+          ]
+        },
+        'Vintage White': {
+          thumb: '/images/shop/apparel/some-lift-people-tee/vintage-white-thumb.webp',
+          gallery: [
+            '/images/shop/apparel/some-lift-people-tee/vintage-white-1.webp',
+            '/images/shop/apparel/some-lift-people-tee/vintage-white-2.webp'
           ]
         }
       }

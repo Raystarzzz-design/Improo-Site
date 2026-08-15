@@ -116,17 +116,17 @@
     emptyEl.style.display = 'none';
     el.innerHTML = items.map(function (p, i) {
       var badge = p.badge ? '<span class="shop-badge-mini">' + p.badge + '</span>' : '';
-      var altImg = p.images.gallery[1] || '';
+      var printNote = p.printLocation ? '<div class="shop-grid-print-note">' + p.printLocation + ' print</div>' : '';
       return '' +
         '<a href="' + p.href + '" class="shop-grid-item">' +
           '<div class="shop-grid-photo">' +
             badge +
             '<img src="' + p.images.thumb + '" alt="' + p.name + '" width="480" height="600" loading="' + (i < 3 ? 'eager' : 'lazy') + '">' +
-            (altImg ? '<img class="shop-grid-photo-alt" src="' + altImg + '" alt="" width="480" height="600" loading="lazy">' : '') +
           '</div>' +
           '<div class="shop-grid-info">' +
             '<div class="shop-grid-name">' + p.name + '</div>' +
             '<div class="shop-grid-price">' + shopFormatPrice(p.price, p.currency) + '</div>' +
+            printNote +
           '</div>' +
         '</a>';
     }).join('');
