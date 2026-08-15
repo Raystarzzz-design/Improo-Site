@@ -9,7 +9,7 @@ window.SHOP_CONSTANTS = {
     { id: 'hoodie', label: 'Hoodies' },
     { id: 'tank', label: 'Tanks' }
   ],
-  SIZES: ['S', 'M', 'L', 'XL', '2XL'],
+  SIZES: ['XS', 'S', 'M', 'L', 'XL', '2XL', '3XL', '4XL', '5XL'],
   SORTS: [
     { id: 'newest', label: 'Newest' },
     { id: 'price-asc', label: 'Price ↑' },
@@ -20,27 +20,54 @@ window.SHOP_CONSTANTS = {
 window.SHOP_PRODUCTS = [
   {
     id: 'apparel-001',
-    slug: 'small-steps-tee',
+    slug: 'some-lift-people-tee',
     category: 'apparel',
     type: 'tshirt',
-    name: 'Small Steps Tee',
-    tagline: 'Every step counts.',
-    price: 29.00,
+    name: 'Some Lift People Tee',
+    tagline: 'For the ones who show up for everyone else.',
+    price: 29.99,
     currency: 'EUR',
-    description: 'A soft, everyday tee with a quiet reminder of what Improo is about: progress made of small, repeatable steps. Made to be worn on the days you show up and the days you almost didn’t.',
-    materials: '100% combed cotton, 180gsm, unisex regular fit. Pre-shrunk.',
+    description: 'Not everyone lifts weights. Some lift people — and we don’t mind being that person. A soft, everyday tee for the friend who always answers the phone, shows up without being asked, and carries more than their fair share.',
+    materials: '100% cotton (Bella+Canvas 3001), back print, unisex fit.',
     colors: [
-      { name: 'Black', swatch: '#161616' },
-      { name: 'Bone', swatch: '#e9e3d6' }
+      { name: 'Black Heather', swatch: '#1c1b1a' },
+      { name: 'Navy', swatch: '#1e2340' },
+      { name: 'Heather Brown', swatch: '#5c4a3d' }
     ],
-    sizes: ['S', 'M', 'L', 'XL', '2XL'],
+    sizes: ['XS', 'S', 'M', 'L', 'XL', '2XL', '3XL', '4XL', '5XL'],
     images: {
-      thumb: '/images/shop/placeholder/thumb-a.svg',
-      gallery: ['/images/shop/placeholder/gallery-a.svg', '/images/shop/placeholder/gallery-b.svg']
+      thumb: '/images/shop/apparel/some-lift-people-tee/black-heather-thumb.webp',
+      gallery: [
+        '/images/shop/apparel/some-lift-people-tee/black-heather-1.webp',
+        '/images/shop/apparel/some-lift-people-tee/black-heather-2.webp'
+      ],
+      byColor: {
+        'Black Heather': {
+          thumb: '/images/shop/apparel/some-lift-people-tee/black-heather-thumb.webp',
+          gallery: [
+            '/images/shop/apparel/some-lift-people-tee/black-heather-1.webp',
+            '/images/shop/apparel/some-lift-people-tee/black-heather-2.webp'
+          ]
+        },
+        'Navy': {
+          thumb: '/images/shop/apparel/some-lift-people-tee/navy-thumb.webp',
+          gallery: [
+            '/images/shop/apparel/some-lift-people-tee/navy-1.webp',
+            '/images/shop/apparel/some-lift-people-tee/navy-2.webp'
+          ]
+        },
+        'Heather Brown': {
+          thumb: '/images/shop/apparel/some-lift-people-tee/heather-brown-thumb.webp',
+          gallery: [
+            '/images/shop/apparel/some-lift-people-tee/heather-brown-1.webp',
+            '/images/shop/apparel/some-lift-people-tee/heather-brown-2.webp'
+          ]
+        }
+      }
     },
-    isPlaceholder: true,
+    isPlaceholder: false,
     dateAdded: '2026-08-15',
-    href: '/shop/apparel/small-steps-tee.html',
+    href: '/shop/apparel/some-lift-people-tee.html',
     badge: 'New',
     printfulVariantId: null
   },

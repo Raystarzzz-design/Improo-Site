@@ -20,12 +20,14 @@
     var defaultColorBtn = document.querySelector('#pdp-colors .shop-swatch.is-active');
     if (defaultColorBtn) selectedColor = defaultColorBtn.getAttribute('data-color');
 
+    // Products with real per-color photography (product.images.byColor) get their
+    // gallery rebuilt from data whenever the color changes. Placeholder products
+    // without byColor keep the static thumb buttons already in the HTML.
+    if (product.images.byColor) renderGalleryForColor(selectedColor);
+
     document.querySelectorAll('#pdp-thumbs button').forEach(function (btn) {
       btn.addEventListener('click', function () {
-        document.querySelectorAll('#pdp-thumbs button').forEach(function (b) { b.classList.remove('is-active'); });
-        btn.classList.add('is-active');
-        var mainImg = document.getElementById('pdp-main-img');
-        if (mainImg) mainImg.src = btn.getAttribute('data-img');
+        setActiveThumb(btn);
       });
     });
 
@@ -36,6 +38,7 @@
         selectedColor = btn.getAttribute('data-color');
         var label = document.getElementById('pdp-color-selected');
         if (label) label.textContent = selectedColor;
+        if (product.images.byColor) renderGalleryForColor(selectedColor);
       });
     });
 
@@ -63,18 +66,44 @@
     var addBtn = document.getElementById('pdp-add-to-cart');
     if (addBtn) addBtn.addEventListener('click', function () {
       if (!selectedSize) return;
+      var colorImage = (product.images.byColor && product.images.byColor[selectedColor])
+        ? product.images.byColor[selectedColor].thumb
+        : product.images.thumb;
       cartAdd({
         id: product.id,
         slug: product.slug,
         name: product.name,
         price: product.price,
         currency: product.currency,
-        image: product.images.thumb,
+        image: colorImage,
         color: selectedColor,
         size: selectedSize,
         qty: qty
       });
     });
+  }
+
+  function setActiveThumb(btn) {
+    document.querySelectorAll('#pdp-thumbs button').forEach(function (b) { b.classList.remove('is-active'); });
+    btn.classList.add('is-active');
+    var mainImg = document.getElementById('pdp-main-img');
+    if (mainImg) mainImg.src = btn.getAttribute('data-img');
+  }
+
+  function renderGalleryForColor(colorName) {
+    var colorImages = product.images.byColor[colorName];
+    if (!colorImages) return;
+    var thumbsEl = document.getElementById('pdp-thumbs');
+    if (!thumbsEl) return;
+    thumbsEl.innerHTML = colorImages.gallery.map(function (src, i) {
+      return '<button type="button"' + (i === 0 ? ' class="is-active"' : '') + ' data-img="' + src + '">' +
+        '<img src="' + src + '" alt="" width="74" height="92" loading="lazy"></button>';
+    }).join('');
+    thumbsEl.querySelectorAll('button').forEach(function (btn) {
+      btn.addEventListener('click', function () { setActiveThumb(btn); });
+    });
+    var mainImg = document.getElementById('pdp-main-img');
+    if (mainImg) mainImg.src = colorImages.gallery[0];
   }
 
   function updateAddToCartState() {
