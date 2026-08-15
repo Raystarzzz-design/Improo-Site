@@ -13,8 +13,8 @@
 
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Free Health Tools – Improo</title>
-  <meta name="description" content="Free, judgment-free health calculators from Improo — starting with a BMI calculator that shows your healthy weight range and what it actually means." />
+  <title>Shop – Improo</title>
+  <meta name="description" content="The Improo shop: the 90-Day Habit Builder book, Improo motivation apparel, and supplements — coming soon." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700&family=Lora:ital,wght@0,400;1,400;1,600&display=swap" rel="stylesheet" />
@@ -25,14 +25,14 @@
   </script>
   <script defer src="/_vercel/insights/script.js"></script>
   <style>
-    .tools-hero {
+    .shop-hero {
       background: #e8edf8;
       border-radius: 12px;
       padding: 2rem;
       margin: 32px 0 40px;
     }
 
-    .tools-hero-label {
+    .shop-hero-label {
       font-size: 11px;
       font-weight: 700;
       letter-spacing: 0.12em;
@@ -41,7 +41,7 @@
       margin-bottom: 14px;
     }
 
-    .tools-hero h1 {
+    .shop-hero h1 {
       font-family: 'Lora', serif;
       font-size: clamp(1.6rem, 3vw, 2.2rem);
       font-weight: 400;
@@ -50,7 +50,7 @@
       line-height: 1.2;
     }
 
-    .tools-hero p {
+    .shop-hero p {
       font-size: 0.98rem;
       color: var(--muted);
       line-height: 1.7;
@@ -59,9 +59,9 @@
       font-weight: 300;
     }
 
-    .tools-body { padding: 0 0 64px; }
+    .shop-body { padding: 0 0 64px; display: flex; flex-direction: column; gap: 16px; }
 
-    .tool-feature-card {
+    .shop-feature-card {
       display: grid;
       grid-template-columns: 200px 1fr;
       gap: 32px;
@@ -78,13 +78,18 @@
       overflow: hidden;
     }
 
-    .tool-feature-card:hover {
+    a.shop-feature-card:hover {
       box-shadow: var(--shadow-md);
       border-color: var(--line-strong);
       transform: translateY(-2px);
     }
 
-    .tool-feature-visual {
+    .shop-feature-card.is-soon {
+      opacity: 0.6;
+      cursor: default;
+    }
+
+    .shop-feature-visual {
       width: 100%;
       aspect-ratio: 1;
       border-radius: 20px;
@@ -95,43 +100,36 @@
       overflow: hidden;
     }
 
-    .tool-feature-visual::before,
-    .tool-feature-visual::after {
+    .shop-feature-visual::before,
+    .shop-feature-visual::after {
       content: '';
       position: absolute;
       border-radius: 50%;
     }
 
-    .tool-visual-bmi {
+    .shop-visual-book {
       background: linear-gradient(145deg, #dbeafe 0%, #eef2ff 45%, #fef3e2 100%);
+      padding: 14px;
     }
-    .tool-visual-bmi::before { width: 150px; height: 150px; background: rgba(37,99,235,0.14); top: -40px; right: -40px; }
-    .tool-visual-bmi::after { width: 110px; height: 110px; background: rgba(245,158,11,0.14); bottom: -30px; left: -30px; }
+    .shop-visual-book img { width: 100%; height: 100%; object-fit: contain; border-radius: 8px; position: relative; z-index: 1; box-shadow: 0 8px 20px rgba(15,31,61,0.18); }
+    .shop-visual-book::before { width: 150px; height: 150px; background: rgba(37,99,235,0.14); top: -40px; right: -40px; }
+    .shop-visual-book::after { width: 110px; height: 110px; background: rgba(245,158,11,0.14); bottom: -30px; left: -30px; }
 
-    .tool-mini-gauge { width: 78%; position: relative; z-index: 1; filter: drop-shadow(0 6px 14px rgba(15,31,61,0.12)); }
-
-    .tool-visual-diet {
-      background: linear-gradient(145deg, #dcfce7 0%, #fef9e7 50%, #fee2e2 100%);
+    .shop-visual-apparel {
+      background: linear-gradient(145deg, #ede9fe 0%, #eef2ff 50%, #f5f3ff 100%);
     }
-    .tool-visual-diet::before { width: 150px; height: 150px; background: rgba(22,163,74,0.14); top: -40px; right: -40px; }
-    .tool-visual-diet::after { width: 110px; height: 110px; background: rgba(220,38,38,0.12); bottom: -30px; left: -30px; }
+    .shop-visual-apparel::before { width: 150px; height: 150px; background: rgba(124,58,237,0.14); top: -40px; right: -40px; }
+    .shop-visual-apparel::after { width: 110px; height: 110px; background: rgba(59,158,245,0.14); bottom: -30px; left: -30px; }
+    .shop-visual-apparel i { font-size: 3.4rem; color: #7c3aed; position: relative; z-index: 1; }
 
-    .diet-bubble-cluster { position: relative; width: 100%; height: 100%; z-index: 1; }
-    .diet-bubble {
-      position: absolute;
-      width: 25%; height: 25%;
-      min-width: 44px; min-height: 44px;
-      border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      color: #fff; font-size: 19px;
-      box-shadow: 0 8px 18px rgba(15,31,61,0.20), 0 0 0 4px #fff;
+    .shop-visual-supplements {
+      background: linear-gradient(145deg, #e5e7eb 0%, #f1f5f9 50%, #e5e7eb 100%);
     }
-    .diet-bubble:nth-child(1) { top: 14%; left: 12%; transform: rotate(-8deg); }
-    .diet-bubble:nth-child(2) { top: 10%; left: 54%; transform: rotate(6deg); }
-    .diet-bubble:nth-child(3) { top: 56%; left: 8%; transform: rotate(9deg); }
-    .diet-bubble:nth-child(4) { top: 52%; left: 52%; transform: rotate(-6deg); }
+    .shop-visual-supplements::before { width: 150px; height: 150px; background: rgba(100,116,139,0.14); top: -40px; right: -40px; }
+    .shop-visual-supplements::after { width: 110px; height: 110px; background: rgba(100,116,139,0.10); bottom: -30px; left: -30px; }
+    .shop-visual-supplements i { font-size: 3.4rem; color: #94a3b8; position: relative; z-index: 1; }
 
-    .tool-feature-badge {
+    .shop-feature-badge {
       display: inline-flex;
       align-items: center;
       gap: 7px;
@@ -145,13 +143,20 @@
       margin-bottom: 14px;
     }
 
-    .tool-feature-badge-dot {
+    .shop-feature-badge-dot {
       width: 6px; height: 6px;
       border-radius: 50%;
       background: var(--green);
     }
 
-    .tool-feature-card h2 {
+    .shop-feature-badge.is-soon {
+      background: #f1f5f9;
+      border-color: rgba(100,116,139,0.25);
+      color: #64748b;
+    }
+    .shop-feature-badge.is-soon .shop-feature-badge-dot { background: #94a3b8; }
+
+    .shop-feature-card h2 {
       font-family: 'Lora', serif;
       font-size: clamp(1.3rem, 2.4vw, 1.7rem);
       font-weight: 400;
@@ -159,7 +164,7 @@
       margin: 0 0 10px;
     }
 
-    .tool-feature-card p {
+    .shop-feature-card p {
       font-size: 0.94rem;
       color: var(--muted);
       line-height: 1.7;
@@ -168,7 +173,7 @@
       max-width: 480px;
     }
 
-    .tool-feature-cta {
+    .shop-feature-cta {
       display: inline-flex;
       align-items: center;
       gap: 8px;
@@ -177,22 +182,22 @@
       font-size: 0.92rem;
     }
 
-    .tool-feature-card:hover .tool-feature-cta { color: var(--blue-dark); }
+    a.shop-feature-card:hover .shop-feature-cta { color: var(--blue-dark); }
 
     @media (max-width: 680px) {
-      .tool-feature-card { grid-template-columns: 1fr; padding: 28px 24px; }
-      .tool-feature-visual { max-width: 160px; margin: 0 auto; }
+      .shop-feature-card { grid-template-columns: 1fr; padding: 28px 24px; }
+      .shop-feature-visual { max-width: 160px; margin: 0 auto; }
     }
 
-    .tools-disclaimer {
+    .shop-disclaimer {
       background: #f4f7fb;
       border-left: 3px solid #4a7fd4;
       border-radius: 0 8px 8px 0;
       padding: 16px 20px;
-      margin-top: 32px;
+      margin-top: 16px;
     }
 
-    .tools-disclaimer p {
+    .shop-disclaimer p {
       font-size: 0.82rem;
       color: var(--muted);
       font-style: italic;
@@ -201,7 +206,7 @@
     }
 
     @media (max-width: 480px) {
-      .tools-hero { padding: 1.5rem; }
+      .shop-hero { padding: 1.5rem; }
     }
   </style>
 </head>
@@ -219,8 +224,8 @@
           <a href="../index.html">Home</a>
           <a href="../insights/index.html">Articles</a>
           <a href="../guides.html">Guides</a>
-          <a href="index.html" class="active">Tools</a>
-          <a href="../shop/index.html">Shop</a>
+          <a href="../tools/index.html">Tools</a>
+          <a href="index.html" class="active">Shop</a>
           <a href="../roadmap.html">Roadmap</a>
           <a href="../index.html#contact">Contact</a>
         </div>
@@ -237,63 +242,60 @@
     <div class="container">
 
       <!-- HERO -->
-      <div class="tools-hero">
-        <div class="tools-hero-label">Improo Tools</div>
-        <h1>Quick, free tools to check in with your body.</h1>
-        <p>No accounts, no upsells, no judgment — just simple calculators that give you a clear, honest read on where you stand right now.</p>
+      <div class="shop-hero">
+        <div class="shop-hero-label">Improo Shop</div>
+        <h1>Bring Improo into your everyday life.</h1>
+        <p>A few things to support the journey — a physical tracker to build the habit, and gear to keep the motivation visible. No pressure, no upsells.</p>
       </div>
 
-      <!-- TOOLS -->
-      <div class="tools-body">
-        <a href="bmi-calculator.html" class="tool-feature-card">
-          <div class="tool-feature-visual tool-visual-bmi">
-            <svg viewBox="0 0 200 120" class="tool-mini-gauge" aria-hidden="true">
-              <defs>
-                <linearGradient id="hubGaugeGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%" stop-color="#60a5fa"/>
-                  <stop offset="32%" stop-color="#22c55e"/>
-                  <stop offset="62%" stop-color="#f59e0b"/>
-                  <stop offset="100%" stop-color="#ef4444"/>
-                </linearGradient>
-              </defs>
-              <path d="M 20 102 A 80 80 0 0 1 180 102" fill="none" stroke="url(#hubGaugeGradient)" stroke-width="16" stroke-linecap="round"/>
-              <line x1="100" y1="102" x2="100" y2="32" stroke="#0c1a2e" stroke-width="5" stroke-linecap="round" transform="rotate(-12 100 102)"/>
-              <circle cx="100" cy="102" r="9" fill="#0c1a2e"/>
-            </svg>
+      <!-- SHOP -->
+      <div class="shop-body">
+
+        <a href="https://www.amazon.com/dp/B0H446L1KD" target="_blank" rel="noopener" class="shop-feature-card">
+          <div class="shop-feature-visual shop-visual-book">
+            <img src="../images/book-cover.png" alt="90-Day Habit Builder by Improo — book cover" loading="lazy">
           </div>
           <div>
-            <div class="tool-feature-badge">
-              <span class="tool-feature-badge-dot"></span>
-              Free · No sign-up
+            <div class="shop-feature-badge">
+              <span class="shop-feature-badge-dot"></span>
+              Available now · On Amazon
             </div>
-            <h2>BMI Calculator</h2>
-            <p>Enter your height and weight to get your BMI, your healthy weight range, and a clear, non-alarmist explanation of what it means — plus a few honest next steps.</p>
-            <span class="tool-feature-cta">Open the calculator <i class="ti ti-arrow-right"></i></span>
+            <h2>90-Day Habit Builder</h2>
+            <p>A physical 90-day tracker designed around small daily steps. No perfection required — just showing up, one day at a time.</p>
+            <span class="shop-feature-cta">View on Amazon <i class="ti ti-external-link"></i></span>
           </div>
         </a>
 
-        <a href="diet-quiz.html" class="tool-feature-card" style="margin-top: 16px;">
-          <div class="tool-feature-visual tool-visual-diet">
-            <div class="diet-bubble-cluster">
-              <span class="diet-bubble" style="background:#16a34a;"><i class="ti ti-salad"></i></span>
-              <span class="diet-bubble" style="background:#3b82f6;"><i class="ti ti-fish"></i></span>
-              <span class="diet-bubble" style="background:#f59e0b;"><i class="ti ti-egg"></i></span>
-              <span class="diet-bubble" style="background:#dc2626;"><i class="ti ti-apple"></i></span>
-            </div>
+        <div class="shop-feature-card is-soon">
+          <div class="shop-feature-visual shop-visual-apparel">
+            <i class="ti ti-shirt" aria-hidden="true"></i>
           </div>
           <div>
-            <div class="tool-feature-badge">
-              <span class="tool-feature-badge-dot"></span>
-              Free · No sign-up
+            <div class="shop-feature-badge is-soon">
+              <span class="shop-feature-badge-dot"></span>
+              Coming soon
             </div>
-            <h2>Diet Match Quiz</h2>
-            <p>Tell us what you like to eat and how you live, and see which well-known diet styles actually fit your routine — ranked and explained, not a single verdict.</p>
-            <span class="tool-feature-cta">Take the quiz <i class="ti ti-arrow-right"></i></span>
+            <h2>Improo Apparel</h2>
+            <p>T-shirts and hoodies with quiet Improo motivation — for the days you need a reminder to keep showing up. Details soon.</p>
           </div>
-        </a>
+        </div>
 
-        <div class="tools-disclaimer">
-          <p>These tools give a quick estimate, not a diagnosis. They don't replace advice from a doctor or other qualified professional.</p>
+        <div class="shop-feature-card is-soon">
+          <div class="shop-feature-visual shop-visual-supplements">
+            <i class="ti ti-pill" aria-hidden="true"></i>
+          </div>
+          <div>
+            <div class="shop-feature-badge is-soon">
+              <span class="shop-feature-badge-dot"></span>
+              Coming soon
+            </div>
+            <h2>Supplements</h2>
+            <p>We're not in a rush to sell you supplements. If and when we do, it'll be things we'd actually recommend — nothing here yet.</p>
+          </div>
+        </div>
+
+        <div class="shop-disclaimer">
+          <p>Improo products are sold via Amazon and, in the future, external print-on-demand partners. Improo is not a medical service — nothing on this page is medical advice.</p>
         </div>
       </div>
     </div>
@@ -314,8 +316,8 @@
           <a href="../index.html">Home</a>
           <a href="../insights/index.html">Articles</a>
           <a href="../guides.html">Guides</a>
-          <a href="index.html">Tools</a>
-          <a href="../shop/index.html">Shop</a>
+          <a href="../tools/index.html">Tools</a>
+          <a href="index.html">Shop</a>
           <a href="../roadmap.html">Roadmap</a>
           <a href="../disclaimer.html">Disclaimer</a>
           <a href="../privacy-policy.html">Privacy Policy</a>
