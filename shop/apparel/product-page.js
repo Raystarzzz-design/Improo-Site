@@ -41,6 +41,14 @@
       });
     });
 
+    // "In the gym" strip stays visible regardless of selected color — clicking
+    // one just swaps the main image, same as the color-driven thumbnail rail.
+    document.querySelectorAll('#pdp-lifestyle-thumbs button').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        setActiveThumb(btn);
+      });
+    });
+
     document.querySelectorAll('#pdp-colors .shop-swatch').forEach(function (btn) {
       btn.addEventListener('click', function () {
         document.querySelectorAll('#pdp-colors .shop-swatch').forEach(function (b) { b.classList.remove('is-active'); });
@@ -94,7 +102,7 @@
   }
 
   function setActiveThumb(btn) {
-    document.querySelectorAll('#pdp-thumbs button').forEach(function (b) { b.classList.remove('is-active'); });
+    document.querySelectorAll('#pdp-thumbs button, #pdp-lifestyle-thumbs button').forEach(function (b) { b.classList.remove('is-active'); });
     btn.classList.add('is-active');
     var mainImg = document.getElementById('pdp-main-img');
     if (mainImg) mainImg.src = btn.getAttribute('data-img');
