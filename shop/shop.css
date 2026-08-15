@@ -342,6 +342,22 @@
 .shop-pagination a.is-active { background: var(--shop-ink); color: var(--shop-white); }
 .shop-pagination .shop-page-disabled { opacity: 0.3; pointer-events: none; }
 
+/* ── back link ── */
+.shop-back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--shop-sans);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--shop-muted);
+  text-decoration: none;
+  margin-top: 24px;
+}
+.shop-back-link:hover { color: var(--shop-ink); }
+
 /* ── product detail ── */
 .shop-product {
   display: grid;
