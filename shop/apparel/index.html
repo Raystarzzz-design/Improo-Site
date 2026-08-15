@@ -13,14 +13,14 @@
 
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Shop – Improo</title>
-  <meta name="description" content="The Improo shop: the 90-Day Habit Builder book, Improo motivation apparel, and supplements — coming soon." />
+  <title>Apparel – Improo Shop</title>
+  <meta name="description" content="Improo apparel — everyday t-shirts, hoodies and tanks with a quiet reminder to keep going. Small steps, real progress." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700&family=Lora:ital,wght@0,400;1,400;1,600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
-  <link rel="stylesheet" href="../styles.css" />
-  <link rel="stylesheet" href="shop.css" />
+  <link rel="stylesheet" href="../../styles.css" />
+  <link rel="stylesheet" href="../shop.css" />
   <script>
     window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
   </script>
@@ -28,22 +28,20 @@
 </head>
 <body class="shop-body">
 
-  <!-- NAV -->
   <header class="site-header">
-
     <div class="container">
       <nav class="nav">
-        <a href="../index.html">
+        <a href="../../index.html">
           <span style="font-size:1.6rem; font-weight:700; background:linear-gradient(135deg,#3b9ef5,#2563eb); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; letter-spacing:-0.03em; font-family:'Sora',sans-serif;">Improo</span>
         </a>
         <div class="nav-links">
-          <a href="../index.html">Home</a>
-          <a href="../insights/index.html">Articles</a>
-          <a href="../guides.html">Guides</a>
-          <a href="../tools/index.html">Tools</a>
-          <a href="index.html" class="active">Shop</a>
-          <a href="../roadmap.html">Roadmap</a>
-          <a href="../index.html#contact">Contact</a>
+          <a href="../../index.html">Home</a>
+          <a href="../../insights/index.html">Articles</a>
+          <a href="../../guides.html">Guides</a>
+          <a href="../../tools/index.html">Tools</a>
+          <a href="../index.html" class="active">Shop</a>
+          <a href="../../roadmap.html">Roadmap</a>
+          <a href="../../index.html#contact">Contact</a>
         </div>
         <div class="socials">
           <a href="https://www.youtube.com/@Improo_App" aria-label="YouTube">
@@ -56,41 +54,16 @@
 
   <main>
     <div class="shop-wrap">
-
-      <div class="shop-hero-boutique">
+      <div class="shop-hero-boutique" style="padding-bottom:8px;">
         <div class="shop-eyebrow">Improo Shop</div>
-        <h1>Bring Improo into your everyday life.</h1>
-        <p>A few things to support the journey — a physical tracker to build the habit, and gear to keep the motivation visible. No pressure, no upsells.</p>
+        <h1>Apparel</h1>
+        <p>Everyday pieces with a quiet reminder to keep going. Made to order, one small step at a time.</p>
       </div>
 
-      <div class="shop-category-grid">
-
-        <a href="https://www.amazon.com/dp/B0H446L1KD" target="_blank" rel="noopener" class="shop-category-tile">
-          <div class="shop-category-icon"><img src="../images/book-cover.png" alt="90-Day Habit Builder by Improo — book cover" style="width:100%;height:100%;object-fit:contain;padding:20px;"></div>
-          <span class="shop-tag">Available now · On Amazon</span>
-          <h2>90-Day Habit Builder</h2>
-          <p>A physical 90-day tracker designed around small daily steps. No perfection required — just showing up, one day at a time.</p>
-        </a>
-
-        <a href="apparel/index.html" class="shop-category-tile">
-          <div class="shop-category-icon"><i class="ti ti-shirt" aria-hidden="true"></i></div>
-          <span class="shop-tag">New</span>
-          <h2>Apparel</h2>
-          <p>T-shirts, hoodies and tanks with quiet Improo motivation — for the days you need a reminder to keep showing up.</p>
-        </a>
-
-        <div class="shop-category-tile is-soon">
-          <div class="shop-category-icon"><i class="ti ti-pill" aria-hidden="true"></i></div>
-          <span class="shop-tag is-soon">Coming soon</span>
-          <h2>Supplements</h2>
-          <p>We're not in a rush to sell you supplements. If and when we do, it'll be things we'd actually recommend — nothing here yet.</p>
-        </div>
-
-      </div>
-
-      <div class="shop-strip">
-        Improo products are sold via Amazon and, in the future, our print-on-demand partner. Improo is not a medical service — nothing on this page is medical advice.
-      </div>
+      <div id="shop-filterbar" class="shop-filterbar"></div>
+      <div id="shop-grid" class="shop-grid"></div>
+      <div id="shop-empty" class="shop-empty" style="display:none;">No pieces match those filters yet — try clearing one.</div>
+      <div id="shop-pagination" class="shop-pagination"></div>
     </div>
   </main>
 
@@ -102,19 +75,19 @@
           <span style="font-size:1.3rem; font-weight:700; background:linear-gradient(135deg,#60a5fa,#3b82f6); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; letter-spacing:-0.03em; font-family:'Sora',sans-serif; display:block; margin-bottom:16px;">Improo</span>
           <p>Health, weight loss, movement & mindset — together.</p>
           <small>© 2026 Improo. All rights reserved.</small>
-          <small style="margin-top:6px;font-size:0.75rem;opacity:0.6;">Improo is not a medical service. Content is for informational purposes only. <a href="../disclaimer.html" style="color:inherit;text-decoration:underline;">Disclaimer.</a></small>
+          <small style="margin-top:6px;font-size:0.75rem;opacity:0.6;">Improo is not a medical service. Content is for informational purposes only. <a href="../../disclaimer.html" style="color:inherit;text-decoration:underline;">Disclaimer.</a></small>
         </div>
         <div class="footer-links">
           <h4>Navigation</h4>
-          <a href="../index.html">Home</a>
-          <a href="../insights/index.html">Articles</a>
-          <a href="../guides.html">Guides</a>
-          <a href="../tools/index.html">Tools</a>
-          <a href="index.html">Shop</a>
-          <a href="../roadmap.html">Roadmap</a>
-          <a href="../disclaimer.html">Disclaimer</a>
-          <a href="../privacy-policy.html">Privacy Policy</a>
-          <a href="../terms-of-service.html">Terms of Service</a>
+          <a href="../../index.html">Home</a>
+          <a href="../../insights/index.html">Articles</a>
+          <a href="../../guides.html">Guides</a>
+          <a href="../../tools/index.html">Tools</a>
+          <a href="../index.html">Shop</a>
+          <a href="../../roadmap.html">Roadmap</a>
+          <a href="../../disclaimer.html">Disclaimer</a>
+          <a href="../../privacy-policy.html">Privacy Policy</a>
+          <a href="../../terms-of-service.html">Terms of Service</a>
         </div>
         <div class="footer-links">
           <h4>Follow us</h4>
@@ -131,7 +104,8 @@
     </div>
   </footer>
 
-  <script src="shop-data.js"></script>
-  <script src="shop-cart.js"></script>
+  <script src="../shop-data.js"></script>
+  <script src="../shop-cart.js"></script>
+  <script src="shop-catalog.js"></script>
 </body>
 </html>

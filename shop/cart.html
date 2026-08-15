@@ -13,8 +13,9 @@
 
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Shop – Improo</title>
-  <meta name="description" content="The Improo shop: the 90-Day Habit Builder book, Improo motivation apparel, and supplements — coming soon." />
+  <title>Your Bag – Improo Shop</title>
+  <meta name="description" content="Your Improo shop bag." />
+  <meta name="robots" content="noindex" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700&family=Lora:ital,wght@0,400;1,400;1,600&display=swap" rel="stylesheet" />
@@ -28,9 +29,7 @@
 </head>
 <body class="shop-body">
 
-  <!-- NAV -->
   <header class="site-header">
-
     <div class="container">
       <nav class="nav">
         <a href="../index.html">
@@ -56,40 +55,23 @@
 
   <main>
     <div class="shop-wrap">
+      <div class="shop-cart-page">
+        <h1>Your Bag</h1>
+        <div id="cart-page-items"></div>
 
-      <div class="shop-hero-boutique">
-        <div class="shop-eyebrow">Improo Shop</div>
-        <h1>Bring Improo into your everyday life.</h1>
-        <p>A few things to support the journey — a physical tracker to build the habit, and gear to keep the motivation visible. No pressure, no upsells.</p>
-      </div>
+        <div class="shop-cart-summary" id="cart-page-summary" style="display:none;">
+          <div class="shop-cart-summary-row"><span>Subtotal</span><span id="cart-page-subtotal">€0.00</span></div>
+          <p class="shop-cart-summary-note">Shipping and taxes calculated at checkout. Each piece is made to order via our print partner once checkout is live.</p>
+          <button type="button" class="shop-btn shop-btn-block" disabled>Checkout coming soon — pay securely at launch</button>
 
-      <div class="shop-category-grid">
-
-        <a href="https://www.amazon.com/dp/B0H446L1KD" target="_blank" rel="noopener" class="shop-category-tile">
-          <div class="shop-category-icon"><img src="../images/book-cover.png" alt="90-Day Habit Builder by Improo — book cover" style="width:100%;height:100%;object-fit:contain;padding:20px;"></div>
-          <span class="shop-tag">Available now · On Amazon</span>
-          <h2>90-Day Habit Builder</h2>
-          <p>A physical 90-day tracker designed around small daily steps. No perfection required — just showing up, one day at a time.</p>
-        </a>
-
-        <a href="apparel/index.html" class="shop-category-tile">
-          <div class="shop-category-icon"><i class="ti ti-shirt" aria-hidden="true"></i></div>
-          <span class="shop-tag">New</span>
-          <h2>Apparel</h2>
-          <p>T-shirts, hoodies and tanks with quiet Improo motivation — for the days you need a reminder to keep showing up.</p>
-        </a>
-
-        <div class="shop-category-tile is-soon">
-          <div class="shop-category-icon"><i class="ti ti-pill" aria-hidden="true"></i></div>
-          <span class="shop-tag is-soon">Coming soon</span>
-          <h2>Supplements</h2>
-          <p>We're not in a rush to sell you supplements. If and when we do, it'll be things we'd actually recommend — nothing here yet.</p>
+          <div style="margin-top:24px;">
+            <label for="notify-email" class="shop-option-label" style="margin-bottom:8px;">Want to know the moment checkout goes live?</label>
+            <div style="display:flex;gap:10px;flex-wrap:wrap;">
+              <input type="email" id="notify-email" placeholder="you@email.com" style="flex:1;min-width:200px;padding:12px 14px;border:1px solid var(--shop-line-strong);background:var(--shop-white);font-family:var(--shop-sans);font-size:13px;">
+              <button type="button" class="shop-btn shop-btn-outline" id="notify-btn">Notify Me</button>
+            </div>
+          </div>
         </div>
-
-      </div>
-
-      <div class="shop-strip">
-        Improo products are sold via Amazon and, in the future, our print-on-demand partner. Improo is not a medical service — nothing on this page is medical advice.
       </div>
     </div>
   </main>
@@ -133,5 +115,71 @@
 
   <script src="shop-data.js"></script>
   <script src="shop-cart.js"></script>
+  <script>
+    function cartRenderPage() {
+      var container = document.getElementById('cart-page-items');
+      var summary = document.getElementById('cart-page-summary');
+      var items = cartGet();
+      if (items.length === 0) {
+        container.innerHTML = '<div class="shop-cart-empty">Your bag is empty. <a href="apparel/index.html" style="color:var(--shop-ink);text-decoration:underline;">Browse apparel →</a></div>';
+        summary.style.display = 'none';
+        return;
+      }
+      summary.style.display = '';
+      container.innerHTML = items.map(function (item, index) {
+        return '' +
+          '<div class="shop-cart-page-line">' +
+            '<img src="' + item.image + '" alt="" width="90" height="112" loading="lazy">' +
+            '<div>' +
+              '<div class="shop-cart-page-name">' + shopEscapeHtml(item.name) + '</div>' +
+              '<div class="shop-cart-page-meta">' + shopEscapeHtml(item.color) + ' · ' + shopEscapeHtml(item.size) + '</div>' +
+              '<div class="shop-qty-stepper">' +
+                '<button type="button" data-qty-minus="' + index + '">−</button>' +
+                '<span>' + item.qty + '</span>' +
+                '<button type="button" data-qty-plus="' + index + '">+</button>' +
+              '</div>' +
+              '<button type="button" class="shop-cart-page-remove" data-remove="' + index + '">Remove</button>' +
+            '</div>' +
+            '<div class="shop-cart-page-price">' + shopFormatPrice(item.price * item.qty, item.currency) + '</div>' +
+          '</div>';
+      }).join('');
+
+      container.querySelectorAll('[data-qty-minus]').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var i = parseInt(btn.getAttribute('data-qty-minus'), 10);
+          cartUpdateQty(i, cartGet()[i].qty - 1);
+        });
+      });
+      container.querySelectorAll('[data-qty-plus]').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var i = parseInt(btn.getAttribute('data-qty-plus'), 10);
+          cartUpdateQty(i, cartGet()[i].qty + 1);
+        });
+      });
+      container.querySelectorAll('[data-remove]').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          cartRemove(parseInt(btn.getAttribute('data-remove'), 10));
+        });
+      });
+
+      document.getElementById('cart-page-subtotal').textContent = shopFormatPrice(cartSubtotal(), 'EUR');
+    }
+    window.cartRenderPage = cartRenderPage;
+    document.addEventListener('DOMContentLoaded', cartRenderPage);
+
+    var notifyBtn = document.getElementById('notify-btn');
+    if (notifyBtn) {
+      notifyBtn.addEventListener('click', function () {
+        var input = document.getElementById('notify-email');
+        var val = input.value.trim();
+        if (val) {
+          window.location.href = 'mailto:contact.improo@gmail.com?subject=Shop checkout notify me&body=Please notify me when Improo Shop checkout is live: ' + encodeURIComponent(val);
+          input.value = '';
+        } else {
+          input.focus();
+        }
+      });
+    }
+  </script>
 </body>
 </html>
