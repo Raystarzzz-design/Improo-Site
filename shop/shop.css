@@ -72,7 +72,7 @@
 /* ── category tiles (hub page) ── */
 .shop-category-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   border-top: 1px solid var(--shop-line);
   border-bottom: 1px solid var(--shop-line);
   border-left: 1px solid var(--shop-line);

@@ -66,6 +66,8 @@ window.SHOP_PRODUCTS = [
           thumb: '/images/shop/apparel/some-lift-people-tee/heather-brown-thumb.webp',
           gallery: [
             '/images/shop/apparel/some-lift-people-tee/heather-brown-1.webp',
+            '/images/shop/apparel/some-lift-people-tee/heather-brown-lifestyle.webp',
+            '/images/shop/apparel/some-lift-people-tee/heather-brown-lifestyle-2.webp',
             '/images/shop/apparel/some-lift-people-tee/heather-brown-2.webp'
           ]
         },
