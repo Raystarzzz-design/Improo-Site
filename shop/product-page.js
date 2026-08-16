@@ -1,6 +1,7 @@
-// Improo Shop — shared interactivity for every product detail page.
-// The page's own <script> tag carries data-slug so this one file can drive
-// every product page's gallery/color/size/qty/add-to-cart behavior.
+// Improo Shop — shared interactivity for every product detail page
+// (apparel and accessories alike). The page's own <script> tag carries
+// data-slug so this one file can drive every product's gallery/color/
+// size/qty/add-to-cart behavior.
 
 (function () {
   var scriptTag = document.currentScript;
@@ -27,6 +28,10 @@
       }
     }
 
+    // Default color: the product's first listed color, overridden below if
+    // the page actually has a color-swatch picker (products with just one
+    // color/no real choice — like a single-colorway mug — skip the picker).
+    if (product.colors && product.colors[0]) selectedColor = product.colors[0].name;
     var defaultColorBtn = document.querySelector('#pdp-colors .shop-swatch.is-active');
     if (defaultColorBtn) selectedColor = defaultColorBtn.getAttribute('data-color');
 
@@ -60,7 +65,8 @@
       });
     });
 
-    document.querySelectorAll('#pdp-sizes .shop-size-pill').forEach(function (btn) {
+    var sizePills = document.querySelectorAll('#pdp-sizes .shop-size-pill');
+    sizePills.forEach(function (btn) {
       btn.addEventListener('click', function () {
         document.querySelectorAll('#pdp-sizes .shop-size-pill').forEach(function (b) { b.classList.remove('is-active'); });
         btn.classList.add('is-active');
@@ -68,6 +74,9 @@
         updateAddToCartState();
       });
     });
+    // A single-size product (e.g. one mug size) has nothing to choose —
+    // select it automatically instead of making the shopper click it.
+    if (sizePills.length === 1) sizePills[0].click();
 
     var qtyEl = document.getElementById('pdp-qty');
     var minusBtn = document.getElementById('pdp-qty-minus');

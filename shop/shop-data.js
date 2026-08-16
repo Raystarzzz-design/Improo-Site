@@ -14,6 +14,9 @@ window.SHOP_CONSTANTS = {
     { id: 'newest', label: 'Newest' },
     { id: 'price-asc', label: 'Price ↑' },
     { id: 'price-desc', label: 'Price ↓' }
+  ],
+  ACCESSORY_TYPES: [
+    { id: 'mug', label: 'Mugs' }
   ]
 };
 
@@ -217,6 +220,35 @@ window.SHOP_PRODUCTS = [
     dateAdded: '2026-08-05',
     href: '/shop/apparel/one-step-at-a-time-tank.html',
     badge: null,
+    printfulVariantId: null
+  },
+  {
+    id: 'accessories-001',
+    slug: 'todays-goals-mug',
+    category: 'accessories',
+    type: 'mug',
+    name: "Today's Goals Mug",
+    tagline: "Show up. Do the work. Don't quit.",
+    price: 9.49,
+    currency: 'EUR',
+    description: "A little checklist for the days you need it: Show up. Do the work. Don't quit. Repeat tomorrow.",
+    materials: 'White glossy ceramic mug, 11 oz (325 ml), dishwasher and microwave safe.',
+    colors: [
+      { name: 'White', swatch: '#ffffff' }
+    ],
+    sizes: ['11 oz (325 ml)'],
+    images: {
+      thumb: '/images/shop/accessories/todays-goals-mug/thumb.webp',
+      gallery: [
+        '/images/shop/accessories/todays-goals-mug/1.webp',
+        '/images/shop/accessories/todays-goals-mug/2.webp',
+        '/images/shop/accessories/todays-goals-mug/3.webp'
+      ]
+    },
+    isPlaceholder: false,
+    dateAdded: '2026-08-16',
+    href: '/shop/accessories/todays-goals-mug.html',
+    badge: 'New',
     printfulVariantId: null
   }
 ];

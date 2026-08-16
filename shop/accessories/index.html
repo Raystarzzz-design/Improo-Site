@@ -13,11 +13,8 @@
 
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>One Step at a Time Tank – Improo Shop</title>
-  <meta name="description" content="A lightweight tank for training days, walks and everything in between. 100% combed cotton, unisex fit." />
-  <meta property="og:title" content="One Step at a Time Tank – Improo Shop" />
-  <meta property="og:description" content="Made to move in. A lightweight Improo tank." />
-  <meta property="og:image" content="https://improo.vercel.app/images/shop/placeholder/gallery-a.svg" />
+  <title>Accessories – Improo Shop</title>
+  <meta name="description" content="Improo accessories — mugs and other small everyday pieces with a quiet reminder to keep going." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700&family=Lora:ital,wght@0,400;1,400;1,600&display=swap" rel="stylesheet" />
@@ -57,70 +54,20 @@
 
   <main>
     <div class="shop-wrap">
-      <a href="index.html" class="shop-back-link">← Back to Apparel</a>
-      <div class="shop-product">
+      <a href="../index.html" class="shop-back-link">← Back to Shop</a>
+      <div class="shop-hero-boutique" style="padding-bottom:8px;">
+        <div class="shop-eyebrow">Improo Shop</div>
+        <h1>Accessories</h1>
+        <p>Small everyday pieces with a quiet reminder to keep going.</p>
+      </div>
 
-        <div class="shop-gallery">
-          <div class="shop-gallery-main">
-            <img id="pdp-main-img" src="../../images/shop/placeholder/gallery-a.svg" alt="One Step at a Time Tank" width="1200" height="1500" loading="eager" fetchpriority="high">
-            <div class="shop-placeholder-ribbon" id="pdp-ribbon"><span>Mockup preview — final product photos coming soon</span></div>
-          </div>
-          <div class="shop-gallery-thumbs" id="pdp-thumbs">
-            <button type="button" class="is-active" data-img="../../images/shop/placeholder/gallery-a.svg"><img src="../../images/shop/placeholder/gallery-a.svg" alt="" width="74" height="92"></button>
-          </div>
-        </div>
+      <div id="shop-filterbar" class="shop-filterbar"></div>
+      <div id="shop-grid" class="shop-grid"></div>
+      <div id="shop-empty" class="shop-empty" style="display:none;">No pieces match those filters yet — try clearing one.</div>
+      <div id="shop-pagination" class="shop-pagination"></div>
 
-        <div class="shop-info-col">
-          <div class="shop-eyebrow">Tanks</div>
-          <h1>One Step at a Time Tank</h1>
-          <p class="shop-product-tagline">Made to move in.</p>
-          <p class="shop-product-price" id="pdp-price">€25.00</p>
-
-          <div class="shop-option-block">
-            <div class="shop-option-label"><span>Color</span><span id="pdp-color-selected">Black</span></div>
-            <div class="shop-option-row" id="pdp-colors">
-              <button type="button" class="shop-swatch is-active" data-color="Black" style="background:#161616" title="Black" aria-label="Black"></button>
-            </div>
-          </div>
-
-          <div class="shop-option-block">
-            <div class="shop-option-label"><span>Size</span><a href="#" style="color:inherit;text-decoration:underline;">Size guide</a></div>
-            <div class="shop-option-row" id="pdp-sizes">
-              <button type="button" class="shop-size-pill" data-size="S">S</button>
-              <button type="button" class="shop-size-pill" data-size="M">M</button>
-              <button type="button" class="shop-size-pill" data-size="L">L</button>
-              <button type="button" class="shop-size-pill" data-size="XL">XL</button>
-            </div>
-          </div>
-
-          <div class="shop-qty-row">
-            <span class="shop-option-label" style="margin-bottom:0;">Qty</span>
-            <div class="shop-qty-stepper">
-              <button type="button" id="pdp-qty-minus">−</button>
-              <span id="pdp-qty">1</span>
-              <button type="button" id="pdp-qty-plus">+</button>
-            </div>
-          </div>
-
-          <button type="button" class="shop-btn shop-btn-block" id="pdp-add-to-cart" disabled>Select a size</button>
-          <p class="shop-hint">Made to order via our print partner — please allow a few extra days for production.</p>
-
-          <div class="shop-accordion">
-            <details open>
-              <summary>Details &amp; Materials</summary>
-              <div class="shop-accordion-body">A lightweight tank for training days, walks and everything in between — with a simple line that says what Improo is all about.<br><br>100% combed cotton, 160gsm, unisex fit.</div>
-            </details>
-            <details>
-              <summary>Sizing</summary>
-              <div class="shop-accordion-body">Unisex sizing, true to size. If you're between sizes, we recommend sizing up for a relaxed fit.</div>
-            </details>
-            <details>
-              <summary>Shipping</summary>
-              <div class="shop-accordion-body">Each piece is made to order and ships within the EU and US. Delivery times and checkout are coming soon — leave your email below and we'll let you know the moment it's live.</div>
-            </details>
-          </div>
-        </div>
-
+      <div class="shop-strip">
+        These pieces are launching soon — you can browse and save your picks now, and check out as soon as ordering opens.
       </div>
     </div>
   </main>
@@ -164,6 +111,6 @@
 
   <script src="../shop-data.js"></script>
   <script src="../shop-cart.js"></script>
-  <script src="../product-page.js" data-slug="one-step-at-a-time-tank"></script>
+  <script src="accessories-catalog.js"></script>
 </body>
 </html>
