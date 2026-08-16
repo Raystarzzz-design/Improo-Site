@@ -106,6 +106,15 @@
     btn.classList.add('is-active');
     var mainImg = document.getElementById('pdp-main-img');
     if (mainImg) mainImg.src = btn.getAttribute('data-img');
+    updatePrintBadge(btn.getAttribute('data-badge') !== 'hide');
+  }
+
+  // The "Back Print" badge only makes sense while the back-of-garment photo is
+  // showing — front/side angles don't show the design, so the badge hides
+  // itself rather than sitting on top of a photo that seems to contradict it.
+  function updatePrintBadge(visible) {
+    var badge = document.querySelector('.shop-gallery-main .shop-badge-mini');
+    if (badge) badge.style.display = visible ? '' : 'none';
   }
 
   function renderGalleryForColor(colorName) {
@@ -114,7 +123,7 @@
     var thumbsEl = document.getElementById('pdp-thumbs');
     if (!thumbsEl) return;
     thumbsEl.innerHTML = colorImages.gallery.map(function (src, i) {
-      return '<button type="button"' + (i === 0 ? ' class="is-active"' : '') + ' data-img="' + src + '">' +
+      return '<button type="button"' + (i === 0 ? ' class="is-active"' : '') + ' data-img="' + src + '"' + (i > 0 ? ' data-badge="hide"' : '') + '>' +
         '<img src="' + src + '" alt="" width="74" height="92" loading="lazy"></button>';
     }).join('');
     thumbsEl.querySelectorAll('button').forEach(function (btn) {
@@ -122,6 +131,7 @@
     });
     var mainImg = document.getElementById('pdp-main-img');
     if (mainImg) mainImg.src = colorImages.gallery[0];
+    updatePrintBadge(true);
   }
 
   function updateAddToCartState() {
