@@ -116,28 +116,82 @@ window.SHOP_PRODUCTS = [
   },
   {
     id: 'apparel-002',
-    slug: 'consistency-hoodie',
+    slug: 'dont-give-up-hoodie',
     category: 'apparel',
     type: 'hoodie',
-    name: 'Consistency Hoodie',
-    tagline: 'Show up anyway.',
-    price: 54.00,
+    name: "Don't Give Up Hoodie",
+    tagline: 'Every step counts.',
+    price: 40.99,
     currency: 'EUR',
-    description: 'A heavyweight hoodie for the early mornings, the walks, the days that need a little more warmth and a little more resolve. Built to last through a lot of small steps.',
-    materials: '80% cotton / 20% polyester, 320gsm brushed fleece interior, unisex fit.',
+    description: "“Don’t give up. You can do this. Every step counts.” A heavyweight hoodie for the early mornings, the walks, the days that need a little more warmth and a little more resolve.",
+    materials: 'Unisex Heavy Blend Hoodie (Gildan 18500), back print, unisex fit.',
+    printLocation: 'back',
     colors: [
-      { name: 'Charcoal', swatch: '#3a3835' },
-      { name: 'Sand', swatch: '#cbbfa8' }
+      { name: 'Orange', swatch: '#d7742a' },
+      { name: 'Military Green', swatch: '#5c6444' },
+      { name: 'Sport Grey', swatch: '#9a9a9a' },
+      { name: 'Carolina Blue', swatch: '#7bafd4' },
+      { name: 'Azalea', swatch: '#e389a3' },
+      { name: 'Gold', swatch: '#c9a536' },
+      { name: 'Light Blue', swatch: '#a9c8e0' },
+      { name: 'Sand', swatch: '#cbbfa8' },
+      { name: 'Light Pink', swatch: '#f2c6d3' },
+      { name: 'Ash', swatch: '#b2b0ab' }
     ],
-    sizes: ['S', 'M', 'L', 'XL', '2XL'],
+    sizes: ['S', 'M', 'L', 'XL', '2XL', '3XL', '4XL', '5XL'],
     images: {
-      thumb: '/images/shop/placeholder/thumb-b.svg',
-      gallery: ['/images/shop/placeholder/gallery-b.svg', '/images/shop/placeholder/gallery-a.svg']
+      thumb: '/images/shop/apparel/dont-give-up-hoodie/orange-thumb.webp',
+      gallery: [
+        '/images/shop/apparel/dont-give-up-hoodie/orange-1.webp',
+        '/images/shop/apparel/dont-give-up-hoodie/orange-2.webp'
+      ],
+      byColor: {
+        'Orange': {
+          thumb: '/images/shop/apparel/dont-give-up-hoodie/orange-thumb.webp',
+          gallery: ['/images/shop/apparel/dont-give-up-hoodie/orange-1.webp', '/images/shop/apparel/dont-give-up-hoodie/orange-2.webp']
+        },
+        'Military Green': {
+          thumb: '/images/shop/apparel/dont-give-up-hoodie/military-green-thumb.webp',
+          gallery: ['/images/shop/apparel/dont-give-up-hoodie/military-green-1.webp', '/images/shop/apparel/dont-give-up-hoodie/military-green-2.webp']
+        },
+        'Sport Grey': {
+          thumb: '/images/shop/apparel/dont-give-up-hoodie/sport-grey-thumb.webp',
+          gallery: ['/images/shop/apparel/dont-give-up-hoodie/sport-grey-1.webp']
+        },
+        'Carolina Blue': {
+          thumb: '/images/shop/apparel/dont-give-up-hoodie/carolina-blue-thumb.webp',
+          gallery: ['/images/shop/apparel/dont-give-up-hoodie/carolina-blue-1.webp', '/images/shop/apparel/dont-give-up-hoodie/carolina-blue-2.webp']
+        },
+        'Azalea': {
+          thumb: '/images/shop/apparel/dont-give-up-hoodie/azalea-thumb.webp',
+          gallery: ['/images/shop/apparel/dont-give-up-hoodie/azalea-1.webp', '/images/shop/apparel/dont-give-up-hoodie/azalea-2.webp']
+        },
+        'Gold': {
+          thumb: '/images/shop/apparel/dont-give-up-hoodie/gold-thumb.webp',
+          gallery: ['/images/shop/apparel/dont-give-up-hoodie/gold-1.webp', '/images/shop/apparel/dont-give-up-hoodie/gold-2.webp']
+        },
+        'Light Blue': {
+          thumb: '/images/shop/apparel/dont-give-up-hoodie/light-blue-thumb.webp',
+          gallery: ['/images/shop/apparel/dont-give-up-hoodie/light-blue-1.webp', '/images/shop/apparel/dont-give-up-hoodie/light-blue-2.webp']
+        },
+        'Sand': {
+          thumb: '/images/shop/apparel/dont-give-up-hoodie/sand-thumb.webp',
+          gallery: ['/images/shop/apparel/dont-give-up-hoodie/sand-1.webp', '/images/shop/apparel/dont-give-up-hoodie/sand-2.webp']
+        },
+        'Light Pink': {
+          thumb: '/images/shop/apparel/dont-give-up-hoodie/light-pink-thumb.webp',
+          gallery: ['/images/shop/apparel/dont-give-up-hoodie/light-pink-1.webp', '/images/shop/apparel/dont-give-up-hoodie/light-pink-2.webp']
+        },
+        'Ash': {
+          thumb: '/images/shop/apparel/dont-give-up-hoodie/ash-thumb.webp',
+          gallery: ['/images/shop/apparel/dont-give-up-hoodie/ash-1.webp', '/images/shop/apparel/dont-give-up-hoodie/ash-2.webp']
+        }
+      }
     },
-    isPlaceholder: true,
-    dateAdded: '2026-08-10',
-    href: '/shop/apparel/consistency-hoodie.html',
-    badge: null,
+    isPlaceholder: false,
+    dateAdded: '2026-08-16',
+    href: '/shop/apparel/dont-give-up-hoodie.html',
+    badge: 'New',
     printfulVariantId: null
   },
   {
