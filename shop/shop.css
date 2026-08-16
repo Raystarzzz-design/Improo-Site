@@ -520,6 +520,21 @@
   font-size: 0.82rem;
   margin-top: 14px;
 }
+.shop-list-more { display: none; }
+.shop-list-more.is-open { display: block; }
+.shop-see-more {
+  background: none;
+  border: none;
+  padding: 0;
+  font-family: var(--shop-sans);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--shop-accent-ink);
+  text-decoration: underline;
+  cursor: pointer;
+}
 
 @media (max-width: 860px) {
   .shop-product { grid-template-columns: 1fr; gap: 32px; }

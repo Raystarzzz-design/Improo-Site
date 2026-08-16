@@ -136,5 +136,19 @@
     }
   }
 
-  document.addEventListener('DOMContentLoaded', init);
+  function initSeeMore() {
+    document.querySelectorAll('.shop-see-more').forEach(function (btn) {
+      var target = document.getElementById(btn.getAttribute('data-target'));
+      if (!target) return;
+      btn.addEventListener('click', function () {
+        var open = target.classList.toggle('is-open');
+        btn.textContent = open ? 'Show less' : 'See more';
+      });
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    init();
+    initSeeMore();
+  });
 })();
