@@ -249,8 +249,7 @@
 .shop-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  border-top: 1px solid var(--shop-line);
-  border-left: 1px solid var(--shop-line);
+  gap: 20px;
 }
 .shop-grid-item {
   background: var(--shop-bg);
@@ -258,8 +257,7 @@
   color: inherit;
   display: block;
   padding-bottom: 28px;
-  border-right: 1px solid var(--shop-line);
-  border-bottom: 1px solid var(--shop-line);
+  border: 1px solid var(--shop-line);
 }
 .shop-grid-photo {
   aspect-ratio: 4/5;
@@ -283,7 +281,7 @@
   color: var(--shop-ink);
   margin: 0 0 6px;
 }
-.shop-grid-price { font-size: 12px; color: var(--shop-muted); }
+.shop-grid-price { font-size: 13.8px; color: var(--shop-muted); }
 .shop-grid-print-note {
   font-size: 10px;
   color: var(--shop-muted);
@@ -308,7 +306,7 @@
   .shop-grid { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 520px) {
-  .shop-grid { grid-template-columns: 1fr 1fr; }
+  .shop-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
   .shop-grid-info { padding: 12px 10px 0; }
 }
 
@@ -453,7 +451,7 @@
   margin: 10px 0 6px;
 }
 .shop-product-tagline { color: var(--shop-muted); font-size: 0.94rem; margin: 0 0 18px; }
-.shop-product-price { font-size: 1.2rem; color: var(--shop-ink); margin: 0 0 28px; }
+.shop-product-price { font-size: 1.38rem; color: var(--shop-ink); margin: 0 0 28px; }
 
 .shop-option-block { margin-bottom: 24px; }
 .shop-option-label {
@@ -629,7 +627,7 @@
 .shop-cart-page-line img { width: 90px; height: 112px; object-fit: cover; background: var(--shop-panel); }
 .shop-cart-page-name { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 6px; }
 .shop-cart-page-meta { font-size: 12px; color: var(--shop-muted); margin-bottom: 10px; }
-.shop-cart-page-price { font-size: 0.95rem; text-align: right; }
+.shop-cart-page-price { font-size: 1.09rem; text-align: right; }
 .shop-cart-page-remove { font-size: 11px; color: var(--shop-muted); text-decoration: underline; background: none; border: none; cursor: pointer; padding: 4px 0 0; }
 
 .shop-cart-summary { padding-top: 28px; }
