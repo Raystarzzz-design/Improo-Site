@@ -258,7 +258,7 @@ window.SHOP_PRODUCTS = [
     type: 'mug',
     name: 'Breathe / Focus / Get It Done Mug',
     tagline: 'A little checklist, right there on your mug.',
-    price: 9.49,
+    price: 11.95,
     currency: 'EUR',
     description: "Breathe. Focus. Get it done. A simple checklist to start the day right — one box already ticked, two to go.",
     materials: 'White ceramic mug with colored inside and handle, 11 oz (325 ml), dishwasher and microwave safe.',
