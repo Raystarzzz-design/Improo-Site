@@ -250,6 +250,85 @@ window.SHOP_PRODUCTS = [
     href: '/shop/accessories/todays-goals-mug.html',
     badge: 'New',
     printfulVariantId: null
+  },
+  {
+    id: 'accessories-002',
+    slug: 'breathe-focus-get-it-done-mug',
+    category: 'accessories',
+    type: 'mug',
+    name: 'Breathe / Focus / Get It Done Mug',
+    tagline: 'A little checklist, right there on your mug.',
+    price: 9.49,
+    currency: 'EUR',
+    description: "Breathe. Focus. Get it done. A simple checklist to start the day right — one box already ticked, two to go.",
+    materials: 'White ceramic mug with colored inside and handle, 11 oz (325 ml), dishwasher and microwave safe.',
+    colors: [
+      { name: 'Blue', swatch: '#5bc2e7' },
+      { name: 'Dark Green', swatch: '#1c5c4a' },
+      { name: 'Golden Yellow', swatch: '#e8b923' },
+      { name: 'Green', swatch: '#8bc34a' },
+      { name: 'Orange', swatch: '#f2793b' },
+      { name: 'Pink', swatch: '#f2b6c6' },
+      { name: 'Red', swatch: '#e0403a' },
+      { name: 'Yellow', swatch: '#f6d13c' }
+    ],
+    sizes: ['11 oz (325 ml)'],
+    images: {
+      thumb: '/images/shop/accessories/breathe-focus-get-it-done-mug/blue-thumb.webp',
+      gallery: [
+        '/images/shop/accessories/breathe-focus-get-it-done-mug/blue-1.webp',
+        '/images/shop/accessories/breathe-focus-get-it-done-mug/blue-2.webp'
+      ],
+      byColor: {
+        'Blue': {
+          thumb: '/images/shop/accessories/breathe-focus-get-it-done-mug/blue-thumb.webp',
+          gallery: [
+            '/images/shop/accessories/breathe-focus-get-it-done-mug/blue-1.webp',
+            '/images/shop/accessories/breathe-focus-get-it-done-mug/blue-2.webp'
+          ]
+        },
+        'Dark Green': {
+          thumb: '/images/shop/accessories/breathe-focus-get-it-done-mug/dark-green-thumb.webp',
+          gallery: [
+            '/images/shop/accessories/breathe-focus-get-it-done-mug/dark-green-1.webp',
+            '/images/shop/accessories/breathe-focus-get-it-done-mug/dark-green-2.webp',
+            '/images/shop/accessories/breathe-focus-get-it-done-mug/dark-green-3.webp'
+          ]
+        },
+        'Golden Yellow': {
+          thumb: '/images/shop/accessories/breathe-focus-get-it-done-mug/golden-yellow-thumb.webp',
+          gallery: ['/images/shop/accessories/breathe-focus-get-it-done-mug/golden-yellow-1.webp']
+        },
+        'Green': {
+          thumb: '/images/shop/accessories/breathe-focus-get-it-done-mug/green-thumb.webp',
+          gallery: ['/images/shop/accessories/breathe-focus-get-it-done-mug/green-1.webp']
+        },
+        'Orange': {
+          thumb: '/images/shop/accessories/breathe-focus-get-it-done-mug/orange-thumb.webp',
+          gallery: ['/images/shop/accessories/breathe-focus-get-it-done-mug/orange-1.webp']
+        },
+        'Pink': {
+          thumb: '/images/shop/accessories/breathe-focus-get-it-done-mug/pink-thumb.webp',
+          gallery: ['/images/shop/accessories/breathe-focus-get-it-done-mug/pink-1.webp']
+        },
+        'Red': {
+          thumb: '/images/shop/accessories/breathe-focus-get-it-done-mug/red-thumb.webp',
+          gallery: [
+            '/images/shop/accessories/breathe-focus-get-it-done-mug/red-1.webp',
+            '/images/shop/accessories/breathe-focus-get-it-done-mug/red-2.webp'
+          ]
+        },
+        'Yellow': {
+          thumb: '/images/shop/accessories/breathe-focus-get-it-done-mug/yellow-thumb.webp',
+          gallery: ['/images/shop/accessories/breathe-focus-get-it-done-mug/yellow-1.webp']
+        }
+      }
+    },
+    isPlaceholder: false,
+    dateAdded: '2026-08-18',
+    href: '/shop/accessories/breathe-focus-get-it-done-mug.html',
+    badge: 'New',
+    printfulVariantId: null
   }
 ];
 
